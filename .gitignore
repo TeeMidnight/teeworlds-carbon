@@ -53,7 +53,6 @@ out
 tags
 
 # CMake
-data
 generated
 
 .ninja_deps

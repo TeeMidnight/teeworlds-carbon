@@ -1,19 +1,12 @@
 name: Check style
 
-on:
-  push:
-    branches-ignore:
-      - master
-      - staging.tmp
-      - trying.tmp
-      - staging-squash-merge.tmp
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   check-style:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Prepare

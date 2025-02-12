@@ -63,9 +63,6 @@ if(TARGET_OS STREQUAL "windows")
   set(AUTO_DEPENDENCIES_DEFAULT ON)
 endif()
 
-option(CLIENT "Compile client" ON)
-option(HEADLESS_CLIENT "Build the client without graphics" OFF)
-option(DOWNLOAD_DEPENDENCIES "Download dependencies (only available on Windows)" ${AUTO_DEPENDENCIES_DEFAULT})
 option(DOWNLOAD_GTEST "Download and compile GTest if not found" ${AUTO_DEPENDENCIES_DEFAULT})
 option(PREFER_BUNDLED_LIBS "Prefer bundled libraries over system libraries" ${AUTO_DEPENDENCIES_DEFAULT})
 option(DEV "Don't generate stuff necessary for packaging" OFF)
@@ -88,29 +85,6 @@ set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
 )
 
 set(SERVER_EXECUTABLE teeworlds_srv CACHE STRING "Name of the built server executable")
-set(CLIENT_EXECUTABLE teeworlds CACHE STRING "Name of the build client executable")
-
-########################################################################
-# Download dependencies
-########################################################################
-
-find_package(Python3)
-if(DOWNLOAD_DEPENDENCIES)
-  if(Python3_EXECUTABLE AND TARGET_OS STREQUAL "windows" AND TARGET_BITS)
-    set(DOWNLOADS)
-    foreach(d freetype sdl)
-      if(NOT EXISTS "${PROJECT_SOURCE_DIR}/other/${d}/${TARGET_OS}/lib${TARGET_BITS}")
-        list(APPEND DOWNLOADS ${d})
-      endif()
-    endforeach()
-    if(DOWNLOADS)
-      message(STATUS "Downloading Freetype and SDL 2")
-      execute_process(COMMAND ${Python3_EXECUTABLE} scripts/download.py ${DOWNLOADS}
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-      )
-    endif()
-  endif()
-endif()
 
 ########################################################################
 # Compiler flags
@@ -293,13 +267,10 @@ if(NOT CMAKE_CROSSCOMPILING)
 endif()
 find_package(ZLIB)
 find_package(Crypto)
-find_package(Freetype)
 find_package(Git)
 find_package(GTest)
-find_package(Pnglite)
-find_package(SDL2)
 find_package(Threads)
-find_package(Wavpack)
+find_package(Python3)
 
 
 if(TARGET_OS AND TARGET_OS STREQUAL "mac")
@@ -357,12 +328,6 @@ if(NOT(Python3_FOUND))
   message(SEND_ERROR "You must install Python to compile Teeworlds")
 endif()
 
-if(CLIENT AND NOT(FREETYPE_FOUND))
-  message(SEND_ERROR "You must install Freetype to compile the Teeworlds client")
-endif()
-if(CLIENT AND NOT(SDL2_FOUND))
-  message(SEND_ERROR "You must install SDL2 to compile the Teeworlds client")
-endif()
 if(NOT(GTEST_FOUND))
   if(DOWNLOAD_GTEST)
     if(GIT_FOUND)
@@ -377,27 +342,11 @@ if(NOT(GTEST_FOUND))
 endif()
 
 if(TARGET_OS STREQUAL "windows")
-  set(PLATFORM_CLIENT)
-  set(PLATFORM_CLIENT_LIBS opengl32 winmm imm32)
   set(PLATFORM_LIBS ws2_32) # Windows sockets
 elseif(TARGET_OS STREQUAL "mac")
   find_library(CARBON Carbon)
-  find_library(COCOA Cocoa)
-  find_library(OPENGL OpenGL)
-  set(PLATFORM_CLIENT
-    src/macoslaunch/client.m
-  )
-  set(PLATFORM_CLIENT_LIBS ${COCOA} ${OPENGL})
   set(PLATFORM_LIBS ${CARBON})
 else()
-  set(PLATFORM_CLIENT)
-  find_package(OpenGL)
-  if(CMAKE_VERSION VERSION_LESS 3.10)
-    set(PLATFORM_CLIENT_LIBS ${OPENGL_gl_LIBRARY})
-  else()
-    set(PLATFORM_CLIENT_LIBS ${OPENGL_opengl_LIBRARY})
-  endif()
-  set(PLATFORM_CLIENT_INCLUDE_DIRS ${OPENGL_INCLUDE_DIR})
   if(TARGET_OS STREQUAL "linux")
     set(PLATFORM_LIBS rt) # clock_gettime for glibc < 2.17
   else()
@@ -479,708 +428,10 @@ if(NOT CRYPTO_FOUND)
 endif()
 
 ########################################################################
-# DATA
+# COPY DATA
 ########################################################################
 
-set(EXPECTED_DATA
-  audio/foley_body_impact-01.wv
-  audio/foley_body_impact-02.wv
-  audio/foley_body_impact-03.wv
-  audio/foley_body_splat-01.wv
-  audio/foley_body_splat-02.wv
-  audio/foley_body_splat-03.wv
-  audio/foley_body_splat-04.wv
-  audio/foley_dbljump-01.wv
-  audio/foley_dbljump-02.wv
-  audio/foley_dbljump-03.wv
-  audio/foley_foot_left-01.wv
-  audio/foley_foot_left-02.wv
-  audio/foley_foot_left-03.wv
-  audio/foley_foot_left-04.wv
-  audio/foley_foot_right-01.wv
-  audio/foley_foot_right-02.wv
-  audio/foley_foot_right-03.wv
-  audio/foley_foot_right-04.wv
-  audio/foley_land-01.wv
-  audio/foley_land-02.wv
-  audio/foley_land-03.wv
-  audio/foley_land-04.wv
-  audio/hook_attach-01.wv
-  audio/hook_attach-02.wv
-  audio/hook_attach-03.wv
-  audio/hook_loop-01.wv
-  audio/hook_loop-02.wv
-  audio/hook_noattach-01.wv
-  audio/hook_noattach-02.wv
-  audio/hook_noattach-03.wv
-  audio/music_menu.wv
-  audio/sfx_ctf_cap_pl.wv
-  audio/sfx_ctf_drop.wv
-  audio/sfx_ctf_grab_en.wv
-  audio/sfx_ctf_grab_pl.wv
-  audio/sfx_ctf_rtn.wv
-  audio/sfx_hit_strong-01.wv
-  audio/sfx_hit_strong-02.wv
-  audio/sfx_hit_weak-01.wv
-  audio/sfx_hit_weak-02.wv
-  audio/sfx_hit_weak-03.wv
-  audio/sfx_msg-client.wv
-  audio/sfx_msg-highlight.wv
-  audio/sfx_msg-server.wv
-  audio/sfx_pickup_arm-01.wv
-  audio/sfx_pickup_arm-02.wv
-  audio/sfx_pickup_arm-03.wv
-  audio/sfx_pickup_arm-04.wv
-  audio/sfx_pickup_gun.wv
-  audio/sfx_pickup_hrt-01.wv
-  audio/sfx_pickup_hrt-02.wv
-  audio/sfx_pickup_launcher.wv
-  audio/sfx_pickup_ninja.wv
-  audio/sfx_pickup_sg.wv
-  audio/sfx_skid-01.wv
-  audio/sfx_skid-02.wv
-  audio/sfx_skid-03.wv
-  audio/sfx_skid-04.wv
-  audio/sfx_spawn_wpn-01.wv
-  audio/sfx_spawn_wpn-02.wv
-  audio/sfx_spawn_wpn-03.wv
-  audio/vo_teefault_cry-01.wv
-  audio/vo_teefault_cry-02.wv
-  audio/vo_teefault_ninja-01.wv
-  audio/vo_teefault_ninja-02.wv
-  audio/vo_teefault_ninja-03.wv
-  audio/vo_teefault_ninja-04.wv
-  audio/vo_teefault_pain_long-01.wv
-  audio/vo_teefault_pain_long-02.wv
-  audio/vo_teefault_pain_short-01.wv
-  audio/vo_teefault_pain_short-02.wv
-  audio/vo_teefault_pain_short-03.wv
-  audio/vo_teefault_pain_short-04.wv
-  audio/vo_teefault_pain_short-05.wv
-  audio/vo_teefault_pain_short-06.wv
-  audio/vo_teefault_pain_short-07.wv
-  audio/vo_teefault_pain_short-08.wv
-  audio/vo_teefault_pain_short-09.wv
-  audio/vo_teefault_pain_short-10.wv
-  audio/vo_teefault_pain_short-11.wv
-  audio/vo_teefault_pain_short-12.wv
-  audio/vo_teefault_sledge-01.wv
-  audio/vo_teefault_sledge-02.wv
-  audio/vo_teefault_sledge-03.wv
-  audio/vo_teefault_spawn-01.wv
-  audio/vo_teefault_spawn-02.wv
-  audio/vo_teefault_spawn-03.wv
-  audio/vo_teefault_spawn-04.wv
-  audio/vo_teefault_spawn-05.wv
-  audio/vo_teefault_spawn-06.wv
-  audio/vo_teefault_spawn-07.wv
-  audio/wp_flump_explo-01.wv
-  audio/wp_flump_explo-02.wv
-  audio/wp_flump_explo-03.wv
-  audio/wp_flump_launch-01.wv
-  audio/wp_flump_launch-02.wv
-  audio/wp_flump_launch-03.wv
-  audio/wp_gun_fire-01.wv
-  audio/wp_gun_fire-02.wv
-  audio/wp_gun_fire-03.wv
-  audio/wp_hammer_hit-01.wv
-  audio/wp_hammer_hit-02.wv
-  audio/wp_hammer_hit-03.wv
-  audio/wp_hammer_swing-01.wv
-  audio/wp_hammer_swing-02.wv
-  audio/wp_hammer_swing-03.wv
-  audio/wp_laser_bnce-01.wv
-  audio/wp_laser_bnce-02.wv
-  audio/wp_laser_bnce-03.wv
-  audio/wp_laser_fire-01.wv
-  audio/wp_laser_fire-02.wv
-  audio/wp_laser_fire-03.wv
-  audio/wp_ninja_attack-01.wv
-  audio/wp_ninja_attack-02.wv
-  audio/wp_ninja_attack-03.wv
-  audio/wp_ninja_attack-04.wv
-  audio/wp_ninja_hit-01.wv
-  audio/wp_ninja_hit-02.wv
-  audio/wp_ninja_hit-03.wv
-  audio/wp_ninja_hit-04.wv
-  audio/wp_noammo-01.wv
-  audio/wp_noammo-02.wv
-  audio/wp_noammo-03.wv
-  audio/wp_noammo-04.wv
-  audio/wp_noammo-05.wv
-  audio/wp_shotty_fire-01.wv
-  audio/wp_shotty_fire-02.wv
-  audio/wp_shotty_fire-03.wv
-  audio/wp_switch-01.wv
-  audio/wp_switch-02.wv
-  audio/wp_switch-03.wv
-  countryflags/AD.png
-  countryflags/AE.png
-  countryflags/AF.png
-  countryflags/AG.png
-  countryflags/AI.png
-  countryflags/AL.png
-  countryflags/AM.png
-  countryflags/AO.png
-  countryflags/AR.png
-  countryflags/AS.png
-  countryflags/AT.png
-  countryflags/AU.png
-  countryflags/AW.png
-  countryflags/AX.png
-  countryflags/AZ.png
-  countryflags/BA.png
-  countryflags/BB.png
-  countryflags/BD.png
-  countryflags/BE.png
-  countryflags/BF.png
-  countryflags/BG.png
-  countryflags/BH.png
-  countryflags/BI.png
-  countryflags/BJ.png
-  countryflags/BL.png
-  countryflags/BM.png
-  countryflags/BN.png
-  countryflags/BO.png
-  countryflags/BR.png
-  countryflags/BS.png
-  countryflags/BT.png
-  countryflags/BW.png
-  countryflags/BY.png
-  countryflags/BZ.png
-  countryflags/CA.png
-  countryflags/CC.png
-  countryflags/CD.png
-  countryflags/CF.png
-  countryflags/CG.png
-  countryflags/CH.png
-  countryflags/CI.png
-  countryflags/CK.png
-  countryflags/CL.png
-  countryflags/CM.png
-  countryflags/CN.png
-  countryflags/CO.png
-  countryflags/CR.png
-  countryflags/CU.png
-  countryflags/CV.png
-  countryflags/CW.png
-  countryflags/CX.png
-  countryflags/CY.png
-  countryflags/CZ.png
-  countryflags/DE.png
-  countryflags/DJ.png
-  countryflags/DK.png
-  countryflags/DM.png
-  countryflags/DO.png
-  countryflags/DZ.png
-  countryflags/EC.png
-  countryflags/EE.png
-  countryflags/EG.png
-  countryflags/EH.png
-  countryflags/ER.png
-  countryflags/ES.png
-  countryflags/ET.png
-  countryflags/FI.png
-  countryflags/FJ.png
-  countryflags/FK.png
-  countryflags/FM.png
-  countryflags/FO.png
-  countryflags/FR.png
-  countryflags/GA.png
-  countryflags/GB.png
-  countryflags/GD.png
-  countryflags/GE.png
-  countryflags/GF.png
-  countryflags/GG.png
-  countryflags/GH.png
-  countryflags/GI.png
-  countryflags/GL.png
-  countryflags/GM.png
-  countryflags/GN.png
-  countryflags/GP.png
-  countryflags/GQ.png
-  countryflags/GR.png
-  countryflags/GS.png
-  countryflags/GT.png
-  countryflags/GU.png
-  countryflags/GW.png
-  countryflags/GY.png
-  countryflags/HK.png
-  countryflags/HN.png
-  countryflags/HR.png
-  countryflags/HT.png
-  countryflags/HU.png
-  countryflags/ID.png
-  countryflags/IE.png
-  countryflags/IL.png
-  countryflags/IM.png
-  countryflags/IN.png
-  countryflags/IO.png
-  countryflags/IQ.png
-  countryflags/IR.png
-  countryflags/IS.png
-  countryflags/IT.png
-  countryflags/JE.png
-  countryflags/JM.png
-  countryflags/JO.png
-  countryflags/JP.png
-  countryflags/KE.png
-  countryflags/KG.png
-  countryflags/KH.png
-  countryflags/KI.png
-  countryflags/KM.png
-  countryflags/KN.png
-  countryflags/KP.png
-  countryflags/KR.png
-  countryflags/KW.png
-  countryflags/KY.png
-  countryflags/KZ.png
-  countryflags/LA.png
-  countryflags/LB.png
-  countryflags/LC.png
-  countryflags/LI.png
-  countryflags/LK.png
-  countryflags/LR.png
-  countryflags/LS.png
-  countryflags/LT.png
-  countryflags/LU.png
-  countryflags/LV.png
-  countryflags/LY.png
-  countryflags/MA.png
-  countryflags/MC.png
-  countryflags/MD.png
-  countryflags/ME.png
-  countryflags/MF.png
-  countryflags/MG.png
-  countryflags/MH.png
-  countryflags/MK.png
-  countryflags/ML.png
-  countryflags/MM.png
-  countryflags/MN.png
-  countryflags/MO.png
-  countryflags/MP.png
-  countryflags/MQ.png
-  countryflags/MR.png
-  countryflags/MS.png
-  countryflags/MT.png
-  countryflags/MU.png
-  countryflags/MV.png
-  countryflags/MW.png
-  countryflags/MX.png
-  countryflags/MY.png
-  countryflags/MZ.png
-  countryflags/NA.png
-  countryflags/NC.png
-  countryflags/NE.png
-  countryflags/NF.png
-  countryflags/NG.png
-  countryflags/NI.png
-  countryflags/NL.png
-  countryflags/NO.png
-  countryflags/NP.png
-  countryflags/NR.png
-  countryflags/NU.png
-  countryflags/NZ.png
-  countryflags/OM.png
-  countryflags/PA.png
-  countryflags/PE.png
-  countryflags/PF.png
-  countryflags/PG.png
-  countryflags/PH.png
-  countryflags/PK.png
-  countryflags/PL.png
-  countryflags/PM.png
-  countryflags/PN.png
-  countryflags/PR.png
-  countryflags/PS.png
-  countryflags/PT.png
-  countryflags/PW.png
-  countryflags/PY.png
-  countryflags/QA.png
-  countryflags/RE.png
-  countryflags/RO.png
-  countryflags/RS.png
-  countryflags/RU.png
-  countryflags/RW.png
-  countryflags/SA.png
-  countryflags/SB.png
-  countryflags/SC.png
-  countryflags/SD.png
-  countryflags/SE.png
-  countryflags/SG.png
-  countryflags/SH.png
-  countryflags/SI.png
-  countryflags/SK.png
-  countryflags/SL.png
-  countryflags/SM.png
-  countryflags/SN.png
-  countryflags/SO.png
-  countryflags/SR.png
-  countryflags/SS.png
-  countryflags/ST.png
-  countryflags/SV.png
-  countryflags/SX.png
-  countryflags/SY.png
-  countryflags/SZ.png
-  countryflags/TC.png
-  countryflags/TD.png
-  countryflags/TF.png
-  countryflags/TG.png
-  countryflags/TH.png
-  countryflags/TJ.png
-  countryflags/TK.png
-  countryflags/TL.png
-  countryflags/TM.png
-  countryflags/TN.png
-  countryflags/TO.png
-  countryflags/TR.png
-  countryflags/TT.png
-  countryflags/TV.png
-  countryflags/TW.png
-  countryflags/TZ.png
-  countryflags/UA.png
-  countryflags/UG.png
-  countryflags/US.png
-  countryflags/UY.png
-  countryflags/UZ.png
-  countryflags/VA.png
-  countryflags/VC.png
-  countryflags/VE.png
-  countryflags/VG.png
-  countryflags/VI.png
-  countryflags/VN.png
-  countryflags/VU.png
-  countryflags/WF.png
-  countryflags/WS.png
-  countryflags/XBZ.png
-  countryflags/XCA.png
-  countryflags/XEN.png
-  countryflags/XES.png
-  countryflags/XGA.png
-  countryflags/XNI.png
-  countryflags/XSC.png
-  countryflags/XWA.png
-  countryflags/YE.png
-  countryflags/ZA.png
-  countryflags/ZM.png
-  countryflags/ZW.png
-  countryflags/default.png
-  countryflags/index.json
-  deadtee.png
-  editor/automap/desert_main.json
-  editor/automap/grass_doodads.json
-  editor/automap/grass_main.json
-  editor/automap/jungle_deathtiles.json
-  editor/automap/jungle_main.json
-  editor/automap/winter_main.json
-  editor/background.png
-  editor/checker.png
-  editor/cursor.png
-  editor/entities.png
-  emoticons.png
-  fonts/DejaVuSans.ttf
-  fonts/SourceHanSans.ttc
-  fonts/index.json
-  game.png
-  languages/belarusian.json
-  languages/bosnian.json
-  languages/brazilian_portuguese.json
-  languages/breton.json
-  languages/bulgarian.json
-  languages/catalan.json
-  languages/chuvash.json
-  languages/czech.json
-  languages/danish.json
-  languages/dutch.json
-  languages/esperanto.json
-  languages/estonian.json
-  languages/finnish.json
-  languages/french.json
-  languages/gaelic_scottish.json
-  languages/galician.json
-  languages/german.json
-  languages/greek.json
-  languages/hungarian.json
-  languages/index.json
-  languages/irish.json
-  languages/italian.json
-  languages/japanese.json
-  languages/korean.json
-  languages/kyrgyz.json
-  languages/license.txt
-  languages/lithuanian.json
-  languages/norwegian.json
-  languages/polish.json
-  languages/portuguese.json
-  languages/readme.txt
-  languages/romanian.json
-  languages/russian.json
-  languages/serbian.json
-  languages/simplified_chinese.json
-  languages/slovak.json
-  languages/slovenian.json
-  languages/spanish.json
-  languages/swedish.json
-  languages/traditional_chinese.json
-  languages/turkish.json
-  languages/ukrainian.json
-  mapres/bg_cloud1.png
-  mapres/bg_cloud2.png
-  mapres/bg_cloud3.png
-  mapres/desert_doodads.png
-  mapres/desert_main.png
-  mapres/desert_mountains.png
-  mapres/desert_mountains2.png
-  mapres/desert_sun.png
-  mapres/easter.png
-  mapres/generic_deathtiles.png
-  mapres/generic_lamps.png
-  mapres/generic_shadows.png
-  mapres/generic_unhookable.png
-  mapres/grass_doodads.png
-  mapres/grass_main.png
-  mapres/jungle_background.png
-  mapres/jungle_deathtiles.png
-  mapres/jungle_doodads.png
-  mapres/jungle_main.png
-  mapres/jungle_midground.png
-  mapres/jungle_unhookables.png
-  mapres/light.png
-  mapres/moon.png
-  mapres/mountains.png
-  mapres/snow.png
-  mapres/stars.png
-  mapres/sun.png
-  mapres/winter_doodads.png
-  mapres/winter_main.png
-  mapres/winter_mountains.png
-  mapres/winter_mountains2.png
-  mapres/winter_mountains3.png
-  maps/ctf1.map
-  maps/ctf2.map
-  maps/ctf3.map
-  maps/ctf4.map
-  maps/ctf5.map
-  maps/ctf6.map
-  maps/ctf7.map
-  maps/ctf8.map
-  maps/dm1.map
-  maps/dm2.map
-  maps/dm3.map
-  maps/dm6.map
-  maps/dm7.map
-  maps/dm8.map
-  maps/dm9.map
-  maps/license.txt
-  maps/lms1.map
-  maps/readme.txt
-  particles.png
-  race_flag.png
-  skins/beaver.json
-  skins/bluekitty.json
-  skins/bluestripe.json
-  skins/body/bat.png
-  skins/body/bear.png
-  skins/body/beaver.png
-  skins/body/dog.png
-  skins/body/force.png
-  skins/body/fox.png
-  skins/body/hippo.png
-  skins/body/kitty.png
-  skins/body/koala.png
-  skins/body/monkey.png
-  skins/body/mouse.png
-  skins/body/piglet.png
-  skins/body/raccoon.png
-  skins/body/spiky.png
-  skins/body/standard.png
-  skins/body/x_ninja.png
-  skins/bot.png
-  skins/brownbear.json
-  skins/bumbler.json
-  skins/cammo.json
-  skins/cammostripes.json
-  skins/cavebat.json
-  skins/decoration/hair.png
-  skins/decoration/twinbopp.png
-  skins/decoration/twinmello.png
-  skins/decoration/twinpen.png
-  skins/decoration/unibop.png
-  skins/decoration/unimelo.png
-  skins/decoration/unipento.png
-  skins/default.json
-  skins/eyes/colorable.png
-  skins/eyes/negative.png
-  skins/eyes/standard.png
-  skins/eyes/standardreal.png
-  skins/eyes/x_ninja.png
-  skins/feet/standard.png
-  skins/force.json
-  skins/fox.json
-  skins/greycoon.json
-  skins/greyfox.json
-  skins/hands/standard.png
-  skins/hippo.json
-  skins/koala.json
-  skins/limedog.json
-  skins/limekitty.json
-  skins/marking/bear.png
-  skins/marking/belly1.png
-  skins/marking/belly2.png
-  skins/marking/blush.png
-  skins/marking/bug.png
-  skins/marking/cammo1.png
-  skins/marking/cammo2.png
-  skins/marking/cammostripes.png
-  skins/marking/coonfluff.png
-  skins/marking/donny.png
-  skins/marking/downdony.png
-  skins/marking/duodonny.png
-  skins/marking/fox.png
-  skins/marking/hipbel.png
-  skins/marking/lowcross.png
-  skins/marking/lowpaint.png
-  skins/marking/marksman.png
-  skins/marking/mice.png
-  skins/marking/mixture1.png
-  skins/marking/mixture2.png
-  skins/marking/monkey.png
-  skins/marking/panda1.png
-  skins/marking/panda2.png
-  skins/marking/purelove.png
-  skins/marking/saddo.png
-  skins/marking/setisu.png
-  skins/marking/sidemarks.png
-  skins/marking/singu.png
-  skins/marking/stripe.png
-  skins/marking/striped.png
-  skins/marking/stripes.png
-  skins/marking/stripes2.png
-  skins/marking/thunder.png
-  skins/marking/tiger1.png
-  skins/marking/tiger2.png
-  skins/marking/toptri.png
-  skins/marking/triangular.png
-  skins/marking/tricircular.png
-  skins/marking/tripledon.png
-  skins/marking/tritri.png
-  skins/marking/twinbelly.png
-  skins/marking/twincross.png
-  skins/marking/twintri.png
-  skins/marking/uppy.png
-  skins/marking/warpaint.png
-  skins/marking/warstripes.png
-  skins/marking/whisker.png
-  skins/marking/wildpaint.png
-  skins/marking/wildpatch.png
-  skins/marking/yinyang.png
-  skins/monkey.json
-  skins/paintgre.json
-  skins/pandabear.json
-  skins/panther.json
-  skins/pento.json
-  skins/piggy.json
-  skins/pinky.json
-  skins/raccoon.json
-  skins/redbopp.json
-  skins/redstripe.json
-  skins/saddo.json
-  skins/setisu.json
-  skins/snowti.json
-  skins/spiky.json
-  skins/swardy.json
-  skins/tiger.json
-  skins/tooxy.json
-  skins/toptri.json
-  skins/twinbop.json
-  skins/twintri.json
-  skins/warmouse.json
-  skins/warpaint.json
-  skins/x_ninja.json
-  skins/xmas_hat.png
-  ui/blob.png
-  ui/console.png
-  ui/console_bar.png
-  ui/debug_font.png
-  ui/demo_buttons.png
-  ui/file_icons.png
-  ui/gametypes/ctf.png
-  ui/gametypes/dm.png
-  ui/gametypes/lms.png
-  ui/gametypes/lts.png
-  ui/gametypes/mod.png
-  ui/gametypes/race.png
-  ui/gametypes/tdm.png
-  ui/gui_buttons.png
-  ui/gui_cursor.png
-  ui/gui_icons.png
-  ui/gui_logo.png
-  ui/icons/arrows.png
-  ui/icons/browse.png
-  ui/icons/browser.png
-  ui/icons/chat_whisper.png
-  ui/icons/friend.png
-  ui/icons/level.png
-  ui/icons/menu.png
-  ui/icons/network.png
-  ui/icons/sidebar.png
-  ui/icons/timer_clock.png
-  ui/icons/tools.png
-  ui/menuimages/demos.png
-  ui/menuimages/editor.png
-  ui/menuimages/local_server.png
-  ui/menuimages/play_game.png
-  ui/menuimages/settings.png
-  ui/no_skinpart.png
-  ui/sound_icons.png
-  ui/themes/auto.png
-  ui/themes/heavens.png
-  ui/themes/heavens_day.map
-  ui/themes/heavens_night.map
-  ui/themes/jungle.png
-  ui/themes/jungle_day.map
-  ui/themes/jungle_night.map
-  ui/themes/none.png
-  ui/themes/winter.png
-  ui/themes/winter_day.map
-  ui/themes/winter_night.map
-)
-
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/datasrc/languages/index.json)
-  message(WARNING "Missing datasrc/languages submodule. Please download a source release or update your git submodules with `git submodule update --init`")
-  foreach(item ${EXPECTED_DATA})
-    if(item MATCHES "^languages/")
-      list(REMOVE_ITEM EXPECTED_DATA ${item})
-    endif()
-  endforeach()
-endif()
-
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/datasrc/maps/dm1.map)
-  message(WARNING "Missing datasrc/maps submodule. Please download a source release or update your git submodules with `git submodule update --init`")
-  foreach(item ${EXPECTED_DATA})
-    if(item MATCHES "^maps/")
-      list(REMOVE_ITEM EXPECTED_DATA ${item})
-    endif()
-  endforeach()
-endif()
-
-set_glob(DATA GLOB_RECURSE "json;map;png;rules;ttc;ttf;txt;wv" datasrc ${EXPECTED_DATA})
-
-########################################################################
-# COPY DATA AND DLLS
-########################################################################
-
-foreach(datafile ${DATA})
-  file(RELATIVE_PATH OUT ${PROJECT_SOURCE_DIR}/datasrc ${datafile})
-  get_filename_component(DESTINATION data/${OUT} PATH)
-  file(MAKE_DIRECTORY ${DESTINATION})
-  file(COPY ${datafile} DESTINATION ${DESTINATION})
-endforeach()
-set(COPY_FILES
-  ${FREETYPE_COPY_FILES}
-  ${SDL2_COPY_FILES}
-)
-file(COPY ${COPY_FILES} DESTINATION .)
+file(COPY ${PROJECT_SOURCE_DIR}/data DESTINATION .)
 
 ########################################################################
 # CODE GENERATION
@@ -1238,8 +489,6 @@ chash("src/generated/nethash.cpp"
   "src/game/gamecore.cpp"
   "${PROJECT_BINARY_DIR}/src/generated/protocol.h"
 )
-generate_source("src/generated/client_data.cpp" "client_content_source")
-generate_source("src/generated/client_data.h" "client_content_header")
 generate_source("src/generated/protocol.cpp" "network_source")
 generate_source("src/generated/protocol.h" "network_header")
 generate_source("src/generated/server_data.cpp" "server_content_source")
@@ -1273,26 +522,16 @@ set_src(BASE GLOB_RECURSE src/base
   vmath.h
 )
 set_src(ENGINE_INTERFACE GLOB src/engine
-  client.h
   config.h
   console.h
-  contacts.h
   demo.h
-  editor.h
   engine.h
-  graphics.h
-  input.h
   kernel.h
-  keys.h
   map.h
-  mapchecker.h
   masterserver.h
   message.h
   server.h
-  serverbrowser.h
-  sound.h
   storage.h
-  textrender.h
 )
 set_src(ENGINE_SHARED GLOB src/engine/shared
   compression.cpp
@@ -1323,16 +562,14 @@ set_src(ENGINE_SHARED GLOB src/engine/shared
   linereader.cpp
   linereader.h
   map.cpp
-  mapchecker.cpp
-  mapchecker.h
   masterserver.cpp
+  masterserver.h
   memheap.cpp
   memheap.h
   netban.cpp
   netban.h
   network.cpp
   network.h
-  network_client.cpp
   network_conn.cpp
   network_console.cpp
   network_console_conn.cpp
@@ -1377,204 +614,6 @@ set(LIBS ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${CRYPTO_LIBRARIES} ${PLATF
 add_library(engine-shared EXCLUDE_FROM_ALL OBJECT ${ENGINE_INTERFACE} ${ENGINE_SHARED} ${ENGINE_GENERATED_SHARED} ${BASE})
 add_library(game-shared EXCLUDE_FROM_ALL OBJECT ${GAME_SHARED} ${GAME_GENERATED_SHARED})
 list(APPEND TARGETS_OWN engine-shared game-shared)
-
-
-########################################################################
-# CLIENT
-########################################################################
-
-if(CLIENT)
-  # Sources
-  set_src(ENGINE_CLIENT GLOB src/engine/client
-    backend_sdl.cpp
-    backend_sdl.h
-    client.cpp
-    client.h
-    contacts.cpp
-    contacts.h
-    graphics_threaded.cpp
-    graphics_threaded.h
-    graphics_threaded_null.h
-    input.cpp
-    input.h
-    keynames.h
-    serverbrowser.cpp
-    serverbrowser.h
-    serverbrowser_entry.h
-    serverbrowser_fav.cpp
-    serverbrowser_fav.h
-    serverbrowser_filter.cpp
-    serverbrowser_filter.h
-    sound.cpp
-    sound.h
-    textrender.cpp
-    textrender.h
-  )
-  set_src(GAME_CLIENT GLOB_RECURSE src/game/client
-    animstate.cpp
-    animstate.h
-    component.h
-    components/binds.cpp
-    components/binds.h
-    components/broadcast.cpp
-    components/broadcast.h
-    components/camera.cpp
-    components/camera.h
-    components/chat.cpp
-    components/chat.h
-    components/console.cpp
-    components/console.h
-    components/controls.cpp
-    components/controls.h
-    components/countryflags.cpp
-    components/countryflags.h
-    components/damageind.cpp
-    components/damageind.h
-    components/debughud.cpp
-    components/debughud.h
-    components/effects.cpp
-    components/effects.h
-    components/emoticon.cpp
-    components/emoticon.h
-    components/flow.cpp
-    components/flow.h
-    components/hud.cpp
-    components/hud.h
-    components/infomessages.cpp
-    components/infomessages.h
-    components/items.cpp
-    components/items.h
-    components/mapimages.cpp
-    components/mapimages.h
-    components/maplayers.cpp
-    components/maplayers.h
-    components/menus.cpp
-    components/menus.h
-    components/menus_browser.cpp
-    components/menus_callback.cpp
-    components/menus_demo.cpp
-    components/menus_ingame.cpp
-    components/menus_settings.cpp
-    components/menus_start.cpp
-    components/motd.cpp
-    components/motd.h
-    components/nameplates.cpp
-    components/nameplates.h
-    components/notifications.cpp
-    components/notifications.h
-    components/particles.cpp
-    components/particles.h
-    components/players.cpp
-    components/players.h
-    components/scoreboard.cpp
-    components/scoreboard.h
-    components/skins.cpp
-    components/skins.h
-    components/sounds.cpp
-    components/sounds.h
-    components/spectator.cpp
-    components/spectator.h
-    components/stats.cpp
-    components/stats.h
-    components/voting.cpp
-    components/voting.h
-    gameclient.cpp
-    gameclient.h
-    lineinput.cpp
-    lineinput.h
-    localization.cpp
-    localization.h
-    render.cpp
-    render.h
-    render_map.cpp
-    ui.cpp
-    ui.h
-    ui_listbox.cpp
-    ui_listbox.h
-    ui_rect.cpp
-    ui_rect.h
-    ui_scrollregion.cpp
-    ui_scrollregion.h
-  )
-  set_src(GAME_EDITOR GLOB src/game/editor
-    auto_map.cpp
-    auto_map.h
-    editor.cpp
-    editor.h
-    io.cpp
-    layer_game.cpp
-    layer_quads.cpp
-    layer_tiles.cpp
-    popups.cpp
-  )
-  set(GAME_GENERATED_CLIENT
-    src/generated/client_data.cpp
-    src/generated/client_data.h
-  )
-  set(CLIENT_SRC ${PLATFORM_CLIENT} ${ENGINE_CLIENT} ${GAME_CLIENT} ${GAME_EDITOR} ${GAME_GENERATED_CLIENT})
-
-  set(DEPS_CLIENT ${DEPS} ${PNGLITE_DEP} ${WAVPACK_DEP})
-
-  # Libraries
-  set(LIBS_CLIENT
-    ${LIBS}
-    ${FREETYPE_LIBRARIES}
-    ${PNGLITE_LIBRARIES}
-    ${SDL2_LIBRARIES}
-    ${WAVPACK_LIBRARIES}
-    ${PLATFORM_CLIENT_LIBS}
-  )
-
-  if(TARGET_OS STREQUAL "windows")
-    set(CLIENT_ICON "other/icons/${CLIENT_EXECUTABLE}.rc")
-    if(NOT MINGW)
-      set(CLIENT_MANIFEST "other/manifest/teeworlds.manifest")
-    else()
-      set(CLIENT_MANIFEST "other/manifest/teeworlds.rc")
-    endif()
-  else()
-    set(CLIENT_ICON)
-  endif()
-
-  # Target
-  set(TARGET_CLIENT ${CLIENT_EXECUTABLE})
-  add_executable(${TARGET_CLIENT}
-    ${CLIENT_SRC}
-    ${CLIENT_ICON}
-    ${CLIENT_MANIFEST}
-    ${DEPS_CLIENT}
-    $<TARGET_OBJECTS:engine-shared>
-    $<TARGET_OBJECTS:game-shared>
-  )
-  target_link_libraries(${TARGET_CLIENT} ${LIBS_CLIENT})
-
-  target_include_directories(${TARGET_CLIENT} PRIVATE
-    ${FREETYPE_INCLUDE_DIRS}
-    ${PNGLITE_INCLUDE_DIRS}
-    ${SDL2_INCLUDE_DIRS}
-    ${WAVPACK_INCLUDE_DIRS}
-  )
-
-  set(PARAMS "${WAVPACK_INCLUDE_DIRS};${WAVPACK_INCLUDE_DIRS}")
-  if(NOT(WAVPACK_OPEN_FILE_INPUT_EX_PARAMS STREQUAL PARAMS))
-    unset(WAVPACK_OPEN_FILE_INPUT_EX CACHE)
-  endif()
-  set(WAVPACK_OPEN_FILE_INPUT_EX_PARAMS "${PARAMS}" CACHE INTERNAL "")
-
-  set(CMAKE_REQUIRED_INCLUDES ${ORIGINAL_CMAKE_REQUIRED_INCLUDES} ${WAVPACK_INCLUDE_DIRS})
-  set(CMAKE_REQUIRED_LIBRARIES ${ORIGINAL_CMAKE_REQUIRED_LIBRARIES} ${WAVPACK_LIBRARIES})
-  check_symbol_exists(WavpackOpenFileInputEx wavpack.h WAVPACK_OPEN_FILE_INPUT_EX)
-  set(CMAKE_REQUIRED_INCLUDES ${ORIGINAL_CMAKE_REQUIRED_INCLUDES})
-  set(CMAKE_REQUIRED_LIBRARIES ${ORIGINAL_CMAKE_REQUIRED_LIBRARIES})
-
-  if(WAVPACK_OPEN_FILE_INPUT_EX)
-    target_compile_definitions(${TARGET_CLIENT} PRIVATE CONF_WAVPACK_OPEN_FILE_INPUT_EX)
-  endif()
-
-  list(APPEND TARGETS_OWN ${TARGET_CLIENT})
-  list(APPEND TARGETS_LINK ${TARGET_CLIENT})
-endif()
-
 
 ########################################################################
 # SERVER
@@ -1660,53 +699,6 @@ if(TARGET_OS AND TARGET_OS STREQUAL "mac")
   list(APPEND TARGETS_LINK ${TARGET_SERVER_LAUNCHER})
 endif()
 
-########################################################################
-# VARIOUS TARGETS
-########################################################################
-
-set_src(MASTERSRV_SRC GLOB src/mastersrv mastersrv.cpp mastersrv.h)
-set_src(VERSIONSRV_SRC GLOB src/versionsrv mapversions.h versionsrv.cpp versionsrv.h)
-list(APPEND VERSIONSRV_SRC ${PROJECT_BINARY_DIR}/src/generated/nethash.cpp)
-
-set(TARGET_MASTERSRV mastersrv)
-set(TARGET_VERSIONSRV versionsrv)
-
-add_executable(${TARGET_MASTERSRV} EXCLUDE_FROM_ALL ${MASTERSRV_SRC} $<TARGET_OBJECTS:engine-shared> ${DEPS})
-add_executable(${TARGET_VERSIONSRV} EXCLUDE_FROM_ALL ${VERSIONSRV_SRC} $<TARGET_OBJECTS:engine-shared> ${DEPS})
-
-target_link_libraries(${TARGET_MASTERSRV} ${LIBS})
-target_link_libraries(${TARGET_VERSIONSRV} ${LIBS})
-
-list(APPEND TARGETS_OWN ${TARGET_MASTERSRV} ${TARGET_VERSIONSRV})
-list(APPEND TARGETS_LINK ${TARGET_MASTERSRV} ${TARGET_VERSIONSRV})
-
-set(TARGETS_TOOLS)
-set_src(TOOLS GLOB src/tools
-  crapnet.cpp
-  fake_server.cpp
-  map_resave.cpp
-  map_version.cpp
-  packetgen.cpp
-)
-foreach(ABS_T ${TOOLS})
-  file(RELATIVE_PATH T "${PROJECT_SOURCE_DIR}/src/tools/" ${ABS_T})
-  if(T MATCHES "\\.cpp$")
-    string(REGEX REPLACE "\\.cpp$" "" TOOL "${T}")
-    add_executable(${TOOL} EXCLUDE_FROM_ALL
-      ${DEPS}
-      src/tools/${TOOL}.cpp
-      ${EXTRA_TOOL_SRC}
-      $<TARGET_OBJECTS:engine-shared>
-    )
-    target_link_libraries(${TOOL} ${LIBS})
-    list(APPEND TARGETS_TOOLS ${TOOL})
-  endif()
-endforeach()
-
-list(APPEND TARGETS_OWN ${TARGETS_TOOLS})
-list(APPEND TARGETS_LINK ${TARGETS_TOOLS})
-
-add_custom_target(tools DEPENDS ${TARGETS_TOOLS})
 add_custom_target(everything DEPENDS ${TARGETS_OWN})
 
 ########################################################################
@@ -1882,7 +874,6 @@ endforeach()
 set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME ${PROJECT_NAME})
 
 set(CPACK_TARGETS
-  ${TARGET_CLIENT}
   ${TARGET_SERVER}
 )
 set(CPACK_DIRS ${PROJECT_BINARY_DIR}/data)
@@ -1897,7 +888,6 @@ endif()
 
 if(NOT DEV)
   install(DIRECTORY ${PROJECT_BINARY_DIR}/data DESTINATION share/${PROJECT_NAME} COMPONENT data)
-  install(TARGETS ${TARGET_CLIENT} DESTINATION bin COMPONENT client)
   install(TARGETS ${TARGET_SERVER} DESTINATION bin COMPONENT server)
 endif()
 
@@ -1913,75 +903,6 @@ else()
 endif()
 
 set(PACKAGE_TARGETS)
-
-if(CLIENT AND (DMGTOOLS_FOUND OR HDIUTIL))
-  file(MAKE_DIRECTORY bundle/client/)
-  file(MAKE_DIRECTORY bundle/server/)
-  configure_file(other/bundle/client/Info.plist.in bundle/client/Info.plist)
-  configure_file(other/bundle/server/Info.plist.in bundle/server/Info.plist)
-
-  if(HDIUTIL)
-    set(DMG_PARAMS --hdiutil ${HDIUTIL})
-  elseif(DMGTOOLS_FOUND)
-    set(DMG_PARAMS --dmgtools ${DMG} ${HFSPLUS} ${NEWFS_HFS})
-  endif()
-  set(DMG_TMPDIR pack_${CPACK_PACKAGE_FILE_NAME}_dmg)
-  set(DMG_MKDIRS
-    ${TARGET_CLIENT}.app
-    ${TARGET_CLIENT}.app/Contents
-    ${TARGET_CLIENT}.app/Contents/Frameworks
-    ${TARGET_CLIENT}.app/Contents/MacOS
-    ${TARGET_CLIENT}.app/Contents/Resources
-    ${TARGET_SERVER}.app
-    ${TARGET_SERVER}.app/Contents
-    ${TARGET_SERVER}.app/Contents/MacOS
-    ${TARGET_SERVER}.app/Contents/Resources
-    ${TARGET_SERVER}.app/Contents/Resources/data
-    # Needed so the server recognizes the data directory.
-    ${TARGET_SERVER}.app/Contents/Resources/data/mapres
-  )
-  set(DMG_MKDIR_COMMANDS)
-  foreach(dir ${DMG_MKDIRS})
-    list(APPEND DMG_MKDIR_COMMANDS COMMAND ${CMAKE_COMMAND} -E make_directory ${DMG_TMPDIR}/${dir})
-  endforeach()
-  add_custom_command(OUTPUT ${CPACK_PACKAGE_FILE_NAME}.dmg
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${DMG_TMPDIR}
-    ${DMG_MKDIR_COMMANDS}
-
-    # CLIENT
-    COMMAND ${CMAKE_COMMAND} -E copy_directory data ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/Resources/data
-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/other/icons/${TARGET_CLIENT}.icns ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/Resources/
-    COMMAND ${CMAKE_COMMAND} -E copy bundle/client/Info.plist ${PROJECT_SOURCE_DIR}/other/bundle/client/PkgInfo ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_CLIENT}> ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/MacOS/
-    COMMAND ${CMAKE_COMMAND} -E copy ${SDL2_LIBRARY} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/Frameworks/libSDL2-2.0.0.dylib
-    COMMAND ${CMAKE_COMMAND} -E copy ${FREETYPE_LIBRARY} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/Frameworks/libfreetype.6.dylib
-    COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/darwin_change_dylib.py change --tools ${CMAKE_INSTALL_NAME_TOOL} ${CMAKE_OTOOL} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/MacOS/${TARGET_CLIENT} SDL2 @executable_path/../Frameworks/libSDL2-2.0.0.dylib
-    COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/darwin_change_dylib.py change --tools ${CMAKE_INSTALL_NAME_TOOL} ${CMAKE_OTOOL} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/MacOS/${TARGET_CLIENT} libfreetype @executable_path/../Frameworks/libfreetype.6.dylib
-
-    # SERVER
-    COMMAND ${CMAKE_COMMAND} -E copy_directory data/maps ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/Resources/data/maps
-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/other/icons/${TARGET_SERVER}.icns ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/Resources/
-    COMMAND ${CMAKE_COMMAND} -E copy bundle/server/Info.plist ${PROJECT_SOURCE_DIR}/other/bundle/server/PkgInfo ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_SERVER}> $<TARGET_FILE:${TARGET_SERVER_LAUNCHER}> ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/MacOS/
-
-    # DMG
-    COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/dmg.py create ${DMG_PARAMS} ${CPACK_PACKAGE_FILE_NAME}.dmg ${CPACK_PACKAGE_FILE_NAME} ${DMG_TMPDIR}
-
-    DEPENDS
-      ${TARGET_CLIENT}
-      ${TARGET_SERVER_LAUNCHER}
-      ${TARGET_SERVER}
-      ${PROJECT_BINARY_DIR}/bundle/client/Info.plist
-      ${PROJECT_BINARY_DIR}/bundle/server/Info.plist
-      other/bundle/client/PkgInfo
-      other/bundle/server/PkgInfo
-      other/icons/${TARGET_CLIENT}.icns
-      other/icons/${TARGET_SERVER}.icns
-      scripts/dmg.py
-  )
-  add_custom_target(package_dmg DEPENDS ${CPACK_PACKAGE_FILE_NAME}.dmg)
-  list(APPEND PACKAGE_TARGETS package_dmg)
-endif()
 
 foreach(ext zip tar.gz tar.xz)
   set(TAR_MODE c)
@@ -2131,9 +1052,6 @@ foreach(target ${TARGETS_OWN})
   if(CRYPTO_FOUND)
     target_compile_definitions(${target} PRIVATE CONF_OPENSSL)
     target_include_directories(${target} PRIVATE ${CRYPTO_INCLUDE_DIRS})
-  endif()
-  if(HEADLESS_CLIENT)
-    target_compile_definitions(${target} PRIVATE CONF_HEADLESS_CLIENT)
   endif()
 endforeach()
 
