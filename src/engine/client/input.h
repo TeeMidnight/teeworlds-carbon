@@ -74,7 +74,7 @@ private:
 	int m_CandidateCount;
 	int m_CandidateSelectedIndex;
 
-	void AddEvent(char *pText, int Key, int Flags);
+	void AddEvent(const char *pText, int Key, int Flags);
 	void Clear();
 	bool IsEventValid(CEvent *pEvent) const { return pEvent->m_InputCount == m_InputCounter; }
 
@@ -91,8 +91,6 @@ private:
 
 	void ClearKeyStates();
 	bool KeyState(int Key) const;
-
-	void ProcessSystemMessage(SDL_SysWMmsg *pMsg);
 
 public:
 	CInput();

@@ -35,6 +35,11 @@ static int LoadSoundsThread(void *pUser)
 	return 0;
 }
 
+void CSounds::CJob::Run()
+{
+	LoadSoundsThread(m_pData);
+}
+
 ISound::CSampleHandle CSounds::GetSampleId(int SetId)
 {
 	if(!Config()->m_SndEnable || !Sound()->IsSoundEnabled() || m_WaitForSoundJob || SetId < 0 || SetId >= g_pData->m_NumSounds)
@@ -77,12 +82,14 @@ void CSounds::OnInit()
 
 	ClearQueue();
 
+	m_pSoundJob = nullptr;
 	// load sounds
 	if(Config()->m_SndAsyncLoading)
 	{
 		g_UserData.m_pGameClient = m_pClient;
 		g_UserData.m_Render = false;
-		m_pClient->Engine()->AddJob(&m_SoundJob, LoadSoundsThread, &g_UserData);
+		m_pSoundJob = std::make_shared<CJob>(&g_UserData);
+		m_pClient->Engine()->AddJob(m_pSoundJob);
 		m_WaitForSoundJob = true;
 	}
 	else
@@ -114,7 +121,7 @@ void CSounds::OnRender()
 	// check for sound initialisation
 	if(m_WaitForSoundJob)
 	{
-		if(m_SoundJob.Status() == CJob::STATE_DONE)
+		if(m_pSoundJob->Done())
 			m_WaitForSoundJob = false;
 		else
 			return;

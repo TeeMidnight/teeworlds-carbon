@@ -20,11 +20,20 @@ class CSounds : public CComponent
 	} m_aQueue[QUEUE_SIZE];
 	int m_QueuePos;
 	int64 m_QueueWaitTime;
-	class CJob m_SoundJob;
+	class CJob : public IJob
+	{
+		struct CUserData *m_pData;
+	public:
+		CJob(struct CUserData *pData) : m_pData(pData) {}
+
+		void Run() override;
+	};
+	std::shared_ptr<CJob> m_pSoundJob;
 	bool m_WaitForSoundJob;
 	
 	ISound::CSampleHandle GetSampleId(int SetId);
 
+	friend class CSounds::CJob;
 public:
 	// sound channels
 	enum

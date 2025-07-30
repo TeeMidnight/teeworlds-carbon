@@ -8,6 +8,8 @@
 #include "serverbrowser_fav.h"
 #include "serverbrowser_filter.h"
 
+class IServerBrowserHttp;
+
 class CServerBrowser : public IServerBrowser
 {
 public:
@@ -19,7 +21,8 @@ public:
 	};
 		
 	CServerBrowser();
-	void Init(class CNetClient *pClient, const char *pNetVersion);
+	void OnInitHttp();
+	void Init(class CHttp *pHttp, class CNetClient *pClient, const char *pNetVersion);
 	void Set(const NETADDR &Addr, int SetType, int Token, const CServerInfo *pInfo);
 	void Update();
 
@@ -28,7 +31,6 @@ public:
 	void SetType(int Type);
 	void Refresh(int RefreshFlags);
 	bool IsRefreshing() const { return m_pFirstReqServer != 0; }
-	bool IsRefreshingMasters() const { return m_pMasterServer->IsRefreshing(); }
 	bool WasUpdated(bool Purge);
 	int LoadingProgression() const;
 	void RequestResort() { m_NeedResort = true; }
@@ -60,12 +62,11 @@ public:
 	void SaveServerlist();
 
 private:
+	class IHttp *m_pHttpClient;
 	class CNetClient *m_pNetClient;
 	class CConfig *m_pConfig;
 	class IConsole *m_pConsole;
 	class IStorage *m_pStorage;
-	class IMasterServer *m_pMasterServer;
-	class IMapChecker *m_pMapChecker;
 
 	class CServerBrowserFavorites m_ServerBrowserFavorites;
 	class CServerBrowserFilter m_ServerBrowserFilter;
@@ -74,6 +75,8 @@ private:
 	class IConsole *Console() const { return m_pConsole; }
 	class IStorage *Storage() const { return m_pStorage; }
 
+	bool m_RefreshingHttp = false;
+	IServerBrowserHttp *m_pHttp = nullptr;
 	// serverlist
 	int m_ActServerlistType;
 	class CServerlist
@@ -101,12 +104,12 @@ private:
 	bool m_InfoUpdated;
 	bool m_NeedResort;
 
+	void UpdateFromHttp();
 	// the token is to keep server refresh separated from each other
 	int m_CurrentLanToken;
 
 	int m_RefreshFlags;
 	int64 m_BroadcastTime;
-	int64 m_MasterRefreshTime;
 
 	CServerEntry *Add(int ServerlistType, const NETADDR &Addr);
 	CServerEntry *Find(int ServerlistType, const NETADDR &Addr);

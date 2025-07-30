@@ -744,7 +744,7 @@ int CGraphics_Threaded::IssueInit()
 	if(m_pConfig->m_DbgResizable) Flags |= IGraphicsBackend::INITFLAG_RESIZABLE;
 	if(m_pConfig->m_GfxUseX11XRandRWM) Flags |= IGraphicsBackend::INITFLAG_X11XRANDR;
 
-	return m_pBackend->Init("Teeworlds", &m_pConfig->m_GfxScreen, &m_pConfig->m_GfxScreenWidth,
+	return m_pBackend->Init("Teeworlds Carbon", &m_pConfig->m_GfxScreen, &m_pConfig->m_GfxScreenWidth,
 			&m_pConfig->m_GfxScreenHeight, &m_ScreenWidth, &m_ScreenHeight, m_pConfig->m_GfxFsaaSamples,
 			Flags, &m_DesktopScreenWidth, &m_DesktopScreenHeight);
 }
@@ -995,6 +995,11 @@ bool CGraphics_Threaded::IsIdle() const
 void CGraphics_Threaded::WaitForIdle()
 {
 	m_pBackend->WaitForIdle();
+}
+
+void *CGraphics_Threaded::GetWindowHandle()
+{
+	return m_pBackend->GetWindowHandle();
 }
 
 int CGraphics_Threaded::GetVideoModes(CVideoMode *pModes, int MaxModes, int Screen)

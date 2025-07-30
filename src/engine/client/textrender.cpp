@@ -803,7 +803,7 @@ void CTextRender::LoadFonts(IStorage *pStorage, IConsole *pConsole)
 		for(int i = 0; i < m_NumVariants; ++i)
 		{
 			char aFileName[128];
-			str_format(aFileName, sizeof(aFileName), "languages/%s.json", (const char *)Entries[i].name);
+			str_format(aFileName, sizeof(aFileName), "client_lang/%s.json", (const char *)Entries[i].name);
 			str_copy(m_pVariants[i].m_aLanguageFile, aFileName, sizeof(m_pVariants[i].m_aLanguageFile));
 
 			json_value *pFamilyName = rVariant.u.object.values[i].value;

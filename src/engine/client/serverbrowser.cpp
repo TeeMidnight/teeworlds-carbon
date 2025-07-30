@@ -4,24 +4,22 @@
 #include <base/system.h>
 
 #include <engine/shared/config.h>
+#include <engine/shared/http.h>
+#include <engine/shared/masterserver.h>
 #include <engine/shared/memheap.h>
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
 #include <engine/shared/jsonparser.h>
 #include <engine/shared/jsonwriter.h>
-#include <engine/shared/mapchecker.h>
 
 #include <engine/config.h>
 #include <engine/console.h>
 #include <engine/engine.h>
 #include <engine/contacts.h>
-#include <engine/masterserver.h>
 #include <engine/storage.h>
 
-#include <mastersrv/mastersrv.h>
-
 #include "serverbrowser.h"
-
+#include "serverbrowser_http.h"
 
 static const char *s_pFilename = "serverlist.json";
 
@@ -56,8 +54,6 @@ void CServerBrowser::CServerlist::Clear()
 //
 CServerBrowser::CServerBrowser()
 {
-	m_pMasterServer = 0;
-
 	//
 	for(int i = 0; i < NUM_TYPES; ++i)
 	{
@@ -80,21 +76,43 @@ CServerBrowser::CServerBrowser()
 
 	m_ActServerlistType = 0;
 	m_BroadcastTime = 0;
-	m_MasterRefreshTime = 0;
 }
 
-void CServerBrowser::Init(class CNetClient *pNetClient, const char *pNetVersion)
+void CServerBrowser::OnInitHttp()
+{
+	m_pHttp = CreateServerBrowserHttp(m_pHttpClient, m_pConfig);
+}
+
+void CServerBrowser::Init(class CHttp *pHttp, class CNetClient *pNetClient, const char *pNetVersion)
 {
 	IConfigManager *pConfigManager = Kernel()->RequestInterface<IConfigManager>();
 	m_pConfig = pConfigManager->Values();
 	m_pConsole = Kernel()->RequestInterface<IConsole>();
-	m_pStorage = Kernel()->RequestInterface<IStorage>();
-	m_pMasterServer = Kernel()->RequestInterface<IMasterServer>();
-	m_pMapChecker = Kernel()->RequestInterface<IMapChecker>();
+	m_pStorage = Kernel()->RequestInterface<IStorage>();\
 	m_pNetClient = pNetClient;
+	m_pHttpClient = pHttp;
 
 	m_ServerBrowserFavorites.Init(pNetClient, m_pConsole, Kernel()->RequestInterface<IEngine>(), pConfigManager);
 	m_ServerBrowserFilter.Init(Config(), Kernel()->RequestInterface<IFriends>(), pNetVersion);
+
+	m_pHttp = nullptr;
+}
+
+void CServerBrowser::UpdateFromHttp()
+{
+	int NumServers = m_pHttp->NumServers();
+
+	for(int i = 0; i < NumServers; i++)
+	{
+		CServerInfo Info = m_pHttp->Server(i);
+		CServerEntry *pEntry = Add(IServerBrowser::TYPE_INTERNET, Info.m_NetAddr);
+		pEntry->m_RequestTime = 0;
+		SetInfo(IServerBrowser::TYPE_INTERNET, pEntry, Info);
+		pEntry->m_Info.m_Latency = 999;
+		QueueRequest(pEntry);
+	}
+
+	RequestResort();
 }
 
 void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CServerInfo *pInfo)
@@ -106,8 +124,6 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 		{
 			if(!(m_RefreshFlags&IServerBrowser::REFRESHFLAG_INTERNET))
 				return;
-
-			m_MasterRefreshTime = 0;
 
 			if(!Find(IServerBrowser::TYPE_INTERNET, Addr))
 			{
@@ -151,7 +167,8 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 			// set info
 			if(pEntry)
 			{
-				SetInfo(Type, pEntry, *pInfo);
+				if(!pEntry->m_Info.m_InfoGotByHttp)
+					SetInfo(Type, pEntry, *pInfo);
 				if(Type == IServerBrowser::TYPE_LAN)
 					pEntry->m_Info.m_Latency = minimum(static_cast<int>((time_get()-m_BroadcastTime)*1000/time_freq()), 999);
 				else
@@ -173,40 +190,18 @@ void CServerBrowser::Update()
 	int Count;
 	CServerEntry *pEntry, *pNext;
 
+	m_pHttp->Update();
+
 	// do server list requests
-	if(m_NeedRefresh && !m_pMasterServer->IsRefreshing())
+	if(m_ActServerlistType != IServerBrowser::TYPE_LAN && m_RefreshingHttp && !m_pHttp->IsRefreshing())
 	{
-		CNetChunk Packet;
-
-		m_NeedRefresh = false;
-		m_InfoUpdated = false;
-
-		mem_zero(&Packet, sizeof(Packet));
-		Packet.m_ClientID = -1;
-		Packet.m_Flags = NETSENDFLAG_CONNLESS;
-		Packet.m_DataSize = sizeof(SERVERBROWSE_GETLIST);
-		Packet.m_pData = SERVERBROWSE_GETLIST;
-
-		for(int i = 0; i < IMasterServer::MAX_MASTERSERVERS; i++)
-		{
-			if(!m_pMasterServer->IsValid(i))
-				continue;
-
-			Packet.m_Address = m_pMasterServer->GetAddr(i);
-			m_pNetClient->Send(&Packet);
-		}
-
-		m_MasterRefreshTime = Now;
-
-		if(Config()->m_Debug)
-			m_pConsole->Print(IConsole::OUTPUT_LEVEL_DEBUG, "client_srvbrowse", "requesting server list");
+		m_RefreshingHttp = false;
+		UpdateFromHttp();
 	}
-
 	// load server list backup from file in case the masters don't response
-	if(m_MasterRefreshTime && m_MasterRefreshTime+2*Timeout < Now)
+	else if(m_pHttp->IsError())
 	{
 		LoadServerlist();
-		m_MasterRefreshTime = 0;
 
 		if(Config()->m_Debug)
 			m_pConsole->Print(IConsole::OUTPUT_LEVEL_DEBUG, "client_srvbrowse", "using backup server list");
@@ -330,6 +325,8 @@ void CServerBrowser::Refresh(int RefreshFlags)
 		m_pFirstReqServer = 0;
 		m_pLastReqServer = 0;
 		m_NumRequests = 0;
+		m_pHttp->Refresh();
+		m_RefreshingHttp = true;
 
 		m_NeedRefresh = true;
 		for(int i = 0; i < m_ServerBrowserFavorites.m_NumFavoriteServers; i++)
@@ -596,8 +593,6 @@ void CServerBrowser::SetInfo(int ServerlistType, CServerEntry *pEntry, const CSe
 		str_comp(pEntry->m_Info.m_aGameType, "LTS") == 0 ||	str_comp(pEntry->m_Info.m_aGameType, "LMS") == 0)
 		pEntry->m_Info.m_Flags |= FLAG_PURE;
 
-	if(m_pMapChecker->IsStandardMap(pEntry->m_Info.m_aMap))
-		pEntry->m_Info.m_Flags |= FLAG_PUREMAP;
 	pEntry->m_Info.m_Favorite = Fav;
 	pEntry->m_Info.m_NetAddr = pEntry->m_Addr;
 
@@ -636,7 +631,7 @@ void CServerBrowser::SaveServerlist()
 	if(!File)
 		return;
 
-	CJsonWriter Writer(File);
+	CJsonFileWriter Writer(File);
 	Writer.BeginObject(); // root
 	Writer.WriteAttribute("serverlist");
 	Writer.BeginArray();

@@ -4,6 +4,7 @@
 #define ENGINE_CLIENT_CLIENT_H
 
 #include <base/hash.h>
+#include <engine/shared/http.h>
 
 class CGraph
 {
@@ -62,12 +63,11 @@ class CClient : public IClient, public CDemoPlayer::IListener
 	IEngineTextRender *m_pTextRender;
 	IGameClient *m_pGameClient;
 	IEngineMap *m_pMap;
-	IMapChecker *m_pMapChecker;
 	IConfigManager *m_pConfigManager;
 	CConfig *m_pConfig;
 	IConsole *m_pConsole;
 	IStorage *m_pStorage;
-	IEngineMasterServer *m_pMasterServer;
+	CHttp m_Http;
 
 	enum
 	{
@@ -175,21 +175,6 @@ class CClient : public IClient, public CDemoPlayer::IListener
 	//
 	class CServerInfo m_CurrentServerInfo;
 
-	// version info
-	struct CVersionInfo
-	{
-		enum
-		{
-			STATE_INIT=0,
-			STATE_START,
-			STATE_READY,
-			STATE_ERROR,
-		};
-
-		int m_State;
-		class CHostLookup m_VersionServeraddr;
-	} m_VersionInfo;
-
 	int64 TickStartTime(int Tick);
 
 public:
@@ -198,7 +183,6 @@ public:
 	IEngineInput *Input() { return m_pInput; }
 	IEngineSound *Sound() { return m_pSound; }
 	IGameClient *GameClient() { return m_pGameClient; }
-	IEngineMasterServer *MasterServer() { return m_pMasterServer; }
 	IConfigManager *ConfigManager() { return m_pConfigManager; }
 	CConfig *Config() { return m_pConfig; }
 	IConsole *Console() { return m_pConsole; }

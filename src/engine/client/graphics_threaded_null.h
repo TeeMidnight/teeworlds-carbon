@@ -94,9 +94,11 @@ public:
 	virtual int GetVideoModes(CVideoMode *pModes, int MaxModes, int Screen) { return 0; };
 
 	// syncronization
-	virtual void InsertSignal(semaphore *pSemaphore) {};
-	virtual bool IsIdle() const { return false; };
-	virtual void WaitForIdle() {};
+	void InsertSignal(semaphore *pSemaphore) override {}
+	bool IsIdle() const override { return false; }
+	void WaitForIdle() override {};
+
+	void *GetWindowHandle() { return nullptr; }
 };
 
 #endif // ENGINE_CLIENT_GRAPHICS_THREADED_NULL_H

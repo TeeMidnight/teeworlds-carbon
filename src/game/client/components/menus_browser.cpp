@@ -272,7 +272,7 @@ void CMenus::SaveFilters()
 	if(!File)
 		return;
 
-	CJsonWriter Writer(File);
+	CJsonFileWriter Writer(File);
 
 	Writer.BeginObject(); // root
 
@@ -1114,9 +1114,7 @@ void CMenus::RenderServerbrowserServerList(CUIRect View)
 		{
 			char aBuf[128];
 			const char *pImportantMessage = 0;
-			if(m_ActivePage == PAGE_INTERNET && ServerBrowser()->IsRefreshingMasters())
-				pImportantMessage = Localize("Refreshing master servers");
-			else if(SelectedFilter == -1)
+			if(SelectedFilter == -1)
 				pImportantMessage = Localize("No filter category is selected");
 			else if(ServerBrowser()->IsRefreshing())
 				pImportantMessage = Localize("Fetching server info");

@@ -14,10 +14,10 @@
 #include <engine/editor.h>
 #include <engine/engine.h>
 #include <engine/graphics.h>
+#include <engine/http.h>
 #include <engine/input.h>
 #include <engine/keys.h>
 #include <engine/map.h>
-#include <engine/masterserver.h>
 #include <engine/serverbrowser.h>
 #include <engine/sound.h>
 #include <engine/storage.h>
@@ -28,7 +28,7 @@
 #include <engine/shared/datafile.h>
 #include <engine/shared/demo.h>
 #include <engine/shared/filecollection.h>
-#include <engine/shared/mapchecker.h>
+#include <engine/shared/masterserver.h>
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
 #include <engine/shared/protocol.h>
@@ -36,9 +36,6 @@
 #include <engine/shared/snapshot.h>
 
 #include <game/version.h>
-
-#include <mastersrv/mastersrv.h>
-#include <versionsrv/versionsrv.h>
 
 #include "contacts.h"
 #include "serverbrowser.h"
@@ -238,7 +235,6 @@ CClient::CClient() : m_DemoPlayer(&m_SnapshotDelta), m_DemoRecorder(&m_SnapshotD
 	m_pSound = 0;
 	m_pGameClient = 0;
 	m_pMap = 0;
-	m_pMapChecker = 0;
 	m_pConfigManager = 0;
 	m_pConfig = 0;
 	m_pConsole = 0;
@@ -299,8 +295,6 @@ CClient::CClient() : m_DemoPlayer(&m_SnapshotDelta), m_DemoRecorder(&m_SnapshotD
 	mem_zero(m_aSnapshots, sizeof(m_aSnapshots));
 	m_SnapshotStorage.Init();
 	m_ReceivedSnapshots = 0;
-
-	m_VersionInfo.m_State = CVersionInfo::STATE_INIT;
 }
 
 // ----- send functions -----
@@ -940,7 +934,7 @@ int CClient::UnpackServerInfo(CUnpacker *pUnpacker, CServerInfo *pInfo, int *pTo
 		pInfo->m_NumPlayers < 0 || pInfo->m_NumPlayers > pInfo->m_NumClients || pInfo->m_MaxPlayers < 0 || pInfo->m_MaxPlayers > pInfo->m_MaxClients)
 		return -1;
 	// drop standard gametype with more than MAX_PLAYERS
-	if(pInfo->m_MaxPlayers > MAX_PLAYERS && (str_comp(pInfo->m_aGameType, "DM") == 0 || str_comp(pInfo->m_aGameType, "TDM") == 0 || str_comp(pInfo->m_aGameType, "CTF") == 0 ||
+	if(pInfo->m_MaxPlayers > 16 && (str_comp(pInfo->m_aGameType, "DM") == 0 || str_comp(pInfo->m_aGameType, "TDM") == 0 || str_comp(pInfo->m_aGameType, "CTF") == 0 ||
 		str_comp(pInfo->m_aGameType, "LTS") == 0 || str_comp(pInfo->m_aGameType, "LMS") == 0))
 		return -1;
 
@@ -1006,106 +1000,6 @@ inline void SortClients(CServerInfo *pInfo)
 
 void CClient::ProcessConnlessPacket(CNetChunk *pPacket)
 {
-	// version server
-	if(m_VersionInfo.m_State == CVersionInfo::STATE_READY && net_addr_comp(&pPacket->m_Address, &m_VersionInfo.m_VersionServeraddr.m_Addr, true) == 0)
-	{
-		// version info
-		if(pPacket->m_DataSize == (int)(sizeof(VERSIONSRV_VERSION) + sizeof(GAME_RELEASE_VERSION)) &&
-			mem_comp(pPacket->m_pData, VERSIONSRV_VERSION, sizeof(VERSIONSRV_VERSION)) == 0)
-
-		{
-			char *pVersionData = (char*)pPacket->m_pData + sizeof(VERSIONSRV_VERSION);
-			int VersionMatch = !mem_comp(pVersionData, GAME_RELEASE_VERSION, sizeof(GAME_RELEASE_VERSION));
-
-			char aVersion[sizeof(GAME_RELEASE_VERSION)];
-			str_copy(aVersion, pVersionData, sizeof(aVersion));
-
-			char aBuf[256];
-			str_format(aBuf, sizeof(aBuf), "version does %s (%s)",
-				VersionMatch ? "match" : "NOT match",
-				aVersion);
-			m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/version", aBuf);
-
-			// assume version is out of date when version-data doesn't match
-			if(!VersionMatch)
-			{
-				str_copy(m_aVersionStr, aVersion, sizeof(m_aVersionStr));
-			}
-
-			// request the map version list now
-			unsigned char aData[sizeof(VERSIONSRV_GETMAPLIST) + sizeof(unsigned)];
-			mem_copy(aData, VERSIONSRV_GETMAPLIST, sizeof(VERSIONSRV_GETMAPLIST));
-			uint_to_bytes_be(aData + sizeof(VERSIONSRV_GETMAPLIST), CLIENT_VERSION);
-			CNetChunk Packet;
-			Packet.m_ClientID = -1;
-			Packet.m_Address = m_VersionInfo.m_VersionServeraddr.m_Addr;
-			Packet.m_Flags = NETSENDFLAG_CONNLESS;
-			Packet.m_pData = aData;
-			Packet.m_DataSize = sizeof(aData);
-			m_ContactClient.Send(&Packet);
-		}
-
-		// map version list
-		if(pPacket->m_DataSize >= (int)sizeof(VERSIONSRV_MAPLIST) &&
-			mem_comp(pPacket->m_pData, VERSIONSRV_MAPLIST, sizeof(VERSIONSRV_MAPLIST)) == 0)
-		{
-			m_pMapChecker->AddMaplist(
-				(const CMapVersion *)((char *)pPacket->m_pData + sizeof(VERSIONSRV_MAPLIST)),
-				unsigned(pPacket->m_DataSize - sizeof(VERSIONSRV_MAPLIST)) / sizeof(CMapVersion));
-		}
-	}
-
-	// server list from master server
-	if(pPacket->m_DataSize >= (int)sizeof(SERVERBROWSE_LIST) &&
-		mem_comp(pPacket->m_pData, SERVERBROWSE_LIST, sizeof(SERVERBROWSE_LIST)) == 0)
-	{
-		// check for valid master server address
-		bool Valid = false;
-		for(int i = 0; i < IMasterServer::MAX_MASTERSERVERS; ++i)
-		{
-			if(m_pMasterServer->IsValid(i))
-			{
-				NETADDR Addr = m_pMasterServer->GetAddr(i);
-				if(net_addr_comp(&pPacket->m_Address, &Addr, true) == 0)
-				{
-					Valid = true;
-					break;
-				}
-			}
-		}
-		if(!Valid)
-			return;
-
-		int Size = pPacket->m_DataSize-sizeof(SERVERBROWSE_LIST);
-		int Num = Size/sizeof(CMastersrvAddr);
-		CMastersrvAddr *pAddrs = (CMastersrvAddr *)((char*)pPacket->m_pData+sizeof(SERVERBROWSE_LIST));
-		for(int i = 0; i < Num; i++)
-		{
-			NETADDR Addr;
-
-			static unsigned char s_aIPV4Mapping[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF};
-
-			// copy address
-			if(!mem_comp(s_aIPV4Mapping, pAddrs[i].m_aIp, sizeof(s_aIPV4Mapping)))
-			{
-				mem_zero(&Addr, sizeof(Addr));
-				Addr.type = NETTYPE_IPV4;
-				Addr.ip[0] = pAddrs[i].m_aIp[12];
-				Addr.ip[1] = pAddrs[i].m_aIp[13];
-				Addr.ip[2] = pAddrs[i].m_aIp[14];
-				Addr.ip[3] = pAddrs[i].m_aIp[15];
-			}
-			else
-			{
-				Addr.type = NETTYPE_IPV6;
-				mem_copy(Addr.ip, pAddrs[i].m_aIp, sizeof(Addr.ip));
-			}
-			Addr.port = (pAddrs[i].m_aPort[0]<<8) | pAddrs[i].m_aPort[1];
-
-			m_ServerBrowser.Set(Addr, CServerBrowser::SET_MASTER_ADD, -1, 0x0);
-		}
-	}
-
 	// server info
 	if(pPacket->m_DataSize >= (int)sizeof(SERVERBROWSE_INFO) && mem_comp(pPacket->m_pData, SERVERBROWSE_INFO, sizeof(SERVERBROWSE_INFO)) == 0)
 	{
@@ -1142,10 +1036,6 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 				return;
 			const SHA256_DIGEST *pMapSha256 = (const SHA256_DIGEST *)Unpacker.GetRaw(sizeof(*pMapSha256));
 			const char *pError = 0;
-
-			// check for valid standard map
-			if(!m_pMapChecker->IsMapValid(pMap, pMapSha256, MapCrc, MapSize))
-				pError = "invalid standard map";
 
 			// protect the player from nasty map names
 			for(int i = 0; pMap[i]; i++)
@@ -1750,9 +1640,6 @@ void CClient::Update()
 	// pump the network
 	PumpNetwork();
 
-	// update the maser server registry
-	MasterServer()->Update();
-
 	// update the server browser
 	m_ServerBrowser.Update();
 
@@ -1765,36 +1652,6 @@ void CClient::Update()
 
 void CClient::VersionUpdate()
 {
-	if(m_VersionInfo.m_State == CVersionInfo::STATE_INIT)
-	{
-		Engine()->HostLookup(&m_VersionInfo.m_VersionServeraddr, Config()->m_ClVersionServer, m_ContactClient.NetType());
-		m_VersionInfo.m_State = CVersionInfo::STATE_START;
-	}
-	else if(m_VersionInfo.m_State == CVersionInfo::STATE_START)
-	{
-		if(m_VersionInfo.m_VersionServeraddr.m_Job.Status() == CJob::STATE_DONE)
-		{
-			if(m_VersionInfo.m_VersionServeraddr.m_Job.Result() == 0)
-			{
-				CNetChunk Packet;
-
-				mem_zero(&Packet, sizeof(Packet));
-
-				m_VersionInfo.m_VersionServeraddr.m_Addr.port = VERSIONSRV_PORT;
-
-				Packet.m_ClientID = -1;
-				Packet.m_Address = m_VersionInfo.m_VersionServeraddr.m_Addr;
-				Packet.m_pData = VERSIONSRV_GETVERSION;
-				Packet.m_DataSize = sizeof(VERSIONSRV_GETVERSION);
-				Packet.m_Flags = NETSENDFLAG_CONNLESS;
-
-				m_ContactClient.Send(&Packet);
-				m_VersionInfo.m_State = CVersionInfo::STATE_READY;
-			}
-			else
-				m_VersionInfo.m_State = CVersionInfo::STATE_ERROR;
-		}
-	}
 }
 
 void CClient::RegisterInterfaces()
@@ -1817,14 +1674,13 @@ void CClient::InitInterfaces()
 	m_pGameClient = Kernel()->RequestInterface<IGameClient>();
 	m_pInput = Kernel()->RequestInterface<IEngineInput>();
 	m_pMap = Kernel()->RequestInterface<IEngineMap>();
-	m_pMapChecker = Kernel()->RequestInterface<IMapChecker>();
-	m_pMasterServer = Kernel()->RequestInterface<IEngineMasterServer>();
 	m_pConfigManager = Kernel()->RequestInterface<IConfigManager>();
 	m_pConfig = m_pConfigManager->Values();
 	m_pStorage = Kernel()->RequestInterface<IStorage>();
+	Kernel()->RegisterInterface(static_cast<IHttp *>(&m_Http));
 
 	//
-	m_ServerBrowser.Init(&m_ContactClient, m_pGameClient->NetVersion());
+	m_ServerBrowser.Init(&m_Http, &m_ContactClient, m_pGameClient->NetVersion());
 	m_Friends.Init();
 	m_Blacklist.Init();
 	m_DemoRecorder.Init(Console(), m_pStorage);
@@ -1918,7 +1774,7 @@ void CClient::Run()
 
 	// init SDL
 	{
-		if(SDL_Init(0) < 0)
+		if(!SDL_Init(0))
 		{
 			dbg_msg("client", "unable to init SDL base: %s", SDL_GetError());
 			return;
@@ -1941,6 +1797,13 @@ void CClient::Run()
 			return;
 		}
 	}
+
+	if(!m_Http.Init(std::chrono::seconds{2}, Config()))
+	{
+		dbg_msg("server", "Failed to initialize the HTTP client.");
+		return;
+	}
+	m_ServerBrowser.OnInitHttp();
 
 	// init sound, allowed to fail
 	m_SoundInitFailed = Sound()->Init() != 0;
@@ -1977,9 +1840,6 @@ void CClient::Run()
 
 	// init the input
 	Input()->Init();
-
-	// start refreshing addresses while we load
-	MasterServer()->RefreshAddresses(m_ContactClient.NetType());
 
 	GameClient()->OnInit();
 
@@ -2435,14 +2295,9 @@ void CClient::ConchainWindowScreen(IConsole::IResult *pResult, void *pUserData, 
 
 bool CClient::ToggleFullscreen()
 {
-#ifndef CONF_PLATFORM_MACOS
 	if(Graphics()->Fullscreen(Config()->m_GfxFullscreen^1))
 		Config()->m_GfxFullscreen ^= 1;
 	return true;
-#else
-	Config()->m_GfxFullscreen ^= 1;
-	return false;
-#endif
 }
 
 void CClient::ConchainFullscreen(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData)
@@ -2592,8 +2447,6 @@ int main(int argc, const char **argv)
 	IEngineInput *pEngineInput = CreateEngineInput();
 	IEngineTextRender *pEngineTextRender = CreateEngineTextRender();
 	IEngineMap *pEngineMap = CreateEngineMap();
-	IMapChecker *pMapChecker = CreateMapChecker();
-	IEngineMasterServer *pEngineMasterServer = CreateEngineMasterServer();
 
 	if(RandInitFailed)
 	{
@@ -2620,11 +2473,6 @@ int main(int argc, const char **argv)
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IEngineMap*>(pEngineMap)); // register as both
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IMap*>(pEngineMap));
 
-		RegisterFail = RegisterFail || !pKernel->RegisterInterface(pMapChecker);
-
-		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IEngineMasterServer*>(pEngineMasterServer)); // register as both
-		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IMasterServer*>(pEngineMasterServer));
-
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(CreateEditor());
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(CreateGameClient());
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(pStorage);
@@ -2636,8 +2484,6 @@ int main(int argc, const char **argv)
 	pEngine->Init();
 	pConfigManager->Init(FlagMask);
 	pConsole->Init();
-	pEngineMasterServer->Init();
-	pEngineMasterServer->Load();
 
 	// register all console commands
 	pClient->RegisterCommands();
@@ -2723,8 +2569,6 @@ int main(int argc, const char **argv)
 	delete pEngineInput;
 	delete pEngineTextRender;
 	delete pEngineMap;
-	delete pMapChecker;
-	delete pEngineMasterServer;
 
 	secure_random_uninit();
 	cmdline_free(argc, argv);

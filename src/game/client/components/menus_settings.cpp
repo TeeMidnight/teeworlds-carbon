@@ -645,7 +645,7 @@ int CMenus::ThemeIconScan(const char *pName, int IsDir, int DirType, void *pUser
 void LoadLanguageIndexfile(IStorage *pStorage, IConsole *pConsole, sorted_array<CLanguage> *pLanguages)
 {
 	CJsonParser JsonParser;
-	const json_value *pJsonData = JsonParser.ParseFile("languages/index.json", pStorage);
+	const json_value *pJsonData = JsonParser.ParseFile("client_lang/index.json", pStorage);
 	if(pJsonData == 0)
 	{
 		pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "localization", JsonParser.Error());
@@ -658,7 +658,7 @@ void LoadLanguageIndexfile(IStorage *pStorage, IConsole *pConsole, sorted_array<
 		for(unsigned i = 0; i < rStart.u.array.length; ++i)
 		{
 			char aFileName[128];
-			str_format(aFileName, sizeof(aFileName), "languages/%s.json", (const char *)rStart[i]["file"]);
+			str_format(aFileName, sizeof(aFileName), "client_lang/%s.json", (const char *)rStart[i]["file"]);
 			pLanguages->add(CLanguage((const char *)rStart[i]["name"], aFileName, (json_int_t)rStart[i]["code"]));
 		}
 	}

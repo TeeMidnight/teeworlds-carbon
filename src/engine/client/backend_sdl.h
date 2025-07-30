@@ -189,6 +189,7 @@ class CGraphicsBackend_SDL_OpenGL : public CGraphicsBackend_Threaded
 	volatile int m_TextureMemoryUsage;
 	int m_NumScreens;
 	int m_TextureArraySize;
+	SDL_DisplayID DisplayIDFromIndex(int &Index) const;
 public:
 	virtual int Init(const char *pName, int *pScreen, int *pWindowWidth, int *pWindowHeight, int *pScreenWidth, int *pScreenHeight, int FsaaSamples, int Flags, int *pDesktopWidth, int *pDesktopHeight);
 	virtual int Shutdown();
@@ -208,6 +209,8 @@ public:
 	virtual bool GetDesktopResolution(int Index, int *pDesktopWidth, int* pDesktopHeight);
 	virtual int WindowActive();
 	virtual int WindowOpen();
+
+	virtual void *GetWindowHandle() override;
 };
 
 #endif // ENGINE_CLIENT_BACKEND_SDL_H

@@ -11,7 +11,6 @@
 #include <engine/graphics.h>
 #include <engine/input.h>
 #include <engine/keys.h>
-#include <engine/mapchecker.h>
 #include <engine/storage.h>
 #include <engine/textrender.h>
 
@@ -4151,8 +4150,6 @@ void CEditor::Init()
 #endif
 }
 
-static const char *s_aImageName[] = { "grass_doodads", "winter_main" };
-
 static int s_GrassDoodadsIndicesOld[] = { 42, 43, 44, 58, 59, 60, 74, 75, 76, 132, 133, 148, 149, 163, 164, 165, 169, 170, 185, 186 };
 static int s_GrassDoodadsIndicesNew[] = { 217, 218, 219, 233, 234, 235, 249, 250, 251, 182, 183, 198, 199, 213, 214, 215, 184, 185, 200, 201 };
 static int s_WinterMainIndicesOld[] = { 166, 167, 168, 169, 170, 171, 182, 183, 184, 185, 186, 187, 198, 199, 200, 201, 202, 203, 174, 177, 178, 179, 180, 193, 194, 195, 196, 197, 209, 210, 211, 212, 215, 216, 231, 232, 248, 249, 250, 251, 252, 253, 254, 255, 229, 230, 224, 225, 226, 227, 228 };
@@ -4160,40 +4157,6 @@ static int s_WinterMainIndicesNew[] = { 218, 219, 220, 221, 222, 223, 234, 235, 
 
 void CEditor::ConMapMagic(IConsole::IResult *pResult, void *pUserData)
 {
-	CEditor *pSelf = static_cast<CEditor *>(pUserData);
-	IMapChecker *pMapChecker = pSelf->Kernel()->RequestInterface<IMapChecker>();
-	int Flag = pResult->GetInteger(0);
-
-	for(int m = 0; m < pMapChecker->NumStandardMaps(); ++m)
-	{
-		const char *pMapName = pMapChecker->GetStandardMapName(m);
-		char aBuf[64];
-		str_format(aBuf, sizeof(aBuf), "maps/%s.map", pMapName);
-		dbg_msg("map magic", "processing map '%s'", pMapName);
-		CallbackOpenMap(aBuf, IStorage::TYPE_ALL, pSelf);
-		bool Edited = false;
-
-		// find image
-		for(int i = 0; i < pSelf->m_Map.m_lImages.size(); ++i)
-		{
-			for(unsigned SrcIndex = 0; SrcIndex < sizeof(s_aImageName) / sizeof(s_aImageName[0]); ++SrcIndex)
-			{
-				if(((1 << SrcIndex)&Flag) && !str_comp(pSelf->m_Map.m_lImages[i]->m_aName, s_aImageName[SrcIndex]))
-				{
-					dbg_msg("map magic", "found image '%s'. doing magic", s_aImageName[SrcIndex]);
-					pSelf->DoMapMagic(i, SrcIndex);
-					Edited = true;
-				}
-			}
-		}
-
-		if(Edited)
-		{
-			str_format(aBuf, sizeof(aBuf), "maps/%s_mapmagic.map", pMapName);
-			dbg_msg("map magic", "saving map '%s_mapmagic'", pMapName);
-			CallbackSaveMap(aBuf, IStorage::TYPE_SAVE, pSelf);
-		}
-	}
 }
 
 void CEditor::DoMapMagic(int ImageID, int SrcIndex)

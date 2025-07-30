@@ -15,6 +15,7 @@
 #include <engine/storage.h>
 #include <engine/textrender.h>
 #include <engine/shared/config.h>
+#include <engine/shared/masterserver.h>
 
 #include <game/version.h>
 #include <generated/protocol.h>
@@ -26,7 +27,6 @@
 #include <game/client/components/sounds.h>
 #include <game/client/gameclient.h>
 #include <game/client/lineinput.h>
-#include <mastersrv/mastersrv.h>
 
 #include "maplayers.h"
 #include "countryflags.h"

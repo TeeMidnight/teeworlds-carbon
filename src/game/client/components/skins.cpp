@@ -559,7 +559,7 @@ bool CSkins::SaveSkinfile(const char *pSaveSkinName)
 	if(!File)
 		return false;
 
-	CJsonWriter Writer(File);
+	CJsonFileWriter Writer(File);
 
 	Writer.BeginObject();
 	Writer.WriteAttribute("skin");

@@ -14,10 +14,10 @@ public:
 	IEngineGraphics *m_pGraphics;
 	IStorage *m_pStorage;
 
-	virtual int Init();
+	int Init() override;
 
 	int Update();
-	int Shutdown();
+	void Shutdown() override;
 	int AllocID();
 
 	static void RateConvert(int SampleID);

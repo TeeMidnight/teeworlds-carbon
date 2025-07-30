@@ -68,6 +68,8 @@ public:
 	char m_aVersion[32];
 	char m_aAddress[NETADDR_MAXSTRSIZE];
 	CClient m_aClients[MAX_CLIENTS];
+
+	bool m_InfoGotByHttp;
 };
 
 class CServerFilterInfo
@@ -159,7 +161,6 @@ public:
 	virtual void SetType(int Type) = 0;
 	virtual void Refresh(int RefreshFlags) = 0;
 	virtual bool IsRefreshing() const = 0;
-	virtual bool IsRefreshingMasters() const = 0;
 	virtual bool WasUpdated(bool Purge) = 0;
 	virtual int LoadingProgression() const = 0;
 

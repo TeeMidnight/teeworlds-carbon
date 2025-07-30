@@ -4,6 +4,7 @@
 #include <base/system.h>
 
 #include <engine/shared/config.h>
+#include <engine/shared/masterserver.h>
 #include <engine/shared/memheap.h>
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
@@ -12,9 +13,6 @@
 #include <engine/console.h>
 #include <engine/engine.h>
 #include <engine/contacts.h>
-#include <engine/masterserver.h>
-
-#include <mastersrv/mastersrv.h>
 
 #include "serverbrowser_fav.h"
 
@@ -174,12 +172,12 @@ const NETADDR *CServerBrowserFavorites::UpdateFavorites()
 	NETADDR *pResult = 0;
 
 	// check if hostname lookup for favorites is done
-	if(m_FavLookup.m_Active && m_FavLookup.m_HostLookup.m_Job.Status() == CJob::STATE_DONE)
+	if(m_FavLookup.m_Active && m_FavLookup.m_HostLookup.m_pJob->Done())
 	{
 		// check if favorite has not been removed in the meanwhile
 		if(m_FavLookup.m_FavoriteIndex != -1)
 		{
-			if(m_FavLookup.m_HostLookup.m_Job.Result() == 0)
+			if(m_FavLookup.m_HostLookup.m_Result == 0)
 			{
 				CFavoriteServer *pEntry = FindFavoriteByAddr(m_FavLookup.m_HostLookup.m_Addr, 0);
 				if(pEntry)
