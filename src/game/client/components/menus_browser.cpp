@@ -1269,13 +1269,13 @@ void CMenus::RenderServerbrowserSidebar(CUIRect View)
 	// header
 	View.HSplitTop(UI()->GetListHeaderHeight(), &Header, &View);
 	float Width = Header.w;
-	Header.VSplitLeft(Width * 0.30f, &Button, &Header);
+	Header.VSplitLeft(Width * 0.33f, &Button, &Header);
 	static CButtonContainer s_TabInfo;
 	if(DoButton_SpriteID(&s_TabInfo, IMAGE_SIDEBARICONS, m_SidebarTab != SIDEBAR_TAB_INFO ? SPRITE_SIDEBAR_INFO_A : SPRITE_SIDEBAR_INFO_B, m_SidebarTab == SIDEBAR_TAB_INFO, &Button, CUIRect::CORNER_TL, 5.0f, true))
 	{
 		m_SidebarTab = SIDEBAR_TAB_INFO;
 	}
-	Header.VSplitLeft(Width * 0.30f, &Button, &Header);
+	Header.VSplitLeft(Width * 0.33f, &Button, &Header);
 	static CButtonContainer s_TabFilter;
 	if(DoButton_SpriteID(&s_TabFilter, IMAGE_SIDEBARICONS, m_SidebarTab != SIDEBAR_TAB_FILTER ? SPRITE_SIDEBAR_FILTER_A : SPRITE_SIDEBAR_FILTER_B, m_SidebarTab == SIDEBAR_TAB_FILTER, &Button, 0, 0.0f, true))
 	{
@@ -1935,7 +1935,7 @@ void CMenus::RenderDetailInfo(CUIRect View, const CServerInfo *pInfo, const vec4
 	Row.VSplitLeft(Row.h, &Icon, &Row);
 	Icon.y -= 2.0f;
 	DoIcon(IMAGE_LEVELICONS, s_aDifficultySpriteIds[pInfo->m_ServerLevel], &Icon);
-	UI()->DoLabel(&Row, s_aDifficultyLabels[pInfo->m_ServerLevel], FontSize, TEXTALIGN_LEFT, Row.w, false);
+	UI()->DoLabel(&Row, Localize(s_aDifficultyLabels[pInfo->m_ServerLevel], "Server difficulty"), FontSize, TEXTALIGN_LEFT, Row.w, false);
 }
 
 void CMenus::RenderDetailScoreboard(CUIRect View, const CServerInfo *pInfo, int RowCount, const vec4 &TextColor, const vec4 &TextOutlineColor)
@@ -2033,7 +2033,7 @@ void CMenus::RenderDetailScoreboard(CUIRect View, const CServerInfo *pInfo, int 
 			DoIcon(IMAGE_BROWSEICONS, SPRITE_BROWSE_HEART_A, &Icon);
 
 		Name.VSplitLeft(2.0f, 0, &Name);
-		Name.VSplitLeft(12.0f, &Score, &Name);
+		Name.VSplitLeft(40.0f, &Score, &Name);
 		Name.VSplitRight(2 * (Name.h - 8.0f), &Name, &Flag);
 		Name.HSplitTop(LineHeight * 0.5f, &Name, &Clan);
 
@@ -2043,7 +2043,7 @@ void CMenus::RenderDetailScoreboard(CUIRect View, const CServerInfo *pInfo, int 
 			Score.y += (Score.h - FontSize / CUI::ms_FontmodHeight) / 2.0f;
 			char aTemp[16];
 			FormatScore(aTemp, sizeof(aTemp), pInfo->m_Flags & IServerBrowser::FLAG_TIMESCORE, &pInfo->m_aClients[i]);
-			UI()->DoLabel(&Score, aTemp, FontSize, TEXTALIGN_RIGHT);
+			UI()->DoLabel(&Score, aTemp, FontSize, TEXTALIGN_LEFT);
 		}
 
 		// name
@@ -2194,7 +2194,7 @@ void CMenus::RenderServerbrowser(CUIRect MainView)
 	MainView.VSplitRight(20.0f, &ServerList, &SidebarButton);
 
 	if(m_SidebarActive)
-		ServerList.VSplitRight(150.0f, &ServerList, &Sidebar);
+		ServerList.VSplitRight(160.0f, &ServerList, &Sidebar);
 
 	// server list
 	RenderServerbrowserServerList(ServerList);
