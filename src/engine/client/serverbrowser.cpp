@@ -602,11 +602,12 @@ void CServerBrowser::SetInfo(int ServerlistType, CServerEntry *pEntry, const CSe
 
 		pEntry->m_Info.m_Favorite = Fav;
 		pEntry->m_Info.m_NetAddr = pEntry->m_Addr;
-	}
-	m_aServerlist[ServerlistType].m_NumPlayers += pEntry->m_Info.m_NumPlayers;
-	m_aServerlist[ServerlistType].m_NumClients += pEntry->m_Info.m_NumClients;
 
-	pEntry->m_InfoState = CServerEntry::STATE_READY;
+		m_aServerlist[ServerlistType].m_NumPlayers += pEntry->m_Info.m_NumPlayers;
+		m_aServerlist[ServerlistType].m_NumClients += pEntry->m_Info.m_NumClients;
+
+		pEntry->m_InfoState = CServerEntry::STATE_READY;
+	}
 }
 
 void CServerBrowser::LoadServerlist()
