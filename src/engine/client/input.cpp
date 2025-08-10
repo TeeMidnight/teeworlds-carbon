@@ -256,15 +256,8 @@ bool CInput::MouseRelative(float *pX, float *pY)
 	if(!m_MouseInputRelative)
 		return false;
 
-	float MouseX = 0, MouseY = 0;
-	SDL_GetRelativeMouseState(&MouseX, &MouseY);
-	if(MouseX || MouseY)
-	{
-		*pX = MouseX;
-		*pY = MouseY;
-		return true;
-	}
-	return false;
+	SDL_GetRelativeMouseState(pX, pY);
+	return *pX != 0.0f || *pY != 0.0f;;
 }
 
 void CInput::MouseModeAbsolute()
