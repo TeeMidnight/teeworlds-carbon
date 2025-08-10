@@ -1584,12 +1584,17 @@ void CGameClient::OnPredict()
 
 			if(m_LocalClientID == c)
 			{
-				// apply player input
-				const int *pInput = Client()->GetInput(Tick);
-				if(pInput)
-					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
+				// apply freeze for Race mode
+				bool IsFrozen = m_GameInfo.m_GameFlags & GAMEFLAG_RACE && m_Snap.m_aCharacters[c].m_Cur.m_Weapon == WEAPON_NINJA && m_Snap.m_aCharacters[c].m_Cur.m_Armor < 10;
+				if(!IsFrozen)
+				{
+					// apply player input
+					const int *pInput = Client()->GetInput(Tick);
+					if(pInput)
+						World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
 
-				World.m_apCharacters[c]->Tick(true);
+					World.m_apCharacters[c]->Tick(true);
+				}
 			}
 			else
 			{
