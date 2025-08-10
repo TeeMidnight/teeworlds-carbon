@@ -3208,14 +3208,14 @@ int str_utf8_decode(const char **ptr)
 
 	do
 	{
-		if((*buf & 0x80) == 0x0) /* 0xxxxxxx */
+		if((*buf & 0x80) == 0x00) /* 0xxxxxxx */
 		{
 			ch = (unsigned char) *buf;
 			buf++;
 		}
 		else if((*buf & 0xE0) == 0xC0) /* 110xxxxx */
 		{
-			ch = (*buf++ & 0x3F) << 6;
+			ch = (*buf++ & 0x1F) << 6;
 			if(!(*buf) || (*buf & 0xC0) != 0x80)
 				break;
 			ch += (*buf++ & 0x3F);
@@ -3224,7 +3224,7 @@ int str_utf8_decode(const char **ptr)
 		}
 		else if((*buf & 0xF0) == 0xE0) /* 1110xxxx */
 		{
-			ch = (*buf++ & 0x1F) << 12;
+			ch = (*buf++ & 0x0F) << 12;
 			if(!(*buf) || (*buf & 0xC0) != 0x80)
 				break;
 			ch += (*buf++ & 0x3F) << 6;
@@ -3236,7 +3236,7 @@ int str_utf8_decode(const char **ptr)
 		}
 		else if((*buf & 0xF8) == 0xF0) /* 11110xxx */
 		{
-			ch = (*buf++ & 0x0F) << 18;
+			ch = (*buf++ & 0x07) << 18;
 			if(!(*buf) || (*buf & 0xC0) != 0x80)
 				break;
 			ch += (*buf++ & 0x3F) << 12;
@@ -3269,7 +3269,7 @@ int str_utf8_check(const char *str)
 {
 	while(*str)
 	{
-		if((*str & 0x80) == 0x0)
+		if((*str & 0x80) == 0x00)
 			str++;
 		else if((*str & 0xE0) == 0xC0 && (*(str + 1) & 0xC0) == 0x80)
 			str += 2;

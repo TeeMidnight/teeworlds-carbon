@@ -231,14 +231,14 @@ public:
 	void FindDataDir()
 	{
 		// 1) use data-dir in PWD if present
-		if(fs_is_dir("data/languages"))
+		if(fs_is_dir("data/mapres"))
 		{
 			str_copy(m_aDataDir, "data", sizeof(m_aDataDir));
 			return;
 		}
 
 		// 2) use compiled-in data-dir if present
-		if(fs_is_dir(DATA_DIR "/languages"))
+		if(fs_is_dir(DATA_DIR "/mapres"))
 		{
 			str_copy(m_aDataDir, DATA_DIR, sizeof(m_aDataDir));
 			return;
@@ -249,7 +249,7 @@ public:
 			char aBaseDir[IO_MAX_PATH_LENGTH];
 			str_copy(aBaseDir, m_aAppDir, sizeof(aBaseDir));
 			str_format(m_aDataDir, sizeof(m_aDataDir), "%s/data", aBaseDir);
-			str_append(aBaseDir, "/data/languages", sizeof(aBaseDir));
+			str_append(aBaseDir, "/data/mapres", sizeof(aBaseDir));
 
 			if(fs_is_dir(aBaseDir))
 				return;
