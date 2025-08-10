@@ -131,6 +131,7 @@ public:
 		char m_aClan[MAX_CLAN_ARRAY_SIZE];
 		int m_Version;
 		int m_CarbonVersion;
+		int m_DDNetVersion;
 		int m_Country;
 		int m_Score;
 		int m_Authed;
@@ -227,6 +228,7 @@ public:
 	void GetClientAddr(int ClientID, char *pAddrStr, int Size) const override;
 	int GetClientVersion(int ClientID) const override;
 	int GetCarbonClientVersion(int ClientID) const override;
+	int GetDDNetClientVersion(int ClientID) const override;
 	const char *ClientLanguage(int ClientID) const override;
 	const char *ClientName(int ClientID) const override;
 	const char *ClientClan(int ClientID) const override;

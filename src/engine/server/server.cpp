@@ -408,6 +408,13 @@ int CServer::GetCarbonClientVersion(int ClientID) const
 	return 0;
 }
 
+int CServer::GetDDNetClientVersion(int ClientID) const
+{
+	if(ClientID >= 0 && ClientID < SERVER_MAX_CLIENTS && m_aClients[ClientID].m_State == CClient::STATE_INGAME)
+		return m_aClients[ClientID].m_DDNetVersion;
+	return 0;
+}
+
 const char *CServer::ClientLanguage(int ClientID) const
 {
 	if(ClientID < 0 || ClientID >= SERVER_MAX_CLIENTS || m_aClients[ClientID].m_State == CServer::CClient::STATE_EMPTY)
@@ -697,6 +704,7 @@ int CServer::NewClientCallback(int ClientID, void *pUser)
 	pThis->m_aClients[ClientID].m_Quitting = false;
 	pThis->m_aClients[ClientID].m_Latency = 0;
 	pThis->m_aClients[ClientID].m_CarbonVersion = 0;
+	pThis->m_aClients[ClientID].m_DDNetVersion = 0;
 	pThis->m_aClients[ClientID].Reset();
 
 	str_copy(pThis->m_aClients[ClientID].m_aLanguage, pThis->Config()->m_SvDefaultLanguage, sizeof(pThis->m_aClients[ClientID].m_aLanguage));
@@ -851,6 +859,7 @@ static void UnpackPacketWithNamespace(CMsgUnpacker *pUnpacker, const void *pData
 			return;
 		pUnpacker->ModifyType(CarbonMsgID + (pUnpacker->System() ? (int) NUM_VANILLA_NET_MSG : (int) NUM_GAMEMSGS));
 	}
+	// could be DDNet msg, so we don't drop it.
 }
 
 void CServer::ProcessClientPacket(CNetChunk *pPacket)
@@ -864,16 +873,33 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 	if(Unpacker.System())
 	{
 		// system message
-		if(Unpacker.Type() == CarbonSystemMsgID(CARBONMSG_INFO))
+		if(Unpacker.Namespace())
 		{
-			if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
+			if(Unpacker.Type() == CarbonSystemMsgID(CARBONMSG_INFO))
 			{
-				m_aClients[ClientID].m_CarbonVersion = Unpacker.GetInt();
-				if(Unpacker.Error())
-					return;
-				char aBuf[64];
-				str_format(aBuf, sizeof(aBuf), "carbon client connected, cid=%d carbon_version=0x%x", ClientID, m_aClients[ClientID].m_CarbonVersion);
-				Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
+				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
+				{
+					m_aClients[ClientID].m_CarbonVersion = Unpacker.GetInt();
+					if(Unpacker.Error())
+						return;
+					char aBuf[64];
+					str_format(aBuf, sizeof(aBuf), "carbon client connected, cid=%d carbon_version=0x%x", ClientID, m_aClients[ClientID].m_CarbonVersion);
+					Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
+				}
+			}
+			// ddnet part start
+			else if(*Unpacker.Namespace() == CalculateUuid("clientver@ddnet.tw")) // ddnet 128p version = 19000
+			{
+				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
+				{
+					Unpacker.GetRaw(sizeof(Uuid)); // connection id, unused.
+					m_aClients[ClientID].m_DDNetVersion = Unpacker.GetInt();
+					if(Unpacker.Error())
+						return;
+					char aBuf[64];
+					str_format(aBuf, sizeof(aBuf), "ddnet client connected, cid=%d ddnet_version=%d", ClientID, m_aClients[ClientID].m_DDNetVersion);
+					Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
+				}
 			}
 		}
 		else if(Unpacker.Type() == NETMSG_INFO)
