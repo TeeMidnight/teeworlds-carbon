@@ -158,6 +158,7 @@ bool CServerBrowserHttp::Parse(json_value *pJson, std::vector<CServerInfo> *pvSe
 		}
 		CServerInfo SetInfo = ParsedInfo;
 		str_format(SetInfo.m_aAddress, sizeof(SetInfo.m_aAddress), "%s:%d", Addresses.u.string.ptr, static_cast<int>(Port.u.integer));
+		str_copy(SetInfo.m_aHostname, SetInfo.m_aAddress, sizeof(SetInfo.m_aHostname));
 		net_addr_from_str(&SetInfo.m_NetAddr, SetInfo.m_aAddress);
 		SetInfo.m_InfoGotByHttp = true;
 		vServers.push_back(SetInfo);
