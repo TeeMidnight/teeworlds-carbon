@@ -1544,7 +1544,7 @@ void CMenus::RenderServerbrowserFilterTab(CUIRect View)
 
 	// new filter
 	ServerFilter.HSplitBottom(LineSize, &ServerFilter, &Button);
-	Button.VSplitLeft(60.0f, &Icon, &Button);
+	Button.VSplitLeft(80.0f, &Icon, &Button);
 	static CLineInputBuffered<32> s_FilterInput;
 	UI()->DoEditBox(&s_FilterInput, &Icon, FontSize, CUIRect::CORNER_L);
 	Button.Draw(vec4(1.0f, 1.0f, 1.0f, 0.25f), 5.0f, CUIRect::CORNER_R);
