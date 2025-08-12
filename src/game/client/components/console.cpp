@@ -378,9 +378,9 @@ void CGameConsole::PossibleCommandsRenderCallback(int Index, const char *pStr, v
 	{
 		TextColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 		const float TextWidth = pInfo->m_pSelf->TextRender()->TextWidth(pInfo->m_pCursor->m_FontSize, pStr, -1);
-		CUIRect Rect = { pInfo->m_pCursor->AdvancePosition().x - 2.0f, pInfo->m_pCursor->AdvancePosition().y, TextWidth + 4.0f, pInfo->m_pCursor->m_FontSize + 4.0f };
+		CUIRect Rect = {pInfo->m_pCursor->AdvancePosition().x - 2.0f, pInfo->m_pCursor->AdvancePosition().y, TextWidth + 4.0f, pInfo->m_pCursor->m_FontSize + 4.0f};
 
-		Rect.Draw(vec4(0.0f, 0.0f, 0.0f, 0.85f), pInfo->m_pCursor->m_FontSize/3);
+		Rect.Draw(vec4(0.0f, 0.0f, 0.0f, 0.85f), pInfo->m_pCursor->m_FontSize / 3);
 
 		// scroll when out of sight
 		const bool MoveLeft = Rect.x - *pInfo->m_pOffsetChange < 0.0f;
@@ -399,7 +399,7 @@ void CGameConsole::PossibleCommandsRenderCallback(int Index, const char *pStr, v
 	if(pMatchStart)
 	{
 		pInfo->m_pSelf->TextRender()->TextColor(TextColor);
-		pInfo->m_pSelf->TextRender()->TextDeferred(pInfo->m_pCursor, pStr, pMatchStart-pStr);
+		pInfo->m_pSelf->TextRender()->TextDeferred(pInfo->m_pCursor, pStr, pMatchStart - pStr);
 		pInfo->m_pSelf->TextRender()->TextColor(1.0f, 0.8f, 0.0f, 1);
 		pInfo->m_pSelf->TextRender()->TextDeferred(pInfo->m_pCursor, pMatchStart, str_length(pInfo->m_pCurrentCmd));
 		pInfo->m_pSelf->TextRender()->TextColor(TextColor);
