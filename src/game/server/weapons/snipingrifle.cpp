@@ -32,7 +32,7 @@ void CSnipingRifle::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Di
 		round_to_int(pWorld->Server()->TickSpeed() * 0.5f),
 		9, false, 2, -1, SnapStyle());
 
-	pWorld->GameServer()->CreateSound(Pos, SOUND_SHOTGUN_FIRE);
+	pWorld->GameServer()->CreateSound(Pos, SOUND_GUN_FIRE);
 }
 
 static CSnipingRifle gs_WeaponSnipingRifle;

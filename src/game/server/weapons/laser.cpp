@@ -14,13 +14,13 @@ public:
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;
 	const char *Name() override { return _("Laser"); }
 	bool FullAuto() override { return true; }
-	int FireDelay() override { return g_pData->m_Weapons.m_Gun.m_pBase->m_Firedelay; }
+	int FireDelay() override { return g_pData->m_Weapons.m_Laser.m_pBase->m_Firedelay; }
 	int SnapStyle() override { return WEAPON_LASER; }
 
 	// Ammo
-	int AmmoRegenTime() override { return g_pData->m_Weapons.m_Gun.m_pBase->m_Ammoregentime; }
-	int DefaultAmmo() override { return g_pData->m_Weapons.m_Gun.m_pBase->m_Maxammo; }
-	int MaxAmmo() override { return g_pData->m_Weapons.m_Gun.m_pBase->m_Maxammo; }
+	int AmmoRegenTime() override { return g_pData->m_Weapons.m_Laser.m_pBase->m_Ammoregentime; }
+	int DefaultAmmo() override { return g_pData->m_Weapons.m_Laser.m_pBase->m_Maxammo; }
+	int MaxAmmo() override { return g_pData->m_Weapons.m_Laser.m_pBase->m_Maxammo; }
 };
 
 void CLaserWeapon::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer)
