@@ -1631,6 +1631,7 @@ set_src(GAME_SERVER GLOB_RECURSE src/game/server
   weapons/laser.cpp
   weapons/ninja.cpp
   weapons/shotgun.cpp
+  weapons/snipingrifle.cpp
 )
 set(GAME_GENERATED_SERVER
   src/generated/server_data.cpp

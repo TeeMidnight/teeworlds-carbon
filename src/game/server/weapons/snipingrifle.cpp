@@ -1,0 +1,38 @@
+#include <game/server/entities/projectile.h>
+#include <game/server/entity.h>
+#include <game/server/gamecontext.h>
+#include <game/server/gameworld.h>
+#include <game/server/weapons.h>
+#include <generated/server_data.h>
+
+class CSnipingRifle : public IWeaponInterface
+{
+public:
+	CSnipingRifle() { WeaponManager()->RegisterWeapon("Sniping Rifle", this); }
+
+	//
+	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;
+	const char *Name() override { return _("Sniping Rifle"); }
+	bool FullAuto() override { return false; }
+	int FireDelay() override { return 1000; }
+	int SnapStyle() override { return WEAPON_LASER; }
+
+	// Ammo
+	int AmmoRegenTime() override { return 0; }
+	int DefaultAmmo() override { return 10; }
+	int MaxAmmo() override { return 10; }
+};
+
+void CSnipingRifle::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer)
+{
+	new CProjectile(pWorld, WEAPON_SHOTGUN,
+		pFrom,
+		Pos,
+		Direction * 2.5f,
+		round_to_int(pWorld->Server()->TickSpeed() * 0.5f),
+		9, false, 2, -1, SnapStyle());
+
+	pWorld->GameServer()->CreateSound(Pos, SOUND_SHOTGUN_FIRE);
+}
+
+static CSnipingRifle gs_WeaponSnipingRifle;
