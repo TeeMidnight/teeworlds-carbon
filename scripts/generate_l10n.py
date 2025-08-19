@@ -22,12 +22,16 @@ JSON_KEY_TR="value"
 
 SOURCE_LOCALIZE_RE=re.compile(br'_\("(?P<str>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
 SOURCE_LOCALIZE_CONTEXT_RE=re.compile(br'_C\("(?P<str>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
+SOURCE_LOCALIZE_NAME_RE=re.compile(br'_\("(?P<name>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
 
 def parse_source():
 	l10n = defaultdict(lambda: str)
 
 	def process_line(line, filename, lineno):
 		for match in SOURCE_LOCALIZE_RE.finditer(line):
+			str_ = match.group('str').decode()
+			l10n[(str_, None)] = ""
+		for match in SOURCE_LOCALIZE_NAME_RE.finditer(line):
 			str_ = match.group('str').decode()
 			l10n[(str_, None)] = ""
 		for match in SOURCE_LOCALIZE_CONTEXT_RE.finditer(line):
@@ -67,7 +71,7 @@ def write_languagefile(outputfilename, l10n_src, old_l10n_data):
 		translations.update({
 			(t[JSON_KEY_OR], t.get(JSON_KEY_CTXT)): t[JSON_KEY_TR]
 			for t in old_l10n_data[type_]
-			if t[JSON_KEY_TR]
+			if t[JSON_KEY_TR] and translations.get((t[JSON_KEY_OR], t.get(JSON_KEY_CTXT))) != None
 		})
 
 	result = {JSON_KEY_TRANSL: []}

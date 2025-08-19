@@ -76,8 +76,8 @@ public:
 
 	virtual void ExpireServerInfo() = 0;
 
-	virtual const char *Localize(const char *pCode, const char *pStr, const char *pContext = "") = 0;
-	virtual const char *Localize(int ClientID, const char *pStr, const char *pContext = "") = 0;
+	virtual const char *Localize(const char *pCode, const char *pStr, const char *pContext = "") GNUC_ATTRIBUTE((format_arg(3))) = 0;
+	virtual const char *Localize(int ClientID, const char *pStr, const char *pContext = "") GNUC_ATTRIBUTE((format_arg(3))) = 0;
 
 	virtual int GetLanguagesInfo(struct SLanguageInfo **ppInfo) = 0;
 };

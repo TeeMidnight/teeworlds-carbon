@@ -1,7 +1,9 @@
 #ifndef GAME_SERVER_GAMEMENU_H
 #define GAME_SERVER_GAMEMENU_H
 
+#include <base/system.h>
 #include <base/uuid.h>
+
 #include <game/voting.h>
 
 #include <memory>
@@ -27,6 +29,7 @@ struct SMenuPage
 	Uuid m_ParentUuid = UUID_ZEROED;
 	MenuCallback m_pfnCallback = nullptr;
 	char m_aTitle[VOTE_DESC_LENGTH] = {'\0'};
+	char m_aContext[VOTE_DESC_LENGTH] = {'\0'};
 	void *m_pUserData = nullptr;
 };
 
@@ -41,7 +44,7 @@ public:
 	CGameMenu(CGameContext *pGameServer);
 	~CGameMenu() = default;
 
-	void Register(const char *pPageName, const char *pTitle, MenuCallback pfnFunc, void *pUser, const char *pParent = "MAIN");
+	void Register(const char *pPageName, const char *pTitle, const char *pContext, MenuCallback pfnFunc, void *pUser, const char *pParent = "MAIN");
 
 	void OnClientEntered(int ClientID);
 	void OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound = false);
@@ -56,9 +59,12 @@ public:
 	void AddSpace();
 	void AddHorizontalRule();
 	void AddOption(const char *pDesc, const char *pCommand, const char *pPrefix = "");
-	void AddTranslatedOption(const char *pDesc, const char *pCommand, const char *pPrefix = "");
+	void AddOptionLocalize(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix = "");
+	void AddOptionLocalizeFormat(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix, ...)
+		GNUC_ATTRIBUTE((format(printf, 2, 6)));
 
-	const char *Localize(const char *pStr, const char *pContext = "");
+	const char *Localize(const char *pStr, const char *pContext)
+		GNUC_ATTRIBUTE((format_arg(2)));
 
 private:
 	int m_CurrentClientID;

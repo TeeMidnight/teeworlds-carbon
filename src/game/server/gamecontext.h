@@ -144,6 +144,8 @@ public:
 
 	// ----- send functions -----
 	void SendChat(int ChatterClientID, int Mode, int To, const char *pText);
+	void SendChatTargetLocalize(int To, const char *pText, const char *pContext);
+	void SendChatTarget(int To, const char *pText);
 	void SendBroadcast(const char *pText, int ClientID);
 	void SendEmoticon(int ClientID, int Emoticon);
 	void SendWeaponPickup(int ClientID, int Weapon);

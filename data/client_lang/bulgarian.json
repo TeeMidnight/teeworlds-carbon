@@ -10,6 +10,10 @@
 	},
 	"translated strings": [
 		{
+			"or": "Search:",
+			"tr": "Търсене:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "Отборите бяха разменени"
 		},
@@ -118,160 +122,8 @@
 			"tr": "„%s“ се присъедини към наблюдателите"
 		},
 		{
-			"or": "Search:",
-			"tr": "Търсене:"
-		},
-		{
 			"or": "key not found",
 			"tr": "ключът не е намерен"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Картата е променена на „%s“"
-		},
-		{
-			"or": "All",
-			"tr": "Всички"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Наблюдатели"
-		},
-		{
-			"or": "Team",
-			"tr": "Отбор"
-		},
-		{
-			"or": "Chat",
-			"tr": "Чат"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Натиснетеs %s, за да продължите да пишете"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Страница %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Натиснете „Enter“ за потвърждение или „Esc“ за отказ"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Натиснете „Tab“ за избор или „Esc“ за отказ"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "„%s“ беше заглушен(а)"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "„%s“ вече не е заглушен(а)"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "„%s“ беше добавен(а) в приятелите"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "„%s“ беше премахнат(а) от приятелите"
-		},
-		{
-			"or": "-Page %d-",
-			"tr": "-Страница %d-"
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Внезапна смърт"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Играта е на пауза"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d играч не е готов"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d играчи не са готови"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Играта започва след"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Изчакване до следващия рунд"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d играч напусна"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d играчи напуснаха"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Разгрявка"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Проблеми с връзката..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Моля уравновесете отборите!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "Остава(т) %d сек"
-		},
-		{
-			"or": "Reason:",
-			"tr": "Причина:"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Наблюдаване"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Когато сте готов(а), натиснете <%s>"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -288,513 +140,6 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": "„%s“ завърши за: %s"
-		},
-		{
-			"or": "Game",
-			"tr": "Игра"
-		},
-		{
-			"or": "Players",
-			"tr": "Играчи"
-		},
-		{
-			"or": "Server info",
-			"tr": "Информация за сървъра"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Гласуване"
-		},
-		{
-			"or": "Settings",
-			"tr": "Настройки"
-		},
-		{
-			"or": "General",
-			"tr": "Основни"
-		},
-		{
-			"or": "Player",
-			"tr": "Играч"
-		},
-		{
-			"or": "Controls",
-			"tr": "Управление"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Графика"
-		},
-		{
-			"or": "Sound",
-			"tr": "Звук"
-		},
-		{
-			"or": "Global",
-			"tr": "Общи"
-		},
-		{
-			"or": "Local",
-			"tr": "Местни"
-		},
-		{
-			"or": "Demos",
-			"tr": "Записи"
-		},
-		{
-			"or": "Back",
-			"tr": "Назад"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Звукова грешка"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "Звуковото устройство не може да бъде стартирано."
-		},
-		{
-			"or": "Ok",
-			"tr": "Добре"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Свързване с"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Изтегляне на карта"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Език"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Преименуване на записа"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Запазване на облика"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Грешна парола"
-		},
-		{
-			"or": "Quit",
-			"tr": "Изход"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Добре дошли в Teeworlds"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Наистина ли искате да напуснете?"
-		},
-		{
-			"or": "No",
-			"tr": "Не"
-		},
-		{
-			"or": "Yes",
-			"tr": "Да"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Password",
-			"tr": "Парола"
-		},
-		{
-			"or": "Save password",
-			"tr": "Запазване на паролата"
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": "Запазване на паролата и сървъра като любими"
-		},
-		{
-			"or": "Abort",
-			"tr": "Отмяна"
-		},
-		{
-			"or": "Try again",
-			"tr": "Повторен опит"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "Остава %i минута"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "Остават %i минути"
-		},
-		{
-			"or": "%i second left",
-			"tr": "Остава %i секунда"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "Остават %i секунди"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Грешка при зареждане на запис"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Наистина ли искате да преименувате този запис?"
-		},
-		{
-			"or": "Name",
-			"tr": "Име"
-		},
-		{
-			"or": "Error",
-			"tr": "Грешка"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Неуспешно преименуване на записа"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Наистина ли искате за запазите облика си? Ако вече съществува облик с това име, той ще бъде изтрит."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Тъй като стартирате играта за първи път, моля, въведете своя псевдоним по-долу. Препоръчително е да проверите и нагласите настройките, преди да започнете игра."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Псевдоним"
-		},
-		{
-			"or": "Enter",
-			"tr": "Влизане"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "Псевдонимът е празен."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Разкачен"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "Този сървър използва нестандартни настройки на стандартен тип игра."
-		},
-		{
-			"or": "Server",
-			"tr": "Сървър"
-		},
-		{
-			"or": "Type",
-			"tr": "Тип"
-		},
-		{
-			"or": "Map",
-			"tr": "Карта"
-		},
-		{
-			"or": "Ping",
-			"tr": "Вр. за отг."
-		},
-		{
-			"or": "Race",
-			"tr": ""
-		},
-		{
-			"or": "Favorites",
-			"tr": "Любими"
-		},
-		{
-			"or": "This server is protected by a password.",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove server from favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add server to favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Friends are online on this server.",
-			"tr": ""
-		},
-		{
-			"or": "%d servers, %d players",
-			"tr": "%d сървъра, %d играчи"
-		},
-		{
-			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
-			"tr": ""
-		},
-		{
-			"or": "Remove filter",
-			"tr": "Премахване на филтъра"
-		},
-		{
-			"or": "No filter category is selected",
-			"tr": "Не е избран филтър за категорията"
-		},
-		{
-			"or": "Fetching server info",
-			"tr": "Получаване на информацията за сървъра"
-		},
-		{
-			"or": "No servers found",
-			"tr": "Няма намерени сървъри"
-		},
-		{
-			"or": "No local servers found (ports %d–%d)",
-			"tr": ""
-		},
-		{
-			"or": "No servers match your filter criteria",
-			"tr": "Няма сървъри, отговарящи на критериите"
-		},
-		{
-			"or": "Host address:",
-			"tr": "Адрес на сървъра:"
-		},
-		{
-			"or": "%d%% loaded",
-			"tr": "%d%% заредено"
-		},
-		{
-			"or": "%d servers",
-			"tr": "%d сървъра"
-		},
-		{
-			"or": "%d players",
-			"tr": "%d играчи"
-		},
-		{
-			"or": "Double click to join your friend.",
-			"tr": ""
-		},
-		{
-			"context": "Playing '(gametype)' on '(map)'",
-			"or": "Playing '%s' on '%s'",
-			"tr": "Играе „%s“ на „%s“"
-		},
-		{
-			"context": "Watching '(gametype)' on '(map)'",
-			"or": "Watching '%s' on '%s'",
-			"tr": "Гледа „%s“ на „%s“"
-		},
-		{
-			"or": "Click to delete this friend.",
-			"tr": ""
-		},
-		{
-			"or": "Online players (%d)",
-			"tr": "Играчи на линия (%d)"
-		},
-		{
-			"or": "Online clanmates (%d)",
-			"tr": "Членове на клана на линия (%d)"
-		},
-		{
-			"context": "friends (server browser)",
-			"or": "Offline (%d)",
-			"tr": "Извън линия (%d)"
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
-		},
-		{
-			"or": "Add friend/clan",
-			"tr": "Добавяне на приятел/клан"
-		},
-		{
-			"or": "Add friend",
-			"tr": "Добавяне на приятел"
-		},
-		{
-			"or": "Add clan",
-			"tr": "Добавяне на клан"
-		},
-		{
-			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Remove friend",
-			"tr": "Премахване на приятеля"
-		},
-		{
-			"or": "New filter",
-			"tr": "Нов филтър"
-		},
-		{
-			"or": "Server filter",
-			"tr": "Филтър на сървъра"
-		},
-		{
-			"or": "Has people playing",
-			"tr": "Да има играчи"
-		},
-		{
-			"or": "Count players only",
-			"tr": "Броене само на играчите"
-		},
-		{
-			"or": "Server not full",
-			"tr": "Сървърът да не е пълен"
-		},
-		{
-			"or": "Show friends only",
-			"tr": "Показване само на приятелите"
-		},
-		{
-			"or": "Hide bots",
-			"tr": "Скриване на ботовете"
-		},
-		{
-			"or": "No password",
-			"tr": "Няма парола"
-		},
-		{
-			"or": "Compatible version",
-			"tr": "Съвместима версия"
-		},
-		{
-			"or": "Standard gametype",
-			"tr": "Стандартен тип игри"
-		},
-		{
-			"or": "Standard map",
-			"tr": "Стандартни карти"
-		},
-		{
-			"or": "Game types:",
-			"tr": "Типове игри:"
-		},
-		{
-			"or": "Include servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"or": "Exclude servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"context": "clear gametype filters",
-			"or": "Clear",
-			"tr": "Изчистване"
-		},
-		{
-			"or": "Maximum ping:",
-			"tr": "Макс. време за отговор:"
-		},
-		{
-			"or": "Server address:",
-			"tr": "Адрес на сървъра:"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty:",
-			"tr": "Трудност:"
-		},
-		{
-			"or": "Reset filter",
-			"tr": "Нулиране на филтрите"
-		},
-		{
-			"or": "Server details",
-			"tr": "Подр. за сървъра"
-		},
-		{
-			"or": "Map:",
-			"tr": "Карта:"
-		},
-		{
-			"or": "Game type:",
-			"tr": "Тип на играта:"
-		},
-		{
-			"or": "Version:",
-			"tr": "Версия:"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Неангажиращ"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Нормален"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Съревнователен"
-		},
-		{
-			"or": "Click to remove the player from your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add the player to your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Табло с резултати"
-		},
-		{
-			"or": "Refresh",
-			"tr": "Опресняване"
-		},
-		{
-			"or": "Connect",
-			"tr": "Свързване"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
 		},
 		{
 			"or": "Move left",
@@ -853,6 +198,10 @@
 			"tr": "Против"
 		},
 		{
+			"or": "Chat",
+			"tr": "Чат"
+		},
+		{
 			"or": "Team chat",
 			"tr": "Отборен чат"
 		},
@@ -891,6 +240,10 @@
 		{
 			"or": "Screenshot",
 			"tr": "Снимка"
+		},
+		{
+			"or": "Scoreboard",
+			"tr": "Табло с резултати"
 		},
 		{
 			"or": "Statboard",
@@ -987,6 +340,10 @@
 			"tr": "Ос #%d"
 		},
 		{
+			"or": "Name",
+			"tr": "Име"
+		},
+		{
 			"or": "Length",
 			"tr": "Дължина"
 		},
@@ -1035,8 +392,20 @@
 			"tr": "Изтриване на записа"
 		},
 		{
+			"or": "Yes",
+			"tr": "Да"
+		},
+		{
+			"or": "No",
+			"tr": "Не"
+		},
+		{
 			"or": "Rename",
 			"tr": "Преименуване"
+		},
+		{
+			"or": "Refresh",
+			"tr": "Опресняване"
 		},
 		{
 			"or": "Fetch Info",
@@ -1052,12 +421,24 @@
 			"tr": "Играене"
 		},
 		{
+			"or": "Error",
+			"tr": "Грешка"
+		},
+		{
 			"or": "Unable to delete the demo",
 			"tr": "Неуспешно изтриване на записа"
 		},
 		{
+			"or": "Ok",
+			"tr": "Добре"
+		},
+		{
 			"or": "Created",
 			"tr": "Създаден"
+		},
+		{
+			"or": "Type",
+			"tr": "Тип"
 		},
 		{
 			"or": "Version",
@@ -1070,6 +451,10 @@
 		{
 			"or": "Markers",
 			"tr": "Отметки"
+		},
+		{
+			"or": "Map",
+			"tr": "Карта"
 		},
 		{
 			"or": "%.3f KiB",
@@ -1148,8 +533,24 @@
 			"tr": "Настройки на играча"
 		},
 		{
+			"or": "Player",
+			"tr": "Играч"
+		},
+		{
+			"or": "Server info",
+			"tr": "Информация за сървъра"
+		},
+		{
 			"or": "Address",
 			"tr": "Адрес"
+		},
+		{
+			"or": "Ping",
+			"tr": "Вр. за отг."
+		},
+		{
+			"or": "Password",
+			"tr": "Парола"
 		},
 		{
 			"context": "With",
@@ -1178,6 +579,21 @@
 			"tr": "Тип игра"
 		},
 		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Неангажиращ"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Нормален"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Съревнователен"
+		},
+		{
 			"or": "Difficulty",
 			"tr": "Трудност"
 		},
@@ -1188,6 +604,10 @@
 		{
 			"or": "Time limit",
 			"tr": "Ограничение на времето"
+		},
+		{
+			"or": "Players",
+			"tr": "Играчи"
 		},
 		{
 			"or": "MOTD",
@@ -1234,6 +654,14 @@
 			"tr": "Сървърът не позволява гласуване за прехвърляне на играчи към наблюдателите"
 		},
 		{
+			"or": "Reason:",
+			"tr": "Причина:"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Гласуване"
+		},
+		{
 			"or": "Force vote",
 			"tr": "Насилено гласуване"
 		},
@@ -1252,79 +680,6 @@
 		{
 			"or": "Add",
 			"tr": "Добавяне"
-		},
-		{
-			"or": "Local server",
-			"tr": "Местен сървър"
-		},
-		{
-			"or": "Editor",
-			"tr": "Редактор"
-		},
-		{
-			"or": "Play",
-			"tr": "Играене"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Излезе Teeworlds %s! Изтеглете я от www.teeworlds.com!"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Ограничение на времето: %d мин"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Мач"
-		},
-		{
-			"or": "Game over",
-			"tr": "Край на играта"
-		},
-		{
-			"or": "Round over",
-			"tr": "Край на рунда"
-		},
-		{
-			"or": "Map record",
-			"tr": "Рекорд на картата"
-		},
-		{
-			"or": "Time",
-			"tr": "Време"
-		},
-		{
-			"or": "Score",
-			"tr": "Резултат"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%dдруги играчи"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "Записани %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Червен отбор"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Син отбор"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s печели!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Равенство!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Край на рунда!"
 		},
 		{
 			"context": "skins",
@@ -1391,6 +746,18 @@
 			"tr": "Вземания"
 		},
 		{
+			"or": "%d other players",
+			"tr": "%dдруги играчи"
+		},
+		{
+			"or": "Red team",
+			"tr": "Червен отбор"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Син отбор"
+		},
+		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
 			"tr": "„%s“ поиска гласуване за промяна на сървърния параметър „%s“ (%s)"
 		},
@@ -1429,6 +796,342 @@
 		{
 			"or": "Vote failed",
 			"tr": "Гласуването не мина"
+		},
+		{
+			"or": "Settings",
+			"tr": "Настройки"
+		},
+		{
+			"or": "Local server",
+			"tr": "Местен сървър"
+		},
+		{
+			"or": "Demos",
+			"tr": "Записи"
+		},
+		{
+			"or": "Editor",
+			"tr": "Редактор"
+		},
+		{
+			"or": "Play",
+			"tr": "Играене"
+		},
+		{
+			"or": "Quit",
+			"tr": "Изход"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Излезе Teeworlds %s! Изтеглете я от www.teeworlds.com!"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Картата е променена на „%s“"
+		},
+		{
+			"or": "All",
+			"tr": "Всички"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Наблюдатели"
+		},
+		{
+			"or": "Team",
+			"tr": "Отбор"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Натиснетеs %s, за да продължите да пишете"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Страница %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Натиснете „Enter“ за потвърждение или „Esc“ за отказ"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Натиснете „Tab“ за избор или „Esc“ за отказ"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "„%s“ беше заглушен(а)"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "„%s“ вече не е заглушен(а)"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "„%s“ беше добавен(а) в приятелите"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "„%s“ беше премахнат(а) от приятелите"
+		},
+		{
+			"or": "Game",
+			"tr": "Игра"
+		},
+		{
+			"or": "General",
+			"tr": "Основни"
+		},
+		{
+			"or": "Controls",
+			"tr": "Управление"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Графика"
+		},
+		{
+			"or": "Sound",
+			"tr": "Звук"
+		},
+		{
+			"or": "Global",
+			"tr": "Общи"
+		},
+		{
+			"or": "Local",
+			"tr": "Местни"
+		},
+		{
+			"or": "Back",
+			"tr": "Назад"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Звукова грешка"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "Звуковото устройство не може да бъде стартирано."
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Свързване с"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Изтегляне на карта"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Език"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Преименуване на записа"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Запазване на облика"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Грешна парола"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Добре дошли в Teeworlds"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Наистина ли искате да напуснете?"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Save password",
+			"tr": "Запазване на паролата"
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": "Запазване на паролата и сървъра като любими"
+		},
+		{
+			"or": "Abort",
+			"tr": "Отмяна"
+		},
+		{
+			"or": "Try again",
+			"tr": "Повторен опит"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "Остава %i минута"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "Остават %i минути"
+		},
+		{
+			"or": "%i second left",
+			"tr": "Остава %i секунда"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "Остават %i секунди"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Грешка при зареждане на запис"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Наистина ли искате да преименувате този запис?"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Неуспешно преименуване на записа"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Наистина ли искате за запазите облика си? Ако вече съществува облик с това име, той ще бъде изтрит."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Тъй като стартирате играта за първи път, моля, въведете своя псевдоним по-долу. Препоръчително е да проверите и нагласите настройките, преди да започнете игра."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Псевдоним"
+		},
+		{
+			"or": "Enter",
+			"tr": "Влизане"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "Псевдонимът е празен."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Разкачен"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "Този сървър използва нестандартни настройки на стандартен тип игра."
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Внезапна смърт"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Играта е на пауза"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "%d играч не е готов"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d играчи не са готови"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "Играта започва след"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Изчакване до следващия рунд"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d играч напусна"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d играчи напуснаха"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Разгрявка"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Проблеми с връзката..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Моля уравновесете отборите!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "Остава(т) %d сек"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Наблюдаване"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Когато сте готов(а), натиснете <%s>"
 		},
 		{
 			"or": "Hue:",
@@ -1584,6 +1287,14 @@
 		{
 			"or": "Personal",
 			"tr": "Лични"
+		},
+		{
+			"or": "Clan",
+			"tr": "Клан"
+		},
+		{
+			"or": "Flag:",
+			"tr": ""
 		},
 		{
 			"or": "Save",
@@ -1822,129 +1533,285 @@
 			"tr": "Трябва да изчакате %1.0f секунди, за да промените идентичността си."
 		},
 		{
-			"or": "Are you sure that you want to delete the demo?",
-			"tr": "Наистина ли искате да изтриете записа?"
+			"or": "Server",
+			"tr": "Сървър"
 		},
 		{
-			"or": "Are you sure that you want to delete the skin?",
-			"tr": "Наистина ли искате да изтриете облика?"
+			"or": "Race",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to remove the clan from your friends list?",
-			"tr": "Наинстина ли искате да премахнете клана от списъка си с приятели?"
+			"or": "Favorites",
+			"tr": "Любими"
 		},
 		{
-			"or": "Are you sure that you want to remove the filter from the server browser?",
-			"tr": "Наистина ли искате да премахнете филтъра от списъка със сървъри?"
+			"or": "This server is protected by a password.",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to remove the player from your friends list?",
-			"tr": "Наистина ли искате да премахнете този играч от списъка с приятели?"
+			"or": "Click to remove server from favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Click on a player or a flag to follow it",
-			"tr": "Щракнете на играч или флаг за следване"
+			"or": "Click to add server to favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Country",
-			"tr": "Държава"
+			"or": "Friends are online on this server.",
+			"tr": ""
 		},
 		{
-			"or": "Country:",
-			"tr": "Държава:"
+			"or": "%d servers, %d players",
+			"tr": "%d сървъра, %d играчи"
 		},
 		{
-			"or": "FPM",
-			"tr": "Уб./мин"
+			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
+			"tr": ""
 		},
 		{
-			"or": "Frags",
-			"tr": "Убийства"
+			"or": "Remove filter",
+			"tr": "Премахване на филтъра"
 		},
 		{
-			"or": "Frags per minute",
-			"tr": "Убийства в минута"
+			"or": "No filter category is selected",
+			"tr": "Не е избран филтър за категорията"
 		},
 		{
-			"or": "Ingame mouse sens.",
-			"tr": "Чувств. на мишката в игра"
+			"or": "Fetching server info",
+			"tr": "Получаване на информацията за сървъра"
 		},
 		{
-			"context": "Join a server",
-			"or": "Join",
-			"tr": "Присъединяване"
+			"or": "No servers found",
+			"tr": "Няма намерени сървъри"
 		},
 		{
-			"or": "Joystick sens.",
-			"tr": "Чувствителност на контролера"
+			"or": "No local servers found (ports %d–%d)",
+			"tr": ""
 		},
 		{
-			"or": "Menu background transparency",
-			"tr": "Прозрачност на фона на менюто"
+			"or": "No servers match your filter criteria",
+			"tr": "Няма сървъри, отговарящи на критериите"
 		},
 		{
-			"or": "Mute when not active",
-			"tr": "Заглушаване на звука когато играта е неактивна"
+			"or": "Host address:",
+			"tr": "Адрес на сървъра:"
 		},
 		{
-			"or": "Press Tab to cycle chat recipients. Whispers aren't encrypted and might be logged by the server.",
-			"tr": "Натиснете „Tab“, за да превъртате получателите. Шепотите не са шифровани и могат да бъдат записване в журнала на сървъра."
+			"or": "%d%% loaded",
+			"tr": "%d%% заредено"
 		},
 		{
-			"or": "Refreshing master servers",
-			"tr": "Обновяване на главните сървъри"
+			"or": "%d servers",
+			"tr": "%d сървъра"
 		},
 		{
-			"or": "Servers",
-			"tr": "Сървъри"
+			"or": "%d players",
+			"tr": "%d играчи"
 		},
 		{
-			"or": "Show chat messages from:",
-			"tr": "Показване на съобщенията от:"
+			"or": "Double click to join your friend.",
+			"tr": ""
 		},
 		{
-			"or": "Show ingame HUD",
-			"tr": "Показване на интерфейса в играта"
+			"context": "Playing '(gametype)' on '(map)'",
+			"or": "Playing '%s' on '%s'",
+			"tr": "Играе „%s“ на „%s“"
 		},
 		{
-			"or": "Skin",
-			"tr": "Облик"
+			"context": "Watching '(gametype)' on '(map)'",
+			"or": "Watching '%s' on '%s'",
+			"tr": "Гледа „%s“ на „%s“"
 		},
 		{
-			"or": "There's an unsaved map in the editor, you might want to save it before you quit the game.",
-			"tr": "Има незапазена карта в редактора. Ако напуснете играта, картата няма да бъде запазена."
+			"or": "Click to delete this friend.",
+			"tr": ""
 		},
 		{
-			"or": "blue flag",
-			"tr": "Синият флаг"
+			"or": "Online players (%d)",
+			"tr": "Играчи на линия (%d)"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "everyone",
-			"tr": "всички"
+			"or": "Online clanmates (%d)",
+			"tr": "Членове на клана на линия (%d)"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "friends only",
-			"tr": "само от приятели"
+			"context": "friends (server browser)",
+			"or": "Offline (%d)",
+			"tr": "Извън линия (%d)"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "no one",
-			"tr": "никого"
+			"or": "Add friend/clan",
+			"tr": "Добавяне на приятел/клан"
 		},
 		{
-			"context": "server browser message",
-			"or": "no players",
-			"tr": "няма играчи"
+			"or": "Add friend",
+			"tr": "Добавяне на приятел"
 		},
 		{
-			"or": "red flag",
-			"tr": "Червеният флаг"
+			"or": "Add clan",
+			"tr": "Добавяне на клан"
 		},
 		{
-			"or": "wait for more players",
-			"tr": "изчакване за още играчи"
+			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Remove friend",
+			"tr": "Премахване на приятеля"
+		},
+		{
+			"or": "New filter",
+			"tr": "Нов филтър"
+		},
+		{
+			"or": "Server filter",
+			"tr": "Филтър на сървъра"
+		},
+		{
+			"or": "Has people playing",
+			"tr": "Да има играчи"
+		},
+		{
+			"or": "Count players only",
+			"tr": "Броене само на играчите"
+		},
+		{
+			"or": "Server not full",
+			"tr": "Сървърът да не е пълен"
+		},
+		{
+			"or": "Show friends only",
+			"tr": "Показване само на приятелите"
+		},
+		{
+			"or": "Hide bots",
+			"tr": "Скриване на ботовете"
+		},
+		{
+			"or": "No password",
+			"tr": "Няма парола"
+		},
+		{
+			"or": "Standard gametype",
+			"tr": "Стандартен тип игри"
+		},
+		{
+			"or": "Game types:",
+			"tr": "Типове игри:"
+		},
+		{
+			"or": "Include servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"or": "Exclude servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"context": "clear gametype filters",
+			"or": "Clear",
+			"tr": "Изчистване"
+		},
+		{
+			"or": "Maximum ping:",
+			"tr": "Макс. време за отговор:"
+		},
+		{
+			"or": "Server address:",
+			"tr": "Адрес на сървъра:"
+		},
+		{
+			"or": "Difficulty:",
+			"tr": "Трудност:"
+		},
+		{
+			"or": "Reset filter",
+			"tr": "Нулиране на филтрите"
+		},
+		{
+			"or": "Server details",
+			"tr": "Подр. за сървъра"
+		},
+		{
+			"or": "Map:",
+			"tr": "Карта:"
+		},
+		{
+			"or": "Game type:",
+			"tr": "Тип на играта:"
+		},
+		{
+			"or": "Version:",
+			"tr": "Версия:"
+		},
+		{
+			"or": "Click to remove the player from your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Click to add the player to your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Connect",
+			"tr": "Свързване"
+		},
+		{
+			"or": "Server list from status.tw",
+			"tr": ""
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Ограничение на времето: %d мин"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Мач"
+		},
+		{
+			"or": "Game over",
+			"tr": "Край на играта"
+		},
+		{
+			"or": "Round over",
+			"tr": "Край на рунда"
+		},
+		{
+			"or": "Map record",
+			"tr": "Рекорд на картата"
+		},
+		{
+			"or": "Time",
+			"tr": "Време"
+		},
+		{
+			"or": "Score",
+			"tr": "Резултат"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "Записани %3d:%02d"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s печели!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Равенство!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Край на рунда!"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Страница %d-"
 		}
 	]
 }

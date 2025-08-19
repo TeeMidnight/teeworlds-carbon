@@ -241,6 +241,29 @@ void CGameContext::SendChat(int ChatterClientID, int Mode, int To, const char *p
 	}
 }
 
+void CGameContext::SendChatTargetLocalize(int To, const char *pText, const char *pContext)
+{
+	if(To == -1)
+	{
+		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
+		{
+			SendChatTargetLocalize(i, pText, pContext);
+		}
+		return;
+	}
+	SendChatTarget(To, Server()->Localize(To, pText, pContext));
+}
+
+void CGameContext::SendChatTarget(int To, const char *pText)
+{
+	CNetMsg_Sv_Chat Msg;
+	Msg.m_Mode = CHAT_ALL;
+	Msg.m_ClientID = -1;
+	Msg.m_pMessage = pText;
+	Msg.m_TargetID = To;
+	Server()->SendPackMsg(&Msg, MSGFLAG_VITAL, To);
+}
+
 void CGameContext::SendBroadcast(const char *pText, int ClientID)
 {
 	CNetMsg_Sv_Broadcast Msg;
@@ -833,7 +856,28 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 			}
 
 			if(Mode != CHAT_NONE)
-				SendChat(ClientID, Mode, pMsg->m_Target, pMsg->m_pMessage);
+			{
+				char aMsg[256] = {'\0'};
+				if(pMsg->m_pMessage[0] == '/')
+				{
+					const char *pCommandStr = pMsg->m_pMessage;
+					char aCommand[16];
+					str_format(aCommand, sizeof(aCommand), "%.*s", str_span(pCommandStr + 1, " "), pCommandStr + 1);
+					const CCommandManager::CCommand *pCommand = m_CommandManager.GetCommand(aCommand);
+					if(!pCommand)
+					{
+						SendChatTargetLocalize(ClientID, _("No such command"));
+						return;
+					}
+
+					// execute command
+					CommandManager()->OnCommand(pCommand->m_aName, str_skip_whitespaces_const(str_skip_to_whitespace_const(pCommandStr)), ClientID);
+				}
+				else
+				{
+					SendChat(ClientID, Mode, pMsg->m_Target, aMsg);
+				}
+			}
 		}
 		else if(MsgID == NETMSGTYPE_CL_CALLVOTE)
 		{
@@ -1472,7 +1516,7 @@ bool CGameContext::MenuServerVote(int ClientID, SCallVoteStatus &VoteStatus, cla
 		}
 		else
 		{
-			pMenu->AddTranslatedOption(_("There's no any server vote"), "NONE");
+			pMenu->AddOptionLocalize(_C("There's no any server vote", "Vote Menu Server Vote"), "NONE");
 		}
 	}
 
@@ -1481,7 +1525,7 @@ bool CGameContext::MenuServerVote(int ClientID, SCallVoteStatus &VoteStatus, cla
 
 void CGameContext::OnGameMenuInit()
 {
-	GameMenu()->Register("SERVER VOTE", _("Server Vote"), MenuServerVote, this);
+	GameMenu()->Register("SERVER VOTE", _C("Server Vote", "Vote Menu"), MenuServerVote, this);
 }
 
 void CGameContext::OnInit()

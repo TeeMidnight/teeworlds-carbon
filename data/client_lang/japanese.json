@@ -7,6 +7,10 @@
 	},
 	"translated strings": [
 		{
+			"or": "Search:",
+			"tr": ""
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -115,159 +119,7 @@
 			"tr": ""
 		},
 		{
-			"or": "Search:",
-			"tr": ""
-		},
-		{
 			"or": "key not found",
-			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "全部"
-		},
-		{
-			"or": "Spectators",
-			"tr": "観戦者"
-		},
-		{
-			"or": "Team",
-			"tr": "チーム"
-		},
-		{
-			"or": "Chat",
-			"tr": "チャット"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d-",
-			"tr": "-%d ページ-"
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "サドンデス"
-		},
-		{
-			"or": "Game paused",
-			"tr": "ゲーム停止"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": ""
-		},
-		{
-			"or": "%d players not ready",
-			"tr": ""
-		},
-		{
-			"or": "Game starts in",
-			"tr": ""
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "次のラウンドを待ちなさい"
-		},
-		{
-			"or": "%d player left",
-			"tr": "まだ%d人いる"
-		},
-		{
-			"or": "%d players left",
-			"tr": "まだ%d人いる"
-		},
-		{
-			"or": "Warmup",
-			"tr": "準備中"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "接続中に問題が発生"
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "チーム人数が偏っています！"
-		},
-		{
-			"or": "%ds left",
-			"tr": "残り %ds"
-		},
-		{
-			"or": "Reason:",
-			"tr": "理由:"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "観戦"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
 			"tr": ""
 		},
 		{
@@ -284,513 +136,6 @@
 		},
 		{
 			"or": "'%s' finished in: %s",
-			"tr": ""
-		},
-		{
-			"or": "Game",
-			"tr": "ゲーム"
-		},
-		{
-			"or": "Players",
-			"tr": "プレイヤー"
-		},
-		{
-			"or": "Server info",
-			"tr": "サーバー情報"
-		},
-		{
-			"or": "Call vote",
-			"tr": "投票を開始する"
-		},
-		{
-			"or": "Settings",
-			"tr": "設定"
-		},
-		{
-			"or": "General",
-			"tr": "一般"
-		},
-		{
-			"or": "Player",
-			"tr": "プレイヤー"
-		},
-		{
-			"or": "Controls",
-			"tr": "コントロール"
-		},
-		{
-			"or": "Graphics",
-			"tr": "グラフィック"
-		},
-		{
-			"or": "Sound",
-			"tr": "サウンド"
-		},
-		{
-			"or": "Global",
-			"tr": ""
-		},
-		{
-			"or": "Local",
-			"tr": "ローカル"
-		},
-		{
-			"or": "Demos",
-			"tr": "デモ"
-		},
-		{
-			"or": "Back",
-			"tr": "前に"
-		},
-		{
-			"or": "Sound error",
-			"tr": "サウンドエラー"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "オーディオデバイスの初期化に失敗しました。"
-		},
-		{
-			"or": "Ok",
-			"tr": "Ok"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "接続先"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "マップをダウンロード中"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "言語"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "デモの名前変更"
-		},
-		{
-			"or": "Save skin",
-			"tr": "スキンを保存する"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "パスワードが正しくありません"
-		},
-		{
-			"or": "Quit",
-			"tr": "終了"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Teeworldsの世界へようこそ！"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "終了してもよろしいですか？"
-		},
-		{
-			"or": "No",
-			"tr": "いいえ"
-		},
-		{
-			"or": "Yes",
-			"tr": "はい"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Password",
-			"tr": "パスワード"
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "中止"
-		},
-		{
-			"or": "Try again",
-			"tr": "もう一度"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "残り %i 分"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "残り %i 分"
-		},
-		{
-			"or": "%i second left",
-			"tr": "残り %i 秒"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "残り %i 秒"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "デモの読み込みに失敗しました"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "デモをリネームしてもよろしいですか？"
-		},
-		{
-			"or": "Name",
-			"tr": "名前"
-		},
-		{
-			"or": "Error",
-			"tr": "エラー"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "デモの名前を変更できません。"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "初起動ので、あなたのハンドルネームを入力してください。(半角英数のみ)　サーバーに参加する前に、お好みに合わせて設定を調整する事をお勧めです。"
-		},
-		{
-			"or": "Nickname",
-			"tr": "ハンドルネーム"
-		},
-		{
-			"or": "Enter",
-			"tr": "Enter"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "ハンドルネームはありません。"
-		},
-		{
-			"or": "Disconnected",
-			"tr": "切断されました"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "サーバーがMODを導入しているようです。"
-		},
-		{
-			"or": "Server",
-			"tr": ""
-		},
-		{
-			"or": "Type",
-			"tr": "タイプ"
-		},
-		{
-			"or": "Map",
-			"tr": "マップ"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"or": "Race",
-			"tr": ""
-		},
-		{
-			"or": "Favorites",
-			"tr": "お気に入り"
-		},
-		{
-			"or": "This server is protected by a password.",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove server from favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add server to favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Friends are online on this server.",
-			"tr": ""
-		},
-		{
-			"or": "%d servers, %d players",
-			"tr": "%dつのサーバー、%d人のプレーヤー"
-		},
-		{
-			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
-			"tr": ""
-		},
-		{
-			"or": "Remove filter",
-			"tr": ""
-		},
-		{
-			"or": "No filter category is selected",
-			"tr": ""
-		},
-		{
-			"or": "Fetching server info",
-			"tr": ""
-		},
-		{
-			"or": "No servers found",
-			"tr": "サーバーが見つかりません"
-		},
-		{
-			"or": "No local servers found (ports %d–%d)",
-			"tr": ""
-		},
-		{
-			"or": "No servers match your filter criteria",
-			"tr": "フィルタに適合するサーバーが見つかりません"
-		},
-		{
-			"or": "Host address:",
-			"tr": "ホストアドレス:"
-		},
-		{
-			"or": "%d%% loaded",
-			"tr": "%d%% 読み込み中"
-		},
-		{
-			"or": "%d servers",
-			"tr": ""
-		},
-		{
-			"or": "%d players",
-			"tr": ""
-		},
-		{
-			"or": "Double click to join your friend.",
-			"tr": ""
-		},
-		{
-			"context": "Playing '(gametype)' on '(map)'",
-			"or": "Playing '%s' on '%s'",
-			"tr": ""
-		},
-		{
-			"context": "Watching '(gametype)' on '(map)'",
-			"or": "Watching '%s' on '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Click to delete this friend.",
-			"tr": ""
-		},
-		{
-			"or": "Online players (%d)",
-			"tr": ""
-		},
-		{
-			"or": "Online clanmates (%d)",
-			"tr": ""
-		},
-		{
-			"context": "friends (server browser)",
-			"or": "Offline (%d)",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "クラン"
-		},
-		{
-			"or": "Add friend/clan",
-			"tr": ""
-		},
-		{
-			"or": "Add friend",
-			"tr": ""
-		},
-		{
-			"or": "Add clan",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Remove friend",
-			"tr": "友達を削除"
-		},
-		{
-			"or": "New filter",
-			"tr": ""
-		},
-		{
-			"or": "Server filter",
-			"tr": "サーバーフィルタ"
-		},
-		{
-			"or": "Has people playing",
-			"tr": "プレイヤーがいるサーバー"
-		},
-		{
-			"or": "Count players only",
-			"tr": "実際のプレイヤー数を表示"
-		},
-		{
-			"or": "Server not full",
-			"tr": "空きがあるサーバー"
-		},
-		{
-			"or": "Show friends only",
-			"tr": "友達がいるサーバー"
-		},
-		{
-			"or": "Hide bots",
-			"tr": ""
-		},
-		{
-			"or": "No password",
-			"tr": "パスワードがないサーバー"
-		},
-		{
-			"or": "Compatible version",
-			"tr": "互換性のあるバージョン"
-		},
-		{
-			"or": "Standard gametype",
-			"tr": "標準のゲームタイプ"
-		},
-		{
-			"or": "Standard map",
-			"tr": "標準のマップ"
-		},
-		{
-			"or": "Game types:",
-			"tr": "ゲームタイプ:"
-		},
-		{
-			"or": "Include servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"or": "Exclude servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"context": "clear gametype filters",
-			"or": "Clear",
-			"tr": ""
-		},
-		{
-			"or": "Maximum ping:",
-			"tr": "Pingの最大値:"
-		},
-		{
-			"or": "Server address:",
-			"tr": "IPアドレス:"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty:",
-			"tr": ""
-		},
-		{
-			"or": "Reset filter",
-			"tr": "フィルタをリセット"
-		},
-		{
-			"or": "Server details",
-			"tr": "サーバーの詳細"
-		},
-		{
-			"or": "Map:",
-			"tr": ""
-		},
-		{
-			"or": "Game type:",
-			"tr": ""
-		},
-		{
-			"or": "Version:",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove the player from your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add the player to your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "スコアボード"
-		},
-		{
-			"or": "Refresh",
-			"tr": "更新"
-		},
-		{
-			"or": "Connect",
-			"tr": "接続"
-		},
-		{
-			"or": "Server list from status.tw",
 			"tr": ""
 		},
 		{
@@ -850,6 +195,10 @@
 			"tr": "反対"
 		},
 		{
+			"or": "Chat",
+			"tr": "チャット"
+		},
+		{
 			"or": "Team chat",
 			"tr": "チームチャット"
 		},
@@ -888,6 +237,10 @@
 		{
 			"or": "Screenshot",
 			"tr": "スクリーンショット"
+		},
+		{
+			"or": "Scoreboard",
+			"tr": "スコアボード"
 		},
 		{
 			"or": "Statboard",
@@ -984,6 +337,10 @@
 			"tr": ""
 		},
 		{
+			"or": "Name",
+			"tr": "名前"
+		},
+		{
 			"or": "Length",
 			"tr": ""
 		},
@@ -1032,8 +389,20 @@
 			"tr": "デモを削除"
 		},
 		{
+			"or": "Yes",
+			"tr": "はい"
+		},
+		{
+			"or": "No",
+			"tr": "いいえ"
+		},
+		{
 			"or": "Rename",
 			"tr": "名前変更"
+		},
+		{
+			"or": "Refresh",
+			"tr": "更新"
 		},
 		{
 			"or": "Fetch Info",
@@ -1049,12 +418,24 @@
 			"tr": "プレイ"
 		},
 		{
+			"or": "Error",
+			"tr": "エラー"
+		},
+		{
 			"or": "Unable to delete the demo",
 			"tr": "デモを削除できません。"
 		},
 		{
+			"or": "Ok",
+			"tr": "Ok"
+		},
+		{
 			"or": "Created",
 			"tr": ""
+		},
+		{
+			"or": "Type",
+			"tr": "タイプ"
 		},
 		{
 			"or": "Version",
@@ -1067,6 +448,10 @@
 		{
 			"or": "Markers",
 			"tr": ""
+		},
+		{
+			"or": "Map",
+			"tr": "マップ"
 		},
 		{
 			"or": "%.3f KiB",
@@ -1145,8 +530,24 @@
 			"tr": "プレイヤー設定"
 		},
 		{
+			"or": "Player",
+			"tr": "プレイヤー"
+		},
+		{
+			"or": "Server info",
+			"tr": "サーバー情報"
+		},
+		{
 			"or": "Address",
 			"tr": "アドレス"
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Password",
+			"tr": "パスワード"
 		},
 		{
 			"context": "With",
@@ -1175,6 +576,21 @@
 			"tr": "ゲームタイプ"
 		},
 		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty",
 			"tr": ""
 		},
@@ -1185,6 +601,10 @@
 		{
 			"or": "Time limit",
 			"tr": "残り時間"
+		},
+		{
+			"or": "Players",
+			"tr": "プレイヤー"
 		},
 		{
 			"or": "MOTD",
@@ -1231,6 +651,14 @@
 			"tr": ""
 		},
 		{
+			"or": "Reason:",
+			"tr": "理由:"
+		},
+		{
+			"or": "Call vote",
+			"tr": "投票を開始する"
+		},
+		{
 			"or": "Force vote",
 			"tr": "強制投票"
 		},
@@ -1249,79 +677,6 @@
 		{
 			"or": "Add",
 			"tr": "追加"
-		},
-		{
-			"or": "Local server",
-			"tr": "ローカルサーバ"
-		},
-		{
-			"or": "Editor",
-			"tr": "エディタ"
-		},
-		{
-			"or": "Play",
-			"tr": "プレイ"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s が公開されました！ダウンロードはこちら！www.teeworlds.com"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "残り %d 分"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "試合"
-		},
-		{
-			"or": "Game over",
-			"tr": "ゲームオーバー"
-		},
-		{
-			"or": "Round over",
-			"tr": "ラウンドオーバー"
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "スコア"
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "赤チーム"
-		},
-		{
-			"or": "Blue team",
-			"tr": "青チーム"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s の勝ち!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "引き分け！"
-		},
-		{
-			"or": "Round over!",
-			"tr": "ラウンドオーバー！"
 		},
 		{
 			"context": "skins",
@@ -1388,6 +743,18 @@
 			"tr": ""
 		},
 		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "Red team",
+			"tr": "赤チーム"
+		},
+		{
+			"or": "Blue team",
+			"tr": "青チーム"
+		},
+		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
 			"tr": ""
 		},
@@ -1426,6 +793,342 @@
 		{
 			"or": "Vote failed",
 			"tr": "投票不合格"
+		},
+		{
+			"or": "Settings",
+			"tr": "設定"
+		},
+		{
+			"or": "Local server",
+			"tr": "ローカルサーバ"
+		},
+		{
+			"or": "Demos",
+			"tr": "デモ"
+		},
+		{
+			"or": "Editor",
+			"tr": "エディタ"
+		},
+		{
+			"or": "Play",
+			"tr": "プレイ"
+		},
+		{
+			"or": "Quit",
+			"tr": "終了"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s が公開されました！ダウンロードはこちら！www.teeworlds.com"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "全部"
+		},
+		{
+			"or": "Spectators",
+			"tr": "観戦者"
+		},
+		{
+			"or": "Team",
+			"tr": "チーム"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "ゲーム"
+		},
+		{
+			"or": "General",
+			"tr": "一般"
+		},
+		{
+			"or": "Controls",
+			"tr": "コントロール"
+		},
+		{
+			"or": "Graphics",
+			"tr": "グラフィック"
+		},
+		{
+			"or": "Sound",
+			"tr": "サウンド"
+		},
+		{
+			"or": "Global",
+			"tr": ""
+		},
+		{
+			"or": "Local",
+			"tr": "ローカル"
+		},
+		{
+			"or": "Back",
+			"tr": "前に"
+		},
+		{
+			"or": "Sound error",
+			"tr": "サウンドエラー"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "オーディオデバイスの初期化に失敗しました。"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "接続先"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "マップをダウンロード中"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "言語"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "デモの名前変更"
+		},
+		{
+			"or": "Save skin",
+			"tr": "スキンを保存する"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "パスワードが正しくありません"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Teeworldsの世界へようこそ！"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "終了してもよろしいですか？"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "中止"
+		},
+		{
+			"or": "Try again",
+			"tr": "もう一度"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "残り %i 分"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "残り %i 分"
+		},
+		{
+			"or": "%i second left",
+			"tr": "残り %i 秒"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "残り %i 秒"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "デモの読み込みに失敗しました"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "デモをリネームしてもよろしいですか？"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "デモの名前を変更できません。"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "初起動ので、あなたのハンドルネームを入力してください。(半角英数のみ)　サーバーに参加する前に、お好みに合わせて設定を調整する事をお勧めです。"
+		},
+		{
+			"or": "Nickname",
+			"tr": "ハンドルネーム"
+		},
+		{
+			"or": "Enter",
+			"tr": "Enter"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "ハンドルネームはありません。"
+		},
+		{
+			"or": "Disconnected",
+			"tr": "切断されました"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "サーバーがMODを導入しているようです。"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "サドンデス"
+		},
+		{
+			"or": "Game paused",
+			"tr": "ゲーム停止"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": ""
+		},
+		{
+			"or": "%d players not ready",
+			"tr": ""
+		},
+		{
+			"or": "Game starts in",
+			"tr": ""
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "次のラウンドを待ちなさい"
+		},
+		{
+			"or": "%d player left",
+			"tr": "まだ%d人いる"
+		},
+		{
+			"or": "%d players left",
+			"tr": "まだ%d人いる"
+		},
+		{
+			"or": "Warmup",
+			"tr": "準備中"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "接続中に問題が発生"
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "チーム人数が偏っています！"
+		},
+		{
+			"or": "%ds left",
+			"tr": "残り %ds"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "観戦"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
 		},
 		{
 			"or": "Hue:",
@@ -1580,6 +1283,14 @@
 		},
 		{
 			"or": "Personal",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "クラン"
+		},
+		{
+			"or": "Flag:",
 			"tr": ""
 		},
 		{
@@ -1819,57 +1530,285 @@
 			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to delete the demo?",
-			"tr": "デモを削除してもよろしいですか？"
+			"or": "Server",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to delete the skin?",
-			"tr": "スキンを削除してもよろしいですか？"
+			"or": "Race",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to remove the player from your friends list?",
-			"tr": "このプレイヤーを友達リストから削除してもよろしいですか？"
+			"or": "Favorites",
+			"tr": "お気に入り"
 		},
 		{
-			"or": "Browser",
-			"tr": "ブラウザー"
+			"or": "This server is protected by a password.",
+			"tr": ""
 		},
 		{
-			"or": "Country",
-			"tr": "国"
+			"or": "Click to remove server from favorites.",
+			"tr": ""
 		},
 		{
-			"context": "Join a server",
-			"or": "Join",
-			"tr": "参加する"
+			"or": "Click to add server to favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Loading",
-			"tr": "読み込み中"
+			"or": "Friends are online on this server.",
+			"tr": ""
 		},
 		{
-			"or": "Mute when not active",
-			"tr": "非アクティブ時にミュート"
+			"or": "%d servers, %d players",
+			"tr": "%dつのサーバー、%d人のプレーヤー"
 		},
 		{
-			"or": "Refreshing master servers",
-			"tr": "サーバーリスト更新"
+			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
+			"tr": ""
 		},
 		{
-			"or": "Servers",
-			"tr": "サーバー"
+			"or": "Remove filter",
+			"tr": ""
 		},
 		{
-			"or": "Show ingame HUD",
-			"tr": "ゲーム内でHUDを表示"
+			"or": "No filter category is selected",
+			"tr": ""
 		},
 		{
-			"or": "Skin",
-			"tr": "スキン"
+			"or": "Fetching server info",
+			"tr": ""
 		},
 		{
-			"or": "There's an unsaved map in the editor, you might want to save it before you quit the game.",
-			"tr": "保存されていないデータがありますが、よろしいですか。"
+			"or": "No servers found",
+			"tr": "サーバーが見つかりません"
+		},
+		{
+			"or": "No local servers found (ports %d–%d)",
+			"tr": ""
+		},
+		{
+			"or": "No servers match your filter criteria",
+			"tr": "フィルタに適合するサーバーが見つかりません"
+		},
+		{
+			"or": "Host address:",
+			"tr": "ホストアドレス:"
+		},
+		{
+			"or": "%d%% loaded",
+			"tr": "%d%% 読み込み中"
+		},
+		{
+			"or": "%d servers",
+			"tr": ""
+		},
+		{
+			"or": "%d players",
+			"tr": ""
+		},
+		{
+			"or": "Double click to join your friend.",
+			"tr": ""
+		},
+		{
+			"context": "Playing '(gametype)' on '(map)'",
+			"or": "Playing '%s' on '%s'",
+			"tr": ""
+		},
+		{
+			"context": "Watching '(gametype)' on '(map)'",
+			"or": "Watching '%s' on '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Click to delete this friend.",
+			"tr": ""
+		},
+		{
+			"or": "Online players (%d)",
+			"tr": ""
+		},
+		{
+			"or": "Online clanmates (%d)",
+			"tr": ""
+		},
+		{
+			"context": "friends (server browser)",
+			"or": "Offline (%d)",
+			"tr": ""
+		},
+		{
+			"or": "Add friend/clan",
+			"tr": ""
+		},
+		{
+			"or": "Add friend",
+			"tr": ""
+		},
+		{
+			"or": "Add clan",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Remove friend",
+			"tr": "友達を削除"
+		},
+		{
+			"or": "New filter",
+			"tr": ""
+		},
+		{
+			"or": "Server filter",
+			"tr": "サーバーフィルタ"
+		},
+		{
+			"or": "Has people playing",
+			"tr": "プレイヤーがいるサーバー"
+		},
+		{
+			"or": "Count players only",
+			"tr": "実際のプレイヤー数を表示"
+		},
+		{
+			"or": "Server not full",
+			"tr": "空きがあるサーバー"
+		},
+		{
+			"or": "Show friends only",
+			"tr": "友達がいるサーバー"
+		},
+		{
+			"or": "Hide bots",
+			"tr": ""
+		},
+		{
+			"or": "No password",
+			"tr": "パスワードがないサーバー"
+		},
+		{
+			"or": "Standard gametype",
+			"tr": "標準のゲームタイプ"
+		},
+		{
+			"or": "Game types:",
+			"tr": "ゲームタイプ:"
+		},
+		{
+			"or": "Include servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"or": "Exclude servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"context": "clear gametype filters",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"or": "Maximum ping:",
+			"tr": "Pingの最大値:"
+		},
+		{
+			"or": "Server address:",
+			"tr": "IPアドレス:"
+		},
+		{
+			"or": "Difficulty:",
+			"tr": ""
+		},
+		{
+			"or": "Reset filter",
+			"tr": "フィルタをリセット"
+		},
+		{
+			"or": "Server details",
+			"tr": "サーバーの詳細"
+		},
+		{
+			"or": "Map:",
+			"tr": ""
+		},
+		{
+			"or": "Game type:",
+			"tr": ""
+		},
+		{
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"or": "Click to remove the player from your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Click to add the player to your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Connect",
+			"tr": "接続"
+		},
+		{
+			"or": "Server list from status.tw",
+			"tr": ""
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "残り %d 分"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "試合"
+		},
+		{
+			"or": "Game over",
+			"tr": "ゲームオーバー"
+		},
+		{
+			"or": "Round over",
+			"tr": "ラウンドオーバー"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "スコア"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s の勝ち!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "引き分け！"
+		},
+		{
+			"or": "Round over!",
+			"tr": "ラウンドオーバー！"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-%d ページ-"
 		}
 	]
 }

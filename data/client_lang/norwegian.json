@@ -11,6 +11,10 @@
 	},
 	"translated strings": [
 		{
+			"or": "Search:",
+			"tr": "Søk:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "Lagene ble byttet"
 		},
@@ -119,160 +123,8 @@
 			"tr": "'%s' ble tilskuer"
 		},
 		{
-			"or": "Search:",
-			"tr": "Søk:"
-		},
-		{
 			"or": "key not found",
 			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Bane endret til '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Tilskuere"
-		},
-		{
-			"or": "Team",
-			"tr": "Lag"
-		},
-		{
-			"or": "Chat",
-			"tr": "Chat"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Trykk %s for å fortsette å chatte"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": "Trykk Tab for å bla gjennom chat-mottakere"
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Side %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Trykk Enter for å bekrefte eller Esc for å avbryte"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' ble blokert"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' ble ikke lenger blokert"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' ble lagt  til som venn"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' har blitt fjernet som venn"
-		},
-		{
-			"or": "-Page %d-",
-			"tr": "-Side %d-"
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Sudden Death"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Kampen er pauset"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d spiller er ikke klar"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d spillere er ikke klare"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Kampen starter om"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Vent til neste runde"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d spillere igjen"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d spillere forlot"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Oppvarming"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Tilkoblingsproblemer..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Vennligst balanser lagene!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds igjen"
-		},
-		{
-			"or": "Reason:",
-			"tr": "Grunn:"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Se på"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Trykk <%s> Når du er klar"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -289,513 +141,6 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": "'%s' fullførte på %s"
-		},
-		{
-			"or": "Game",
-			"tr": "Spill"
-		},
-		{
-			"or": "Players",
-			"tr": "Spillere"
-		},
-		{
-			"or": "Server info",
-			"tr": "Serverinfo"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Stem"
-		},
-		{
-			"or": "Settings",
-			"tr": "Instillinger"
-		},
-		{
-			"or": "General",
-			"tr": "Generelt"
-		},
-		{
-			"or": "Player",
-			"tr": "Spiller"
-		},
-		{
-			"or": "Controls",
-			"tr": "Kontroller"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Grafikk"
-		},
-		{
-			"or": "Sound",
-			"tr": "Lyd"
-		},
-		{
-			"or": "Global",
-			"tr": "Global"
-		},
-		{
-			"or": "Local",
-			"tr": "Lokalt"
-		},
-		{
-			"or": "Demos",
-			"tr": "Demoer"
-		},
-		{
-			"or": "Back",
-			"tr": "Tilbake"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Lydfeil"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "Lydenheten kunne ikke startes opp."
-		},
-		{
-			"or": "Ok",
-			"tr": "Ok"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Kobler til"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Laster ned bane"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Språk"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Gi nytt navn på demo"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Lagre utseende"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Feil passord"
-		},
-		{
-			"or": "Quit",
-			"tr": "Avslutt"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Velkommen til Teeworlds"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Er du sikker på at du vil avslutte?"
-		},
-		{
-			"or": "No",
-			"tr": "Nei"
-		},
-		{
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Password",
-			"tr": "Passord"
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Avbryt"
-		},
-		{
-			"or": "Try again",
-			"tr": "Prøv igjen"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i minutt igjen"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i minutter igjen"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i sekunder igjen"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i sekunder igjen"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Kunne ikke laste inn demo"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Er du sikker på at du vil endre navn på demoen"
-		},
-		{
-			"or": "Name",
-			"tr": "Navn"
-		},
-		{
-			"or": "Error",
-			"tr": "Error"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Kunne ikke endre navn på demoen"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Er du sikker på at du vil lagre utseende ditt? Hvis et utseende har det samme navnet, vil den bli erstattet."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Siden dette er første gang du starter spillet, vennligst skriv inn et kallenavn nedenfor. Det anbefales at du sjekker innstillingene og justerer dem slik du ønsker før du kobler til en server."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Kallenavn"
-		},
-		{
-			"or": "Enter",
-			"tr": "Enter"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "Kallenavn er tomt."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Frakoblet"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "Denne serveren kjører ikke-standard innstillinger på standard spilltype."
-		},
-		{
-			"or": "Server",
-			"tr": "Server"
-		},
-		{
-			"or": "Type",
-			"tr": "Type"
-		},
-		{
-			"or": "Map",
-			"tr": "Bane"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"or": "Race",
-			"tr": ""
-		},
-		{
-			"or": "Favorites",
-			"tr": "Favoritter"
-		},
-		{
-			"or": "This server is protected by a password.",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove server from favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add server to favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Friends are online on this server.",
-			"tr": ""
-		},
-		{
-			"or": "%d servers, %d players",
-			"tr": "%d servere, %d spillere"
-		},
-		{
-			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
-			"tr": ""
-		},
-		{
-			"or": "Remove filter",
-			"tr": "Fjern filter"
-		},
-		{
-			"or": "No filter category is selected",
-			"tr": ""
-		},
-		{
-			"or": "Fetching server info",
-			"tr": ""
-		},
-		{
-			"or": "No servers found",
-			"tr": "Ingen servere funnet"
-		},
-		{
-			"or": "No local servers found (ports %d–%d)",
-			"tr": ""
-		},
-		{
-			"or": "No servers match your filter criteria",
-			"tr": "Ingen servere tilsvarer filteret ditt"
-		},
-		{
-			"or": "Host address:",
-			"tr": "Vertadresse:"
-		},
-		{
-			"or": "%d%% loaded",
-			"tr": "%d%% lastet"
-		},
-		{
-			"or": "%d servers",
-			"tr": "%d servere"
-		},
-		{
-			"or": "%d players",
-			"tr": "%d spillere"
-		},
-		{
-			"or": "Double click to join your friend.",
-			"tr": ""
-		},
-		{
-			"context": "Playing '(gametype)' on '(map)'",
-			"or": "Playing '%s' on '%s'",
-			"tr": "Spiller '%s' på '%s'"
-		},
-		{
-			"context": "Watching '(gametype)' on '(map)'",
-			"or": "Watching '%s' on '%s'",
-			"tr": "Ser '%s' på '%s'"
-		},
-		{
-			"or": "Click to delete this friend.",
-			"tr": ""
-		},
-		{
-			"or": "Online players (%d)",
-			"tr": "Online spillere (%d)"
-		},
-		{
-			"or": "Online clanmates (%d)",
-			"tr": "Online klan-venner (%d)"
-		},
-		{
-			"context": "friends (server browser)",
-			"or": "Offline (%d)",
-			"tr": "Offline (%d)"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Add friend/clan",
-			"tr": "Legg til venn/klan"
-		},
-		{
-			"or": "Add friend",
-			"tr": "Legg til venn"
-		},
-		{
-			"or": "Add clan",
-			"tr": "Legg til klan"
-		},
-		{
-			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Remove friend",
-			"tr": "Fjern venn"
-		},
-		{
-			"or": "New filter",
-			"tr": "Nytt filter"
-		},
-		{
-			"or": "Server filter",
-			"tr": "Serverfilter"
-		},
-		{
-			"or": "Has people playing",
-			"tr": "Har folk som spiller"
-		},
-		{
-			"or": "Count players only",
-			"tr": "Tell kun spillere"
-		},
-		{
-			"or": "Server not full",
-			"tr": "Serveren er ikke full"
-		},
-		{
-			"or": "Show friends only",
-			"tr": "Vis kun venner"
-		},
-		{
-			"or": "Hide bots",
-			"tr": "Uten bots"
-		},
-		{
-			"or": "No password",
-			"tr": "Uten passord"
-		},
-		{
-			"or": "Compatible version",
-			"tr": "Kompitabel versjon"
-		},
-		{
-			"or": "Standard gametype",
-			"tr": "Standard spilletype"
-		},
-		{
-			"or": "Standard map",
-			"tr": "Standard bane"
-		},
-		{
-			"or": "Game types:",
-			"tr": "Spilletyper:"
-		},
-		{
-			"or": "Include servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"or": "Exclude servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"context": "clear gametype filters",
-			"or": "Clear",
-			"tr": "Nullstill"
-		},
-		{
-			"or": "Maximum ping:",
-			"tr": "Maks ping:"
-		},
-		{
-			"or": "Server address:",
-			"tr": "Serveradresse:"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty:",
-			"tr": "Vanskelighetsgrad:"
-		},
-		{
-			"or": "Reset filter",
-			"tr": "Tilbakestill filter"
-		},
-		{
-			"or": "Server details",
-			"tr": "Serverdetaljer"
-		},
-		{
-			"or": "Map:",
-			"tr": "Kart:"
-		},
-		{
-			"or": "Game type:",
-			"tr": "Spilltype:"
-		},
-		{
-			"or": "Version:",
-			"tr": "Versjon:"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Casual"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Normal"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Competitive"
-		},
-		{
-			"or": "Click to remove the player from your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add the player to your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Poengliste"
-		},
-		{
-			"or": "Refresh",
-			"tr": "Oppdater"
-		},
-		{
-			"or": "Connect",
-			"tr": "Koble til"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
 		},
 		{
 			"or": "Move left",
@@ -854,6 +199,10 @@
 			"tr": "Stem nei"
 		},
 		{
+			"or": "Chat",
+			"tr": "Chat"
+		},
+		{
 			"or": "Team chat",
 			"tr": "Lagchat"
 		},
@@ -892,6 +241,10 @@
 		{
 			"or": "Screenshot",
 			"tr": "Skjermbilde"
+		},
+		{
+			"or": "Scoreboard",
+			"tr": "Poengliste"
 		},
 		{
 			"or": "Statboard",
@@ -988,6 +341,10 @@
 			"tr": "Joystick Akse #%d"
 		},
 		{
+			"or": "Name",
+			"tr": "Navn"
+		},
+		{
 			"or": "Length",
 			"tr": "Lengde"
 		},
@@ -1036,8 +393,20 @@
 			"tr": "Slett demo"
 		},
 		{
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"or": "No",
+			"tr": "Nei"
+		},
+		{
 			"or": "Rename",
 			"tr": "Gi nytt navn"
+		},
+		{
+			"or": "Refresh",
+			"tr": "Oppdater"
 		},
 		{
 			"or": "Fetch Info",
@@ -1053,12 +422,24 @@
 			"tr": "Spill"
 		},
 		{
+			"or": "Error",
+			"tr": "Error"
+		},
+		{
 			"or": "Unable to delete the demo",
 			"tr": "Kunne ikke slette demoen"
 		},
 		{
+			"or": "Ok",
+			"tr": "Ok"
+		},
+		{
 			"or": "Created",
 			"tr": "Opprettet"
+		},
+		{
+			"or": "Type",
+			"tr": "Type"
 		},
 		{
 			"or": "Version",
@@ -1071,6 +452,10 @@
 		{
 			"or": "Markers",
 			"tr": "Markeringer"
+		},
+		{
+			"or": "Map",
+			"tr": "Bane"
 		},
 		{
 			"or": "%.3f KiB",
@@ -1149,8 +534,24 @@
 			"tr": "Spilleralternativer"
 		},
 		{
+			"or": "Player",
+			"tr": "Spiller"
+		},
+		{
+			"or": "Server info",
+			"tr": "Serverinfo"
+		},
+		{
 			"or": "Address",
 			"tr": "Adresse"
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Password",
+			"tr": "Passord"
 		},
 		{
 			"context": "With",
@@ -1179,6 +580,21 @@
 			"tr": "Spilltype"
 		},
 		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Casual"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Normal"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Competitive"
+		},
+		{
 			"or": "Difficulty",
 			"tr": "Vanskelighet"
 		},
@@ -1189,6 +605,10 @@
 		{
 			"or": "Time limit",
 			"tr": "Tidsbegrensning"
+		},
+		{
+			"or": "Players",
+			"tr": "Spillere"
 		},
 		{
 			"or": "MOTD",
@@ -1235,6 +655,14 @@
 			"tr": "Serveren tillater ikke avstemning for å gjøre spillere til tilskuere."
 		},
 		{
+			"or": "Reason:",
+			"tr": "Grunn:"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Stem"
+		},
+		{
 			"or": "Force vote",
 			"tr": "Tving stemme"
 		},
@@ -1253,79 +681,6 @@
 		{
 			"or": "Add",
 			"tr": "Legg til"
-		},
-		{
-			"or": "Local server",
-			"tr": "Lokal server"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editor"
-		},
-		{
-			"or": "Play",
-			"tr": "Spill"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s er ute! Last den ned på www.teeworlds.com!"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Tidsgrense: %d min"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Kamp"
-		},
-		{
-			"or": "Game over",
-			"tr": "Game over"
-		},
-		{
-			"or": "Round over",
-			"tr": "Runde over"
-		},
-		{
-			"or": "Map record",
-			"tr": "Bane opptak"
-		},
-		{
-			"or": "Time",
-			"tr": "Tid"
-		},
-		{
-			"or": "Score",
-			"tr": "Poeng"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d Andre spillere"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Rødt lag"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blått lag"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s vant!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Uavgjort!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Runde over!"
 		},
 		{
 			"context": "skins",
@@ -1392,6 +747,18 @@
 			"tr": "Kapringer"
 		},
 		{
+			"or": "%d other players",
+			"tr": "%d Andre spillere"
+		},
+		{
+			"or": "Red team",
+			"tr": "Rødt lag"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blått lag"
+		},
+		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
 			"tr": "'%s' stemte for å endre server innstilling '%s' (%s)"
 		},
@@ -1430,6 +797,342 @@
 		{
 			"or": "Vote failed",
 			"tr": "Stemme mislyktes"
+		},
+		{
+			"or": "Settings",
+			"tr": "Instillinger"
+		},
+		{
+			"or": "Local server",
+			"tr": "Lokal server"
+		},
+		{
+			"or": "Demos",
+			"tr": "Demoer"
+		},
+		{
+			"or": "Editor",
+			"tr": "Editor"
+		},
+		{
+			"or": "Play",
+			"tr": "Spill"
+		},
+		{
+			"or": "Quit",
+			"tr": "Avslutt"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s er ute! Last den ned på www.teeworlds.com!"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Bane endret til '%s'"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Tilskuere"
+		},
+		{
+			"or": "Team",
+			"tr": "Lag"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Trykk %s for å fortsette å chatte"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": "Trykk Tab for å bla gjennom chat-mottakere"
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Side %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Trykk Enter for å bekrefte eller Esc for å avbryte"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' ble blokert"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' ble ikke lenger blokert"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' ble lagt  til som venn"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' har blitt fjernet som venn"
+		},
+		{
+			"or": "Game",
+			"tr": "Spill"
+		},
+		{
+			"or": "General",
+			"tr": "Generelt"
+		},
+		{
+			"or": "Controls",
+			"tr": "Kontroller"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Grafikk"
+		},
+		{
+			"or": "Sound",
+			"tr": "Lyd"
+		},
+		{
+			"or": "Global",
+			"tr": "Global"
+		},
+		{
+			"or": "Local",
+			"tr": "Lokalt"
+		},
+		{
+			"or": "Back",
+			"tr": "Tilbake"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Lydfeil"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "Lydenheten kunne ikke startes opp."
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Kobler til"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Laster ned bane"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Språk"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Gi nytt navn på demo"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Lagre utseende"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Feil passord"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Velkommen til Teeworlds"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Er du sikker på at du vil avslutte?"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Avbryt"
+		},
+		{
+			"or": "Try again",
+			"tr": "Prøv igjen"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i minutt igjen"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i minutter igjen"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i sekunder igjen"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i sekunder igjen"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Kunne ikke laste inn demo"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Er du sikker på at du vil endre navn på demoen"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Kunne ikke endre navn på demoen"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Er du sikker på at du vil lagre utseende ditt? Hvis et utseende har det samme navnet, vil den bli erstattet."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Siden dette er første gang du starter spillet, vennligst skriv inn et kallenavn nedenfor. Det anbefales at du sjekker innstillingene og justerer dem slik du ønsker før du kobler til en server."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Kallenavn"
+		},
+		{
+			"or": "Enter",
+			"tr": "Enter"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "Kallenavn er tomt."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Frakoblet"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "Denne serveren kjører ikke-standard innstillinger på standard spilltype."
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Sudden Death"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Kampen er pauset"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "%d spiller er ikke klar"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d spillere er ikke klare"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "Kampen starter om"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Vent til neste runde"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d spillere igjen"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d spillere forlot"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Oppvarming"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Tilkoblingsproblemer..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Vennligst balanser lagene!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds igjen"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Se på"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Trykk <%s> Når du er klar"
 		},
 		{
 			"or": "Hue:",
@@ -1585,6 +1288,14 @@
 		{
 			"or": "Personal",
 			"tr": "Personlig"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
+			"or": "Flag:",
+			"tr": ""
 		},
 		{
 			"or": "Save",
@@ -1823,141 +1534,285 @@
 			"tr": "Du må vente %1.0f sekunder for og endre identitet."
 		},
 		{
-			"or": "'%s' has set a new record: %s",
-			"tr": "'%s' har satt en ny rekord: %s"
+			"or": "Server",
+			"tr": "Server"
 		},
 		{
-			"or": "Are you sure that you want to delete the demo?",
-			"tr": "Er du sikker på at du vil slette denne demoen?"
+			"or": "Race",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to delete the skin?",
-			"tr": "Er du sikker på at du vil slette utseendet?"
+			"or": "Favorites",
+			"tr": "Favoritter"
 		},
 		{
-			"or": "Are you sure that you want to remove the filter from the server browser?",
-			"tr": "Er du sikker på at du vil fjerne filteret fra serverlisten?"
+			"or": "This server is protected by a password.",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to remove the player from your friends list?",
-			"tr": "Er du sikker på at du vil fjerne spilleren fra vennelisten din?"
+			"or": "Click to remove server from favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Browser",
-			"tr": "Leser"
+			"or": "Click to add server to favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Click on a player or a flag to follow it",
-			"tr": "Trykk på en spiller eller flagg for og følge"
+			"or": "Friends are online on this server.",
+			"tr": ""
 		},
 		{
-			"or": "Country",
-			"tr": "Land"
+			"or": "%d servers, %d players",
+			"tr": "%d servere, %d spillere"
 		},
 		{
-			"or": "Country:",
-			"tr": "Land:"
+			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
+			"tr": ""
 		},
 		{
-			"or": "FPM",
-			"tr": "FPM"
+			"or": "Remove filter",
+			"tr": "Fjern filter"
 		},
 		{
-			"or": "Frags",
-			"tr": "Frags"
+			"or": "No filter category is selected",
+			"tr": ""
 		},
 		{
-			"or": "Frags per minute",
-			"tr": "Frags per minutt"
+			"or": "Fetching server info",
+			"tr": ""
 		},
 		{
-			"or": "Ingame mouse sens.",
-			"tr": "Ingame musesensitivitet"
+			"or": "No servers found",
+			"tr": "Ingen servere funnet"
 		},
 		{
-			"context": "Join a server",
-			"or": "Join",
-			"tr": "Bli med"
+			"or": "No local servers found (ports %d–%d)",
+			"tr": ""
 		},
 		{
-			"or": "Joystick sens.",
-			"tr": "Joystick sens."
+			"or": "No servers match your filter criteria",
+			"tr": "Ingen servere tilsvarer filteret ditt"
 		},
 		{
-			"or": "Loading",
-			"tr": "Laster inn"
+			"or": "Host address:",
+			"tr": "Vertadresse:"
 		},
 		{
-			"or": "Menu background transparency",
-			"tr": "Gjennomsiktighet på menybakrunn"
+			"or": "%d%% loaded",
+			"tr": "%d%% lastet"
 		},
 		{
-			"or": "Mute when not active",
-			"tr": "Slå av lyd når spillet ikke er aktivt"
+			"or": "%d servers",
+			"tr": "%d servere"
 		},
 		{
-			"or": "Refreshing master servers",
-			"tr": "Oppdaterer masterservere"
+			"or": "%d players",
+			"tr": "%d spillere"
 		},
 		{
-			"or": "Servers",
-			"tr": "Servere"
+			"or": "Double click to join your friend.",
+			"tr": ""
 		},
 		{
-			"or": "Show chat messages from:",
-			"tr": "Hvis chat melding fra:"
+			"context": "Playing '(gametype)' on '(map)'",
+			"or": "Playing '%s' on '%s'",
+			"tr": "Spiller '%s' på '%s'"
 		},
 		{
-			"or": "Show ingame HUD",
-			"tr": "Vis HUD i spillet"
+			"context": "Watching '(gametype)' on '(map)'",
+			"or": "Watching '%s' on '%s'",
+			"tr": "Ser '%s' på '%s'"
 		},
 		{
-			"or": "Skin",
-			"tr": "Utseende"
+			"or": "Click to delete this friend.",
+			"tr": ""
 		},
 		{
-			"or": "There's an unsaved map in the editor, you might want to save it before you quit the game.",
-			"tr": "Det er en ulagret bane i editoren, du vil kanskje lagre den før du avslutter."
+			"or": "Online players (%d)",
+			"tr": "Online spillere (%d)"
 		},
 		{
-			"or": "X",
-			"tr": "X"
+			"or": "Online clanmates (%d)",
+			"tr": "Online klan-venner (%d)"
 		},
 		{
-			"or": "Y",
-			"tr": "Y"
+			"context": "friends (server browser)",
+			"or": "Offline (%d)",
+			"tr": "Offline (%d)"
 		},
 		{
-			"or": "blue flag",
-			"tr": "blått flagg"
+			"or": "Add friend/clan",
+			"tr": "Legg til venn/klan"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "everyone",
-			"tr": "alle"
+			"or": "Add friend",
+			"tr": "Legg til venn"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "friends only",
-			"tr": "bare venner"
+			"or": "Add clan",
+			"tr": "Legg til klan"
 		},
 		{
-			"context": "Show chat messages from:",
-			"or": "no one",
-			"tr": "ingen"
+			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
+			"tr": ""
 		},
 		{
-			"context": "server browser message",
-			"or": "no players",
-			"tr": "ingen spillere"
+			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
+			"tr": ""
 		},
 		{
-			"or": "red flag",
-			"tr": "rødt flagg"
+			"or": "Remove friend",
+			"tr": "Fjern venn"
 		},
 		{
-			"or": "wait for more players",
-			"tr": "vent på flere spillere"
+			"or": "New filter",
+			"tr": "Nytt filter"
+		},
+		{
+			"or": "Server filter",
+			"tr": "Serverfilter"
+		},
+		{
+			"or": "Has people playing",
+			"tr": "Har folk som spiller"
+		},
+		{
+			"or": "Count players only",
+			"tr": "Tell kun spillere"
+		},
+		{
+			"or": "Server not full",
+			"tr": "Serveren er ikke full"
+		},
+		{
+			"or": "Show friends only",
+			"tr": "Vis kun venner"
+		},
+		{
+			"or": "Hide bots",
+			"tr": "Uten bots"
+		},
+		{
+			"or": "No password",
+			"tr": "Uten passord"
+		},
+		{
+			"or": "Standard gametype",
+			"tr": "Standard spilletype"
+		},
+		{
+			"or": "Game types:",
+			"tr": "Spilletyper:"
+		},
+		{
+			"or": "Include servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"or": "Exclude servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"context": "clear gametype filters",
+			"or": "Clear",
+			"tr": "Nullstill"
+		},
+		{
+			"or": "Maximum ping:",
+			"tr": "Maks ping:"
+		},
+		{
+			"or": "Server address:",
+			"tr": "Serveradresse:"
+		},
+		{
+			"or": "Difficulty:",
+			"tr": "Vanskelighetsgrad:"
+		},
+		{
+			"or": "Reset filter",
+			"tr": "Tilbakestill filter"
+		},
+		{
+			"or": "Server details",
+			"tr": "Serverdetaljer"
+		},
+		{
+			"or": "Map:",
+			"tr": "Kart:"
+		},
+		{
+			"or": "Game type:",
+			"tr": "Spilltype:"
+		},
+		{
+			"or": "Version:",
+			"tr": "Versjon:"
+		},
+		{
+			"or": "Click to remove the player from your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Click to add the player to your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Connect",
+			"tr": "Koble til"
+		},
+		{
+			"or": "Server list from status.tw",
+			"tr": ""
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Tidsgrense: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Kamp"
+		},
+		{
+			"or": "Game over",
+			"tr": "Game over"
+		},
+		{
+			"or": "Round over",
+			"tr": "Runde over"
+		},
+		{
+			"or": "Map record",
+			"tr": "Bane opptak"
+		},
+		{
+			"or": "Time",
+			"tr": "Tid"
+		},
+		{
+			"or": "Score",
+			"tr": "Poeng"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s vant!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Uavgjort!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Runde over!"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Side %d-"
 		}
 	]
 }

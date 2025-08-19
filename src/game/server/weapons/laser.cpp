@@ -12,7 +12,7 @@ public:
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;
-	const char *Name() override { return _("Laser"); }
+	const char *Name() override { return _N("Laser"); }
 	bool FullAuto() override { return true; }
 	int FireDelay() override { return g_pData->m_Weapons.m_Laser.m_pBase->m_Firedelay; }
 	int SnapStyle() override { return WEAPON_LASER; }

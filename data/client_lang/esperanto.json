@@ -9,6 +9,10 @@
 	},
 	"translated strings": [
 		{
+			"or": "Search:",
+			"tr": "Serĉi:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -117,159 +121,7 @@
 			"tr": ""
 		},
 		{
-			"or": "Search:",
-			"tr": "Serĉi:"
-		},
-		{
 			"or": "key not found",
-			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Al ĉiuj"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Spektantoj"
-		},
-		{
-			"or": "Team",
-			"tr": "Teamo"
-		},
-		{
-			"or": "Chat",
-			"tr": "Babilejo"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d-",
-			"tr": "-Paĝo %d-"
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Eka morto"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Ludo paŭzita"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d ludanto ne estas preta"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d ludantoj ne estas pretaj"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "La ludo komenciĝas en"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Atendi la venonta raŭndo"
-		},
-		{
-			"or": "%d player left",
-			"tr": "Ludanto %d foriris"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d ludantoj restas"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Antaŭtrejnado"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Konektaj problemoj..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Bonvolu egaligi la teamojn"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds restas"
-		},
-		{
-			"or": "Reason:",
-			"tr": "Kialo:"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Spekti"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
 			"tr": ""
 		},
 		{
@@ -286,513 +138,6 @@
 		},
 		{
 			"or": "'%s' finished in: %s",
-			"tr": ""
-		},
-		{
-			"or": "Game",
-			"tr": "Ludo"
-		},
-		{
-			"or": "Players",
-			"tr": "Ludantoj"
-		},
-		{
-			"or": "Server info",
-			"tr": "Servilinformoj"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Voki voĉdonon"
-		},
-		{
-			"or": "Settings",
-			"tr": "Agordoj"
-		},
-		{
-			"or": "General",
-			"tr": "Ĝeneralaj"
-		},
-		{
-			"or": "Player",
-			"tr": "Ludanto"
-		},
-		{
-			"or": "Controls",
-			"tr": "Regadoj"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Grafikoj"
-		},
-		{
-			"or": "Sound",
-			"tr": "Sono"
-		},
-		{
-			"or": "Global",
-			"tr": "Globala"
-		},
-		{
-			"or": "Local",
-			"tr": "Loka"
-		},
-		{
-			"or": "Demos",
-			"tr": "Demonstroj"
-		},
-		{
-			"or": "Back",
-			"tr": "Reen"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Sona eraro"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "La sonludilo ne povis esti pravalorizita"
-		},
-		{
-			"or": "Ok",
-			"tr": "Bone"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Konektas al"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Mi elŝutas mapon"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Lingvo"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Renomigi demonstron"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Konservi haŭtaĵon"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Malĝusta pasvorto"
-		},
-		{
-			"or": "Quit",
-			"tr": "Forlasi"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Bonvenon al Tejmondo!"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Ĉu vi estas certa ke vi volas eliri?"
-		},
-		{
-			"or": "No",
-			"tr": "Ne"
-		},
-		{
-			"or": "Yes",
-			"tr": "Jes"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Password",
-			"tr": "Pasvorto"
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Nuligi"
-		},
-		{
-			"or": "Try again",
-			"tr": "Provi denove"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i minuton restas"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i minutojn restas"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i sekundon restas"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i sekundojn restas"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Eraro okazas dum oni ŝarĝas la demonstradon"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Ĉu vi certe volas renomigi la demonstron?"
-		},
-		{
-			"or": "Name",
-			"tr": "Nomo"
-		},
-		{
-			"or": "Error",
-			"tr": "Eraro"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Estas neebla renomigi la demonstron"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Ĉu vi estas certa ke vi volas konservi vian haŭtaĵon? Se iu haŭtaĵo kun tiu nomo jam ekzistas, ĝi estos anstataŭigita"
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Ĉar tiu estas via unua fojo, ke vi startigis la ludon, bonvolu enskribi vian kromnomon sube. Vi povas ekrigardi la agordojn por alfari ilin laŭ via gusto antaŭ vi aliĝos iu servilo."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Kromnomo"
-		},
-		{
-			"or": "Enter",
-			"tr": "Eniri"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "Kromnomo estas malplena."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Nekonektita"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "La servilo ne uzas normajn ludagordojn."
-		},
-		{
-			"or": "Server",
-			"tr": ""
-		},
-		{
-			"or": "Type",
-			"tr": "Tipo"
-		},
-		{
-			"or": "Map",
-			"tr": "Mapo"
-		},
-		{
-			"or": "Ping",
-			"tr": "Pingo"
-		},
-		{
-			"or": "Race",
-			"tr": ""
-		},
-		{
-			"or": "Favorites",
-			"tr": "Ŝatatoj"
-		},
-		{
-			"or": "This server is protected by a password.",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove server from favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add server to favorites.",
-			"tr": ""
-		},
-		{
-			"or": "Friends are online on this server.",
-			"tr": ""
-		},
-		{
-			"or": "%d servers, %d players",
-			"tr": "%d serviloj, %d ludantoj"
-		},
-		{
-			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
-			"tr": ""
-		},
-		{
-			"or": "Remove filter",
-			"tr": ""
-		},
-		{
-			"or": "No filter category is selected",
-			"tr": ""
-		},
-		{
-			"or": "Fetching server info",
-			"tr": ""
-		},
-		{
-			"or": "No servers found",
-			"tr": "Oni ne povis trovi servilon"
-		},
-		{
-			"or": "No local servers found (ports %d–%d)",
-			"tr": ""
-		},
-		{
-			"or": "No servers match your filter criteria",
-			"tr": "Oni ne povis trovi servilon laŭ via gusto"
-		},
-		{
-			"or": "Host address:",
-			"tr": "Gastiganta adreso:"
-		},
-		{
-			"or": "%d%% loaded",
-			"tr": "%d%% ŝarĝita"
-		},
-		{
-			"or": "%d servers",
-			"tr": ""
-		},
-		{
-			"or": "%d players",
-			"tr": ""
-		},
-		{
-			"or": "Double click to join your friend.",
-			"tr": ""
-		},
-		{
-			"context": "Playing '(gametype)' on '(map)'",
-			"or": "Playing '%s' on '%s'",
-			"tr": ""
-		},
-		{
-			"context": "Watching '(gametype)' on '(map)'",
-			"or": "Watching '%s' on '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Click to delete this friend.",
-			"tr": ""
-		},
-		{
-			"or": "Online players (%d)",
-			"tr": ""
-		},
-		{
-			"or": "Online clanmates (%d)",
-			"tr": ""
-		},
-		{
-			"context": "friends (server browser)",
-			"or": "Offline (%d)",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Klano"
-		},
-		{
-			"or": "Add friend/clan",
-			"tr": ""
-		},
-		{
-			"or": "Add friend",
-			"tr": ""
-		},
-		{
-			"or": "Add clan",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
-			"tr": ""
-		},
-		{
-			"or": "Remove friend",
-			"tr": "Forigi amikon"
-		},
-		{
-			"or": "New filter",
-			"tr": ""
-		},
-		{
-			"or": "Server filter",
-			"tr": "Servila filtrilo"
-		},
-		{
-			"or": "Has people playing",
-			"tr": "Havas ludantajn homojn"
-		},
-		{
-			"or": "Count players only",
-			"tr": "Kalkuli nur ludantojn"
-		},
-		{
-			"or": "Server not full",
-			"tr": "La servilo ne estas plena"
-		},
-		{
-			"or": "Show friends only",
-			"tr": "Montri nur amikojn"
-		},
-		{
-			"or": "Hide bots",
-			"tr": ""
-		},
-		{
-			"or": "No password",
-			"tr": "Sen pasvorto"
-		},
-		{
-			"or": "Compatible version",
-			"tr": "Kongrua versio"
-		},
-		{
-			"or": "Standard gametype",
-			"tr": "Norma ludtipo"
-		},
-		{
-			"or": "Standard map",
-			"tr": "Norma mapo"
-		},
-		{
-			"or": "Game types:",
-			"tr": "Ludtipoj:"
-		},
-		{
-			"or": "Include servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"or": "Exclude servers with this gametype.",
-			"tr": ""
-		},
-		{
-			"context": "clear gametype filters",
-			"or": "Clear",
-			"tr": ""
-		},
-		{
-			"or": "Maximum ping:",
-			"tr": "Maksimuma pingo:"
-		},
-		{
-			"or": "Server address:",
-			"tr": "Servila adreso:"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty:",
-			"tr": ""
-		},
-		{
-			"or": "Reset filter",
-			"tr": "Reŝarĝi filtrilon"
-		},
-		{
-			"or": "Server details",
-			"tr": "Detaloj pri la servilo"
-		},
-		{
-			"or": "Map:",
-			"tr": ""
-		},
-		{
-			"or": "Game type:",
-			"tr": ""
-		},
-		{
-			"or": "Version:",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": ""
-		},
-		{
-			"or": "Click to remove the player from your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Click to add the player to your friends.",
-			"tr": ""
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Rezulttabelo"
-		},
-		{
-			"or": "Refresh",
-			"tr": "Aktualigi"
-		},
-		{
-			"or": "Connect",
-			"tr": "Konekti"
-		},
-		{
-			"or": "Server list from status.tw",
 			"tr": ""
 		},
 		{
@@ -852,6 +197,10 @@
 			"tr": "Voĉdonu ne"
 		},
 		{
+			"or": "Chat",
+			"tr": "Babilejo"
+		},
+		{
 			"or": "Team chat",
 			"tr": "Teama babilejo"
 		},
@@ -890,6 +239,10 @@
 		{
 			"or": "Screenshot",
 			"tr": "Ekrankopio"
+		},
+		{
+			"or": "Scoreboard",
+			"tr": "Rezulttabelo"
 		},
 		{
 			"or": "Statboard",
@@ -986,6 +339,10 @@
 			"tr": ""
 		},
 		{
+			"or": "Name",
+			"tr": "Nomo"
+		},
+		{
 			"or": "Length",
 			"tr": "Longeco"
 		},
@@ -1034,8 +391,20 @@
 			"tr": "Forigi demonstron"
 		},
 		{
+			"or": "Yes",
+			"tr": "Jes"
+		},
+		{
+			"or": "No",
+			"tr": "Ne"
+		},
+		{
 			"or": "Rename",
 			"tr": "Renomigi"
+		},
+		{
+			"or": "Refresh",
+			"tr": "Aktualigi"
 		},
 		{
 			"or": "Fetch Info",
@@ -1051,12 +420,24 @@
 			"tr": "Ludi"
 		},
 		{
+			"or": "Error",
+			"tr": "Eraro"
+		},
+		{
 			"or": "Unable to delete the demo",
 			"tr": "Estas neebla forigi la demonstron"
 		},
 		{
+			"or": "Ok",
+			"tr": "Bone"
+		},
+		{
 			"or": "Created",
 			"tr": "Kreita"
+		},
+		{
+			"or": "Type",
+			"tr": "Tipo"
 		},
 		{
 			"or": "Version",
@@ -1069,6 +450,10 @@
 		{
 			"or": "Markers",
 			"tr": ""
+		},
+		{
+			"or": "Map",
+			"tr": "Mapo"
 		},
 		{
 			"or": "%.3f KiB",
@@ -1147,8 +532,24 @@
 			"tr": "Agordoj de ludanto"
 		},
 		{
+			"or": "Player",
+			"tr": "Ludanto"
+		},
+		{
+			"or": "Server info",
+			"tr": "Servilinformoj"
+		},
+		{
 			"or": "Address",
 			"tr": "Adreso"
+		},
+		{
+			"or": "Ping",
+			"tr": "Pingo"
+		},
+		{
+			"or": "Password",
+			"tr": "Pasvorto"
 		},
 		{
 			"context": "With",
@@ -1177,6 +578,21 @@
 			"tr": "Ludtipo"
 		},
 		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty",
 			"tr": ""
 		},
@@ -1187,6 +603,10 @@
 		{
 			"or": "Time limit",
 			"tr": "Templimito"
+		},
+		{
+			"or": "Players",
+			"tr": "Ludantoj"
 		},
 		{
 			"or": "MOTD",
@@ -1233,6 +653,14 @@
 			"tr": "La servilo ne permesas voĉdoni por movi ludantojn al spektantoj"
 		},
 		{
+			"or": "Reason:",
+			"tr": "Kialo:"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Voki voĉdonon"
+		},
+		{
 			"or": "Force vote",
 			"tr": "Eldevigi voĉdonadon"
 		},
@@ -1251,79 +679,6 @@
 		{
 			"or": "Add",
 			"tr": "Aldoni"
-		},
-		{
-			"or": "Local server",
-			"tr": "Loka servilo"
-		},
-		{
-			"or": "Editor",
-			"tr": "Redaktilo"
-		},
-		{
-			"or": "Play",
-			"tr": "Ludi"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Tejmondo %s estas ellasita! Elŝutu ĝin al www.teeworlds.com!"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Templimito: %d minutojn"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Ludbatalo"
-		},
-		{
-			"or": "Game over",
-			"tr": "Ludo finita"
-		},
-		{
-			"or": "Round over",
-			"tr": "La raŭndo finiĝis"
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "Rezulto"
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REG %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Ruĝa teamo"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blua teamo"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s venkas!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Remiso!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Fino de la raŭndo!"
 		},
 		{
 			"context": "skins",
@@ -1390,6 +745,18 @@
 			"tr": ""
 		},
 		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "Red team",
+			"tr": "Ruĝa teamo"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blua teamo"
+		},
+		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
 			"tr": "'%s' volas voĉdoni por ŝanĝi la servilagordo '%s' (%s)"
 		},
@@ -1428,6 +795,342 @@
 		{
 			"or": "Vote failed",
 			"tr": "La voĉdonado fiaskis"
+		},
+		{
+			"or": "Settings",
+			"tr": "Agordoj"
+		},
+		{
+			"or": "Local server",
+			"tr": "Loka servilo"
+		},
+		{
+			"or": "Demos",
+			"tr": "Demonstroj"
+		},
+		{
+			"or": "Editor",
+			"tr": "Redaktilo"
+		},
+		{
+			"or": "Play",
+			"tr": "Ludi"
+		},
+		{
+			"or": "Quit",
+			"tr": "Forlasi"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Tejmondo %s estas ellasita! Elŝutu ĝin al www.teeworlds.com!"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "Al ĉiuj"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Spektantoj"
+		},
+		{
+			"or": "Team",
+			"tr": "Teamo"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "Ludo"
+		},
+		{
+			"or": "General",
+			"tr": "Ĝeneralaj"
+		},
+		{
+			"or": "Controls",
+			"tr": "Regadoj"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Grafikoj"
+		},
+		{
+			"or": "Sound",
+			"tr": "Sono"
+		},
+		{
+			"or": "Global",
+			"tr": "Globala"
+		},
+		{
+			"or": "Local",
+			"tr": "Loka"
+		},
+		{
+			"or": "Back",
+			"tr": "Reen"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Sona eraro"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "La sonludilo ne povis esti pravalorizita"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Konektas al"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Mi elŝutas mapon"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Lingvo"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Renomigi demonstron"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Konservi haŭtaĵon"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Malĝusta pasvorto"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Bonvenon al Tejmondo!"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Ĉu vi estas certa ke vi volas eliri?"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Nuligi"
+		},
+		{
+			"or": "Try again",
+			"tr": "Provi denove"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i minuton restas"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i minutojn restas"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i sekundon restas"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i sekundojn restas"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Eraro okazas dum oni ŝarĝas la demonstradon"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Ĉu vi certe volas renomigi la demonstron?"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Estas neebla renomigi la demonstron"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Ĉu vi estas certa ke vi volas konservi vian haŭtaĵon? Se iu haŭtaĵo kun tiu nomo jam ekzistas, ĝi estos anstataŭigita"
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Ĉar tiu estas via unua fojo, ke vi startigis la ludon, bonvolu enskribi vian kromnomon sube. Vi povas ekrigardi la agordojn por alfari ilin laŭ via gusto antaŭ vi aliĝos iu servilo."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Kromnomo"
+		},
+		{
+			"or": "Enter",
+			"tr": "Eniri"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "Kromnomo estas malplena."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Nekonektita"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "La servilo ne uzas normajn ludagordojn."
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Eka morto"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Ludo paŭzita"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "%d ludanto ne estas preta"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d ludantoj ne estas pretaj"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "La ludo komenciĝas en"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Atendi la venonta raŭndo"
+		},
+		{
+			"or": "%d player left",
+			"tr": "Ludanto %d foriris"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d ludantoj restas"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Antaŭtrejnado"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Konektaj problemoj..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Bonvolu egaligi la teamojn"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds restas"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Spekti"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
 		},
 		{
 			"or": "Hue:",
@@ -1583,6 +1286,14 @@
 		{
 			"or": "Personal",
 			"tr": "Persona"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klano"
+		},
+		{
+			"or": "Flag:",
+			"tr": ""
 		},
 		{
 			"or": "Save",
@@ -1821,66 +1532,285 @@
 			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to delete the demo?",
-			"tr": "Ĉu vi certe volas forigi la demonstron?"
+			"or": "Server",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to delete the skin?",
-			"tr": "Ĉu vi certe volas forigi la haŭtaĵon?"
+			"or": "Race",
+			"tr": ""
 		},
 		{
-			"or": "Are you sure that you want to remove the player from your friends list?",
-			"tr": "Ĉu vi certe volas forigi la ludanton el via geamiklisto?"
+			"or": "Favorites",
+			"tr": "Ŝatatoj"
 		},
 		{
-			"or": "Browser",
-			"tr": "Esplorilo"
+			"or": "This server is protected by a password.",
+			"tr": ""
 		},
 		{
-			"or": "Country",
-			"tr": "Lando"
+			"or": "Click to remove server from favorites.",
+			"tr": ""
 		},
 		{
-			"context": "Join a server",
-			"or": "Join",
-			"tr": "Aligi"
+			"or": "Click to add server to favorites.",
+			"tr": ""
 		},
 		{
-			"or": "Loading",
-			"tr": "Ŝargas"
+			"or": "Friends are online on this server.",
+			"tr": ""
 		},
 		{
-			"or": "Mute when not active",
-			"tr": "Silentigi kiam la ludo ne aktivas"
+			"or": "%d servers, %d players",
+			"tr": "%d serviloj, %d ludantoj"
 		},
 		{
-			"or": "Refreshing master servers",
-			"tr": "La ĉefaj serviloj ĝisdatiĝas"
+			"or": "Are you sure that you want to remove the filter '%s' from the server browser?",
+			"tr": ""
 		},
 		{
-			"or": "Servers",
-			"tr": "Serviloj"
+			"or": "Remove filter",
+			"tr": ""
 		},
 		{
-			"or": "Show ingame HUD",
-			"tr": "Montri statusojn/HUD-on en la ludo"
+			"or": "No filter category is selected",
+			"tr": ""
 		},
 		{
-			"or": "Skin",
-			"tr": "Haŭtaĵo"
+			"or": "Fetching server info",
+			"tr": ""
 		},
 		{
-			"or": "There's an unsaved map in the editor, you might want to save it before you quit the game.",
-			"tr": "Vi ne konservis vian mapon, vi eble volas konservi ĝin antaŭ vi eliras el la ludo."
+			"or": "No servers found",
+			"tr": "Oni ne povis trovi servilon"
 		},
 		{
-			"context": "server browser message",
-			"or": "no players",
-			"tr": "ne ludantoj"
+			"or": "No local servers found (ports %d–%d)",
+			"tr": ""
 		},
 		{
-			"or": "wait for more players",
-			"tr": "atendas por pli ludantoj"
+			"or": "No servers match your filter criteria",
+			"tr": "Oni ne povis trovi servilon laŭ via gusto"
+		},
+		{
+			"or": "Host address:",
+			"tr": "Gastiganta adreso:"
+		},
+		{
+			"or": "%d%% loaded",
+			"tr": "%d%% ŝarĝita"
+		},
+		{
+			"or": "%d servers",
+			"tr": ""
+		},
+		{
+			"or": "%d players",
+			"tr": ""
+		},
+		{
+			"or": "Double click to join your friend.",
+			"tr": ""
+		},
+		{
+			"context": "Playing '(gametype)' on '(map)'",
+			"or": "Playing '%s' on '%s'",
+			"tr": ""
+		},
+		{
+			"context": "Watching '(gametype)' on '(map)'",
+			"or": "Watching '%s' on '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Click to delete this friend.",
+			"tr": ""
+		},
+		{
+			"or": "Online players (%d)",
+			"tr": ""
+		},
+		{
+			"or": "Online clanmates (%d)",
+			"tr": ""
+		},
+		{
+			"context": "friends (server browser)",
+			"or": "Offline (%d)",
+			"tr": ""
+		},
+		{
+			"or": "Add friend/clan",
+			"tr": ""
+		},
+		{
+			"or": "Add friend",
+			"tr": ""
+		},
+		{
+			"or": "Add clan",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to remove the player '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to remove the clan '%s' from your friends list?",
+			"tr": ""
+		},
+		{
+			"or": "Remove friend",
+			"tr": "Forigi amikon"
+		},
+		{
+			"or": "New filter",
+			"tr": ""
+		},
+		{
+			"or": "Server filter",
+			"tr": "Servila filtrilo"
+		},
+		{
+			"or": "Has people playing",
+			"tr": "Havas ludantajn homojn"
+		},
+		{
+			"or": "Count players only",
+			"tr": "Kalkuli nur ludantojn"
+		},
+		{
+			"or": "Server not full",
+			"tr": "La servilo ne estas plena"
+		},
+		{
+			"or": "Show friends only",
+			"tr": "Montri nur amikojn"
+		},
+		{
+			"or": "Hide bots",
+			"tr": ""
+		},
+		{
+			"or": "No password",
+			"tr": "Sen pasvorto"
+		},
+		{
+			"or": "Standard gametype",
+			"tr": "Norma ludtipo"
+		},
+		{
+			"or": "Game types:",
+			"tr": "Ludtipoj:"
+		},
+		{
+			"or": "Include servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"or": "Exclude servers with this gametype.",
+			"tr": ""
+		},
+		{
+			"context": "clear gametype filters",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"or": "Maximum ping:",
+			"tr": "Maksimuma pingo:"
+		},
+		{
+			"or": "Server address:",
+			"tr": "Servila adreso:"
+		},
+		{
+			"or": "Difficulty:",
+			"tr": ""
+		},
+		{
+			"or": "Reset filter",
+			"tr": "Reŝarĝi filtrilon"
+		},
+		{
+			"or": "Server details",
+			"tr": "Detaloj pri la servilo"
+		},
+		{
+			"or": "Map:",
+			"tr": ""
+		},
+		{
+			"or": "Game type:",
+			"tr": ""
+		},
+		{
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"or": "Click to remove the player from your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Click to add the player to your friends.",
+			"tr": ""
+		},
+		{
+			"or": "Connect",
+			"tr": "Konekti"
+		},
+		{
+			"or": "Server list from status.tw",
+			"tr": ""
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Templimito: %d minutojn"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Ludbatalo"
+		},
+		{
+			"or": "Game over",
+			"tr": "Ludo finita"
+		},
+		{
+			"or": "Round over",
+			"tr": "La raŭndo finiĝis"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Rezulto"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REG %3d:%02d"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s venkas!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Remiso!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Fino de la raŭndo!"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Paĝo %d-"
 		}
 	]
 }

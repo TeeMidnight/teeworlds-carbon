@@ -1,60 +1,114 @@
 {
 	"translated strings": [
 		{
-			"key": "There's no any server vote",
-			"value": "没有任何服务器投票"
-		},
-		{
-			"key": "Server Vote",
-			"value": "服务器投票"
-		},
-		{
+			"context": "Vote Menu",
 			"key": "Main Menu",
 			"value": "主菜单"
 		},
 		{
+			"context": "Vote Menu",
 			"key": "Language Settings",
 			"value": "语言设置"
 		},
 		{
+			"context": "Vote Menu",
 			"key": "Previous Page",
-			"value": "返回"
+			"value": "上一页"
 		},
 		{
+			"context": "Vote Main Menu",
 			"key": "If you don't want to close menu when you use a option,",
-			"value": "如果你不想要在使用选项时关闭菜单"
+			"value": "如果你不想在使用选项时关闭菜单"
 		},
 		{
+			"context": "Vote Main Menu",
 			"key": "then you can input this in your console:",
-			"value": "那么你可以在控制台输入这些:"
+			"value": "那么你可以在你的控制台输入:"
 		},
 		{
+			"context": "Vote Main Menu",
 			"key": "(Click this to hide this tip)",
-			"value": "(双击隐藏提示)"
+			"value": "(点击以隐藏提示)"
 		},
 		{
-			"key": "Name",
-			"value": "名称"
+			"context": "Vote Main Menu",
+			"key": "Name: %s",
+			"value": "昵称: %s"
 		},
 		{
-			"key": "Level",
-			"value": "等级"
+			"context": "Vote Main Menu",
+			"key": "Level: %d",
+			"value": "等级: %d"
 		},
 		{
-			"key": "IP Address",
-			"value": "IP地址"
+			"context": "Vote Main Menu",
+			"key": "IP Address: %s (Click any option to hide)",
+			"value": "IP地址: %s (双击任何选项隐藏)"
 		},
 		{
-			"key": "(Click any option to hide)",
-			"value": "(双击任意选项隐藏)"
+			"context": "Vote Main Menu",
+			"key": "IP Address: %s (Click to display)",
+			"value": "IP地址: %s (双击选项以显示)"
 		},
 		{
-			"key": "Hidden (Click to display)",
-			"value": "隐藏 (双击以显示)"
+			"context": "Vote Main Menu",
+			"key": "Server Vote",
+			"value": "服务器投票"
+		},
+		{
+			"context": "Vote Main Menu",
+			"key": "Language Settings",
+			"value": "语言设置"
 		},
 		{
 			"key": "Oops, couldn't find any language. (Click to refresh)",
 			"value": "噢不!没有找到任何语言! (双击以刷新)"
+		},
+		{
+			"key": "No such command",
+			"value": "没有此指令"
+		},
+		{
+			"context": "Vote Menu Server Vote",
+			"key": "There's no any server vote",
+			"value": "找不到任何服务器投票"
+		},
+		{
+			"context": "Vote Menu",
+			"key": "Server Vote",
+			"value": "服务器投票"
+		},
+		{
+			"key": "Hand",
+			"value": "空手"
+		},
+		{
+			"key": "Grenade",
+			"value": "榴弹炮"
+		},
+		{
+			"key": "Gun",
+			"value": "手枪"
+		},
+		{
+			"key": "Hammer",
+			"value": "锤子"
+		},
+		{
+			"key": "Laser",
+			"value": "激光枪"
+		},
+		{
+			"key": "Ninja",
+			"value": "忍者刀"
+		},
+		{
+			"key": "Shotgun",
+			"value": "霰弹枪"
+		},
+		{
+			"key": "Sniping Rifle",
+			"value": "狙击步枪"
 		}
 	]
 }

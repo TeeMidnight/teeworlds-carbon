@@ -6,6 +6,9 @@
 #include "gamemenu.h"
 #include "player.h"
 
+#include <cstdio>
+#include <cstdarg>
+
 CConfig *CGameMenu::Config() const { return GameServer()->Config(); }
 IServer *CGameMenu::Server() const { return GameServer()->Server(); }
 
@@ -19,11 +22,11 @@ CGameMenu::CGameMenu(CGameContext *pGameServer) :
 
 	m_CurrentClientID = -1;
 
-	Register("MAIN", _("Main Menu"), MenuMain, nullptr);
-	Register("LANGUAGE", _("Language Settings"), MenuLanguage, nullptr);
+	Register("MAIN", _C("Main Menu", "Vote Menu"), MenuMain, nullptr);
+	Register("LANGUAGE", _C("Language Settings", "Vote Menu"), MenuLanguage, nullptr);
 }
 
-void CGameMenu::Register(const char *pPageName, const char *pTitle, MenuCallback pfnFunc, void *pUser, const char *pParent)
+void CGameMenu::Register(const char *pPageName, const char *pTitle, const char *pContext, MenuCallback pfnFunc, void *pUser, const char *pParent)
 {
 	dbg_assert(pPageName && pPageName[0], "Page must have a name");
 	dbg_assert(pTitle && pTitle[0], "Page must have a title");
@@ -34,6 +37,7 @@ void CGameMenu::Register(const char *pPageName, const char *pTitle, MenuCallback
 	pPage->m_Uuid = CalculateUuid(pPageName);
 	pPage->m_ParentUuid = CalculateUuid(pParent);
 	str_copy(pPage->m_aTitle, pTitle, sizeof(pPage->m_aTitle));
+	str_copy(pPage->m_aContext, pContext, sizeof(pPage->m_aContext));
 	m_vpMenuPages[pPage->m_Uuid] = pPage;
 }
 
@@ -95,7 +99,7 @@ void CGameMenu::OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound
 	if(CurrentPage != MENU_MAIN_PAGE_UUID)
 	{
 		AddHorizontalRule();
-		AddTranslatedOption(_("Previous Page"), "PREPAGE", "=");
+		AddOptionLocalize(_C("Previous Page", "Vote Menu"), "PREPAGE", "=");
 	}
 
 	CVoteOptionServer *pCurrent = m_aPlayerData[ClientID].m_pVoteOptionFirst;
@@ -192,38 +196,34 @@ bool CGameMenu::MenuMain(int ClientID, SCallVoteStatus &VoteStatus, class CGameM
 	// TIP
 	if(!pMenu->GameServer()->m_apPlayers[ClientID]->m_HideTip)
 	{
-		pMenu->AddOption(pMenu->Localize(_("If you don't want to close menu when you use a option,")), "DISPLAY", "");
-		pMenu->AddOption(pMenu->Localize(_("then you can input this in your console:")), "DISPLAY", "");
+		pMenu->AddOptionLocalize(_C("If you don't want to close menu when you use a option,", "Vote Main Menu"), "DISPLAY", "");
+		pMenu->AddOptionLocalize(_C("then you can input this in your console:", "Vote Main Menu"), "DISPLAY", "");
 		pMenu->AddOption("ui_close_window_after_changing_setting 0", "DISPLAY", "");
 
-		pMenu->AddOption(pMenu->Localize(_("(Click this to hide this tip)")), "HIDDEN", "");
+		pMenu->AddOptionLocalize(_C("(Click this to hide this tip)", "Vote Main Menu"), "HIDDEN", "");
 
 		pMenu->AddHorizontalRule();
 	}
 	// player stats
 	{
-		char aBuf[VOTE_DESC_LENGTH];
-		str_format(aBuf, sizeof(aBuf), "%s: %s", pMenu->Localize(_("Name")), pMenu->Server()->ClientName(ClientID));
-		pMenu->AddOption(aBuf, "DISPLAY", "-");
-		str_format(aBuf, sizeof(aBuf), "%s: %d", pMenu->Localize(_("Level")), pMenu->Server()->ClientScore(ClientID));
-		pMenu->AddOption(aBuf, "DISPLAY", "-");
+		pMenu->AddOptionLocalizeFormat(_C("Name: %s", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientName(ClientID));
+		pMenu->AddOptionLocalizeFormat(_C("Level: %d", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientScore(ClientID));
 		if(DisplayAddr)
 		{
 			char aAddr[NETADDR_MAXSTRSIZE];
 			pMenu->Server()->GetClientAddr(ClientID, aAddr, sizeof(aAddr));
-			str_format(aBuf, sizeof(aBuf), "%s: %s %s", pMenu->Localize(_("IP Address")), aAddr, pMenu->Localize(_("(Click any option to hide)")));
+			pMenu->AddOptionLocalizeFormat(_C("IP Address: %s (Click any option to hide)", "Vote Main Menu"), "DISPLAY", "-", aAddr);
 		}
 		else
 		{
-			str_format(aBuf, sizeof(aBuf), "%s: %s", pMenu->Localize(_("IP Address")), pMenu->Localize(_("Hidden (Click to display)")));
+			pMenu->AddOptionLocalize(_C("IP Address: %s (Click to display)", "Vote Main Menu"), "DISPLAY ADDR", "-");
 		}
-		pMenu->AddOption(aBuf, DisplayAddr ? "DISPLAY" : "DISPLAY ADDR", "-");
 	}
 	pMenu->AddHorizontalRule();
 	// options
 	{
-		pMenu->AddTranslatedOption(_("Server Vote"), "PAGE SERVER VOTE", "★");
-		pMenu->AddTranslatedOption(_("Language Settings"), "PAGE LANGUAGE", "★");
+		pMenu->AddOptionLocalize(_C("Server Vote", "Vote Main Menu"), "PAGE SERVER VOTE", "★");
+		pMenu->AddOptionLocalize(_C("Language Settings", "Vote Main Menu"), "PAGE LANGUAGE", "★");
 	}
 
 	return true;
@@ -262,7 +262,7 @@ bool CGameMenu::MenuLanguage(int ClientID, SCallVoteStatus &VoteStatus, class CG
 		}
 		else
 		{
-			pMenu->AddTranslatedOption(_("Oops, couldn't find any language. (Click to refresh)"), "DISPLAY");
+			pMenu->AddOptionLocalize(_("Oops, couldn't find any language. (Click to refresh)"), "DISPLAY");
 		}
 	}
 
@@ -277,7 +277,7 @@ void CGameMenu::AddPageTitle()
 		return;
 
 	AddOption("===============================", "NONE", "");
-	AddTranslatedOption(m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, "NONE", "=");
+	AddOptionLocalize(m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, "NONE", "=");
 	AddOption("===============================", "NONE", "");
 }
 
@@ -319,7 +319,7 @@ void CGameMenu::AddOption(const char *pDesc, const char *pCommand, const char *p
 	mem_copy(pOption->m_aCommand, pCommand, Len + 1);
 }
 
-void CGameMenu::AddTranslatedOption(const char *pDesc, const char *pCommand, const char *pPrefix)
+void CGameMenu::AddOptionLocalize(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix)
 {
 	if(m_CurrentClientID < 0 || m_CurrentClientID >= SERVER_MAX_CLIENTS)
 		return;
@@ -327,7 +327,18 @@ void CGameMenu::AddTranslatedOption(const char *pDesc, const char *pCommand, con
 		return;
 	if(!pDesc[0] || !pCommand[0])
 		return;
-	return AddOption(Localize(pDesc), pCommand, pPrefix);
+	AddOption(Localize(pDesc, pContext), pCommand, pPrefix);
+}
+
+void CGameMenu::AddOptionLocalizeFormat(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix, ...)
+{
+	va_list List;
+	va_start(List, pPrefix);
+	char aBuf[VOTE_DESC_LENGTH];
+	vsnprintf(aBuf, sizeof(aBuf), Localize(pDesc, pContext), List);
+	va_end(List);
+
+	AddOption(aBuf, pCommand, pPrefix);
 }
 
 const char *CGameMenu::Localize(const char *pStr, const char *pContext)

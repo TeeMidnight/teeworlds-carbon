@@ -64,7 +64,7 @@ def write_languagefile(outputfilename, l10n_src, old_l10n_data):
 		translations.update({
 			(t[JSON_KEY_OR], t.get(JSON_KEY_CTXT)): t[JSON_KEY_TR]
 			for t in old_l10n_data[type_]
-			if t[JSON_KEY_TR]
+			if t[JSON_KEY_TR] and translations.get((t[JSON_KEY_OR], t.get(JSON_KEY_CTXT))) != None
 		})
 
 	result = {JSON_KEY_TRANSL: []}
