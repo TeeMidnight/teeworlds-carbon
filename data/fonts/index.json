@@ -2,7 +2,7 @@
     "font files": [
         "DejaVuSans.ttf",
         "SourceHanSans.ttc",
-        "NotoEmoji-VariableFont_wght.ttf"
+        "NotoEmoji-Regular.ttf"
     ],
     "default": "DejaVu Sans",
     "language variants": {

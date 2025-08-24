@@ -924,7 +924,7 @@ set(EXPECTED_DATA
   editor/entities.png
   emoticons.png
   fonts/DejaVuSans.ttf
-  fonts/NotoEmoji-VariableFont_wght.ttf
+  fonts/NotoEmoji-Regular.ttf
   fonts/SourceHanSans.ttc
   fonts/index.json
   game.png
