@@ -668,6 +668,7 @@ int CGraphicsBackend_SDL_OpenGL::Init(const char *pName, int *pScreen, int *pWin
 
 	// set gl attributes
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 	if(FsaaSamples)
 	{
 		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
@@ -706,6 +707,8 @@ int CGraphicsBackend_SDL_OpenGL::Init(const char *pName, int *pScreen, int *pWin
 		return -1;
 	}
 
+	dbg_msg("gfx", "using opengl %s", glGetString(GL_VERSION));
+
 	SDL_GetWindowSizeInPixels(m_pWindow, pScreenWidth, pScreenHeight); // drawable size may differ in high dpi mode
 
 #if defined(CONF_FAMILY_WINDOWS)
@@ -723,7 +726,7 @@ int CGraphicsBackend_SDL_OpenGL::Init(const char *pName, int *pScreen, int *pWin
 
 	// print sdl version
 	int Version = SDL_GetVersion();
-	dbg_msg("sdl", "SDL version %d.%d.%d", SDL_VERSIONNUM_MAJOR(Version), SDL_VERSIONNUM_MINOR(Version), SDL_VERSIONNUM_MICRO(Version));
+	dbg_msg("gfx", "SDL version %d.%d.%d", SDL_VERSIONNUM_MAJOR(Version), SDL_VERSIONNUM_MINOR(Version), SDL_VERSIONNUM_MICRO(Version));
 
 	// start the command processor
 	m_pProcessor = new CCommandProcessor_SDL_OpenGL;
