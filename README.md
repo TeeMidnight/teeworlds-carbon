@@ -1,6 +1,8 @@
 Teeworlds Carbon ![GitHub Actions](https://github.com/Bamcane/teeworlds-carbon/workflows/Build/badge.svg)
 =========
-A survival teeworlds mod.
+A teeworlds mod.
+
+You need SDL3 and Curl to build this project.
 
 ---
 ## About Teeworlds
