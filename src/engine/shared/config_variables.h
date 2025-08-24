@@ -66,7 +66,7 @@ MACRO_CONFIG_INT(GfxLimitFps, gfx_limitfps, 0, 0, 1, CFGFLAG_SAVE | CFGFLAG_CLIE
 MACRO_CONFIG_INT(GfxUseX11XRandRWM, gfx_use_x11xrandr_wm, 1, 0, 1, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Let SDL use the X11 XRandR window manager")
 
 MACRO_CONFIG_INT(InpGrab, inp_grab, 0, 0, 1, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Disable OS mouse settings such as mouse acceleration, use raw mouse input mode")
-MACRO_CONFIG_INT(InpMousesens, inp_mousesens, 100, 1, 100000, CFGFLAG_SAVE | CFGFLAG_CLIENT, "In-game mouse sensitivity")
+MACRO_CONFIG_INT(InpMousesens, inp_mousesens, 200, 1, 100000, CFGFLAG_SAVE | CFGFLAG_CLIENT, "In-game mouse sensitivity")
 
 MACRO_CONFIG_INT(JoystickEnable, joystick_enable, 0, 0, 1, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Enable joystick")
 MACRO_CONFIG_STR(JoystickGUID, joystick_guid, 34, "", CFGFLAG_SAVE | CFGFLAG_CLIENT, "Joystick GUID which uniquely identifies the active joystick")

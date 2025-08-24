@@ -1315,7 +1315,8 @@ void CGameClient::OnNewSnapshot()
 						m_aClients[Item.m_ID].m_Evolved = m_Snap.m_aCharacters[Item.m_ID].m_Cur;
 					}
 
-					ProcessTriggeredEvents(pCharInfo->m_Cur.m_TriggeredEvents, vec2(pCharInfo->m_Cur.m_X, pCharInfo->m_Cur.m_Y));
+					if(Item.m_ID != m_LocalClientID || Client()->State() == IClient::STATE_DEMOPLAYBACK)
+						ProcessTriggeredEvents(pCharInfo->m_Cur.m_TriggeredEvents, vec2(pCharInfo->m_Cur.m_X, pCharInfo->m_Cur.m_Y));
 				}
 			}
 			else if(Item.m_Type == NETOBJTYPE_SPECTATORINFO)
@@ -1620,7 +1621,6 @@ void CGameClient::OnPredict()
 		{
 			m_LastNewPredictedTick = Tick;
 
-			/*
 			// Only trigger effects for the local character here. Effects for
 			// non-local characters are triggered in `OnNewSnapshot`. Since we
 			// don't apply any inputs to non-local characters, it's not
@@ -1633,7 +1633,6 @@ void CGameClient::OnPredict()
 					World.m_apCharacters[m_LocalClientID]->m_TriggeredEvents,
 					World.m_apCharacters[m_LocalClientID]->m_Pos);
 			}
-			*/
 		}
 	}
 

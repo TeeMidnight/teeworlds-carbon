@@ -112,7 +112,7 @@ void CPlayers::RenderPlayer(
 		Player.m_Angle += 2 * pi * 256;
 	float Angle = mix((float) Prev.m_Angle, (float) Player.m_Angle, IntraTick) / 256.0f;
 
-	if(m_pClient->m_LocalClientID == ClientID && Client()->State() != IClient::STATE_DEMOPLAYBACK)
+	if(m_pClient->m_LocalClientID == ClientID && Client()->State() != IClient::STATE_DEMOPLAYBACK && !m_pClient->m_Snap.m_SpecInfo.m_Active)
 	{
 		// just use the direct input if it's local player we are rendering
 		Angle = angle(m_pClient->m_pControls->m_MousePos);
@@ -398,43 +398,48 @@ void CPlayers::OnRender()
 			}
 		}
 	}
-
-	// render other players in two passes, first pass we render the other, second pass we render our self
-	for(int p = 0; p < 4; p++)
+	int LocalID = m_pClient->m_LocalClientID;
+	// render hook
+	for(int i = 0; i < MAX_CLIENTS; i++)
 	{
-		for(int i = 0; i < MAX_CLIENTS; i++)
-		{
-			// only render active characters
-			if(!m_pClient->m_Snap.m_aCharacters[i].m_Active || !s_apInfo[i])
-				continue;
+		// only render active characters
+		if(!m_pClient->m_Snap.m_aCharacters[i].m_Active || !s_apInfo[i] || i == LocalID)
+			continue;
+		RenderHook(
+			&m_pClient->m_Snap.m_aCharacters[i].m_Prev,
+			&m_pClient->m_Snap.m_aCharacters[i].m_Cur,
+			&s_aRenderInfo[i],
+			i);
+	};
+	if(LocalID >= 0 && m_pClient->m_Snap.m_aCharacters[LocalID].m_Active && s_apInfo[LocalID])
+	{
+		RenderHook(
+			&m_pClient->m_Snap.m_aCharacters[LocalID].m_Prev,
+			&m_pClient->m_Snap.m_aCharacters[LocalID].m_Cur,
+			&s_aRenderInfo[LocalID],
+			LocalID);
+	}
 
-			//
-			bool Local = m_pClient->m_LocalClientID == i;
-			if((p % 2) == 0 && Local)
-				continue;
-			if((p % 2) == 1 && !Local)
-				continue;
-
-			CNetObj_Character *pPrevChar = &m_pClient->m_Snap.m_aCharacters[i].m_Prev;
-			CNetObj_Character *pCurChar = &m_pClient->m_Snap.m_aCharacters[i].m_Cur;
-
-			if(p < 2)
-			{
-				RenderHook(
-					pPrevChar,
-					pCurChar,
-					&s_aRenderInfo[i],
-					i);
-			}
-			else
-			{
-				RenderPlayer(
-					pPrevChar,
-					pCurChar,
-					s_apInfo[i],
-					&s_aRenderInfo[i],
-					i);
-			}
-		}
+	// render character
+	for(int i = 0; i < MAX_CLIENTS; i++)
+	{
+		// only render active characters
+		if(!m_pClient->m_Snap.m_aCharacters[i].m_Active || !s_apInfo[i] || i == LocalID)
+			continue;
+		RenderPlayer(
+			&m_pClient->m_Snap.m_aCharacters[i].m_Prev,
+			&m_pClient->m_Snap.m_aCharacters[i].m_Cur,
+			s_apInfo[i],
+			&s_aRenderInfo[i],
+			i);
+	};
+	if(LocalID >= 0 && m_pClient->m_Snap.m_aCharacters[LocalID].m_Active && s_apInfo[LocalID])
+	{
+		RenderPlayer(
+			&m_pClient->m_Snap.m_aCharacters[LocalID].m_Prev,
+			&m_pClient->m_Snap.m_aCharacters[LocalID].m_Cur,
+			s_apInfo[LocalID],
+			&s_aRenderInfo[LocalID],
+			LocalID);
 	}
 }
