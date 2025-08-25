@@ -2072,7 +2072,7 @@ int main(int argc, const char **argv)
 
 	// create the components
 	int FlagMask = CFGFLAG_SERVER | CFGFLAG_ECON;
-	IEngine *pEngine = CreateEngine("Teeworlds_Server");
+	IEngine *pEngine = CreateEngine("Carbon_Server");
 	IEngineMap *pEngineMap = CreateEngineMap();
 	IGameServer *pGameServer = CreateGameServer();
 	IConsole *pConsole = CreateConsole(CFGFLAG_SERVER | CFGFLAG_ECON);

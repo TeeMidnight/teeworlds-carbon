@@ -2462,7 +2462,7 @@ int main(int argc, const char **argv)
 
 	// create the components
 	int FlagMask = CFGFLAG_CLIENT;
-	IEngine *pEngine = CreateEngine("Teeworlds");
+	IEngine *pEngine = CreateEngine("Carbon_Client");
 	IConsole *pConsole = CreateConsole(FlagMask);
 	IStorage *pStorage = CreateStorage("Teeworlds", IStorage::STORAGETYPE_CLIENT, argc, argv);
 	IConfigManager *pConfigManager = CreateConfigManager();
