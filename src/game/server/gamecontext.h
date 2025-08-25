@@ -14,7 +14,19 @@
 #include "gamemenu.h"
 #include "gameworld.h"
 
+#include <cstdio>
 #include <vector>
+
+enum class EChatPrefix
+{
+	NONE=0,
+	ENTER_PLAYER,
+	LEAVE_PLAYER,
+	WARNING_ERROR,
+
+	QUESTION,
+};
+
 /*
 	Tick
 		Game Context (CGameContext::tick)
@@ -146,8 +158,6 @@ public:
 
 	// ----- send functions -----
 	void SendChat(int ChatterClientID, int Mode, int To, const char *pText);
-	void SendChatTargetLocalize(int To, const char *pText, const char *pContext);
-	void SendChatTarget(int To, const char *pText);
 	void SendBroadcast(const char *pText, int ClientID);
 	void SendEmoticon(int ClientID, int Emoticon);
 	void SendWeaponPickup(int ClientID, int Weapon);
@@ -157,6 +167,14 @@ public:
 	void SendTuningParams(int ClientID);
 	void SendSoundTarget(int ClientID, int SoundID);
 	void SendReadyToEnter(CPlayer *pPlayer);
+
+	void SendChatTarget(int To, const char *pText, EChatPrefix Prefix = EChatPrefix::NONE);
+	void SendChatTargetLocalize(int To, const char *pText, const char *pContext, EChatPrefix Prefix = EChatPrefix::NONE);
+
+	void SendChatTargetFormat(int To, const char *pFormat, EChatPrefix Prefix, va_list List)
+		GNUC_ATTRIBUTE((format(printf, 3, 0)));
+	void SendChatTargetLocalizeFormat(int To, const char *pFormat, const char *pContext, EChatPrefix Prefix, ...)
+		GNUC_ATTRIBUTE((format(printf, 3, 6)));
 
 	void SendGameMsg(int GameMsgID, int ClientID);
 	void SendGameMsg(int GameMsgID, int ParaI1, int ClientID);

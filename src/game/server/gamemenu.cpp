@@ -212,11 +212,11 @@ bool CGameMenu::MenuMain(int ClientID, SCallVoteStatus &VoteStatus, class CGameM
 		{
 			char aAddr[NETADDR_MAXSTRSIZE];
 			pMenu->Server()->GetClientAddr(ClientID, aAddr, sizeof(aAddr));
-			pMenu->AddOptionLocalizeFormat(_C("IP Address: %s (Click any option to hide)", "Vote Main Menu"), "DISPLAY", "-", aAddr);
+			pMenu->AddOptionLocalizeFormat(_C("IP Address: %s (Click to hide)", "Vote Main Menu"), "DISPLAY", "-", aAddr);
 		}
 		else
 		{
-			pMenu->AddOptionLocalize(_C("IP Address: %s (Click to display)", "Vote Main Menu"), "DISPLAY ADDR", "-");
+			pMenu->AddOptionLocalize(_C("IP Address: (Click to display)", "Vote Main Menu"), "DISPLAY ADDR", "-");
 		}
 	}
 	pMenu->AddHorizontalRule();
@@ -277,7 +277,7 @@ void CGameMenu::AddPageTitle()
 		return;
 
 	AddOption("===============================", "NONE", "");
-	AddOptionLocalize(m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, "NONE", "=");
+	AddOptionLocalize(m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aContext, "NONE", "=");
 	AddOption("===============================", "NONE", "");
 }
 
@@ -288,7 +288,7 @@ void CGameMenu::AddSpace()
 
 void CGameMenu::AddHorizontalRule()
 {
-	AddOption("-------------------------------------------", "NONE");
+	AddOption("−−−−−−−−−−−−−−−−−−−−−", "NONE");
 }
 
 void CGameMenu::AddOption(const char *pDesc, const char *pCommand, const char *pPrefix)

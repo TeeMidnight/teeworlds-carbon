@@ -1,6 +1,14 @@
 {
 	"translated strings": [
 		{
+			"key": "'%s' entered the server",
+			"value": "'%s' 进入服务器"
+		},
+		{
+			"key": "'%s' left the server",
+			"value": "'%s' 退出服务器"
+		},
+		{
 			"key": "No such command",
 			"value": "没有此指令"
 		},
@@ -66,13 +74,13 @@
 		},
 		{
 			"context": "Vote Main Menu",
-			"key": "IP Address: %s (Click any option to hide)",
-			"value": "IP地址: %s (双击任何选项隐藏)"
+			"key": "IP Address: %s (Click to hide)",
+			"value": "IP地址: %s (双击以隐藏)"
 		},
 		{
 			"context": "Vote Main Menu",
-			"key": "IP Address: %s (Click to display)",
-			"value": "IP地址: %s (双击选项以显示)"
+			"key": "IP Address: (Click to display)",
+			"value": "IP地址: (双击以显示)"
 		},
 		{
 			"context": "Vote Main Menu",
@@ -86,7 +94,7 @@
 		},
 		{
 			"key": "Oops, couldn't find any language. (Click to refresh)",
-			"value": "噢不!没有找到任何语言! (双击以刷新)"
+			"value": "哦不!没有找到任何语言! (双击以刷新)"
 		}
 	]
 }

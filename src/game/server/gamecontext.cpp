@@ -21,6 +21,8 @@
 #include "player.h"
 #include "weapons.h"
 
+#include <cstdarg>
+
 enum
 {
 	RESET,
@@ -241,27 +243,71 @@ void CGameContext::SendChat(int ChatterClientID, int Mode, int To, const char *p
 	}
 }
 
-void CGameContext::SendChatTargetLocalize(int To, const char *pText, const char *pContext)
+void CGameContext::SendChatTarget(int To, const char *pText, EChatPrefix Prefix)
+{
+	char aLine[512];
+	if(Prefix != EChatPrefix::NONE)
+	{
+		const char *pPrefix = nullptr;
+		switch (Prefix)
+		{
+			case EChatPrefix::ENTER_PLAYER: pPrefix = "[+]"; break;
+			case EChatPrefix::LEAVE_PLAYER: pPrefix = "[−]"; break;
+			case EChatPrefix::WARNING_ERROR: pPrefix = "[⚠]"; break;
+			case EChatPrefix::QUESTION:
+			default: pPrefix = "[?]"; break;
+		}
+		str_format(aLine, sizeof(aLine), "%s %s", pPrefix, pText);
+	}
+	else
+		str_copy(aLine, pText, sizeof(aLine));
+
+	CNetMsg_Sv_Chat Msg;
+	Msg.m_Mode = CHAT_ALL;
+	Msg.m_ClientID = -1;
+	Msg.m_pMessage = aLine;
+	Msg.m_TargetID = To;
+	Server()->SendPackMsg(&Msg, MSGFLAG_VITAL, To);
+}
+
+void CGameContext::SendChatTargetLocalize(int To, const char *pText, const char *pContext, EChatPrefix Prefix)
 {
 	if(To == -1)
 	{
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
-			SendChatTargetLocalize(i, pText, pContext);
+			if(!Server()->ClientIngame(i)) continue;
+			SendChatTargetLocalize(i, pText, pContext, Prefix);
 		}
 		return;
 	}
-	SendChatTarget(To, Server()->Localize(To, pText, pContext));
+	SendChatTarget(To, Server()->Localize(To, pText, pContext), Prefix);
 }
 
-void CGameContext::SendChatTarget(int To, const char *pText)
+void CGameContext::SendChatTargetFormat(int To, const char *pFormat, EChatPrefix Prefix, va_list List)
 {
-	CNetMsg_Sv_Chat Msg;
-	Msg.m_Mode = CHAT_ALL;
-	Msg.m_ClientID = -1;
-	Msg.m_pMessage = pText;
-	Msg.m_TargetID = To;
-	Server()->SendPackMsg(&Msg, MSGFLAG_VITAL, To);
+	char aLine[512];
+	vsnprintf(aLine, sizeof(aLine), pFormat, List);
+	SendChatTarget(To, aLine, Prefix);
+}
+
+void CGameContext::SendChatTargetLocalizeFormat(int To, const char *pFormat, const char *pContext, EChatPrefix Prefix, ...)
+{
+	va_list List;
+	if(To == -1)
+	{
+		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
+		{
+			if(!Server()->ClientIngame(i)) continue;
+			va_start(List, Prefix);
+			SendChatTargetFormat(i, Server()->Localize(To, pFormat, pContext), Prefix, List);
+			va_end(List);
+		}
+		return;
+	}
+	va_start(List, Prefix);
+	SendChatTargetFormat(To, Server()->Localize(To, pFormat, pContext), Prefix, List);
+	va_end(List);
 }
 
 void CGameContext::SendBroadcast(const char *pText, int ClientID)
@@ -654,10 +700,7 @@ void CGameContext::OnClientEnter(int ClientID)
 	NewClientInfoMsg.m_pName = Server()->ClientName(ClientID);
 	NewClientInfoMsg.m_pClan = Server()->ClientClan(ClientID);
 	NewClientInfoMsg.m_Country = Server()->ClientCountry(ClientID);
-	NewClientInfoMsg.m_Silent = false;
-
-	if(Config()->m_SvSilentSpectatorMode && m_apPlayers[ClientID]->GetTeam() == TEAM_SPECTATORS)
-		NewClientInfoMsg.m_Silent = true;
+	NewClientInfoMsg.m_Silent = true;
 
 	for(int p = 0; p < NUM_SKINPARTS; p++)
 	{
@@ -707,6 +750,7 @@ void CGameContext::OnClientEnter(int ClientID)
 	}
 
 	Server()->ExpireServerInfo();
+	SendChatTargetLocalizeFormat(-1, _("'%s' entered the server"), EChatPrefix::ENTER_PLAYER, Server()->ClientName(ClientID));
 }
 
 void CGameContext::OnClientConnected(int ClientID, bool Dummy, bool AsSpec)
@@ -764,9 +808,7 @@ void CGameContext::OnClientDrop(int ClientID, const char *pReason)
 		CNetMsg_Sv_ClientDrop Msg;
 		Msg.m_ClientID = ClientID;
 		Msg.m_pReason = pReason;
-		Msg.m_Silent = false;
-		if(Config()->m_SvSilentSpectatorMode && m_apPlayers[ClientID]->GetTeam() == TEAM_SPECTATORS)
-			Msg.m_Silent = true;
+		Msg.m_Silent = true;
 		Server()->SendPackMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_NORECORD, -1);
 	}
 
@@ -784,6 +826,7 @@ void CGameContext::OnClientDrop(int ClientID, const char *pReason)
 	m_VoteUpdate = true;
 
 	Server()->ExpireServerInfo();
+	SendChatTargetLocalizeFormat(-1, _("'%s' left the server"), EChatPrefix::LEAVE_PLAYER, Server()->ClientName(ClientID));
 }
 
 void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
@@ -857,7 +900,6 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 
 			if(Mode != CHAT_NONE)
 			{
-				char aMsg[256] = {'\0'};
 				if(pMsg->m_pMessage[0] == '/')
 				{
 					const char *pCommandStr = pMsg->m_pMessage;
@@ -866,7 +908,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 					const CCommandManager::CCommand *pCommand = m_CommandManager.GetCommand(aCommand);
 					if(!pCommand)
 					{
-						SendChatTargetLocalize(ClientID, _("No such command"));
+						SendChatTargetLocalize(ClientID, _("No such command"), EChatPrefix::WARNING_ERROR);
 						return;
 					}
 
@@ -875,7 +917,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 				}
 				else
 				{
-					SendChat(ClientID, Mode, pMsg->m_Target, aMsg);
+					SendChat(ClientID, Mode, pMsg->m_Target, pMsg->m_pMessage);
 				}
 			}
 		}
@@ -1463,7 +1505,7 @@ void CGameContext::ComWhisper(IConsole::IResult *pResult, void *pContext)
 
 	if(str_comp(pResult->GetString(0), pSelf->Server()->ClientName(pComContext->m_ClientID)) == 0)
 	{
-		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("You can't whisper to yourself", "Whisper"));
+		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("You can't whisper to yourself", "Whisper"), EChatPrefix::WARNING_ERROR);
 		return;
 	}
 
@@ -1482,7 +1524,7 @@ void CGameContext::ComWhisper(IConsole::IResult *pResult, void *pContext)
 
 	if(Target == -1)
 	{
-		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("Couldn't find this player", "Whisper"));
+		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("Couldn't find this player", "Whisper"), EChatPrefix::WARNING_ERROR);
 		return;
 	}
 
