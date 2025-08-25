@@ -69,6 +69,8 @@ class CGameContext : public IGameServer
 	static void NewCommandHook(const CCommandManager::CCommand *pCommand, void *pContext);
 	static void RemoveCommandHook(const CCommandManager::CCommand *pCommand, void *pContext);
 
+	static void ComWhisper(IConsole::IResult *pResult, void *pContext);
+
 	static bool MenuServerVote(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData);
 
 	CGameContext(int Resetting);

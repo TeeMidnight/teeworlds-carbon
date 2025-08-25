@@ -1456,6 +1456,39 @@ void CGameContext::RemoveCommandHook(const CCommandManager::CCommand *pCommand, 
 	pSelf->SendRemoveChatCommand(pCommand, -1);
 }
 
+void CGameContext::ComWhisper(IConsole::IResult *pResult, void *pContext)
+{
+	CCommandManager::SCommandContext *pComContext = (CCommandManager::SCommandContext *)pContext;
+	CGameContext *pSelf = (CGameContext *)pComContext->m_pContext;
+
+	if(str_comp(pResult->GetString(0), pSelf->Server()->ClientName(pComContext->m_ClientID)) == 0)
+	{
+		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("You can't whisper to yourself", "Whisper"));
+		return;
+	}
+
+	int Target = -1;
+	for(int i = 0; i < SERVER_MAX_CLIENTS; i ++)
+	{
+		if(pSelf->Server()->ClientIngame(i))
+		{
+			if(str_comp(pResult->GetString(0), pSelf->Server()->ClientName(i)) == 0)
+			{
+				Target = i;
+				break;
+			}
+		}
+	}
+
+	if(Target == -1)
+	{
+		pSelf->SendChatTargetLocalize(pComContext->m_ClientID, _C("Couldn't find this player", "Whisper"));
+		return;
+	}
+
+	pSelf->SendChat(pComContext->m_ClientID, CHAT_WHISPER, Target, pResult->GetString(1));
+}
+
 bool CGameContext::MenuServerVote(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData)
 {
 	CGameContext *pSelf = (CGameContext *) pUserData;
@@ -1552,6 +1585,9 @@ void CGameContext::OnInit()
 	// select gametype
 	m_pController = new CGameController(this);
 	GameController()->RegisterChatCommands(CommandManager());
+
+	CommandManager()->AddCommand("w", "Whisper another player", "sr", ComWhisper, this);
+	CommandManager()->AddCommand("whisper", "Whisper another player", "sr", ComWhisper, this);
 
 	// create all entities from the game layer
 	CMapItemLayerTilemap *pTileMap = m_Layers.GameLayer();

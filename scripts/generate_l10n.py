@@ -32,7 +32,7 @@ def parse_source():
 			str_ = match.group('str').decode()
 			l10n[(str_, None)] = ""
 		for match in SOURCE_LOCALIZE_NAME_RE.finditer(line):
-			str_ = match.group('str').decode()
+			str_ = match.group('name').decode()
 			l10n[(str_, None)] = ""
 		for match in SOURCE_LOCALIZE_CONTEXT_RE.finditer(line):
 			str_ = match.group('str').decode()

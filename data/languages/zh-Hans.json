@@ -1,6 +1,30 @@
 {
 	"translated strings": [
 		{
+			"key": "No such command",
+			"value": "没有此指令"
+		},
+		{
+			"context": "Whisper",
+			"key": "You can't whisper to yourself",
+			"value": "你不能私聊你自己"
+		},
+		{
+			"context": "Whisper",
+			"key": "Couldn't find this player",
+			"value": "找不到该玩家"
+		},
+		{
+			"context": "Vote Menu Server Vote",
+			"key": "There's no any server vote",
+			"value": "找不到任何服务器投票"
+		},
+		{
+			"context": "Vote Menu",
+			"key": "Server Vote",
+			"value": "服务器投票"
+		},
+		{
 			"context": "Vote Menu",
 			"key": "Main Menu",
 			"value": "主菜单"
@@ -63,52 +87,6 @@
 		{
 			"key": "Oops, couldn't find any language. (Click to refresh)",
 			"value": "噢不!没有找到任何语言! (双击以刷新)"
-		},
-		{
-			"key": "No such command",
-			"value": "没有此指令"
-		},
-		{
-			"context": "Vote Menu Server Vote",
-			"key": "There's no any server vote",
-			"value": "找不到任何服务器投票"
-		},
-		{
-			"context": "Vote Menu",
-			"key": "Server Vote",
-			"value": "服务器投票"
-		},
-		{
-			"key": "Hand",
-			"value": "空手"
-		},
-		{
-			"key": "Grenade",
-			"value": "榴弹炮"
-		},
-		{
-			"key": "Gun",
-			"value": "手枪"
-		},
-		{
-			"key": "Hammer",
-			"value": "锤子"
-		},
-		{
-			"key": "Laser",
-			"value": "激光枪"
-		},
-		{
-			"key": "Ninja",
-			"value": "忍者刀"
-		},
-		{
-			"key": "Shotgun",
-			"value": "霰弹枪"
-		},
-		{
-			"key": "Sniping Rifle",
-			"value": "狙击步枪"
 		}
 	]
 }
