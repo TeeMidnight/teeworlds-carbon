@@ -6,8 +6,8 @@
 #include "gamemenu.h"
 #include "player.h"
 
-#include <cstdio>
 #include <cstdarg>
+#include <cstdio>
 
 CConfig *CGameMenu::Config() const { return GameServer()->Config(); }
 IServer *CGameMenu::Server() const { return GameServer()->Server(); }

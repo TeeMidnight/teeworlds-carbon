@@ -89,7 +89,7 @@ void CInput::InitJoysticks()
 {
 	if(!SDL_WasInit(SDL_INIT_JOYSTICK))
 	{
-		if(SDL_InitSubSystem(SDL_INIT_JOYSTICK))
+		if(!SDL_InitSubSystem(SDL_INIT_JOYSTICK))
 		{
 			dbg_msg("joystick", "Unable to init SDL joystick system: %s", SDL_GetError());
 			return;

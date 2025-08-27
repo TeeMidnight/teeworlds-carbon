@@ -249,13 +249,13 @@ void CGameContext::SendChatTarget(int To, const char *pText, EChatPrefix Prefix)
 	if(Prefix != EChatPrefix::NONE)
 	{
 		const char *pPrefix = nullptr;
-		switch (Prefix)
+		switch(Prefix)
 		{
-			case EChatPrefix::ENTER_PLAYER: pPrefix = "[+]"; break;
-			case EChatPrefix::LEAVE_PLAYER: pPrefix = "[−]"; break;
-			case EChatPrefix::WARNING_ERROR: pPrefix = "[⚠]"; break;
-			case EChatPrefix::QUESTION:
-			default: pPrefix = "[?]"; break;
+		case EChatPrefix::ENTER_PLAYER: pPrefix = "[+]"; break;
+		case EChatPrefix::LEAVE_PLAYER: pPrefix = "[−]"; break;
+		case EChatPrefix::WARNING_ERROR: pPrefix = "[⚠]"; break;
+		case EChatPrefix::QUESTION:
+		default: pPrefix = "[?]"; break;
 		}
 		str_format(aLine, sizeof(aLine), "%s %s", pPrefix, pText);
 	}
@@ -276,7 +276,8 @@ void CGameContext::SendChatTargetLocalize(int To, const char *pText, const char 
 	{
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
-			if(!Server()->ClientIngame(i)) continue;
+			if(!Server()->ClientIngame(i))
+				continue;
 			SendChatTargetLocalize(i, pText, pContext, Prefix);
 		}
 		return;
@@ -298,7 +299,8 @@ void CGameContext::SendChatTargetLocalizeFormat(int To, const char *pFormat, con
 	{
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
-			if(!Server()->ClientIngame(i)) continue;
+			if(!Server()->ClientIngame(i))
+				continue;
 			va_start(List, Prefix);
 			SendChatTargetFormat(i, Server()->Localize(To, pFormat, pContext), Prefix, List);
 			va_end(List);
@@ -1500,8 +1502,8 @@ void CGameContext::RemoveCommandHook(const CCommandManager::CCommand *pCommand, 
 
 void CGameContext::ComWhisper(IConsole::IResult *pResult, void *pContext)
 {
-	CCommandManager::SCommandContext *pComContext = (CCommandManager::SCommandContext *)pContext;
-	CGameContext *pSelf = (CGameContext *)pComContext->m_pContext;
+	CCommandManager::SCommandContext *pComContext = (CCommandManager::SCommandContext *) pContext;
+	CGameContext *pSelf = (CGameContext *) pComContext->m_pContext;
 
 	if(str_comp(pResult->GetString(0), pSelf->Server()->ClientName(pComContext->m_ClientID)) == 0)
 	{
@@ -1510,7 +1512,7 @@ void CGameContext::ComWhisper(IConsole::IResult *pResult, void *pContext)
 	}
 
 	int Target = -1;
-	for(int i = 0; i < SERVER_MAX_CLIENTS; i ++)
+	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{
 		if(pSelf->Server()->ClientIngame(i))
 		{

@@ -24,7 +24,7 @@ extern "C" {
 // Localization
 #define _(TEXT) TEXT, ""
 #define _C(TEXT, CONTEXT) TEXT, CONTEXT
-#define _N(NAME) NAME 
+#define _N(NAME) NAME
 
 /* Group: Debug */
 /*

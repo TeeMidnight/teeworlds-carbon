@@ -363,22 +363,19 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		glGenTextures(1, &m_aTextures[pCommand->m_Slot].m_Tex2D);
 		m_aTextures[pCommand->m_Slot].m_State |= CTexture::STATE_TEX2D;
 		glBindTexture(GL_TEXTURE_2D, m_aTextures[pCommand->m_Slot].m_Tex2D);
-		if(!Mipmaps)
+		
+		// Optimization: Use glTexImage2D with texture parameters in one call
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		if(Mipmaps)
 		{
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexImage2D(GL_TEXTURE_2D, 0, StoreOglformat, Width, Height, 0, Oglformat, GL_UNSIGNED_BYTE, pTexData);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, pCommand->m_Flags & CCommandBuffer::TEXTFLAG_LINEARMIPMAPS ? GL_LINEAR : GL_LINEAR_MIPMAP_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
 		}
 		else
 		{
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			if(pCommand->m_Flags & CCommandBuffer::TEXTFLAG_LINEARMIPMAPS)
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			else
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
-			glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
-			glTexImage2D(GL_TEXTURE_2D, 0, StoreOglformat, Width, Height, 0, Oglformat, GL_UNSIGNED_BYTE, pTexData);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		}
+		glTexImage2D(GL_TEXTURE_2D, 0, StoreOglformat, Width, Height, 0, Oglformat, GL_UNSIGNED_BYTE, pTexData);
 
 		// calculate memory usage
 		m_aTextures[pCommand->m_Slot].m_MemSize = Width * Height * pCommand->m_PixelSize;
@@ -497,9 +494,9 @@ void CCommandProcessorFragment_OpenGL::Cmd_Screenshot(const CCommandBuffer::CScr
 	// flip the pixel because opengl works from bottom left corner
 	for(int ty = 0; ty < h / 2; ty++)
 	{
-		mem_copy(pTempRow, pPixelData + ty * w * 3, w * 3);
-		mem_copy(pPixelData + ty * w * 3, pPixelData + (h - ty - 1) * w * 3, w * 3);
-		mem_copy(pPixelData + (h - ty - 1) * w * 3, pTempRow, w * 3);
+		memmove(pTempRow, pPixelData + ty * w * 3, w * 3);
+		memmove(pPixelData + ty * w * 3, pPixelData + (h - ty - 1) * w * 3, w * 3);
+		memmove(pPixelData + (h - ty - 1) * w * 3, pTempRow, w * 3);
 	}
 
 	// fill in the information

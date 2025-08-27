@@ -19,7 +19,7 @@
 
 enum class EChatPrefix
 {
-	NONE=0,
+	NONE = 0,
 	ENTER_PLAYER,
 	LEAVE_PLAYER,
 	WARNING_ERROR,
