@@ -99,7 +99,10 @@ class CCommandProcessorFragment_OpenGL
 	int m_MaxTexSize;
 	int m_Max3DTexSize;
 	int m_TextureArraySize;
-
+	
+	// OpenGL 4.6 Core Profile additions
+	GLuint m_ShaderProgram;
+	GLuint m_ShaderProgram3D;
 public:
 	enum
 	{
@@ -120,6 +123,11 @@ private:
 	static void *Rescale(int Width, int Height, int NewWidth, int NewHeight, int Format, const unsigned char *pData);
 
 	void SetState(const CCommandBuffer::CState &State);
+	
+	// OpenGL 4.6 Core Profile helper functions
+	GLuint CompileShader(GLuint type, const char* source);
+	GLuint CreateShaderProgram();
+	GLuint CreateShaderProgram3D();
 
 	void Cmd_Init(const CInitCommand *pCommand);
 	void Cmd_Texture_Update(const CCommandBuffer::CTextureUpdateCommand *pCommand);
