@@ -13,14 +13,44 @@
 
 class SortWrap
 {
-	typedef bool (CServerBrowserFilter::CServerFilter::*SortFunc)(int, int) const;
+	typedef int (CServerBrowserFilter::CServerFilter::*SortFunc)(int, int) const;
 	SortFunc m_pfnSort;
 	CServerBrowserFilter::CServerFilter *m_pThis;
 
 public:
+	SortWrap() {};
 	SortWrap(CServerBrowserFilter::CServerFilter *t, SortFunc f) :
 		m_pfnSort(f), m_pThis(t) {}
-	bool operator()(int a, int b) { return (m_pThis->Config()->m_BrSortOrder ? (m_pThis->*m_pfnSort)(b, a) : (m_pThis->*m_pfnSort)(a, b)); }
+	int operator()(int a, int b) { return (m_pThis->Config()->m_BrSortOrder ? (m_pThis->*m_pfnSort)(b, a) : (m_pThis->*m_pfnSort)(a, b)); }
+};
+
+class SortWarpCollection
+{
+	array<SortWrap> m_aSortWarps;
+
+public:
+	SortWarpCollection() { m_aSortWarps.clear(); }
+
+	void Add(const SortWrap &Warp)
+	{
+		m_aSortWarps.add(Warp);
+	}
+
+	bool operator()(int a, int b)
+	{
+		int FlagA, FlagB;
+		FlagA = 0;
+		FlagB = 0;
+		for(auto &Warp : m_aSortWarps)
+		{
+			int Result;
+			if((Result = Warp(a, b)) > 0)
+				FlagA += Result;
+			else if(Result < 0)
+				FlagB -= Result;
+		}
+		return FlagA > FlagB;
+	}
 };
 
 //	CServerFilter
@@ -241,94 +271,84 @@ void CServerBrowserFilter::CServerFilter::Sort()
 {
 	// create filtered list
 	Filter();
-
+	SortWarpCollection FuncCollection;
 	// sort
-	switch(Config()->m_BrSort)
+	if(Config()->m_BrSort & IServerBrowser::SORT_NAME)
+		FuncCollection.Add(SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareName));
+	if(Config()->m_BrSort & IServerBrowser::SORT_PING)
+		FuncCollection.Add(SortWrap(this, &CServerBrowserFilter::CServerFilter::SortComparePing));
+	if(Config()->m_BrSort & IServerBrowser::SORT_MAP)
+		FuncCollection.Add(SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareMap));
+	if(Config()->m_BrSort & IServerBrowser::SORT_NUMPLAYERS)
 	{
-	case IServerBrowser::SORT_NAME:
-		std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareName));
-		break;
-	case IServerBrowser::SORT_PING:
-		std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, &CServerBrowserFilter::CServerFilter::SortComparePing));
-		break;
-	case IServerBrowser::SORT_MAP:
-		std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareMap));
-		break;
-	case IServerBrowser::SORT_NUMPLAYERS:
 		if(!(m_FilterInfo.m_SortHash & IServerBrowser::FILTER_BOTS))
-			std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, (m_FilterInfo.m_SortHash & IServerBrowser::FILTER_SPECTATORS) ? &CServerBrowserFilter::CServerFilter::SortCompareNumPlayers : &CServerBrowserFilter::CServerFilter::SortCompareNumClients));
+			FuncCollection.Add(SortWrap(this, (m_FilterInfo.m_SortHash & IServerBrowser::FILTER_SPECTATORS) ? &CServerBrowserFilter::CServerFilter::SortCompareNumPlayers : &CServerBrowserFilter::CServerFilter::SortCompareNumClients));
 		else
-			std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, (m_FilterInfo.m_SortHash & IServerBrowser::FILTER_SPECTATORS) ? &CServerBrowserFilter::CServerFilter::SortCompareNumRealPlayers : &CServerBrowserFilter::CServerFilter::SortCompareNumRealClients));
-		break;
-	case IServerBrowser::SORT_GAMETYPE:
-		std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareGametype));
+			FuncCollection.Add(SortWrap(this, (m_FilterInfo.m_SortHash & IServerBrowser::FILTER_SPECTATORS) ? &CServerBrowserFilter::CServerFilter::SortCompareNumRealPlayers : &CServerBrowserFilter::CServerFilter::SortCompareNumRealClients));
 	}
+	if(Config()->m_BrSort & IServerBrowser::SORT_GAMETYPE)
+		FuncCollection.Add(SortWrap(this, &CServerBrowserFilter::CServerFilter::SortCompareGametype));
+	std::stable_sort(m_pSortedServerlist, m_pSortedServerlist + m_NumSortedServers, FuncCollection);
 
 	m_FilterInfo.m_SortHash = GetSortHash();
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareName(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareName(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
 	//	make sure empty entries are listed last
-	return (a->m_InfoState == CServerEntry::STATE_READY && b->m_InfoState == CServerEntry::STATE_READY) || (a->m_InfoState != CServerEntry::STATE_READY && b->m_InfoState != CServerEntry::STATE_READY) ? str_comp_nocase(a->m_Info.m_aName, b->m_Info.m_aName) < 0 :
-																									      a->m_InfoState == CServerEntry::STATE_READY;
+	return (a->m_InfoState == CServerEntry::STATE_READY && b->m_InfoState == CServerEntry::STATE_READY) ? 0 : ((a->m_InfoState != CServerEntry::STATE_READY && b->m_InfoState != CServerEntry::STATE_READY) ? str_comp_nocase(a->m_Info.m_aName, b->m_Info.m_aName) : (a->m_InfoState == CServerEntry::STATE_READY ? -1 : 0));
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareMap(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareMap(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
 	int Result = str_comp_nocase(a->m_Info.m_aMap, b->m_Info.m_aMap);
-	return Result < 0 || (Result == 0 && (a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && !(b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return Result;
 }
 
-bool CServerBrowserFilter::CServerFilter::SortComparePing(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortComparePing(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return a->m_Info.m_Latency < b->m_Info.m_Latency ||
-	       (a->m_Info.m_Latency == b->m_Info.m_Latency && (a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && !(b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return b->m_Info.m_Latency - a->m_Info.m_Latency;
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareGametype(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareGametype(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return str_comp_nocase(a->m_Info.m_aGameType, b->m_Info.m_aGameType) < 0;
+	return str_comp_nocase(a->m_Info.m_aGameType, b->m_Info.m_aGameType);
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareNumPlayers(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareNumPlayers(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return a->m_Info.m_NumPlayers < b->m_Info.m_NumPlayers ||
-	       (a->m_Info.m_NumPlayers == b->m_Info.m_NumPlayers && !(a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && (b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return a->m_Info.m_NumPlayers - b->m_Info.m_NumPlayers;
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareNumRealPlayers(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareNumRealPlayers(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return (a->m_Info.m_NumPlayers - a->m_Info.m_NumBotPlayers) < (b->m_Info.m_NumPlayers - b->m_Info.m_NumBotPlayers) ||
-	       ((a->m_Info.m_NumPlayers - a->m_Info.m_NumBotPlayers) == (b->m_Info.m_NumPlayers - b->m_Info.m_NumBotPlayers) && !(a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && (b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return (a->m_Info.m_NumPlayers - a->m_Info.m_NumBotPlayers) - (b->m_Info.m_NumPlayers - b->m_Info.m_NumBotPlayers);
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareNumClients(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareNumClients(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return a->m_Info.m_NumClients < b->m_Info.m_NumClients ||
-	       (a->m_Info.m_NumClients == b->m_Info.m_NumClients && !(a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && (b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return a->m_Info.m_NumClients - b->m_Info.m_NumClients;
 }
 
-bool CServerBrowserFilter::CServerFilter::SortCompareNumRealClients(int Index1, int Index2) const
+int CServerBrowserFilter::CServerFilter::SortCompareNumRealClients(int Index1, int Index2) const
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	return (a->m_Info.m_NumClients - a->m_Info.m_NumBotPlayers - a->m_Info.m_NumBotSpectators) < (b->m_Info.m_NumClients - b->m_Info.m_NumBotPlayers - b->m_Info.m_NumBotSpectators) ||
-	       ((a->m_Info.m_NumClients - a->m_Info.m_NumBotPlayers - a->m_Info.m_NumBotSpectators) == (b->m_Info.m_NumClients - b->m_Info.m_NumBotPlayers - b->m_Info.m_NumBotSpectators) && !(a->m_Info.m_Flags & IServerBrowser::FLAG_PURE) && (b->m_Info.m_Flags & IServerBrowser::FLAG_PURE));
+	return (a->m_Info.m_NumClients - a->m_Info.m_NumBotPlayers - a->m_Info.m_NumBotSpectators) - (b->m_Info.m_NumClients - b->m_Info.m_NumBotPlayers - b->m_Info.m_NumBotSpectators);
 }
 
 //	CServerBrowserFilter

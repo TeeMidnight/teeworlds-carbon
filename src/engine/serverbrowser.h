@@ -118,11 +118,11 @@ public:
 	*/
 	enum
 	{
-		SORT_NAME = 0,
-		SORT_PING,
-		SORT_MAP,
-		SORT_GAMETYPE,
-		SORT_NUMPLAYERS,
+		SORT_NAME = 1 << 0,
+		SORT_PING = 1 << 1,
+		SORT_MAP = 1 << 2,
+		SORT_GAMETYPE = 1 << 3,
+		SORT_NUMPLAYERS = 1 << 4,
 
 		QUICK_SERVERNAME = 1,
 		QUICK_PLAYER = 2,

@@ -32,7 +32,7 @@ CMenus::CColumn CMenus::ms_aBrowserCols[] = {
 	{COL_BROWSER_MAP, IServerBrowser::SORT_MAP, "Map", 1, 100.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_PLAYERS, IServerBrowser::SORT_NUMPLAYERS, "Players", 1, 50.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_PING, IServerBrowser::SORT_PING, "Ping", 1, 40.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
-};
+	{COL_BROWSER_SORT_ORDER, -1, "↓", 1, 12.f, 0, {0}, {0}, TEXTALIGN_CENTER}};
 
 CServerFilterInfo CMenus::CBrowserFilter::ms_FilterStandard = {IServerBrowser::FILTER_PURE, 999, -1, 0, {{0}}, {0}, {0}};
 CServerFilterInfo CMenus::CBrowserFilter::ms_FilterRace = {0, 999, -1, 0, {{"Race"}}, {false}, {0}};
@@ -834,53 +834,34 @@ void CMenus::RenderServerbrowserServerList(CUIRect View)
 		if(ms_aBrowserCols[i].m_Direction == 0)
 			ms_aBrowserCols[i].m_Rect = Headers;
 	}
-
-	// do headers
+	// list background
+	View.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f), 5.0f, CUIRect::CORNER_L);
+	// do headers and draw background
 	for(int i = 0; i < NUM_BROWSER_COLS; i++)
 	{
-		if(i == COL_BROWSER_FLAG)
+		if(i == COL_BROWSER_FLAG || i == COL_BROWSER_SORT_ORDER)
 			continue;
 
-		if(DoButton_GridHeader(ms_aBrowserCols[i].m_Caption, ms_aBrowserCols[i].m_Caption, Config()->m_BrSort == ms_aBrowserCols[i].m_Sort, ms_aBrowserCols[i].m_Align, &ms_aBrowserCols[i].m_Rect))
+		if(DoButton_GridHeader(ms_aBrowserCols[i].m_Caption, ms_aBrowserCols[i].m_Caption, Config()->m_BrSort & ms_aBrowserCols[i].m_Sort, ms_aBrowserCols[i].m_Align, &ms_aBrowserCols[i].m_Rect))
 		{
 			if(ms_aBrowserCols[i].m_Sort != -1)
 			{
-				if(Config()->m_BrSort == ms_aBrowserCols[i].m_Sort)
-					Config()->m_BrSortOrder ^= 1;
-				else
-					Config()->m_BrSortOrder = 0;
-				Config()->m_BrSort = ms_aBrowserCols[i].m_Sort;
+				Config()->m_BrSort ^= ms_aBrowserCols[i].m_Sort;
+				ServerBrowserSortingOnUpdate();
 			}
-			ServerBrowserSortingOnUpdate();
 		}
-	}
-
-	// list background
-	View.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f), 5.0f, CUIRect::CORNER_L);
-	{
-		int Column = COL_BROWSER_PING;
-		switch(Config()->m_BrSort)
+		if(Config()->m_BrSort & ms_aBrowserCols[i].m_Sort)
 		{
-		case IServerBrowser::SORT_NAME:
-			Column = COL_BROWSER_NAME;
-			break;
-		case IServerBrowser::SORT_GAMETYPE:
-			Column = COL_BROWSER_GAMETYPE;
-			break;
-		case IServerBrowser::SORT_MAP:
-			Column = COL_BROWSER_MAP;
-			break;
-		case IServerBrowser::SORT_NUMPLAYERS:
-			Column = COL_BROWSER_PLAYERS;
-			break;
+			CUIRect Rect = View;
+			Rect.x = CMenus::ms_aBrowserCols[i].m_Rect.x;
+			Rect.w = CMenus::ms_aBrowserCols[i].m_Rect.w;
+			Rect.Draw(vec4(0.0f, 0.0f, 0.0f, 0.05f));
 		}
-
-		CUIRect Rect = View;
-		Rect.x = CMenus::ms_aBrowserCols[Column].m_Rect.x;
-		Rect.w = CMenus::ms_aBrowserCols[Column].m_Rect.w;
-		Rect.Draw(vec4(0.0f, 0.0f, 0.0f, 0.05f));
 	}
-
+	if(DoButton_GridHeader(ms_aBrowserCols[COL_BROWSER_SORT_ORDER].m_Caption, ms_aBrowserCols[COL_BROWSER_SORT_ORDER].m_Caption, Config()->m_BrSortOrder, ms_aBrowserCols[COL_BROWSER_SORT_ORDER].m_Align, &ms_aBrowserCols[COL_BROWSER_SORT_ORDER].m_Rect))
+	{
+		Config()->m_BrSortOrder ^= 1;
+	}
 	// update selection based on address if it changed
 	if(ServerBrowser()->WasUpdated(true))
 		m_AddressSelection |= ADDR_SELECTION_CHANGE;

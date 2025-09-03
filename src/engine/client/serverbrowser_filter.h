@@ -38,14 +38,14 @@ public:
 		void Sort();
 
 		// sorting criterions
-		bool SortCompareName(int Index1, int Index2) const;
-		bool SortCompareMap(int Index1, int Index2) const;
-		bool SortComparePing(int Index1, int Index2) const;
-		bool SortCompareGametype(int Index1, int Index2) const;
-		bool SortCompareNumPlayers(int Index1, int Index2) const;
-		bool SortCompareNumRealPlayers(int Index1, int Index2) const;
-		bool SortCompareNumClients(int Index1, int Index2) const;
-		bool SortCompareNumRealClients(int Index1, int Index2) const;
+		int SortCompareName(int Index1, int Index2) const;
+		int SortCompareMap(int Index1, int Index2) const;
+		int SortComparePing(int Index1, int Index2) const;
+		int SortCompareGametype(int Index1, int Index2) const;
+		int SortCompareNumPlayers(int Index1, int Index2) const;
+		int SortCompareNumRealPlayers(int Index1, int Index2) const;
+		int SortCompareNumClients(int Index1, int Index2) const;
+		int SortCompareNumRealClients(int Index1, int Index2) const;
 	};
 	CConfig *Config() { return m_pConfig; }
 
