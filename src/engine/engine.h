@@ -9,21 +9,10 @@
 class CHostLookup
 {
 public:
-	class CJob : public IJob
-	{
-		CHostLookup *m_pParent;
-
-	public:
-		CJob(CHostLookup *pParent) :
-			m_pParent(pParent) {}
-
-		void Run() override;
-	};
+	CJob m_Job;
 	char m_aHostname[128];
 	int m_Nettype;
 	NETADDR m_Addr;
-	int m_Result;
-	std::shared_ptr<CJob> m_pJob;
 };
 
 class IEngine : public IInterface
@@ -39,7 +28,7 @@ public:
 	virtual void InitLogfile() = 0;
 	virtual void QueryNetLogHandles(IOHANDLE *pHDLSend, IOHANDLE *pHDLRecv) = 0;
 	virtual void HostLookup(CHostLookup *pLookup, const char *pHostname, int Nettype) = 0;
-	virtual void AddJob(std::shared_ptr<IJob> pJob) = 0;
+	virtual void AddJob(CJob *pJob, JOBFUNC pfnFunc, void *pData) = 0;
 };
 
 extern IEngine *CreateEngine(const char *pAppname);

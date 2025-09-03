@@ -1,6 +1,6 @@
 #include "register.h"
 
-#include <base/lock.h>
+#include <base/system.h>
 #include <base/uuid.h>
 
 #include <engine/console.h>
@@ -41,9 +41,9 @@ class CRegister : public IRegister
 	class CGlobal
 	{
 	public:
-		CLock m_Lock;
-		int m_InfoSerial GUARDED_BY(m_Lock) = -1;
-		int m_LatestSuccessfulInfoSerial GUARDED_BY(m_Lock) = -1;
+		lock m_Lock;
+		int m_InfoSerial;
+		int m_LatestSuccessfulInfoSerial;
 	};
 
 	class CProtocol
@@ -51,59 +51,52 @@ class CRegister : public IRegister
 		class CShared
 		{
 		public:
-			CShared(std::shared_ptr<CGlobal> pGlobal) :
-				m_pGlobal(std::move(pGlobal))
+			CShared(CGlobal *pGlobal) :
+				m_pGlobal(pGlobal)
 			{
 			}
 
-			std::shared_ptr<CGlobal> m_pGlobal;
-			CLock m_Lock;
-			int m_NumTotalRequests GUARDED_BY(m_Lock) = 0;
-			int m_LatestResponseStatus GUARDED_BY(m_Lock) = STATUS_NONE;
-			int m_LatestResponseIndex GUARDED_BY(m_Lock) = -1;
+			CGlobal *m_pGlobal;
+			lock m_Lock;
+			int m_NumTotalRequests;
+			int m_LatestResponseStatus;
+			int m_LatestResponseIndex;
 		};
 
-		class CJob : public IJob
+		struct SRequestJob
 		{
 			int m_Protocol;
 			int m_ServerPort;
 			int m_Index;
 			int m_InfoSerial;
-			std::shared_ptr<CShared> m_pShared;
-			std::shared_ptr<CHttpRequest> m_pRegister;
+			CShared *m_pShared;
+			CHttpRequest *m_pRegister;
 			IHttp *m_pHttp;
-
-			void Run() override;
-
-		public:
-			CJob(int Protocol, int ServerPort, int Index, int InfoSerial, std::shared_ptr<CShared> pShared, std::shared_ptr<CHttpRequest> &&pRegister, IHttp *pHttp) :
-				m_Protocol(Protocol),
-				m_ServerPort(ServerPort),
-				m_Index(Index),
-				m_InfoSerial(InfoSerial),
-				m_pShared(std::move(pShared)),
-				m_pRegister(std::move(pRegister)),
-				m_pHttp(pHttp)
-			{
-			}
-			~CJob() override = default;
+			CJob m_Job;
 		};
+		SRequestJob m_Job;
+
+		static int RequestThread(void *pUser);
 
 		CRegister *m_pParent;
 		int m_Protocol;
 
-		std::shared_ptr<CShared> m_pShared;
-		bool m_NewChallengeToken = false;
-		bool m_HaveChallengeToken = false;
-		char m_aChallengeToken[128] = {0};
+		CShared *m_pShared;
+		bool m_NewChallengeToken;
+		bool m_HaveChallengeToken;
+		char m_aChallengeToken[128];
 
 		void CheckChallengeStatus();
 
 	public:
-		int64_t m_PrevRegister = -1;
-		int64_t m_NextRegister = -1;
+		int64_t m_PrevRegister;
+		int64_t m_NextRegister;
 
 		CProtocol(CRegister *pParent, int Protocol);
+		~CProtocol()
+		{
+			delete m_pShared;
+		}
 		void OnToken(const char *pToken);
 		void SendRegister();
 		void SendDeleteIfRegistered(bool Shutdown);
@@ -117,25 +110,31 @@ class CRegister : public IRegister
 
 	// Don't start sending registers before the server has initialized
 	// completely.
-	bool m_GotFirstUpdateCall = false;
+	bool m_GotFirstUpdateCall;
 	int m_ServerPort;
 	char m_aConnlessTokenHex[16];
 
-	std::shared_ptr<CGlobal> m_pGlobal = std::make_shared<CGlobal>();
-	bool m_aProtocolEnabled[NUM_PROTOCOLS] = {true, true, true, true};
-	CProtocol m_aProtocols[NUM_PROTOCOLS];
+	CGlobal *m_pGlobal;
+	bool m_aProtocolEnabled[NUM_PROTOCOLS];
+	CProtocol *m_apProtocols[NUM_PROTOCOLS];
 
-	int m_NumExtraHeaders = 0;
+	int m_NumExtraHeaders;
 	char m_aaExtraHeaders[8][128];
 
 	char m_aVerifyPacketPrefix[sizeof(SERVERBROWSE_CHALLENGE) + UUID_MAXSTRSIZE];
-	Uuid m_Secret = RandomUuid();
-	Uuid m_ChallengeSecret = RandomUuid();
-	bool m_GotServerInfo = false;
+	Uuid m_Secret;
+	Uuid m_ChallengeSecret;
+	bool m_GotServerInfo;
 	char m_aServerInfo[16384];
 
 public:
 	CRegister(CConfig *pConfig, IConsole *pConsole, IEngine *pEngine, IHttp *pHttp, int ServerPort, unsigned SixupSecurityToken);
+	~CRegister()
+	{
+		delete m_pGlobal;
+		for(auto &pProtocol : m_apProtocols)
+			delete pProtocol;
+	}
 	void Update() override;
 	void OnConfigChange() override;
 	bool OnPacket(const CNetChunk *pPacket) override;
@@ -178,7 +177,7 @@ const char *CRegister::ProtocolToScheme(int Protocol)
 	case PROTOCOL_TW7_IPV6: return "tw-0.7+udp://";
 	case PROTOCOL_TW7_IPV4: return "tw-0.7+udp://";
 	}
-	dbg_assert(false, "invalid protocol");
+	dbg_assert(0, "invalid protocol");
 	dbg_break();
 
 	return "";
@@ -193,7 +192,7 @@ const char *CRegister::ProtocolToString(int Protocol)
 	case PROTOCOL_TW7_IPV6: return "tw0.7/ipv6";
 	case PROTOCOL_TW7_IPV4: return "tw0.7/ipv4";
 	}
-	dbg_assert(false, "invalid protocol");
+	dbg_assert(0, "invalid protocol");
 	dbg_break();
 
 	return "";
@@ -234,7 +233,7 @@ const char *CRegister::ProtocolToSystem(int Protocol)
 	case PROTOCOL_TW7_IPV6: return "register/7/ipv6";
 	case PROTOCOL_TW7_IPV4: return "register/7/ipv4";
 	}
-	dbg_assert(false, "invalid protocol");
+	dbg_assert(0, "invalid protocol");
 	dbg_break();
 
 	return "";
@@ -249,7 +248,7 @@ IPRESOLVE CRegister::ProtocolToIpresolve(int Protocol)
 	case PROTOCOL_TW7_IPV6: return IPRESOLVE::V6;
 	case PROTOCOL_TW7_IPV4: return IPRESOLVE::V4;
 	}
-	dbg_assert(false, "invalid protocol");
+	dbg_assert(0, "invalid protocol");
 	dbg_break();
 
 	return IPRESOLVE::WHATEVER;
@@ -282,13 +281,12 @@ void CRegister::CProtocol::SendRegister()
 	int InfoSerial;
 	bool SendInfo;
 
-	{
-		CLockScope ls(m_pShared->m_pGlobal->m_Lock);
-		InfoSerial = m_pShared->m_pGlobal->m_InfoSerial;
-		SendInfo = InfoSerial > m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial;
-	}
+	m_pShared->m_pGlobal->m_Lock.take();
+	InfoSerial = m_pShared->m_pGlobal->m_InfoSerial;
+	SendInfo = InfoSerial > m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial;
+	m_pShared->m_pGlobal->m_Lock.release();
 
-	std::unique_ptr<CHttpRequest> pRegister;
+	CHttpRequest *pRegister;
 	if(SendInfo)
 	{
 		pRegister = HttpPostJson(m_pParent->m_pConfig->m_SvRegisterUrl, m_pParent->m_pConfig, m_pParent->m_aServerInfo);
@@ -318,16 +316,17 @@ void CRegister::CProtocol::SendRegister()
 	pRegister->FailOnErrorStatus(false);
 
 	int RequestIndex;
+	m_pShared->m_Lock.take();
+	if(m_pShared->m_LatestResponseStatus != STATUS_OK)
 	{
-		CLockScope ls(m_pShared->m_Lock);
-		if(m_pShared->m_LatestResponseStatus != STATUS_OK)
-		{
-			dbg_msg(ProtocolToSystem(m_Protocol), "registering...");
-		}
-		RequestIndex = m_pShared->m_NumTotalRequests;
-		m_pShared->m_NumTotalRequests += 1;
+		dbg_msg(ProtocolToSystem(m_Protocol), "registering...");
 	}
-	m_pParent->m_pEngine->AddJob(std::make_shared<CJob>(m_Protocol, m_pParent->m_ServerPort, RequestIndex, InfoSerial, m_pShared, std::move(pRegister), m_pParent->m_pHttp));
+	RequestIndex = m_pShared->m_NumTotalRequests;
+	m_pShared->m_NumTotalRequests += 1;
+	m_pShared->m_Lock.release();
+
+	m_Job = {m_Protocol, m_pParent->m_ServerPort, RequestIndex, InfoSerial, m_pShared, std::move(pRegister), m_pParent->m_pHttp, CJob()};
+	m_pParent->m_pEngine->AddJob(&m_Job.m_Job, CProtocol::RequestThread, &m_Job);
 	m_NewChallengeToken = false;
 
 	m_PrevRegister = Now;
@@ -336,13 +335,13 @@ void CRegister::CProtocol::SendRegister()
 
 void CRegister::CProtocol::SendDeleteIfRegistered(bool Shutdown)
 {
-	{
-		const CLockScope LockScope(m_pShared->m_Lock);
-		const bool ShouldSendDelete = m_pShared->m_LatestResponseStatus == STATUS_OK;
-		m_pShared->m_LatestResponseStatus = STATUS_NONE;
-		if(!ShouldSendDelete)
-			return;
-	}
+	m_pShared->m_Lock.take();
+	const bool ShouldSendDelete = m_pShared->m_LatestResponseStatus == STATUS_OK;
+	m_pShared->m_LatestResponseStatus = STATUS_NONE;
+	m_pShared->m_Lock.release();
+
+	if(!ShouldSendDelete)
+		return;
 
 	char aAddress[64];
 	str_format(aAddress, sizeof(aAddress), "%sconnecting-address.invalid:%d", ProtocolToScheme(m_Protocol), m_pParent->m_ServerPort);
@@ -350,7 +349,7 @@ void CRegister::CProtocol::SendDeleteIfRegistered(bool Shutdown)
 	char aSecret[UUID_MAXSTRSIZE];
 	FormatUuid(m_pParent->m_Secret, aSecret, sizeof(aSecret));
 
-	std::shared_ptr<CHttpRequest> pDelete = HttpPost(m_pParent->m_pConfig->m_SvRegisterUrl, m_pParent->m_pConfig, (const unsigned char *) "", 0);
+	CHttpRequest *pDelete = HttpPost(m_pParent->m_pConfig->m_SvRegisterUrl, m_pParent->m_pConfig, (const unsigned char *) "", 0);
 	pDelete->HeaderString("Action", "delete");
 	pDelete->HeaderString("Address", aAddress);
 	pDelete->HeaderString("Secret", aSecret);
@@ -367,18 +366,24 @@ void CRegister::CProtocol::SendDeleteIfRegistered(bool Shutdown)
 	}
 	dbg_msg(ProtocolToSystem(m_Protocol), "deleting...");
 	m_pParent->m_pHttp->Run(pDelete);
+	delete pDelete;
 }
 
 CRegister::CProtocol::CProtocol(CRegister *pParent, int Protocol) :
 	m_pParent(pParent),
 	m_Protocol(Protocol),
-	m_pShared(std::make_shared<CShared>(pParent->m_pGlobal))
+	m_pShared(new CShared(pParent->m_pGlobal)),
+	m_NewChallengeToken(false),
+	m_HaveChallengeToken(false),
+	m_PrevRegister(-1),
+	m_NextRegister(-1)
 {
+	mem_zero(m_aChallengeToken, sizeof(m_aChallengeToken));
 }
 
 void CRegister::CProtocol::CheckChallengeStatus()
 {
-	CLockScope ls(m_pShared->m_Lock);
+	m_pShared->m_Lock.take();
 	// No requests in flight?
 	if(m_pShared->m_LatestResponseIndex == m_pShared->m_NumTotalRequests - 1)
 	{
@@ -397,6 +402,7 @@ void CRegister::CProtocol::CheckChallengeStatus()
 			break;
 		}
 	}
+	m_pShared->m_Lock.release();
 }
 
 void CRegister::CProtocol::Update()
@@ -421,36 +427,38 @@ void CRegister::CProtocol::OnToken(const char *pToken)
 	}
 }
 
-void CRegister::CProtocol::CJob::Run()
+int CRegister::CProtocol::RequestThread(void *pUser)
 {
-	m_pHttp->Run(m_pRegister);
-	m_pRegister->Wait();
-	if(m_pRegister->State() != EHttpState::DONE)
+	SRequestJob *pJob = (SRequestJob *) pUser;
+
+	pJob->m_pHttp->Run(pJob->m_pRegister);
+	pJob->m_pRegister->Wait();
+	if(pJob->m_pRegister->State() != EHttpState::DONE)
 	{
 		// TODO: exponential backoff
-		dbg_msg(ProtocolToSystem(m_Protocol), "error sending request to master");
-		return;
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "error sending request to master");
+		return -1;
 	}
-	json_value *pJson = m_pRegister->ResultJson();
+	json_value *pJson = pJob->m_pRegister->ResultJson();
 	if(!pJson)
 	{
-		dbg_msg(ProtocolToSystem(m_Protocol), "non-JSON response from master");
-		return;
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "non-JSON response from master");
+		return -1;
 	}
 	const json_value &Json = *pJson;
 	const json_value &StatusString = Json["status"];
 	if(StatusString.type != json_string)
 	{
 		json_value_free(pJson);
-		dbg_msg(ProtocolToSystem(m_Protocol), "invalid JSON response from master");
-		return;
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "invalid JSON response from master");
+		return -1;
 	}
 	int Status;
 	if(StatusFromString(&Status, StatusString))
 	{
-		dbg_msg(ProtocolToSystem(m_Protocol), "invalid status from master: %s", (const char *) StatusString);
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "invalid status from master: %s", (const char *) StatusString);
 		json_value_free(pJson);
-		return;
+		return -1;
 	}
 	if(Status == STATUS_ERROR)
 	{
@@ -458,55 +466,59 @@ void CRegister::CProtocol::CJob::Run()
 		if(Message.type != json_string)
 		{
 			json_value_free(pJson);
-			dbg_msg(ProtocolToSystem(m_Protocol), "invalid JSON error response from master");
-			return;
+			dbg_msg(ProtocolToSystem(pJob->m_Protocol), "invalid JSON error response from master");
+			return -1;
 		}
-		dbg_msg(ProtocolToSystem(m_Protocol), "error response from master: %d: %s", m_pRegister->StatusCode(), (const char *) Message);
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "error response from master: %d: %s", pJob->m_pRegister->StatusCode(), (const char *) Message);
 		json_value_free(pJson);
-		return;
+		return -1;
 	}
-	if(m_pRegister->StatusCode() >= 400)
+	if(pJob->m_pRegister->StatusCode() >= 400)
 	{
-		dbg_msg(ProtocolToSystem(m_Protocol), "non-success status code %d from master without error code", m_pRegister->StatusCode());
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "non-success status code %d from master without error code", pJob->m_pRegister->StatusCode());
 		json_value_free(pJson);
-		return;
+		return -1;
 	}
+
+	pJob->m_pShared->m_Lock.take();
+	if(Status != STATUS_OK || Status != pJob->m_pShared->m_LatestResponseStatus)
 	{
-		CLockScope ls(m_pShared->m_Lock);
-		if(Status != STATUS_OK || Status != m_pShared->m_LatestResponseStatus)
-		{
-			if(m_pRegister->Config()->m_Debug)
-				dbg_msg(ProtocolToSystem(m_Protocol), "status: %s", (const char *) StatusString);
-		}
-		if(Status == m_pShared->m_LatestResponseStatus && Status == STATUS_NEEDCHALLENGE)
-		{
-			dbg_msg(ProtocolToSystem(m_Protocol), "ERROR: the master server reports that clients can not connect to this server.");
-			dbg_msg(ProtocolToSystem(m_Protocol), "ERROR: configure your firewall/nat to let through udp on port %d.", m_ServerPort);
-		}
-		json_value_free(pJson);
-		if(m_Index > m_pShared->m_LatestResponseIndex)
-		{
-			m_pShared->m_LatestResponseIndex = m_Index;
-			m_pShared->m_LatestResponseStatus = Status;
-		}
+		if(pJob->m_pRegister->Config()->m_Debug)
+			dbg_msg(ProtocolToSystem(pJob->m_Protocol), "status: %s", (const char *) StatusString);
 	}
+	if(Status == pJob->m_pShared->m_LatestResponseStatus && Status == STATUS_NEEDCHALLENGE)
+	{
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "ERROR: the master server reports that clients can not connect to this server.");
+		dbg_msg(ProtocolToSystem(pJob->m_Protocol), "ERROR: configure your firewall/nat to let through udp on port %d.", pJob->m_ServerPort);
+	}
+	json_value_free(pJson);
+	if(pJob->m_Index > pJob->m_pShared->m_LatestResponseIndex)
+	{
+		pJob->m_pShared->m_LatestResponseIndex = pJob->m_Index;
+		pJob->m_pShared->m_LatestResponseStatus = Status;
+	}
+	pJob->m_pShared->m_Lock.release();
+
 	if(Status == STATUS_OK)
 	{
-		CLockScope ls(m_pShared->m_pGlobal->m_Lock);
-		if(m_InfoSerial > m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
+		pJob->m_pShared->m_pGlobal->m_Lock.take();
+		if(pJob->m_InfoSerial > pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
 		{
-			m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial = m_InfoSerial;
+			pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial = pJob->m_InfoSerial;
 		}
+		pJob->m_pShared->m_pGlobal->m_Lock.release();
 	}
 	else if(Status == STATUS_NEEDINFO)
 	{
-		CLockScope ls(m_pShared->m_pGlobal->m_Lock);
-		if(m_InfoSerial == m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
+		pJob->m_pShared->m_pGlobal->m_Lock.take();
+		if(pJob->m_InfoSerial == pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
 		{
 			// Tell other requests that they need to send the info again.
-			m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial -= 1;
+			pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial -= 1;
 		}
+		pJob->m_pShared->m_pGlobal->m_Lock.release();
 	}
+	return 0;
 }
 
 CRegister::CRegister(CConfig *pConfig, IConsole *pConsole, IEngine *pEngine, IHttp *pHttp, int ServerPort, unsigned SixupSecurityToken) :
@@ -514,21 +526,32 @@ CRegister::CRegister(CConfig *pConfig, IConsole *pConsole, IEngine *pEngine, IHt
 	m_pConsole(pConsole),
 	m_pEngine(pEngine),
 	m_pHttp(pHttp),
+	m_GotFirstUpdateCall(false),
 	m_ServerPort(ServerPort),
-	m_aProtocols{
-		CProtocol(this, PROTOCOL_TW6_IPV6),
-		CProtocol(this, PROTOCOL_TW6_IPV4),
-		CProtocol(this, PROTOCOL_TW7_IPV6),
-		CProtocol(this, PROTOCOL_TW7_IPV4),
-	}
+	m_pGlobal(new CGlobal()),
+	m_NumExtraHeaders(0),
+	m_GotServerInfo(false)
 {
 	const int HEADER_LEN = sizeof(SERVERBROWSE_CHALLENGE);
 	mem_copy(m_aVerifyPacketPrefix, SERVERBROWSE_CHALLENGE, HEADER_LEN);
+	m_Secret = RandomUuid();
+	m_ChallengeSecret = RandomUuid();
 	FormatUuid(m_ChallengeSecret, m_aVerifyPacketPrefix + HEADER_LEN, sizeof(m_aVerifyPacketPrefix) - HEADER_LEN);
 	m_aVerifyPacketPrefix[HEADER_LEN + UUID_MAXSTRSIZE - 1] = ':';
 
 	// The DDNet code uses the `unsigned` security token in big-endian byte order.
 	str_format(m_aConnlessTokenHex, sizeof(m_aConnlessTokenHex), "%08x", SixupSecurityToken);
+
+	for(int i = 0; i < NUM_PROTOCOLS; i++)
+	{
+		m_aProtocolEnabled[i] = true;
+		m_apProtocols[i] = new CProtocol(this, i);
+	}
+	m_aProtocolEnabled[PROTOCOL_TW6_IPV6] = false;
+	m_aProtocolEnabled[PROTOCOL_TW6_IPV4] = false;
+
+	mem_zero(m_aaExtraHeaders, sizeof(m_aaExtraHeaders));
+	mem_zero(m_aServerInfo, sizeof(m_aServerInfo));
 
 	m_pConsole->Chain("sv_register", ConchainOnConfigChange, this);
 	m_pConsole->Chain("sv_register_extra", ConchainOnConfigChange, this);
@@ -557,7 +580,7 @@ void CRegister::Update()
 		{
 			continue;
 		}
-		m_aProtocols[i].Update();
+		m_apProtocols[i]->Update();
 	}
 }
 
@@ -571,23 +594,23 @@ void CRegister::OnConfigChange()
 	const char *pProtocols = m_pConfig->m_SvRegister;
 	if(str_comp(pProtocols, "1") == 0)
 	{
-		for(auto &Enabled : m_aProtocolEnabled)
+		for(int i = 0; i < NUM_PROTOCOLS; i++)
 		{
-			Enabled = true;
+			m_aProtocolEnabled[i] = true;
 		}
 	}
 	else if(str_comp(pProtocols, "0") == 0)
 	{
-		for(auto &Enabled : m_aProtocolEnabled)
+		for(int i = 0; i < NUM_PROTOCOLS; i++)
 		{
-			Enabled = false;
+			m_aProtocolEnabled[i] = false;
 		}
 	}
 	else
 	{
-		for(auto &Enabled : m_aProtocolEnabled)
+		for(int i = 0; i < NUM_PROTOCOLS; i++)
 		{
-			Enabled = false;
+			m_aProtocolEnabled[i] = false;
 		}
 		char aBuf[16];
 		while((pProtocols = str_next_token(pProtocols, ",", aBuf, sizeof(aBuf))))
@@ -632,7 +655,7 @@ void CRegister::OnConfigChange()
 	char aHeader[128];
 	while((pRegisterExtra = str_next_token(pRegisterExtra, ",", aHeader, sizeof(aHeader))))
 	{
-		if(m_NumExtraHeaders == (int) std::size(m_aaExtraHeaders))
+		if(m_NumExtraHeaders == 8)
 		{
 			dbg_msg("register", "reached maximum of %d extra headers, dropping '%s' and all further headers", m_NumExtraHeaders, aHeader);
 			break;
@@ -658,11 +681,11 @@ void CRegister::OnConfigChange()
 		}
 		if(m_aProtocolEnabled[i])
 		{
-			m_aProtocols[i].SendRegister();
+			m_apProtocols[i]->SendRegister();
 		}
 		else
 		{
-			m_aProtocols[i].SendDeleteIfRegistered(false);
+			m_apProtocols[i]->SendDeleteIfRegistered(false);
 		}
 	}
 }
@@ -695,7 +718,7 @@ bool CRegister::OnPacket(const CNetChunk *pPacket)
 			dbg_msg("register", "got challenge packet with unknown protocol");
 			return true;
 		}
-		m_aProtocols[Protocol].OnToken(pToken);
+		m_apProtocols[Protocol]->OnToken(pToken);
 		return true;
 	}
 	return false;
@@ -712,10 +735,9 @@ void CRegister::OnNewInfo(const char *pInfo)
 
 	m_GotServerInfo = true;
 	str_copy(m_aServerInfo, pInfo, sizeof(m_aServerInfo));
-	{
-		CLockScope ls(m_pGlobal->m_Lock);
-		m_pGlobal->m_InfoSerial += 1;
-	}
+	m_pGlobal->m_Lock.take();
+	m_pGlobal->m_InfoSerial += 1;
+	m_pGlobal->m_Lock.release();
 
 	// Don't start registering before the first `CRegister::Update` call.
 	if(!m_GotFirstUpdateCall)
@@ -735,19 +757,19 @@ void CRegister::OnNewInfo(const char *pInfo)
 		{
 			continue;
 		}
-		if(m_aProtocols[i].m_NextRegister == -1)
+		if(m_apProtocols[i]->m_NextRegister == -1)
 		{
-			m_aProtocols[i].m_NextRegister = Now;
+			m_apProtocols[i]->m_NextRegister = Now;
 			continue;
 		}
-		if(m_aProtocols[i].m_PrevRegister > MaximumPrevRegister)
+		if(m_apProtocols[i]->m_PrevRegister > MaximumPrevRegister)
 		{
-			MaximumPrevRegister = m_aProtocols[i].m_PrevRegister;
+			MaximumPrevRegister = m_apProtocols[i]->m_PrevRegister;
 		}
-		if(MinimumNextRegisterProtocol == -1 || m_aProtocols[i].m_NextRegister < MinimumNextRegister)
+		if(MinimumNextRegisterProtocol == -1 || m_apProtocols[i]->m_NextRegister < MinimumNextRegister)
 		{
 			MinimumNextRegisterProtocol = i;
-			MinimumNextRegister = m_aProtocols[i].m_NextRegister;
+			MinimumNextRegister = m_apProtocols[i]->m_NextRegister;
 		}
 	}
 	for(int i = 0; i < NUM_PROTOCOLS; i++)
@@ -758,11 +780,14 @@ void CRegister::OnNewInfo(const char *pInfo)
 		}
 		if(i == MinimumNextRegisterProtocol)
 		{
-			m_aProtocols[i].m_NextRegister = std::min(m_aProtocols[i].m_NextRegister, MaximumPrevRegister + Freq);
+			int64_t NextRegister = m_apProtocols[i]->m_NextRegister;
+			if(MaximumPrevRegister + Freq < NextRegister)
+				NextRegister = MaximumPrevRegister + Freq;
+			m_apProtocols[i]->m_NextRegister = NextRegister;
 		}
-		if(Now >= m_aProtocols[i].m_NextRegister)
+		if(Now >= m_apProtocols[i]->m_NextRegister)
 		{
-			m_aProtocols[i].SendRegister();
+			m_apProtocols[i]->SendRegister();
 		}
 	}
 }
@@ -775,7 +800,7 @@ void CRegister::OnShutdown()
 		{
 			continue;
 		}
-		m_aProtocols[i].SendDeleteIfRegistered(true);
+		m_apProtocols[i]->SendDeleteIfRegistered(true);
 	}
 }
 

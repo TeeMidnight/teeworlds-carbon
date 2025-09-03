@@ -13,7 +13,7 @@ class IHttp : public IInterface
 	MACRO_INTERFACE("http", 0)
 
 public:
-	virtual void Run(std::shared_ptr<IHttpRequest> pRequest) = 0;
+	virtual void Run(IHttpRequest *pRequest) = 0;
 };
 
 #endif // ENGINE_HTTP_H From DDNet

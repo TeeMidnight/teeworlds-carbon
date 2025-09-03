@@ -78,14 +78,14 @@ class lock
 
 	LOCK var;
 
-	void take() { lock_wait(var); }
-	void release() { lock_unlock(var); }
-
 public:
 	lock()
 	{
 		var = lock_create();
 	}
+
+	void take() { lock_wait(var); }
+	void release() { lock_unlock(var); }
 
 	~lock()
 	{

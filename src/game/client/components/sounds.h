@@ -20,22 +20,10 @@ class CSounds : public CComponent
 	} m_aQueue[QUEUE_SIZE];
 	int m_QueuePos;
 	int64 m_QueueWaitTime;
-	class CJob : public IJob
-	{
-		struct CUserData *m_pData;
-
-	public:
-		CJob(struct CUserData *pData) :
-			m_pData(pData) {}
-
-		void Run() override;
-	};
-	std::shared_ptr<CJob> m_pSoundJob;
+	class CJob m_SoundJob;
 	bool m_WaitForSoundJob;
 
 	ISound::CSampleHandle GetSampleId(int SetId);
-
-	friend class CSounds::CJob;
 
 public:
 	// sound channels
@@ -47,11 +35,11 @@ public:
 		CHN_GLOBAL,
 	};
 
-	int GetInitAmount() const override;
-	void OnInit() override;
-	void OnReset() override;
-	void OnStateChange(int NewState, int OldState) override;
-	void OnRender() override;
+	virtual int GetInitAmount() const;
+	virtual void OnInit();
+	virtual void OnReset();
+	virtual void OnStateChange(int NewState, int OldState);
+	virtual void OnRender();
 
 	void ClearQueue();
 	void Enqueue(int Channel, int SetId);

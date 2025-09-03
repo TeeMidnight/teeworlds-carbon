@@ -10,7 +10,6 @@
 #include <engine/shared/serverinfo.h>
 #include <engine/storage.h>
 
-#include <base/lock.h>
 #include <base/system.h>
 
 #include <memory>
@@ -55,7 +54,7 @@ private:
 	CConfig *m_pConfig;
 
 	int m_State = STATE_WANTREFRESH;
-	std::shared_ptr<CHttpRequest> m_pGetServers;
+	CHttpRequest *m_pGetServers;
 
 	std::vector<CServerInfo> m_vServers;
 };
@@ -93,7 +92,7 @@ void CServerBrowserHttp::Update()
 			return;
 		}
 		m_State = STATE_DONE;
-		std::shared_ptr<CHttpRequest> pGetServers = nullptr;
+		CHttpRequest *pGetServers = nullptr;
 		std::swap(m_pGetServers, pGetServers);
 
 		bool Success = true;

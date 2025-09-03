@@ -1252,7 +1252,6 @@ set_src(BASE GLOB_RECURSE src/base
   hash_ctxt.h
   hash_libtomcrypt.c
   hash_openssl.c
-  lock.h
   math.h
   system.c
   system.h

@@ -1509,7 +1509,7 @@ int CServer::Run()
 		return -1;
 	}
 
-	if(!m_Http.Init(std::chrono::seconds{2}, Config()))
+	if(!m_Http.Init(2000, Config()))
 	{
 		dbg_msg("server", "Failed to initialize the HTTP client.");
 		return -1;
