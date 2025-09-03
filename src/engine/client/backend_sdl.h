@@ -76,6 +76,19 @@ public:
 // takes care of opengl related rendering
 class CCommandProcessorFragment_OpenGL
 {
+	struct SRenderStatus
+	{
+		GLuint m_VAO;
+		GLuint m_VBO;
+		GLuint m_EBO;
+		bool m_VAOInitialized;
+
+		GLuint m_ShaderProgram;
+		int m_UseTextureLoc;
+		int m_IsAlphaOnlyLoc;
+		int m_OurTextureLoc;
+	}m_aRenderStatus[2];
+
 	class CTexture
 	{
 	public:
@@ -99,10 +112,6 @@ class CCommandProcessorFragment_OpenGL
 	int m_MaxTexSize;
 	int m_Max3DTexSize;
 	int m_TextureArraySize;
-
-	// OpenGL 4.6 Core Profile additions
-	GLuint m_ShaderProgram;
-	GLuint m_ShaderProgram3D;
 
 public:
 	enum
