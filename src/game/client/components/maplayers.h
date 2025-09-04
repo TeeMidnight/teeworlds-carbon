@@ -7,6 +7,7 @@
 
 class CMapLayers : public CComponent
 {
+	friend class CMapSounds;
 	CLayers *m_pMenuLayers;
 	IEngineMap *m_pMenuMap;
 

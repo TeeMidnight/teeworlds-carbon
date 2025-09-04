@@ -23,7 +23,7 @@ class CSounds : public CComponent
 	class CJob m_SoundJob;
 	bool m_WaitForSoundJob;
 
-	ISound::CSampleHandle GetSampleId(int SetId);
+	int GetSampleId(int SetId);
 
 public:
 	// sound channels
@@ -33,6 +33,7 @@ public:
 		CHN_MUSIC,
 		CHN_WORLD,
 		CHN_GLOBAL,
+		CHN_MAPSOUND,
 	};
 
 	virtual int GetInitAmount() const;
@@ -47,6 +48,9 @@ public:
 	void PlayAt(int Channel, int SetId, float Vol, vec2 Pos);
 	void Stop(int SetId);
 	bool IsPlaying(int SetId);
+
+	ISound::CSampleHandle PlaySample(int Channel, int SampleId, float Vol, int Flags = 0);
+	ISound::CSampleHandle PlaySampleAt(int Channel, int SampleId, float Vol, vec2 Pos, int Flags = 0);
 };
 
 #endif

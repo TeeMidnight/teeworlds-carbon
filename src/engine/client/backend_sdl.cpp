@@ -536,8 +536,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 		glEnableVertexAttribArray(2);
 
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), 0);
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 2));
-		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 5));
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 2));
+		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 5));
 
 		m_aLastIndexBufferBound[i] = 0;
 	}

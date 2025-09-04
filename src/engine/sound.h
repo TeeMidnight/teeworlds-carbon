@@ -11,46 +11,83 @@ class ISound : public IInterface
 public:
 	enum
 	{
-		FLAG_LOOP = 1,
-		FLAG_POS = 2,
-		FLAG_ALL = 3
+		FLAG_LOOP = 1 << 0,
+		FLAG_POS = 1 << 1,
+		FLAG_NO_PANNING = 1 << 2,
+		FLAG_ALL = FLAG_LOOP | FLAG_POS | FLAG_NO_PANNING,
+	};
+
+	enum
+	{
+		SHAPE_CIRCLE,
+		SHAPE_RECTANGLE,
+	};
+
+	struct CVoiceShapeCircle
+	{
+		float m_Radius;
+	};
+
+	struct CVoiceShapeRectangle
+	{
+		float m_Width;
+		float m_Height;
 	};
 
 	class CSampleHandle
 	{
 		friend class ISound;
 		int m_Id;
+		int m_Age;
 
 	public:
 		CSampleHandle() :
-			m_Id(-1)
+			m_Id(-1), m_Age(-1)
 		{
 		}
 
-		bool IsValid() const { return Id() >= 0; }
+		bool IsValid() const { return (Id() >= 0) && (Age() >= 0); }
 		int Id() const { return m_Id; }
+		int Age() const { return m_Age; }
+
+		bool operator==(const CSampleHandle &Other) const { return m_Id == Other.m_Id && m_Age == Other.m_Age; }
 	};
 
 	virtual bool IsSoundEnabled() = 0;
 
-	virtual CSampleHandle LoadWV(const char *pFilename) = 0;
+	virtual int LoadWV(const char *pFilename) = 0;
+	virtual int LoadOpus(const char *pFilename) = 0;
+	virtual int LoadWVFromMem(const void *pData, unsigned DataSize, bool FromEditor = false) = 0;
+	virtual int LoadOpusFromMem(const void *pData, unsigned DataSize, bool FromEditor = false) = 0;
+	virtual void UnloadSample(int SampleID) = 0;
 
-	virtual void SetChannelVolume(int ChannelID, float Volume) = 0;
+	virtual float GetSampleDuration(int SampleID) = 0; // in s
+
+	virtual void SetChannel(int ChannelID, float Volume, float Panning) = 0;
 	virtual void SetListenerPos(float x, float y) = 0;
-	virtual void SetMaxDistance(float Distance) = 0;
 
-	virtual int PlayAt(int ChannelID, CSampleHandle Sound, int Flags, float x, float y) = 0;
-	virtual int Play(int ChannelID, CSampleHandle Sound, int Flags) = 0;
-	virtual void Stop(CSampleHandle Sound) = 0;
+	virtual void SetVoiceVolume(CSampleHandle Voice, float Volume) = 0;
+	virtual void SetVoiceFalloff(CSampleHandle Voice, float Falloff) = 0;
+	virtual void SetVoiceLocation(CSampleHandle Voice, float x, float y) = 0;
+	virtual void SetVoiceTimeOffset(CSampleHandle Voice, float offset) = 0; // in s
+
+	virtual void SetVoiceCircle(CSampleHandle Voice, float Radius) = 0;
+	virtual void SetVoiceRectangle(CSampleHandle Voice, float Width, float Height) = 0;
+
+	virtual CSampleHandle PlayAt(int ChannelID, int SampleID, int Flags, float x, float y) = 0;
+	virtual CSampleHandle Play(int ChannelID, int SampleID, int Flags) = 0;
+	virtual void Stop(int SampleID) = 0;
 	virtual void StopAll() = 0;
-	virtual bool IsPlaying(CSampleHandle Sound) = 0;
+	virtual void StopVoice(CSampleHandle Voice) = 0;
+	virtual bool IsPlaying(int Sound) = 0;
 
 protected:
-	inline CSampleHandle CreateSampleHandle(int Index)
+	inline CSampleHandle CreateVoiceHandle(int Index, int Age)
 	{
-		CSampleHandle Tex;
-		Tex.m_Id = Index;
-		return Tex;
+		CSampleHandle Voice;
+		Voice.m_Id = Index;
+		Voice.m_Age = Age;
+		return Voice;
 	}
 };
 

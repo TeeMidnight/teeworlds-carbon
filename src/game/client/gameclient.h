@@ -340,6 +340,7 @@ public:
 	class CItems *m_pItems;
 	class CMapLayers *m_pMapLayersBackGround;
 	class CMapLayers *m_pMapLayersForeGround;
+	class CMapSounds *m_pMapSounds;
 };
 
 void FormatTime(char *pBuf, int Size, int Time, int Precision);

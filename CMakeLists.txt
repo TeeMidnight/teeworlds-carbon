@@ -300,6 +300,10 @@ find_package(Wavpack)
 find_package(Curl)
 find_package(Python3)
 
+find_package(Ogg)
+find_package(Opus)
+find_package(Opusfile)
+
 if(TARGET_OS AND TARGET_OS STREQUAL "mac")
   find_program(CMAKE_OTOOL otool)
   find_program(DMG dmg)
@@ -345,7 +349,10 @@ if(TARGET_OS AND TARGET_OS STREQUAL "mac")
   show_dependency_status("Hdiutil" HDIUTIL)
 endif()
 show_dependency_status("Freetype" FREETYPE)
+show_dependency_status("Ogg" OGG)
 show_dependency_status("OpenSSL Crypto" CRYPTO)
+show_dependency_status("Opus" OPUS)
+show_dependency_status("Opusfile" OPUSFILE)
 show_dependency_status("Pnglite" PNGLITE)
 show_dependency_status("Python3" Python3)
 show_dependency_status("SDL3" SDL3)
@@ -364,6 +371,16 @@ if(NOT(CURL_FOUND))
 endif()
 if(NOT(Python3_FOUND))
   message(SEND_ERROR "You must install Python to compile Teeworlds")
+endif()
+
+if(CLIENT AND NOT(OGG_FOUND))
+  message(SEND_ERROR "You must install Ogg to compile the Carbon client")
+endif()
+if(CLIENT AND NOT(OPUS_FOUND))
+  message(SEND_ERROR "You must install Opus to compile the Carbon client")
+endif()
+if(CLIENT AND NOT(OPUSFILE_FOUND))
+  message(SEND_ERROR "You must install Opusfile to compile the Carbon client")
 endif()
 
 if(NOT(GTEST_FOUND))
@@ -1462,6 +1479,8 @@ if(CLIENT)
     components/mapimages.h
     components/maplayers.cpp
     components/maplayers.h
+    components/mapsounds.cpp
+    components/mapsounds.h
     components/menus.cpp
     components/menus.h
     components/menus_browser.cpp
@@ -1536,6 +1555,9 @@ if(CLIENT)
     ${PNGLITE_LIBRARIES}
     ${SDL3_LIBRARIES}
     ${WAVPACK_LIBRARIES}
+    ${OPUSFILE_LIBRARIES}
+    ${OPUS_LIBRARIES}
+    ${OGG_LIBRARIES}
     ${PLATFORM_CLIENT_LIBS}
   )
 
@@ -1567,6 +1589,9 @@ if(CLIENT)
     ${PNGLITE_INCLUDE_DIRS}
     ${SDL3_INCLUDE_DIRS}
     ${WAVPACK_INCLUDE_DIRS}
+    ${OGG_INCLUDE_DIRS}
+    ${OPUSFILE_INCLUDE_DIRS}
+    ${OPUS_INCLUDE_DIRS}
   )
 
   set(PARAMS "${WAVPACK_INCLUDE_DIRS};${WAVPACK_INCLUDE_DIRS}")

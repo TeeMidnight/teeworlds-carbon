@@ -40,6 +40,7 @@
 #include "components/items.h"
 #include "components/mapimages.h"
 #include "components/maplayers.h"
+#include "components/mapsounds.h"
 #include "components/menus.h"
 #include "components/motd.h"
 #include "components/nameplates.h"
@@ -123,6 +124,8 @@ static CMapImages gs_MapImages;
 
 static CMapLayers gs_MapLayersBackGround(CMapLayers::TYPE_BACKGROUND);
 static CMapLayers gs_MapLayersForeGround(CMapLayers::TYPE_FOREGROUND);
+
+static CMapSounds gs_MapSounds;
 
 CGameClient::CStack::CStack() { m_Num = 0; }
 void CGameClient::CStack::Add(class CComponent *pComponent) { m_apComponents[m_Num++] = pComponent; }
@@ -257,6 +260,7 @@ void CGameClient::OnConsoleInit()
 	m_pMapLayersBackGround = &::gs_MapLayersBackGround;
 	m_pMapLayersForeGround = &::gs_MapLayersForeGround;
 	m_pStats = &::gs_Stats;
+	m_pMapSounds = &::gs_MapSounds;
 
 	// make a list of all the systems, make sure to add them in the corrent render order
 	m_All.Add(m_pSkins);
@@ -270,6 +274,7 @@ void CGameClient::OnConsoleInit()
 	m_All.Add(m_pCamera);
 	m_All.Add(m_pSounds);
 	m_All.Add(m_pVoting);
+	m_All.Add(m_pMapSounds);
 
 	m_All.Add(&gs_MapLayersBackGround); // first to render
 	m_All.Add(&m_pParticles->m_RenderTrail);

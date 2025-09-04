@@ -13,15 +13,18 @@
 #include "sound.h"
 
 extern "C" {
+#if defined(CONF_VIDEORECORDER)
+#include <engine/shared/video.h>
+#endif
+#include <opusfile.h>
 #include <wavpack.h>
 }
-#include <limits.h>
 #include <math.h>
 
 enum
 {
 	NUM_SAMPLES = 512,
-	NUM_VOICES = 64,
+	NUM_VOICES = 256,
 	NUM_CHANNELS = 16,
 };
 
@@ -38,42 +41,67 @@ struct CSample
 
 struct CChannel
 {
-	int m_Vol; // 0 - 255
+	int m_Vol;
+	int m_Pan;
 };
 
 struct CVoice
 {
 	CSample *m_pSample;
 	CChannel *m_pChannel;
+	int m_Age; // increases when reused
 	int m_Tick;
 	int m_Vol; // 0 - 255
 	int m_Flags;
 	int m_X, m_Y;
+	float m_Falloff; // [0.0, 1.0]
+
+	int m_Shape;
+	union
+	{
+		ISound::CVoiceShapeCircle m_Circle;
+		ISound::CVoiceShapeRectangle m_Rectangle;
+	};
 };
 
 static CSample m_aSamples[NUM_SAMPLES] = {{0}};
 static CVoice m_aVoices[NUM_VOICES] = {{0}};
-static CChannel m_aChannels[NUM_CHANNELS];
+static CChannel m_aChannels[NUM_CHANNELS] = {{255, 0}};
 
 static LOCK m_SoundLock = 0;
 
 static int m_CenterX = 0;
 static int m_CenterY = 0;
 
-static float m_MaxDistance = 1500.0f;
-
 static int m_MixingRate = 48000;
-static int m_SoundVolume = 100;
+static volatile int m_SoundVolume = 100;
 
 static int m_NextVoice = 0;
 static int *m_pMixBuffer = 0; // buffer only used by the thread callback function
 static unsigned m_MaxFrames = 0;
 
-static IOHANDLE s_File;
+static const void *s_pWVBuffer = 0x0;
+static int s_WVBufferPosition = 0;
+static int s_WVBufferSize = 0;
 
+const int DefaultDistance = 1500;
+int m_LastBreak = 0;
+
+// TODO: there should be a faster way todo this
 static short Int2Short(int i)
 {
-	return clamp(i, SHRT_MIN, SHRT_MAX);
+	if(i > 0x7fff)
+		return 0x7fff;
+	else if(i < -0x7fff)
+		return -0x7fff;
+	return i;
+}
+
+static int IntAbs(int i)
+{
+	if(i < 0)
+		return -i;
+	return i;
 }
 
 static void Mix(short *pFinalOut, unsigned Frames)
@@ -82,7 +110,7 @@ static void Mix(short *pFinalOut, unsigned Frames)
 	mem_zero(m_pMixBuffer, m_MaxFrames * 2 * sizeof(int));
 	Frames = minimum(Frames, m_MaxFrames);
 
-	// aquire lock while we are mixing
+	// acquire lock while we are mixing
 	lock_wait(m_SoundLock);
 
 	MasterVol = m_SoundVolume;
@@ -101,8 +129,8 @@ static void Mix(short *pFinalOut, unsigned Frames)
 
 			unsigned End = v->m_pSample->m_NumFrames - v->m_Tick;
 
-			int Rvol = v->m_pChannel->m_Vol;
-			int Lvol = v->m_pChannel->m_Vol;
+			int Rvol = (int) (v->m_pChannel->m_Vol * (v->m_Vol / 255.0f));
+			int Lvol = (int) (v->m_pChannel->m_Vol * (v->m_Vol / 255.0f));
 
 			// make sure that we don't go outside the sound data
 			if(Frames < End)
@@ -113,30 +141,87 @@ static void Mix(short *pFinalOut, unsigned Frames)
 				pInR = pInL;
 
 			// volume calculation
-			if(v->m_Flags & ISound::FLAG_POS)
+			if(v->m_Flags & ISound::FLAG_POS && v->m_pChannel->m_Pan)
 			{
+				// TODO: we should respect the channel panning value
 				int dx = v->m_X - m_CenterX;
 				int dy = v->m_Y - m_CenterY;
-				float Dist = sqrtf((float) dx * dx + dy * dy);
-				if(Dist >= 0.0f && Dist < m_MaxDistance)
+				//
+				int p = IntAbs(dx);
+				float FalloffX = 0.0f;
+				float FalloffY = 0.0f;
+
+				int RangeX = 0; // for panning
+				bool InVoiceField = false;
+
+				switch(v->m_Shape)
 				{
-					// linear falloff
-					float Falloff = 1.0f - Dist / m_MaxDistance;
+				case ISound::SHAPE_CIRCLE:
+				{
+					float r = v->m_Circle.m_Radius;
+					RangeX = r;
 
-					// amplitude after falloff
-					float FalloffAmp = v->m_pChannel->m_Vol * Falloff;
+					int Dist = (int) sqrtf((float) dx * dx + dy * dy); // nasty float
+					if(Dist < r)
+					{
+						InVoiceField = true;
 
-					// distribute volume to the channels depending on x difference
-					float Lpan = 0.5f - dx / m_MaxDistance / 2.0f;
-					float Rpan = 1.0f - Lpan;
+						// falloff
+						int FalloffDistance = r * v->m_Falloff;
+						if(Dist > FalloffDistance)
+							FalloffX = FalloffY = (r - Dist) / (r - FalloffDistance);
+						else
+							FalloffX = FalloffY = 1.0f;
+					}
+					else
+						InVoiceField = false;
 
-					// apply square root to preserve sound power after panning
-					float LampFactor = sqrt(Lpan);
-					float RampFactor = sqrt(Rpan);
+					break;
+				}
 
-					// volume of the channels
-					Lvol = FalloffAmp * LampFactor;
-					Rvol = FalloffAmp * RampFactor;
+				case ISound::SHAPE_RECTANGLE:
+				{
+					RangeX = v->m_Rectangle.m_Width / 2.0f;
+
+					int abs_dx = abs(dx);
+					int abs_dy = abs(dy);
+
+					int w = v->m_Rectangle.m_Width / 2.0f;
+					int h = v->m_Rectangle.m_Height / 2.0f;
+
+					if(abs_dx < w && abs_dy < h)
+					{
+						InVoiceField = true;
+
+						// falloff
+						int fx = v->m_Falloff * w;
+						int fy = v->m_Falloff * h;
+
+						FalloffX = abs_dx > fx ? (float) (w - abs_dx) / (w - fx) : 1.0f;
+						FalloffY = abs_dy > fy ? (float) (h - abs_dy) / (h - fy) : 1.0f;
+					}
+					else
+						InVoiceField = false;
+
+					break;
+				}
+				};
+
+				if(InVoiceField)
+				{
+					// panning
+					if(!(v->m_Flags & ISound::FLAG_NO_PANNING))
+					{
+						if(dx > 0)
+							Lvol = ((RangeX - p) * Lvol) / RangeX;
+						else
+							Rvol = ((RangeX - p) * Rvol) / RangeX;
+					}
+
+					{
+						Lvol *= FalloffX * FalloffY;
+						Rvol *= FalloffX * FalloffY;
+					}
 				}
 				else
 				{
@@ -161,7 +246,10 @@ static void Mix(short *pFinalOut, unsigned Frames)
 				if(v->m_Flags & ISound::FLAG_LOOP)
 					v->m_Tick = 0;
 				else
+				{
 					v->m_pSample = 0;
+					v->m_Age++;
+				}
 			}
 		}
 	}
@@ -169,16 +257,20 @@ static void Mix(short *pFinalOut, unsigned Frames)
 	// release the lock
 	lock_unlock(m_SoundLock);
 
-	// clamp accumulated values
-	// TODO: this seams slow
-	for(unsigned i = 0; i < Frames; ++i)
 	{
-		int j = i << 1;
-		int vl = ((m_pMixBuffer[j] * MasterVol) / 101) >> 8;
-		int vr = ((m_pMixBuffer[j + 1] * MasterVol) / 101) >> 8;
+		// clamp accumulated values
+		// TODO: this seams slow
+		for(unsigned i = 0; i < Frames; i++)
+		{
+			int j = i << 1;
+			int vl = ((m_pMixBuffer[j] * MasterVol) / 101) >> 8;
+			int vr = ((m_pMixBuffer[j + 1] * MasterVol) / 101) >> 8;
 
-		pFinalOut[j] = Int2Short(vl);
-		pFinalOut[j + 1] = Int2Short(vr);
+			pFinalOut[j] = Int2Short(vl);
+			pFinalOut[j + 1] = Int2Short(vr);
+
+			// dbg_msg("sound", "the real shit: %d %d", pFinalOut[j], pFinalOut[j+1]);
+		}
 	}
 
 #if defined(CONF_ARCH_ENDIAN_BIG)
@@ -186,7 +278,7 @@ static void Mix(short *pFinalOut, unsigned Frames)
 #endif
 }
 
-static void SDLCallback(void *pUnused, Uint8 *pStream, int Len)
+static void SdlCallback(void *pUnused, Uint8 *pStream, int Len)
 {
 	(void) pUnused;
 	Mix((short *) pStream, Len / 2 / 2);
@@ -203,7 +295,7 @@ static void SDLNewCallback(void *pUnused, SDL_AudioStream *pStream, int Addition
 		Uint8 *pData = SDL_stack_alloc(Uint8, AdditionalAmount);
 		if(pData)
 		{
-			SDLCallback(pUnused, pData, AdditionalAmount);
+			SdlCallback(pUnused, pData, AdditionalAmount);
 			SDL_PutAudioStreamData(pStream, pData, AdditionalAmount);
 			SDL_stack_free(pData);
 		}
@@ -241,7 +333,7 @@ int CSound::Init()
 		return -1;
 	}
 	else
-		dbg_msg("client/sound", "sound init successful");
+		dbg_msg("client/sound", "sound init successful using audio driver '%s'", SDL_GetCurrentAudioDriver());
 
 	m_MaxFrames = m_pConfig->m_SndBufferSize * 2;
 	m_pMixBuffer = (int *) mem_alloc(m_MaxFrames * 2 * sizeof(int));
@@ -273,6 +365,11 @@ int CSound::Update()
 
 void CSound::Shutdown()
 {
+	for(unsigned SampleID = 0; SampleID < NUM_SAMPLES; SampleID++)
+	{
+		UnloadSample(SampleID);
+	}
+
 	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 	lock_destroy(m_SoundLock);
 	if(m_pMixBuffer)
@@ -280,6 +377,7 @@ void CSound::Shutdown()
 		mem_free(m_pMixBuffer);
 		m_pMixBuffer = 0;
 	}
+	return;
 }
 
 int CSound::AllocID()
@@ -306,7 +404,7 @@ void CSound::RateConvert(int SampleID)
 
 	// allocate new data
 	NumFrames = (int) ((pSample->m_NumFrames / (float) pSample->m_Rate) * m_MixingRate);
-	pNewData = (short *) mem_alloc(NumFrames * pSample->m_Channels * sizeof(short));
+	pNewData = (short *) calloc(NumFrames * pSample->m_Channels, sizeof(short));
 
 	for(int i = 0; i < NumFrames; i++)
 	{
@@ -327,14 +425,64 @@ void CSound::RateConvert(int SampleID)
 	}
 
 	// free old data and apply new
-	mem_free(pSample->m_pData);
+	free(pSample->m_pData);
 	pSample->m_pData = pNewData;
 	pSample->m_NumFrames = NumFrames;
+	pSample->m_Rate = m_MixingRate;
+}
+
+int CSound::DecodeOpus(int SampleID, const void *pData, unsigned DataSize)
+{
+	if(SampleID == -1 || SampleID >= NUM_SAMPLES)
+		return -1;
+
+	CSample *pSample = &m_aSamples[SampleID];
+
+	OggOpusFile *OpusFile = op_open_memory((const unsigned char *) pData, DataSize, NULL);
+	if(OpusFile)
+	{
+		int NumChannels = op_channel_count(OpusFile, -1);
+		int NumSamples = op_pcm_total(OpusFile, -1); // per channel!
+
+		pSample->m_Channels = NumChannels;
+
+		if(pSample->m_Channels > 2)
+		{
+			dbg_msg("sound/opus", "file is not mono or stereo.");
+			return -1;
+		}
+
+		pSample->m_pData = (short *) calloc(NumSamples * NumChannels, sizeof(short));
+
+		int Read;
+		int Pos = 0;
+		while(Pos < NumSamples)
+		{
+			Read = op_read(OpusFile, pSample->m_pData + Pos * NumChannels, NumSamples * NumChannels, NULL);
+			Pos += Read;
+		}
+
+		pSample->m_NumFrames = NumSamples; // ?
+		pSample->m_Rate = 48000;
+		pSample->m_LoopStart = -1;
+		pSample->m_LoopEnd = -1;
+		pSample->m_PausedAt = 0;
+	}
+	else
+	{
+		dbg_msg("sound/opus", "failed to decode sample");
+		return -1;
+	}
+
+	return SampleID;
 }
 
 static int ReadDataOld(void *pBuffer, int Size)
 {
-	return io_read(s_File, pBuffer, Size);
+	int ChunkSize = minimum(Size, s_WVBufferSize - s_WVBufferPosition);
+	mem_copy(pBuffer, (const char *) s_pWVBuffer + s_WVBufferPosition, ChunkSize);
+	s_WVBufferPosition += ChunkSize;
+	return ChunkSize;
 }
 
 #if defined(CONF_WAVPACK_OPEN_FILE_INPUT_EX)
@@ -353,60 +501,34 @@ static int ReturnFalse(void *pId)
 static unsigned int GetPos(void *pId)
 {
 	(void) pId;
-	return io_tell(s_File);
+	return s_WVBufferPosition;
 }
 
 static unsigned int GetLength(void *pId)
 {
 	(void) pId;
-	return io_length(s_File);
+	return s_WVBufferSize;
 }
 
 static int PushBackByte(void *pId, int Char)
 {
-	(void) pId;
-	return io_unread_byte(s_File, Char);
+	s_WVBufferPosition -= 1;
+	return 0;
 }
 #endif
 
-ISound::CSampleHandle CSound::LoadWV(const char *pFilename)
+int CSound::DecodeWV(int SampleID, const void *pData, unsigned DataSize)
 {
-	CSample *pSample;
-	int SampleID = -1;
+	if(SampleID == -1 || SampleID >= NUM_SAMPLES)
+		return -1;
+
+	CSample *pSample = &m_aSamples[SampleID];
 	char aError[100];
 	WavpackContext *pContext;
 
-	// don't waste memory on sound when we are stress testing
-#ifdef CONF_DEBUG
-	if(m_pConfig->m_DbgStress)
-		return CSampleHandle();
-#endif
-
-	// no need to load sound when we are running with no sound
-	if(!m_SoundEnabled)
-		return CSampleHandle();
-
-	if(!m_pStorage)
-		return CSampleHandle();
-
-	lock_wait(m_SoundLock);
-	s_File = m_pStorage->OpenFile(pFilename, IOFLAG_READ, IStorage::TYPE_ALL);
-	if(!s_File)
-	{
-		dbg_msg("sound/wv", "failed to open file. filename='%s'", pFilename);
-		lock_unlock(m_SoundLock);
-		return CSampleHandle();
-	}
-
-	SampleID = AllocID();
-	if(SampleID < 0)
-	{
-		io_close(s_File);
-		s_File = 0;
-		lock_unlock(m_SoundLock);
-		return CSampleHandle();
-	}
-	pSample = &m_aSamples[SampleID];
+	s_pWVBuffer = pData;
+	s_WVBufferSize = DataSize;
+	s_WVBufferPosition = 0;
 
 #if defined(CONF_WAVPACK_OPEN_FILE_INPUT_EX)
 	WavpackStreamReader Callback = {0};
@@ -421,74 +543,223 @@ ISound::CSampleHandle CSound::LoadWV(const char *pFilename)
 #endif
 	if(pContext)
 	{
-		int m_aSamples = WavpackGetNumSamples(pContext);
+		int NumSamples = WavpackGetNumSamples(pContext);
 		int BitsPerSample = WavpackGetBitsPerSample(pContext);
 		unsigned int SampleRate = WavpackGetSampleRate(pContext);
-		int m_aChannels = WavpackGetNumChannels(pContext);
-		int *pData;
+		int NumChannels = WavpackGetNumChannels(pContext);
 		int *pSrc;
 		short *pDst;
 		int i;
 
-		pSample->m_Channels = m_aChannels;
+		pSample->m_Channels = NumChannels;
 		pSample->m_Rate = SampleRate;
 
 		if(pSample->m_Channels > 2)
 		{
-			dbg_msg("sound/wv", "file is not mono or stereo. filename='%s'", pFilename);
-			io_close(s_File);
-			s_File = 0;
-			lock_unlock(m_SoundLock);
-			return CSampleHandle();
-		}
-
-		/*
-		if(snd->rate != 44100)
-		{
-			dbg_msg("sound/wv", "file is %d Hz, not 44100 Hz. filename='%s'", snd->rate, filename);
+			dbg_msg("sound/wv", "file is not mono or stereo.");
 			return -1;
-		}*/
+		}
 
 		if(BitsPerSample != 16)
 		{
-			dbg_msg("sound/wv", "bps is %d, not 16, filname='%s'", BitsPerSample, pFilename);
-			io_close(s_File);
-			s_File = 0;
-			lock_unlock(m_SoundLock);
-			return CSampleHandle();
+			dbg_msg("sound/wv", "bps is %d, not 16", BitsPerSample);
+			return -1;
 		}
 
-		pData = (int *) mem_alloc(4 * m_aSamples * m_aChannels);
-		WavpackUnpackSamples(pContext, pData, m_aSamples); // TODO: check return value
-		pSrc = pData;
+		int *pBuffer = (int *) calloc(NumSamples * NumChannels, sizeof(int));
+		WavpackUnpackSamples(pContext, pBuffer, NumSamples); // TODO: check return value
+		pSrc = pBuffer;
 
-		pSample->m_pData = (short *) mem_alloc(2 * m_aSamples * m_aChannels);
+		pSample->m_pData = (short *) calloc(NumSamples * NumChannels, sizeof(short));
 		pDst = pSample->m_pData;
 
-		for(i = 0; i < m_aSamples * m_aChannels; i++)
+		for(i = 0; i < NumSamples * NumChannels; i++)
 			*pDst++ = (short) *pSrc++;
 
-		mem_free(pData);
+		free(pBuffer);
+#ifdef CONF_WAVPACK_CLOSE_FILE
+		WavpackCloseFile(pContext);
+#endif
 
-		pSample->m_NumFrames = m_aSamples;
+		pSample->m_NumFrames = NumSamples;
 		pSample->m_LoopStart = -1;
 		pSample->m_LoopEnd = -1;
 		pSample->m_PausedAt = 0;
 	}
 	else
 	{
-		dbg_msg("sound/wv", "failed to open %s: %s", pFilename, aError);
+		dbg_msg("sound/wv", "failed to decode sample (%s)", aError);
+		return -1;
 	}
 
-	io_close(s_File);
-	s_File = NULL;
+	return SampleID;
+}
+
+int CSound::LoadOpus(const char *pFilename)
+{
+	// don't waste memory on sound when we are stress testing
+#ifdef CONF_DEBUG
+	if(m_pConfig->m_DbgStress)
+		return -1;
+#endif
+
+	// no need to load sound when we are running with no sound
+	if(!m_SoundEnabled)
+		return -1;
+
+	if(!m_pStorage)
+		return -1;
+
+	IOHANDLE File = m_pStorage->OpenFile(pFilename, IOFLAG_READ, IStorage::TYPE_ALL);
+	if(!File)
+	{
+		dbg_msg("sound/opus", "failed to open file. filename='%s'", pFilename);
+		return -1;
+	}
+
+	int SampleID = AllocID();
+	int DataSize = io_length(File);
+	if(SampleID < 0 || DataSize <= 0)
+	{
+		io_close(File);
+		File = NULL;
+		dbg_msg("sound/opus", "failed to open file. filename='%s'", pFilename);
+		return -1;
+	}
+
+	// read the whole file into memory
+	char *pData = new char[DataSize];
+	io_read(File, pData, DataSize);
+
+	SampleID = DecodeOpus(SampleID, pData, DataSize);
+
+	delete[] pData;
+	io_close(File);
+	File = NULL;
+
+	if(m_pConfig->m_Debug)
+		dbg_msg("sound/opus", "loaded %s", pFilename);
+
+	RateConvert(SampleID);
+	return SampleID;
+}
+
+int CSound::LoadWV(const char *pFilename)
+{
+	// don't waste memory on sound when we are stress testing
+#ifdef CONF_DEBUG
+	if(m_pConfig->m_DbgStress)
+		return -1;
+#endif
+
+	// no need to load sound when we are running with no sound
+	if(!m_SoundEnabled)
+		return -1;
+
+	if(!m_pStorage)
+		return -1;
+
+	IOHANDLE File = m_pStorage->OpenFile(pFilename, IOFLAG_READ, IStorage::TYPE_ALL);
+	if(!File)
+	{
+		dbg_msg("sound/wv", "failed to open file. filename='%s'", pFilename);
+		return -1;
+	}
+
+	int SampleID = AllocID();
+	int DataSize = io_length(File);
+	if(SampleID < 0 || DataSize <= 0)
+	{
+		io_close(File);
+		File = NULL;
+		dbg_msg("sound/wv", "failed to open file. filename='%s'", pFilename);
+		return -1;
+	}
+
+	// read the whole file into memory
+	char *pData = new char[DataSize];
+	io_read(File, pData, DataSize);
+
+	SampleID = DecodeWV(SampleID, pData, DataSize);
+
+	delete[] pData;
+	io_close(File);
+	File = NULL;
 
 	if(m_pConfig->m_Debug)
 		dbg_msg("sound/wv", "loaded %s", pFilename);
 
 	RateConvert(SampleID);
-	lock_unlock(m_SoundLock);
-	return CreateSampleHandle(SampleID);
+	return SampleID;
+}
+
+int CSound::LoadOpusFromMem(const void *pData, unsigned DataSize, bool FromEditor = false)
+{
+	// don't waste memory on sound when we are stress testing
+#ifdef CONF_DEBUG
+	if(m_pConfig->m_DbgStress)
+		return -1;
+#endif
+
+	// no need to load sound when we are running with no sound
+	if(!m_SoundEnabled && !FromEditor)
+		return -1;
+
+	if(!pData)
+		return -1;
+
+	int SampleID = AllocID();
+	if(SampleID < 0)
+		return -1;
+
+	SampleID = DecodeOpus(SampleID, pData, DataSize);
+
+	RateConvert(SampleID);
+	return SampleID;
+}
+
+int CSound::LoadWVFromMem(const void *pData, unsigned DataSize, bool FromEditor = false)
+{
+	// don't waste memory on sound when we are stress testing
+#ifdef CONF_DEBUG
+	if(m_pConfig->m_DbgStress)
+		return -1;
+#endif
+
+	// no need to load sound when we are running with no sound
+	if(!m_SoundEnabled && !FromEditor)
+		return -1;
+
+	if(!pData)
+		return -1;
+
+	int SampleID = AllocID();
+	if(SampleID < 0)
+		return -1;
+
+	SampleID = DecodeWV(SampleID, pData, DataSize);
+
+	RateConvert(SampleID);
+	return SampleID;
+}
+
+void CSound::UnloadSample(int SampleID)
+{
+	if(SampleID == -1 || SampleID >= NUM_SAMPLES)
+		return;
+
+	Stop(SampleID);
+	free(m_aSamples[SampleID].m_pData);
+
+	m_aSamples[SampleID].m_pData = 0x0;
+}
+
+float CSound::GetSampleDuration(int SampleID)
+{
+	if(SampleID == -1 || SampleID >= NUM_SAMPLES)
+		return 0.0f;
+
+	return (m_aSamples[SampleID].m_NumFrames / m_aSamples[SampleID].m_Rate);
 }
 
 void CSound::SetListenerPos(float x, float y)
@@ -497,22 +768,124 @@ void CSound::SetListenerPos(float x, float y)
 	m_CenterY = (int) y;
 }
 
-void CSound::SetMaxDistance(float Distance)
+void CSound::SetVoiceVolume(CSampleHandle Voice, float Volume)
 {
-	m_MaxDistance = Distance;
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	Volume = clamp(Volume, 0.0f, 1.0f);
+	m_aVoices[VoiceID].m_Vol = (int) (Volume * 255.0f);
 }
 
-void CSound::SetChannelVolume(int ChannelID, float Vol)
+void CSound::SetVoiceFalloff(CSampleHandle Voice, float Falloff)
+{
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	Falloff = clamp(Falloff, 0.0f, 1.0f);
+	m_aVoices[VoiceID].m_Falloff = Falloff;
+}
+
+void CSound::SetVoiceLocation(CSampleHandle Voice, float x, float y)
+{
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	m_aVoices[VoiceID].m_X = x;
+	m_aVoices[VoiceID].m_Y = y;
+}
+
+void CSound::SetVoiceTimeOffset(CSampleHandle Voice, float offset)
+{
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	lock_wait(m_SoundLock);
+	{
+		if(m_aVoices[VoiceID].m_pSample)
+		{
+			int Tick = 0;
+			bool IsLooping = m_aVoices[VoiceID].m_Flags & ISound::FLAG_LOOP;
+			uint64_t TickOffset = m_aVoices[VoiceID].m_pSample->m_Rate * offset;
+			if(m_aVoices[VoiceID].m_pSample->m_NumFrames > 0 && IsLooping)
+				Tick = TickOffset % m_aVoices[VoiceID].m_pSample->m_NumFrames;
+			else
+				Tick = clamp(TickOffset, (uint64_t) 0, (uint64_t) m_aVoices[VoiceID].m_pSample->m_NumFrames);
+
+			// at least 200msec off, else depend on buffer size
+			float Threshold = maximum(0.2f * m_aVoices[VoiceID].m_pSample->m_Rate, (float) m_MaxFrames);
+			if(abs(m_aVoices[VoiceID].m_Tick - Tick) > Threshold)
+			{
+				// take care of looping (modulo!)
+				if(!(IsLooping && (minimum(m_aVoices[VoiceID].m_Tick, Tick) + m_aVoices[VoiceID].m_pSample->m_NumFrames - maximum(m_aVoices[VoiceID].m_Tick, Tick)) <= Threshold))
+				{
+					m_aVoices[VoiceID].m_Tick = Tick;
+				}
+			}
+		}
+	}
+	lock_unlock(m_SoundLock);
+}
+
+void CSound::SetVoiceCircle(CSampleHandle Voice, float Radius)
+{
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	m_aVoices[VoiceID].m_Shape = ISound::SHAPE_CIRCLE;
+	m_aVoices[VoiceID].m_Circle.m_Radius = maximum(0.0f, Radius);
+}
+
+void CSound::SetVoiceRectangle(CSampleHandle Voice, float Width, float Height)
+{
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	m_aVoices[VoiceID].m_Shape = ISound::SHAPE_RECTANGLE;
+	m_aVoices[VoiceID].m_Rectangle.m_Width = maximum(0.0f, Width);
+	m_aVoices[VoiceID].m_Rectangle.m_Height = maximum(0.0f, Height);
+}
+
+void CSound::SetChannel(int ChannelID, float Vol, float Pan)
 {
 	m_aChannels[ChannelID].m_Vol = (int) (Vol * 255.0f);
+	m_aChannels[ChannelID].m_Pan = (int) (Pan * 255.0f); // TODO: this is only on and off right now
 }
 
-int CSound::Play(int ChannelID, CSampleHandle SampleID, int Flags, float x, float y)
+ISound::CSampleHandle CSound::Play(int ChannelID, int SampleID, int Flags, float x, float y)
 {
-	if(!SampleID.IsValid())
-		return -1;
-
 	int VoiceID = -1;
+	int Age = -1;
 	int i;
 
 	lock_wait(m_SoundLock);
@@ -532,40 +905,41 @@ int CSound::Play(int ChannelID, CSampleHandle SampleID, int Flags, float x, floa
 	// voice found, use it
 	if(VoiceID != -1)
 	{
-		m_aVoices[VoiceID].m_pSample = &m_aSamples[SampleID.Id()];
+		m_aVoices[VoiceID].m_pSample = &m_aSamples[SampleID];
 		m_aVoices[VoiceID].m_pChannel = &m_aChannels[ChannelID];
 		if(Flags & FLAG_LOOP)
-			m_aVoices[VoiceID].m_Tick = m_aSamples[SampleID.Id()].m_PausedAt;
+			m_aVoices[VoiceID].m_Tick = m_aSamples[SampleID].m_PausedAt;
 		else
 			m_aVoices[VoiceID].m_Tick = 0;
 		m_aVoices[VoiceID].m_Vol = 255;
 		m_aVoices[VoiceID].m_Flags = Flags;
 		m_aVoices[VoiceID].m_X = (int) x;
 		m_aVoices[VoiceID].m_Y = (int) y;
+		m_aVoices[VoiceID].m_Falloff = 0.0f;
+		m_aVoices[VoiceID].m_Shape = ISound::SHAPE_CIRCLE;
+		m_aVoices[VoiceID].m_Circle.m_Radius = DefaultDistance;
+		Age = m_aVoices[VoiceID].m_Age;
 	}
 
 	lock_unlock(m_SoundLock);
-	return VoiceID;
+	return CreateVoiceHandle(VoiceID, Age);
 }
 
-int CSound::PlayAt(int ChannelID, CSampleHandle SampleID, int Flags, float x, float y)
+ISound::CSampleHandle CSound::PlayAt(int ChannelID, int SampleID, int Flags, float x, float y)
 {
 	return Play(ChannelID, SampleID, Flags | ISound::FLAG_POS, x, y);
 }
 
-int CSound::Play(int ChannelID, CSampleHandle SampleID, int Flags)
+ISound::CSampleHandle CSound::Play(int ChannelID, int SampleID, int Flags)
 {
 	return Play(ChannelID, SampleID, Flags, 0, 0);
 }
 
-void CSound::Stop(CSampleHandle SampleID)
+void CSound::Stop(int SampleID)
 {
-	if(!SampleID.IsValid())
-		return;
-
 	// TODO: a nice fade out
 	lock_wait(m_SoundLock);
-	CSample *pSample = &m_aSamples[SampleID.Id()];
+	CSample *pSample = &m_aSamples[SampleID];
 	for(int i = 0; i < NUM_VOICES; i++)
 	{
 		if(m_aVoices[i].m_pSample == pSample)
@@ -598,14 +972,32 @@ void CSound::StopAll()
 	lock_unlock(m_SoundLock);
 }
 
-bool CSound::IsPlaying(CSampleHandle SampleID)
+void CSound::StopVoice(CSampleHandle Voice)
 {
-	if(!SampleID.IsValid())
+	if(!Voice.IsValid())
+		return;
+
+	int VoiceID = Voice.Id();
+
+	if(m_aVoices[VoiceID].m_Age != Voice.Age())
+		return;
+
+	lock_wait(m_SoundLock);
+	{
+		m_aVoices[VoiceID].m_pSample = 0;
+		m_aVoices[VoiceID].m_Age++;
+	}
+	lock_unlock(m_SoundLock);
+}
+
+bool CSound::IsPlaying(int Sound)
+{
+	if(Sound == -1)
 		return false;
 
 	bool Ret = false;
 	lock_wait(m_SoundLock);
-	CSample *pSample = &m_aSamples[SampleID.Id()];
+	CSample *pSample = &m_aSamples[Sound];
 	for(int i = 0; i < NUM_VOICES; i++)
 	{
 		if(m_aVoices[i].m_pSample == pSample)

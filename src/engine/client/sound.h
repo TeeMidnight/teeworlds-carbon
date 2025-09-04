@@ -22,20 +22,37 @@ public:
 
 	static void RateConvert(int SampleID);
 
-	bool IsSoundEnabled() override { return m_SoundEnabled != 0; }
+	static int DecodeWV(int SampleID, const void *pData, unsigned DataSize);
+	static int DecodeOpus(int SampleID, const void *pData, unsigned DataSize);
 
-	CSampleHandle LoadWV(const char *pFilename) override;
+	virtual bool IsSoundEnabled() { return m_SoundEnabled != 0; }
 
-	void SetListenerPos(float x, float y) override;
-	void SetChannelVolume(int ChannelID, float Vol) override;
-	void SetMaxDistance(float Distance) override;
+	virtual int LoadWV(const char *pFilename);
+	virtual int LoadWVFromMem(const void *pData, unsigned DataSize, bool FromEditor);
+	virtual int LoadOpus(const char *pFilename);
+	virtual int LoadOpusFromMem(const void *pData, unsigned DataSize, bool FromEditor);
+	virtual void UnloadSample(int SampleID);
 
-	int Play(int ChannelID, CSampleHandle SampleID, int Flags, float x, float y);
-	int PlayAt(int ChannelID, CSampleHandle SampleID, int Flags, float x, float y) override;
-	int Play(int ChannelID, CSampleHandle SampleID, int Flags) override;
-	void Stop(CSampleHandle SampleID) override;
-	void StopAll() override;
-	bool IsPlaying(CSampleHandle SampleID) override;
+	virtual float GetSampleDuration(int SampleID); // in s
+
+	virtual void SetListenerPos(float x, float y);
+	virtual void SetChannel(int ChannelID, float Vol, float Pan);
+
+	virtual void SetVoiceVolume(ISound::CSampleHandle Voice, float Volume);
+	virtual void SetVoiceFalloff(ISound::CSampleHandle Voice, float Falloff);
+	virtual void SetVoiceLocation(ISound::CSampleHandle Voice, float x, float y);
+	virtual void SetVoiceTimeOffset(ISound::CSampleHandle Voice, float offset); // in s
+
+	virtual void SetVoiceCircle(ISound::CSampleHandle Voice, float Radius);
+	virtual void SetVoiceRectangle(ISound::CSampleHandle Voice, float Width, float Height);
+
+	ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags, float x, float y);
+	virtual ISound::CSampleHandle PlayAt(int ChannelID, int SampleID, int Flags, float x, float y);
+	virtual ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags);
+	virtual void Stop(int SampleID);
+	virtual void StopAll();
+	virtual void StopVoice(ISound::CSampleHandle Voice);
+	virtual bool IsPlaying(int Sound);
 };
 
 #endif
