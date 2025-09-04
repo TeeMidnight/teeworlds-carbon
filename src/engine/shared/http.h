@@ -3,9 +3,8 @@
 
 #include <base/hash_ctxt.h>
 #include <base/math.h>
-#include <base/system.h>
 #include <base/tl/array.h>
-#include <base/tl/threading.h>
+// #include <base/tl/threading.h>
 #include <engine/shared/config.h>
 
 #include <engine/http.h>
@@ -48,8 +47,7 @@ struct CTimeout
 
 class CHttpRequest : public IHttpRequest
 {
-	friend class CHttp;
-
+public:
 	enum class REQUEST
 	{
 		GET = 0,
@@ -72,6 +70,9 @@ class CHttpRequest : public IHttpRequest
 		}
 		return "UNKNOWN";
 	}
+
+private:
+	friend class CHttp;
 
 	class CConfig *m_pConfig;
 
@@ -118,8 +119,8 @@ class CHttpRequest : public IHttpRequest
 	char m_aErr[256];
 	EHttpState m_State = EHttpState::QUEUED;
 	bool m_Abort = false;
-	lock m_WaitLock;
-	semaphore m_WaitSema;
+	class lock *m_pWaitLock;
+	class semaphore *m_pWaitSema;
 
 	int m_StatusCode = 0;
 	bool m_HeadersEnded = false;
@@ -152,21 +153,24 @@ public:
 	CHttpRequest(const char *pUrl, CConfig *pConfig);
 	virtual ~CHttpRequest();
 
-	void Timeout(CTimeout Timeout) { m_Timeout = Timeout; }
+	void Timeout(CTimeout Timeout) { m_Timeout = Timeout; } // Skip the download if the local file is newer or as new as the remote file.
 	void SkipByFileTime(bool SkipByFileTime) { m_SkipByFileTime = SkipByFileTime; }
 	void MaxResponseSize(int64_t MaxResponseSize) { m_MaxResponseSize = MaxResponseSize; }
 	void LogProgress(HTTPLOG LogProgress) { m_LogProgress = LogProgress; }
 	void IpResolve(IPRESOLVE IpResolve) { m_IpResolve = IpResolve; }
 	void FailOnErrorStatus(bool FailOnErrorStatus) { m_FailOnErrorStatus = FailOnErrorStatus; }
-
+	// Download to memory only. Get the result via `Result*`.
 	void WriteToMemory()
 	{
 		m_WriteToMemory = true;
 		m_WriteToFile = false;
 	}
-
+	// Download to filesystem and memory.
 	void WriteToFileAndMemory(IStorage *pStorage, const char *pDest, int StorageType);
+	// Download to the filesystem only.
 	void WriteToFile(IStorage *pStorage, const char *pDest, int StorageType);
+	// Don't place the file in the specified location until
+	// `OnValidation(true)` has been called.
 	void ValidateBeforeOverwrite(bool ValidateBeforeOverwrite) { m_ValidateBeforeOverwrite = ValidateBeforeOverwrite; }
 	void ExpectSha256(const SHA256_DIGEST &Sha256) { m_ExpectedSha256 = Sha256; }
 	void Head() { m_Type = REQUEST::HEAD; }
@@ -277,23 +281,25 @@ inline CHttpRequest *HttpPostJson(const char *pUrl, CConfig *pConfig, const char
 void EscapeUrl(char *pBuf, int Size, const char *pStr);
 bool HttpHasIpresolveBug();
 
-// CHttp class
+// In an ideal world this would be a kernel interface
 class CHttp : public IHttp
 {
-	enum EState
+public:
+	enum class EState
 	{
 		UNINITIALIZED,
 		RUNNING,
 		ERROR,
 	};
 
+private:
 	void *m_Thread = nullptr;
 
-	lock m_Lock;
-	semaphore m_Semaphore;
-	EState m_State = UNINITIALIZED;
+	class lock *m_pLock;
+	class semaphore *m_pSemaphore;
+	EState m_State = EState::UNINITIALIZED;
 
-	array<CHttpRequest *> m_PendingRequests; 
+	array<CHttpRequest *> m_PendingRequests;
 	std::unordered_map<void *, CHttpRequest *> m_RunningRequests{};
 
 	int64_t m_ShutdownDelayMs = 0;
@@ -311,9 +317,9 @@ public:
 	CConfig *Config() { return m_pConfig; }
 	bool Init(int64_t ShutdownDelayMs, CConfig *pConfig);
 
-	virtual void Run(IHttpRequest *pRequest);
-	void Shutdown();
-	~CHttp();
+	void Run(IHttpRequest *pRequest) override;
+	void Shutdown() override;
+	virtual ~CHttp();
 };
 
 #endif // ENGINE_SHARED_HTTP_H

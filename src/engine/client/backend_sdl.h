@@ -87,7 +87,7 @@ class CCommandProcessorFragment_OpenGL
 		int m_UseTextureLoc;
 		int m_IsAlphaOnlyLoc;
 		int m_OurTextureLoc;
-	}m_aRenderStatus[2];
+	} m_aRenderStatus[2];
 
 	class CTexture
 	{

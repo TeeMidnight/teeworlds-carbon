@@ -2,9 +2,6 @@
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #ifndef ENGINE_SHARED_JOBS_H
 #define ENGINE_SHARED_JOBS_H
-
-#include <base/tl/threading.h>
-
 typedef int (*JOBFUNC)(void *pData);
 
 class CJobPool;
@@ -50,7 +47,7 @@ class CJobPool
 	void *m_apThreads[MAX_THREADS];
 	volatile bool m_Shutdown;
 
-	lock m_Lock;
+	void *m_Lock;
 	CJob *m_pFirstJob;
 	CJob *m_pLastJob;
 

@@ -1,7 +1,7 @@
 #include "http.h"
 
 #include <base/math.h>
-#include <base/system.h>
+#include <base/tl/threading.h>
 #include <engine/external/json-parser/json.h>
 #include <engine/shared/config.h>
 #include <engine/storage.h>
@@ -13,12 +13,12 @@
 #include <csignal>
 #endif
 
-#include <curl/curl.h>
-
 // There is a stray constant on Windows/MSVC...
 #ifdef ERROR
 #undef ERROR
 #endif
+
+#include <curl/curl.h>
 
 int CurlDebug(CURL *pHandle, curl_infotype Type, char *pData, size_t DataSize, void *pUser)
 {
@@ -66,6 +66,8 @@ CHttpRequest::CHttpRequest(const char *pUrl, CConfig *pConfig) :
 {
 	str_copy(m_aUrl, pUrl, sizeof(m_aUrl));
 	sha256_init(&m_ActualSha256Ctx);
+	m_pWaitLock = new lock();
+	m_pWaitSema = new semaphore();
 }
 
 CHttpRequest::~CHttpRequest()
@@ -78,6 +80,8 @@ CHttpRequest::~CHttpRequest()
 	{
 		OnValidation(false);
 	}
+	delete m_pWaitLock;
+	delete m_pWaitSema;
 }
 
 static bool CalculateSha256(const char *pAbsoluteFilename, SHA256_DIGEST *pSha256)
@@ -474,10 +478,10 @@ void CHttpRequest::OnCompletionInternal(void *pHandle, unsigned int Result)
 	// or other threads may try to access the result of a completed HTTP request,
 	// before the result has been initialized/updated in OnCompletion.
 	OnCompletion(State);
-	m_WaitLock.take();
+	m_pWaitLock->take();
 	m_State = State;
-	m_WaitLock.release();
-	m_WaitSema.signal();
+	m_pWaitLock->release();
+	m_pWaitSema->signal();
 }
 
 void CHttpRequest::OnValidation(bool Success)
@@ -535,16 +539,16 @@ void CHttpRequest::Header(const char *pNameColonValue)
 
 void CHttpRequest::Wait()
 {
-	m_WaitLock.take();
+	m_pWaitLock->take();
 	;
 	while(m_State == EHttpState::QUEUED || m_State == EHttpState::RUNNING)
 	{
-		m_WaitLock.release();
-		m_WaitSema.wait();
-		m_WaitLock.take();
+		m_pWaitLock->release();
+		m_pWaitSema->wait();
+		m_pWaitLock->take();
 		;
 	}
-	m_WaitLock.release();
+	m_pWaitLock->release();
 }
 
 void CHttpRequest::Result(unsigned char **ppResult, size_t *pResultLength) const
@@ -599,16 +603,19 @@ bool CHttp::Init(int64_t ShutdownDelayMs, CConfig *pConfig)
 #endif
 	m_Thread = thread_init(CHttp::ThreadMain, this);
 
-	m_Lock.take();
-	while(m_State == UNINITIALIZED)
+	m_pLock = new lock();
+	m_pSemaphore = new semaphore();
+
+	m_pLock->take();
+	while(m_State == EState::UNINITIALIZED)
 	{
-		m_Lock.release();
+		m_pLock->release();
 		// Simple busy wait - in real implementation you might want to use condition variables
 		thread_sleep(1);
-		m_Lock.take();
+		m_pLock->take();
 	}
-	bool Result = m_State == RUNNING;
-	m_Lock.release();
+	bool Result = m_State == EState::RUNNING;
+	m_pLock->release();
 
 	return Result;
 }
@@ -621,13 +628,13 @@ void CHttp::ThreadMain(void *pUser)
 
 void CHttp::RunLoop()
 {
-	m_Lock.take();
+	m_pLock->take();
 	if(curl_global_init(CURL_GLOBAL_DEFAULT))
 	{
 		dbg_msg("http", "curl_global_init failed");
-		m_State = ERROR;
-		m_Lock.release();
-		m_Semaphore.signal();
+		m_State = EState::ERROR;
+		m_pLock->release();
+		m_pSemaphore->signal();
 		return;
 	}
 
@@ -635,9 +642,9 @@ void CHttp::RunLoop()
 	if(!m_pMultiH)
 	{
 		dbg_msg("http", "curl_multi_init failed");
-		m_State = ERROR;
-		m_Lock.release();
-		m_Semaphore.signal();
+		m_State = EState::ERROR;
+		m_pLock->release();
+		m_pSemaphore->signal();
 		return;
 	}
 
@@ -647,9 +654,9 @@ void CHttp::RunLoop()
 		dbg_msg("http", "libcurl version %s (compiled = " LIBCURL_VERSION ")", pVersion->version);
 	}
 
-	m_State = RUNNING;
-	m_Lock.release();
-	m_Semaphore.signal();
+	m_State = EState::RUNNING;
+	m_pLock->release();
+	m_pSemaphore->signal();
 
 	while(true)
 	{
@@ -673,18 +680,18 @@ void CHttp::RunLoop()
 
 		if(PollCode != CURLM_OK)
 		{
-			m_Lock.take();
+			m_pLock->take();
 			dbg_msg("http", "curl_multi_poll failed: %s", curl_multi_strerror(PollCode));
-			m_State = ERROR;
+			m_State = EState::ERROR;
 			break;
 		}
 
 		const CURLMcode PerformCode = curl_multi_perform((CURLM *) m_pMultiH, &Events);
 		if(PerformCode != CURLM_OK)
 		{
-			m_Lock.take();
+			m_pLock->take();
 			dbg_msg("http", "curl_multi_perform failed: %s", curl_multi_strerror(PerformCode));
-			m_State = ERROR;
+			m_State = EState::ERROR;
 			break;
 		}
 
@@ -704,16 +711,18 @@ void CHttp::RunLoop()
 			}
 		}
 
-		array<CHttpRequest *> apNewRequests = {};
-		m_Lock.take();
-		std::swap(m_PendingRequests, apNewRequests);
-		m_Lock.release();
+		array<CHttpRequest *> apNewRequests;
+		apNewRequests.clear();
+		m_pLock->take();
+		apNewRequests = std::move(m_PendingRequests);
+		m_PendingRequests.clear();
+		m_pLock->release();
 
 		// Process pending requests
 		while(apNewRequests.size() > 0)
 		{
 			auto &pRequest = *apNewRequests.begin();
-			m_Lock.release();
+			m_pLock->release();
 
 			if(Config()->m_DbgCurl)
 				dbg_msg("http", "task: %s %s", CHttpRequest::GetRequestType(pRequest->m_Type), pRequest->m_aUrl);
@@ -721,10 +730,10 @@ void CHttp::RunLoop()
 			if(pRequest->ShouldSkipRequest())
 			{
 				pRequest->OnCompletion(EHttpState::DONE);
-				pRequest->m_WaitLock.take();
+				pRequest->m_pWaitLock->take();
 				pRequest->m_State = EHttpState::DONE;
-				pRequest->m_WaitLock.release();
-				pRequest->m_WaitSema.signal();
+				pRequest->m_pWaitLock->release();
+				pRequest->m_pWaitSema->signal();
 				apNewRequests.remove_index(0);
 				continue;
 			}
@@ -733,8 +742,8 @@ void CHttp::RunLoop()
 			if(!pEH)
 			{
 				dbg_msg("http", "curl_easy_init failed");
-				pRequest->m_WaitLock.take();
-				m_State = CHttp::ERROR;
+				pRequest->m_pWaitLock->take();
+				m_State = EState::ERROR;
 				break;
 			}
 			if(!pRequest->ConfigureHandle(pEH))
@@ -752,9 +761,9 @@ void CHttp::RunLoop()
 			}
 
 			{
-				pRequest->m_WaitLock.take();
+				pRequest->m_pWaitLock->take();
 				pRequest->m_State = EHttpState::RUNNING;
-				pRequest->m_WaitLock.release();
+				pRequest->m_pWaitLock->release();
 			}
 			m_RunningRequests.emplace(pEH, std::move(pRequest));
 			apNewRequests.remove_index(0);
@@ -769,8 +778,8 @@ void CHttp::RunLoop()
 	}
 
 	// Cleanup
-	m_Lock.take();
-	bool Cleanup = m_State != ERROR;
+	m_pLock->take();
+	bool Cleanup = m_State != EState::ERROR;
 
 	// Handle pending requests
 	for(int i = 0; i < m_PendingRequests.size(); i++)
@@ -801,19 +810,19 @@ void CHttp::RunLoop()
 		curl_multi_cleanup((CURLM *) m_pMultiH);
 		curl_global_cleanup();
 	}
-	m_Lock.release();
+	m_pLock->release();
 }
 
 void CHttp::Run(IHttpRequest *pRequest)
 {
 	CHttpRequest *pImpl = static_cast<CHttpRequest *>(pRequest);
 
-	m_Lock.take();
-	if(m_Shutdown || m_State == ERROR)
+	m_pLock->take();
+	if(m_Shutdown || m_State == EState::ERROR)
 	{
 		str_copy(pImpl->m_aErr, "Shutting down", sizeof(pImpl->m_aErr));
 		pImpl->OnCompletionInternal(nullptr, CURLE_ABORTED_BY_CALLBACK);
-		m_Lock.release();
+		m_pLock->release();
 		return;
 	}
 	m_PendingRequests.add(pImpl);
@@ -822,15 +831,15 @@ void CHttp::Run(IHttpRequest *pRequest)
 	{
 		curl_multi_wakeup((CURLM *) m_pMultiH);
 	}
-	m_Lock.release();
+	m_pLock->release();
 }
 
 void CHttp::Shutdown()
 {
-	m_Lock.take();
-	if(m_Shutdown || m_State != RUNNING)
+	m_pLock->take();
+	if(m_Shutdown || m_State != EState::RUNNING)
 	{
-		m_Lock.release();
+		m_pLock->release();
 		return;
 	}
 
@@ -840,7 +849,7 @@ void CHttp::Shutdown()
 	{
 		curl_multi_wakeup((CURLM *) m_pMultiH);
 	}
-	m_Lock.release();
+	m_pLock->release();
 }
 
 CHttp::~CHttp()
@@ -850,4 +859,7 @@ CHttp::~CHttp()
 
 	Shutdown();
 	thread_wait(m_Thread);
+
+	delete m_pLock;
+	delete m_pSemaphore;
 }

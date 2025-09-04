@@ -474,11 +474,18 @@ add_library(json EXCLUDE_FROM_ALL OBJECT ${DEP_JSON_SRC})
 set_src(DEP_MD5_SRC GLOB src/engine/external/md5 md5.c md5.h)
 add_library(md5 EXCLUDE_FROM_ALL OBJECT ${DEP_MD5_SRC})
 
-list(APPEND TARGETS_DEP json md5)
+set_src(DEP_GLAD_SRC GLOB src/engine/external/glad gl.c gl.h khrplatform.h)
+add_library(glad EXCLUDE_FROM_ALL OBJECT ${DEP_GLAD_SRC})
+
+list(APPEND TARGETS_DEP json md5 glad)
 set(DEP_JSON $<TARGET_OBJECTS:json>)
+set(DEP_GLAD)
 set(DEP_MD5)
 if(NOT CRYPTO_FOUND)
   set(DEP_MD5 $<TARGET_OBJECTS:md5>)
+endif()
+if(CLIENT)
+  set(DEP_GLAD $<TARGET_OBJECTS:glad>)
 endif()
 
 ########################################################################
@@ -1263,6 +1270,7 @@ set_src(BASE GLOB_RECURSE src/base
   tl/string.h
   tl/string_apocalypse.h
   tl/threading.h
+  types.h
   uuid.cpp
   uuid.h
   vmath.h
@@ -1519,7 +1527,7 @@ if(CLIENT)
   )
   set(CLIENT_SRC ${PLATFORM_CLIENT} ${ENGINE_CLIENT} ${GAME_CLIENT} ${GAME_EDITOR} ${GAME_GENERATED_CLIENT})
 
-  set(DEPS_CLIENT ${DEPS} ${PNGLITE_DEP} ${WAVPACK_DEP})
+  set(DEPS_CLIENT ${DEPS} ${PNGLITE_DEP} ${WAVPACK_DEP} ${DEP_GLAD})
 
   # Libraries
   set(LIBS_CLIENT

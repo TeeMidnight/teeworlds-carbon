@@ -1,11 +1,12 @@
 /* (c) Magnus Auvinen. See licence.txt in the root of the distribution for more information. */
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #include <base/detect.h>
-#include <SDL3/SDL.h>
-#define GL_GLEXT_PROTOTYPES
-#include <SDL3/SDL_opengl.h>
+#include <engine/external/glad/gl.h>
 
 #include <base/tl/threading.h>
+
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_opengl.h>
 
 #include "backend_sdl.h"
 #include "graphics_threaded.h"
@@ -126,19 +127,6 @@ void main()
     }
 }
 )";
-// On Windows, we need to manually load glTexImage3D since it's not always available
-#if defined(CONF_FAMILY_WINDOWS)
-PFNGLTEXIMAGE3DPROC glTexImage3DInternal;
-
-#if defined(_MSC_VER)
-GLAPI void GLAPIENTRY glTexImage3D(GLenum target, GLint level, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
-#else
-void glTexImage3D(GLenum target, GLint level, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
-#endif
-{
-	glTexImage3DInternal(target, level, internalFormat, width, height, depth, border, format, type, pixels);
-}
-#endif
 
 // ------------ CGraphicsBackend_Threaded
 
@@ -344,9 +332,9 @@ GLuint CCommandProcessorFragment_OpenGL::CreateShaderProgram3D()
 void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &State)
 {
 	static CCommandBuffer::CState CurrentState = {};
-    if(memcmp(&CurrentState, &State, sizeof(CCommandBuffer::CState)) == 0)
-        return;
-    CurrentState = State;
+	if(memcmp(&CurrentState, &State, sizeof(CCommandBuffer::CState)) == 0)
+		return;
+	CurrentState = State;
 
 	// clip
 	if(State.m_ClipEnable)
@@ -363,9 +351,9 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 
 	const SRenderStatus &Status = m_aRenderStatus[State.m_Dimension == 3 ? 1 : 0];
 	// Get uniform locations
-	const int& UseTextureLoc = Status.m_UseTextureLoc;
-	const int& IsAlphaOnlyLoc = Status.m_IsAlphaOnlyLoc;
-	const int& OurTextureLoc = Status.m_OurTextureLoc;
+	const int &UseTextureLoc = Status.m_UseTextureLoc;
+	const int &IsAlphaOnlyLoc = Status.m_IsAlphaOnlyLoc;
+	const int &OurTextureLoc = Status.m_OurTextureLoc;
 
 	// Reset uniforms to default values
 	if(UseTextureLoc != -1)
@@ -553,11 +541,11 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 		glBindVertexArray(m_aRenderStatus[i].m_VAO);
 
 		glBindBuffer(GL_ARRAY_BUFFER, m_aRenderStatus[i].m_VBO);
-		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) 0);
 		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(1, 2 + i, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 2));
+		glVertexAttribPointer(1, 2 + i, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 2));
 		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 5));
+		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 5));
 		glEnableVertexAttribArray(2);
 
 		glBindVertexArray(0);
@@ -780,7 +768,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Clear(const CCommandBuffer::CClearCom
 
 void CCommandProcessorFragment_OpenGL::Cmd_Render(const CCommandBuffer::CRenderCommand *pCommand)
 {
-	const SRenderStatus &Status = m_aRenderStatus[pCommand->m_State.m_Dimension == 3 ? 1 : 0]; 
+	const SRenderStatus &Status = m_aRenderStatus[pCommand->m_State.m_Dimension == 3 ? 1 : 0];
 	glUseProgram(Status.m_ShaderProgram);
 	SetState(pCommand->m_State);
 
@@ -819,7 +807,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Render(const CCommandBuffer::CRenderC
 	default:
 		dbg_msg("render", "unknown primtype %d", pCommand->m_PrimType);
 	};
-    glBindVertexArray(0);
+	glBindVertexArray(0);
 }
 
 void CCommandProcessorFragment_OpenGL::Cmd_Screenshot(const CCommandBuffer::CScreenshotCommand *pCommand)
@@ -1061,18 +1049,15 @@ int CGraphicsBackend_SDL_OpenGL::Init(const char *pName, int *pScreen, int *pWin
 		return -1;
 	}
 
+	if(!gladLoadGL((GLADloadfunc) SDL_GL_GetProcAddress))
+	{
+		dbg_msg("gfx", "failed to initialize GLAD");
+		return -1;
+	}
+
 	dbg_msg("gfx", "using opengl %s", glGetString(GL_VERSION));
 
 	SDL_GetWindowSizeInPixels(m_pWindow, pScreenWidth, pScreenHeight); // drawable size may differ in high dpi mode
-
-#if defined(CONF_FAMILY_WINDOWS)
-	glTexImage3DInternal = (PFNGLTEXIMAGE3DPROC) wglGetProcAddress("glTexImage3D");
-	if(glTexImage3DInternal == 0)
-	{
-		dbg_msg("gfx", "glTexImage3D not supported");
-		return -1;
-	}
-#endif
 
 	SDL_GL_SetSwapInterval(Flags & IGraphicsBackend::INITFLAG_VSYNC ? 1 : 0);
 

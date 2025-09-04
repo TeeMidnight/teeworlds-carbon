@@ -1,6 +1,6 @@
 #include "register.h"
 
-#include <base/system.h>
+#include <base/types.h>
 #include <base/uuid.h>
 
 #include <engine/console.h>
@@ -41,9 +41,19 @@ class CRegister : public IRegister
 	class CGlobal
 	{
 	public:
-		lock m_Lock;
+		LOCK m_Lock;
 		int m_InfoSerial;
 		int m_LatestSuccessfulInfoSerial;
+
+		CGlobal()
+		{
+			m_Lock = lock_create();
+		}
+
+		~CGlobal()
+		{
+			lock_destroy(m_Lock);
+		}
 	};
 
 	class CProtocol
@@ -54,10 +64,16 @@ class CRegister : public IRegister
 			CShared(CGlobal *pGlobal) :
 				m_pGlobal(pGlobal)
 			{
+				m_Lock = lock_create();
+			}
+
+			CShared()
+			{
+				lock_destroy(m_Lock);
 			}
 
 			CGlobal *m_pGlobal;
-			lock m_Lock;
+			LOCK m_Lock;
 			int m_NumTotalRequests;
 			int m_LatestResponseStatus;
 			int m_LatestResponseIndex;
@@ -281,10 +297,10 @@ void CRegister::CProtocol::SendRegister()
 	int InfoSerial;
 	bool SendInfo;
 
-	m_pShared->m_pGlobal->m_Lock.take();
+	lock_wait(m_pShared->m_pGlobal->m_Lock);
 	InfoSerial = m_pShared->m_pGlobal->m_InfoSerial;
 	SendInfo = InfoSerial > m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial;
-	m_pShared->m_pGlobal->m_Lock.release();
+	lock_unlock(m_pShared->m_pGlobal->m_Lock);
 
 	CHttpRequest *pRegister;
 	if(SendInfo)
@@ -316,14 +332,14 @@ void CRegister::CProtocol::SendRegister()
 	pRegister->FailOnErrorStatus(false);
 
 	int RequestIndex;
-	m_pShared->m_Lock.take();
+	lock_wait(m_pShared->m_Lock);
 	if(m_pShared->m_LatestResponseStatus != STATUS_OK)
 	{
 		dbg_msg(ProtocolToSystem(m_Protocol), "registering...");
 	}
 	RequestIndex = m_pShared->m_NumTotalRequests;
 	m_pShared->m_NumTotalRequests += 1;
-	m_pShared->m_Lock.release();
+	lock_unlock(m_pShared->m_Lock);
 
 	m_Job = {m_Protocol, m_pParent->m_ServerPort, RequestIndex, InfoSerial, m_pShared, std::move(pRegister), m_pParent->m_pHttp, CJob()};
 	m_pParent->m_pEngine->AddJob(&m_Job.m_Job, CProtocol::RequestThread, &m_Job);
@@ -335,10 +351,10 @@ void CRegister::CProtocol::SendRegister()
 
 void CRegister::CProtocol::SendDeleteIfRegistered(bool Shutdown)
 {
-	m_pShared->m_Lock.take();
+	lock_wait(m_pShared->m_Lock);
 	const bool ShouldSendDelete = m_pShared->m_LatestResponseStatus == STATUS_OK;
 	m_pShared->m_LatestResponseStatus = STATUS_NONE;
-	m_pShared->m_Lock.release();
+	lock_unlock(m_pShared->m_Lock);
 
 	if(!ShouldSendDelete)
 		return;
@@ -383,7 +399,7 @@ CRegister::CProtocol::CProtocol(CRegister *pParent, int Protocol) :
 
 void CRegister::CProtocol::CheckChallengeStatus()
 {
-	m_pShared->m_Lock.take();
+	lock_wait(m_pShared->m_Lock);
 	// No requests in flight?
 	if(m_pShared->m_LatestResponseIndex == m_pShared->m_NumTotalRequests - 1)
 	{
@@ -402,7 +418,7 @@ void CRegister::CProtocol::CheckChallengeStatus()
 			break;
 		}
 	}
-	m_pShared->m_Lock.release();
+	lock_unlock(m_pShared->m_Lock);
 }
 
 void CRegister::CProtocol::Update()
@@ -480,7 +496,7 @@ int CRegister::CProtocol::RequestThread(void *pUser)
 		return -1;
 	}
 
-	pJob->m_pShared->m_Lock.take();
+	lock_wait(pJob->m_pShared->m_Lock);
 	if(Status != STATUS_OK || Status != pJob->m_pShared->m_LatestResponseStatus)
 	{
 		if(pJob->m_pRegister->Config()->m_Debug)
@@ -497,26 +513,26 @@ int CRegister::CProtocol::RequestThread(void *pUser)
 		pJob->m_pShared->m_LatestResponseIndex = pJob->m_Index;
 		pJob->m_pShared->m_LatestResponseStatus = Status;
 	}
-	pJob->m_pShared->m_Lock.release();
+	lock_unlock(pJob->m_pShared->m_Lock);
 
 	if(Status == STATUS_OK)
 	{
-		pJob->m_pShared->m_pGlobal->m_Lock.take();
+		lock_wait(pJob->m_pShared->m_pGlobal->m_Lock);
 		if(pJob->m_InfoSerial > pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
 		{
 			pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial = pJob->m_InfoSerial;
 		}
-		pJob->m_pShared->m_pGlobal->m_Lock.release();
+		lock_unlock(pJob->m_pShared->m_pGlobal->m_Lock);
 	}
 	else if(Status == STATUS_NEEDINFO)
 	{
-		pJob->m_pShared->m_pGlobal->m_Lock.take();
+		lock_wait(pJob->m_pShared->m_pGlobal->m_Lock);
 		if(pJob->m_InfoSerial == pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial)
 		{
 			// Tell other requests that they need to send the info again.
 			pJob->m_pShared->m_pGlobal->m_LatestSuccessfulInfoSerial -= 1;
 		}
-		pJob->m_pShared->m_pGlobal->m_Lock.release();
+		lock_unlock(pJob->m_pShared->m_pGlobal->m_Lock);
 	}
 	return 0;
 }
@@ -735,9 +751,9 @@ void CRegister::OnNewInfo(const char *pInfo)
 
 	m_GotServerInfo = true;
 	str_copy(m_aServerInfo, pInfo, sizeof(m_aServerInfo));
-	m_pGlobal->m_Lock.take();
+	lock_wait(m_pGlobal->m_Lock);
 	m_pGlobal->m_InfoSerial += 1;
-	m_pGlobal->m_Lock.release();
+	lock_unlock(m_pGlobal->m_Lock);
 
 	// Don't start registering before the first `CRegister::Update` call.
 	if(!m_GotFirstUpdateCall)

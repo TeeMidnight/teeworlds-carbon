@@ -3,8 +3,7 @@
 #ifndef ENGINE_SHARED_PROTOCOL_H
 #define ENGINE_SHARED_PROTOCOL_H
 
-#include <base/system.h>
-
+#include <base/types.h>
 /*
 	Connection diagram - How the initialization works.
 

@@ -9,6 +9,7 @@
 #define BASE_SYSTEM_H
 
 #include "detect.h"
+#include "types.h"
 #include <time.h>
 
 #ifdef __cplusplus
@@ -39,7 +40,6 @@ extern "C" {
 	See Also:
 		<dbg_break>
 */
-void dbg_assert(int test, const char *msg);
 #define dbg_assert(test, msg) dbg_assert_imp(__FILE__, __LINE__, test, msg)
 void dbg_assert_imp(const char *filename, int line, int test, const char *msg);
 
@@ -180,21 +180,6 @@ int mem_comp(const void *a, const void *b, int size);
 int mem_has_null(const void *block, unsigned size);
 
 /* Group: File IO */
-enum
-{
-	IOFLAG_READ = 1,
-	IOFLAG_WRITE = 2,
-	IOFLAG_APPEND = 4,
-	IOFLAG_SKIP_BOM = 8,
-
-	IOSEEK_START = 0,
-	IOSEEK_CUR = 1,
-	IOSEEK_END = 2,
-
-	IO_MAX_PATH_LENGTH = 512,
-};
-
-typedef struct IOINTERNAL *IOHANDLE;
 
 /*
 	Function: io_open
@@ -606,7 +591,6 @@ void thread_detach(void *thread);
 void cpu_relax();
 
 /* Group: Locks */
-typedef void *LOCK;
 
 LOCK lock_create();
 void lock_destroy(LOCK lock);
@@ -616,15 +600,6 @@ void lock_wait(LOCK lock);
 void lock_unlock(LOCK lock);
 
 /* Group: Semaphores */
-
-#if defined(CONF_FAMILY_UNIX) && !defined(CONF_PLATFORM_MACOS)
-#include <semaphore.h>
-typedef sem_t SEMAPHORE;
-#elif defined(CONF_FAMILY_WINDOWS)
-typedef void *SEMAPHORE;
-#else
-typedef struct SEMINTERNAL *SEMAPHORE;
-#endif
 
 void sphore_init(SEMAPHORE *sem);
 void sphore_wait(SEMAPHORE *sem);
@@ -679,15 +654,6 @@ int time_timestamp();
 */
 int time_houroftheday();
 
-enum
-{
-	SEASON_SPRING = 0,
-	SEASON_SUMMER,
-	SEASON_AUTUMN,
-	SEASON_WINTER,
-	SEASON_NEWYEAR
-};
-
 /*
 	Function: time_season
 		Retrieves the current season of the year.
@@ -718,34 +684,6 @@ int time_isxmasday();
 int time_iseasterday();
 
 /* Group: Network General */
-typedef struct
-{
-	int type;
-	int ipv4sock;
-	int ipv6sock;
-} NETSOCKET;
-
-enum
-{
-	NETADDR_MAXSTRSIZE = 1 + (8 * 4 + 7) + 1 + 1 + 5 + 1, // [XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX]:XXXXX
-
-	NETADDR_SIZE_IPV4 = 4,
-	NETADDR_SIZE_IPV6 = 16,
-
-	NETTYPE_INVALID = 0,
-	NETTYPE_IPV4 = 1,
-	NETTYPE_IPV6 = 2,
-	NETTYPE_LINK_BROADCAST = 4,
-	NETTYPE_ALL = NETTYPE_IPV4 | NETTYPE_IPV6
-};
-
-typedef struct
-{
-	unsigned int type;
-	unsigned char ip[NETADDR_SIZE_IPV6];
-	unsigned short port;
-	unsigned short reserved;
-} NETADDR;
 
 /*
 	Function: net_invalidate_socket
@@ -1756,14 +1694,6 @@ void dbg_console_cleanup();
 void dbg_console_hide();
 #endif
 
-typedef struct
-{
-	int sent_packets;
-	int sent_bytes;
-	int recv_packets;
-	int recv_bytes;
-} NETSTATS;
-
 void net_stats(NETSTATS *stats);
 
 int str_toint(const char *str);
@@ -1771,11 +1701,6 @@ float str_tofloat(const char *str);
 int str_isspace(char c);
 char str_uppercase(char c);
 unsigned str_quickhash(const char *str);
-
-enum
-{
-	UTF8_BYTE_LENGTH = 4
-};
 
 /*
 	Function: str_next_token
