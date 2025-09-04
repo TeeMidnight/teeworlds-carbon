@@ -253,6 +253,8 @@ float CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const c
 	CUIRect Rect = {x, y, w, HeadlineHeight};
 	Rect.Draw(Color);
 
+	CServerInfo CurrentServerInfo;
+	Client()->GetServerInfo(&CurrentServerInfo);
 	// render title
 	if(NoTitle)
 	{
@@ -261,7 +263,7 @@ float CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const c
 		else if(Snap.m_pGameData && Snap.m_pGameData->m_GameStateFlags & GAMESTATEFLAG_ROUNDOVER)
 			pTitle = Localize("Round over");
 		else
-			pTitle = Localize("Scoreboard");
+			pTitle = CurrentServerInfo.m_aMap;
 	}
 	else
 	{

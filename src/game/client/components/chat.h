@@ -23,6 +23,7 @@ class CChat : public CComponent
 	{
 		int64_t m_Time;
 		vec2 m_Size;
+		CTeeRenderInfo m_RenderInfo;
 		int m_ClientID;
 		int m_TargetID;
 		int m_Mode;
