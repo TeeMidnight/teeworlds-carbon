@@ -20,6 +20,7 @@ scripts/work/
 other/freetype
 other/sdl
 Info.plist
+package
 
 crapnet*
 fake_server*

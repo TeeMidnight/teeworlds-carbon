@@ -1954,57 +1954,34 @@ if(CLIENT AND (DMGTOOLS_FOUND OR HDIUTIL))
   list(APPEND PACKAGE_TARGETS package_dmg)
 endif()
 
-foreach(ext zip tar.gz tar.xz)
-  set(TAR_MODE c)
-  set(TAR_EXTRA_ARGS)
-  string(REPLACE . _ EXT_SLUG ${ext})
+set(TMPDIR package)
 
-  set(TMPDIR pack_${CPACK_PACKAGE_FILE_NAME}_${EXT_SLUG}/${CPACK_PACKAGE_FILE_NAME})
-
-  set(COPY_FILE_COMMANDS)
-  set(COPY_DIR_COMMANDS)
-  set(COPY_TARGET_COMMANDS)
-  set(STRIP_TARGET_COMMANDS)
-  foreach(file ${CPACK_FILES})
-    list(APPEND COPY_FILE_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/${file} ${TMPDIR}/)
-  endforeach()
-  foreach(dir ${CPACK_DIRS})
-    get_filename_component(NAME ${dir} NAME)
-    list(APPEND COPY_DIR_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy_directory ${dir} ${TMPDIR}/${NAME})
-  endforeach()
-  foreach(target ${CPACK_TARGETS})
-    list(APPEND COPY_TARGET_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${target}> ${TMPDIR}/)
-  endforeach()
-
-  if(ext STREQUAL zip)
-    set(TAR_EXTRA_ARGS --format=zip)
-  elseif(ext STREQUAL tar.gz)
-    set(TAR_MODE cz)
-  elseif(ext STREQUAL tar.xz)
-    set(TAR_MODE cJ)
-  endif()
-  add_custom_command(OUTPUT ${CPACK_PACKAGE_FILE_NAME}.${ext}
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${TMPDIR}
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${TMPDIR}
-    ${COPY_FILE_COMMANDS}
-    ${COPY_DIR_COMMANDS}
-    ${COPY_TARGET_COMMANDS}
-    ${STRIP_TARGET_COMMANDS}
-    COMMAND ${CMAKE_COMMAND} -E chdir pack_${CPACK_PACKAGE_FILE_NAME}_${EXT_SLUG} ${CMAKE_COMMAND} -E tar ${TAR_MODE} ../${CPACK_PACKAGE_FILE_NAME}.${ext} ${TAR_EXTRA_ARGS} -- ${CPACK_PACKAGE_FILE_NAME}/
-    DEPENDS ${CPACK_TARGETS}
-  )
-  add_custom_target(package_${EXT_SLUG} DEPENDS ${CPACK_PACKAGE_FILE_NAME}.${ext})
-  list(APPEND PACKAGE_TARGETS package_${EXT_SLUG})
+set(COPY_FILE_COMMANDS)
+set(COPY_DIR_COMMANDS)
+set(COPY_TARGET_COMMANDS)
+set(STRIP_TARGET_COMMANDS)
+foreach(file ${CPACK_FILES})
+  list(APPEND COPY_FILE_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/${file} ${TMPDIR}/)
+endforeach()
+foreach(dir ${CPACK_DIRS})
+  get_filename_component(NAME ${dir} NAME)
+  list(APPEND COPY_DIR_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy_directory ${dir} ${TMPDIR}/${NAME})
+endforeach()
+foreach(target ${CPACK_TARGETS})
+  list(APPEND COPY_TARGET_COMMANDS COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${target}> ${TMPDIR}/)
 endforeach()
 
-set(PACKAGE_DEFAULT tar_xz)
-if(TARGET_OS STREQUAL "windows")
-  set(PACKAGE_DEFAULT zip)
-elseif(TARGET_OS STREQUAL "mac")
-  set(PACKAGE_DEFAULT dmg)
-endif()
-add_custom_target(package_default DEPENDS package_${PACKAGE_DEFAULT})
-
+add_custom_command(OUTPUT INSTALL_COMMAND
+  COMMAND ${CMAKE_COMMAND} -E remove_directory ${TMPDIR}
+  COMMAND ${CMAKE_COMMAND} -E make_directory ${TMPDIR}
+  ${COPY_FILE_COMMANDS}
+  ${COPY_DIR_COMMANDS}
+  ${COPY_TARGET_COMMANDS}
+  ${STRIP_TARGET_COMMANDS}
+  DEPENDS ${CPACK_TARGETS}
+)
+add_custom_target(package_default DEPENDS INSTALL_COMMAND)
+list(APPEND PACKAGE_TARGETS package_default)
 add_custom_target(package_all DEPENDS ${PACKAGE_TARGETS})
 
 # Unset these variables, they might do something in the future of CPack.
