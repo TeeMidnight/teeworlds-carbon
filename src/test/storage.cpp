@@ -2,9 +2,9 @@
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #include "test.h"
 
-#include <gtest/gtest.h>
-
+#include <base/system.h>
 #include <engine/storage.h>
+#include <gtest/gtest.h>
 
 TEST(Storage, FindFile)
 {

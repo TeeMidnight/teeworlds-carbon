@@ -3,6 +3,7 @@
 #ifndef ENGINE_ENGINE_H
 #define ENGINE_ENGINE_H
 
+#include <base/types.h>
 #include <engine/shared/jobs.h>
 #include "kernel.h"
 

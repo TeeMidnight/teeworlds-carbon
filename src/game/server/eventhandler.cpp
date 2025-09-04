@@ -36,7 +36,7 @@ void CEventHandler::Create(void *pData, int Type, int Size, int ClientID)
 	mem_copy(p, pData, Size);
 }
 
-void CEventHandler::Create(void *pData, int Type, int Size, int64 Mask)
+void CEventHandler::Create(void *pData, int Type, int Size, int64_t Mask)
 {
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{

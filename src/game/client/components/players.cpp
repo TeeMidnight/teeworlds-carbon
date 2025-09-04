@@ -180,7 +180,7 @@ void CPlayers::RenderPlayer(
 	// do skidding
 	if(!InAir && WantOtherDir && length(Vel * 50) > 500.0f)
 	{
-		static int64 s_SkidSoundTime = 0;
+		static int64_t s_SkidSoundTime = 0;
 		if(time_get() - s_SkidSoundTime > time_freq() / 10)
 		{
 			m_pClient->m_pSounds->PlayAt(CSounds::CHN_WORLD, SOUND_PLAYER_SKID, 0.25f, Position);

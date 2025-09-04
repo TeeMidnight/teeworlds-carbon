@@ -1105,15 +1105,15 @@ void sphore_destroy(SEMAPHORE *sem)
 #endif
 
 /* -----  time ----- */
-int64 time_get()
+int64_t time_get()
 {
 #if defined(CONF_FAMILY_UNIX)
 	struct timeval val;
 	gettimeofday(&val, NULL);
-	return (int64) val.tv_sec * (int64) 1000000 + (int64) val.tv_usec;
+	return (int64_t) val.tv_sec * (int64_t) 1000000 + (int64_t) val.tv_usec;
 #elif defined(CONF_FAMILY_WINDOWS)
-	static int64 last = 0;
-	int64 t;
+	static int64_t last = 0;
+	int64_t t;
 	QueryPerformanceCounter((PLARGE_INTEGER) &t);
 	if(t < last) /* for some reason, QPC can return values in the past */
 		return last;
@@ -1124,12 +1124,12 @@ int64 time_get()
 #endif
 }
 
-int64 time_freq()
+int64_t time_freq()
 {
 #if defined(CONF_FAMILY_UNIX)
 	return 1000000;
 #elif defined(CONF_FAMILY_WINDOWS)
-	int64 t;
+	int64_t t;
 	QueryPerformanceFrequency((PLARGE_INTEGER) &t);
 	return t;
 #else

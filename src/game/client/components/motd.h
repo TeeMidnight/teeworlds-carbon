@@ -7,7 +7,7 @@
 class CMotd : public CComponent
 {
 	// motd
-	int64 m_ServerMotdTime;
+	int64_t m_ServerMotdTime;
 	char m_aServerMotd[1024];
 	CTextCursor m_ServerMotdCursor;
 

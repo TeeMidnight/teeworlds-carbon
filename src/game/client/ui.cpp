@@ -833,8 +833,8 @@ void CUI::RenderTooltip()
 		s_pLastTooltip = 0;
 		return;
 	}
-	const int64 Now = time_get();
-	static int64 s_TooltipActivationStart = 0;
+	const int64_t Now = time_get();
+	static int64_t s_TooltipActivationStart = 0;
 	if(s_pLastTooltip != m_pActiveTooltip)
 	{
 		// Reset the fade in timer if a new tooltip got active

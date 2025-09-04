@@ -113,7 +113,7 @@ void CHud::RenderPauseTimer()
 
 		if(m_pClient->m_Snap.m_pGameData->m_GameStateEndTick == 0)
 		{
-			const int64 CursorVersion = g_Localization.Version() << 8 | m_pClient->m_Snap.m_NotReadyCount;
+			const int64_t CursorVersion = g_Localization.Version() << 8 | m_pClient->m_Snap.m_NotReadyCount;
 
 			if(m_pClient->m_Snap.m_NotReadyCount == 1)
 				str_format(aBuf, sizeof(aBuf), Localize("%d player not ready"), m_pClient->m_Snap.m_NotReadyCount);
@@ -457,7 +457,7 @@ void CHud::RenderWarmupTimer()
 
 		if(m_pClient->m_Snap.m_pGameData->m_GameStateEndTick == 0)
 		{
-			const int64 CursorVersion = g_Localization.Version() << 9 | m_pClient->m_Snap.m_NotReadyCount << 1 | (LargeTimer ? 1 : 0);
+			const int64_t CursorVersion = g_Localization.Version() << 9 | m_pClient->m_Snap.m_NotReadyCount << 1 | (LargeTimer ? 1 : 0);
 			if(m_pClient->m_Snap.m_NotReadyCount == 1)
 			{
 				str_format(aBuf, sizeof(aBuf), Localize("%d player not ready"), m_pClient->m_Snap.m_NotReadyCount);
@@ -587,7 +587,7 @@ void CHud::RenderVoting()
 	str_format(aBuf, sizeof(aBuf), Localize("%ds left"), SecondsLeft);
 	static CTextCursor s_TimerCursor(6.0f, 105.0f, 60.0f);
 	s_TimerCursor.m_Align = TEXTALIGN_RIGHT;
-	s_TimerCursor.Reset(((int64) g_Localization.Version()) << 32 | SecondsLeft);
+	s_TimerCursor.Reset(((int64_t) g_Localization.Version()) << 32 | SecondsLeft);
 	TextRender()->TextOutlined(&s_TimerCursor, aBuf, -1);
 
 	static CTextCursor s_DescriptionCursor(6.0f, 5.0f, 60.0f, TEXTFLAG_ELLIPSIS);
@@ -857,7 +857,7 @@ void CHud::RenderReadyUpNotification()
 		m_pClient->m_pBinds->GetKey("ready_change", aKey, sizeof(aKey), KeyID, Modifier);
 		str_format(aText, sizeof(aText), Localize("When ready, press <%s>"), aKey);
 
-		s_Cursor.Reset(((int64) g_Localization.Version()) << 32 | KeyID);
+		s_Cursor.Reset(((int64_t) g_Localization.Version()) << 32 | KeyID);
 		s_Cursor.m_Align = TEXTALIGN_TC;
 		s_Cursor.MoveTo(150 * Graphics()->ScreenAspect(), 30.0f);
 		TextRender()->TextOutlined(&s_Cursor, aText, -1);
@@ -894,7 +894,7 @@ void CHud::RenderRaceTime(const CNetObj_PlayerInfoRace *pRaceInfo)
 
 void CHud::RenderCheckpoint()
 {
-	int64 TimeSinceCheckpoint = time_get() - m_CheckpointTime;
+	int64_t TimeSinceCheckpoint = time_get() - m_CheckpointTime;
 	if(m_CheckpointTime != 0 && TimeSinceCheckpoint < time_freq() * 4)
 	{
 		char aBuf[64];

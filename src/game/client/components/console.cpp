@@ -333,7 +333,7 @@ CGameConsole::CGameConsole() :
 
 float CGameConsole::TimeNow()
 {
-	static int64 s_TimeStart = time_get();
+	static int64_t s_TimeStart = time_get();
 	return float(time_get() - s_TimeStart) / float(time_freq());
 }
 
@@ -536,7 +536,7 @@ void CGameConsole::OnRender()
 			else
 				pPrompt = "NOT CONNECTED> ";
 		}
-		s_PromptCursor.Reset((int64) pPrompt);
+		s_PromptCursor.Reset((int64_t) pPrompt);
 		TextRender()->TextOutlined(&s_PromptCursor, pPrompt, -1);
 
 		x = s_PromptCursor.AdvancePosition().x;

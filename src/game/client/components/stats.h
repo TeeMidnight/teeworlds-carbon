@@ -56,7 +56,7 @@ private:
 	bool m_Activate;
 
 	bool m_ScreenshotTaken;
-	int64 m_ScreenshotTime;
+	int64_t m_ScreenshotTime;
 	static void ConKeyStats(IConsole::IResult *pResult, void *pUserData);
 	void AutoStatScreenshot();
 

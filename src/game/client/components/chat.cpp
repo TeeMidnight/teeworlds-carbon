@@ -720,7 +720,7 @@ void CChat::AddLine(const char *pLine, int ClientID, int Mode, int TargetID)
 		else
 			ChatType = CHAT_CLIENT;
 
-		const int64 Now = time_get();
+		const int64_t Now = time_get();
 		if(Now - m_aLastSoundPlayed[ChatType] >= time_freq() * 0.3f)
 		{
 			m_pClient->m_pSounds->Play(CSounds::CHN_GUI, GetChatSound(ChatType), 0);
@@ -1003,8 +1003,8 @@ void CChat::OnRender()
 	// show all chat when typing
 	m_Show |= m_Mode != CHAT_NONE;
 
-	int64 Now = time_get();
-	const int64 TimeFreq = time_freq();
+	int64_t Now = time_get();
+	const int64_t TimeFreq = time_freq();
 
 	// get scoreboard data
 	const bool IsScoreboardActive = m_pClient->m_pScoreboard->IsActive();

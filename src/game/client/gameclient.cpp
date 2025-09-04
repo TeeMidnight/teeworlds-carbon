@@ -356,7 +356,7 @@ void CGameClient::OnInit()
 	m_UI.Init(Kernel());
 	m_RenderTools.Init(Config(), Graphics());
 
-	int64 Start = time_get();
+	int64_t Start = time_get();
 
 	// Render load screen at 0% to get graphics sooner.
 	// Swap again to minimize initial flashing color.
@@ -412,7 +412,7 @@ void CGameClient::OnInit()
 	m_pMenus->RenderLoading();
 	m_InitComplete = true;
 
-	int64 End = time_get();
+	int64_t End = time_get();
 	char aBuf[256];
 	str_format(aBuf, sizeof(aBuf), "initialisation finished after %.2fms", ((End - Start) * 1000) / (float) time_freq());
 	Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "gameclient", aBuf);

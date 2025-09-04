@@ -185,8 +185,8 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 
 void CServerBrowser::Update()
 {
-	int64 Timeout = time_freq();
-	int64 Now = time_get();
+	int64_t Timeout = time_freq();
+	int64_t Now = time_get();
 	int Count;
 	CServerEntry *pEntry, *pNext;
 

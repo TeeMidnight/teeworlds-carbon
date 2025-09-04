@@ -681,9 +681,9 @@ void CMenus::InitLoading(int TotalWorkAmount)
 
 void CMenus::RenderLoading(int WorkedAmount)
 {
-	static int64 s_LastLoadRender = 0;
+	static int64_t s_LastLoadRender = 0;
 	m_LoadCurrent += WorkedAmount;
-	const int64 Now = time_get();
+	const int64_t Now = time_get();
 	const float Freq = time_freq();
 
 	if(Config()->m_Debug)
@@ -698,7 +698,7 @@ void CMenus::RenderLoading(int WorkedAmount)
 	if(s_LastLoadRender > 0 && Now - s_LastLoadRender < Freq / 60)
 		return;
 	s_LastLoadRender = Now;
-	static int64 s_LoadingStart = Now;
+	static int64_t s_LoadingStart = Now;
 
 	m_pClient->StartRendering();
 	RenderBackground((Now - s_LoadingStart) / Freq);
@@ -1284,7 +1284,7 @@ void CMenus::RenderMenu(CUIRect Screen)
 			if(Client()->MapDownloadTotalsize() > 0)
 			{
 				char aBuf[128];
-				int64 Now = time_get();
+				int64_t Now = time_get();
 				if(Now - m_DownloadLastCheckTime >= time_freq())
 				{
 					if(m_DownloadLastCheckSize > Client()->MapDownloadAmount())

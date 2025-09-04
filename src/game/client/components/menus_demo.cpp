@@ -54,7 +54,7 @@ void CMenus::RenderDemoPlayer(CUIRect MainView)
 
 	int CurrentTick = pInfo->m_CurrentTick - pInfo->m_FirstTick;
 	int TotalTicks = pInfo->m_LastTick - pInfo->m_FirstTick;
-	int64 Now = time_get();
+	int64_t Now = time_get();
 
 	// we can toggle the seekbar using CTRL
 	if(!m_MenuActive && !s_LastCtrlDown && CtrlDown)

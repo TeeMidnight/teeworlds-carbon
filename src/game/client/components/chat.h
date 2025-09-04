@@ -2,7 +2,6 @@
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #ifndef GAME_CLIENT_COMPONENTS_CHAT_H
 #define GAME_CLIENT_COMPONENTS_CHAT_H
-#include <base/system.h>
 #include <base/tl/array.h>
 #include <engine/shared/ringbuffer.h>
 #include <game/client/component.h>
@@ -22,7 +21,7 @@ class CChat : public CComponent
 
 	struct CLine
 	{
-		int64 m_Time;
+		int64_t m_Time;
 		vec2 m_Size;
 		int m_ClientID;
 		int m_TargetID;
@@ -76,8 +75,8 @@ class CChat : public CComponent
 	CHistoryEntry *m_pHistoryEntry;
 	TStaticRingBuffer<CHistoryEntry, 64 * 1024, CRingBufferBase::FLAG_RECYCLE> m_History;
 	int m_PendingChatCounter;
-	int64 m_LastChatSend;
-	int64 m_aLastSoundPlayed[CHAT_NUM];
+	int64_t m_LastChatSend;
+	int64_t m_aLastSoundPlayed[CHAT_NUM];
 
 	// chat commands
 	bool m_IgnoreCommand;

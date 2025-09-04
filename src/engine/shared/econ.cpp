@@ -95,7 +95,7 @@ bool CEcon::Open()
 	if(m_pConfig->m_EcPort == 0 || m_pConfig->m_EcPassword[0] == 0)
 		return false;
 
-	int64 Now = time_get();
+	int64_t Now = time_get();
 	if(m_LastOpenTry + 60 * time_freq() > Now) // try again every 60s
 		return false;
 

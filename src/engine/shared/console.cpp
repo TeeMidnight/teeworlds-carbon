@@ -14,6 +14,34 @@
 
 // todo: rework this
 
+CConsole::CResult::CResult() :
+	IResult()
+{
+	mem_zero(m_aStringStorage, sizeof(m_aStringStorage));
+	m_pArgsStart = 0;
+	m_pCommand = 0;
+	mem_zero(m_apArgs, sizeof(m_apArgs));
+}
+
+CConsole::CResult &CConsole::CResult::operator=(const CResult &Other)
+{
+	if(this != &Other)
+	{
+		IResult::operator=(Other);
+		mem_copy(m_aStringStorage, Other.m_aStringStorage, sizeof(m_aStringStorage));
+		m_pArgsStart = m_aStringStorage + (Other.m_pArgsStart - Other.m_aStringStorage);
+		m_pCommand = m_aStringStorage + (Other.m_pCommand - Other.m_aStringStorage);
+		for(unsigned i = 0; i < Other.m_NumArgs; ++i)
+			m_apArgs[i] = m_aStringStorage + (Other.m_apArgs[i] - Other.m_aStringStorage);
+	}
+	return *this;
+}
+
+void CConsole::CResult::AddArgument(const char *pArg)
+{
+	m_apArgs[m_NumArgs++] = pArg;
+}
+
 const char *CConsole::CResult::GetString(unsigned Index)
 {
 	if(Index >= m_NumArgs)

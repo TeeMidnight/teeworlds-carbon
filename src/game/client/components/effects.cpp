@@ -293,11 +293,11 @@ void CEffects::OnRender()
 	if(Speed <= 0.0f)
 		return;
 
-	static int64 s_LastUpdate100hz = 0;
-	static int64 s_LastUpdate50hz = 0;
+	static int64_t s_LastUpdate100hz = 0;
+	static int64_t s_LastUpdate50hz = 0;
 
-	const int64 Now = time_get();
-	const int64 Freq = time_freq();
+	const int64_t Now = time_get();
+	const int64_t Freq = time_freq();
 
 	if(Now - s_LastUpdate100hz > Freq / (100 * Speed))
 	{

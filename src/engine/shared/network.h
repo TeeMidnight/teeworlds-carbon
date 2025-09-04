@@ -7,6 +7,8 @@
 #include "protocol.h"
 #include "ringbuffer.h"
 
+#include <cstdint>
+
 /*
 
 CURRENT:
@@ -168,8 +170,8 @@ public:
 	unsigned char *m_pData;
 
 	int m_Sequence;
-	int64 m_LastSendTime;
-	int64 m_FirstSendTime;
+	int64_t m_LastSendTime;
+	int64_t m_FirstSendTime;
 };
 
 class CNetPacketConstruct
@@ -189,11 +191,7 @@ class CNetBase
 	class CNetInitializer
 	{
 	public:
-		CNetInitializer()
-		{
-			// init the network
-			net_init();
-		}
+		CNetInitializer();
 	};
 	static CNetInitializer m_NetInitializer;
 
@@ -236,21 +234,21 @@ public:
 
 	bool CheckToken(const NETADDR *pAddr, TOKEN Token, TOKEN ResponseToken, bool *BroadcastResponse);
 	TOKEN GenerateToken(const NETADDR *pAddr) const;
-	static TOKEN GenerateToken(const NETADDR *pAddr, int64 Seed);
+	static TOKEN GenerateToken(const NETADDR *pAddr, int64_t Seed);
 
 	TOKEN GetGlobalToken() { return m_GlobalToken; };
 
 private:
 	CNetBase *m_pNetBase;
 
-	int64 m_Seed;
-	int64 m_PrevSeed;
+	int64_t m_Seed;
+	int64_t m_PrevSeed;
 
 	TOKEN m_GlobalToken;
 	TOKEN m_PrevGlobalToken;
 
 	int m_SeedTime;
-	int64 m_NextSeedTime;
+	int64_t m_NextSeedTime;
 };
 
 typedef void (*FSendCallback)(int TrackID, void *pUser);
@@ -287,8 +285,8 @@ private:
 		NETADDR m_Addr;
 		int m_DataSize;
 		char m_aData[NET_MAX_PAYLOAD];
-		int64 m_Expiry;
-		int64 m_LastTokenRequest;
+		int64_t m_Expiry;
+		int64_t m_LastTokenRequest;
 		const int m_TrackID;
 		FSendCallback m_pfnCallback;
 		void *m_pCallbackUser;
@@ -299,7 +297,7 @@ private:
 	{
 		NETADDR m_Addr;
 		TOKEN m_Token;
-		int64 m_Expiry;
+		int64_t m_Expiry;
 	};
 
 	TStaticRingBuffer<CAddressInfo,
@@ -331,9 +329,9 @@ private:
 
 	TStaticRingBuffer<CNetChunkResend, NET_CONN_BUFFERSIZE> m_Buffer;
 
-	int64 m_LastUpdateTime;
-	int64 m_LastRecvTime;
-	int64 m_LastSendTime;
+	int64_t m_LastUpdateTime;
+	int64_t m_LastRecvTime;
+	int64_t m_LastSendTime;
 
 	char m_ErrorString[256];
 
@@ -387,8 +385,8 @@ public:
 	const char *ErrorString() const { return m_ErrorString; }
 
 	// Needed for GotProblems in NetClient
-	int64 LastRecvTime() const { return m_LastRecvTime; }
-	int64 ConnectTime() const { return m_LastUpdateTime; }
+	int64_t LastRecvTime() const { return m_LastRecvTime; }
+	int64_t ConnectTime() const { return m_LastUpdateTime; }
 
 	int AckSequence() const { return m_Ack; }
 	// The backroom is ack-NET_MAX_SEQUENCE/2. Used for knowing if we acked a packet or not

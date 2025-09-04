@@ -10,22 +10,11 @@
 
 #include "detect.h"
 #include "types.h"
-#include <time.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#ifdef __GNUC__
-#define GNUC_ATTRIBUTE(x) __attribute__(x)
-#else
-#define GNUC_ATTRIBUTE(x)
-#endif
-
-// Localization
-#define _(TEXT) TEXT, ""
-#define _C(TEXT, CONTEXT) TEXT, CONTEXT
-#define _N(NAME) NAME
 
 /* Group: Debug */
 /*
@@ -607,14 +596,6 @@ void sphore_signal(SEMAPHORE *sem);
 void sphore_destroy(SEMAPHORE *sem);
 
 /* Group: Timer */
-#ifdef __GNUC__
-/* if compiled with -pedantic-errors it will complain about long
-	not being a C90 thing.
-*/
-__extension__ typedef long long int64;
-#else
-typedef long long int64;
-#endif
 /*
 	Function: time_get
 		Fetches a sample from a high resolution timer.
@@ -625,7 +606,7 @@ typedef long long int64;
 	Remarks:
 		To know how fast the timer is ticking, see <time_freq>.
 */
-int64 time_get();
+int64_t time_get();
 
 /*
 	Function: time_freq
@@ -634,7 +615,7 @@ int64 time_get();
 	Returns:
 		Returns the frequency of the high resolution timer.
 */
-int64 time_freq();
+int64_t time_freq();
 
 /*
 	Function: time_timestamp
@@ -1421,10 +1402,6 @@ void str_timestamp_ex(time_t time, char *buffer, int buffer_size, const char *fo
 */
 int str_span(const char *str, const char *set);
 
-#define FORMAT_TIME "%H:%M:%S"
-#define FORMAT_SPACE "%Y-%m-%d %H:%M:%S"
-#define FORMAT_NOSPACE "%Y-%m-%d_%H-%M-%S"
-
 /* Group: Filesystem */
 
 /*
@@ -1437,15 +1414,7 @@ int str_span(const char *str, const char *set);
 		type - Type of the directory
 		user - Pointer to give to the callback
 */
-typedef int (*FS_LISTDIR_CALLBACK)(const char *name, int is_dir, int dir_type, void *user);
 void fs_listdir(const char *dir, FS_LISTDIR_CALLBACK cb, int type, void *user);
-
-typedef struct
-{
-	const char *m_pName;
-	time_t m_TimeCreated; // seconds since UNIX Epoch
-	time_t m_TimeModified; // seconds since UNIX Epoch
-} CFsFileInfo;
 
 /*
 	Function: fs_listdir_fileinfo
@@ -1457,7 +1426,6 @@ typedef struct
 		type - Type of the directory
 		user - Pointer to give to the callback
 */
-typedef int (*FS_LISTDIR_CALLBACK_FILEINFO)(const CFsFileInfo *info, int is_dir, int dir_type, void *user);
 void fs_listdir_fileinfo(const char *dir, FS_LISTDIR_CALLBACK_FILEINFO cb, int type, void *user);
 
 /*

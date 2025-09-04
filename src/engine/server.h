@@ -2,6 +2,9 @@
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
 #ifndef ENGINE_SERVER_H
 #define ENGINE_SERVER_H
+
+#include <base/types.h>
+
 #include "kernel.h"
 #include "message.h"
 

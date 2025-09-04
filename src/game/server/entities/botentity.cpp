@@ -248,7 +248,7 @@ bool CBotEntity::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 	if(pFrom && pFrom->GetObjType() == CGameWorld::ENTTYPE_CHARACTER)
 	{
 		CCharacter *pChr = (CCharacter *) pFrom;
-		int64 Mask = CmaskOne(pChr->GetCID());
+		int64_t Mask = CmaskOne(pChr->GetCID());
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
 			if(GameServer()->m_apPlayers[i] && (GameServer()->m_apPlayers[i]->GetTeam() == TEAM_SPECTATORS || GameServer()->m_apPlayers[i]->m_DeadSpecMode) &&

@@ -126,8 +126,8 @@ public:
 
 	int m_VoteCreator;
 	int m_VoteType;
-	int64 m_VoteCloseTime;
-	int64 m_VoteCancelTime;
+	int64_t m_VoteCloseTime;
+	int64_t m_VoteCancelTime;
 	bool m_VoteUpdate;
 	int m_VotePos;
 	char m_aVoteDescription[VOTE_DESC_LENGTH];
@@ -149,12 +149,12 @@ public:
 	CVoteOptionServer *m_pVoteOptionLast;
 
 	// helper functions
-	void CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64 Mask = -1LL);
-	void CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64 Mask = -1LL);
-	void CreateHammerHit(vec2 Pos, int64 Mask = -1LL);
-	void CreatePlayerSpawn(vec2 Pos, int64 Mask = -1LL);
-	void CreateDeath(vec2 Pos, int Who, int64 Mask = -1LL);
-	void CreateSound(vec2 Pos, int Sound, int64 Mask = -1LL);
+	void CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64_t Mask = -1LL);
+	void CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64_t Mask = -1LL);
+	void CreateHammerHit(vec2 Pos, int64_t Mask = -1LL);
+	void CreatePlayerSpawn(vec2 Pos, int64_t Mask = -1LL);
+	void CreateDeath(vec2 Pos, int Who, int64_t Mask = -1LL);
+	void CreateSound(vec2 Pos, int Sound, int64_t Mask = -1LL);
 
 	// ----- send functions -----
 	void SendChat(int ChatterClientID, int Mode, int To, const char *pText);
@@ -225,10 +225,10 @@ public:
 	void OnUpdatePlayerServerInfo(class CJsonStringWriter *pJSonWriter, int Id) override;
 };
 
-inline int64 CmaskAll() { return -1; }
-inline int64 CmaskOne(int ClientID) { return (int64) 1 << ClientID; }
-inline int64 CmaskAllExceptOne(int ClientID) { return CmaskAll() ^ CmaskOne(ClientID); }
-inline bool CmaskIsSet(int64 Mask, int ClientID) { return (Mask & CmaskOne(ClientID)) != 0; }
+inline int64_t CmaskAll() { return -1; }
+inline int64_t CmaskOne(int ClientID) { return (int64_t) 1 << ClientID; }
+inline int64_t CmaskAllExceptOne(int ClientID) { return CmaskAll() ^ CmaskOne(ClientID); }
+inline bool CmaskIsSet(int64_t Mask, int ClientID) { return (Mask & CmaskOne(ClientID)) != 0; }
 
 int NetworkClipped(int SnappingClient, vec2 CheckPos, CGameContext *pGameServer);
 

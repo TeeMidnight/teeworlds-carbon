@@ -129,8 +129,8 @@ void CParticles::OnRender()
 	if(Client()->State() < IClient::STATE_ONLINE)
 		return;
 
-	int64 Now = time_get();
-	static int64 s_LastTime = Now;
+	int64_t Now = time_get();
+	static int64_t s_LastTime = Now;
 	Update((float) ((Now - s_LastTime) / (double) time_freq()) * m_pClient->GetAnimationPlaybackSpeed());
 	s_LastTime = Now;
 }

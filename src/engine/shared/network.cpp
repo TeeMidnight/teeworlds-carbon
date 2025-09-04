@@ -10,6 +10,12 @@
 #include "huffman.h"
 #include "network.h"
 
+CNetBase::CNetInitializer::CNetInitializer()
+{
+	// init the network
+	net_init();
+}
+
 static void ConchainDbgLognetwork(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData)
 {
 	pfnCallback(pResult, pCallbackUserData);

@@ -23,7 +23,7 @@ class CEcon
 		};
 
 		int m_State;
-		int64 m_TimeConnected;
+		int64_t m_TimeConnected;
 		int m_AuthTries;
 	};
 	CClient m_aClients[NET_MAX_CONSOLE_CLIENTS];
@@ -34,7 +34,7 @@ class CEcon
 	CNetConsole m_NetConsole;
 
 	bool m_Ready;
-	int64 m_LastOpenTry;
+	int64_t m_LastOpenTry;
 	int m_PrintCBIndex;
 	int m_UserClientID;
 

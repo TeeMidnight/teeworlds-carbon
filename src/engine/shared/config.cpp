@@ -6,6 +6,8 @@
 #include <engine/storage.h>
 #include <game/version.h>
 
+#include <base/system.h>
+
 void EscapeParam(char *pDst, const char *pSrc, int size)
 {
 	for(int i = 0; *pSrc && i < size - 1; ++i)

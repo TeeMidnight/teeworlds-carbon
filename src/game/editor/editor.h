@@ -736,7 +736,7 @@ public:
 	bool m_ShowTileInfo;
 	bool m_ShowDetail;
 	bool m_Animate;
-	int64 m_AnimateStart;
+	int64_t m_AnimateStart;
 	float m_AnimateTime;
 	float m_AnimateSpeed;
 

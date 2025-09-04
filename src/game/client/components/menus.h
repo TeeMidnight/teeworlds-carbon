@@ -191,7 +191,7 @@ private:
 	void DoGameIcon(const char *pName, const CUIRect *pRect);
 	static int GameIconScan(const char *pName, int IsDir, int DirType, void *pUser);
 
-	int64 m_LastInput;
+	int64_t m_LastInput;
 
 	// for settings
 	bool m_NeedRestartPlayer;
@@ -204,7 +204,7 @@ private:
 	const CSkins::CSkin *m_pSelectedSkin;
 
 	// for map download popup
-	int64 m_DownloadLastCheckTime;
+	int64_t m_DownloadLastCheckTime;
 	int m_DownloadLastCheckSize;
 	float m_DownloadSpeed;
 
@@ -309,7 +309,7 @@ private:
 	bool m_DemolistSelectedIsDir;
 	int m_DemolistStorageType;
 	char m_aDemolistPreviousSelection[IO_MAX_PATH_LENGTH];
-	int64 m_SeekBarActivatedTime;
+	int64_t m_SeekBarActivatedTime;
 	bool m_SeekBarActive;
 
 	void DemolistOnUpdate(bool Reset);

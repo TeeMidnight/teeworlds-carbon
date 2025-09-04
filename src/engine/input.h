@@ -3,6 +3,8 @@
 #ifndef ENGINE_INPUT_H
 #define ENGINE_INPUT_H
 
+#include <base/types.h>
+
 #include "kernel.h"
 
 const int g_MaxKeys = 512;

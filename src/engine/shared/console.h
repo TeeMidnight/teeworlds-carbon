@@ -92,37 +92,13 @@ class CConsole : public IConsole
 		const char *m_pCommand;
 		const char *m_apArgs[MAX_PARTS];
 
-		CResult() :
-			IResult()
-		{
-			mem_zero(m_aStringStorage, sizeof(m_aStringStorage));
-			m_pArgsStart = 0;
-			m_pCommand = 0;
-			mem_zero(m_apArgs, sizeof(m_apArgs));
-		}
+		CResult();
+		CResult &operator=(const CResult &Other);
+		void AddArgument(const char *pArg);
 
-		CResult &operator=(const CResult &Other)
-		{
-			if(this != &Other)
-			{
-				IResult::operator=(Other);
-				mem_copy(m_aStringStorage, Other.m_aStringStorage, sizeof(m_aStringStorage));
-				m_pArgsStart = m_aStringStorage + (Other.m_pArgsStart - Other.m_aStringStorage);
-				m_pCommand = m_aStringStorage + (Other.m_pCommand - Other.m_aStringStorage);
-				for(unsigned i = 0; i < Other.m_NumArgs; ++i)
-					m_apArgs[i] = m_aStringStorage + (Other.m_apArgs[i] - Other.m_aStringStorage);
-			}
-			return *this;
-		}
-
-		void AddArgument(const char *pArg)
-		{
-			m_apArgs[m_NumArgs++] = pArg;
-		}
-
-		virtual const char *GetString(unsigned Index);
-		virtual int GetInteger(unsigned Index);
-		virtual float GetFloat(unsigned Index);
+		const char *GetString(unsigned Index) override;
+		int GetInteger(unsigned Index) override;
+		float GetFloat(unsigned Index) override;
 	};
 
 	int ParseStart(CResult *pResult, const char *pString, int Length);

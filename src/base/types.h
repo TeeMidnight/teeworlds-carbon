@@ -1,9 +1,22 @@
 #ifndef BASE_TYPE_H
 #define BASE_TYPE_H
 
+#include <time.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#ifdef __GNUC__
+#define GNUC_ATTRIBUTE(x) __attribute__(x)
+#else
+#define GNUC_ATTRIBUTE(x)
+#endif
+
+// Localization
+#define _(TEXT) TEXT, ""
+#define _C(TEXT, CONTEXT) TEXT, CONTEXT
+#define _N(NAME) NAME
 
 enum
 {
@@ -20,6 +33,19 @@ enum
 };
 
 typedef struct IOINTERNAL *IOHANDLE;
+
+#define FORMAT_TIME "%H:%M:%S"
+#define FORMAT_SPACE "%Y-%m-%d %H:%M:%S"
+#define FORMAT_NOSPACE "%Y-%m-%d_%H-%M-%S"
+
+typedef struct
+{
+	const char *m_pName;
+	time_t m_TimeCreated; // seconds since UNIX Epoch
+	time_t m_TimeModified; // seconds since UNIX Epoch
+} CFsFileInfo;
+typedef int (*FS_LISTDIR_CALLBACK)(const char *name, int is_dir, int dir_type, void *user);
+typedef int (*FS_LISTDIR_CALLBACK_FILEINFO)(const CFsFileInfo *info, int is_dir, int dir_type, void *user);
 
 typedef void *LOCK;
 

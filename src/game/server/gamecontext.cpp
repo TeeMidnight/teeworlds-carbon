@@ -104,7 +104,7 @@ class CCharacter *CGameContext::GetPlayerChar(int ClientID)
 	return m_apPlayers[ClientID]->GetCharacter();
 }
 
-void CGameContext::CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64 Mask)
+void CGameContext::CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64_t Mask)
 {
 	float f = angle(Source);
 	CNetEvent_Damage Event;
@@ -118,7 +118,7 @@ void CGameContext::CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount,
 	m_Events.Create(&Event, NETEVENTTYPE_DAMAGE, sizeof(CNetEvent_Damage), Mask);
 }
 
-void CGameContext::CreateHammerHit(vec2 Pos, int64 Mask)
+void CGameContext::CreateHammerHit(vec2 Pos, int64_t Mask)
 {
 	// create the event
 	CNetEvent_HammerHit Event;
@@ -127,7 +127,7 @@ void CGameContext::CreateHammerHit(vec2 Pos, int64 Mask)
 	m_Events.Create(&Event, NETEVENTTYPE_HAMMERHIT, sizeof(CNetEvent_HammerHit), Mask);
 }
 
-void CGameContext::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64 Mask)
+void CGameContext::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64_t Mask)
 {
 	// create the event
 	CNetEvent_Explosion Event;
@@ -154,7 +154,7 @@ void CGameContext::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int Max
 	}
 }
 
-void CGameContext::CreatePlayerSpawn(vec2 Pos, int64 Mask)
+void CGameContext::CreatePlayerSpawn(vec2 Pos, int64_t Mask)
 {
 	CNetEvent_Spawn Event;
 	Event.m_X = (int) Pos.x;
@@ -162,7 +162,7 @@ void CGameContext::CreatePlayerSpawn(vec2 Pos, int64 Mask)
 	m_Events.Create(&Event, NETEVENTTYPE_SPAWN, sizeof(CNetEvent_Spawn), Mask);
 }
 
-void CGameContext::CreateDeath(vec2 Pos, int ClientID, int64 Mask)
+void CGameContext::CreateDeath(vec2 Pos, int ClientID, int64_t Mask)
 {
 	CNetEvent_Death Event;
 	Event.m_X = (int) Pos.x;
@@ -171,7 +171,7 @@ void CGameContext::CreateDeath(vec2 Pos, int ClientID, int64 Mask)
 	m_Events.Create(&Event, NETEVENTTYPE_DEATH, sizeof(CNetEvent_Death), Mask);
 }
 
-void CGameContext::CreateSound(vec2 Pos, int Sound, int64 Mask)
+void CGameContext::CreateSound(vec2 Pos, int Sound, int64_t Mask)
 {
 	if(Sound < 0)
 		return;
@@ -926,7 +926,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 		else if(MsgID == NETMSGTYPE_CL_CALLVOTE)
 		{
 			CNetMsg_Cl_CallVote *pMsg = (CNetMsg_Cl_CallVote *) pRawMsg;
-			int64 Now = Server()->Tick();
+			int64_t Now = Server()->Tick();
 
 			if(str_comp_nocase(pMsg->m_Type, "option") == 0)
 			{
@@ -1546,7 +1546,7 @@ bool CGameContext::MenuServerVote(int ClientID, SCallVoteStatus &VoteStatus, cla
 		}
 		else if(VoteStatus.m_aDesc[0])
 		{
-			int64 Now = pSelf->Server()->Tick();
+			int64_t Now = pSelf->Server()->Tick();
 			if((pSelf->Config()->m_SvSpamprotection && ((pPlayer->m_LastVoteTryTick && pPlayer->m_LastVoteTryTick + pSelf->Server()->TickSpeed() * 3 > Now) ||
 									   (pPlayer->m_LastVoteCallTick && pPlayer->m_LastVoteCallTick + pSelf->Server()->TickSpeed() * VOTE_COOLDOWN > Now))) ||
 				pPlayer->GetTeam() == TEAM_SPECTATORS || pSelf->m_VoteCloseTime)

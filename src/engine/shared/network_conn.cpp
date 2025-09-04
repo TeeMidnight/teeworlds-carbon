@@ -244,7 +244,7 @@ int CNetConnection::Feed(CNetPacketConstruct *pPacket, NETADDR *pAddr)
 	}
 	m_PeerAck = pPacket->m_Ack;
 
-	int64 Now = time_get();
+	int64_t Now = time_get();
 
 	if(pPacket->m_Token == NET_TOKEN_NONE || pPacket->m_Token != m_Token)
 		return 0;
@@ -364,7 +364,7 @@ int CNetConnection::Feed(CNetPacketConstruct *pPacket, NETADDR *pAddr)
 
 int CNetConnection::Update()
 {
-	int64 Now = time_get();
+	int64_t Now = time_get();
 
 	if(State() == NET_CONNSTATE_OFFLINE || State() == NET_CONNSTATE_ERROR)
 		return 0;

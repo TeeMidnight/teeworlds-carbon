@@ -14,7 +14,7 @@ public:
 	};
 
 	NETADDR m_Addr;
-	int64 m_RequestTime;
+	int64_t m_RequestTime;
 	int m_InfoState;
 	int m_CurrentToken; // the token is to keep server refresh separated from each other
 	int m_TrackID;

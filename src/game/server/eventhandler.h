@@ -28,7 +28,7 @@ public:
 	void SetGameServer(CGameContext *pGameServer);
 
 	CEventHandler();
-	void Create(void *pData, int Type, int Size, int64 Mask = -1);
+	void Create(void *pData, int Type, int Size, int64_t Mask = -1);
 	void Clear();
 	void Snap(int SnappingClient);
 };

@@ -62,7 +62,7 @@ void CNetServer::Drop(int ClientID, const char *pReason)
 
 int CNetServer::Update()
 {
-	int64 Now = time_get();
+	int64_t Now = time_get();
 	for(int i = 0; i < NET_MAX_CLIENTS; i++)
 	{
 		if(m_aSlots[i].m_Connection.State() == NET_CONNSTATE_OFFLINE)

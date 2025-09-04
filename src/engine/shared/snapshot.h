@@ -104,7 +104,7 @@ public:
 		CHolder *m_pPrev;
 		CHolder *m_pNext;
 
-		int64 m_Tagtime;
+		int64_t m_Tagtime;
 		int m_Tick;
 
 		int m_SnapSize;
@@ -119,8 +119,8 @@ public:
 	void Init();
 	void PurgeAll();
 	void PurgeUntil(int Tick);
-	void Add(int Tick, int64 Tagtime, int DataSize, const void *pData, bool CreateAlt);
-	int Get(int Tick, int64 *pTagtime, CSnapshot **ppData, CSnapshot **ppAltData) const;
+	void Add(int Tick, int64_t Tagtime, int DataSize, const void *pData, bool CreateAlt);
+	int Get(int Tick, int64_t *pTagtime, CSnapshot **ppData, CSnapshot **ppAltData) const;
 };
 
 class CSnapshotBuilder

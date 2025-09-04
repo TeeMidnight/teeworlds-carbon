@@ -747,7 +747,7 @@ void CScoreboard::RenderRecordingNotification(float x, float w)
 	str_format(aBuf, sizeof(aBuf), Localize("REC %3d:%02d"), Seconds / 60, Seconds % 60);
 
 	static CTextCursor s_Cursor(20.0f);
-	s_Cursor.Reset(((int64) g_Localization.Version() << 32) | Seconds);
+	s_Cursor.Reset(((int64_t) g_Localization.Version() << 32) | Seconds);
 	s_Cursor.MoveTo(x + 50.0f, 10.0f);
 	TextRender()->TextOutlined(&s_Cursor, aBuf, -1);
 }

@@ -130,7 +130,7 @@ void CControls::OnMessage(int Msg, void *pRawMsg)
 
 int CControls::SnapInput(int *pData)
 {
-	static int64 s_LastSendTime = 0;
+	static int64_t s_LastSendTime = 0;
 	bool Send = false;
 
 	// update player state

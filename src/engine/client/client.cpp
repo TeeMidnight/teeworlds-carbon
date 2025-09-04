@@ -130,7 +130,7 @@ void CGraph::Render(IGraphics *pGraphics, IGraphics::CTextureHandle FontTexture,
 	pGraphics->QuadsEnd();
 }
 
-void CSmoothTime::Init(int64 Target)
+void CSmoothTime::Init(int64_t Target)
 {
 	m_Snap = time_get();
 	m_Current = Target;
@@ -147,10 +147,10 @@ void CSmoothTime::SetAdjustSpeed(int Direction, float Value)
 	m_aAdjustSpeed[Direction] = Value;
 }
 
-int64 CSmoothTime::Get(int64 Now)
+int64_t CSmoothTime::Get(int64_t Now)
 {
-	int64 c = m_Current + (Now - m_Snap);
-	int64 t = m_Target + (Now - m_Snap);
+	int64_t c = m_Current + (Now - m_Snap);
+	int64_t t = m_Target + (Now - m_Snap);
 
 	// it's faster to adjust upward instead of downward
 	// we might need to adjust these abit
@@ -163,22 +163,22 @@ int64 CSmoothTime::Get(int64 Now)
 	if(a > 1.0f)
 		a = 1.0f;
 
-	int64 r = c + (int64) ((t - c) * a);
+	int64_t r = c + (int64_t) ((t - c) * a);
 
 	m_Graph.Add(a + 0.5f, 1, 1, 1);
 
 	return r;
 }
 
-void CSmoothTime::UpdateInt(int64 Target)
+void CSmoothTime::UpdateInt(int64_t Target)
 {
-	int64 Now = time_get();
+	int64_t Now = time_get();
 	m_Current = Get(Now);
 	m_Snap = Now;
 	m_Target = Target;
 }
 
-void CSmoothTime::Update(CGraph *pGraph, int64 Target, int TimeLeft, int AdjustDirection)
+void CSmoothTime::Update(CGraph *pGraph, int64_t Target, int TimeLeft, int AdjustDirection)
 {
 	int UpdateTimer = 1;
 
@@ -380,7 +380,7 @@ void CClient::SendRcon(const char *pCmd)
 
 void CClient::SendInput()
 {
-	int64 Now = time_get();
+	int64_t Now = time_get();
 
 	if(m_PredTick <= 0)
 		return;
@@ -406,7 +406,7 @@ void CClient::SendInput()
 		Msg.AddInt(m_aInputs[m_CurrentInput].m_aData[i]);
 
 	int PingCorrection = 0;
-	int64 TagTime;
+	int64_t TagTime;
 	if(m_SnapshotStorage.Get(m_AckGameTick, &TagTime, 0, 0) >= 0)
 		PingCorrection = (int) (((Now - TagTime) * 1000) / time_freq());
 	Msg.AddInt(PingCorrection);
@@ -679,11 +679,11 @@ void CClient::DebugRender()
 		return;
 
 	static NETSTATS Prev, Current;
-	static int64 LastSnap = 0;
+	static int64_t LastSnap = 0;
 	static float FrameTimeAvg = 0;
 	static IGraphics::CTextureHandle s_Font = Graphics()->LoadTexture("ui/debug_font.png", IStorage::TYPE_ALL, CImageInfo::FORMAT_AUTO, IGraphics::TEXLOAD_NORESAMPLE);
 	char aBuffer[256];
-	int64 Now = time_get();
+	int64_t Now = time_get();
 
 	// m_pGraphics->BlendNormal();
 	Graphics()->TextureSet(s_Font);
@@ -1242,13 +1242,13 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 			int TimeLeft = Unpacker.GetInt();
 
 			// adjust our prediction time
-			int64 Target = 0;
+			int64_t Target = 0;
 			for(int k = 0; k < 200; k++)
 			{
 				if(m_aInputs[k].m_Tick == InputPredTick)
 				{
 					Target = m_aInputs[k].m_PredictedTime + (time_get() - m_aInputs[k].m_Time);
-					Target = Target - (int64) (((TimeLeft - PREDICTION_MARGIN) / 1000.0f) * time_freq());
+					Target = Target - (int64_t) (((TimeLeft - PREDICTION_MARGIN) / 1000.0f) * time_freq());
 					break;
 				}
 			}
@@ -1438,9 +1438,9 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 					// adjust game time
 					if(m_ReceivedSnapshots > 2)
 					{
-						int64 Now = m_GameTime.Get(time_get());
-						int64 TickStart = GameTick * time_freq() / SERVER_TICK_SPEED;
-						int64 TimeLeft = (TickStart - Now) * 1000 / time_freq();
+						int64_t Now = m_GameTime.Get(time_get());
+						int64_t TickStart = GameTick * time_freq() / SERVER_TICK_SPEED;
+						int64_t TimeLeft = (TickStart - Now) * 1000 / time_freq();
 						m_GameTime.Update(&m_GametimeMarginGraph, (GameTick - 1) * time_freq() / SERVER_TICK_SPEED, TimeLeft, 0);
 					}
 
@@ -1560,14 +1560,14 @@ void CClient::Update()
 	{
 		// switch snapshot
 		int Repredict = 0;
-		int64 Freq = time_freq();
-		int64 Now = m_GameTime.Get(time_get());
-		int64 PredNow = m_PredictedTime.Get(time_get());
+		int64_t Freq = time_freq();
+		int64_t Now = m_GameTime.Get(time_get());
+		int64_t PredNow = m_PredictedTime.Get(time_get());
 
 		while(1)
 		{
 			CSnapshotStorage::CHolder *pCur = m_aSnapshots[SNAP_CURRENT];
-			int64 TickStart = (pCur->m_Tick) * Freq / SERVER_TICK_SPEED;
+			int64_t TickStart = (pCur->m_Tick) * Freq / SERVER_TICK_SPEED;
 
 			if(TickStart < Now)
 			{
@@ -1596,8 +1596,8 @@ void CClient::Update()
 
 		if(m_aSnapshots[SNAP_CURRENT] && m_aSnapshots[SNAP_PREV])
 		{
-			int64 CurtickStart = m_aSnapshots[SNAP_CURRENT]->m_Tick * Freq / SERVER_TICK_SPEED;
-			int64 PrevtickStart = m_aSnapshots[SNAP_PREV]->m_Tick * Freq / SERVER_TICK_SPEED;
+			int64_t CurtickStart = m_aSnapshots[SNAP_CURRENT]->m_Tick * Freq / SERVER_TICK_SPEED;
+			int64_t PrevtickStart = m_aSnapshots[SNAP_PREV]->m_Tick * Freq / SERVER_TICK_SPEED;
 			int PrevPredTick = (int) (PredNow * SERVER_TICK_SPEED / Freq);
 			int NewPredTick = PrevPredTick + 1;
 
@@ -1636,8 +1636,8 @@ void CClient::Update()
 #ifdef CONF_DEBUG
 	if(Config()->m_DbgStress)
 	{
-		static int64 ActionTaken = 0;
-		int64 Now = time_get();
+		static int64_t ActionTaken = 0;
+		int64_t Now = time_get();
 		if(State() == IClient::STATE_OFFLINE)
 		{
 			if(Now > ActionTaken + time_freq() * 2)
@@ -1727,11 +1727,11 @@ bool CClient::LimitFps()
 
 #ifdef CONF_DEBUG
 	static double DbgTimeWaited = 0.0;
-	static int64 DbgFramesSkippedCount = 0;
-	static int64 DbgLastSkippedDbgMsg = time_get();
+	static int64_t DbgFramesSkippedCount = 0;
+	static int64_t DbgLastSkippedDbgMsg = time_get();
 #endif
 
-	int64 Now = time_get();
+	int64_t Now = time_get();
 	const double LastCpuFrameTime = (Now - m_LastCpuTime) / (double) time_freq();
 	m_LastAvgCpuFrameTime = (m_LastAvgCpuFrameTime + LastCpuFrameTime * 4.0) / 5.0;
 	m_LastCpuTime = Now;
@@ -1748,7 +1748,7 @@ bool CClient::LimitFps()
 		DbgTimeWaited += DesiredTime - RenderDeltaTime;
 #endif
 		const double Freq = (double) time_freq();
-		const int64 LastT = m_LastRenderTime;
+		const int64_t LastT = m_LastRenderTime;
 		double d = DesiredTime - RenderDeltaTime;
 		while(d > 0.00001)
 		{
@@ -1984,7 +1984,7 @@ void CClient::Run()
 				m_RenderFrames++;
 
 				// update frametime
-				int64 Now = time_get();
+				int64_t Now = time_get();
 				m_RenderFrameTime = (Now - m_LastRenderTime) / (float) time_freq();
 
 				if(m_RenderFrameTime < m_RenderFrameTimeLow)
@@ -2063,7 +2063,7 @@ void CClient::Run()
 	SDL_Quit();
 }
 
-int64 CClient::TickStartTime(int Tick)
+int64_t CClient::TickStartTime(int Tick)
 {
 	return m_LocalStartTime + (time_freq() * Tick) / m_GameTickSpeed;
 }
