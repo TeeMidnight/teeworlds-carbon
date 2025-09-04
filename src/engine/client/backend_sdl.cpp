@@ -11,6 +11,8 @@
 #include "backend_sdl.h"
 #include "graphics_threaded.h"
 
+static constexpr GLenum BUFFER_INIT_INDEX_TARGET = GL_COPY_WRITE_BUFFER;
+
 // Vertex shader source code using OpenGL 4.6 Core Profile
 static const char *s_VertexShaderSource = R"(
 #version 330 core
@@ -349,11 +351,12 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 	bool hasValidTexture = false;
 	int SrcBlendMode = GL_ONE;
 
-	const SRenderStatus &Status = m_aRenderStatus[State.m_Dimension == 3 ? 1 : 0];
+	const SRenderShader &Shader = m_aRenderShader[State.m_Dimension == 3 ? 1 : 0];
+	glUseProgram(Shader.m_ShaderProgram);
 	// Get uniform locations
-	const int &UseTextureLoc = Status.m_UseTextureLoc;
-	const int &IsAlphaOnlyLoc = Status.m_IsAlphaOnlyLoc;
-	const int &OurTextureLoc = Status.m_OurTextureLoc;
+	const int &UseTextureLoc = Shader.m_UseTextureLoc;
+	const int &IsAlphaOnlyLoc = Shader.m_IsAlphaOnlyLoc;
+	const int &OurTextureLoc = Shader.m_OurTextureLoc;
 
 	// Reset uniforms to default values
 	if(UseTextureLoc != -1)
@@ -368,7 +371,6 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		if(State.m_Dimension == 2 && (m_aTextures[State.m_Texture].m_State & CTexture::STATE_TEX2D))
 		{
 			// Bind 2D texture to texture unit 0
-			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_aTextures[State.m_Texture].m_Tex2D);
 
 			// Set texture uniforms
@@ -387,8 +389,6 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		}
 		else if(State.m_Dimension == 3 && (m_aTextures[State.m_Texture].m_State & CTexture::STATE_TEX3D))
 		{
-			glActiveTexture(GL_TEXTURE0);
-			glBindTexture(GL_TEXTURE_2D, m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex]);
 			glBindTexture(GL_TEXTURE_3D, m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex]);
 
 			// Set texture uniforms
@@ -491,23 +491,84 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		-(State.m_ScreenBR.x + State.m_ScreenTL.x) / (State.m_ScreenBR.x - State.m_ScreenTL.x),
 		-(State.m_ScreenBR.y + State.m_ScreenTL.y) / (State.m_ScreenTL.y - State.m_ScreenBR.y), 0, 1};
 
-	int projectionLoc = glGetUniformLocation(Status.m_ShaderProgram, "projection");
-	if(projectionLoc != -1)
-		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, orthoMatrix);
+	if(Shader.m_ProjectionLoc != -1)
+		glUniformMatrix4fv(Shader.m_ProjectionLoc, 1, GL_FALSE, orthoMatrix);
 }
 
 void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 {
 	// Create shader program
-	m_aRenderStatus[0].m_ShaderProgram = CreateShaderProgram();
-	m_aRenderStatus[1].m_ShaderProgram = CreateShaderProgram3D();
+	m_aRenderShader[0].m_ShaderProgram = CreateShaderProgram();
+	m_aRenderShader[1].m_ShaderProgram = CreateShaderProgram3D();
 
 	// set some default settings
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glDisable(GL_CULL_FACE);
-	glDisable(GL_DEPTH_TEST);
-	glDepthMask(0);
+	glActiveTexture(GL_TEXTURE0);
+
+	// Initialize shader uniforms with default values
+	for(int i = 0; i < 2; i++)
+	{
+		m_aRenderShader[i].m_UseTextureLoc = glGetUniformLocation(m_aRenderShader[i].m_ShaderProgram, "useTexture");
+		m_aRenderShader[i].m_IsAlphaOnlyLoc = glGetUniformLocation(m_aRenderShader[i].m_ShaderProgram, "IsAlphaOnly");
+		m_aRenderShader[i].m_OurTextureLoc = glGetUniformLocation(m_aRenderShader[i].m_ShaderProgram, "ourTexture");
+		m_aRenderShader[i].m_ProjectionLoc = glGetUniformLocation(m_aRenderShader[i].m_ShaderProgram, "projection");
+
+		if(m_aRenderShader[i].m_UseTextureLoc != -1)
+			glUniform1i(m_aRenderShader[i].m_UseTextureLoc, 0);
+		if(m_aRenderShader[i].m_IsAlphaOnlyLoc != -1)
+			glUniform1i(m_aRenderShader[i].m_IsAlphaOnlyLoc, 0);
+		if(m_aRenderShader[i].m_OurTextureLoc != -1)
+			glUniform1i(m_aRenderShader[i].m_OurTextureLoc, 0);
+	}
+
+	m_LastStreamBuffer = 0;
+
+	glGenBuffers(MAX_STREAM_BUFFER_COUNT, m_aPrimitiveDrawBufferID);
+	glGenVertexArrays(MAX_STREAM_BUFFER_COUNT, m_aPrimitiveDrawVertexID);
+	glGenBuffers(1, &m_PrimitiveDrawBufferIDTex3D);
+	glGenVertexArrays(1, &m_PrimitiveDrawVertexIDTex3D);
+
+	for(int i = 0; i < MAX_STREAM_BUFFER_COUNT; ++i)
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, m_aPrimitiveDrawBufferID[i]);
+		glBindVertexArray(m_aPrimitiveDrawVertexID[i]);
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+		glEnableVertexAttribArray(2);
+
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), 0);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 2));
+		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *)(sizeof(float) * 5));
+
+		m_aLastIndexBufferBound[i] = 0;
+	}
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_PrimitiveDrawBufferIDTex3D);
+	glBindVertexArray(m_PrimitiveDrawVertexIDTex3D);
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(2);
+
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) 0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 2));
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 5));
+
+	glBindVertexArray(0);
+	glGenBuffers(1, &m_QuadDrawIndexBufferID);
+	glBindBuffer(BUFFER_INIT_INDEX_TARGET, m_QuadDrawIndexBufferID);
+
+	unsigned int aIndices[CCommandBuffer::MAX_VERTICES / 4 * 6];
+	int Primq = 0;
+	for(int i = 0; i < CCommandBuffer::MAX_VERTICES / 4 * 6; i += 6)
+	{
+		aIndices[i] = Primq + 0;
+		aIndices[i + 1] = Primq + 1;
+		aIndices[i + 2] = Primq + 2;
+		aIndices[i + 3] = Primq;
+		aIndices[i + 4] = Primq + 2;
+		aIndices[i + 5] = Primq + 3;
+		Primq += 4;
+	}
+	glBufferData(BUFFER_INIT_INDEX_TARGET, sizeof(unsigned int) * CCommandBuffer::MAX_VERTICES / 4 * 6, aIndices, GL_STATIC_DRAW);
 
 	m_pTextureMemoryUsage = pCommand->m_pTextureMemoryUsage;
 	*m_pTextureMemoryUsage = 0;
@@ -520,37 +581,18 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 	*pCommand->m_pTextureArraySize = m_TextureArraySize;
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+}
 
-	// Initialize shader uniforms with default values
-	for(int i = 0; i < 2; i++)
-	{
-		m_aRenderStatus[i].m_UseTextureLoc = glGetUniformLocation(m_aRenderStatus[i].m_ShaderProgram, "useTexture");
-		m_aRenderStatus[i].m_IsAlphaOnlyLoc = glGetUniformLocation(m_aRenderStatus[i].m_ShaderProgram, "IsAlphaOnly");
-		m_aRenderStatus[i].m_OurTextureLoc = glGetUniformLocation(m_aRenderStatus[i].m_ShaderProgram, "ourTexture");
-
-		if(m_aRenderStatus[i].m_UseTextureLoc != -1)
-			glUniform1i(m_aRenderStatus[i].m_UseTextureLoc, 0);
-		if(m_aRenderStatus[i].m_IsAlphaOnlyLoc != -1)
-			glUniform1i(m_aRenderStatus[i].m_IsAlphaOnlyLoc, 0);
-		if(m_aRenderStatus[i].m_OurTextureLoc != -1)
-			glUniform1i(m_aRenderStatus[i].m_OurTextureLoc, 0);
-
-		glGenVertexArrays(1, &m_aRenderStatus[i].m_VAO);
-		glGenBuffers(1, &m_aRenderStatus[i].m_VBO);
-		glGenBuffers(1, &m_aRenderStatus[i].m_EBO);
-		glBindVertexArray(m_aRenderStatus[i].m_VAO);
-
-		glBindBuffer(GL_ARRAY_BUFFER, m_aRenderStatus[i].m_VBO);
-		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) 0);
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(1, 2 + i, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 2));
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(CCommandBuffer::CVertex), (void *) (sizeof(float) * 5));
-		glEnableVertexAttribArray(2);
-
-		glBindVertexArray(0);
-		m_aRenderStatus[i].m_VAOInitialized = true;
-	}
+void CCommandProcessorFragment_OpenGL::Cmd_Shutdown(const CGLShutdownCommand *pCommand)
+{
+	glBindVertexArray(0);
+	glDeleteBuffers(MAX_STREAM_BUFFER_COUNT, m_aPrimitiveDrawBufferID);
+	glDeleteBuffers(1, &m_QuadDrawIndexBufferID);
+	glDeleteVertexArrays(MAX_STREAM_BUFFER_COUNT, m_aPrimitiveDrawVertexID);
+	glDeleteBuffers(1, &m_PrimitiveDrawBufferIDTex3D);
+	glDeleteVertexArrays(1, &m_PrimitiveDrawVertexIDTex3D);
+	glDeleteShader(m_aRenderShader[0].m_ShaderProgram);
+	glDeleteShader(m_aRenderShader[1].m_ShaderProgram);
 }
 
 void CCommandProcessorFragment_OpenGL::Cmd_Texture_Update(const CCommandBuffer::CTextureUpdateCommand *pCommand)
@@ -768,37 +810,34 @@ void CCommandProcessorFragment_OpenGL::Cmd_Clear(const CCommandBuffer::CClearCom
 
 void CCommandProcessorFragment_OpenGL::Cmd_Render(const CCommandBuffer::CRenderCommand *pCommand)
 {
-	const SRenderStatus &Status = m_aRenderStatus[pCommand->m_State.m_Dimension == 3 ? 1 : 0];
-	glUseProgram(Status.m_ShaderProgram);
 	SetState(pCommand->m_State);
 
-	glBindVertexArray(Status.m_VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, Status.m_VBO);
+	if(pCommand->m_State.m_Dimension == 3)
+	{
+		glBindVertexArray(m_PrimitiveDrawVertexIDTex3D);
+		glBindBuffer(GL_ARRAY_BUFFER, m_PrimitiveDrawBufferIDTex3D);
+	}
+	else
+	{
+		glBindVertexArray(m_aPrimitiveDrawVertexID[m_LastStreamBuffer]);
+		glBindBuffer(GL_ARRAY_BUFFER, m_aPrimitiveDrawBufferID[m_LastStreamBuffer]);
+	}
 	glBufferData(GL_ARRAY_BUFFER, pCommand->m_PrimCount * 4 * sizeof(CCommandBuffer::CVertex), pCommand->m_pVertices, GL_STREAM_DRAW);
 
 	switch(pCommand->m_PrimType)
 	{
 	case CCommandBuffer::PRIMTYPE_QUADS:
 	{
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, Status.m_EBO);
-
-		GLuint *pIndices = new GLuint[pCommand->m_PrimCount * 6];
-		for(GLuint i = 0; i < pCommand->m_PrimCount; i++)
+		if(pCommand->m_State.m_Dimension == 3)
 		{
-			GLuint Base = i * 4;
-			pIndices[i * 6 + 0] = Base + 0;
-			pIndices[i * 6 + 1] = Base + 1;
-			pIndices[i * 6 + 2] = Base + 2;
-			pIndices[i * 6 + 3] = Base + 2;
-			pIndices[i * 6 + 4] = Base + 3;
-			pIndices[i * 6 + 5] = Base + 0;
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_QuadDrawIndexBufferID);
 		}
-
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, pCommand->m_PrimCount * 6 * sizeof(GLuint), pIndices, GL_STATIC_DRAW);
-
+		else if(m_aLastIndexBufferBound[m_LastStreamBuffer] != m_QuadDrawIndexBufferID)
+		{
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_QuadDrawIndexBufferID);
+			m_aLastIndexBufferBound[m_LastStreamBuffer] = m_QuadDrawIndexBufferID;
+		}
 		glDrawElements(GL_TRIANGLES, pCommand->m_PrimCount * 6, GL_UNSIGNED_INT, 0);
-
-		delete[] pIndices;
 	}
 	break;
 	case CCommandBuffer::PRIMTYPE_LINES:
@@ -807,7 +846,10 @@ void CCommandProcessorFragment_OpenGL::Cmd_Render(const CCommandBuffer::CRenderC
 	default:
 		dbg_msg("render", "unknown primtype %d", pCommand->m_PrimType);
 	};
-	glBindVertexArray(0);
+	if(pCommand->m_State.m_Dimension == 2)
+	{
+		m_LastStreamBuffer = (m_LastStreamBuffer + 1 >= MAX_STREAM_BUFFER_COUNT ? 0 : m_LastStreamBuffer + 1);
+	}
 }
 
 void CCommandProcessorFragment_OpenGL::Cmd_Screenshot(const CCommandBuffer::CScreenshotCommand *pCommand)
@@ -851,7 +893,7 @@ CCommandProcessorFragment_OpenGL::CCommandProcessorFragment_OpenGL()
 {
 	mem_zero(m_aTextures, sizeof(m_aTextures));
 	m_pTextureMemoryUsage = 0;
-	mem_zero(m_aRenderStatus, sizeof(m_aRenderStatus));
+	mem_zero(m_aRenderShader, sizeof(m_aRenderShader));
 }
 
 bool CCommandProcessorFragment_OpenGL::RunCommand(const CCommandBuffer::CCommand *pBaseCommand)
@@ -859,6 +901,7 @@ bool CCommandProcessorFragment_OpenGL::RunCommand(const CCommandBuffer::CCommand
 	switch(pBaseCommand->m_Cmd)
 	{
 	case CMD_INIT: Cmd_Init(static_cast<const CInitCommand *>(pBaseCommand)); break;
+	case CMD_GL_SHUTDOWN: Cmd_Shutdown(static_cast<const CGLShutdownCommand *>(pBaseCommand)); break;
 	case CCommandBuffer::CMD_TEXTURE_CREATE: Cmd_Texture_Create(static_cast<const CCommandBuffer::CTextureCreateCommand *>(pBaseCommand)); break;
 	case CCommandBuffer::CMD_TEXTURE_DESTROY: Cmd_Texture_Destroy(static_cast<const CCommandBuffer::CTextureDestroyCommand *>(pBaseCommand)); break;
 	case CCommandBuffer::CMD_TEXTURE_UPDATE: Cmd_Texture_Update(static_cast<const CCommandBuffer::CTextureUpdateCommand *>(pBaseCommand)); break;
@@ -889,8 +932,10 @@ void CCommandProcessorFragment_SDL::Cmd_Swap(const CCommandBuffer::CSwapCommand 
 {
 	SDL_GL_SwapWindow(m_pWindow);
 
+	/*
 	if(pCommand->m_Finish)
 		glFinish();
+	*/
 }
 
 void CCommandProcessorFragment_SDL::Cmd_VSync(const CCommandBuffer::CVSyncCommand *pCommand)
@@ -1090,12 +1135,20 @@ int CGraphicsBackend_SDL_OpenGL::Init(const char *pName, int *pScreen, int *pWin
 int CGraphicsBackend_SDL_OpenGL::Shutdown()
 {
 	// issue a shutdown command
-	CCommandBuffer CmdBuffer(1024, 512);
-	CCommandProcessorFragment_SDL::CShutdownCommand Cmd;
-	CmdBuffer.AddCommand(Cmd);
-	RunBuffer(&CmdBuffer);
-	WaitForIdle();
-
+	{
+		CCommandBuffer CmdBuffer(1024, 512);
+		CCommandProcessorFragment_SDL::CShutdownCommand Cmd;
+		CmdBuffer.AddCommand(Cmd);
+		RunBuffer(&CmdBuffer);
+		WaitForIdle();
+	}
+	{
+		CCommandBuffer CmdBuffer(1024, 512);
+		CCommandProcessorFragment_OpenGL::CGLShutdownCommand Cmd;
+		CmdBuffer.AddCommand(Cmd);
+		RunBuffer(&CmdBuffer);
+		WaitForIdle();
+	}
 	// stop and delete the processor
 	StopProcessor();
 	delete m_pProcessor;

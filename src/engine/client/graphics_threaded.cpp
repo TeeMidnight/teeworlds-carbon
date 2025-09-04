@@ -98,7 +98,7 @@ void CGraphics_Threaded::FlushVertices()
 void CGraphics_Threaded::AddVertices(int Count)
 {
 	m_NumVertices += Count;
-	if((m_NumVertices + Count) >= MAX_VERTICES)
+	if((m_NumVertices + Count) >= CCommandBuffer::MAX_VERTICES)
 		FlushVertices();
 }
 
@@ -808,9 +808,9 @@ int CGraphics_Threaded::Init()
 
 	// init textures
 	m_FirstFreeTexture = 0;
-	for(int i = 0; i < MAX_TEXTURES - 1; i++)
+	for(int i = 0; i < CCommandBuffer::MAX_TEXTURES - 1; i++)
 		m_aTextureIndices[i] = i + 1;
-	m_aTextureIndices[MAX_TEXTURES - 1] = -1;
+	m_aTextureIndices[CCommandBuffer::MAX_TEXTURES - 1] = -1;
 
 	m_pBackend = CreateGraphicsBackend();
 	if(InitWindow() != 0)

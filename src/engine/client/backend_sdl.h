@@ -73,21 +73,25 @@ public:
 	bool RunCommand(const CCommandBuffer::CCommand *pBaseCommand);
 };
 
+#define MAX_STREAM_BUFFER_COUNT 8
 // takes care of opengl related rendering
 class CCommandProcessorFragment_OpenGL
 {
-	struct SRenderStatus
-	{
-		GLuint m_VAO;
-		GLuint m_VBO;
-		GLuint m_EBO;
-		bool m_VAOInitialized;
+	GLuint m_aPrimitiveDrawVertexID[MAX_STREAM_BUFFER_COUNT];
+	GLuint m_aPrimitiveDrawBufferID[MAX_STREAM_BUFFER_COUNT];
+	GLuint m_PrimitiveDrawVertexIDTex3D;
+	GLuint m_PrimitiveDrawBufferIDTex3D;
+	GLuint m_aLastIndexBufferBound[MAX_STREAM_BUFFER_COUNT];
+	int m_LastStreamBuffer;
 
+	struct SRenderShader
+	{
 		GLuint m_ShaderProgram;
 		int m_UseTextureLoc;
 		int m_IsAlphaOnlyLoc;
 		int m_OurTextureLoc;
-	} m_aRenderStatus[2];
+		int m_ProjectionLoc;
+	} m_aRenderShader[2];
 
 	class CTexture
 	{
@@ -112,11 +116,13 @@ class CCommandProcessorFragment_OpenGL
 	int m_MaxTexSize;
 	int m_Max3DTexSize;
 	int m_TextureArraySize;
+	GLuint m_QuadDrawIndexBufferID;
 
 public:
 	enum
 	{
 		CMD_INIT = CCommandBuffer::CMDGROUP_PLATFORM_OPENGL,
+		CMD_GL_SHUTDOWN,
 	};
 
 	struct CInitCommand : public CCommandBuffer::CCommand
@@ -125,6 +131,12 @@ public:
 			CCommand(CMD_INIT) {}
 		volatile int *m_pTextureMemoryUsage;
 		int *m_pTextureArraySize;
+	};
+
+	struct CGLShutdownCommand : public CCommandBuffer::CCommand
+	{
+		CGLShutdownCommand() :
+			CCommand(CMD_GL_SHUTDOWN) {}
 	};
 
 private:
@@ -140,6 +152,7 @@ private:
 	GLuint CreateShaderProgram3D();
 
 	void Cmd_Init(const CInitCommand *pCommand);
+	void Cmd_Shutdown(const CGLShutdownCommand *pCommand);
 	void Cmd_Texture_Update(const CCommandBuffer::CTextureUpdateCommand *pCommand);
 	void Cmd_Texture_Destroy(const CCommandBuffer::CTextureDestroyCommand *pCommand);
 	void Cmd_Texture_Create(const CCommandBuffer::CTextureCreateCommand *pCommand);
