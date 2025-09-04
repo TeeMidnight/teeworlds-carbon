@@ -34,10 +34,10 @@ public:
 	int GetDropTick() const { return m_DropTick; }
 
 	/* CEntity functions */
-	virtual void Reset();
-	virtual void TickPaused();
-	virtual void Snap(int SnappingClient);
-	virtual void TickDefered();
+	void Reset() override;
+	void TickPaused() override;
+	void Snap(int SnappingClient) override;
+	void TickDefered() override;
 
 	/* Functions */
 	void Grab(class CCharacter *pChar);

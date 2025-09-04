@@ -25,34 +25,34 @@ public:
 	static int DecodeWV(int SampleID, const void *pData, unsigned DataSize);
 	static int DecodeOpus(int SampleID, const void *pData, unsigned DataSize);
 
-	virtual bool IsSoundEnabled() { return m_SoundEnabled != 0; }
+	bool IsSoundEnabled() override { return m_SoundEnabled != 0; }
 
-	virtual int LoadWV(const char *pFilename);
-	virtual int LoadWVFromMem(const void *pData, unsigned DataSize, bool FromEditor);
-	virtual int LoadOpus(const char *pFilename);
-	virtual int LoadOpusFromMem(const void *pData, unsigned DataSize, bool FromEditor);
-	virtual void UnloadSample(int SampleID);
+	int LoadWV(const char *pFilename) override;
+	int LoadWVFromMem(const void *pData, unsigned DataSize, bool FromEditor) override;
+	int LoadOpus(const char *pFilename) override;
+	int LoadOpusFromMem(const void *pData, unsigned DataSize, bool FromEditor) override;
+	void UnloadSample(int SampleID) override;
 
-	virtual float GetSampleDuration(int SampleID); // in s
+	float GetSampleDuration(int SampleID) override; // in s
 
-	virtual void SetListenerPos(float x, float y);
-	virtual void SetChannel(int ChannelID, float Vol, float Pan);
+	void SetListenerPos(float x, float y) override;
+	void SetChannel(int ChannelID, float Vol, float Pan) override;
 
-	virtual void SetVoiceVolume(ISound::CSampleHandle Voice, float Volume);
-	virtual void SetVoiceFalloff(ISound::CSampleHandle Voice, float Falloff);
-	virtual void SetVoiceLocation(ISound::CSampleHandle Voice, float x, float y);
-	virtual void SetVoiceTimeOffset(ISound::CSampleHandle Voice, float offset); // in s
+	void SetVoiceVolume(ISound::CSampleHandle Voice, float Volume) override;
+	void SetVoiceFalloff(ISound::CSampleHandle Voice, float Falloff) override;
+	void SetVoiceLocation(ISound::CSampleHandle Voice, float x, float y) override;
+	void SetVoiceTimeOffset(ISound::CSampleHandle Voice, float offset) override; // in s
 
-	virtual void SetVoiceCircle(ISound::CSampleHandle Voice, float Radius);
-	virtual void SetVoiceRectangle(ISound::CSampleHandle Voice, float Width, float Height);
+	void SetVoiceCircle(ISound::CSampleHandle Voice, float Radius) override;
+	void SetVoiceRectangle(ISound::CSampleHandle Voice, float Width, float Height) override;
 
-	ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags, float x, float y);
-	virtual ISound::CSampleHandle PlayAt(int ChannelID, int SampleID, int Flags, float x, float y);
-	virtual ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags);
-	virtual void Stop(int SampleID);
-	virtual void StopAll();
-	virtual void StopVoice(ISound::CSampleHandle Voice);
-	virtual bool IsPlaying(int Sound);
+		ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags, float x, float y);
+	ISound::CSampleHandle PlayAt(int ChannelID, int SampleID, int Flags, float x, float y) override;
+	ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags) override;
+	void Stop(int SampleID) override;
+	void StopAll() override;
+	void StopVoice(ISound::CSampleHandle Voice) override;
+	bool IsPlaying(int Sound) override;
 };
 
 #endif

@@ -56,15 +56,15 @@ class CConfigManager : public IConfigManager
 public:
 	CConfigManager();
 
-	virtual void Init(int FlagMask);
-	virtual void Reset();
-	virtual void RestoreStrings();
-	virtual void Save(const char *pFilename);
-	virtual CConfig *Values() { return &m_Values; }
+	void Init(int FlagMask) override;
+	void Reset() override;
+	void RestoreStrings() override;
+	void Save(const char *pFilename) override;
+	CConfig *Values() override { return &m_Values; }
 
-	virtual void RegisterCallback(SAVECALLBACKFUNC pfnFunc, void *pUserData);
+	void RegisterCallback(SAVECALLBACKFUNC pfnFunc, void *pUserData) override;
 
-	virtual void WriteLine(const char *pLine);
+	void WriteLine(const char *pLine) override;
 };
 
 #endif
