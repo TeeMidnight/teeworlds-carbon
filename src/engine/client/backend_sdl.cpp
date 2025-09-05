@@ -59,8 +59,6 @@ void main()
         else
         {
             // Regular RGBA textures
-            if(texColor.a < 0.01)
-                discard;
             FragColor = texColor * Color;
         }
     }
@@ -73,13 +71,13 @@ void main()
 )";
 
 static const char *s_3DVertexShaderSource = R"(
-#version 460 core
+#version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec3 aTexCoord;
 layout (location = 2) in vec4 aColor;
 
-out vec3 TexCoord;
-out vec4 Color;
+noperspective out vec3 TexCoord;
+noperspective out vec4 Color;
 
 uniform mat4 projection;
 
@@ -93,11 +91,11 @@ void main()
 
 // Fixed Fragment shader - Corrected texture sampling and color handling
 static const char *s_3DFragmentShaderSource = R"(
-#version 460 core
+#version 330 core
 out vec4 FragColor;
 
-in vec3 TexCoord;
-in vec4 Color;
+noperspective in vec3 TexCoord;
+noperspective in vec4 Color;
 
 uniform sampler3D ourTexture;
 uniform bool useTexture;
@@ -107,7 +105,7 @@ void main()
 {
     if(useTexture)
     {
-        vec4 texColor = texture(ourTexture, TexCoord);
+        vec4 texColor = texture(ourTexture, TexCoord.xyz);
 
        	if(IsAlphaOnly)
         {
@@ -117,8 +115,6 @@ void main()
         else
         {
             // Regular RGBA textures
-            if(texColor.a < 0.01)
-                discard;
             FragColor = texColor * Color;
         }
     }
@@ -338,6 +334,13 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		return;
 	CurrentState = State;
 
+	if(m_LastBlendMode == CCommandBuffer::BLEND_NONE)
+	{
+		m_LastBlendMode = CCommandBuffer::BLEND_ALPHA;
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	}
+
 	// clip
 	if(State.m_ClipEnable)
 	{
@@ -414,10 +417,7 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		}
 
 		// Set blend mode based on texture type
-		if(m_aTextures[State.m_Texture].m_Format == CCommandBuffer::TEXFORMAT_RGBA)
-			SrcBlendMode = GL_ONE;
-		else
-			SrcBlendMode = GL_SRC_ALPHA;
+		SrcBlendMode = GL_SRC_ALPHA;
 	}
 	else
 	{
@@ -426,23 +426,29 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 			glUniform1i(UseTextureLoc, 0);
 	}
 
-	// blend
-	switch(State.m_BlendMode)
+	if((State.m_BlendMode != m_LastBlendMode || m_LastSrcBlendMode != SrcBlendMode) && State.m_BlendMode != CCommandBuffer::BLEND_NONE)
 	{
-	case CCommandBuffer::BLEND_NONE:
-		glDisable(GL_BLEND);
-		break;
-	case CCommandBuffer::BLEND_ALPHA:
-		glEnable(GL_BLEND);
-		glBlendFunc(SrcBlendMode, GL_ONE_MINUS_SRC_ALPHA);
-		break;
-	case CCommandBuffer::BLEND_ADDITIVE:
-		glEnable(GL_BLEND);
-		glBlendFunc(SrcBlendMode, GL_ONE);
-		break;
-	default:
-		dbg_msg("render", "unknown blendmode %d", State.m_BlendMode);
-	};
+		// blend
+		switch(State.m_BlendMode)
+		{
+		case CCommandBuffer::BLEND_NONE:
+			// We don't really need this anymore
+			// glDisable(GL_BLEND);
+			break;
+		case CCommandBuffer::BLEND_ALPHA:
+			// glEnable(GL_BLEND);
+			glBlendFunc(SrcBlendMode, GL_ONE_MINUS_SRC_ALPHA);
+			break;
+		case CCommandBuffer::BLEND_ADDITIVE:
+			// glEnable(GL_BLEND);
+			glBlendFunc(SrcBlendMode, GL_ONE);
+			break;
+		default:
+			dbg_msg("render", "unknown blendmode %d\n", State.m_BlendMode);
+		};
+
+		m_LastBlendMode = State.m_BlendMode;
+	}
 
 	// wrap mode - only set if we have a valid texture
 	if(hasValidTexture)
@@ -500,6 +506,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 	// Create shader program
 	m_aRenderShader[0].m_ShaderProgram = CreateShaderProgram();
 	m_aRenderShader[1].m_ShaderProgram = CreateShaderProgram3D();
+	m_LastBlendMode = CCommandBuffer::BLEND_NONE;
+	m_LastSrcBlendMode = GL_NONE;
 
 	// set some default settings
 	glActiveTexture(GL_TEXTURE0);
@@ -659,6 +667,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		}
 	}
 
+	/*
 	// use premultiplied alpha for rgba textures
 	if(pCommand->m_Format == CCommandBuffer::TEXFORMAT_RGBA)
 	{
@@ -671,6 +680,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 			pTexels[i * 4 + 2] = (unsigned char) (pTexels[i * 4 + 2] * a);
 		}
 	}
+	*/
 	m_aTextures[pCommand->m_Slot].m_Format = pCommand->m_Format;
 
 	int Oglformat = TexFormatToOpenGLFormat(pCommand->m_Format);
@@ -932,10 +942,8 @@ void CCommandProcessorFragment_SDL::Cmd_Swap(const CCommandBuffer::CSwapCommand 
 {
 	SDL_GL_SwapWindow(m_pWindow);
 
-	/*
 	if(pCommand->m_Finish)
 		glFinish();
-	*/
 }
 
 void CCommandProcessorFragment_SDL::Cmd_VSync(const CCommandBuffer::CVSyncCommand *pCommand)

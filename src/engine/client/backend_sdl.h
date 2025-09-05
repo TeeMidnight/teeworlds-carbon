@@ -117,7 +117,8 @@ class CCommandProcessorFragment_OpenGL
 	int m_Max3DTexSize;
 	int m_TextureArraySize;
 	GLuint m_QuadDrawIndexBufferID;
-
+	int m_LastBlendMode;
+	int m_LastSrcBlendMode;
 public:
 	enum
 	{

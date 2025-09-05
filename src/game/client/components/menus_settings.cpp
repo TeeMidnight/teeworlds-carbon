@@ -826,7 +826,7 @@ void CMenus::RenderSettingsGeneral(CUIRect MainView)
 	Game.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
 
 	// render client menu background
-	NumOptions = 4;
+	NumOptions = 5;
 	BackgroundHeight = (float) (NumOptions + 1) * ButtonHeight + (float) NumOptions * Spacing;
 
 	MainView.HSplitTop(10.0f, 0, &MainView);
@@ -986,6 +986,12 @@ void CMenus::RenderSettingsGeneral(CUIRect MainView)
 
 	if(Config()->m_ClAutoScreenshot)
 		UI()->DoScrollbarOption(&Config()->m_ClAutoScreenshotMax, &Config()->m_ClAutoScreenshotMax, &ClientRight, Localize("Max"), 0, 1000, &CUI::ms_LogarithmicScrollbarScale, CUI::SCROLLBAR_OPTION_INFINITE);
+
+	Client.HSplitTop(Spacing, 0, &Client);
+	Client.HSplitTop(ButtonHeight, &ClientLeft, &Client);
+	ClientLeft.VSplitMid(&ClientLeft, &ClientRight, Spacing);
+	if(DoButton_CheckBox(&Config()->m_ClOldStyleChat, Localize("Use old style chat"), Config()->m_ClOldStyleChat, &ClientLeft))
+		Config()->m_ClOldStyleChat ^= 1;
 
 	MainView.HSplitTop(10.0f, 0, &MainView);
 
@@ -1978,6 +1984,7 @@ void CMenus::ResetSettingsGeneral()
 	Config()->m_ClAutoDemoMax = 10;
 	Config()->m_ClAutoScreenshot = 0;
 	Config()->m_ClAutoScreenshotMax = 10;
+	Config()->m_ClOldStyleChat = 1;
 }
 
 void CMenus::ResetSettingsControls()
@@ -2026,6 +2033,7 @@ void CMenus::ResetSettingsSound()
 	Config()->m_SndNonactiveMute = 0;
 	Config()->m_SndRate = 48000;
 	Config()->m_SndVolume = 100;
+	Config()->m_ClOldStyleChatSound = 1;
 	UpdateMusicState();
 }
 

@@ -1151,7 +1151,7 @@ void CChat::OnRender()
 
 	for(int i = StartLine; i < MAX_LINES; i++)
 	{
-		const CLine *pLine = &m_aLines[((m_CurrentLine - i) + MAX_LINES) % MAX_LINES];
+		CLine *pLine = &m_aLines[((m_CurrentLine - i) + MAX_LINES) % MAX_LINES];
 
 		if(pLine->m_aText[0] == 0)
 			break;
@@ -1283,12 +1283,13 @@ void CChat::OnRender()
 			float ClientIDWidth = UI()->DrawClientID(FontSize, s_ChatCursor.AdvancePosition(), NameCID, BgIdColor, IdTextColor);
 			TextRender()->TextAdvance(&s_ChatCursor, ClientIDWidth);
 			TextRender()->TextColor(TextColorName);
-			TextRender()->TextSecondaryColor(ShadowColor);
+			if(!Config()->m_ClOldStyleChat)
+				TextRender()->TextSecondaryColor(ShadowColor);
 			{
 				CAnimState State;
 				State.Set(&g_pData->m_aAnimations[ANIM_BASE], 1.0f);
 				State.Add(&g_pData->m_aAnimations[ANIM_IDLE], 0, 1.0f);
-				RenderTools()->RenderTee(&State, &pLine->m_RenderInfo, EMOTE_NORMAL, vec2(1.f, 0.f), vec2(s_ChatCursor.AdvancePosition().x + FontSize / 3 * 2 - 1.f, y + FontSize / 3 * 2 + 1.f));
+				RenderTools()->RenderTee(&State, &pLine->m_RenderInfo, EMOTE_NORMAL, vec2(1.f, 0.f), vec2(s_ChatCursor.AdvancePosition().x + FontSize / 3 * 2 - 1.f, y + FontSize / 3 * 2 + 1.f), Blend);
 			}
 			TextRender()->TextAdvance(&s_ChatCursor, FontSize + 1.f);
 			TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aName, -1);
@@ -1312,16 +1313,32 @@ void CChat::OnRender()
 		TextRender()->TextColor(TextColorLine);
 		if(pLine->m_Highlighted)
 		{
-			TextRender()->TextSecondaryColor(ColorHighlightOutline);
-			TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
-			TextRender()->DrawTextShadowed(&s_ChatCursor, ShadowOffset, Blend, 0, NumNameGlyphs);
-			TextRender()->DrawTextOutlined(&s_ChatCursor, Blend, NumNameGlyphs, -1);
+			if(Config()->m_ClOldStyleChat)
+			{
+				TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
+				TextRender()->DrawTextOutlined(&s_ChatCursor, Blend, 0, -1);
+			}
+			else
+			{
+				TextRender()->TextSecondaryColor(ColorHighlightOutline);
+				TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
+				TextRender()->DrawTextShadowed(&s_ChatCursor, ShadowOffset, Blend, 0, NumNameGlyphs);
+				TextRender()->DrawTextOutlined(&s_ChatCursor, Blend, NumNameGlyphs, -1);
+			}
 		}
 		else
 		{
-			TextRender()->TextSecondaryColor(ShadowColor);
-			TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
-			TextRender()->DrawTextShadowed(&s_ChatCursor, ShadowOffset, Blend);
+			if(Config()->m_ClOldStyleChat)
+			{
+				TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
+				TextRender()->DrawTextOutlined(&s_ChatCursor, Blend, 0, -1);
+			}
+			else
+			{
+				TextRender()->TextSecondaryColor(ShadowColor);
+				TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aText, -1);
+				TextRender()->DrawTextShadowed(&s_ChatCursor, ShadowOffset, Blend);
+			}
 		}
 	}
 
