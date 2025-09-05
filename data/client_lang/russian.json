@@ -692,6 +692,71 @@
 			"tr": "Добавить"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Лимит времени: %d мин."
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Матч"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Наблюдатели"
+		},
+		{
+			"or": "Game over",
+			"tr": "Игра окончена"
+		},
+		{
+			"or": "Round over",
+			"tr": "Раунд закончен"
+		},
+		{
+			"or": "Map record",
+			"tr": "Запись карты"
+		},
+		{
+			"or": "Clan",
+			"tr": "Клан"
+		},
+		{
+			"or": "Time",
+			"tr": "Время"
+		},
+		{
+			"or": "Score",
+			"tr": "Счет"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d других игроков"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Красные"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Синие"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s победили!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Ничья!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Конец раунда!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "тело"
@@ -754,18 +819,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "Захвачено"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d других игроков"
-		},
-		{
-			"or": "Red team",
-			"tr": "Красные"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Синие"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -834,58 +887,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Вышла Teeworlds %s! Скачайте на www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Смена карты на '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Всё"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Наблюдатели"
-		},
-		{
-			"or": "Team",
-			"tr": "Команда"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Нажмите %sчтобы вернуться к чату"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Страница %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Нажмите Enter для подтверждения или Esc для отмены"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Нажмите Tab чтобы выбрать или Esc чтобы отменить"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' заглушен"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' разглушен"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' был добавлен как друг"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' был удалён как друг"
 		},
 		{
 			"or": "Game",
@@ -1060,90 +1061,6 @@
 			"tr": "Сервер запущен с нестандартными параметрами в стандартном режиме игры."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Быстрая смерть"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Игра приостановлена"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d игрок не готов"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d игроков не готово"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Игра начнется через"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Подождите следующего раунда"
-		},
-		{
-			"or": "%d player left",
-			"tr": "остался %d игрок"
-		},
-		{
-			"or": "%d players left",
-			"tr": "осталось %d игроков"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Разминка"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Проблемы с подключением..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Сбалансируйте команды!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "осталось %d сек."
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Наблюдать"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Нажмите <%s>, когда будите готовы"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Оттенок:"
 		},
@@ -1263,6 +1180,10 @@
 			"tr": "Автоматический скриншот в конце игры"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Сбросить"
 		},
@@ -1297,10 +1218,6 @@
 		{
 			"or": "Personal",
 			"tr": "Персональные"
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
 		},
 		{
 			"or": "Flag:",
@@ -1543,6 +1460,10 @@
 			"tr": "Подождите %1.0f сек. перед применением настроек."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Страница %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Сервер"
 		},
@@ -1553,6 +1474,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Избранные"
+		},
+		{
+			"or": "All",
+			"tr": "Всё"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1775,53 +1700,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Лимит времени: %d мин."
+			"or": "Sudden Death",
+			"tr": "Быстрая смерть"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Матч"
+			"or": "Game paused",
+			"tr": "Игра приостановлена"
 		},
 		{
-			"or": "Game over",
-			"tr": "Игра окончена"
+			"or": "%d player not ready",
+			"tr": "%d игрок не готов"
 		},
 		{
-			"or": "Round over",
-			"tr": "Раунд закончен"
+			"or": "%d players not ready",
+			"tr": "%d игроков не готово"
 		},
 		{
-			"or": "Map record",
-			"tr": "Запись карты"
+			"or": "Game starts in",
+			"tr": "Игра начнется через"
 		},
 		{
-			"or": "Time",
-			"tr": "Время"
+			"or": "Wait for next round",
+			"tr": "Подождите следующего раунда"
 		},
 		{
-			"or": "Score",
-			"tr": "Счет"
+			"or": "%d player left",
+			"tr": "остался %d игрок"
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "%d players left",
+			"tr": "осталось %d игроков"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s победили!"
+			"or": "Warmup",
+			"tr": "Разминка"
 		},
 		{
-			"or": "Draw!",
-			"tr": "Ничья!"
+			"or": "waiting for more players",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Конец раунда!"
+			"or": "Connection Problems...",
+			"tr": "Проблемы с подключением..."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Страница %d-"
+			"or": "Please balance teams!",
+			"tr": "Сбалансируйте команды!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "осталось %d сек."
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Наблюдать"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Нажмите <%s>, когда будите готовы"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Смена карты на '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "Команда"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Нажмите %sчтобы вернуться к чату"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Страница %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Нажмите Enter для подтверждения или Esc для отмены"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Нажмите Tab чтобы выбрать или Esc чтобы отменить"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' заглушен"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' разглушен"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' был добавлен как друг"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' был удалён как друг"
 		}
 	]
 }

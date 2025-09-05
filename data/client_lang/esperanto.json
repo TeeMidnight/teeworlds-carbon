@@ -681,6 +681,71 @@
 			"tr": "Aldoni"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Templimito: %d minutojn"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Ludbatalo"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Spektantoj"
+		},
+		{
+			"or": "Game over",
+			"tr": "Ludo finita"
+		},
+		{
+			"or": "Round over",
+			"tr": "La raŭndo finiĝis"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klano"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Rezulto"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REG %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Ruĝa teamo"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blua teamo"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s venkas!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Remiso!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Fino de la raŭndo!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": ""
@@ -743,18 +808,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Ruĝa teamo"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blua teamo"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -823,58 +876,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Tejmondo %s estas ellasita! Elŝutu ĝin al www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Al ĉiuj"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Spektantoj"
-		},
-		{
-			"or": "Team",
-			"tr": "Teamo"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1049,90 +1050,6 @@
 			"tr": "La servilo ne uzas normajn ludagordojn."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Eka morto"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Ludo paŭzita"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d ludanto ne estas preta"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d ludantoj ne estas pretaj"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "La ludo komenciĝas en"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Atendi la venonta raŭndo"
-		},
-		{
-			"or": "%d player left",
-			"tr": "Ludanto %d foriris"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d ludantoj restas"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Antaŭtrejnado"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Konektaj problemoj..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Bonvolu egaligi la teamojn"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds restas"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Spekti"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": "Koloro"
 		},
@@ -1252,6 +1169,10 @@
 			"tr": "Aŭtomate fari ekrankopion de la ludrezulto"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Rekomencigo"
 		},
@@ -1286,10 +1207,6 @@
 		{
 			"or": "Personal",
 			"tr": "Persona"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klano"
 		},
 		{
 			"or": "Flag:",
@@ -1532,6 +1449,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Paĝo %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1542,6 +1463,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Ŝatatoj"
+		},
+		{
+			"or": "All",
+			"tr": "Al ĉiuj"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1764,53 +1689,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Templimito: %d minutojn"
+			"or": "Sudden Death",
+			"tr": "Eka morto"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Ludbatalo"
+			"or": "Game paused",
+			"tr": "Ludo paŭzita"
 		},
 		{
-			"or": "Game over",
-			"tr": "Ludo finita"
+			"or": "%d player not ready",
+			"tr": "%d ludanto ne estas preta"
 		},
 		{
-			"or": "Round over",
-			"tr": "La raŭndo finiĝis"
+			"or": "%d players not ready",
+			"tr": "%d ludantoj ne estas pretaj"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "La ludo komenciĝas en"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Atendi la venonta raŭndo"
+		},
+		{
+			"or": "%d player left",
+			"tr": "Ludanto %d foriris"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d ludantoj restas"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Antaŭtrejnado"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Konektaj problemoj..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Bonvolu egaligi la teamojn"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds restas"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Rezulto"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REG %3d:%02d"
+			"or": "Spectate",
+			"tr": "Spekti"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s venkas!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Remiso!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Fino de la raŭndo!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Paĝo %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Teamo"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }

@@ -679,6 +679,71 @@
 			"tr": "Ouzhpennañ"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Bevenn amzer : %d mun"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Krogad"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Arvesterien"
+		},
+		{
+			"or": "Game over",
+			"tr": "Game over"
+		},
+		{
+			"or": "Round over",
+			"tr": "Krogad echu"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Meuriad"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Poentoù"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Skipailh ruz"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Skipailh glas"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "Aet eo ar maout gant %s !"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Rampo !"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Echuet ar c'hrogad!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": ""
@@ -741,18 +806,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Skipailh ruz"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Skipailh glas"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -821,58 +874,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Deuet eo er-maez Teeworlds %s ! Pellgargit anezhañ war www.teeworlds.com !"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Pep tra"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Arvesterien"
-		},
-		{
-			"or": "Team",
-			"tr": "Skipailh"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1047,90 +1048,6 @@
 			"tr": "Un toniadur divoutin war un doare c'hoari glann a zo gant ar servjer"
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Marv trumm"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Ehanet ar c'hoari"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d c'hoarier n'int ket prest"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d c'hoarier n'int ket prest"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Kregiñ a ra ar c'hoari a-benn"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Gortozit ar c'hrogad o tont"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d c'hoarier o chom"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d c'hoarier o chom"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Gourdoniñ"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Kudennoù kennaskañ..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Kempouezit ar skipailhoù mar plij !"
-		},
-		{
-			"or": "%ds left",
-			"tr": "Kuitaet en deus %ds"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Arvestiñ"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": "Livad :"
 		},
@@ -1250,6 +1167,10 @@
 			"tr": "Kemer un tapadenn skramm game over ent emgefreek"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Adderaouekaat"
 		},
@@ -1284,10 +1205,6 @@
 		{
 			"or": "Personal",
 			"tr": "Personel"
-		},
-		{
-			"or": "Clan",
-			"tr": "Meuriad"
 		},
 		{
 			"or": "Flag:",
@@ -1530,6 +1447,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Pajenn %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1540,6 +1461,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Plijet"
+		},
+		{
+			"or": "All",
+			"tr": "Pep tra"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1762,53 +1687,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Bevenn amzer : %d mun"
+			"or": "Sudden Death",
+			"tr": "Marv trumm"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Krogad"
+			"or": "Game paused",
+			"tr": "Ehanet ar c'hoari"
 		},
 		{
-			"or": "Game over",
-			"tr": "Game over"
+			"or": "%d player not ready",
+			"tr": "%d c'hoarier n'int ket prest"
 		},
 		{
-			"or": "Round over",
-			"tr": "Krogad echu"
+			"or": "%d players not ready",
+			"tr": "%d c'hoarier n'int ket prest"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Kregiñ a ra ar c'hoari a-benn"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Gortozit ar c'hrogad o tont"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d c'hoarier o chom"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d c'hoarier o chom"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Gourdoniñ"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Kudennoù kennaskañ..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Kempouezit ar skipailhoù mar plij !"
+		},
+		{
+			"or": "%ds left",
+			"tr": "Kuitaet en deus %ds"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Poentoù"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Arvestiñ"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "Aet eo ar maout gant %s !"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Rampo !"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Echuet ar c'hrogad!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Pajenn %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Skipailh"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }

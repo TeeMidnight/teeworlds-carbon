@@ -682,6 +682,71 @@
 			"tr": "Dodaj"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Vremensko ograničenje: %d min."
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Meč"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Posmatrači"
+		},
+		{
+			"or": "Game over",
+			"tr": "Igra je završena"
+		},
+		{
+			"or": "Round over",
+			"tr": "Runda završena"
+		},
+		{
+			"or": "Map record",
+			"tr": "Rekord mape"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
+			"or": "Time",
+			"tr": "Vreme"
+		},
+		{
+			"or": "Score",
+			"tr": "Rezultat"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d drugih igrača"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Crveni tim"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Plavi tim"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s je pobedio!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Nerešeno!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Runda završena!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "telo"
@@ -744,18 +809,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "Uhvaćene"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d drugih igrača"
-		},
-		{
-			"or": "Red team",
-			"tr": "Crveni tim"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Plavi tim"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -824,58 +877,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworld %s je objavljen! Preuzmi ga na www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Mapa je promenjena u '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Svi"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Posmatrači"
-		},
-		{
-			"or": "Team",
-			"tr": "Tim"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Pritisnite %s da biste nastavili ćaskanje"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Strana %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Pritisnite Enter za potvrdu ili Esc za otkaz"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Pritisnite Tab za odabir ili Esc da biste ga otkazali"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' je utišan"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' više nije utišan"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' je dodat u prijatelje"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' je izbačen iz prijatelja"
 		},
 		{
 			"or": "Game",
@@ -1050,90 +1051,6 @@
 			"tr": "Server sadrži nestandardna podešavanja."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Iznenadna smrt"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Igra pauzirana"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d igrač nije spreman"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d igrači nisu spremni"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Igra počinje za"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Sačekajte sledeću rundu"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d igrač izašao"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d igrača preostalo"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Zagrejavanje"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Problemi sa konekcijom..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Molimo uravnotežite timove!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "Još %ds"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Posmatraj"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Kada spremni, pritisnite <%s>"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Nijansa:"
 		},
@@ -1253,6 +1170,10 @@
 			"tr": "Automatski snimi screenshot"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Resetuj"
 		},
@@ -1287,10 +1208,6 @@
 		{
 			"or": "Personal",
 			"tr": "Lično"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
 		},
 		{
 			"or": "Flag:",
@@ -1533,6 +1450,10 @@
 			"tr": "Morate čekati %1.0f sekundi da promenite identitet."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Strana %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1543,6 +1464,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Omiljeni"
+		},
+		{
+			"or": "All",
+			"tr": "Svi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1765,53 +1690,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Vremensko ograničenje: %d min."
+			"or": "Sudden Death",
+			"tr": "Iznenadna smrt"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Meč"
+			"or": "Game paused",
+			"tr": "Igra pauzirana"
 		},
 		{
-			"or": "Game over",
-			"tr": "Igra je završena"
+			"or": "%d player not ready",
+			"tr": "%d igrač nije spreman"
 		},
 		{
-			"or": "Round over",
-			"tr": "Runda završena"
+			"or": "%d players not ready",
+			"tr": "%d igrači nisu spremni"
 		},
 		{
-			"or": "Map record",
-			"tr": "Rekord mape"
+			"or": "Game starts in",
+			"tr": "Igra počinje za"
 		},
 		{
-			"or": "Time",
-			"tr": "Vreme"
+			"or": "Wait for next round",
+			"tr": "Sačekajte sledeću rundu"
 		},
 		{
-			"or": "Score",
-			"tr": "Rezultat"
+			"or": "%d player left",
+			"tr": "%d igrač izašao"
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "%d players left",
+			"tr": "%d igrača preostalo"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s je pobedio!"
+			"or": "Warmup",
+			"tr": "Zagrejavanje"
 		},
 		{
-			"or": "Draw!",
-			"tr": "Nerešeno!"
+			"or": "waiting for more players",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Runda završena!"
+			"or": "Connection Problems...",
+			"tr": "Problemi sa konekcijom..."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Strana %d-"
+			"or": "Please balance teams!",
+			"tr": "Molimo uravnotežite timove!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "Još %ds"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Posmatraj"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Kada spremni, pritisnite <%s>"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Mapa je promenjena u '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "Tim"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Pritisnite %s da biste nastavili ćaskanje"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Strana %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Pritisnite Enter za potvrdu ili Esc za otkaz"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Pritisnite Tab za odabir ili Esc da biste ga otkazali"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' je utišan"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' više nije utišan"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' je dodat u prijatelje"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' je izbačen iz prijatelja"
 		}
 	]
 }

@@ -683,6 +683,71 @@
 			"tr": "Lisää"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Aikaraja: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Ottelu"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Katsojat"
+		},
+		{
+			"or": "Game over",
+			"tr": "Peli loppui"
+		},
+		{
+			"or": "Round over",
+			"tr": "Kierros ohi"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klaani"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Pisteet"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Punainen joukkue"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Sininen joukkue"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s voitti!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Tasapeli!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Kierros ohi!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "vartalo"
@@ -745,18 +810,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Punainen joukkue"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Sininen joukkue"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -825,58 +878,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s on julkaistu! Lataa se osoitteesta www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Kaikki"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Katsojat"
-		},
-		{
-			"or": "Team",
-			"tr": "Joukkue"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1051,90 +1052,6 @@
 			"tr": "Tämä palvelin ajaa ei-standardeja virityksiä standardipelityypillä."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Äkkikuolema"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Peli keskeytetty"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d pelaaja ei ole valmiina"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d pelaajaa ei ole valmiina"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Peli alkaa"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Odota seuraavaan kierrokseen"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d pelaaja poistui"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d pelaajaa jäljellä"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Lämmittely"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Yhteysongelmia..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Ole hyvä ja tasoita joukkueita!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds jäljellä"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Katso"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": "Hue:"
 		},
@@ -1254,6 +1171,10 @@
 			"tr": "Ota pelin jälkeinen kuvankaappaus autom."
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Resetoi"
 		},
@@ -1288,10 +1209,6 @@
 		{
 			"or": "Personal",
 			"tr": "Henkilökohtainen"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klaani"
 		},
 		{
 			"or": "Flag:",
@@ -1534,6 +1451,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Sivu %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1544,6 +1465,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Suosikit"
+		},
+		{
+			"or": "All",
+			"tr": "Kaikki"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1766,53 +1691,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Aikaraja: %d min"
+			"or": "Sudden Death",
+			"tr": "Äkkikuolema"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Ottelu"
+			"or": "Game paused",
+			"tr": "Peli keskeytetty"
 		},
 		{
-			"or": "Game over",
-			"tr": "Peli loppui"
+			"or": "%d player not ready",
+			"tr": "%d pelaaja ei ole valmiina"
 		},
 		{
-			"or": "Round over",
-			"tr": "Kierros ohi"
+			"or": "%d players not ready",
+			"tr": "%d pelaajaa ei ole valmiina"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Peli alkaa"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Odota seuraavaan kierrokseen"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d pelaaja poistui"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d pelaajaa jäljellä"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Lämmittely"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Yhteysongelmia..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Ole hyvä ja tasoita joukkueita!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds jäljellä"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Pisteet"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Katso"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s voitti!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Tasapeli!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Kierros ohi!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Sivu %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Joukkue"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }

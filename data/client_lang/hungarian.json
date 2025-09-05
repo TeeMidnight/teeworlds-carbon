@@ -680,6 +680,71 @@
 			"tr": "Hozzáad"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Időhatár: %d perc"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Meccs"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Nézők"
+		},
+		{
+			"or": "Game over",
+			"tr": "Játék vége"
+		},
+		{
+			"or": "Round over",
+			"tr": "Kör vége"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klán"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Pont"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d másik játékos"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "FELVÉTEL %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Piros csapat"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Kék csapat"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s nyert!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Döntetlen!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Kör vége!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "test"
@@ -742,18 +807,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d másik játékos"
-		},
-		{
-			"or": "Red team",
-			"tr": "Piros csapat"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Kék csapat"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -822,58 +875,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s kijött! Töltsd le a www.teeworlds.com oldalon!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Mindenki"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Nézők"
-		},
-		{
-			"or": "Team",
-			"tr": "Csapat"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Folytatáshoz nyomd meg az Entert, kilépéshez az Esc-t"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "%s le lett némítva"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "%s némítása feloldva"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "%s hozzáadva barátként"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "%s törölve a barátok közül"
 		},
 		{
 			"or": "Game",
@@ -1048,90 +1049,6 @@
 			"tr": "A szerver egy nem szabványos hangolást futtat a tiszta játék típuson."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Gyors halál"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Játék megállítva"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d játékos még nem áll készen"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d játékosok még nem állnak készen"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "A játék kezdődik:"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Várakozás a következő körre"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d játékos kilépett"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d játékos kilépett"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Kezdés"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Csatlakozási problémák..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Kérlek egyenlítsd ki a csapatokat!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%d másodperc van hátra"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Megfigyelés"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Ha készen állsz, nyomd meg a <%s> billentyűt!"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Árnyalat"
 		},
@@ -1251,6 +1168,10 @@
 			"tr": "Automatikusan készítsen képernyőképet a játék végén"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Visszaállítás"
 		},
@@ -1285,10 +1206,6 @@
 		{
 			"or": "Personal",
 			"tr": "Személyes"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klán"
 		},
 		{
 			"or": "Flag:",
@@ -1531,6 +1448,10 @@
 			"tr": "Identitás megváltoztatásához várnod kell %1.0f másodpercet."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-%d. oldal-"
+		},
+		{
 			"or": "Server",
 			"tr": "Szerver"
 		},
@@ -1541,6 +1462,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Kedvencek"
+		},
+		{
+			"or": "All",
+			"tr": "Mindenki"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1763,53 +1688,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Időhatár: %d perc"
+			"or": "Sudden Death",
+			"tr": "Gyors halál"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Meccs"
+			"or": "Game paused",
+			"tr": "Játék megállítva"
 		},
 		{
-			"or": "Game over",
-			"tr": "Játék vége"
+			"or": "%d player not ready",
+			"tr": "%d játékos még nem áll készen"
 		},
 		{
-			"or": "Round over",
-			"tr": "Kör vége"
+			"or": "%d players not ready",
+			"tr": "%d játékosok még nem állnak készen"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "A játék kezdődik:"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Várakozás a következő körre"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d játékos kilépett"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d játékos kilépett"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Kezdés"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Csatlakozási problémák..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Kérlek egyenlítsd ki a csapatokat!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%d másodperc van hátra"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Pont"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "FELVÉTEL %3d:%02d"
+			"or": "Spectate",
+			"tr": "Megfigyelés"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s nyert!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Döntetlen!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Kör vége!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-%d. oldal-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Ha készen állsz, nyomd meg a <%s> billentyűt!"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Csapat"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Folytatáshoz nyomd meg az Entert, kilépéshez az Esc-t"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "%s le lett némítva"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "%s némítása feloldva"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "%s hozzáadva barátként"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "%s törölve a barátok közül"
 		}
 	]
 }

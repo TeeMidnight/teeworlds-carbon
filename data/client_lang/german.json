@@ -704,6 +704,71 @@
 			"tr": "Hinzufügen"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Zeitlimit: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Spiel"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Zuschauer"
+		},
+		{
+			"or": "Game over",
+			"tr": "Spiel vorbei"
+		},
+		{
+			"or": "Round over",
+			"tr": "Runde vorbei"
+		},
+		{
+			"or": "Map record",
+			"tr": "Map Rekord"
+		},
+		{
+			"or": "Clan",
+			"tr": "Clan"
+		},
+		{
+			"or": "Time",
+			"tr": "Zeit"
+		},
+		{
+			"or": "Score",
+			"tr": "Punkte"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d andere Spieler"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Team Rot"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Team Blau"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s gewinnt!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Unentschieden!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Runde vorbei!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "Körper"
@@ -766,18 +831,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "Aufnahmen"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d andere Spieler"
-		},
-		{
-			"or": "Red team",
-			"tr": "Team Rot"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Team Blau"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -846,58 +899,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s ist verfügbar! Lade es auf www.teeworlds.com herunter!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Die Map wurde geändert zu %s"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Zuschauer"
-		},
-		{
-			"or": "Team",
-			"tr": "Team"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Drücke %s um in den Chat zurückzukehren "
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Seite %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Drücke Enter zum Bestätigen oder Esc zum Abbrechen"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Drücke die Tabulatortaste zum Auswählen oder Esc zum Abbrechen"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "%s wurde stumm geschaltet"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "%s ist nicht mehr stumm geschaltet"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "%s wurde als Freund hinzugefügt"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "%s wurde als Freund entfernt"
 		},
 		{
 			"or": "Game",
@@ -1072,90 +1073,6 @@
 			"tr": "Der Server verwendet vom Standard abweichende Anpassungen für einen Standard-Spieltyp."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Sudden Death"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Spiel pausiert"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d Spieler ist nicht bereit"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d Spieler sind nicht bereit"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Spiel beginnt in"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Auf nächste Runde warten"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d Spieler am Leben"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d Spieler am Leben"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Aufwärmen"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Verbindungsprobleme..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Bitte Teams ausgleichen!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "Noch %ds"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Zuschauen"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Wenn du bereit bist, drücke <%s>"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Farbton:"
 		},
@@ -1275,6 +1192,10 @@
 			"tr": "Bei Spielende automatisch ein Bildschirmfoto erstellen"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Zurücksetzen"
 		},
@@ -1309,10 +1230,6 @@
 		{
 			"or": "Personal",
 			"tr": "Persönlich"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
 		},
 		{
 			"or": "Flag:",
@@ -1555,6 +1472,10 @@
 			"tr": "Du musst %1.0f Sekunden warten, um deine Identität zu ändern."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Seite %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1565,6 +1486,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoriten"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1787,53 +1712,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Zeitlimit: %d min"
+			"or": "Sudden Death",
+			"tr": "Sudden Death"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Spiel"
+			"or": "Game paused",
+			"tr": "Spiel pausiert"
 		},
 		{
-			"or": "Game over",
-			"tr": "Spiel vorbei"
+			"or": "%d player not ready",
+			"tr": "%d Spieler ist nicht bereit"
 		},
 		{
-			"or": "Round over",
-			"tr": "Runde vorbei"
+			"or": "%d players not ready",
+			"tr": "%d Spieler sind nicht bereit"
 		},
 		{
-			"or": "Map record",
-			"tr": "Map Rekord"
+			"or": "Game starts in",
+			"tr": "Spiel beginnt in"
 		},
 		{
-			"or": "Time",
-			"tr": "Zeit"
+			"or": "Wait for next round",
+			"tr": "Auf nächste Runde warten"
 		},
 		{
-			"or": "Score",
-			"tr": "Punkte"
+			"or": "%d player left",
+			"tr": "%d Spieler am Leben"
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "%d players left",
+			"tr": "%d Spieler am Leben"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s gewinnt!"
+			"or": "Warmup",
+			"tr": "Aufwärmen"
 		},
 		{
-			"or": "Draw!",
-			"tr": "Unentschieden!"
+			"or": "waiting for more players",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Runde vorbei!"
+			"or": "Connection Problems...",
+			"tr": "Verbindungsprobleme..."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Seite %d-"
+			"or": "Please balance teams!",
+			"tr": "Bitte Teams ausgleichen!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "Noch %ds"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Zuschauen"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Wenn du bereit bist, drücke <%s>"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Die Map wurde geändert zu %s"
+		},
+		{
+			"or": "Team",
+			"tr": "Team"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Drücke %s um in den Chat zurückzukehren "
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Seite %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Drücke Enter zum Bestätigen oder Esc zum Abbrechen"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Drücke die Tabulatortaste zum Auswählen oder Esc zum Abbrechen"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "%s wurde stumm geschaltet"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "%s ist nicht mehr stumm geschaltet"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "%s wurde als Freund hinzugefügt"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "%s wurde als Freund entfernt"
 		}
 	]
 }

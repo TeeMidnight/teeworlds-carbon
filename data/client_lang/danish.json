@@ -679,6 +679,71 @@
 			"tr": "Tilføj"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Tidsbegrænsning: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": ""
+		},
+		{
+			"or": "Spectators",
+			"tr": "Tilskuer"
+		},
+		{
+			"or": "Game over",
+			"tr": "Game over"
+		},
+		{
+			"or": "Round over",
+			"tr": ""
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Score"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Rødt hold"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blå hold"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s vinder!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Uafgjort!"
+		},
+		{
+			"or": "Round over!",
+			"tr": ""
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": ""
@@ -741,18 +806,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Rødt hold"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blå hold"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -821,58 +874,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworld %s er ude nu! Download den på www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Tilskuer"
-		},
-		{
-			"or": "Team",
-			"tr": "Hold"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1047,90 +1048,6 @@
 			"tr": "Denne server kører på en ikke-standard tuning på en ren spilletype."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Sudden Death"
-		},
-		{
-			"or": "Game paused",
-			"tr": ""
-		},
-		{
-			"or": "%d player not ready",
-			"tr": ""
-		},
-		{
-			"or": "%d players not ready",
-			"tr": ""
-		},
-		{
-			"or": "Game starts in",
-			"tr": ""
-		},
-		{
-			"or": "Wait for next round",
-			"tr": ""
-		},
-		{
-			"or": "%d player left",
-			"tr": ""
-		},
-		{
-			"or": "%d players left",
-			"tr": ""
-		},
-		{
-			"or": "Warmup",
-			"tr": "Opvarmning"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Forbindelsesproblemer..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Balancer venligst holdet!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%d sekunder tilbage"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Kig på"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": ""
 		},
@@ -1250,6 +1167,10 @@
 			"tr": "Tag  automatisk et game over screenshot"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": ""
 		},
@@ -1284,10 +1205,6 @@
 		{
 			"or": "Personal",
 			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
 		},
 		{
 			"or": "Flag:",
@@ -1530,6 +1447,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Side %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1540,6 +1461,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoritter"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1762,53 +1687,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Tidsbegrænsning: %d min"
+			"or": "Sudden Death",
+			"tr": "Sudden Death"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
+			"or": "Game paused",
 			"tr": ""
 		},
 		{
-			"or": "Game over",
-			"tr": "Game over"
-		},
-		{
-			"or": "Round over",
+			"or": "%d player not ready",
 			"tr": ""
 		},
 		{
-			"or": "Map record",
+			"or": "%d players not ready",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Game starts in",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Score"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s vinder!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Uafgjort!"
-		},
-		{
-			"or": "Round over!",
+			"or": "Wait for next round",
 			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Side %d-"
+			"or": "%d player left",
+			"tr": ""
+		},
+		{
+			"or": "%d players left",
+			"tr": ""
+		},
+		{
+			"or": "Warmup",
+			"tr": "Opvarmning"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Forbindelsesproblemer..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Balancer venligst holdet!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%d sekunder tilbage"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Kig på"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Hold"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }

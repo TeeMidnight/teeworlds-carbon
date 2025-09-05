@@ -680,6 +680,71 @@
 			"tr": "Дадаць"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Ліміт часу: %d хв."
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Матч"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Назіральнікі"
+		},
+		{
+			"or": "Game over",
+			"tr": "Гульня скончана"
+		},
+		{
+			"or": "Round over",
+			"tr": "Раўнд скончаны"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Клан"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Лік"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d іншых гульцоў"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Чырвоныя"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Сінія"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s перамаглі!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Нічыя!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Канец раўнда!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "цела"
@@ -742,18 +807,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d іншых гульцоў"
-		},
-		{
-			"or": "Red team",
-			"tr": "Чырвоныя"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Сінія"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -822,58 +875,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Выйшла Teeworlds %s! Спампоўвайце на www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Усе"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Назіральнікі"
-		},
-		{
-			"or": "Team",
-			"tr": "Каманда"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Націсніце Enter для пацверджання ці Esc для адмены"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' заглушаны"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' разглушаны"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' быў дададзены як сябар"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' быў выдалены як сябар"
 		},
 		{
 			"or": "Game",
@@ -1048,90 +1049,6 @@
 			"tr": "Сервер запушчаны з нестандартнымі параметрамі ў стандартным рэжыме гульні."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Хуткая смерць"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Гульня прыпынена"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d гулец не гатовы"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d гульцоў не гатова"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Гульня пачынаецца праз"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Дачакайцеся наступнага раўнда"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d гулец выйшаў"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d гульцы выйшлі"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Размінка"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Праблемы з сувяззю..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Збалансуйце каманды!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "засталося %d сек."
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Назіраць"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Націсніце <%s>, калі гатовы"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Адценне:"
 		},
@@ -1251,6 +1168,10 @@
 			"tr": "Аўтаматычны скрыншот у канцы гульні"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Скінуць"
 		},
@@ -1285,10 +1206,6 @@
 		{
 			"or": "Personal",
 			"tr": "Асабістыя"
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
 		},
 		{
 			"or": "Flag:",
@@ -1531,6 +1448,10 @@
 			"tr": "Пачакайце %1.0f сек. перад ужыццём налад."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Старонка %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Сервер"
 		},
@@ -1541,6 +1462,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Абраныя"
+		},
+		{
+			"or": "All",
+			"tr": "Усе"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1763,53 +1688,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Ліміт часу: %d хв."
+			"or": "Sudden Death",
+			"tr": "Хуткая смерць"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Матч"
+			"or": "Game paused",
+			"tr": "Гульня прыпынена"
 		},
 		{
-			"or": "Game over",
-			"tr": "Гульня скончана"
+			"or": "%d player not ready",
+			"tr": "%d гулец не гатовы"
 		},
 		{
-			"or": "Round over",
-			"tr": "Раўнд скончаны"
+			"or": "%d players not ready",
+			"tr": "%d гульцоў не гатова"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Гульня пачынаецца праз"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Дачакайцеся наступнага раўнда"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d гулец выйшаў"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d гульцы выйшлі"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Размінка"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Праблемы з сувяззю..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Збалансуйце каманды!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "засталося %d сек."
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Лік"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Назіраць"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s перамаглі!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Нічыя!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Канец раўнда!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Старонка %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Націсніце <%s>, калі гатовы"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Каманда"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Націсніце Enter для пацверджання ці Esc для адмены"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' заглушаны"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' разглушаны"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' быў дададзены як сябар"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' быў выдалены як сябар"
 		}
 	]
 }

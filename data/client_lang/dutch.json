@@ -697,6 +697,71 @@
 			"tr": "Toevoegen"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Tijdslimiet: %d minuten"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Wedstrijd"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Toeschouwers"
+		},
+		{
+			"or": "Game over",
+			"tr": "Spel afgelopen"
+		},
+		{
+			"or": "Round over",
+			"tr": "Ronde voorbij"
+		},
+		{
+			"or": "Map record",
+			"tr": "Kaartrecord"
+		},
+		{
+			"or": "Clan",
+			"tr": "Clan"
+		},
+		{
+			"or": "Time",
+			"tr": "Tijd"
+		},
+		{
+			"or": "Score",
+			"tr": "Score"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d overige spelers"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Rode team"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blauwe team"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s heeft gewonnen!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Gelijkspel!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Ronde voorbij!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "lichaam"
@@ -759,18 +824,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "Gepakt"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d overige spelers"
-		},
-		{
-			"or": "Red team",
-			"tr": "Rode team"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blauwe team"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -839,58 +892,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s is uitgebracht! Download het op www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Je bevindt je nu op de kaart '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Toeschouwers"
-		},
-		{
-			"or": "Team",
-			"tr": "Team"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Druk op %s om weer te chatten"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Pagina %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Druk op Enter om te bevestigen of Esc om af te breken"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Druk op Tab om te selecteren of Esc om af te breken"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' is gedempt"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' is ontdempt"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' is toegevoegd als vriend"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' is verwijderd als vriend"
 		},
 		{
 			"or": "Game",
@@ -1065,90 +1066,6 @@
 			"tr": "De tuning van de server is niet standaard, maar draait wel op een standaard speltype."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Plotselinge dood"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Spel gepauzeerd"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%dspeler is nog niet klaar"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%dspelers zijn nog niet klaar"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Spel begint over"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Wachten op volgende ronde"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d speler heeft het spel verlaten"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d spelers over"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Opwarmen"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Verbindingsproblemen..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Balanceer de teams!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds over"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Toekijken"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Als je er klaar voor bent, druk dan op <%s>"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Kleurverloop:"
 		},
@@ -1268,6 +1185,10 @@
 			"tr": "Automatisch schermafdrukken maken"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Herstellen"
 		},
@@ -1302,10 +1223,6 @@
 		{
 			"or": "Personal",
 			"tr": "Persoonlijk"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
 		},
 		{
 			"or": "Flag:",
@@ -1548,6 +1465,10 @@
 			"tr": "Je moet %1.0f seconden wachten voordat je je identiteit kunt wijzigen."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Pagina %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1558,6 +1479,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favorieten"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1780,53 +1705,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Tijdslimiet: %d minuten"
+			"or": "Sudden Death",
+			"tr": "Plotselinge dood"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Wedstrijd"
+			"or": "Game paused",
+			"tr": "Spel gepauzeerd"
 		},
 		{
-			"or": "Game over",
-			"tr": "Spel afgelopen"
+			"or": "%d player not ready",
+			"tr": "%dspeler is nog niet klaar"
 		},
 		{
-			"or": "Round over",
-			"tr": "Ronde voorbij"
+			"or": "%d players not ready",
+			"tr": "%dspelers zijn nog niet klaar"
 		},
 		{
-			"or": "Map record",
-			"tr": "Kaartrecord"
+			"or": "Game starts in",
+			"tr": "Spel begint over"
 		},
 		{
-			"or": "Time",
-			"tr": "Tijd"
+			"or": "Wait for next round",
+			"tr": "Wachten op volgende ronde"
 		},
 		{
-			"or": "Score",
-			"tr": "Score"
+			"or": "%d player left",
+			"tr": "%d speler heeft het spel verlaten"
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "%d players left",
+			"tr": "%d spelers over"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s heeft gewonnen!"
+			"or": "Warmup",
+			"tr": "Opwarmen"
 		},
 		{
-			"or": "Draw!",
-			"tr": "Gelijkspel!"
+			"or": "waiting for more players",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Ronde voorbij!"
+			"or": "Connection Problems...",
+			"tr": "Verbindingsproblemen..."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Pagina %d-"
+			"or": "Please balance teams!",
+			"tr": "Balanceer de teams!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds over"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Toekijken"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Als je er klaar voor bent, druk dan op <%s>"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Je bevindt je nu op de kaart '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "Team"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Druk op %s om weer te chatten"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Pagina %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Druk op Enter om te bevestigen of Esc om af te breken"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Druk op Tab om te selecteren of Esc om af te breken"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' is gedempt"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' is ontdempt"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' is toegevoegd als vriend"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' is verwijderd als vriend"
 		}
 	]
 }

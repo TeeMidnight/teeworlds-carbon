@@ -680,6 +680,71 @@
 			"tr": "新增"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "規定時限：%d分鐘"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "比賽"
+		},
+		{
+			"or": "Spectators",
+			"tr": "旁觀者"
+		},
+		{
+			"or": "Game over",
+			"tr": "遊戲結束"
+		},
+		{
+			"or": "Round over",
+			"tr": "回合結束"
+		},
+		{
+			"or": "Map record",
+			"tr": "地圖最高記錄"
+		},
+		{
+			"or": "Clan",
+			"tr": "戰隊"
+		},
+		{
+			"or": "Time",
+			"tr": "用時"
+		},
+		{
+			"or": "Score",
+			"tr": "分數"
+		},
+		{
+			"or": "%d other players",
+			"tr": "另有%d名玩家"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "紅隊"
+		},
+		{
+			"or": "Blue team",
+			"tr": "藍隊"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s勝利!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "平局！"
+		},
+		{
+			"or": "Round over!",
+			"tr": "回合結束！"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "身體"
@@ -742,18 +807,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "得旗數"
-		},
-		{
-			"or": "%d other players",
-			"tr": "另有%d名玩家"
-		},
-		{
-			"or": "Red team",
-			"tr": "紅隊"
-		},
-		{
-			"or": "Blue team",
-			"tr": "藍隊"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -822,58 +875,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s已經發布！請訪問 www.teeworlds.com 下載最新版本！"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "地圖已更換為 '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "全部"
-		},
-		{
-			"or": "Spectators",
-			"tr": "旁觀者"
-		},
-		{
-			"or": "Team",
-			"tr": "隊伍"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "按 %s 以恢復聊天"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "- %d/%d -"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "已屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "已解除屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "已將 '%s' 新增為好友"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "已將 '%s' 從好友中移除"
 		},
 		{
 			"or": "Game",
@@ -1048,90 +1049,6 @@
 			"tr": "此伺服器執行著經過調整的非標準遊戲模式。"
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "決勝"
-		},
-		{
-			"or": "Game paused",
-			"tr": "遊戲已暫停"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "還有%d名玩家未準備"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "還有%d名玩家未準備"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "遊戲即將開始："
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "等待下一回合"
-		},
-		{
-			"or": "%d player left",
-			"tr": "還剩%d名玩家"
-		},
-		{
-			"or": "%d players left",
-			"tr": "還剩%d名玩家"
-		},
-		{
-			"or": "Warmup",
-			"tr": "熱身"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "連線中斷..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "隊伍人數不平衡！"
-		},
-		{
-			"or": "%ds left",
-			"tr": "還剩%d秒"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "旁觀"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "按 <%s> 準備"
-		},
-		{
 			"or": "Hue:",
 			"tr": "色調："
 		},
@@ -1251,6 +1168,10 @@
 			"tr": "自動擷取遊戲結束畫面"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "重置"
 		},
@@ -1285,10 +1206,6 @@
 		{
 			"or": "Personal",
 			"tr": "個人"
-		},
-		{
-			"or": "Clan",
-			"tr": "戰隊"
 		},
 		{
 			"or": "Flag:",
@@ -1531,6 +1448,10 @@
 			"tr": "你需要等待 %1.0f 秒才能修改身份"
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-第%d頁-"
+		},
+		{
 			"or": "Server",
 			"tr": "伺服器"
 		},
@@ -1541,6 +1462,10 @@
 		{
 			"or": "Favorites",
 			"tr": "收藏"
+		},
+		{
+			"or": "All",
+			"tr": "全部"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1763,53 +1688,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "規定時限：%d分鐘"
+			"or": "Sudden Death",
+			"tr": "決勝"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "比賽"
+			"or": "Game paused",
+			"tr": "遊戲已暫停"
 		},
 		{
-			"or": "Game over",
-			"tr": "遊戲結束"
+			"or": "%d player not ready",
+			"tr": "還有%d名玩家未準備"
 		},
 		{
-			"or": "Round over",
-			"tr": "回合結束"
+			"or": "%d players not ready",
+			"tr": "還有%d名玩家未準備"
 		},
 		{
-			"or": "Map record",
-			"tr": "地圖最高記錄"
+			"or": "Game starts in",
+			"tr": "遊戲即將開始："
 		},
 		{
-			"or": "Time",
-			"tr": "用時"
+			"or": "Wait for next round",
+			"tr": "等待下一回合"
 		},
 		{
-			"or": "Score",
-			"tr": "分數"
+			"or": "%d player left",
+			"tr": "還剩%d名玩家"
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "%d players left",
+			"tr": "還剩%d名玩家"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s勝利!"
+			"or": "Warmup",
+			"tr": "熱身"
 		},
 		{
-			"or": "Draw!",
-			"tr": "平局！"
+			"or": "waiting for more players",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "回合結束！"
+			"or": "Connection Problems...",
+			"tr": "連線中斷..."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-第%d頁-"
+			"or": "Please balance teams!",
+			"tr": "隊伍人數不平衡！"
+		},
+		{
+			"or": "%ds left",
+			"tr": "還剩%d秒"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "旁觀"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "按 <%s> 準備"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "地圖已更換為 '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "隊伍"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "按 %s 以恢復聊天"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "- %d/%d -"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "已屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "已解除屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "已將 '%s' 新增為好友"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "已將 '%s' 從好友中移除"
 		}
 	]
 }

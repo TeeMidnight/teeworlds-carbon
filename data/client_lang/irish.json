@@ -679,6 +679,71 @@
 			"tr": "Cuir Vóta Leis"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Teorainn ama: %d nóim"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Comórtas"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Lucht féachana"
+		},
+		{
+			"or": "Game over",
+			"tr": "Cluiche thart"
+		},
+		{
+			"or": "Round over",
+			"tr": "Tá an babhta thart"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Clann"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Scór"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "TAIF %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Foireann dhearg"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Foireann ghorm"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "Tá an bua ag %s!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Comhbhua!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Tá an babhta thart!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": ""
@@ -741,18 +806,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Foireann dhearg"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Foireann ghorm"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -821,58 +874,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Tá Teeworlds %s ar fáil! Íoslódáil ó www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Uile"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Lucht féachana"
-		},
-		{
-			"or": "Team",
-			"tr": "Foireann"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1047,90 +1048,6 @@
 			"tr": "Tá an freastalaí ag déanamh tiúnadh neamhchaighdeánach ar chluiche glan."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Bás Tobann"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Cluiche curtha ar sos"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d imreoir neamhullamh"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d imreoir neamhullamh"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Tosóidh an cluiche i gceann"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Fan leis an chéad bhabhta eile"
-		},
-		{
-			"or": "%d player left",
-			"tr": "D'fhág %d imreoir"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d imreoir fágtha"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Réamhchleachtadh"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Fadhbanna ag Ceangal..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Caithfidh tú na foirne a choinneáil ar cothrom!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds fágtha"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Breathnaigh"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": "Lí:"
 		},
@@ -1250,6 +1167,10 @@
 			"tr": "Seat scáileáin go huathoibríoch ag deireadh an chluiche"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Athshocraigh"
 		},
@@ -1284,10 +1205,6 @@
 		{
 			"or": "Personal",
 			"tr": "Pearsanta"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clann"
 		},
 		{
 			"or": "Flag:",
@@ -1530,6 +1447,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Leathanach %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1540,6 +1461,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Ceanáin"
+		},
+		{
+			"or": "All",
+			"tr": "Uile"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1762,53 +1687,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Teorainn ama: %d nóim"
+			"or": "Sudden Death",
+			"tr": "Bás Tobann"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Comórtas"
+			"or": "Game paused",
+			"tr": "Cluiche curtha ar sos"
 		},
 		{
-			"or": "Game over",
-			"tr": "Cluiche thart"
+			"or": "%d player not ready",
+			"tr": "%d imreoir neamhullamh"
 		},
 		{
-			"or": "Round over",
-			"tr": "Tá an babhta thart"
+			"or": "%d players not ready",
+			"tr": "%d imreoir neamhullamh"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Tosóidh an cluiche i gceann"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Fan leis an chéad bhabhta eile"
+		},
+		{
+			"or": "%d player left",
+			"tr": "D'fhág %d imreoir"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d imreoir fágtha"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Réamhchleachtadh"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Fadhbanna ag Ceangal..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Caithfidh tú na foirne a choinneáil ar cothrom!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds fágtha"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Scór"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "TAIF %3d:%02d"
+			"or": "Spectate",
+			"tr": "Breathnaigh"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "Tá an bua ag %s!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Comhbhua!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Tá an babhta thart!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Leathanach %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Foireann"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }

@@ -680,6 +680,71 @@
 			"tr": "Pridėti"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Laiko limitas: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Varžybos"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Žiūrovai"
+		},
+		{
+			"or": "Game over",
+			"tr": "Žaidimas baigtas"
+		},
+		{
+			"or": "Round over",
+			"tr": "Raundas"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klanas"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Taškai"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%dkiti žaidėjai"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Raudona komanda"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Mėlyna komanda"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s laimėjo!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Lygiosios!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Raundas Baigtas!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "kūnas"
@@ -742,18 +807,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": "%dkiti žaidėjai"
-		},
-		{
-			"or": "Red team",
-			"tr": "Raudona komanda"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Mėlyna komanda"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -822,58 +875,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworld nauja versija %s .Atsisiūskite iš www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Visi"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Žiūrovai"
-		},
-		{
-			"or": "Team",
-			"tr": "Komanda"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Spauskite Enter patvirtinti arba Esc atšaukti"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' buvo užtildytas"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' buvo atitildytas"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' buvo pridėtas prie draugų"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' buvo išmestas iš draugų"
 		},
 		{
 			"or": "Game",
@@ -1048,90 +1049,6 @@
 			"tr": "Serveris veikia nestandartiniu tuningo ant gryno žaidimo tipu."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Staigi Mirtis"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Žaidimas pristabdytas"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%dnapasiruošęs"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d Žaidėjai nepasiruošę"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Žaidimas prasideda po"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Palaukite kito raundo"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d žaidėjas išėjo"
-		},
-		{
-			"or": "%d players left",
-			"tr": "liko%d žaidėjų"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Apšilimas"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Prisijungimo problemos..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Prašome subalansuoti komandas!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%d išėjo"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Žiūrėti"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Kai pasiruošę, spauskite <%s>"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Atspalvis:"
 		},
@@ -1251,6 +1168,10 @@
 			"tr": "Automatiškai nufotografuoti žaidimo pabaigos ekraną"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Restartuoti"
 		},
@@ -1285,10 +1206,6 @@
 		{
 			"or": "Personal",
 			"tr": "Nuosavas"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klanas"
 		},
 		{
 			"or": "Flag:",
@@ -1531,6 +1448,10 @@
 			"tr": "Jūs turi palaukti %1.0f sekundžių, kad pakeistumėte tapatybę."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Puslapis %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Serveris"
 		},
@@ -1541,6 +1462,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Mėgstami"
+		},
+		{
+			"or": "All",
+			"tr": "Visi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1763,53 +1688,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Laiko limitas: %d min"
+			"or": "Sudden Death",
+			"tr": "Staigi Mirtis"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Varžybos"
+			"or": "Game paused",
+			"tr": "Žaidimas pristabdytas"
 		},
 		{
-			"or": "Game over",
-			"tr": "Žaidimas baigtas"
+			"or": "%d player not ready",
+			"tr": "%dnapasiruošęs"
 		},
 		{
-			"or": "Round over",
-			"tr": "Raundas"
+			"or": "%d players not ready",
+			"tr": "%d Žaidėjai nepasiruošę"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Žaidimas prasideda po"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Palaukite kito raundo"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d žaidėjas išėjo"
+		},
+		{
+			"or": "%d players left",
+			"tr": "liko%d žaidėjų"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Apšilimas"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Prisijungimo problemos..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Prašome subalansuoti komandas!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%d išėjo"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Taškai"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Žiūrėti"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s laimėjo!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Lygiosios!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Raundas Baigtas!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Puslapis %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Kai pasiruošę, spauskite <%s>"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Komanda"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Spauskite Enter patvirtinti arba Esc atšaukti"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' buvo užtildytas"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' buvo atitildytas"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' buvo pridėtas prie draugų"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' buvo išmestas iš draugų"
 		}
 	]
 }

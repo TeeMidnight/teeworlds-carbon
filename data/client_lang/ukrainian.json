@@ -682,6 +682,71 @@
 			"tr": "Додати"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Ліміт часу: %d хв"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Матч"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Спостерігачі"
+		},
+		{
+			"or": "Game over",
+			"tr": "Гра закінчена"
+		},
+		{
+			"or": "Round over",
+			"tr": "Раунд завершено"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Клан"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Очки"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d інші гравці"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Червоні"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Сині"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s перемогли!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Нічия!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Кінець раунду!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "Тіло"
@@ -744,18 +809,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": "Підбирання"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d інші гравці"
-		},
-		{
-			"or": "Red team",
-			"tr": "Червоні"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Сині"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -824,58 +877,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Вийшла Teeworlds %s! Завантажуйте на www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Всі"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Спостерігачі"
-		},
-		{
-			"or": "Team",
-			"tr": "Команда"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' заборонено використовувати чат"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' дозволено використовувати чат"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' додано як друга"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' вилучено з друзів"
 		},
 		{
 			"or": "Game",
@@ -1050,90 +1051,6 @@
 			"tr": "Сервер запущено з нестандартними налаштуваннями на стандартному типі гри."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Швидка смерть"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Гра зупинена"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d гравець не готовий"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d гравців не готові"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Гра почнеться через"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Дочекайтеся наступного раунду."
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d гравець залишився"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d гравцiв залишилось"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Розминка"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Проблеми зі з'єднанням..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Збалансуйте команди!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "залишилось %d сек."
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Спостерігати"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Коли готові, натиснить <%s>"
-		},
-		{
 			"or": "Hue:",
 			"tr": "Відтінок:"
 		},
@@ -1253,6 +1170,10 @@
 			"tr": "Автоматично робити скріншот в кінці гри"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Скинути"
 		},
@@ -1287,10 +1208,6 @@
 		{
 			"or": "Personal",
 			"tr": "Особистість"
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
 		},
 		{
 			"or": "Flag:",
@@ -1533,6 +1450,10 @@
 			"tr": "Зачекайте %1.0f секунд перед зміною особистості."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Сторінка %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Сервер"
 		},
@@ -1543,6 +1464,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Обрані"
+		},
+		{
+			"or": "All",
+			"tr": "Всі"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1765,53 +1690,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Ліміт часу: %d хв"
+			"or": "Sudden Death",
+			"tr": "Швидка смерть"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Матч"
+			"or": "Game paused",
+			"tr": "Гра зупинена"
 		},
 		{
-			"or": "Game over",
-			"tr": "Гра закінчена"
+			"or": "%d player not ready",
+			"tr": "%d гравець не готовий"
 		},
 		{
-			"or": "Round over",
-			"tr": "Раунд завершено"
+			"or": "%d players not ready",
+			"tr": "%d гравців не готові"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Гра почнеться через"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Дочекайтеся наступного раунду."
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d гравець залишився"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d гравцiв залишилось"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Розминка"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Проблеми зі з'єднанням..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Збалансуйте команди!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "залишилось %d сек."
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Очки"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Спостерігати"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s перемогли!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Нічия!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Кінець раунду!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Сторінка %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Коли готові, натиснить <%s>"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Команда"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' заборонено використовувати чат"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' дозволено використовувати чат"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' додано як друга"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' вилучено з друзів"
 		}
 	]
 }

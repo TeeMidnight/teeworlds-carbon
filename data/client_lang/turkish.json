@@ -686,6 +686,71 @@
 			"tr": "Ekle"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Süre limiti: %d dakika"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Maç"
+		},
+		{
+			"or": "Spectators",
+			"tr": "İzleyiciler"
+		},
+		{
+			"or": "Game over",
+			"tr": "Oyun sonu"
+		},
+		{
+			"or": "Round over",
+			"tr": "Tur bitti"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Skor"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%dbaşka oyuncu"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "Kayıt %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Kırmızı takım"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Mavi takım"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s kazandı!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Berabere!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Tur bitti!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": "gövde"
@@ -748,18 +813,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": "%dbaşka oyuncu"
-		},
-		{
-			"or": "Red team",
-			"tr": "Kırmızı takım"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Mavi takım"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -828,58 +881,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Teeworlds %s çıktı! www.teeworlds.com dan indir!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Hepsi"
-		},
-		{
-			"or": "Spectators",
-			"tr": "İzleyiciler"
-		},
-		{
-			"or": "Team",
-			"tr": "Takım"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' susturuldu."
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' artık konuşabilir."
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' arkadaş olarak eklendi. "
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' arkadaşlardan çıkarıldı"
 		},
 		{
 			"or": "Game",
@@ -1054,90 +1055,6 @@
 			"tr": "Bu sunucu standart olmayan bir ayarı saf bir oyun türünde kullanıyor."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Ani ölüm"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Oyun duraklatıldı"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d oyuncu hazır değil"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d oyuncular hazır değil"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Oyun başlıyor :"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Bir sonraki tur için bekle"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d oyuncu kaldı"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d oyuncu kaldi"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Isınma"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Bağlantı Hataları..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Takımları dengeleyin!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds kaldı"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "İzle"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Hazır olunca <%s>'e basın."
-		},
-		{
 			"or": "Hue:",
 			"tr": "Renk:"
 		},
@@ -1257,6 +1174,10 @@
 			"tr": "Otomatik olarak oyun bitişinde ekran görüntüsü al"
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Yenile"
 		},
@@ -1291,10 +1212,6 @@
 		{
 			"or": "Personal",
 			"tr": "Kişisel"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
 		},
 		{
 			"or": "Flag:",
@@ -1537,6 +1454,10 @@
 			"tr": "Kimlik değiştirmek için %1.0f saniye beklemelisiniz."
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Sayfa %d-"
+		},
+		{
 			"or": "Server",
 			"tr": "Sunucu"
 		},
@@ -1547,6 +1468,10 @@
 		{
 			"or": "Favorites",
 			"tr": "En sevilenler"
+		},
+		{
+			"or": "All",
+			"tr": "Hepsi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1769,53 +1694,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Süre limiti: %d dakika"
+			"or": "Sudden Death",
+			"tr": "Ani ölüm"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Maç"
+			"or": "Game paused",
+			"tr": "Oyun duraklatıldı"
 		},
 		{
-			"or": "Game over",
-			"tr": "Oyun sonu"
+			"or": "%d player not ready",
+			"tr": "%d oyuncu hazır değil"
 		},
 		{
-			"or": "Round over",
-			"tr": "Tur bitti"
+			"or": "%d players not ready",
+			"tr": "%d oyuncular hazır değil"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Oyun başlıyor :"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Bir sonraki tur için bekle"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d oyuncu kaldı"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d oyuncu kaldi"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Isınma"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Bağlantı Hataları..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Takımları dengeleyin!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds kaldı"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Skor"
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "Kayıt %3d:%02d"
+			"or": "Spectate",
+			"tr": "İzle"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "%s kazandı!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Berabere!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Tur bitti!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Sayfa %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Hazır olunca <%s>'e basın."
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Takım"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' susturuldu."
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' artık konuşabilir."
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' arkadaş olarak eklendi. "
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' arkadaşlardan çıkarıldı"
 		}
 	]
 }

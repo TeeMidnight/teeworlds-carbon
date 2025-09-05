@@ -679,6 +679,71 @@
 			"tr": "Προσθήκη"
 		},
 		{
+			"or": "Time limit: %d min",
+			"tr": "Όριο χρόνου: %d λ"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Ταίρι"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Θεατές"
+		},
+		{
+			"or": "Game over",
+			"tr": "Τέλος παιχνιδιού"
+		},
+		{
+			"or": "Round over",
+			"tr": "Τέλος γύρου"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Clan",
+			"tr": "Φυλή"
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Βαθμ."
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Κόκκινη ομάδα"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Μπλε ομάδα"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "Ο/Η %s νίκησε!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Ισοπαλία!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Τέλος γύρου!"
+		},
+		{
 			"context": "skins",
 			"or": "body",
 			"tr": ""
@@ -741,18 +806,6 @@
 			"context": "Flag grabs",
 			"or": "Grabs",
 			"tr": ""
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "Red team",
-			"tr": "Κόκκινη ομάδα"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Μπλε ομάδα"
 		},
 		{
 			"or": "'%s' called vote to change server option '%s' (%s)",
@@ -821,58 +874,6 @@
 		{
 			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
 			"tr": "Το Teeworlds %s κυκλοφόρησε! Κατεβάστε το από το www.teeworlds.com!"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Όλοι"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Θεατές"
-		},
-		{
-			"or": "Team",
-			"tr": "Ομάδα"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		},
 		{
 			"or": "Game",
@@ -1047,90 +1048,6 @@
 			"tr": "Ο διακομιστής εκτελεί μη-τυπικές ρυθμίσεις σε κανονικό τύπο παιχνιδιού."
 		},
 		{
-			"or": "Sudden Death",
-			"tr": "Ξαφνικός θάνατος"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Παιχνίδι σε παύση"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d παίκτης δεν είναι έτοιμος"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d παίκτες δεν είναι έτοιμοι"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Το παιχνίδι αρχίζει σε"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Αναμονή για τον επόμενο γύρο"
-		},
-		{
-			"or": "%d player left",
-			"tr": "απομένει %d παίκτης"
-		},
-		{
-			"or": "%d players left",
-			"tr": "απομένουν %d παίκτες"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Ζέσταμα"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Προβλήματα σύνδεσης..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Παρακαλούμε εξισορροπήστε τις ομάδες!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds ακόμα"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Θέαση"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
 			"or": "Hue:",
 			"tr": "Απόχ:"
 		},
@@ -1250,6 +1167,10 @@
 			"tr": "Αυτόμ. λήψη στιγμιότυπου στο τέλος παιχν."
 		},
 		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
 			"or": "Reset",
 			"tr": "Επαναφορά"
 		},
@@ -1284,10 +1205,6 @@
 		{
 			"or": "Personal",
 			"tr": "Προσωπικό"
-		},
-		{
-			"or": "Clan",
-			"tr": "Φυλή"
 		},
 		{
 			"or": "Flag:",
@@ -1530,6 +1447,10 @@
 			"tr": ""
 		},
 		{
+			"or": "-Page %d-",
+			"tr": "-Σελίδα %d-"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1540,6 +1461,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Αγαπημένοι"
+		},
+		{
+			"or": "All",
+			"tr": "Όλοι"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1762,53 +1687,132 @@
 			"tr": ""
 		},
 		{
-			"or": "Time limit: %d min",
-			"tr": "Όριο χρόνου: %d λ"
+			"or": "Sudden Death",
+			"tr": "Ξαφνικός θάνατος"
 		},
 		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Ταίρι"
+			"or": "Game paused",
+			"tr": "Παιχνίδι σε παύση"
 		},
 		{
-			"or": "Game over",
-			"tr": "Τέλος παιχνιδιού"
+			"or": "%d player not ready",
+			"tr": "%d παίκτης δεν είναι έτοιμος"
 		},
 		{
-			"or": "Round over",
-			"tr": "Τέλος γύρου"
+			"or": "%d players not ready",
+			"tr": "%d παίκτες δεν είναι έτοιμοι"
 		},
 		{
-			"or": "Map record",
+			"or": "Game starts in",
+			"tr": "Το παιχνίδι αρχίζει σε"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Αναμονή για τον επόμενο γύρο"
+		},
+		{
+			"or": "%d player left",
+			"tr": "απομένει %d παίκτης"
+		},
+		{
+			"or": "%d players left",
+			"tr": "απομένουν %d παίκτες"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Ζέσταμα"
+		},
+		{
+			"or": "waiting for more players",
 			"tr": ""
 		},
 		{
-			"or": "Time",
+			"or": "Connection Problems...",
+			"tr": "Προβλήματα σύνδεσης..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Παρακαλούμε εξισορροπήστε τις ομάδες!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds ακόμα"
+		},
+		{
+			"or": "Vote Yes",
 			"tr": ""
 		},
 		{
-			"or": "Score",
-			"tr": "Βαθμ."
+			"or": "Vote No",
+			"tr": ""
 		},
 		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
+			"or": "Spectate",
+			"tr": "Θέαση"
 		},
 		{
-			"or": "%s wins!",
-			"tr": "Ο/Η %s νίκησε!"
+			"or": "Free View",
+			"tr": ""
 		},
 		{
-			"or": "Draw!",
-			"tr": "Ισοπαλία!"
+			"or": "Red Flag",
+			"tr": ""
 		},
 		{
-			"or": "Round over!",
-			"tr": "Τέλος γύρου!"
+			"or": "Blue Flag",
+			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Σελίδα %d-"
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Ομάδα"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
 		}
 	]
 }
