@@ -492,9 +492,9 @@ void CHud::RenderWarmupTimer()
 			s_Cursor.m_Align = TEXTALIGN_TC;
 			s_Cursor.m_LineSpacing = 5.0f;
 
-			s_Cursor.m_FontSize = 20.0f;
-			TextRender()->TextDeferred(&s_Cursor, pText, -1);
 			s_Cursor.m_FontSize = 16.0f;
+			TextRender()->TextDeferred(&s_Cursor, pText, -1);
+			s_Cursor.m_FontSize = 12.0f;
 			TextRender()->TextNewline(&s_Cursor);
 			TextRender()->TextDeferred(&s_Cursor, aBuf, -1);
 			TextRender()->DrawTextOutlined(&s_Cursor);
