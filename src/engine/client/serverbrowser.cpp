@@ -21,16 +21,30 @@
 #include "serverbrowser.h"
 #include "serverbrowser_http.h"
 
+#include <unordered_set>
+
 static const char *s_pFilename = "serverlist.json";
+
+static std::unordered_set<int> s_uHttpServers;
 
 inline int AddrHash(const NETADDR *pAddr)
 {
-	if(pAddr->type == NETTYPE_IPV4)
-		return (pAddr->ip[0] + pAddr->ip[1] + pAddr->ip[2] + pAddr->ip[3]) & 0xFF;
-	else
-		return (pAddr->ip[0] + pAddr->ip[1] + pAddr->ip[2] + pAddr->ip[3] + pAddr->ip[4] + pAddr->ip[5] + pAddr->ip[6] + pAddr->ip[7] +
-			       pAddr->ip[8] + pAddr->ip[9] + pAddr->ip[10] + pAddr->ip[11] + pAddr->ip[12] + pAddr->ip[13] + pAddr->ip[14] + pAddr->ip[15]) &
-		       0xFF;
+	int Len = pAddr->type == NETTYPE_IPV4 ? 4 : 16;
+	// FNV-1a 32-bit
+	int Hash = 2166136261U;
+	for(int i = 0; i < Len; i++)
+	{
+		Hash ^= pAddr->ip[i];
+		Hash *= 16777619; // FNV prime
+	}
+
+    Hash ^= Hash >> 16;
+    Hash *= 0x85ebca6b;
+    Hash ^= Hash >> 13;
+    Hash *= 0xc2b2ae35;
+    Hash ^= Hash >> 16;
+
+	return Hash & 0x1FF;
 }
 
 inline int GetNewToken()
@@ -103,14 +117,21 @@ void CServerBrowser::UpdateFromHttp()
 {
 	int NumServers = m_pHttp->NumServers();
 
+	s_uHttpServers.clear();
+
 	for(int i = 0; i < NumServers; i++)
 	{
 		CServerInfo Info = m_pHttp->Server(i);
 		CServerEntry *pEntry = Add(IServerBrowser::TYPE_INTERNET, Info.m_NetAddr);
-		pEntry->m_RequestTime = 0;
+		pEntry->m_RequestTime = time_get();
 		SetInfo(IServerBrowser::TYPE_INTERNET, pEntry, Info);
 		pEntry->m_Info.m_Latency = 999;
-		QueueRequest(pEntry);
+		if(!s_uHttpServers.count(AddrHash(&pEntry->m_Addr)))
+		{
+			pEntry->m_RequestTime = 0;
+			QueueRequest(pEntry);
+			s_uHttpServers.insert(AddrHash(&pEntry->m_Addr));
+		}
 	}
 
 	RequestResort();
@@ -172,7 +193,13 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 			if(Type == IServerBrowser::TYPE_LAN)
 				pEntry->m_Info.m_Latency = minimum(static_cast<int>((time_get() - m_BroadcastTime) * 1000 / time_freq()), 999);
 			else
-				pEntry->m_Info.m_Latency = minimum(static_cast<int>((time_get() - pEntry->m_RequestTime) * 1000 / time_freq()), 999);
+			{
+				int Latency = minimum(static_cast<int>((time_get() - pEntry->m_RequestTime) * 1000 / time_freq()), 999);
+				for(CServerEntry *pEntry = m_aServerlist[IServerBrowser::TYPE_INTERNET].m_aServerlistIp[AddrHash(&Addr)]; pEntry; pEntry = pEntry->m_pNextIp)
+				{
+					pEntry->m_Info.m_Latency = Latency;
+				}
+			}
 			m_InfoUpdated = true;
 			RemoveRequest(pEntry);
 		}
@@ -585,29 +612,20 @@ void CServerBrowser::RequestImpl(const NETADDR &Addr, CServerEntry *pEntry)
 
 void CServerBrowser::SetInfo(int ServerlistType, CServerEntry *pEntry, const CServerInfo &Info)
 {
-	if(pEntry->m_Info.m_InfoGotByHttp)
-	{
-		pEntry->m_Info.m_ServerLevel = Info.m_ServerLevel;
-		pEntry->m_Info.m_NumBotPlayers = Info.m_NumBotPlayers;
-		pEntry->m_Info.m_NumBotSpectators = Info.m_NumBotSpectators;
-	}
-	else
-	{
-		bool Fav = pEntry->m_Info.m_Favorite;
-		pEntry->m_Info = Info;
-		pEntry->m_Info.m_Flags &= FLAG_PASSWORD | FLAG_TIMESCORE;
-		if(str_comp(pEntry->m_Info.m_aGameType, "DM") == 0 || str_comp(pEntry->m_Info.m_aGameType, "TDM") == 0 || str_comp(pEntry->m_Info.m_aGameType, "CTF") == 0 ||
-			str_comp(pEntry->m_Info.m_aGameType, "LTS") == 0 || str_comp(pEntry->m_Info.m_aGameType, "LMS") == 0)
-			pEntry->m_Info.m_Flags |= FLAG_PURE;
+	bool Fav = pEntry->m_Info.m_Favorite;
+	pEntry->m_Info = Info;
+	pEntry->m_Info.m_Flags &= FLAG_PASSWORD | FLAG_TIMESCORE;
+	if(str_comp(pEntry->m_Info.m_aGameType, "DM") == 0 || str_comp(pEntry->m_Info.m_aGameType, "TDM") == 0 || str_comp(pEntry->m_Info.m_aGameType, "CTF") == 0 ||
+		str_comp(pEntry->m_Info.m_aGameType, "LTS") == 0 || str_comp(pEntry->m_Info.m_aGameType, "LMS") == 0)
+		pEntry->m_Info.m_Flags |= FLAG_PURE;
 
-		pEntry->m_Info.m_Favorite = Fav;
-		pEntry->m_Info.m_NetAddr = pEntry->m_Addr;
+	pEntry->m_Info.m_Favorite = Fav;
+	pEntry->m_Info.m_NetAddr = pEntry->m_Addr;
 
-		m_aServerlist[ServerlistType].m_NumPlayers += pEntry->m_Info.m_NumPlayers;
-		m_aServerlist[ServerlistType].m_NumClients += pEntry->m_Info.m_NumClients;
+	m_aServerlist[ServerlistType].m_NumPlayers += pEntry->m_Info.m_NumPlayers;
+	m_aServerlist[ServerlistType].m_NumClients += pEntry->m_Info.m_NumClients;
 
-		pEntry->m_InfoState = CServerEntry::STATE_READY;
-	}
+	pEntry->m_InfoState = CServerEntry::STATE_READY;
 }
 
 void CServerBrowser::LoadServerlist()

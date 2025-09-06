@@ -89,7 +89,7 @@ private:
 		int m_NumServers;
 		int m_NumServerCapacity;
 
-		CServerEntry *m_aServerlistIp[256]; // ip hash list
+		CServerEntry *m_aServerlistIp[512]; // ip hash list
 		CServerEntry **m_ppServerlist;
 
 		~CServerlist();
