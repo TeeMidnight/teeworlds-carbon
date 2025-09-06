@@ -119,6 +119,17 @@ class CCommandProcessorFragment_OpenGL
 	GLuint m_QuadDrawIndexBufferID;
 	int m_LastBlendMode;
 	int m_LastSrcBlendMode;
+	int m_CurrentShader;
+
+	bool m_LastClipEnable;
+	int m_aLast2DWarpMode[2]; // 0 = U, 1 = V
+
+	GLuint m_LastTexture2D;
+	GLuint m_LastTexture3D;
+	bool m_LastUseTexture;
+	bool m_LastAlphaOnly;
+
+	bool m_LastRender3D;
 public:
 	enum
 	{
