@@ -638,7 +638,7 @@ void CChat::AddLine(const char *pLine, int ClientID, int Mode, int TargetID)
 
 		if(ClientID >= 0)
 		{
-			pCurLine->m_RenderInfo = m_pClient->m_aClients[ClientID].m_RenderInfo;
+			pCurLine->m_RenderInfo = m_pClient->m_aClients[(Mode == CHAT_WHISPER && ClientID == m_pClient->m_LocalClientID) ? TargetID : ClientID].m_RenderInfo;
 			pCurLine->m_RenderInfo.m_Size = 9.f;
 		}
 		// check for highlighted name
