@@ -71,6 +71,7 @@ option(DOWNLOAD_GTEST "Download and compile GTest if not found" ${AUTO_DEPENDENC
 option(PREFER_BUNDLED_LIBS "Prefer bundled libraries over system libraries" ${AUTO_DEPENDENCIES_DEFAULT})
 option(DEV "Don't generate stuff necessary for packaging" OFF)
 option(CLIENT "Compile client" ON)
+option(SERVER "Compile server" OFF)
 
 set(OpenGL_GL_PREFERENCE GLVND)
 
@@ -381,6 +382,10 @@ if(CLIENT AND NOT(OPUS_FOUND))
 endif()
 if(CLIENT AND NOT(OPUSFILE_FOUND))
   message(SEND_ERROR "You must install Opusfile to compile the Carbon client")
+endif()
+
+if(NOT(CLIENT) AND NOT(SERVER))
+  message(SEND_ERROR "You must build the server or client")
 endif()
 
 if(NOT(GTEST_FOUND))
@@ -1618,93 +1623,94 @@ endif()
 # SERVER
 ########################################################################
 
-# Sources
-set_src(ENGINE_SERVER GLOB src/engine/server
-  register.cpp
-  register.h
-  server.cpp
-  server.h
-)
-set_src(GAME_SERVER GLOB_RECURSE src/game/server
-  alloc.h
-  botmanager.cpp
-  botmanager.h
-  entities/botentity.cpp
-  entities/botentity.h
-  entities/character.cpp
-  entities/character.h
-  entities/flag.cpp
-  entities/flag.h
-  entities/laser.cpp
-  entities/laser.h
-  entities/pickup.cpp
-  entities/pickup.h
-  entities/projectile.cpp
-  entities/projectile.h
-  entity.cpp
-  entity.h
-  eventhandler.cpp
-  eventhandler.h
-  gamecontext.cpp
-  gamecontext.h
-  gamecontroller.cpp
-  gamecontroller.h
-  gamemenu.cpp
-  gamemenu.h
-  gameworld.cpp
-  gameworld.h
-  player.cpp
-  player.h
-  teeinfo.cpp
-  teeinfo.h
-  weapons.cpp
-  weapons.h
-  weapons/grenade.cpp
-  weapons/gun.cpp
-  weapons/hammer.cpp
-  weapons/laser.cpp
-  weapons/ninja.cpp
-  weapons/shotgun.cpp
-  weapons/snipingrifle.cpp
-)
-set(GAME_GENERATED_SERVER
-  src/generated/server_data.cpp
-  src/generated/server_data.h
-)
-set(SERVER_SRC ${ENGINE_SERVER} ${GAME_SERVER} ${GAME_GENERATED_SERVER})
-if(TARGET_OS STREQUAL "windows")
-  set(SERVER_ICON "other/icons/${SERVER_EXECUTABLE}.rc")
-else()
-  set(SERVER_ICON)
-endif()
+  if(SERVER)
+  # Sources
+  set_src(ENGINE_SERVER GLOB src/engine/server
+    register.cpp
+    register.h
+    server.cpp
+    server.h
+  )
+  set_src(GAME_SERVER GLOB_RECURSE src/game/server
+    alloc.h
+    botmanager.cpp
+    botmanager.h
+    entities/botentity.cpp
+    entities/botentity.h
+    entities/character.cpp
+    entities/character.h
+    entities/flag.cpp
+    entities/flag.h
+    entities/laser.cpp
+    entities/laser.h
+    entities/pickup.cpp
+    entities/pickup.h
+    entities/projectile.cpp
+    entities/projectile.h
+    entity.cpp
+    entity.h
+    eventhandler.cpp
+    eventhandler.h
+    gamecontext.cpp
+    gamecontext.h
+    gamecontroller.cpp
+    gamecontroller.h
+    gamemenu.cpp
+    gamemenu.h
+    gameworld.cpp
+    gameworld.h
+    player.cpp
+    player.h
+    teeinfo.cpp
+    teeinfo.h
+    weapons.cpp
+    weapons.h
+    weapons/grenade.cpp
+    weapons/gun.cpp
+    weapons/hammer.cpp
+    weapons/laser.cpp
+    weapons/ninja.cpp
+    weapons/shotgun.cpp
+    weapons/snipingrifle.cpp
+  )
+  set(GAME_GENERATED_SERVER
+    src/generated/server_data.cpp
+    src/generated/server_data.h
+  )
+  set(SERVER_SRC ${ENGINE_SERVER} ${GAME_SERVER} ${GAME_GENERATED_SERVER})
+  if(TARGET_OS STREQUAL "windows")
+    set(SERVER_ICON "other/icons/${SERVER_EXECUTABLE}.rc")
+  else()
+    set(SERVER_ICON)
+  endif()
 
-# Libraries
-set(LIBS_SERVER ${LIBS})
+  # Libraries
+  set(LIBS_SERVER ${LIBS})
 
-# Target
-set(TARGET_SERVER ${SERVER_EXECUTABLE})
-add_executable(${TARGET_SERVER}
-  ${DEPS}
-  ${SERVER_SRC}
-  ${SERVER_ICON}
-  $<TARGET_OBJECTS:engine-shared>
-  $<TARGET_OBJECTS:game-shared>
-)
-target_link_libraries(${TARGET_SERVER} ${LIBS_SERVER})
-list(APPEND TARGETS_OWN ${TARGET_SERVER})
-list(APPEND TARGETS_LINK ${TARGET_SERVER})
+  # Target
+  set(TARGET_SERVER ${SERVER_EXECUTABLE})
+  add_executable(${TARGET_SERVER}
+    ${DEPS}
+    ${SERVER_SRC}
+    ${SERVER_ICON}
+    $<TARGET_OBJECTS:engine-shared>
+    $<TARGET_OBJECTS:game-shared>
+  )
+  target_link_libraries(${TARGET_SERVER} ${LIBS_SERVER})
+  list(APPEND TARGETS_OWN ${TARGET_SERVER})
+  list(APPEND TARGETS_LINK ${TARGET_SERVER})
 
-if(TARGET_OS AND TARGET_OS STREQUAL "mac")
-  set(SERVER_LAUNCHER_SRC src/macoslaunch/server.mm)
-  set(TARGET_SERVER_LAUNCHER ${TARGET_SERVER}-Launcher)
-  add_executable(${TARGET_SERVER_LAUNCHER} ${SERVER_LAUNCHER_SRC})
-  target_link_libraries(${TARGET_SERVER_LAUNCHER} ${COCOA})
-  list(APPEND TARGETS_OWN ${TARGET_SERVER_LAUNCHER})
-  list(APPEND TARGETS_LINK ${TARGET_SERVER_LAUNCHER})
+  if(TARGET_OS AND TARGET_OS STREQUAL "mac")
+    set(SERVER_LAUNCHER_SRC src/macoslaunch/server.mm)
+    set(TARGET_SERVER_LAUNCHER ${TARGET_SERVER}-Launcher)
+    add_executable(${TARGET_SERVER_LAUNCHER} ${SERVER_LAUNCHER_SRC})
+    target_link_libraries(${TARGET_SERVER_LAUNCHER} ${COCOA})
+    list(APPEND TARGETS_OWN ${TARGET_SERVER_LAUNCHER})
+    list(APPEND TARGETS_LINK ${TARGET_SERVER_LAUNCHER})
+  endif()
 endif()
 
 add_custom_target(everything DEPENDS ${TARGETS_OWN})
-
 ########################################################################
 # TESTS
 ########################################################################
@@ -1879,7 +1885,6 @@ set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME ${PROJECT_NAME})
 
 set(CPACK_TARGETS
   ${TARGET_CLIENT}
-  ${TARGET_SERVER}
 )
 set(CPACK_DIRS ${PROJECT_BINARY_DIR}/data)
 set(CPACK_FILES
@@ -1893,7 +1898,6 @@ endif()
 
 if(NOT DEV)
   install(DIRECTORY ${PROJECT_BINARY_DIR}/data DESTINATION share/${PROJECT_NAME} COMPONENT data)
-  install(TARGETS ${TARGET_SERVER} DESTINATION bin COMPONENT server)
   install(TARGETS ${TARGET_CLIENT} DESTINATION bin COMPONENT client)
 endif()
 
@@ -1912,9 +1916,7 @@ set(PACKAGE_TARGETS)
 
 if(CLIENT AND (DMGTOOLS_FOUND OR HDIUTIL))
   file(MAKE_DIRECTORY bundle/client/)
-  file(MAKE_DIRECTORY bundle/server/)
   configure_file(other/bundle/client/Info.plist.in bundle/client/Info.plist)
-  configure_file(other/bundle/server/Info.plist.in bundle/server/Info.plist)
 
   if(HDIUTIL)
     set(DMG_PARAMS --hdiutil ${HDIUTIL})
@@ -1928,13 +1930,6 @@ if(CLIENT AND (DMGTOOLS_FOUND OR HDIUTIL))
     ${TARGET_CLIENT}.app/Contents/Frameworks
     ${TARGET_CLIENT}.app/Contents/MacOS
     ${TARGET_CLIENT}.app/Contents/Resources
-    ${TARGET_SERVER}.app
-    ${TARGET_SERVER}.app/Contents
-    ${TARGET_SERVER}.app/Contents/MacOS
-    ${TARGET_SERVER}.app/Contents/Resources
-    ${TARGET_SERVER}.app/Contents/Resources/data
-    # Needed so the server recognizes the data directory.
-    ${TARGET_SERVER}.app/Contents/Resources/data/mapres
   )
   set(DMG_MKDIR_COMMANDS)
   foreach(dir ${DMG_MKDIRS})
@@ -1954,25 +1949,14 @@ if(CLIENT AND (DMGTOOLS_FOUND OR HDIUTIL))
     COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/darwin_change_dylib.py change --tools ${CMAKE_INSTALL_NAME_TOOL} ${CMAKE_OTOOL} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/MacOS/${TARGET_CLIENT} SDL3 @executable_path/../Frameworks/libSDL3-3.2.18.dylib
     COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/darwin_change_dylib.py change --tools ${CMAKE_INSTALL_NAME_TOOL} ${CMAKE_OTOOL} ${DMG_TMPDIR}/${TARGET_CLIENT}.app/Contents/MacOS/${TARGET_CLIENT} libfreetype @executable_path/../Frameworks/libfreetype.6.dylib
 
-    # SERVER
-    COMMAND ${CMAKE_COMMAND} -E copy_directory data/maps ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/Resources/data/maps
-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/other/icons/${TARGET_SERVER}.icns ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/Resources/
-    COMMAND ${CMAKE_COMMAND} -E copy bundle/server/Info.plist ${PROJECT_SOURCE_DIR}/other/bundle/server/PkgInfo ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_SERVER}> $<TARGET_FILE:${TARGET_SERVER_LAUNCHER}> ${DMG_TMPDIR}/${TARGET_SERVER}.app/Contents/MacOS/
-
     # DMG
     COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/scripts/dmg.py create ${DMG_PARAMS} ${CPACK_PACKAGE_FILE_NAME}.dmg ${CPACK_PACKAGE_FILE_NAME} ${DMG_TMPDIR}
 
     DEPENDS
       ${TARGET_CLIENT}
-      ${TARGET_SERVER_LAUNCHER}
-      ${TARGET_SERVER}
       ${PROJECT_BINARY_DIR}/bundle/client/Info.plist
-      ${PROJECT_BINARY_DIR}/bundle/server/Info.plist
       other/bundle/client/PkgInfo
-      other/bundle/server/PkgInfo
       other/icons/${TARGET_CLIENT}.icns
-      other/icons/${TARGET_SERVER}.icns
       scripts/dmg.py
   )
   add_custom_target(package_dmg DEPENDS ${CPACK_PACKAGE_FILE_NAME}.dmg)
