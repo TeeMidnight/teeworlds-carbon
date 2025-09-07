@@ -49,6 +49,8 @@ public:
 	void Stop(int SetId);
 	bool IsPlaying(int SetId);
 
+	void UpdateSoundVolume();
+
 	ISound::CSampleHandle PlaySample(int Channel, int SampleId, float Vol, int Flags = 0);
 	ISound::CSampleHandle PlaySampleAt(int Channel, int SampleId, float Vol, vec2 Pos, int Flags = 0);
 };

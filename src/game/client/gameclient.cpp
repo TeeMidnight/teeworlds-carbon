@@ -322,6 +322,7 @@ void CGameClient::OnConsoleInit()
 	Console()->Chain("add_ignore", ConchainBlacklistUpdate, this);
 	Console()->Chain("remove_ignore", ConchainBlacklistUpdate, this);
 	Console()->Chain("cl_show_xmas_hats", ConchainXmasHatUpdate, this);
+	Console()->Chain("snd_volume", ConchainSoundVolumeChange, this);
 	Console()->Chain("player_color_body", ConchainSkinChange, this);
 	Console()->Chain("player_color_marking", ConchainSkinChange, this);
 	Console()->Chain("player_color_decoration", ConchainSkinChange, this);
@@ -2005,6 +2006,13 @@ void CGameClient::ConchainXmasHatUpdate(IConsole::IResult *pResult, void *pUserD
 		if(pClient->m_aClients[i].m_Active)
 			pClient->m_aClients[i].UpdateRenderInfo(pClient, i, true);
 	}
+}
+
+void CGameClient::ConchainSoundVolumeChange(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData)
+{
+	pfnCallback(pResult, pCallbackUserData);
+	CGameClient *pClient = static_cast<CGameClient *>(pUserData);
+	pClient->m_pSounds->UpdateSoundVolume();
 }
 
 IGameClient *CreateGameClient()

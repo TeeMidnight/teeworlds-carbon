@@ -68,6 +68,7 @@ void CSounds::OnInit()
 {
 	Sound()->SetListenerPos(0.0f, 0.0f);
 
+	UpdateSoundVolume();
 	ClearQueue();
 
 	// load sounds
@@ -206,4 +207,13 @@ bool CSounds::IsPlaying(int SetId)
 			return true;
 	}
 	return false;
+}
+
+void CSounds::UpdateSoundVolume()
+{
+	Sound()->SetChannel(CSounds::CHN_GUI, Config()->m_SndVolume / 100.0f, 0.0f);
+	Sound()->SetChannel(CSounds::CHN_MUSIC, Config()->m_SndVolume / 100.0f, 1.0f);
+	Sound()->SetChannel(CSounds::CHN_WORLD, Config()->m_SndVolume / 100.0f, 1.0f);
+	Sound()->SetChannel(CSounds::CHN_GLOBAL, Config()->m_SndVolume / 100.0f, 0.0f);
+	Sound()->SetChannel(CSounds::CHN_MAPSOUND, Config()->m_SndVolume / 100.0f, 1.0f);
 }

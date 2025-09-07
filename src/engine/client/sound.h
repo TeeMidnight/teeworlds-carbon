@@ -46,7 +46,7 @@ public:
 	void SetVoiceCircle(ISound::CSampleHandle Voice, float Radius) override;
 	void SetVoiceRectangle(ISound::CSampleHandle Voice, float Width, float Height) override;
 
-		ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags, float x, float y);
+	ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags, float x, float y);
 	ISound::CSampleHandle PlayAt(int ChannelID, int SampleID, int Flags, float x, float y) override;
 	ISound::CSampleHandle Play(int ChannelID, int SampleID, int Flags) override;
 	void Stop(int SampleID) override;

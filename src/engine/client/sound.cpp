@@ -97,13 +97,6 @@ static short Int2Short(int i)
 	return i;
 }
 
-static int IntAbs(int i)
-{
-	if(i < 0)
-		return -i;
-	return i;
-}
-
 static void Mix(short *pFinalOut, unsigned Frames)
 {
 	int MasterVol;
@@ -147,7 +140,7 @@ static void Mix(short *pFinalOut, unsigned Frames)
 				int dx = v->m_X - m_CenterX;
 				int dy = v->m_Y - m_CenterY;
 				//
-				int p = IntAbs(dx);
+				int p = abs(dx);
 				float FalloffX = 0.0f;
 				float FalloffY = 0.0f;
 
