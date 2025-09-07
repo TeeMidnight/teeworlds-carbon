@@ -325,6 +325,16 @@
 			"tr": "配置统计信息板"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": "主体颜色"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": "轮廓颜色"
+		},
+		{
 			"or": "Device",
 			"tr": "设备"
 		},
@@ -900,6 +910,10 @@
 			"tr": "音效"
 		},
 		{
+			"or": "Custom",
+			"tr": "自订"
+		},
+		{
 			"or": "Global",
 			"tr": "互联网"
 		},
@@ -1233,10 +1247,6 @@
 		{
 			"or": "Basic",
 			"tr": "基础"
-		},
-		{
-			"or": "Custom",
-			"tr": "自订"
 		},
 		{
 			"or": "Unable to delete the skin",

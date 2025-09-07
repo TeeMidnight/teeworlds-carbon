@@ -321,6 +321,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -896,6 +906,10 @@
 			"tr": "Zvok"
 		},
 		{
+			"or": "Custom",
+			"tr": "Po meri"
+		},
+		{
 			"or": "Global",
 			"tr": "Globalno"
 		},
@@ -1229,10 +1243,6 @@
 		{
 			"or": "Basic",
 			"tr": "Osnovno"
-		},
-		{
-			"or": "Custom",
-			"tr": "Po meri"
 		},
 		{
 			"or": "Unable to delete the skin",

@@ -322,6 +322,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -897,6 +907,10 @@
 			"tr": "Hang"
 		},
 		{
+			"or": "Custom",
+			"tr": "Egyedi"
+		},
+		{
 			"or": "Global",
 			"tr": "Globális"
 		},
@@ -1230,10 +1244,6 @@
 		{
 			"or": "Basic",
 			"tr": "Alap"
-		},
-		{
-			"or": "Custom",
-			"tr": "Egyedi"
 		},
 		{
 			"or": "Unable to delete the skin",

@@ -324,6 +324,16 @@
 			"tr": "Podesi tablu statistike"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Uređjaj"
 		},
@@ -899,6 +909,10 @@
 			"tr": "Zvuk"
 		},
 		{
+			"or": "Custom",
+			"tr": "Prilagođeno"
+		},
+		{
 			"or": "Global",
 			"tr": "Globalno"
 		},
@@ -1232,10 +1246,6 @@
 		{
 			"or": "Basic",
 			"tr": "Osnovno"
-		},
-		{
-			"or": "Custom",
-			"tr": "Prilagođeno"
 		},
 		{
 			"or": "Unable to delete the skin",

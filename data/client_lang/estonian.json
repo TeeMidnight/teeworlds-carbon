@@ -321,6 +321,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -896,6 +906,10 @@
 			"tr": "Heli"
 		},
 		{
+			"or": "Custom",
+			"tr": "Teistsugune"
+		},
+		{
 			"or": "Global",
 			"tr": "Globaalne"
 		},
@@ -1229,10 +1243,6 @@
 		{
 			"or": "Basic",
 			"tr": "Tavaline"
-		},
-		{
-			"or": "Custom",
-			"tr": "Teistsugune"
 		},
 		{
 			"or": "Unable to delete the skin",

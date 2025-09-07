@@ -321,6 +321,16 @@
 			"tr": "Configuració d'estadístiques"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Dispositiu"
 		},
@@ -896,6 +906,10 @@
 			"tr": "So"
 		},
 		{
+			"or": "Custom",
+			"tr": "Personalitzat"
+		},
+		{
 			"or": "Global",
 			"tr": "Global"
 		},
@@ -1229,10 +1243,6 @@
 		{
 			"or": "Basic",
 			"tr": "Bàsic"
-		},
-		{
-			"or": "Custom",
-			"tr": "Personalitzat"
 		},
 		{
 			"or": "Unable to delete the skin",

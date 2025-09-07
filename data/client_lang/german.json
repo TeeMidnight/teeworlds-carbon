@@ -346,6 +346,16 @@
 			"tr": "Statistiktafel einrichten"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Gerät"
 		},
@@ -921,6 +931,10 @@
 			"tr": "Audio"
 		},
 		{
+			"or": "Custom",
+			"tr": "Erweitert"
+		},
+		{
 			"or": "Global",
 			"tr": "Global"
 		},
@@ -1254,10 +1268,6 @@
 		{
 			"or": "Basic",
 			"tr": "Standard"
-		},
-		{
-			"or": "Custom",
-			"tr": "Erweitert"
 		},
 		{
 			"or": "Unable to delete the skin",

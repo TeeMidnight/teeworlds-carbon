@@ -329,6 +329,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -904,6 +914,10 @@
 			"tr": "Sunet"
 		},
 		{
+			"or": "Custom",
+			"tr": "Personalizat"
+		},
+		{
 			"or": "Global",
 			"tr": "Global"
 		},
@@ -1237,10 +1251,6 @@
 		{
 			"or": "Basic",
 			"tr": "Simplu"
-		},
-		{
-			"or": "Custom",
-			"tr": "Personalizat"
 		},
 		{
 			"or": "Unable to delete the skin",

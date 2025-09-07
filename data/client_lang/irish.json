@@ -321,6 +321,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -896,6 +906,10 @@
 			"tr": "Fuaim"
 		},
 		{
+			"or": "Custom",
+			"tr": "Saincheaptha"
+		},
+		{
 			"or": "Global",
 			"tr": "Domhanda"
 		},
@@ -1229,10 +1243,6 @@
 		{
 			"or": "Basic",
 			"tr": "Bunúsach"
-		},
-		{
-			"or": "Custom",
-			"tr": "Saincheaptha"
 		},
 		{
 			"or": "Unable to delete the skin",

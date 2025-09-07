@@ -334,6 +334,16 @@
 			"tr": "Настроить табло статистики"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Устройство"
 		},
@@ -909,6 +919,10 @@
 			"tr": "Звук"
 		},
 		{
+			"or": "Custom",
+			"tr": "Свой"
+		},
+		{
 			"or": "Global",
 			"tr": "Глобальные"
 		},
@@ -1242,10 +1256,6 @@
 		{
 			"or": "Basic",
 			"tr": "Основные"
-		},
-		{
-			"or": "Custom",
-			"tr": "Свой"
 		},
 		{
 			"or": "Unable to delete the skin",

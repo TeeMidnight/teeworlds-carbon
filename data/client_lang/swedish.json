@@ -323,6 +323,16 @@
 			"tr": "Ändra statistiken"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -898,6 +908,10 @@
 			"tr": "Ljud"
 		},
 		{
+			"or": "Custom",
+			"tr": "Eget val"
+		},
+		{
 			"or": "Global",
 			"tr": ""
 		},
@@ -1231,10 +1245,6 @@
 		{
 			"or": "Basic",
 			"tr": "Vanlig"
-		},
-		{
-			"or": "Custom",
-			"tr": "Eget val"
 		},
 		{
 			"or": "Unable to delete the skin",

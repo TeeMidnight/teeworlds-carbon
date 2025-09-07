@@ -324,6 +324,16 @@
 			"tr": "Налаштування вікна статистики"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -899,6 +909,10 @@
 			"tr": "Звук"
 		},
 		{
+			"or": "Custom",
+			"tr": "Свій"
+		},
+		{
 			"or": "Global",
 			"tr": "Загальні"
 		},
@@ -1232,10 +1246,6 @@
 		{
 			"or": "Basic",
 			"tr": "Базові"
-		},
-		{
-			"or": "Custom",
-			"tr": "Свій"
 		},
 		{
 			"or": "Unable to delete the skin",

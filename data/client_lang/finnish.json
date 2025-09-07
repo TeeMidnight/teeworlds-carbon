@@ -325,6 +325,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -900,6 +910,10 @@
 			"tr": "Äänet"
 		},
 		{
+			"or": "Custom",
+			"tr": "Räätälöity"
+		},
+		{
 			"or": "Global",
 			"tr": "Maailmanlaajuinen"
 		},
@@ -1233,10 +1247,6 @@
 		{
 			"or": "Basic",
 			"tr": "Perus"
-		},
-		{
-			"or": "Custom",
-			"tr": "Räätälöity"
 		},
 		{
 			"or": "Unable to delete the skin",

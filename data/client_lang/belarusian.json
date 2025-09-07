@@ -322,6 +322,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -897,6 +907,10 @@
 			"tr": "Гук"
 		},
 		{
+			"or": "Custom",
+			"tr": "Свой"
+		},
+		{
 			"or": "Global",
 			"tr": "Глабальныя"
 		},
@@ -1230,10 +1244,6 @@
 		{
 			"or": "Basic",
 			"tr": "Асноўныя"
-		},
-		{
-			"or": "Custom",
-			"tr": "Свой"
 		},
 		{
 			"or": "Unable to delete the skin",

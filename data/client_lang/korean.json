@@ -321,6 +321,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -896,6 +906,10 @@
 			"tr": "소리"
 		},
 		{
+			"or": "Custom",
+			"tr": ""
+		},
+		{
 			"or": "Global",
 			"tr": ""
 		},
@@ -1228,10 +1242,6 @@
 		},
 		{
 			"or": "Basic",
-			"tr": ""
-		},
-		{
-			"or": "Custom",
 			"tr": ""
 		},
 		{

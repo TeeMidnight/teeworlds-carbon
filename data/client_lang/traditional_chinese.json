@@ -322,6 +322,16 @@
 			"tr": "配置統計資訊板"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "裝置"
 		},
@@ -897,6 +907,10 @@
 			"tr": "聲音"
 		},
 		{
+			"or": "Custom",
+			"tr": "自訂"
+		},
+		{
 			"or": "Global",
 			"tr": "網際網路"
 		},
@@ -1230,10 +1244,6 @@
 		{
 			"or": "Basic",
 			"tr": "基礎"
-		},
-		{
-			"or": "Custom",
-			"tr": "自訂"
 		},
 		{
 			"or": "Unable to delete the skin",

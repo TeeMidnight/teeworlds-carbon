@@ -327,6 +327,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -902,6 +912,10 @@
 			"tr": "Zvuk"
 		},
 		{
+			"or": "Custom",
+			"tr": "Vlastní"
+		},
+		{
 			"or": "Global",
 			"tr": "Globální"
 		},
@@ -1235,10 +1249,6 @@
 		{
 			"or": "Basic",
 			"tr": "Základní"
-		},
-		{
-			"or": "Custom",
-			"tr": "Vlastní"
 		},
 		{
 			"or": "Unable to delete the skin",

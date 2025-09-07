@@ -339,6 +339,16 @@
 			"tr": "Statistiekpagina instellen"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Apparaat"
 		},
@@ -914,6 +924,10 @@
 			"tr": "Geluid"
 		},
 		{
+			"or": "Custom",
+			"tr": "Aangepast"
+		},
+		{
 			"or": "Global",
 			"tr": "Algemeen"
 		},
@@ -1247,10 +1261,6 @@
 		{
 			"or": "Basic",
 			"tr": "Basis"
-		},
-		{
-			"or": "Custom",
-			"tr": "Aangepast"
 		},
 		{
 			"or": "Unable to delete the skin",

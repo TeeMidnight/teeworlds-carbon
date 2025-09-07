@@ -324,6 +324,16 @@
 			"tr": "Настройка на таблото с резултатите"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Устройство"
 		},
@@ -899,6 +909,10 @@
 			"tr": "Звук"
 		},
 		{
+			"or": "Custom",
+			"tr": "Потребителски"
+		},
+		{
 			"or": "Global",
 			"tr": "Общи"
 		},
@@ -1232,10 +1246,6 @@
 		{
 			"or": "Basic",
 			"tr": "Прости"
-		},
-		{
-			"or": "Custom",
-			"tr": "Потребителски"
 		},
 		{
 			"or": "Unable to delete the skin",

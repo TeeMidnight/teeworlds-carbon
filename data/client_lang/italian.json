@@ -329,6 +329,16 @@
 			"tr": "Configura scheda statistiche"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Dispositivo"
 		},
@@ -904,6 +914,10 @@
 			"tr": "Suono"
 		},
 		{
+			"or": "Custom",
+			"tr": "costume"
+		},
+		{
 			"or": "Global",
 			"tr": "Globale"
 		},
@@ -1237,10 +1251,6 @@
 		{
 			"or": "Basic",
 			"tr": "Di base"
-		},
-		{
-			"or": "Custom",
-			"tr": "costume"
 		},
 		{
 			"or": "Unable to delete the skin",

@@ -323,6 +323,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -898,6 +908,10 @@
 			"tr": "Үн"
 		},
 		{
+			"or": "Custom",
+			"tr": "Бапталуучу"
+		},
+		{
 			"or": "Global",
 			"tr": "Жалпы"
 		},
@@ -1231,10 +1245,6 @@
 		{
 			"or": "Basic",
 			"tr": "Негизги"
-		},
-		{
-			"or": "Custom",
-			"tr": "Бапталуучу"
 		},
 		{
 			"or": "Unable to delete the skin",

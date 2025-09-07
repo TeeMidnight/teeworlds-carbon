@@ -328,6 +328,16 @@
 			"tr": ""
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": ""
 		},
@@ -903,6 +913,10 @@
 			"tr": "Ses"
 		},
 		{
+			"or": "Custom",
+			"tr": "Özel"
+		},
+		{
 			"or": "Global",
 			"tr": "Küresel"
 		},
@@ -1236,10 +1250,6 @@
 		{
 			"or": "Basic",
 			"tr": "Temel"
-		},
-		{
-			"or": "Custom",
-			"tr": "Özel"
 		},
 		{
 			"or": "Unable to delete the skin",

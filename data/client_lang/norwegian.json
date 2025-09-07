@@ -325,6 +325,16 @@
 			"tr": "Konfigurer statistikkvindu"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Enhet"
 		},
@@ -900,6 +910,10 @@
 			"tr": "Lyd"
 		},
 		{
+			"or": "Custom",
+			"tr": "Tilpass"
+		},
+		{
 			"or": "Global",
 			"tr": "Global"
 		},
@@ -1233,10 +1247,6 @@
 		{
 			"or": "Basic",
 			"tr": "Grunnleggende"
-		},
-		{
-			"or": "Custom",
-			"tr": "Tilpass"
 		},
 		{
 			"or": "Unable to delete the skin",

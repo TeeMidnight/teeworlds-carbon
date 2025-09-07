@@ -341,6 +341,16 @@
 			"tr": "Configurer le tableau des scores"
 		},
 		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
 			"or": "Device",
 			"tr": "Appareil"
 		},
@@ -916,6 +926,10 @@
 			"tr": "Son"
 		},
 		{
+			"or": "Custom",
+			"tr": "Perso"
+		},
+		{
 			"or": "Global",
 			"tr": "Global"
 		},
@@ -1249,10 +1263,6 @@
 		{
 			"or": "Basic",
 			"tr": "Basique"
-		},
-		{
-			"or": "Custom",
-			"tr": "Perso"
 		},
 		{
 			"or": "Unable to delete the skin",
