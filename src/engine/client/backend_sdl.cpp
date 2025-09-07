@@ -59,7 +59,7 @@ void main()
         else
         {
             // Regular RGBA textures
-            FragColor = texColor * Color;
+            FragColor = vec4(texColor.rgb / texColor.a, texColor.a) * Color;
         }
     }
     else
@@ -110,9 +110,9 @@ void main()
        	if(IsAlphaOnly)
         {
             // Alpha-only textures: not used
-        }
+	}
 		// Regular RGBA textures
-		FragColor = texColor * Color;
+		FragColor = vec4(texColor.rgb / texColor.a, texColor.a) * Color;
     }
     else
     {
@@ -372,34 +372,31 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		if(State.m_Dimension == 2 && (m_aTextures[State.m_Texture].m_State & CTexture::STATE_TEX2D))
 		{
 			// Bind 2D texture to texture unit 0
-			if(m_LastTexture2D != m_aTextures[State.m_Texture].m_Tex2D)
+			if(m_LastTexture2D != m_aTextures[State.m_Texture].m_Tex2D || !m_LastUseTexture || NewShader)
 			{
 				glBindTexture(GL_TEXTURE_2D, m_aTextures[State.m_Texture].m_Tex2D);
 				m_LastTexture2D = m_aTextures[State.m_Texture].m_Tex2D;
+				bool IsAlphaOnly = (m_aTextures[State.m_Texture].m_Format == CCommandBuffer::TEXFORMAT_ALPHA);
+				if(IsAlphaOnlyLoc != -1 && (m_LastAlphaOnly != IsAlphaOnly || NewShader))
+					glUniform1i(IsAlphaOnlyLoc, IsAlphaOnly ? 1 : 0);
+				if(UseTextureLoc != -1 && (!m_LastUseTexture || NewShader))
+					glUniform1i(UseTextureLoc, 1);
+
+				m_LastAlphaOnly = IsAlphaOnly;
+				m_LastUseTexture = true;
 			}
-
-			bool IsAlphaOnly = (m_aTextures[State.m_Texture].m_Format == CCommandBuffer::TEXFORMAT_ALPHA);
-			if(IsAlphaOnlyLoc != -1 && (m_LastAlphaOnly != IsAlphaOnly || NewShader))
-				glUniform1i(IsAlphaOnlyLoc, IsAlphaOnly ? 1 : 0);
-			m_LastAlphaOnly = IsAlphaOnly;
-
-			if(UseTextureLoc != -1 && (!m_LastUseTexture || NewShader))
-				glUniform1i(UseTextureLoc, 1);
-			m_LastUseTexture = true;
-
 			hasValidTexture = true;
 		}
 		else if(State.m_Dimension == 3 && (m_aTextures[State.m_Texture].m_State & CTexture::STATE_TEX3D))
 		{
-			if(m_LastTexture3D != m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex])
+			if(m_LastTexture3D != m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex] || !m_LastUseTexture || NewShader)
 			{
 				glBindTexture(GL_TEXTURE_3D, m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex]);
 				m_LastTexture3D = m_aTextures[State.m_Texture].m_Tex3D[State.m_TextureArrayIndex];
+				if(UseTextureLoc != -1 && (!m_LastUseTexture || NewShader))
+					glUniform1i(UseTextureLoc, 1);
+				m_LastUseTexture = true;
 			}
-			if(UseTextureLoc != -1 && (!m_LastUseTexture || NewShader))
-				glUniform1i(UseTextureLoc, 1);
-			m_LastUseTexture = true;
-
 			hasValidTexture = true;
 		}
 		else
@@ -408,6 +405,8 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 			if(UseTextureLoc != -1 && (m_LastUseTexture || NewShader))
 				glUniform1i(UseTextureLoc, 0);
 			m_LastUseTexture = false;
+			m_LastTexture2D = -1;
+			m_LastTexture3D = -1;
 		}
 
 		// Set blend mode based on texture type
@@ -415,7 +414,7 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 	}
 	else 
 	{
-		if((IsAlphaOnlyLoc != -1 && m_LastAlphaOnly) || NewShader)
+		if(IsAlphaOnlyLoc != -1 && (m_LastAlphaOnly || NewShader))
 			glUniform1i(IsAlphaOnlyLoc, 0);
 		m_LastAlphaOnly = false;
 		if(UseTextureLoc != -1 && (m_LastUseTexture || NewShader))
@@ -516,6 +515,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 	m_LastAlphaOnly = false;
 	m_LastRender3D = false;
 
+	glDisable(GL_BLEND);
+
 	// set some default settings
 	glActiveTexture(GL_TEXTURE0);
 
@@ -597,6 +598,9 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glDisable(GL_SCISSOR_TEST);
+	glDisable(GL_CULL_FACE);
+	glDisable(GL_DEPTH_TEST);
+	glDepthMask(0);
 }
 
 void CCommandProcessorFragment_OpenGL::Cmd_Shutdown(const CGLShutdownCommand *pCommand)
@@ -675,7 +679,6 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		}
 	}
 
-	/*
 	// use premultiplied alpha for rgba textures
 	if(pCommand->m_Format == CCommandBuffer::TEXFORMAT_RGBA)
 	{
@@ -688,7 +691,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 			pTexels[i * 4 + 2] = (unsigned char) (pTexels[i * 4 + 2] * a);
 		}
 	}
-	*/
+
 	m_aTextures[pCommand->m_Slot].m_Format = pCommand->m_Format;
 
 	int Oglformat = TexFormatToOpenGLFormat(pCommand->m_Format);
@@ -716,7 +719,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		// Set texture parameters
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, Mipmaps ? GL_LINEAR_MIPMAP_LINEAR : GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 		if(pCommand->m_Format == CCommandBuffer::TEXFORMAT_ALPHA)
@@ -731,16 +734,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		// calculate memory usage
 		m_aTextures[pCommand->m_Slot].m_MemSize = Width * Height * pCommand->m_PixelSize;
 		if(Mipmaps)
-		{
-			int TexWidth = Width;
-			int TexHeight = Height;
-			while(TexWidth > 2 && TexHeight > 2)
-			{
-				TexWidth >>= 1;
-				TexHeight >>= 1;
-				m_aTextures[pCommand->m_Slot].m_MemSize += TexWidth * TexHeight * pCommand->m_PixelSize;
-			}
-		}
+			glGenerateMipmap(GL_TEXTURE_2D);
 	}
 
 	// 3D texture - in the existing code, add this check
