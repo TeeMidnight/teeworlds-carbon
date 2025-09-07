@@ -2,8 +2,6 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
     paths-ignore:
       - "README.md"
   pull_request:
@@ -11,6 +9,8 @@ on:
 
 jobs:
   build-cmake:
+    permissions:
+      contents: write
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -103,7 +103,24 @@ jobs:
         ${{ matrix.cmake-path }}cmake --build . --config Release ${{ matrix.build-args }} --target package_default
 
     - name: Upload Artifacts
+      id: artifact-upload-step
       uses: actions/upload-artifact@v4
       with:
         name: Carbon-${{ matrix.os }}
         path: release/package/*
+    - name: Prepare for Release
+      run: |
+        mkdir result
+    - name: Download artifact for Release
+      uses: dawidd6/action-download-artifact@v11
+      if: github.ref_type == 'tag'
+      with:
+        name: Carbon-${{ matrix.os }}
+        run_id: ${{ github.event.workflow_run.id }}
+        path: result/
+        skip_unpack: true
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      if: github.ref_type == 'tag'
+      with:
+        files: result/*
