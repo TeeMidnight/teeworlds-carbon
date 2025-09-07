@@ -572,14 +572,40 @@ float CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const c
 			TextRender()->TextSecondaryColor(OutlineColor.r, OutlineColor.g, OutlineColor.b, OutlineColor.a);
 
 			// ping
-			TextRender()->TextColor(TextColor.r, TextColor.g, TextColor.b, 0.5f * ColorAlpha);
-			str_format(aBuf, sizeof(aBuf), "%d", clamp(pInfo->m_pPlayerInfo->m_Latency, 0, 999));
+			{
+				const int &Ping = pInfo->m_pPlayerInfo->m_Latency;
+				vec4 PingColor = vec4(TextColor.r, TextColor.g, TextColor.b, 0.5f * ColorAlpha);;
+				vec4 StartColor;
+				vec4 EndColor;
+				float MixVal;
+				if(!HighlightedLine)
+				{
+					if(Ping <= 125)
+					{
+						StartColor = vec4(0.0f, 1.0f, 0.0f, 0.75f * ColorAlpha);
+						EndColor = vec4(1.0f, 1.0f, 0.0f, 0.75f * ColorAlpha);
 
-			s_Cursor.Reset();
-			s_Cursor.MoveTo(PingOffset + PingLength, y + Spacing);
-			s_Cursor.m_Align = TEXTALIGN_RIGHT;
-			s_Cursor.m_MaxWidth = PingLength;
-			TextRender()->TextOutlined(&s_Cursor, aBuf, -1);
+						MixVal = (Ping - 50.0f) / 75.0f;
+					}
+					else
+					{
+						StartColor = vec4(1.0f, 1.0f, 0.0f, 0.75f * ColorAlpha);
+						EndColor = vec4(1.0f, 0.0f, 0.0f, 0.75f * ColorAlpha);
+
+						MixVal = (Ping - 125.0f) / 75.0f;
+					}
+					PingColor = mix(StartColor, EndColor, MixVal);
+				}
+
+				TextRender()->TextColor(PingColor);
+				str_format(aBuf, sizeof(aBuf), "%d", clamp(Ping, 0, 999));
+
+				s_Cursor.Reset();
+				s_Cursor.MoveTo(PingOffset + PingLength, y + Spacing);
+				s_Cursor.m_Align = TEXTALIGN_RIGHT;
+				s_Cursor.m_MaxWidth = PingLength;
+				TextRender()->TextOutlined(&s_Cursor, aBuf, -1);
+			}
 			TextRender()->TextColor(TextColor.r, TextColor.g, TextColor.b, ColorAlpha);
 
 			// country flag
