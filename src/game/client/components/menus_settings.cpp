@@ -62,21 +62,15 @@ bool CMenusKeyBinder::OnInput(IInput::CEvent Event)
 	return false;
 }
 
-void CMenus::RenderHSLPicker(CUIRect MainView)
+bool CMenus::RenderHSLPicker(CUIRect MainView, int &Color, bool UseAlpha, int &HLPicker, CButtonContainer aButtonContainer[12])
 {
 	CUIRect Label, Button, Picker, Sliders;
 
 	// background
 	float Spacing = 2.0f;
-
-	if(!(*CSkins::ms_apUCCVariables[m_TeePartSelected]))
-		return;
-
 	MainView.HSplitTop(Spacing, 0, &MainView);
 
 	bool Modified = false;
-	bool UseAlpha = m_TeePartSelected == SKINPART_MARKING;
-	int Color = *CSkins::ms_apColorVariables[m_TeePartSelected];
 
 	int Hue, Sat, Lgt, Alp;
 	Hue = (Color >> 16) & 0xff;
@@ -147,8 +141,7 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 
 		// logic
 		float X, Y;
-		static int s_HLPicker;
-		if(UI()->DoPickerLogic(&s_HLPicker, &Picker, &X, &Y))
+		if(UI()->DoPickerLogic(&HLPicker, &Picker, &X, &Y))
 		{
 			Sat = (int) (255.0f * X / Picker.w);
 			Lgt = (int) (255.0f * Y / Picker.h);
@@ -161,7 +154,6 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 		int NumBars = UseAlpha ? 4 : 3;
 		const char *const apNames[4] = {Localize("Hue:"), Localize("Sat:"), Localize("Lgt:"), Localize("Alp:")};
 		int *const apVars[4] = {&Hue, &Sat, &Lgt, &Alp};
-		static CButtonContainer s_aButtons[12];
 		float SectionHeight = 40.0f;
 		float SliderHeight = 16.0f;
 		static const float s_aColorIndices[7][3] = {{1.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 0.0f}, {0.0f, 1.0f, 0.0f},
@@ -190,7 +182,7 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 
 			// button <
 			Section.VSplitLeft(SliderHeight, &Button, &Bar);
-			if(DoButton_Menu(&s_aButtons[i * 3], "<", 0, &Button, 0, CUIRect::CORNER_TL | CUIRect::CORNER_BL))
+			if(DoButton_Menu(&aButtonContainer[i * 3], "<", 0, &Button, 0, CUIRect::CORNER_TL | CUIRect::CORNER_BL))
 			{
 				*apVars[i] = maximum(0, *apVars[i] - 1);
 				Modified = true;
@@ -277,7 +269,7 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 
 			// button >
 			Button.VSplitLeft(SliderHeight, &Button, &Label);
-			if(DoButton_Menu(&s_aButtons[i * 3 + 1], ">", 0, &Button, 0, CUIRect::CORNER_TR | CUIRect::CORNER_BR))
+			if(DoButton_Menu(&aButtonContainer[i * 3 + 1], ">", 0, &Button, 0, CUIRect::CORNER_TR | CUIRect::CORNER_BR))
 			{
 				*apVars[i] = minimum(255, *apVars[i] + 1);
 				Modified = true;
@@ -285,7 +277,7 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 
 			// logic
 			float X;
-			if(UI()->DoPickerLogic(&s_aButtons[i * 3 + 2], &Bar, &X, 0))
+			if(UI()->DoPickerLogic(&aButtonContainer[i * 3 + 2], &Bar, &X, 0))
 			{
 				*apVars[i] = X * 255.0f / Bar.w;
 				Modified = true;
@@ -296,15 +288,11 @@ void CMenus::RenderHSLPicker(CUIRect MainView)
 	if(Modified)
 	{
 		int NewVal = (Hue << 16) + (Sat << 8) + Lgt;
-		for(int p = 0; p < NUM_SKINPARTS; p++)
-		{
-			if(m_TeePartSelected == p)
-				*CSkins::ms_apColorVariables[p] = NewVal;
-		}
+		Color = NewVal;
 		if(UseAlpha)
-			Config()->m_PlayerColorMarking = (Alp << 24) + NewVal;
-		m_SkinModified = true;
+			Color = (Alp << 24) + NewVal;
 	}
+	return Modified;
 }
 
 void CMenus::RenderSkinSelection(CUIRect MainView)
@@ -1076,7 +1064,10 @@ void CMenus::RenderSettingsTeeCustom(CUIRect MainView)
 	if(s_CustomColors)
 	{
 		Right.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
-		RenderHSLPicker(Picker);
+		static int s_HLPicker;
+		static CButtonContainer s_aButtons[12];
+		if(RenderHSLPicker(Picker, *CSkins::ms_apUCCVariables[m_TeePartSelected], m_TeePartSelected == SKINPART_MARKING, s_HLPicker, s_aButtons))
+			m_SkinModified = true;
 		RenderSkinPartPalette(Palette);
 	}
 }
@@ -1966,6 +1957,41 @@ void CMenus::RenderSettingsSound(CUIRect MainView)
 	}
 }
 
+void CMenus::RenderSettingsCustom(CUIRect MainView)
+{
+	CUIRect Background, BottomView;
+
+	MainView.HSplitBottom(80.0f, &MainView, &BottomView);
+	BottomView.HSplitTop(20.f, 0, &BottomView);
+
+	if(this->Client()->State() == IClient::STATE_ONLINE)
+		Background = MainView;
+	else
+		MainView.HSplitTop(20.0f, 0, &Background);
+	Background.Draw(vec4(0.0f, 0.0f, 0.0f, Config()->m_ClMenuAlpha / 100.0f), 5.0f, Client()->State() == IClient::STATE_OFFLINE ? CUIRect::CORNER_ALL : CUIRect::CORNER_B);
+	MainView.HSplitTop(20.0f, 0, &MainView);
+	BottomView.HSplitTop(20.f, 0, &BottomView);
+
+	const float HeaderHeight = 20.0f;
+
+	static CScrollRegion s_ScrollRegion;
+	vec2 ScrollOffset(0, 0);
+	CScrollRegionParams ScrollParams;
+	ScrollParams.m_ClipBgColor = vec4(0, 0, 0, 0);
+	ScrollParams.m_ScrollUnit = 60.0f; // inconsistent margin, 3 category header per scroll
+	s_ScrollRegion.Begin(&MainView, &ScrollOffset, &ScrollParams);
+	MainView.y += ScrollOffset.y;
+
+	CUIRect LastExpandRect;
+	static bool s_LaserActive = true;
+	float Split = DoIndependentDropdownMenu(&s_LaserActive, &MainView, Localize("Laser"), HeaderHeight, &CMenus::RenderSettingsCustomLaser, &s_LaserActive);
+
+	MainView.HSplitTop(Split + 10.0f, &LastExpandRect, &MainView);
+	s_ScrollRegion.AddRect(LastExpandRect);
+
+	s_ScrollRegion.End();
+}
+
 void CMenus::ResetSettingsGeneral()
 {
 	Config()->m_ClDynamicCamera = 0;
@@ -2058,6 +2084,8 @@ void CMenus::RenderSettings(CUIRect MainView)
 		RenderSettingsGraphics(MainView);
 	else if(Config()->m_UiSettingsPage == SETTINGS_SOUND)
 		RenderSettingsSound(MainView);
+	else if(Config()->m_UiSettingsPage == SETTINGS_CUSTOM)
+		RenderSettingsCustom(MainView);
 
 	MainView.HSplitBottom(32.0f, 0, &MainView);
 

@@ -1,10 +1,14 @@
 /* (c) Magnus Auvinen. See licence.txt in the root of the distribution for more information. */
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
+#include <base/color.h>
+
 #include <engine/shared/config.h>
 #include <engine/textrender.h>
 
 #include "binds.h"
 #include "menus.h"
+
+#include <generated/client_data.h>
 
 typedef struct
 {
@@ -379,6 +383,110 @@ float CMenus::RenderSettingsControlsMisc(CUIRect View)
 	DoSettingsControlsButtons(StartOption, StartOption + NumOptions, View, ButtonHeight, Spacing);
 
 	return BackgroundHeight;
+}
+
+float CMenus::RenderSettingsCustomLaser(CUIRect View)
+{
+	CUIRect Rifle, ColorPicker, Laser;
+	const float LaserSize = 96.0f;
+	View.VSplitLeft(32.0f, 0, &View);
+	View.VSplitRight(32.0f, &View, 0);
+	View.HSplitTop(LaserSize, &Rifle, &ColorPicker);
+	Rifle.VSplitLeft(LaserSize, &Rifle, &Laser);
+
+	// laser
+	{
+		const vec2 From = Rifle.Center();
+		const vec2 Pos = Laser.Center() + vec2(Laser.w / 2.0f, 0.0f);
+		const vec2 Dir = normalize(Pos - From);
+		Graphics()->BlendNormal();
+		Graphics()->TextureClear();
+		Graphics()->QuadsBegin();
+
+		// do outline
+		const vec4 OuterColor = VarToRgbaWithAlpha(Config()->m_ClLaserOuterColor, 1.0f);
+		const vec2 Outer = vec2(Dir.y, -Dir.x) * 7.0f;
+		Graphics()->SetColor(OuterColor);
+		IGraphics::CFreeformItem Freeform(
+			From.x - Outer.x, From.y - Outer.y,
+			From.x + Outer.x, From.y + Outer.y,
+			Pos.x - Outer.x, Pos.y - Outer.y,
+			Pos.x + Outer.x, Pos.y + Outer.y);
+		Graphics()->QuadsDrawFreeform(&Freeform, 1);
+
+		// do inner
+		const vec4 InnerColor = VarToRgbaWithAlpha(Config()->m_ClLaserInnerColor, 1.0f);
+		const vec2 Inner = vec2(Dir.y, -Dir.x) * 5.0f;
+		Graphics()->SetColor(InnerColor);
+		Freeform = IGraphics::CFreeformItem(
+			From.x - Inner.x, From.y - Inner.y,
+			From.x + Inner.x, From.y + Inner.y,
+			Pos.x - Inner.x, Pos.y - Inner.y,
+			Pos.x + Inner.x, Pos.y + Inner.y);
+		Graphics()->QuadsDrawFreeform(&Freeform, 1);
+
+		Graphics()->QuadsEnd();
+
+		// render head
+		Graphics()->BlendNormal();
+		Graphics()->TextureSet(g_pData->m_aImages[IMAGE_PARTICLES].m_Id);
+		Graphics()->QuadsBegin();
+
+		const int Time = Client()->LocalTime() * Client()->GameTickSpeed() / 2;
+		const int aSprites[] = {SPRITE_PART_SPLAT01, SPRITE_PART_SPLAT02, SPRITE_PART_SPLAT03};
+		RenderTools()->SelectSprite(aSprites[Time % 3]);
+		Graphics()->QuadsSetRotation(Time);
+		Graphics()->SetColor(OuterColor);
+		IGraphics::CQuadItem QuadItem(Pos.x, Pos.y, 24, 24);
+		Graphics()->QuadsDraw(&QuadItem, 1);
+		Graphics()->SetColor(InnerColor);
+		QuadItem = IGraphics::CQuadItem(Pos.x, Pos.y, 20, 20);
+		Graphics()->QuadsDraw(&QuadItem, 1);
+		Graphics()->QuadsEnd();
+
+		Graphics()->BlendNormal();
+	}
+
+	Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
+	Graphics()->QuadsBegin();
+	RenderTools()->SelectSprite(g_pData->m_Weapons.m_aId[WEAPON_LASER].m_pSpriteBody, 0);
+	RenderTools()->DrawSprite(Rifle.Center().x, Rifle.Center().y, LaserSize);
+	Graphics()->QuadsEnd();
+
+	CUIRect Label, OuterPicker, InnerPicker, Palette;
+	ColorPicker.VSplitMid(&InnerPicker, &OuterPicker, 20.f);
+	const float ButtonHeight = 20.0f;
+	{
+		InnerPicker.HSplitTop(ButtonHeight, &Label, &InnerPicker);
+		Label.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
+		Label.VSplitLeft(10.0f, 0, &Label);
+		UI()->DoLabel(&Label, Localize("Inner Color", "Custom Laser"), Label.h * CUI::ms_FontmodHeight * 0.8f, TEXTALIGN_ML);
+
+		// HSL picker
+		CUIRect Picker;
+		static int s_HLPicker;
+		static CButtonContainer s_aButtons[12];
+		InnerPicker.HSplitBottom(45.0f, &Picker, &Palette);
+		InnerPicker.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
+		RenderHSLPicker(Picker, Config()->m_ClLaserInnerColor, false, s_HLPicker, s_aButtons);
+	}
+	{
+		OuterPicker.HSplitTop(ButtonHeight, &Label, &OuterPicker);
+		Label.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
+		Label.VSplitLeft(10.0f, 0, &Label);
+		UI()->DoLabel(&Label, Localize("Outer Color", "Custom Laser"), Label.h * CUI::ms_FontmodHeight * 0.8f, TEXTALIGN_ML);
+
+		// HSL picker
+		CUIRect Picker;
+		static int s_HLPicker;
+		static CButtonContainer s_aButtons[12];
+		OuterPicker.HSplitBottom(45.0f, &Picker, &Palette);
+		OuterPicker.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
+		RenderHSLPicker(Picker, Config()->m_ClLaserOuterColor, false, s_HLPicker, s_aButtons);
+	}
+
+
+	return 48.0f;
 }
 
 void CMenus::DoJoystickAxisPicker(CUIRect View)

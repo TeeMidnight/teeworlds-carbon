@@ -533,7 +533,7 @@ void CMenus::RenderMenubar(CUIRect Rect)
 
 	if((Client()->State() == IClient::STATE_OFFLINE && m_MenuPage == PAGE_SETTINGS) || (Client()->State() == IClient::STATE_ONLINE && m_GamePage == PAGE_SETTINGS))
 	{
-		int NumButtons = 5;
+		int NumButtons = 6;
 		float Spacing = 3.0f;
 		float ButtonWidth = (Box.w / NumButtons) - (Spacing * (NumButtons - 1)) / NumButtons;
 		float NotActiveAlpha = Client()->State() == IClient::STATE_ONLINE ? 0.5f : 1.0f;
@@ -594,6 +594,16 @@ void CMenus::RenderMenubar(CUIRect Rect)
 		{
 			m_pClient->m_pCamera->ChangePosition(CCamera::POS_SETTINGS_SOUND);
 			Config()->m_UiSettingsPage = SETTINGS_SOUND;
+		}
+
+		Box.VSplitLeft(Spacing, 0, &Box); // little space
+		Box.VSplitLeft(ButtonWidth, &Button, &Box);
+		static CButtonContainer s_CustomButton;
+		if(DoButton_MenuTabTop(&s_CustomButton, Localize("Custom"), Client()->State() == IClient::STATE_OFFLINE && Config()->m_UiSettingsPage == SETTINGS_CUSTOM, &Button,
+			   Config()->m_UiSettingsPage == SETTINGS_CUSTOM ? 1.0f : NotActiveAlpha, 1.0f, Corners))
+		{
+			m_pClient->m_pCamera->ChangePosition(CCamera::POS_SETTINGS_CUSTOM);
+			Config()->m_UiSettingsPage = SETTINGS_CUSTOM;
 		}
 	}
 	else if((Client()->State() == IClient::STATE_OFFLINE && m_MenuPage >= PAGE_INTERNET && m_MenuPage <= PAGE_LAN) || (Client()->State() == IClient::STATE_ONLINE && m_GamePage >= PAGE_INTERNET && m_GamePage <= PAGE_LAN))

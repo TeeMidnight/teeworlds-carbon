@@ -43,6 +43,34 @@ inline vec3 HslToRgb(vec3 HSL)
 }
 
 /*
+	Function: VarToRgb
+		Converts Var to RGB
+*/
+inline vec3 VarToRgb(int v)
+{
+	return HslToRgb(vec3(((v >> 16) & 0xff) / 255.0f, ((v >> 8) & 0xff) / 255.0f, (v & 0xff) / 255.0f));
+}
+
+/*
+	Function: VarToRgba
+		Converts Var to RGBA
+*/
+inline vec4 VarToRgba(int v)
+{
+	vec3 r = VarToRgb(v);
+	float Alpha = ((v >> 24) & 0xff) / 255.0f;
+	return vec4(r.r, r.g, r.b, Alpha);
+}
+/*
+	Function: VarToRgbaWithAlpha
+		Converts Var to RGBA
+*/
+inline vec4 VarToRgbaWithAlpha(int v, float Alpha)
+{
+	vec3 r = VarToRgb(v);
+	return vec4(r.r, r.g, r.b, Alpha);
+}
+/*
 	Function: HexToRgba
 		Converts Hex to RGBA
 

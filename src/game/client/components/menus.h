@@ -92,6 +92,7 @@ private:
 		SETTINGS_CONTROLS,
 		SETTINGS_GRAPHICS,
 		SETTINGS_SOUND,
+		SETTINGS_CUSTOM,
 
 		ACTLB_NONE = 0,
 		ACTLB_LANG,
@@ -560,7 +561,7 @@ private:
 	// found in menus_settings.cpp
 	void RenderLanguageSelection(CUIRect MainView, bool Header = true);
 	void RenderThemeSelection(CUIRect MainView, bool Header = true);
-	void RenderHSLPicker(CUIRect MainView);
+	bool RenderHSLPicker(CUIRect MainView, int &Color, bool UseAlpha, int &HLPicker, CButtonContainer aButtonContainer[12]);
 	void RenderSkinSelection(CUIRect MainView);
 	void RenderSkinPartSelection(CUIRect MainView);
 	void RenderSkinPartPalette(CUIRect MainView);
@@ -573,6 +574,7 @@ private:
 	void RenderSettingsControls(CUIRect MainView);
 	void RenderSettingsGraphics(CUIRect MainView);
 	void RenderSettingsSound(CUIRect MainView);
+	void RenderSettingsCustom(CUIRect MainView);
 	void RenderSettings(CUIRect MainView);
 	void ResetSettingsGeneral();
 	void ResetSettingsControls();
@@ -593,6 +595,7 @@ private:
 	float RenderSettingsControlsScoreboard(CUIRect View);
 	float RenderSettingsControlsStats(CUIRect View);
 	float RenderSettingsControlsMisc(CUIRect View);
+	float RenderSettingsCustomLaser(CUIRect View);
 	void DoSettingsControlsButtons(int Start, int Stop, CUIRect View, float ButtonHeight, float Spacing);
 
 	void DoJoystickAxisPicker(CUIRect View);

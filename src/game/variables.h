@@ -84,7 +84,7 @@ MACRO_CONFIG_UTF8STR(PlayerSkinFeet, player_skin_feet, MAX_SKIN_ARRAY_SIZE, MAX_
 MACRO_CONFIG_UTF8STR(PlayerSkinEyes, player_skin_eyes, MAX_SKIN_ARRAY_SIZE, MAX_SKIN_LENGTH, "standard", CFGFLAG_CLIENT | CFGFLAG_SAVE, "Player skin eyes")
 
 MACRO_CONFIG_INT(UiBrowserPage, ui_browser_page, 5, 5, 8, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Interface serverbrowser page")
-MACRO_CONFIG_INT(UiSettingsPage, ui_settings_page, 0, 0, 5, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Interface settings page")
+MACRO_CONFIG_INT(UiSettingsPage, ui_settings_page, 0, 0, 6, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Interface settings page")
 MACRO_CONFIG_STR(UiServerAddress, ui_server_address, 64, "localhost:8303", CFGFLAG_CLIENT | CFGFLAG_SAVE, "Interface server address (Internet page)")
 MACRO_CONFIG_STR(UiServerAddressLan, ui_server_address_lan, 64, "localhost:8303", CFGFLAG_CLIENT | CFGFLAG_SAVE, "Interface server address (LAN page)")
 MACRO_CONFIG_INT(UiMousesens, ui_mousesens, 200, 1, 100000, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Mouse sensitivity for menus/editor")
@@ -110,6 +110,8 @@ MACRO_CONFIG_INT(ClShowLocalTimeAlways, cl_show_local_time_always, 0, 0, 1, CFGF
 
 MACRO_CONFIG_INT(ClLastVersionPlayed, cl_last_version_played, PREV_CLIENT_VERSION, 0, 0, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Last version of the game that was played")
 
+MACRO_CONFIG_INT(ClLaserInnerColor, cl_laser_inner_color, 0xAAFFBF, 0, 0xFFFFFF, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Laser inner color")
+MACRO_CONFIG_INT(ClLaserOuterColor, cl_laser_outer_color, 0xAA8929, 0, 0xFFFFFF, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Laser outer color")
 // server
 MACRO_CONFIG_STR(SvMotd, sv_motd, 900, "", CFGFLAG_SAVE | CFGFLAG_SERVER, "Message of the day to display for the clients")
 MACRO_CONFIG_INT(SvTeamdamage, sv_teamdamage, 0, 0, 1, CFGFLAG_SAVE | CFGFLAG_SERVER, "Team damage")

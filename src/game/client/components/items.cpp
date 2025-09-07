@@ -1,5 +1,7 @@
 /* (c) Magnus Auvinen. See licence.txt in the root of the distribution for more information. */
 /* If you are missing that file, acquire a complete release at teeworlds.com.                */
+#include <base/color.h>
+
 #include <engine/demo.h>
 #include <engine/graphics.h>
 #include <engine/shared/config.h>
@@ -214,7 +216,7 @@ void CItems::RenderLaser(const struct CNetObj_Laser *pCurrent)
 	Graphics()->QuadsBegin();
 
 	// do outline
-	const vec4 OuterColor(0.075f, 0.075f, 0.25f, 1.0f);
+	const vec4 OuterColor = VarToRgbaWithAlpha(Config()->m_ClLaserOuterColor, 1.0f);
 	const vec2 Outer = vec2(Dir.y, -Dir.x) * (7.0f * RemainingRelativeLifetime);
 	Graphics()->SetColor(OuterColor);
 	IGraphics::CFreeformItem Freeform(
@@ -225,7 +227,7 @@ void CItems::RenderLaser(const struct CNetObj_Laser *pCurrent)
 	Graphics()->QuadsDrawFreeform(&Freeform, 1);
 
 	// do inner
-	const vec4 InnerColor(0.5f, 0.5f, 1.0f, 1.0f);
+	const vec4 InnerColor = VarToRgbaWithAlpha(Config()->m_ClLaserInnerColor, 1.0f);
 	const vec2 Inner = vec2(Dir.y, -Dir.x) * (5.0f * RemainingRelativeLifetime);
 	Graphics()->SetColor(InnerColor);
 	Freeform = IGraphics::CFreeformItem(
