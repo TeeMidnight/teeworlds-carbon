@@ -107,6 +107,7 @@ class CCommandProcessorFragment_OpenGL
 		};
 		GLuint m_Tex2D;
 		GLuint m_Tex3D[MAX_ARRAYSIZE_TEX3D];
+		GLuint m_Sampler;
 		int m_State;
 		int m_Format;
 		int m_MemSize;
