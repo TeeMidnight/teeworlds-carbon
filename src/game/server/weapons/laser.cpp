@@ -8,7 +8,7 @@
 class CLaserWeapon : public IWeaponInterface
 {
 public:
-	CLaserWeapon() { WeaponManager()->RegisterWeapon("Laser", this); }
+	CLaserWeapon() { WeaponManager()->RegisterWeapon("vanilla.laser", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;

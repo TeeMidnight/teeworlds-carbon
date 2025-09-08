@@ -8,7 +8,7 @@
 class CSnipingRifle : public IWeaponInterface
 {
 public:
-	CSnipingRifle() { WeaponManager()->RegisterWeapon("Sniping Rifle", this); }
+	CSnipingRifle() { WeaponManager()->RegisterWeapon("carbon.sniping_rifle", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;

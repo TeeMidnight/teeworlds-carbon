@@ -8,7 +8,7 @@
 class CShotgun : public IWeaponInterface
 {
 public:
-	CShotgun() { WeaponManager()->RegisterWeapon("Shotgun", this); }
+	CShotgun() { WeaponManager()->RegisterWeapon("vanilla.shotgun", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;

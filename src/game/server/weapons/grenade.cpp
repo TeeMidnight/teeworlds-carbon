@@ -8,7 +8,7 @@
 class CGrenade : public IWeaponInterface
 {
 public:
-	CGrenade() { WeaponManager()->RegisterWeapon("Grenade", this); }
+	CGrenade() { WeaponManager()->RegisterWeapon("vanilla.grenade", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;

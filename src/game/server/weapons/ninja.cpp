@@ -8,7 +8,7 @@
 class CNinja : public IWeaponInterface
 {
 public:
-	CNinja() { WeaponManager()->RegisterWeapon("Ninja", this); }
+	CNinja() { WeaponManager()->RegisterWeapon("vanilla.ninja", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;

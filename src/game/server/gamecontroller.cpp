@@ -131,8 +131,8 @@ void CGameController::OnCharacterSpawn(CCharacter *pChr)
 	pChr->IncreaseHealth(10);
 
 	// give default weapons
-	pChr->SetWeapon(WEAPON_HAMMER, CalculateUuid("Hammer"), -1);
-	pChr->SetWeapon(WEAPON_GUN, CalculateUuid("Gun"), 10);
+	pChr->SetWeapon(WEAPON_HAMMER, CalculateUuid("vanilla.hammer"), -1);
+	pChr->SetWeapon(WEAPON_GUN, CalculateUuid("vanilla.gun"), 10);
 }
 
 void CGameController::OnFlagReturn(CFlag *pFlag)

@@ -7,7 +7,7 @@
 class CHammer : public IWeaponInterface
 {
 public:
-	CHammer() { WeaponManager()->RegisterWeapon("Hammer", this); }
+	CHammer() { WeaponManager()->RegisterWeapon("vanilla.hammer", this); }
 
 	//
 	void OnFire(class CEntity *pFrom, class CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer = nullptr) override;
