@@ -523,6 +523,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Init(const CInitCommand *pCommand)
 
 	glDisable(GL_BLEND);
 
+	glGenBuffers(1, &m_PixelBuffer);
+
 	// set some default settings
 	glActiveTexture(GL_TEXTURE0);
 
@@ -625,9 +627,17 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Update(const CCommandBuffer::
 {
 	if(m_aTextures[pCommand->m_Slot].m_State & CTexture::STATE_TEX2D)
 	{
+		glBindBuffer(GL_PIXEL_UNPACK_BUFFER, m_PixelBuffer);
+		glBufferData(GL_PIXEL_UNPACK_BUFFER, pCommand->m_Size, nullptr, GL_STREAM_DRAW);
+		glBufferSubData(GL_PIXEL_UNPACK_BUFFER, 0, pCommand->m_Size, pCommand->m_pData);
+
 		glBindTexture(GL_TEXTURE_2D, m_aTextures[pCommand->m_Slot].m_Tex2D);
-		glTexSubImage2D(GL_TEXTURE_2D, 0, pCommand->m_X, pCommand->m_Y, pCommand->m_Width, pCommand->m_Height,
-			TexFormatToOpenGLFormat(pCommand->m_Format), GL_UNSIGNED_BYTE, pCommand->m_pData);
+		glTexSubImage2D(GL_TEXTURE_2D, 0, pCommand->m_X, pCommand->m_Y, 
+						pCommand->m_Width, pCommand->m_Height,
+						TexFormatToOpenGLFormat(pCommand->m_Format), 
+						GL_UNSIGNED_BYTE, 0);
+
+		glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
 	}
 	mem_free(pCommand->m_pData);
 }

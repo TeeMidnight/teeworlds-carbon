@@ -44,7 +44,7 @@ public:
 
 	int UnloadTexture(IGraphics::CTextureHandle *Index) override { return 0; };
 	IGraphics::CTextureHandle LoadTextureRaw(int Width, int Height, int Format, const void *pData, int StoreFormat, int Flags) override { return CreateTextureHandle(0); };
-	int LoadTextureRawSub(IGraphics::CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, const void *pData) override { return 0; };
+	int LoadTextureRawSub(IGraphics::CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, int Size, const void *pData) override { return 0; };
 
 	// simple uncompressed RGBA loaders
 	IGraphics::CTextureHandle LoadTexture(const char *pFilename, int StorageType, int StoreFormat, int Flags) override { return CreateTextureHandle(0); };

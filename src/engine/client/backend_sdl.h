@@ -131,6 +131,7 @@ class CCommandProcessorFragment_OpenGL
 	bool m_LastAlphaOnly;
 
 	bool m_LastRender3D;
+	GLuint m_PixelBuffer;
 public:
 	enum
 	{

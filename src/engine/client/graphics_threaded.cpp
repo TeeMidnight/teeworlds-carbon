@@ -295,7 +295,7 @@ static int ImageFormatToTexFormat(int Format)
 	return CCommandBuffer::TEXFORMAT_RGBA;
 }
 
-int CGraphics_Threaded::LoadTextureRawSub(CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, const void *pData)
+int CGraphics_Threaded::LoadTextureRawSub(CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, int Size, const void *pData)
 {
 	if(!TextureID.IsValid())
 		return 0;
@@ -306,6 +306,7 @@ int CGraphics_Threaded::LoadTextureRawSub(CTextureHandle TextureID, int x, int y
 	Cmd.m_Y = y;
 	Cmd.m_Width = Width;
 	Cmd.m_Height = Height;
+	Cmd.m_Size = Size;
 	Cmd.m_Format = ImageFormatToTexFormat(Format);
 
 	// calculate memory usage

@@ -262,6 +262,7 @@ public:
 		int m_Width;
 		int m_Height;
 		int m_Format;
+		int m_Size;
 		void *m_pData; // will be freed by the command processor
 	};
 
@@ -439,7 +440,7 @@ public:
 
 	int UnloadTexture(IGraphics::CTextureHandle *pIndex) override;
 	IGraphics::CTextureHandle LoadTextureRaw(int Width, int Height, int Format, const void *pData, int StoreFormat, int Flags) override;
-	int LoadTextureRawSub(IGraphics::CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, const void *pData) override;
+	int LoadTextureRawSub(IGraphics::CTextureHandle TextureID, int x, int y, int Width, int Height, int Format, int Size, const void *pData) override;
 
 	// simple uncompressed RGBA loaders
 	IGraphics::CTextureHandle LoadTexture(const char *pFilename, int StorageType, int StoreFormat, int Flags) override;

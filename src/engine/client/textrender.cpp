@@ -228,7 +228,7 @@ int CGlyphMap::FitGlyph(int Width, int Height, ivec2 *pPosition)
 void CGlyphMap::UploadGlyph(int TextureIndex, int PosX, int PosY, int Width, int Height, const unsigned char *pData)
 {
 	m_pGraphics->LoadTextureRawSub(m_aTextures[TextureIndex], PosX, PosY,
-		Width, Height, CImageInfo::FORMAT_ALPHA, pData);
+		Width, Height, CImageInfo::FORMAT_ALPHA, Width * Height, pData);
 }
 
 bool CGlyphMap::SetFaceByName(FT_Face *pFace, const char *pFamilyName)
