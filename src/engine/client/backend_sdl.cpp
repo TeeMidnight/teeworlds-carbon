@@ -638,6 +638,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Destroy(const CCommandBuffer:
 		glDeleteTextures(1, &m_aTextures[pCommand->m_Slot].m_Tex2D);
 	if(m_aTextures[pCommand->m_Slot].m_State & CTexture::STATE_TEX3D)
 		glDeleteTextures(m_TextureArraySize, m_aTextures[pCommand->m_Slot].m_Tex3D);
+	if(m_aTextures[pCommand->m_Slot].m_Sampler != 0)
+		glDeleteSamplers(1, &m_aTextures[pCommand->m_Slot].m_Sampler);
 	*m_pTextureMemoryUsage -= m_aTextures[pCommand->m_Slot].m_MemSize;
 	m_aTextures[pCommand->m_Slot].m_State = CTexture::STATE_EMPTY;
 	m_aTextures[pCommand->m_Slot].m_MemSize = 0;
@@ -727,7 +729,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		// Set texture parameters
 		glSamplerParameteri(m_aTextures[pCommand->m_Slot].m_Sampler, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glSamplerParameteri(m_aTextures[pCommand->m_Slot].m_Sampler, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glSamplerParameteri(m_aTextures[pCommand->m_Slot].m_Sampler, GL_TEXTURE_MIN_FILTER, Mipmaps ? GL_LINEAR_MIPMAP_LINEAR : GL_LINEAR);
+		glSamplerParameteri(m_aTextures[pCommand->m_Slot].m_Sampler, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glSamplerParameteri(m_aTextures[pCommand->m_Slot].m_Sampler, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 		if(pCommand->m_Format == CCommandBuffer::TEXFORMAT_ALPHA)
@@ -742,7 +744,16 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		// calculate memory usage
 		m_aTextures[pCommand->m_Slot].m_MemSize = Width * Height * pCommand->m_PixelSize;
 		if(Mipmaps)
-			glGenerateMipmap(GL_TEXTURE_2D);
+		{
+			int TexWidth = Width;
+			int TexHeight = Height;
+			while(TexWidth > 2 && TexHeight > 2)
+			{
+				TexWidth >>= 1;
+				TexHeight >>= 1;
+				m_aTextures[pCommand->m_Slot].m_MemSize += TexWidth * TexHeight * pCommand->m_PixelSize;
+			}
+		}
 	}
 
 	// 3D texture - in the existing code, add this check
