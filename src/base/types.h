@@ -7,8 +7,8 @@
 * See license.txt in the root of the distribution for more information.
 * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
 */
-#ifndef BASE_TYPE_H
-#define BASE_TYPE_H
+#ifndef BASE_TYPES_H
+#define BASE_TYPES_H
 
 #include <time.h>
 
