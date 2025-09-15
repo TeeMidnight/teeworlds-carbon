@@ -21,11 +21,10 @@
 #include <game/version.h>
 #include <generated/server_data.h>
 
-#include "botmanager.h"
 #include "entities/character.h"
 #include "entities/projectile.h"
 #include "gamecontext.h"
-#include "gamecontroller.h"
+#include "gamemodes/carbon.h"
 #include "player.h"
 #include "weapons.h"
 
@@ -45,7 +44,6 @@ void CGameContext::Construct(int Resetting)
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		m_apPlayers[i] = 0;
 
-	m_pBotManager = nullptr;
 	m_pController = nullptr;
 	m_VoteCloseTime = 0;
 	m_VoteCancelTime = 0;
@@ -557,11 +555,7 @@ void CGameContext::OnTick()
 {
 	// copy tuning
 	m_World.m_Core.m_Tuning = m_Tuning;
-	BotManager()->BotWorldCore()->m_Tuning = m_Tuning;
-
 	m_World.Tick();
-
-	BotManager()->Tick();
 	// if(world.paused) // make sure that the game object always updates
 	GameController()->Tick();
 
@@ -800,7 +794,6 @@ void CGameContext::OnClientTeamChange(int ClientID)
 void CGameContext::OnClientDrop(int ClientID, const char *pReason)
 {
 	AbortVoteOnDisconnect(ClientID);
-	BotManager()->OnClientRefresh(ClientID);
 	GameController()->OnPlayerDisconnect(m_apPlayers[ClientID]);
 
 	// update clients on drop
@@ -1633,9 +1626,10 @@ void CGameContext::OnInit()
 	m_Layers.Init(Kernel());
 	m_Collision.Init(&m_Layers);
 
-	m_pBotManager = new CBotManager(this);
 	// select gametype
-	m_pController = new CGameController(this);
+	m_pController = new CGameControllerCarbon(this);
+	m_World.SetGameController(m_pController);
+
 	GameController()->RegisterChatCommands(CommandManager());
 
 	CommandManager()->AddCommand("w", "Whisper another player", "sr", ComWhisper, this);
@@ -1689,8 +1683,6 @@ void CGameContext::OnShutdown()
 	delete m_pController;
 	m_pController = nullptr;
 
-	delete m_pBotManager;
-	m_pBotManager = nullptr;
 	Clear();
 }
 
@@ -1722,7 +1714,7 @@ void CGameContext::OnPostSnap()
 {
 	m_World.PostSnap();
 	m_Events.Clear();
-	BotManager()->PostSnap();
+	GameController()->PostSnap();
 }
 
 bool CGameContext::IsClientBot(int ClientID) const

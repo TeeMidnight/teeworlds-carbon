@@ -22,25 +22,16 @@
 
 CConfig *CBotManager::Config() const { return GameServer()->Config(); }
 CGameContext *CBotManager::GameServer() const { return m_pGameServer; }
-CGameController *CBotManager::GameController() const { return GameServer()->GameController(); }
+IGameController *CBotManager::GameController() const { return GameServer()->GameController(); }
 CGameWorld *CBotManager::GameWorld() const { return &GameServer()->m_World; }
 IServer *CBotManager::Server() const { return GameServer()->Server(); }
-CWorldCore *CBotManager::BotWorldCore() const { return m_pWorldCore; }
 
 CBotManager::CBotManager(CGameContext *pGameServer)
 {
 	m_pGameServer = pGameServer;
-	m_pWorldCore = new CWorldCore();
-
 	m_vMarkedAsDestroy.clear();
 	m_vpBots.clear();
 	ClearPlayerMap(-1);
-}
-
-CBotManager::~CBotManager()
-{
-	delete m_pWorldCore;
-	m_pWorldCore = nullptr;
 }
 
 void CBotManager::ClearPlayerMap(int ClientID)

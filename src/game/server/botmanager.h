@@ -18,13 +18,12 @@
 #include <vector>
 
 class CGameContext;
-class CGameController;
+class IGameController;
 class CGameWorld;
 
 class CBotManager
 {
 	CGameContext *m_pGameServer;
-	class CWorldCore *m_pWorldCore;
 	Uuid m_aaBotIDMaps[SERVER_MAX_CLIENTS][MAX_BOTS];
 
 	std::vector<Uuid> m_vMarkedAsDestroy;
@@ -37,14 +36,11 @@ class CBotManager
 public:
 	class CConfig *Config() const;
 	CGameContext *GameServer() const;
-	CGameController *GameController() const;
+	IGameController *GameController() const;
 	CGameWorld *GameWorld() const;
 	class IServer *Server() const;
 
-	class CWorldCore *BotWorldCore() const;
-
 	CBotManager(CGameContext *pGameServer);
-	~CBotManager();
 
 	void Tick();
 

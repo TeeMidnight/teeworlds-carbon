@@ -15,7 +15,7 @@
 
 class CCollision
 {
-	struct CTile *m_pTiles;
+	int *m_pTiles;
 	int m_Width;
 	int m_Height;
 	class CLayers *m_pLayers;
@@ -32,6 +32,7 @@ public:
 	};
 
 	CCollision();
+	~CCollision();
 	void Init(class CLayers *pLayers);
 	bool CheckPoint(float x, float y, int Flag = COLFLAG_SOLID) const { return IsTile(round_to_int(x), round_to_int(y), Flag); }
 	bool CheckPoint(vec2 Pos, int Flag = COLFLAG_SOLID) const { return CheckPoint(Pos.x, Pos.y, Flag); }

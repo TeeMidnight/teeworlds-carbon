@@ -28,34 +28,37 @@ CCollision::CCollision()
 	m_pLayers = 0;
 }
 
+CCollision::~CCollision()
+{
+	if(m_pTiles)
+		mem_free(m_pTiles);
+}
+
 void CCollision::Init(class CLayers *pLayers)
 {
 	m_pLayers = pLayers;
 	m_Width = m_pLayers->GameLayer()->m_Width;
 	m_Height = m_pLayers->GameLayer()->m_Height;
-	m_pTiles = static_cast<CTile *>(m_pLayers->Map()->GetData(m_pLayers->GameLayer()->m_Data));
+	m_pTiles = static_cast<int *>(mem_alloc(sizeof(int) * m_Width * m_Height));
+	CTile *pTiles = static_cast<CTile *>(m_pLayers->Map()->GetData(m_pLayers->GameLayer()->m_Data));
 
 	for(int i = 0; i < m_Width * m_Height; i++)
 	{
-		int Index = m_pTiles[i].m_Index;
+		int Index = pTiles[i].m_Index;
 
 		switch(Index)
 		{
 		case TILE_DEATH:
-			m_pTiles[i].m_Index = COLFLAG_DEATH;
+			m_pTiles[i] = COLFLAG_DEATH;
 			break;
 		case TILE_SOLID:
-			m_pTiles[i].m_Index = COLFLAG_SOLID;
+			m_pTiles[i] = COLFLAG_SOLID;
 			break;
 		case TILE_NOHOOK:
-			m_pTiles[i].m_Index = COLFLAG_SOLID | COLFLAG_NOHOOK;
-			break;
-		case TILE_BENCH:
-			m_pTiles[i].m_Index = TILE_BENCH;
+			m_pTiles[i] = COLFLAG_SOLID | COLFLAG_NOHOOK;
 			break;
 		default:
-			if(m_pTiles[i].m_Index < ENTITY_OFFSET)
-				m_pTiles[i].m_Index = 0;
+			m_pTiles[i] = 0;
 		}
 	}
 }
@@ -65,7 +68,7 @@ int CCollision::GetTile(int x, int y) const
 	int Nx = clamp(x / 32, 0, m_Width - 1);
 	int Ny = clamp(y / 32, 0, m_Height - 1);
 
-	return m_pTiles[Ny * m_Width + Nx].m_Index > 128 ? 0 : m_pTiles[Ny * m_Width + Nx].m_Index;
+	return m_pTiles[Ny * m_Width + Nx];
 }
 
 bool CCollision::IsTile(int x, int y, int Flag) const

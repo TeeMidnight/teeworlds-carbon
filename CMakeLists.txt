@@ -1658,6 +1658,8 @@ endif()
     gamecontroller.h
     gamemenu.cpp
     gamemenu.h
+    gamemodes/carbon.cpp
+    gamemodes/carbon.h
     gameworld.cpp
     gameworld.h
     player.cpp

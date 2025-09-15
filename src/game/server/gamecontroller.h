@@ -23,7 +23,7 @@
 		Controls the main game logic. Keeping track of team and player score,
 		winning conditions and specific game logic.
 */
-class CGameController
+class IGameController
 {
 	friend class CBotManager;
 
@@ -71,7 +71,7 @@ class CGameController
 	int ClampTeam(int Team) const;
 
 protected:
-	CGameContext *GameServer() const { return m_pGameServer; }
+	class CGameContext *GameServer() const { return m_pGameServer; }
 	CConfig *Config() const { return m_pConfig; }
 	IServer *Server() const { return m_pServer; }
 
@@ -84,56 +84,59 @@ protected:
 
 	void SendGameInfo(int ClientID);
 
-	array<vec2> m_aSitPoints;
+	class CBotManager *m_pBotManager;
 
 public:
-	CGameController(class CGameContext *pGameServer);
-	~CGameController() {}
+	class CBotManager *BotManager() const { return m_pBotManager; }
 
-	int OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon);
-	void OnCharacterSpawn(class CCharacter *pChr);
-	void OnFlagReturn(class CFlag *pFlag);
-	bool OnEntity(int Index, vec2 Pos);
-	bool OnExtraTile(int Index, vec2 Pos);
+	IGameController(class CGameContext *pGameServer);
+	virtual ~IGameController();
 
-	void OnPlayerConnect(class CPlayer *pPlayer);
-	void OnPlayerDisconnect(class CPlayer *pPlayer);
-	void OnPlayerInfoChange(class CPlayer *pPlayer);
-	void OnPlayerReadyChange(class CPlayer *pPlayer);
+	virtual int OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon);
+	virtual void OnCharacterSpawn(class CCharacter *pChr);
+	virtual void OnFlagReturn(class CFlag *pFlag);
+	virtual bool OnEntity(int Index, vec2 Pos);
+	virtual bool OnExtraTile(int Index, vec2 Pos);
 
-	void OnPlayerSendEmoticon(int Emoticon, class CPlayer *pPlayer);
+	virtual void OnPlayerConnect(class CPlayer *pPlayer);
+	virtual void OnPlayerDisconnect(class CPlayer *pPlayer);
+	virtual void OnPlayerInfoChange(class CPlayer *pPlayer);
+	virtual void OnPlayerReadyChange(class CPlayer *pPlayer);
 
-	void OnReset();
+	virtual void OnPlayerSendEmoticon(int Emoticon, class CPlayer *pPlayer);
+
+	virtual void OnReset();
 
 	// general
-	void Snap(int SnappingClient);
-	void Tick();
+	virtual void Snap(int SnappingClient);
+	virtual void PostSnap();
+	virtual void Tick();
 
 	// info
-	bool IsFriendlyFire(int ClientID1, int ClientID2) const;
-	bool IsFriendlyTeamFire(int Team1, int Team2) const;
-	bool IsPlayerReadyMode() const;
-	bool IsTeamChangeAllowed() const;
-	bool IsTeamplay() const { return false; }
-	bool IsSurvival() const { return false; }
+	virtual bool IsFriendlyFire(int ClientID1, int ClientID2) const;
+	virtual bool IsFriendlyTeamFire(int Team1, int Team2) const;
+	virtual bool IsPlayerReadyMode() const;
+	virtual bool IsTeamChangeAllowed() const;
+	virtual bool IsTeamplay() const { return false; }
+	virtual bool IsSurvival() const { return false; }
 
 	const char *GetGameType() const { return m_pGameType; }
 
 	// spawn
-	bool CanSpawn(int Team, vec2 *pPos) const;
-	bool GetStartRespawnState() const;
+	virtual bool CanSpawn(int Team, vec2 *pPos) const;
+	virtual bool GetStartRespawnState() const;
 
 	// team
-	bool CanJoinTeam(int Team, int NotThisID) const;
-	bool CanChangeTeam(CPlayer *pPplayer, int JoinTeam) const;
+	virtual bool CanJoinTeam(int Team, int NotThisID) const;
+	virtual bool CanChangeTeam(CPlayer *pPplayer, int JoinTeam) const;
 
-	void DoTeamChange(class CPlayer *pPlayer, int Team, bool DoChatMsg = true);
+	virtual void DoTeamChange(class CPlayer *pPlayer, int Team, bool DoChatMsg = true);
 
 	int GetRealPlayerNum() const { return m_RealPlayerNum; }
-	int GetStartTeam();
+	virtual int GetStartTeam();
 
 	// static void Com_Example(IConsole::IResult *pResult, void *pContext);
-	void RegisterChatCommands(CCommandManager *pManager);
+	virtual void RegisterChatCommands(CCommandManager *pManager);
 };
 
 #endif

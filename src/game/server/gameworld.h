@@ -60,11 +60,13 @@ private:
 	CEntity *m_pNextTraverseEntity;
 	CEntity *m_apFirstEntityTypes[NUM_ENTTYPES];
 
+	class IGameController *m_pGameController;
 	class CGameContext *m_pGameServer;
 	class CConfig *m_pConfig;
 	class IServer *m_pServer;
 
 public:
+	class IGameController *GameController() { return m_pGameController; }
 	class CGameContext *GameServer() { return m_pGameServer; }
 	class CConfig *Config() { return m_pConfig; }
 	class IServer *Server() { return m_pServer; }
@@ -77,6 +79,7 @@ public:
 	~CGameWorld();
 
 	void SetGameServer(CGameContext *pGameServer);
+	void SetGameController(IGameController *pGameController);
 
 	CEntity *FindFirst(int Type);
 

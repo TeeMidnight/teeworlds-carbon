@@ -67,8 +67,7 @@ class CGameContext : public IGameServer
 	CNetObjHandler m_NetObjHandler;
 	CTuningParams m_Tuning;
 
-	class CBotManager *m_pBotManager;
-	class CGameController *m_pController;
+	class IGameController *m_pController;
 
 	CGameMenu *m_pGameMenu;
 
@@ -106,8 +105,7 @@ public:
 	CCollision *Collision() { return &m_Collision; }
 	CTuningParams *Tuning() { return &m_Tuning; }
 
-	class CBotManager *BotManager() const { return m_pBotManager; }
-	class CGameController *GameController() const { return m_pController; }
+	class IGameController *GameController() const { return m_pController; }
 	CGameMenu *GameMenu() const { return m_pGameMenu; }
 
 	CGameContext();

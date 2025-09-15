@@ -70,6 +70,7 @@ public:
 	class CGameWorld *GameWorld() { return m_pGameWorld; }
 	class CConfig *Config() { return m_pGameWorld->Config(); }
 	class CGameContext *GameServer() { return m_pGameWorld->GameServer(); }
+	class IGameController *GameController() { return m_pGameWorld->GameController(); }
 	class IServer *Server() { return m_pGameWorld->Server(); }
 
 	/* Getters */

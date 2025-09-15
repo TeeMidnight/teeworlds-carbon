@@ -45,6 +45,11 @@ void CGameWorld::SetGameServer(CGameContext *pGameServer)
 	m_pServer = m_pGameServer->Server();
 }
 
+void CGameWorld::SetGameController(IGameController *pGameController)
+{
+	m_pGameController = pGameController;
+}
+
 CEntity *CGameWorld::FindFirst(int Type)
 {
 	return Type < 0 || Type >= NUM_ENTTYPES ? 0 : m_apFirstEntityTypes[Type];

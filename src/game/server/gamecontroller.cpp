@@ -12,13 +12,14 @@
 
 #include <game/mapitems.h>
 
+#include "botmanager.h"
 #include "entities/character.h"
 #include "entities/pickup.h"
 #include "gamecontext.h"
 #include "gamecontroller.h"
 #include "player.h"
 
-CGameController::CGameController(CGameContext *pGameServer)
+IGameController::IGameController(CGameContext *pGameServer)
 {
 	m_pGameServer = pGameServer;
 	m_pConfig = m_pGameServer->Config();
@@ -36,10 +37,18 @@ CGameController::CGameController(CGameContext *pGameServer)
 	m_aNumSpawnPoints[0] = 0;
 	m_aNumSpawnPoints[1] = 0;
 	m_aNumSpawnPoints[2] = 0;
+
+	m_pBotManager = nullptr;
+}
+
+IGameController::~IGameController()
+{
+	if(m_pBotManager)
+		delete m_pBotManager;
 }
 
 // activity
-void CGameController::DoActivityCheck()
+void IGameController::DoActivityCheck()
 {
 	if(Config()->m_SvInactiveKickTime == 0)
 		return;
@@ -90,7 +99,7 @@ void CGameController::DoActivityCheck()
 	}
 }
 
-bool CGameController::GetPlayersReadyState(int WithoutID)
+bool IGameController::GetPlayersReadyState(int WithoutID)
 {
 	for(int i = 0; i < SERVER_MAX_CLIENTS; ++i)
 	{
@@ -103,7 +112,7 @@ bool CGameController::GetPlayersReadyState(int WithoutID)
 	return true;
 }
 
-void CGameController::SetPlayersReadyState(bool ReadyState)
+void IGameController::SetPlayersReadyState(bool ReadyState)
 {
 	for(int i = 0; i < SERVER_MAX_CLIENTS; ++i)
 	{
@@ -113,7 +122,7 @@ void CGameController::SetPlayersReadyState(bool ReadyState)
 }
 
 // event
-int CGameController::OnCharacterDeath(CCharacter *pVictim, CPlayer *pKiller, int Weapon)
+int IGameController::OnCharacterDeath(CCharacter *pVictim, CPlayer *pKiller, int Weapon)
 {
 	// do scoreing
 	if(!pKiller || Weapon == WEAPON_GAME)
@@ -133,7 +142,7 @@ int CGameController::OnCharacterDeath(CCharacter *pVictim, CPlayer *pKiller, int
 	return 0;
 }
 
-void CGameController::OnCharacterSpawn(CCharacter *pChr)
+void IGameController::OnCharacterSpawn(CCharacter *pChr)
 {
 	// default health
 	pChr->IncreaseHealth(10);
@@ -143,11 +152,11 @@ void CGameController::OnCharacterSpawn(CCharacter *pChr)
 	pChr->SetWeapon(WEAPON_GUN, CalculateUuid("vanilla.gun"), 10);
 }
 
-void CGameController::OnFlagReturn(CFlag *pFlag)
+void IGameController::OnFlagReturn(CFlag *pFlag)
 {
 }
 
-bool CGameController::OnEntity(int Index, vec2 Pos)
+bool IGameController::OnEntity(int Index, vec2 Pos)
 {
 	// don't add pickups in survival
 	if(m_GameFlags & GAMEFLAG_SURVIVAL)
@@ -198,16 +207,12 @@ bool CGameController::OnEntity(int Index, vec2 Pos)
 	return false;
 }
 
-bool CGameController::OnExtraTile(int Index, vec2 Pos)
+bool IGameController::OnExtraTile(int Index, vec2 Pos)
 {
-	switch(Index)
-	{
-	case TILE_BENCH: m_aSitPoints.add(Pos + vec2(0.f, -12.f)); return true;
-	}
 	return false;
 }
 
-void CGameController::OnPlayerConnect(CPlayer *pPlayer)
+void IGameController::OnPlayerConnect(CPlayer *pPlayer)
 {
 	int ClientID = pPlayer->GetCID();
 	pPlayer->Respawn();
@@ -220,8 +225,10 @@ void CGameController::OnPlayerConnect(CPlayer *pPlayer)
 	SendGameInfo(ClientID);
 }
 
-void CGameController::OnPlayerDisconnect(CPlayer *pPlayer)
+void IGameController::OnPlayerDisconnect(CPlayer *pPlayer)
 {
+	if(BotManager())
+		BotManager()->OnClientRefresh(pPlayer->GetCID());
 	pPlayer->OnDisconnect();
 
 	int ClientID = pPlayer->GetCID();
@@ -236,11 +243,11 @@ void CGameController::OnPlayerDisconnect(CPlayer *pPlayer)
 		m_RealPlayerNum--;
 }
 
-void CGameController::OnPlayerInfoChange(CPlayer *pPlayer)
+void IGameController::OnPlayerInfoChange(CPlayer *pPlayer)
 {
 }
 
-void CGameController::OnPlayerReadyChange(CPlayer *pPlayer)
+void IGameController::OnPlayerReadyChange(CPlayer *pPlayer)
 {
 	if(Config()->m_SvPlayerReadyMode && pPlayer->GetTeam() != TEAM_SPECTATORS && !pPlayer->m_DeadSpecMode)
 	{
@@ -249,33 +256,11 @@ void CGameController::OnPlayerReadyChange(CPlayer *pPlayer)
 	}
 }
 
-void CGameController::OnPlayerSendEmoticon(int Emoticon, CPlayer *pPlayer)
+void IGameController::OnPlayerSendEmoticon(int Emoticon, CPlayer *pPlayer)
 {
-	if(!pPlayer || !pPlayer->GetCharacter())
-	{
-		return;
-	}
-
-	CCharacter *pChr = pPlayer->GetCharacter();
-	float ClosestDistance = 32.f;
-	int ClosestPoint = -1;
-	for(int i = 0; i < m_aSitPoints.size(); ++i)
-	{
-		vec2 SitPos = m_aSitPoints[i];
-		if(distance(pChr->GetPos(), SitPos) < ClosestDistance + pChr->GetProximityRadius())
-		{
-			ClosestDistance = distance(pChr->GetPos(), SitPos);
-			ClosestPoint = i;
-		}
-	}
-	if(ClosestPoint != -1)
-	{
-		pChr->SetSitting(true);
-		pChr->SetSitPos(m_aSitPoints[ClosestPoint]);
-	}
 }
 
-void CGameController::OnReset()
+void IGameController::OnReset()
 {
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{
@@ -290,7 +275,7 @@ void CGameController::OnReset()
 }
 
 // game
-void CGameController::ResetGame()
+void IGameController::ResetGame()
 {
 	// reset the game
 	GameServer()->m_World.m_ResetRequested = true;
@@ -299,7 +284,7 @@ void CGameController::ResetGame()
 }
 
 // general
-void CGameController::Snap(int SnappingClient)
+void IGameController::Snap(int SnappingClient)
 {
 	CNetObj_GameData *pGameData = static_cast<CNetObj_GameData *>(Server()->SnapNewItem(NETOBJTYPE_GAMEDATA, 0, sizeof(CNetObj_GameData)));
 	if(!pGameData)
@@ -324,14 +309,22 @@ void CGameController::Snap(int SnappingClient)
 	}
 }
 
-void CGameController::Tick()
+void IGameController::PostSnap()
 {
+	if(BotManager())
+		BotManager()->PostSnap();
+}
+
+void IGameController::Tick()
+{
+	if(BotManager())
+		BotManager()->Tick();
 	// check for inactive players
 	DoActivityCheck();
 }
 
 // info
-bool CGameController::IsFriendlyFire(int ClientID1, int ClientID2) const
+bool IGameController::IsFriendlyFire(int ClientID1, int ClientID2) const
 {
 	if(ClientID1 == ClientID2)
 		return false;
@@ -348,22 +341,22 @@ bool CGameController::IsFriendlyFire(int ClientID1, int ClientID2) const
 	return false;
 }
 
-bool CGameController::IsFriendlyTeamFire(int Team1, int Team2) const
+bool IGameController::IsFriendlyTeamFire(int Team1, int Team2) const
 {
 	return IsTeamplay() && !Config()->m_SvTeamdamage && Team1 == Team2;
 }
 
-bool CGameController::IsPlayerReadyMode() const
+bool IGameController::IsPlayerReadyMode() const
 {
 	return Config()->m_SvPlayerReadyMode != 0;
 }
 
-bool CGameController::IsTeamChangeAllowed() const
+bool IGameController::IsTeamChangeAllowed() const
 {
 	return !GameServer()->m_World.m_Paused;
 }
 
-void CGameController::SendGameInfo(int ClientID)
+void IGameController::SendGameInfo(int ClientID)
 {
 	CNetMsg_Sv_GameInfo GameInfoMsg;
 	GameInfoMsg.m_GameFlags = m_GameFlags;
@@ -394,7 +387,7 @@ void CGameController::SendGameInfo(int ClientID)
 }
 
 // spawn
-bool CGameController::CanSpawn(int Team, vec2 *pOutPos) const
+bool IGameController::CanSpawn(int Team, vec2 *pOutPos) const
 {
 	// spectators can't spawn
 	if(Team == TEAM_SPECTATORS || GameServer()->m_World.m_Paused || GameServer()->m_World.m_ResetRequested)
@@ -417,7 +410,7 @@ bool CGameController::CanSpawn(int Team, vec2 *pOutPos) const
 	return Eval.m_Got;
 }
 
-float CGameController::EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos) const
+float IGameController::EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos) const
 {
 	float Score = 0.0f;
 	CCharacter *pC = (CCharacter *) GameServer()->m_World.FindFirst(CGameWorld::ENTTYPE_CHARACTER);
@@ -435,7 +428,7 @@ float CGameController::EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos) const
 	return Score;
 }
 
-void CGameController::EvaluateSpawnType(CSpawnEval *pEval, int Type) const
+void IGameController::EvaluateSpawnType(CSpawnEval *pEval, int Type) const
 {
 	// get spawn point
 	for(unsigned i = 0; i < m_aNumSpawnPoints[Type]; i++)
@@ -470,23 +463,23 @@ void CGameController::EvaluateSpawnType(CSpawnEval *pEval, int Type) const
 	}
 }
 
-bool CGameController::GetStartRespawnState() const
+bool IGameController::GetStartRespawnState() const
 {
 	return false;
 }
 
 // team
-bool CGameController::CanChangeTeam(CPlayer *pPlayer, int JoinTeam) const
+bool IGameController::CanChangeTeam(CPlayer *pPlayer, int JoinTeam) const
 {
 	return true;
 }
 
-bool CGameController::CanJoinTeam(int Team, int NotThisID) const
+bool IGameController::CanJoinTeam(int Team, int NotThisID) const
 {
 	return true;
 }
 
-int CGameController::ClampTeam(int Team) const
+int IGameController::ClampTeam(int Team) const
 {
 	if(Team < TEAM_RED)
 		return TEAM_SPECTATORS;
@@ -495,7 +488,7 @@ int CGameController::ClampTeam(int Team) const
 	return TEAM_RED;
 }
 
-void CGameController::DoTeamChange(CPlayer *pPlayer, int Team, bool DoChatMsg)
+void IGameController::DoTeamChange(CPlayer *pPlayer, int Team, bool DoChatMsg)
 {
 	Team = ClampTeam(Team);
 	if(Team == pPlayer->GetTeam())
@@ -537,7 +530,7 @@ void CGameController::DoTeamChange(CPlayer *pPlayer, int Team, bool DoChatMsg)
 		pPlayer->m_InactivityTickCounter = 0;
 }
 
-int CGameController::GetStartTeam()
+int IGameController::GetStartTeam()
 {
 	if(Config()->m_SvTournamentMode)
 		return TEAM_SPECTATORS;
@@ -547,6 +540,6 @@ int CGameController::GetStartTeam()
 	return Team;
 }
 
-void CGameController::RegisterChatCommands(CCommandManager *pManager)
+void IGameController::RegisterChatCommands(CCommandManager *pManager)
 {
 }

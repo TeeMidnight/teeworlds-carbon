@@ -23,6 +23,12 @@
 CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInfos) :
 	CHealthEntity(pWorld, CGameWorld::ENTTYPE_BOTENTITY, Pos, ms_PhysSize)
 {
+	if(!GameController()->BotManager())
+	{
+		delete this;
+		return;
+	}
+
 	m_BotID = BotID;
 	m_Emote = random_int() % NUM_EMOTES;
 	m_TeeInfos = TeeInfos;
@@ -31,7 +37,7 @@ CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInf
 	m_ReloadTimer = 0;
 
 	m_Core.Reset();
-	m_Core.Init(GameServer()->BotManager()->BotWorldCore(), GameServer()->Collision());
+	m_Core.Init(&pWorld->m_Core, GameServer()->Collision());
 	m_Core.m_Pos = m_Pos;
 
 	m_CursorTarget = vec2(100.f, 0.f);
@@ -148,7 +154,7 @@ void CBotEntity::TickDefered()
 
 void CBotEntity::Snap(int SnappingClient)
 {
-	int ClientID = GameServer()->BotManager()->FindClientID(SnappingClient, GetBotID());
+	int ClientID = GameController()->BotManager()->FindClientID(SnappingClient, GetBotID());
 	if(ClientID == -1)
 		return;
 
@@ -231,10 +237,8 @@ void CBotEntity::Die(CEntity *pKiller, int Weapon)
 	GameServer()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
 
 	CHealthEntity::Die(pKiller, Weapon);
-	GameServer()->BotManager()->CreateDeath(m_Pos, GetBotID());
-
-	if(GameServer()->BotManager())
-		GameServer()->BotManager()->OnBotDeath(GetBotID());
+	GameController()->BotManager()->CreateDeath(m_Pos, GetBotID());
+	GameController()->BotManager()->OnBotDeath(GetBotID());
 }
 
 bool CBotEntity::IsFriendlyDamage(CEntity *pFrom)
@@ -251,7 +255,7 @@ bool CBotEntity::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 	int OldHealth = m_Health, OldArmor = m_Armor;
 	bool Return = CHealthEntity::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
 	// create healthmod indicator
-	GameServer()->BotManager()->CreateDamage(m_Pos, m_BotID, Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
+	GameController()->BotManager()->CreateDamage(m_Pos, m_BotID, Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
 
 	// do damage Hit sound
 	if(pFrom && pFrom->GetObjType() == CGameWorld::ENTTYPE_CHARACTER)
