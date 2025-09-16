@@ -30,13 +30,13 @@ struct SCallVoteStatus
 };
 
 // return: true means that need to send vote msg
-typedef bool (*MenuCallback)(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData);
+typedef bool (*FMenuCallback)(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData);
 
 struct SMenuPage
 {
 	Uuid m_Uuid = UUID_ZEROED;
 	Uuid m_ParentUuid = UUID_ZEROED;
-	MenuCallback m_pfnCallback = nullptr;
+	FMenuCallback m_pfnCallback = nullptr;
 	char m_aTitle[VOTE_DESC_LENGTH] = {'\0'};
 	char m_aContext[VOTE_DESC_LENGTH] = {'\0'};
 	void *m_pUserData = nullptr;
@@ -53,7 +53,7 @@ public:
 	CGameMenu(CGameContext *pGameServer);
 	~CGameMenu() = default;
 
-	void Register(const char *pPageName, const char *pTitle, const char *pContext, MenuCallback pfnFunc, void *pUser, const char *pParent = "MAIN");
+	void Register(const char *pPageName, const char *pTitle, const char *pContext, FMenuCallback pfnFunc, void *pUser, const char *pParent = "MAIN");
 
 	void OnClientEntered(int ClientID);
 	void OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound = false);

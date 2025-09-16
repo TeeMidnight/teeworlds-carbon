@@ -35,7 +35,7 @@ CGameMenu::CGameMenu(CGameContext *pGameServer) :
 	Register("LANGUAGE", _C("Language Settings", "Vote Menu"), MenuLanguage, nullptr);
 }
 
-void CGameMenu::Register(const char *pPageName, const char *pTitle, const char *pContext, MenuCallback pfnFunc, void *pUser, const char *pParent)
+void CGameMenu::Register(const char *pPageName, const char *pTitle, const char *pContext, FMenuCallback pfnFunc, void *pUser, const char *pParent)
 {
 	dbg_assert(pPageName && pPageName[0], "Page must have a name");
 	dbg_assert(pTitle && pTitle[0], "Page must have a title");
