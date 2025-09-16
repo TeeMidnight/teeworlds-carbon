@@ -2267,7 +2267,7 @@ void CClient::Con_Record(IConsole::IResult *pResult, void *pUserData)
 	if(pResult->NumArguments())
 		pSelf->DemoRecorder_Start(pResult->GetString(0), false);
 	else
-		pSelf->DemoRecorder_Start("demo", true);
+		pSelf->DemoRecorder_Start(pSelf->GetCurrentMapName(), true);
 }
 
 void CClient::Con_StopRecord(IConsole::IResult *pResult, void *pUserData)

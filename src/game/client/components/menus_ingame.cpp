@@ -207,7 +207,7 @@ void CMenus::RenderGame(CUIRect MainView)
 		if(DoButton_Menu(&s_DemoButton, Localize(Recording ? "Stop record" : "Record"), Recording, &Button)) // Localize("Stop record");Localize("Record");
 		{
 			if(!Recording)
-				Client()->DemoRecorder_Start("demo", true);
+				Client()->DemoRecorder_Start(Client()->GetCurrentMapName(), true);
 			else
 				Client()->DemoRecorder_Stop();
 		}

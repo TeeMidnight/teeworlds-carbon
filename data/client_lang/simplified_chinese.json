@@ -473,11 +473,11 @@
 		},
 		{
 			"or": "Size",
-			"tr": "大小"
+			"tr": "地图大小"
 		},
 		{
 			"or": "Crc",
-			"tr": "Crc"
+			"tr": "地图Crc"
 		},
 		{
 			"or": "Teams are locked",
