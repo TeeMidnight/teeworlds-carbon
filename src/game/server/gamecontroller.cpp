@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of NewTeeworldsCN, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #include <engine/shared/config.h>
 
 #include <game/mapitems.h>
@@ -324,13 +324,18 @@ void IGameController::Tick()
 }
 
 // info
-bool IGameController::IsFriendlyFire(int ClientID1, int ClientID2) const
+bool IGameController::IsFriendlyFire(class CEntity *pEnt1, class CEntity *pEnt2) const
 {
-	if(ClientID1 == ClientID2)
+	if(pEnt1 == pEnt2)
 		return false;
 
 	if(IsTeamplay())
 	{
+		if(pEnt1->GetObjType() != CGameWorld::ENTTYPE_CHARACTER || pEnt2->GetObjType() != CGameWorld::ENTTYPE_CHARACTER)
+			return false;
+		int ClientID1 = static_cast<CCharacter *>(pEnt1)->GetCID();
+		int ClientID2 = static_cast<CCharacter *>(pEnt2)->GetCID();
+
 		if(!GameServer()->m_apPlayers[ClientID1] || !GameServer()->m_apPlayers[ClientID2])
 			return false;
 

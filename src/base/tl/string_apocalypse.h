@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (c) 2024 Bamcane
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of NewTeeworldsCN, a modified version of Teeworlds.
+ *
+ * Copyright (c) 2024 Bamcane
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #ifndef BASE_TL_STRING_APOCALYPSE_H
 #define BASE_TL_STRING_APOCALYPSE_H
 

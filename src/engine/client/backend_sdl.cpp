@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of NewTeeworldsCN, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #include <base/detect.h>
 #include <engine/external/glad/gl.h>
 
@@ -426,7 +426,7 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 		else
 			SrcBlendMode = GL_SRC_ALPHA;
 	}
-	else 
+	else
 	{
 		if(IsAlphaOnlyLoc != -1 && (m_LastAlphaOnly || NewShader))
 			glUniform1i(IsAlphaOnlyLoc, 0);
@@ -640,10 +640,10 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Update(const CCommandBuffer::
 		glBufferSubData(GL_PIXEL_UNPACK_BUFFER, 0, pCommand->m_Size, pCommand->m_pData);
 
 		glBindTexture(GL_TEXTURE_2D, m_aTextures[pCommand->m_Slot].m_Tex2D);
-		glTexSubImage2D(GL_TEXTURE_2D, 0, pCommand->m_X, pCommand->m_Y, 
-						pCommand->m_Width, pCommand->m_Height,
-						TexFormatToOpenGLFormat(pCommand->m_Format), 
-						GL_UNSIGNED_BYTE, 0);
+		glTexSubImage2D(GL_TEXTURE_2D, 0, pCommand->m_X, pCommand->m_Y,
+			pCommand->m_Width, pCommand->m_Height,
+			TexFormatToOpenGLFormat(pCommand->m_Format),
+			GL_UNSIGNED_BYTE, 0);
 
 		glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
 	}

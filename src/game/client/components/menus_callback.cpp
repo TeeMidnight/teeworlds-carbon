@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of NewTeeworldsCN, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #include <base/color.h>
 
 #include <engine/shared/config.h>
@@ -492,7 +492,6 @@ float CMenus::RenderSettingsCustomLaser(CUIRect View)
 		OuterPicker.Draw(vec4(0.0f, 0.0f, 0.0f, 0.25f));
 		RenderHSLPicker(Picker, Config()->m_ClLaserOuterColor, false, s_HLPicker, s_aButtons);
 	}
-
 
 	return 48.0f;
 }
