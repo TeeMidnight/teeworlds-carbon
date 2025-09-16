@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of Carbon, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #include <limits.h>
 
 #include <engine/demo.h>
@@ -582,7 +582,8 @@ float CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const c
 			// ping
 			{
 				const int &Ping = pInfo->m_pPlayerInfo->m_Latency;
-				vec4 PingColor = vec4(TextColor.r, TextColor.g, TextColor.b, 0.5f * ColorAlpha);;
+				vec4 PingColor = vec4(TextColor.r, TextColor.g, TextColor.b, 0.5f * ColorAlpha);
+				;
 				vec4 StartColor;
 				vec4 EndColor;
 				float MixVal;

@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of Carbon, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #include <engine/shared/config.h>
 
 #include <game/server/gamecontext.h>
@@ -575,7 +575,7 @@ bool CCharacter::IsFriendlyDamage(CEntity *pFrom)
 	if(!pFrom)
 		return true;
 
-	return false;
+	return GameController()->IsFriendlyFire(pFrom, this);
 }
 
 bool CCharacter::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, int Weapon)

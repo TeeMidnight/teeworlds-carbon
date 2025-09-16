@@ -1,13 +1,13 @@
 /*
-* This file is part of NewTeeworldsCN, a modified version of Teeworlds.
-* 
-* Copyright (C) 2007-2025 Magnus Auvinen
-* Copyright (C) 2025 NewTeeworldsCN
-* 
-* This software is provided 'as-is', under the zlib License.
-* See license.txt in the root of the distribution for more information.
-* If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
-*/
+ * This file is part of Carbon, a modified version of Teeworlds.
+ *
+ * Copyright (C) 2007-2025 Magnus Auvinen
+ * Copyright (C) 2025 NewTeeworldsCN
+ *
+ * This software is provided 'as-is', under the zlib License.
+ * See license.txt in the root of the distribution for more information.
+ * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ */
 #ifndef GAME_SERVER_GAMECONTROLLER_H
 #define GAME_SERVER_GAMECONTROLLER_H
 
@@ -113,7 +113,7 @@ public:
 	virtual void Tick();
 
 	// info
-	virtual bool IsFriendlyFire(int ClientID1, int ClientID2) const;
+	virtual bool IsFriendlyFire(class CEntity *pEnt1, class CEntity *pEnt2) const;
 	virtual bool IsFriendlyTeamFire(int Team1, int Team2) const;
 	virtual bool IsPlayerReadyMode() const;
 	virtual bool IsTeamChangeAllowed() const;
