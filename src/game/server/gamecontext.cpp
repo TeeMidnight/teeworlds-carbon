@@ -25,6 +25,7 @@
 #include "entities/projectile.h"
 #include "gamecontext.h"
 #include "gamemodes/carbon.h"
+#include "gamemodes/race.h"
 #include "player.h"
 #include "weapons.h"
 

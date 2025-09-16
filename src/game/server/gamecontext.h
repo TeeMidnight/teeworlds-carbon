@@ -23,7 +23,6 @@
 #include "gameworld.h"
 
 #include <cstdio>
-#include <vector>
 
 enum class EChatPrefix
 {

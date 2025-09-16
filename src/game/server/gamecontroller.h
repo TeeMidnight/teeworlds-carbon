@@ -134,6 +134,8 @@ public:
 
 	int GetRealPlayerNum() const { return m_RealPlayerNum; }
 	virtual int GetStartTeam();
+	virtual void OnPlayerExtraSnap(class CPlayer *pPlayer, int SnappingClient) {}
+	virtual int GetPlayerScore(int ClientID) const { return 0; }
 
 	// static void Com_Example(IConsole::IResult *pResult, void *pContext);
 	virtual void RegisterChatCommands(CCommandManager *pManager);
