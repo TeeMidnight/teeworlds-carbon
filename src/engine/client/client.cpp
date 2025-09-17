@@ -352,7 +352,7 @@ void CClient::SendInfo()
 
 void CClient::SendCarbonInfo()
 {
-	CMsgPacker Msg(CARBONMSG_INFO, true, true);
+	CMsgPacker Msg("carbon-info@carbon-mod", true);
 	Msg.AddInt(GameClient()->CarbonClientVersion());
 	SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH);
 }
@@ -1028,26 +1028,9 @@ void CClient::ProcessConnlessPacket(CNetChunk *pPacket)
 	}
 }
 
-static void UnpackPacketWithNamespace(CMsgUnpacker *pUnpacker, const void *pData, int Size)
-{
-	*pUnpacker = CMsgUnpacker(pData, Size);
-
-	if(!pUnpacker->Namespace())
-		return;
-	if(*pUnpacker->Namespace() == UUID_CARBON_NAMESPACE)
-	{
-		int CarbonMsgID = pUnpacker->GetInt();
-		if(pUnpacker->Error())
-			return;
-		pUnpacker->ModifyType(CarbonMsgID + (pUnpacker->System() ? (int) NUM_VANILLA_NET_MSG : (int) NUM_GAMEMSGS));
-	}
-}
-
 void CClient::ProcessServerPacket(CNetChunk *pPacket)
 {
-	CMsgUnpacker Unpacker;
-	UnpackPacketWithNamespace(&Unpacker, pPacket->m_pData, pPacket->m_DataSize);
-
+	CMsgUnpacker Unpacker(pPacket->m_pData, pPacket->m_DataSize);
 	if(Unpacker.Error())
 		return;
 

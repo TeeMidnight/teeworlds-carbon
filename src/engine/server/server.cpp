@@ -854,26 +854,9 @@ void CServer::UpdateClientMapListEntries()
 	}
 }
 
-static void UnpackPacketWithNamespace(CMsgUnpacker *pUnpacker, const void *pData, int Size)
-{
-	*pUnpacker = CMsgUnpacker(pData, Size);
-
-	if(!pUnpacker->Namespace())
-		return;
-	if(*pUnpacker->Namespace() == UUID_CARBON_NAMESPACE)
-	{
-		int CarbonMsgID = pUnpacker->GetInt();
-		if(pUnpacker->Error())
-			return;
-		pUnpacker->ModifyType(CarbonMsgID + (pUnpacker->System() ? (int) NUM_VANILLA_NET_MSG : (int) NUM_GAMEMSGS));
-	}
-	// could be DDNet msg, so we don't drop it.
-}
-
 void CServer::ProcessClientPacket(CNetChunk *pPacket)
 {
-	CMsgUnpacker Unpacker;
-	UnpackPacketWithNamespace(&Unpacker, pPacket->m_pData, pPacket->m_DataSize);
+	CMsgUnpacker Unpacker(pPacket->m_pData, pPacket->m_DataSize);
 	if(Unpacker.Error())
 		return;
 
@@ -881,9 +864,9 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 	if(Unpacker.System())
 	{
 		// system message
-		if(Unpacker.Namespace())
+		if(Unpacker.MsgUuid())
 		{
-			if(Unpacker.Type() == CarbonSystemMsgID(CARBONMSG_INFO))
+			if(*Unpacker.MsgUuid() == CalculateUuid("carbon-info@carbon-mod"))
 			{
 				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
 				{
@@ -896,7 +879,7 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 				}
 			}
 			// ddnet part start
-			else if(*Unpacker.Namespace() == CalculateUuid("clientver@ddnet.tw")) // ddnet 128p version = 19000
+			else if(*Unpacker.MsgUuid() == CalculateUuid("clientver@ddnet.tw")) // ddnet 128p version = 19000
 			{
 				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
 				{
