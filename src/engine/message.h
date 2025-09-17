@@ -17,7 +17,7 @@
 class CMsgPacker : public CPacker
 {
 public:
-	CMsgPacker(int Type, bool System = false, bool Carbon = false)
+	CMsgPacker(int Type, bool System = false)
 	{
 		Reset();
 		if(Type < 0 || Type > 0x3FFFFFFF)
@@ -25,14 +25,18 @@ public:
 			m_Error = true;
 			return;
 		}
-		if(Carbon)
-		{
-			AddInt(System ? 1 : 0);
-			AddRaw(&UUID_CARBON_NAMESPACE, sizeof(UUID_CARBON_NAMESPACE));
-			AddInt(Type);
-		}
-		else
-			AddInt((Type << 1) | (System ? 1 : 0));
+		AddInt((Type << 1) | (System ? 1 : 0));
+	}
+	CMsgPacker(const Uuid &MsgID, bool System = false)
+	{
+		Reset();
+		AddInt(System ? 1 : 0);
+		AddRaw(&MsgID, sizeof(MsgID));
+	}
+
+	CMsgPacker(const char *pUuidStr, bool System = false) :
+		CMsgPacker(CalculateUuid(pUuidStr), System)
+	{
 	}
 };
 
@@ -40,7 +44,7 @@ class CMsgUnpacker : public CUnpacker
 {
 	int m_Type;
 	bool m_System;
-	const Uuid *m_pNamespace;
+	const Uuid *m_pUuid;
 
 public:
 	CMsgUnpacker() = default;
@@ -55,18 +59,18 @@ public:
 		{
 			m_System = false;
 			m_Type = 0;
-			m_pNamespace = nullptr;
+			m_pUuid = nullptr;
 			return;
 		}
 		m_System = Msg & 1;
 		m_Type = Msg >> 1;
-		m_pNamespace = nullptr;
+		m_pUuid = nullptr;
 		if(m_Type == 0)
 		{
-			m_pNamespace = (const Uuid *) GetRaw(sizeof(*m_pNamespace));
+			m_pUuid = (const Uuid *) GetRaw(sizeof(*m_pUuid));
 			if(m_Error)
 			{
-				m_pNamespace = nullptr;
+				m_pUuid = nullptr;
 				m_Error = false;
 				Reset(pData, Size);
 				GetInt();
@@ -79,8 +83,7 @@ public:
 
 	int Type() const { return m_Type; }
 	bool System() const { return m_System; }
-	const Uuid *Namespace() const { return m_pNamespace; }
-	void ModifyType(int Type) { m_Type = Type; }
+	const Uuid *MsgUuid() const { return m_pUuid; }
 };
 
 #endif

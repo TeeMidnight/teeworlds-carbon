@@ -83,11 +83,6 @@ enum
 	NUM_VANILLA_NET_MSG,
 };
 
-enum
-{
-	CARBONMSG_INFO = 0,
-};
-
 // this should be revised
 enum
 {
@@ -120,7 +115,5 @@ enum
 	MSGFLAG_RECORD = 8,
 	MSGFLAG_NOSEND = 16
 };
-
-inline int CarbonSystemMsgID(int OriginMsg) { return OriginMsg + NUM_VANILLA_NET_MSG; }
 
 #endif
