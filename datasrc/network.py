@@ -24,6 +24,7 @@ GameMsgIDs = Enum("GAMEMSG", ["TEAM_SWAP", "SPEC_INVALID_ID", "TEAM_SHUFFLE", "T
 RawHeader = '''
 
 #include <engine/message.h>
+#include <engine/shared/protocol_ex.h>
 
 enum
 {
@@ -300,6 +301,20 @@ Objects = [
 		NetIntRange("m_BestTime", -1, 'max_int'),
 		NetIntRange("m_Precision", 0, 3),
 		NetFlag("m_RaceFlags", RaceFlags),
+	]),
+
+	NetObjectEx("DDNetCharacter", "character@netobj.ddnet.tw", [
+		NetIntAny("m_Flags", default=0),
+		NetTick("m_FreezeEnd"),
+		NetIntRange("m_Jumps", -1, 255, default=2),
+		NetIntAny("m_TeleCheckpoint", default=-1),
+		NetIntRange("m_StrongWeakId", 0, 'MAX_CLIENTS-1', default=0),
+
+		# New data fields for jump display, freeze bar and ninja bar
+		# Default values indicate that these values should not be used
+		NetIntRange("m_JumpedTotal", -1, 255, default=-1),
+		NetTick("m_NinjaActivationTick"),
+		NetTick("m_FreezeStart")
 	]),
 ]
 

@@ -1338,6 +1338,7 @@ set_src(ENGINE_SHARED GLOB src/engine/shared
   engine.cpp
   filecollection.cpp
   filecollection.h
+  global_uuid_manager.cpp
   http.cpp
   http.h
   huffman.cpp
@@ -1369,6 +1370,9 @@ set_src(ENGINE_SHARED GLOB src/engine/shared
   packer.cpp
   packer.h
   protocol.h
+  protocol_ex.cpp
+  protocol_ex.h
+  protocol_ex_msgs.h
   ringbuffer.cpp
   ringbuffer.h
   serverinfo.cpp
@@ -1376,6 +1380,8 @@ set_src(ENGINE_SHARED GLOB src/engine/shared
   snapshot.cpp
   snapshot.h
   storage.cpp
+  uuid_manager.cpp
+  uuid_manager.h
 )
 set(ENGINE_GENERATED_SHARED src/generated/nethash.cpp src/generated/protocol.cpp src/generated/protocol.h)
 set_src(GAME_SHARED GLOB src/game

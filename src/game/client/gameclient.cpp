@@ -1157,7 +1157,7 @@ void CGameClient::OnNewSnapshot()
 		{
 			IClient::CSnapItem Item;
 			const void *pData = Client()->SnapGetItem(IClient::SNAP_CURRENT, Index, &Item);
-			if(m_NetObjHandler.ValidateObj(Item.m_Type, pData, Item.m_DataSize) != 0)
+			if(Item.m_Type < CSnapshot::OFFSET_UUID_TYPE && m_NetObjHandler.ValidateObj(Item.m_Type, pData, Item.m_DataSize) != 0)
 			{
 				if(Config()->m_Debug)
 				{
@@ -1390,6 +1390,15 @@ void CGameClient::OnNewSnapshot()
 			{
 				m_Snap.m_apFlags[Item.m_ID % 2] = (const CNetObj_Flag *) pData;
 			}
+			else if(Item.m_Type == NETOBJTYPE_DDNETCHARACTER)
+			{
+				const CNetObj_DDNetCharacter *pCharacterData = (const CNetObj_DDNetCharacter *) pData;
+				if(Item.m_ID < MAX_CLIENTS)
+				{
+					CSnapState::CCharacterInfo *pCharInfo = &m_Snap.m_aCharacters[Item.m_ID];
+					pCharInfo->m_FreezeEnd = pCharacterData->m_FreezeEnd;
+				}
+			}
 		}
 	}
 
@@ -1599,17 +1608,19 @@ void CGameClient::OnPredict()
 
 			if(m_LocalClientID == c)
 			{
-				// apply freeze for Race mode
-				bool IsFrozen = m_GameInfo.m_GameFlags & GAMEFLAG_RACE && m_Snap.m_aCharacters[c].m_Cur.m_Weapon == WEAPON_NINJA && m_Snap.m_aCharacters[c].m_Cur.m_Armor < 10;
-				if(!IsFrozen)
+				// apply freeze for DDRace mode
+				// apply player input
+				const int *pInput = Client()->GetInput(Tick);
+				if(pInput)
+					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
+				if(m_Snap.m_aCharacters[c].m_FreezeEnd > Client()->GameTick())
 				{
-					// apply player input
-					const int *pInput = Client()->GetInput(Tick);
-					if(pInput)
-						World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
-
-					World.m_apCharacters[c]->Tick(true);
+					World.m_apCharacters[c]->m_Input.m_Direction = 0;
+					World.m_apCharacters[c]->m_Input.m_Jump = 0;
+					World.m_apCharacters[c]->m_Input.m_Fire &= INPUT_STATE_MASK;
+					World.m_apCharacters[c]->m_Input.m_Hook = 0;
 				}
+				World.m_apCharacters[c]->Tick(true);
 			}
 			else
 			{

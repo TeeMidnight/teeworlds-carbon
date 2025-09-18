@@ -11,8 +11,8 @@
 #ifndef ENGINE_MESSAGE_H
 #define ENGINE_MESSAGE_H
 
-#include <base/uuid.h>
 #include <engine/shared/packer.h>
+#include <engine/shared/uuid_manager.h>
 
 class CMsgPacker : public CPacker
 {
@@ -25,18 +25,15 @@ public:
 			m_Error = true;
 			return;
 		}
-		AddInt((Type << 1) | (System ? 1 : 0));
-	}
-	CMsgPacker(const Uuid &MsgID, bool System = false)
-	{
-		Reset();
-		AddInt(System ? 1 : 0);
-		AddRaw(&MsgID, sizeof(MsgID));
-	}
-
-	CMsgPacker(const char *pUuidStr, bool System = false) :
-		CMsgPacker(CalculateUuid(pUuidStr), System)
-	{
+		if(Type < OFFSET_UUID)
+		{
+			AddInt((Type << 1) | (System ? 1 : 0));
+		}
+		else
+		{
+			AddInt(System ? 1 : 0);
+			g_UuidManager.PackUuid(Type, this);
+		}
 	}
 };
 
@@ -44,13 +41,15 @@ class CMsgUnpacker : public CUnpacker
 {
 	int m_Type;
 	bool m_System;
-	const Uuid *m_pUuid;
+	Uuid m_Uuid;
 
 public:
 	CMsgUnpacker() = default;
 
 	CMsgUnpacker(const void *pData, int Size)
 	{
+		m_Uuid = UUID_ZEROED;
+
 		Reset(pData, Size);
 		const int Msg = GetInt();
 		if(Msg < 0)
@@ -59,31 +58,21 @@ public:
 		{
 			m_System = false;
 			m_Type = 0;
-			m_pUuid = nullptr;
 			return;
 		}
 		m_System = Msg & 1;
 		m_Type = Msg >> 1;
-		m_pUuid = nullptr;
 		if(m_Type == 0)
 		{
-			m_pUuid = (const Uuid *) GetRaw(sizeof(*m_pUuid));
-			if(m_Error)
-			{
-				m_pUuid = nullptr;
-				m_Error = false;
-				Reset(pData, Size);
-				GetInt();
-				m_System = Msg & 1;
-				m_Type = Msg >> 1;
-				return;
-			}
+			m_Type = g_UuidManager.UnpackUuid(this, &m_Uuid);
+			if(m_Type == UUID_INVALID || m_Type == UUID_UNKNOWN)
+				m_Error = true;
 		}
 	}
 
 	int Type() const { return m_Type; }
 	bool System() const { return m_System; }
-	const Uuid *MsgUuid() const { return m_pUuid; }
+	const Uuid *MsgUuid() const { return &m_Uuid; }
 };
 
 #endif
