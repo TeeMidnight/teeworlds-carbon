@@ -2164,7 +2164,7 @@ int fs_makedir(const char *path)
 
 int fs_makedir_recursive(const char *path)
 {
-	char buffer[2048];
+	char buffer[IO_MAX_PATH_LENGTH];
 	int len;
 	int i;
 	str_copy(buffer, path, sizeof(buffer));
@@ -2184,6 +2184,26 @@ int fs_makedir_recursive(const char *path)
 		}
 	}
 	return fs_makedir(path);
+}
+
+int fs_makedir_rec_for(const char *path)
+{
+	char buffer[IO_MAX_PATH_LENGTH];
+	str_copy(buffer, path, sizeof(buffer));
+	for(int index = 1; buffer[index] != '\0'; ++index)
+	{
+		char b = buffer[index];
+		if((buffer[index] == '/' || buffer[index] == '\\') && buffer[index + 1] != '\0' && buffer[index - 1] != ':')
+		{
+			buffer[index] = '\0';
+			if(fs_makedir(buffer) < 0)
+			{
+				return -1;
+			}
+			buffer[index] = b;
+		}
+	}
+	return 0;
 }
 
 int fs_is_dir(const char *path)

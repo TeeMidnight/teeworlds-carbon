@@ -36,6 +36,11 @@ MACRO_CONFIG_INT(ClColoredBroadcast, cl_colored_broadcast, 1, 0, 1, CFGFLAG_SAVE
 
 MACRO_CONFIG_INT(ClSaveServerPasswords, cl_save_server_passwords, 1, 0, 2, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Save server passwords (0 = never, 1 = only favorites, 2 = all servers)")
 
+MACRO_CONFIG_STR(ClMapDownloadUrl, cl_map_download_url, 100, "https://raw.githubusercontent.com/NewTeeworldsCN/ddnet-maps7/refs/heads/main/outmaps", CFGFLAG_CLIENT | CFGFLAG_SAVE, "URL used to download maps (must start with https://)")
+MACRO_CONFIG_INT(ClMapDownloadConnectTimeoutMs, cl_map_download_connect_timeout_ms, 2000, 0, 100000, CFGFLAG_CLIENT | CFGFLAG_SAVE, "HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)")
+MACRO_CONFIG_INT(ClMapDownloadLowSpeedLimit, cl_map_download_low_speed_limit, 4000, 0, 100000, CFGFLAG_CLIENT | CFGFLAG_SAVE, "HTTP map downloads: Set low speed limit in bytes per second (0 to disable)")
+MACRO_CONFIG_INT(ClMapDownloadLowSpeedTime, cl_map_download_low_speed_time, 3, 0, 100000, CFGFLAG_CLIENT | CFGFLAG_SAVE, "HTTP map downloads: Set low speed limit time period (0 to disable)")
+
 MACRO_CONFIG_STR(BrFilterString, br_filter_string, 25, "", CFGFLAG_SAVE | CFGFLAG_CLIENT, "Server browser filtering string")
 
 MACRO_CONFIG_INT(BrSort, br_sort, 2, 0, 256, CFGFLAG_SAVE | CFGFLAG_CLIENT, "Sort criteria for the server browser")

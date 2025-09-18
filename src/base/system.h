@@ -1452,6 +1452,8 @@ void fs_listdir_fileinfo(const char *dir, FS_LISTDIR_CALLBACK_FILEINFO cb, int t
 */
 int fs_makedir(const char *path);
 
+int fs_makedir_rec_for(const char *path);
+
 /*
 	Function: fs_makedir_recursive
 		Recursively create directories
