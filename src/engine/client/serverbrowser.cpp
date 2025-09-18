@@ -29,30 +29,35 @@
 #include "serverbrowser.h"
 #include "serverbrowser_http.h"
 
-#include <unordered_set>
+#include <map>
 
 static const char *s_pFilename = "serverlist.json";
 
-static std::unordered_set<int> s_uHttpServers;
+struct SAddrComp
+{
+	bool operator()(const NETADDR &A, const NETADDR &B) const
+	{
+		if(A.type != B.type)
+			return A.type < B.type;
+
+		int ip_size = (A.type == NETTYPE_IPV4) ? NETADDR_SIZE_IPV4 : NETADDR_SIZE_IPV6;
+		int cmp = mem_comp(A.ip, B.ip, ip_size);
+		if(cmp)
+			return cmp < 0;
+
+		return false;
+	}
+};
+static std::map<NETADDR, array<CServerEntry *>, SAddrComp> s_uaHttpServers;
 
 inline int AddrHash(const NETADDR *pAddr)
 {
-	int Len = pAddr->type == NETTYPE_IPV4 ? 4 : 16;
-	// FNV-1a 32-bit
-	int Hash = 2166136261U;
-	for(int i = 0; i < Len; i++)
-	{
-		Hash ^= pAddr->ip[i];
-		Hash *= 16777619; // FNV prime
-	}
-
-	Hash ^= Hash >> 16;
-	Hash *= 0x85ebca6b;
-	Hash ^= Hash >> 13;
-	Hash *= 0xc2b2ae35;
-	Hash ^= Hash >> 16;
-
-	return Hash & 0x1FF;
+	if(pAddr->type == NETTYPE_IPV4)
+		return (pAddr->ip[0] + pAddr->ip[1] + pAddr->ip[2] + pAddr->ip[3]) & 0xFF;
+	else
+		return (pAddr->ip[0] + pAddr->ip[1] + pAddr->ip[2] + pAddr->ip[3] + pAddr->ip[4] + pAddr->ip[5] + pAddr->ip[6] + pAddr->ip[7] +
+			       pAddr->ip[8] + pAddr->ip[9] + pAddr->ip[10] + pAddr->ip[11] + pAddr->ip[12] + pAddr->ip[13] + pAddr->ip[14] + pAddr->ip[15]) &
+		       0xFF;
 }
 
 inline int GetNewToken()
@@ -125,7 +130,7 @@ void CServerBrowser::UpdateFromHttp()
 {
 	int NumServers = m_pHttp->NumServers();
 
-	s_uHttpServers.clear();
+	s_uaHttpServers.clear();
 
 	for(int i = 0; i < NumServers; i++)
 	{
@@ -134,12 +139,12 @@ void CServerBrowser::UpdateFromHttp()
 		pEntry->m_RequestTime = time_get();
 		SetInfo(IServerBrowser::TYPE_INTERNET, pEntry, Info);
 		pEntry->m_Info.m_Latency = 999;
-		if(!s_uHttpServers.count(AddrHash(&pEntry->m_Addr)))
+		if(!s_uaHttpServers.count(pEntry->m_Addr))
 		{
 			pEntry->m_RequestTime = 0;
 			QueueRequest(pEntry);
-			s_uHttpServers.insert(AddrHash(&pEntry->m_Addr));
 		}
+		s_uaHttpServers[pEntry->m_Addr].add(pEntry);
 	}
 
 	RequestResort();
@@ -203,7 +208,7 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 			else
 			{
 				int Latency = minimum(static_cast<int>((time_get() - pEntry->m_RequestTime) * 1000 / time_freq()), 999);
-				for(CServerEntry *pEntry = m_aServerlist[IServerBrowser::TYPE_INTERNET].m_aServerlistIp[AddrHash(&Addr)]; pEntry; pEntry = pEntry->m_pNextIp)
+				for(auto &pEntry : s_uaHttpServers[Addr])
 				{
 					pEntry->m_Info.m_Latency = Latency;
 				}
