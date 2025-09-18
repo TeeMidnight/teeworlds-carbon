@@ -11,7 +11,6 @@
 #ifndef ENGINE_CLIENT_TEXTRENDER_H
 #define ENGINE_CLIENT_TEXTRENDER_H
 
-#include <base/tl/sorted_array.h>
 #include <base/vmath.h>
 #include <engine/textrender.h>
 
@@ -19,6 +18,9 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include FT_STROKER_H
+
+#include <functional>
+#include <unordered_map>
 
 enum
 {
@@ -56,22 +58,32 @@ struct CGlyphIndex
 {
 	int m_FontSizeIndex;
 	int m_ID;
-	CGlyph *m_pGlyph;
 
 	friend bool operator==(const CGlyphIndex &l, const CGlyphIndex &r)
 	{
 		return l.m_ID == r.m_ID && l.m_FontSizeIndex == r.m_FontSizeIndex;
 	};
-	friend bool operator<(const CGlyphIndex &l, const CGlyphIndex &r)
-	{
-		if(l.m_FontSizeIndex == r.m_FontSizeIndex)
-			return l.m_ID < r.m_ID;
-		return l.m_FontSizeIndex < r.m_FontSizeIndex;
-	};
-	friend bool operator>(const CGlyphIndex &l, const CGlyphIndex &r) { return r < l; }
-	friend bool operator<=(const CGlyphIndex &l, const CGlyphIndex &r) { return !(l > r); }
-	friend bool operator>=(const CGlyphIndex &l, const CGlyphIndex &r) { return !(l < r); }
 };
+
+namespace std {
+template<>
+struct hash<CGlyphIndex>
+{
+	std::size_t operator()(const CGlyphIndex &key) const
+	{
+		std::hash<int> int_hash;
+		std::size_t h1 = int_hash(key.m_FontSizeIndex);
+		std::size_t h2 = int_hash(key.m_ID);
+
+		// FNV-1a
+		std::size_t hash = 14695981039346656037ULL; // FNV offset basis (32-bit)
+		hash = (hash ^ h1) * 16777619;
+		hash = (hash ^ h2) * 16777619;
+
+		return hash;
+	}
+};
+} // namespace std
 
 class CGlyphMap
 {
@@ -105,7 +117,7 @@ class CGlyphMap
 	IGraphics::CTextureHandle m_aTextures[2];
 	CAtlas m_aAtlasPages[NUM_PAGES_PER_DIM * NUM_PAGES_PER_DIM];
 	int m_ActiveAtlasIndex;
-	sorted_array<CGlyphIndex> m_Glyphs;
+	std::unordered_map<CGlyphIndex, CGlyph *> m_uGlyphs;
 
 	int m_NumTotalPages;
 
