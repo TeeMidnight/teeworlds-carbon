@@ -159,8 +159,8 @@ void CGlyphMap::InitTexture(int Width, int Height)
 	m_ActiveAtlasIndex = 0;
 
 	// invalidate all glyphs
-	for(int i = 0; i < m_Glyphs.size(); ++i)
-		m_Glyphs[i].m_pGlyph->m_Rendered = false;
+	for(auto &[GlyphIndex, pGlyph] : m_uGlyphs)
+		pGlyph->m_Rendered = false;
 
 	int TextureSize = Width * Height;
 
@@ -293,8 +293,8 @@ CGlyphMap::~CGlyphMap()
 {
 	FT_Stroker_Done(m_FtStroker);
 
-	for(int i = 0; i < m_Glyphs.size(); ++i)
-		delete m_Glyphs[i].m_pGlyph;
+	for(auto &[GlyphIndex, pGlyph] : m_uGlyphs)
+		delete pGlyph;
 }
 
 int CGlyphMap::GetCharGlyph(int Chr, FT_Face *pFace)
@@ -476,25 +476,23 @@ CGlyph *CGlyphMap::GetGlyph(int Chr, int FontSizeIndex, bool Render)
 	Index.m_FontSizeIndex = FontSizeIndex;
 	Index.m_ID = Chr;
 
-	sorted_array<CGlyphIndex>::range r = ::find_binary(m_Glyphs.all(), Index);
-
 	// couldn't find glyph, render a new one
-	if(r.empty())
+	if(!m_uGlyphs.count(Index))
 	{
-		Index.m_pGlyph = new CGlyph();
-		Index.m_pGlyph->m_Rendered = false;
-		Index.m_pGlyph->m_ID = Chr;
-		Index.m_pGlyph->m_FontSizeIndex = FontSizeIndex;
-		if(RenderGlyph(Index.m_pGlyph, Render))
+		m_uGlyphs[Index] = new CGlyph();
+		m_uGlyphs[Index]->m_Rendered = false;
+		m_uGlyphs[Index]->m_ID = Chr;
+		m_uGlyphs[Index]->m_FontSizeIndex = FontSizeIndex;
+		if(RenderGlyph(m_uGlyphs[Index], Render))
 		{
-			m_Glyphs.add(Index);
-			return Index.m_pGlyph;
+			return m_uGlyphs[Index];
 		}
-		delete Index.m_pGlyph;
+		delete m_uGlyphs[Index];
+		m_uGlyphs.erase(Index);
 		return NULL;
 	}
 
-	CGlyph *pMatch = r.front().m_pGlyph;
+	CGlyph *pMatch = m_uGlyphs[Index];
 	if(Render)
 		RenderGlyph(pMatch, true);
 	return pMatch;
