@@ -159,9 +159,9 @@ static void TestMsgPackerUnpacker(int Type, bool System, bool ExpectError)
 
 TEST(Packer, RoundtripMsgPackerUnpacker)
 {
-	TestMsgPackerUnpacker(0, false, false);
+	TestMsgPackerUnpacker(1, false, false);
 	TestMsgPackerUnpacker(12345, true, false);
-	TestMsgPackerUnpacker(0x3FFFFFFF, true, false);
+	TestMsgPackerUnpacker(OFFSET_UUID - 1, true, false);
 }
 
 TEST(Packer, MsgPackerError)

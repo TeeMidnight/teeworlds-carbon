@@ -15,6 +15,7 @@
 
 #include "compression.h"
 #include "snapshot.h"
+#include "uuid_manager.h"
 
 // CSnapshot
 
@@ -42,6 +43,25 @@ int CSnapshot::GetItemIndex(int Key) const
 	if(GetItem(Index)->Key() != Key)
 		return -1; // deleted
 	return Index;
+}
+
+int CSnapshot::GetItemType(int Index) const
+{
+	int InternalType = GetItem(Index)->Type();
+	if(InternalType < OFFSET_UUID_TYPE)
+	{
+		return InternalType;
+	}
+	int TypeItemIndex = GetItemIndex(InternalType); // NETOBJTYPE_EX
+	if(TypeItemIndex == -1 || GetItemSize(TypeItemIndex) < (int) sizeof(Uuid))
+	{
+		return InternalType;
+	}
+	const CSnapshotItem *pTypeItem = GetItem(TypeItemIndex);
+	Uuid ItemUuid;
+	for(size_t i = 0; i < sizeof(Uuid) / sizeof(int32_t); i++)
+		uint_to_bytes_be(&ItemUuid.m_aData[i * sizeof(int32_t)], pTypeItem->Data()[i]);
+	return g_UuidManager.LookupUuid(ItemUuid);
 }
 
 void CSnapshot::InvalidateItem(int Index)
@@ -366,9 +386,9 @@ int CSnapshotDelta::UnpackDelta(const CSnapshot *pFrom, CSnapshot *pTo, const vo
 		{
 			if(pData + 1 > pEnd)
 				return -2;
-			if(*pData < 0 || *pData > INT_MAX / 4)
+			if(*pData < 0 || (size_t) *pData > INT_MAX / sizeof(int32_t))
 				return -3;
-			ItemSize = (*pData++) * 4;
+			ItemSize = (*pData++) * sizeof(int32_t);
 		}
 
 		if(RangeCheck(pEnd, pData, ItemSize) || ItemSize < 0)
@@ -379,7 +399,10 @@ int CSnapshotDelta::UnpackDelta(const CSnapshot *pFrom, CSnapshot *pTo, const vo
 		// create the item if needed
 		pNewData = Builder.GetItemData(Key);
 		if(!pNewData)
-			pNewData = (int *) Builder.NewItem(Key >> 16, Key & 0xffff, ItemSize);
+			pNewData = (int *) Builder.NewItem(Type, ID, ItemSize);
+
+		if(!pNewData)
+			return -3;
 
 		// if(range_check(pEnd, pNewData, ItemSize)) return -4;
 
@@ -387,17 +410,16 @@ int CSnapshotDelta::UnpackDelta(const CSnapshot *pFrom, CSnapshot *pTo, const vo
 		if(FromIndex != -1)
 		{
 			// we got an update so we need to apply the diff
-			UndiffItem(pFrom->GetItem(FromIndex)->Data(), pData, pNewData, ItemSize / 4, &m_aSnapshotDataRate[Type]);
-			m_aSnapshotDataUpdates[Type]++;
+			UndiffItem(pFrom->GetItem(FromIndex)->Data(), pData, pNewData, ItemSize / sizeof(int32_t), &m_aSnapshotDataRate[Type]);
 		}
 		else // no previous, just copy the pData
 		{
 			mem_copy(pNewData, pData, ItemSize);
 			m_aSnapshotDataRate[Type] += ItemSize * 8;
-			m_aSnapshotDataUpdates[Type]++;
 		}
+		m_aSnapshotDataUpdates[Type]++;
 
-		pData += ItemSize / 4;
+		pData += ItemSize / sizeof(int32_t);
 	}
 
 	// finish up
@@ -518,11 +540,19 @@ int CSnapshotStorage::Get(int Tick, int64_t *pTagtime, CSnapshot **ppData, CSnap
 }
 
 // CSnapshotBuilder
+CSnapshotBuilder::CSnapshotBuilder()
+{
+	m_NumExtendedItemTypes = 0;
+}
 
 void CSnapshotBuilder::Init()
 {
 	m_DataSize = 0;
 	m_NumItems = 0;
+	for(int i = 0; i < m_NumExtendedItemTypes; i++)
+	{
+		AddExtendedItemType(i);
+	}
 }
 
 void CSnapshotBuilder::Init(const CSnapshot *pSnapshot)
@@ -653,6 +683,49 @@ int CSnapshotBuilder::Finish(void *pSnapdata)
 	return sizeof(CSnapshot) + KeySize + OffsetSize + m_DataSize;
 }
 
+static int GetTypeFromIndex(int Index)
+{
+	return CSnapshot::MAX_TYPE - Index;
+}
+
+bool CSnapshotBuilder::AddExtendedItemType(int Index)
+{
+	dbg_assert(0 <= Index && Index < m_NumExtendedItemTypes, "index out of range");
+	int *pUuidItem = static_cast<int *>(NewItem(0, GetTypeFromIndex(Index), sizeof(Uuid))); // NETOBJTYPE_EX
+	if(pUuidItem == nullptr)
+	{
+		return false;
+	}
+
+	const int TypeId = m_aExtendedItemTypes[Index];
+	const Uuid ItemUuid = g_UuidManager.GetUuid(TypeId);
+	for(size_t i = 0; i < sizeof(Uuid) / sizeof(int32_t); i++)
+	{
+		pUuidItem[i] = bytes_be_to_uint(&ItemUuid.m_aData[i * sizeof(int32_t)]);
+	}
+	return true;
+}
+
+int CSnapshotBuilder::GetExtendedItemTypeIndex(int TypeID)
+{
+	for(int i = 0; i < m_NumExtendedItemTypes; i++)
+	{
+		if(m_aExtendedItemTypes[i] == TypeID)
+		{
+			return i;
+		}
+	}
+	dbg_assert(m_NumExtendedItemTypes < MAX_EXTENDED_ITEM_TYPES, "too many extended item types");
+	int Index = m_NumExtendedItemTypes;
+	m_aExtendedItemTypes[Index] = TypeID;
+	if(AddExtendedItemType(Index))
+	{
+		return Index;
+	}
+	m_NumExtendedItemTypes--;
+	return Index;
+}
+
 void *CSnapshotBuilder::NewItem(int Type, int ID, int Size)
 {
 	if(m_DataSize + sizeof(CSnapshot) + sizeof(CSnapshotItem) + Size + (m_NumItems + 1) * sizeof(int) * 2 >= CSnapshot::MAX_SIZE ||
@@ -662,6 +735,16 @@ void *CSnapshotBuilder::NewItem(int Type, int ID, int Size)
 		dbg_assert(m_DataSize + sizeof(CSnapshot) + m_NumItems * sizeof(int) * 2 < CSnapshot::MAX_SIZE, "too much data");
 		dbg_assert(m_NumItems < MAX_ITEMS, "too many items");
 		return 0;
+	}
+
+	if(Type >= OFFSET_UUID)
+	{
+		const int ExtendedItemTypeIndex = GetExtendedItemTypeIndex(Type);
+		if(ExtendedItemTypeIndex == -1)
+		{
+			return nullptr;
+		}
+		Type = GetTypeFromIndex(ExtendedItemTypeIndex);
 	}
 
 	CSnapshotItem *pObj = (CSnapshotItem *) (m_aData + m_DataSize);

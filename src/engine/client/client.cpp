@@ -40,8 +40,10 @@
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
 #include <engine/shared/protocol.h>
+#include <engine/shared/protocol_ex.h>
 #include <engine/shared/ringbuffer.h>
 #include <engine/shared/snapshot.h>
+#include <engine/shared/uuid_manager.h>
 
 #include <game/version.h>
 #include <generated/protocol.h> // for NUM_GAMEMSGS
@@ -352,7 +354,7 @@ void CClient::SendInfo()
 
 void CClient::SendCarbonInfo()
 {
-	CMsgPacker Msg("carbon-info@carbon-mod", true);
+	CMsgPacker Msg(NETMSG_CARBONINFO, true);
 	Msg.AddInt(GameClient()->CarbonClientVersion());
 	SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH);
 }
@@ -634,7 +636,7 @@ const void *CClient::SnapGetItem(int SnapID, int Index, CSnapItem *pItem) const
 	dbg_assert(SnapID >= 0 && SnapID < NUM_SNAPSHOT_TYPES, "invalid SnapID");
 	const CSnapshotItem *i = m_aSnapshots[SnapID]->m_pAltSnap->GetItem(Index);
 	pItem->m_DataSize = m_aSnapshots[SnapID]->m_pAltSnap->GetItemSize(Index);
-	pItem->m_Type = i->Type();
+	pItem->m_Type = m_aSnapshots[SnapID]->m_pAltSnap->GetItemType(Index);
 	pItem->m_ID = i->ID();
 	return i->Data();
 }
@@ -653,11 +655,12 @@ const void *CClient::SnapFindItem(int SnapID, int Type, int ID) const
 		return 0x0;
 
 	CSnapshot *pAltSnap = m_aSnapshots[SnapID]->m_pAltSnap;
-	int Key = (Type << 16) | (ID & 0xffff);
-	int Index = pAltSnap->GetItemIndex(Key);
-	if(Index != -1)
-		return pAltSnap->GetItem(Index)->Data();
-
+	for(int i = 0; i < m_aSnapshots[SnapID]->m_pSnap->NumItems(); i++)
+	{
+		const CSnapshotItem *pItem = pAltSnap->GetItem(i);
+		if(pAltSnap->GetItemType(i) == Type && pItem->ID() == ID)
+			return (void *) pItem->Data();
+	}
 	return 0x0;
 }
 

@@ -32,6 +32,7 @@
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
 #include <engine/shared/protocol.h>
+#include <engine/shared/protocol_ex.h>
 #include <engine/shared/snapshot.h>
 
 #include <generated/protocol.h> // for NUM_GAMEMSGS
@@ -864,33 +865,30 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 	if(Unpacker.System())
 	{
 		// system message
-		if(Unpacker.MsgUuid())
+		if(Unpacker.Type() == NETMSG_CARBONINFO)
 		{
-			if(*Unpacker.MsgUuid() == CalculateUuid("carbon-info@carbon-mod"))
+			if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
 			{
-				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
-				{
-					m_aClients[ClientID].m_CarbonVersion = Unpacker.GetInt();
-					if(Unpacker.Error())
-						return;
-					char aBuf[64];
-					str_format(aBuf, sizeof(aBuf), "carbon client connected, cid=%d carbon_version=0x%x", ClientID, m_aClients[ClientID].m_CarbonVersion);
-					Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
-				}
+				m_aClients[ClientID].m_CarbonVersion = Unpacker.GetInt();
+				if(Unpacker.Error())
+					return;
+				char aBuf[64];
+				str_format(aBuf, sizeof(aBuf), "carbon client connected, cid=%d carbon_version=0x%x", ClientID, m_aClients[ClientID].m_CarbonVersion);
+				Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
 			}
-			// ddnet part start
-			else if(*Unpacker.MsgUuid() == CalculateUuid("clientver@ddnet.tw")) // ddnet 128p version = 19000
+		}
+		// ddnet part start
+		else if(Unpacker.Type() == NETMSG_DDNETCLIENTVER) // ddnet 128p version = 19000
+		{
+			if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
 			{
-				if((pPacket->m_Flags & NET_CHUNKFLAG_VITAL) != 0 && m_aClients[ClientID].m_State == CClient::STATE_AUTH)
-				{
-					Unpacker.GetRaw(sizeof(Uuid)); // connection id, unused.
-					m_aClients[ClientID].m_DDNetVersion = Unpacker.GetInt();
-					if(Unpacker.Error())
-						return;
-					char aBuf[64];
-					str_format(aBuf, sizeof(aBuf), "ddnet client connected, cid=%d ddnet_version=%d", ClientID, m_aClients[ClientID].m_DDNetVersion);
-					Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
-				}
+				Unpacker.GetRaw(sizeof(Uuid)); // connection id, unused.
+				m_aClients[ClientID].m_DDNetVersion = Unpacker.GetInt();
+				if(Unpacker.Error())
+					return;
+				char aBuf[64];
+				str_format(aBuf, sizeof(aBuf), "ddnet client connected, cid=%d ddnet_version=%d", ClientID, m_aClients[ClientID].m_DDNetVersion);
+				Console()->Print(IConsole::OUTPUT_LEVEL_DEBUG, "server", aBuf);
 			}
 		}
 		else if(Unpacker.Type() == NETMSG_INFO)
@@ -1989,7 +1987,6 @@ void CServer::SnapFreeID(int ID)
 
 void *CServer::SnapNewItem(int Type, int ID, int Size)
 {
-	dbg_assert(Type >= 0 && Type <= 0xffff, "incorrect type");
 	dbg_assert(ID >= 0 && ID <= 0xffff, "incorrect id");
 	return ID < 0 ? 0 : m_SnapshotBuilder.NewItem(Type, ID, Size);
 }
