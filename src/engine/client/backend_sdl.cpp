@@ -805,8 +805,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 		}
 
 		// Free original data if it was rescaled
-		if(pTexData != pCommand->m_pData)
-			mem_free(pTexData);
+		mem_free(pTexData);
 
 		// Create 3D textures
 		glGenTextures(m_TextureArraySize, m_aTextures[pCommand->m_Slot].m_Tex3D);
@@ -842,8 +841,7 @@ void CCommandProcessorFragment_OpenGL::Cmd_Texture_Create(const CCommandBuffer::
 
 			m_aTextures[pCommand->m_Slot].m_MemSize += TileWidth * TileHeight * Depth * pCommand->m_PixelSize;
 		}
-
-		mem_free(pTmpData);
+		pTexData = pTmpData;
 	}
 
 	*m_pTextureMemoryUsage += m_aTextures[pCommand->m_Slot].m_MemSize;
