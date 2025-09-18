@@ -144,7 +144,7 @@ bool CHttpRequest::BeforeInit()
 			}
 		}
 
-		if(fs_makedir_recursive(m_aDestAbsoluteTmp) < 0)
+		if(fs_makedir_rec_for(m_aDestAbsoluteTmp) < 0)
 		{
 			dbg_msg("http", "i/o error, cannot create folder for: %s", m_aDest);
 			return false;

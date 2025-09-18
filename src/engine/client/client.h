@@ -132,6 +132,8 @@ class CClient : public IClient, public CDemoPlayer::IListener
 	char m_aCmdConnect[256];
 
 	// map download
+	char m_aMapdownloadUrl[256];
+	CHttpRequest *m_pMapdownloadTask;
 	char m_aMapdownloadFilename[IO_MAX_PATH_LENGTH];
 	char m_aMapdownloadFilenameTemp[IO_MAX_PATH_LENGTH];
 	char m_aMapdownloadName[IO_MAX_PATH_LENGTH];
@@ -262,8 +264,8 @@ public:
 	const char *GetCurrentMapName() const override { return m_aCurrentMap; }
 	const char *GetCurrentMapPath() const override { return m_aCurrentMapPath; }
 	const char *MapDownloadName() const override { return m_aMapdownloadName; }
-	int MapDownloadAmount() const override { return m_MapdownloadAmount; }
-	int MapDownloadTotalsize() const override { return m_MapdownloadTotalsize; }
+	int MapDownloadAmount() const override { return !m_pMapdownloadTask ? m_MapdownloadAmount : (int)m_pMapdownloadTask->Current(); }
+	int MapDownloadTotalsize() const override { return !m_pMapdownloadTask ? m_MapdownloadTotalsize : (int)m_pMapdownloadTask->Size(); }
 
 	void PumpNetwork();
 
@@ -280,6 +282,10 @@ public:
 
 	void ConnectOnStart(const char *pAddress);
 	void DoVersionSpecificActions();
+
+	void ResetMapDownload(bool ResetActive);
+	void FinishMapDownload();
+	void SendMapRequest();
 
 	static void Con_Connect(IConsole::IResult *pResult, void *pUserData);
 	static void Con_Disconnect(IConsole::IResult *pResult, void *pUserData);

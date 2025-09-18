@@ -286,6 +286,8 @@ CClient::CClient() :
 	m_aCmdConnect[0] = 0;
 
 	// map download
+	m_aMapdownloadUrl[0] = 0;
+	m_pMapdownloadTask = nullptr;
 	m_aMapdownloadFilename[0] = 0;
 	m_aMapdownloadFilenameTemp[0] = 0;
 	m_aMapdownloadName[0] = 0;
@@ -593,18 +595,7 @@ void CClient::DisconnectWithReason(const char *pReason)
 	m_pMap->Unload();
 
 	// disable all downloads
-	m_MapdownloadChunk = 0;
-	if(m_MapdownloadFileTemp)
-	{
-		io_close(m_MapdownloadFileTemp);
-		Storage()->RemoveFile(m_aMapdownloadFilenameTemp, IStorage::TYPE_SAVE);
-	}
-	m_MapdownloadFileTemp = 0;
-	m_MapdownloadSha256 = SHA256_ZEROED;
-	m_MapdownloadSha256Present = false;
-	m_MapdownloadCrc = 0;
-	m_MapdownloadTotalsize = -1;
-	m_MapdownloadAmount = 0;
+	ResetMapDownload(true);
 
 	// clear the current server info
 	mem_zero(&m_CurrentServerInfo, sizeof(m_CurrentServerInfo));
@@ -1066,6 +1057,8 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 				DisconnectWithReason(pError);
 			else
 			{
+				ResetMapDownload(true);
+
 				pError = LoadMapSearch(pMap, pMapSha256, MapCrc);
 
 				if(!pError)
@@ -1075,12 +1068,6 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 				}
 				else
 				{
-					if(m_MapdownloadFileTemp)
-					{
-						io_close(m_MapdownloadFileTemp);
-						Storage()->RemoveFile(m_aMapdownloadFilenameTemp, IStorage::TYPE_SAVE);
-					}
-
 					// start map download
 					FormatMapDownloadFilename(pMap, pMapSha256, MapCrc, false, m_aMapdownloadFilename, sizeof(m_aMapdownloadFilename));
 					FormatMapDownloadFilename(pMap, pMapSha256, MapCrc, true, m_aMapdownloadFilenameTemp, sizeof(m_aMapdownloadFilenameTemp));
@@ -1090,7 +1077,6 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 					m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/network", aBuf);
 
 					str_copy(m_aMapdownloadName, pMap, sizeof(m_aMapdownloadName));
-					m_MapdownloadFileTemp = Storage()->OpenFile(m_aMapdownloadFilenameTemp, IOFLAG_WRITE, IStorage::TYPE_SAVE);
 					m_MapdownloadChunk = 0;
 					m_MapdownloadChunkNum = MapChunkNum;
 					m_MapDownloadChunkSize = MapChunkSize;
@@ -1100,12 +1086,27 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 					m_MapdownloadTotalsize = MapSize;
 					m_MapdownloadAmount = 0;
 
-					// request first chunk package of map data
-					CMsgPacker Msg(NETMSG_REQUEST_MAP_DATA, true);
-					SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH);
+					if(pMapSha256)
+					{
+						char aUrl[256];
+						char aEscaped[256];
+						EscapeUrl(aEscaped, sizeof(aEscaped), m_aMapdownloadFilename + str_length("downloadedmaps/")); // cut off downloadedmaps/
+						bool UseConfigUrl = m_aMapdownloadUrl[0] == '\0';
+						str_format(aUrl, sizeof(aUrl), "%s/%s", UseConfigUrl ? Config()->m_ClMapDownloadUrl : m_aMapdownloadUrl, aEscaped);
 
-					if(Config()->m_Debug)
-						m_pConsole->Print(IConsole::OUTPUT_LEVEL_DEBUG, "client/network", "requested first chunk package");
+						m_pMapdownloadTask = HttpGetFile(aUrl, Config(), Storage(), m_aMapdownloadFilenameTemp, IStorage::TYPE_SAVE);
+						m_pMapdownloadTask->Timeout(CTimeout{Config()->m_ClMapDownloadConnectTimeoutMs, 0, Config()->m_ClMapDownloadLowSpeedLimit, Config()->m_ClMapDownloadLowSpeedTime});
+						m_pMapdownloadTask->MaxResponseSize(MapSize);
+						m_pMapdownloadTask->ExpectSha256(*pMapSha256);
+						m_Http.Run(m_pMapdownloadTask);
+					}
+					else
+					{
+						// request first chunk package of map data
+						SendMapRequest();
+						if(Config()->m_Debug)
+							m_pConsole->Print(IConsole::OUTPUT_LEVEL_DEBUG, "client/network", "requested first chunk package");
+					}
 				}
 			}
 		}
@@ -1131,23 +1132,14 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 				m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/network", "download complete, loading map");
 
 				if(m_MapdownloadFileTemp)
+				{
 					io_close(m_MapdownloadFileTemp);
-				m_MapdownloadFileTemp = 0;
+					m_MapdownloadFileTemp = nullptr;
+				}
 				m_MapdownloadAmount = 0;
 				m_MapdownloadTotalsize = -1;
 
-				Storage()->RemoveFile(m_aMapdownloadFilename, IStorage::TYPE_SAVE);
-				Storage()->RenameFile(m_aMapdownloadFilenameTemp, m_aMapdownloadFilename, IStorage::TYPE_SAVE);
-
-				// load map
-				const char *pError = LoadMap(m_aMapdownloadName, m_aMapdownloadFilename, m_MapdownloadSha256Present ? &m_MapdownloadSha256 : 0, m_MapdownloadCrc);
-				if(!pError)
-				{
-					m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/network", "loading done");
-					SendReady();
-				}
-				else
-					DisconnectWithReason(pError);
+				FinishMapDownload();
 			}
 			else if(m_MapdownloadChunk % m_MapdownloadChunkNum == 0)
 			{
@@ -1655,6 +1647,18 @@ void CClient::Update()
 
 	// pump the network
 	PumpNetwork();
+
+	if(m_pMapdownloadTask)
+	{
+		if(m_pMapdownloadTask->State() == EHttpState::DONE)
+			FinishMapDownload();
+		else if(m_pMapdownloadTask->State() == EHttpState::ERROR || m_pMapdownloadTask->State() == EHttpState::ABORTED)
+		{
+			dbg_msg("webdl", "http failed, falling back to gameserver");
+			ResetMapDownload(false);
+			SendMapRequest();
+		}
+	}
 
 	// update the server browser
 	m_ServerBrowser.Update();
@@ -2405,6 +2409,70 @@ void CClient::ConnectOnStart(const char *pAddress)
 void CClient::DoVersionSpecificActions()
 {
 	Config()->m_ClLastVersionPlayed = CLIENT_VERSION;
+}
+
+void CClient::ResetMapDownload(bool ResetActive)
+{
+	if(m_pMapdownloadTask)
+	{
+		m_pMapdownloadTask->Abort();
+		m_pMapdownloadTask = nullptr;
+	}
+
+	if(m_MapdownloadFileTemp)
+	{
+		io_close(m_MapdownloadFileTemp);
+		Storage()->RemoveFile(m_aMapdownloadFilenameTemp, IStorage::TYPE_SAVE);
+		m_MapdownloadFileTemp = nullptr;
+	}
+
+	if(ResetActive)
+	{
+		m_MapdownloadChunk = 0;
+		m_MapdownloadSha256Present = false;
+		m_MapdownloadSha256 = SHA256_ZEROED;
+		m_MapdownloadCrc = 0;
+		m_MapdownloadTotalsize = -1;
+		m_MapdownloadAmount = 0;
+		m_aMapdownloadFilename[0] = '\0';
+		m_aMapdownloadFilenameTemp[0] = '\0';
+		m_aMapdownloadName[0] = '\0';
+	}
+}
+
+void CClient::FinishMapDownload()
+{
+	m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/network", "download complete, loading map");
+
+	SHA256_DIGEST *pSha256 = m_MapdownloadSha256Present ? &m_MapdownloadSha256 : nullptr;
+
+	Storage()->RemoveFile(m_aMapdownloadFilename, IStorage::TYPE_SAVE);
+	Storage()->RenameFile(m_aMapdownloadFilenameTemp, m_aMapdownloadFilename, IStorage::TYPE_SAVE);
+
+	const char *pError = LoadMap(m_aMapdownloadName, m_aMapdownloadFilename, pSha256, m_MapdownloadCrc);
+	if(!pError)
+	{
+		ResetMapDownload(true);
+		m_pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "client/network", "loading done");
+		SendReady();
+	}
+	else if(m_pMapdownloadTask) // fallback
+	{
+		ResetMapDownload(false);
+		SendMapRequest();
+	}
+	else
+	{
+		DisconnectWithReason(pError);
+	}
+}
+
+void CClient::SendMapRequest()
+{
+	m_MapdownloadFileTemp = Storage()->OpenFile(m_aMapdownloadFilenameTemp, IOFLAG_WRITE, IStorage::TYPE_SAVE);
+
+	CMsgPacker Msg(NETMSG_REQUEST_MAP_DATA, true);
+	SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH);
 }
 
 /*
