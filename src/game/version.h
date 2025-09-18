@@ -21,6 +21,6 @@
 #define MOD_NAME "Carbon"
 #define GAME_RELEASE_VERSION "0.7.5"
 
-#define MOD_VERSION "0.1.0"
-#define MOD_CLIENT_VERSION 0x0100
+#define MOD_VERSION "0.1.1"
+#define MOD_CLIENT_VERSION 0x0101
 #endif
