@@ -67,7 +67,7 @@ void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directio
 	}
 
 	// if we Hit anything, we have to wait for the reload
-	if(Hits && *pReloadTimer)
+	if(Hits && pReloadTimer)
 		*pReloadTimer = pWorld->Server()->TickSpeed() / 3;
 }
 
