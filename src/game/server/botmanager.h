@@ -23,7 +23,7 @@ class CGameWorld;
 
 class CBotManager
 {
-	CGameContext *m_pGameServer;
+	CGameWorld *m_pGameWorld;
 	Uuid m_aaBotIDMaps[SERVER_MAX_CLIENTS][MAX_BOTS];
 
 	std::vector<Uuid> m_vMarkedAsDestroy;
@@ -31,19 +31,19 @@ class CBotManager
 
 	void ClearPlayerMap(int ClientID);
 	void UpdatePlayerMap(int ClientID);
-	bool CreateBot();
 
 public:
 	class CConfig *Config() const;
 	CGameContext *GameServer() const;
-	IGameController *GameController() const;
 	CGameWorld *GameWorld() const;
+	IGameController *GameController() const;
 	class IServer *Server() const;
 
-	CBotManager(CGameContext *pGameServer);
+	CBotManager(CGameWorld *pGameWorld);
 
 	void Tick();
 
+	bool CreateBot();
 	void CreateDamage(vec2 Pos, Uuid BotID, vec2 Source, int HealthAmount, int ArmorAmount, bool Self);
 	void CreateDeath(vec2 Pos, Uuid BotID);
 

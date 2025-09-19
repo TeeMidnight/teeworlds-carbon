@@ -43,7 +43,7 @@ void CNinja::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction
 	pCharacter->Ninja()->m_CurrentMoveTime = g_pData->m_Weapons.m_Ninja.m_Movetime * pWorld->Server()->TickSpeed() / 1000;
 	pCharacter->Ninja()->m_OldVelAmount = length(pCharacter->GetVel());
 
-	pWorld->GameServer()->CreateSound(Pos, SOUND_NINJA_FIRE);
+	pWorld->CreateSound(Pos, SOUND_NINJA_FIRE);
 }
 
 static CNinja gs_WeaponNinja;

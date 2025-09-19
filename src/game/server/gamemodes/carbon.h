@@ -16,6 +16,8 @@ class CGameControllerCarbon : public IGameController
 {
 public:
 	CGameControllerCarbon(class CGameContext *pGameServer);
+
+	bool IsUsingBot() override { return true; }
 };
 
 #endif // GAME_SERVER_GAMEMODES_CARBON_H

@@ -42,6 +42,7 @@ public:
 	virtual int ClientCountry(int ClientID) const = 0;
 	virtual int ClientScore(int ClientID) const = 0;
 	virtual bool ClientIngame(int ClientID) const = 0;
+	virtual Uuid GetClientMapID(int ClientID) const = 0;
 	virtual int GetClientInfo(int ClientID, CClientInfo *pInfo) const = 0;
 	virtual void GetClientAddr(int ClientID, char *pAddrStr, int Size) const = 0;
 	virtual int GetClientVersion(int ClientID) const = 0;
@@ -80,7 +81,6 @@ public:
 	virtual bool IsAuthed(int ClientID) const = 0;
 	virtual bool IsBanned(int ClientID) = 0;
 	virtual void Kick(int ClientID, const char *pReason) = 0;
-	virtual void ChangeMap(const char *pMap) = 0;
 
 	virtual void DemoRecorder_HandleAutoStart() = 0;
 	virtual bool DemoRecorder_IsRecording() = 0;
@@ -91,6 +91,13 @@ public:
 	virtual const char *Localize(int ClientID, const char *pStr, const char *pContext = "") GNUC_ATTRIBUTE((format_arg(3))) = 0;
 
 	virtual int GetLanguagesInfo(struct SLanguageInfo **ppInfo) = 0;
+
+	virtual void SwitchClientMap(int ClientID, Uuid MapID) = 0;
+	virtual void RequestNewMap(int ClientID, const char *pMapName, int ModeID) = 0;
+
+	virtual Uuid GetBaseMapUuid() const = 0;
+	virtual const char *GetMapName(Uuid MapID) = 0;
+	virtual int GetMapModeID(Uuid MapID) = 0;
 };
 
 class IGameServer : public IInterface
@@ -134,6 +141,10 @@ public:
 	 * @param i The client id.
 	 */
 	virtual void OnUpdatePlayerServerInfo(class CJsonStringWriter *pJSonWriter, int Id) = 0;
+
+	virtual bool CheckWorldExists(Uuid WorldID) = 0;
+	virtual void LoadNewWorld(Uuid WorldID) = 0;
+	virtual void SwitchPlayerWorld(int ClientID, Uuid WorldID) = 0;
 };
 
 extern IGameServer *CreateGameServer();

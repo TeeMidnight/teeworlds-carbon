@@ -15,6 +15,15 @@
 
 #include "race.h"
 
+enum
+{
+	TILE_START = 33,
+	TILE_FINISH = 34,
+
+	COLFLAG_START = 1 << 3,
+	COLFLAG_FINISH = 1 << 4
+};
+
 CGameControllerCarbonRace::CGameControllerCarbonRace(CGameContext *pGameServer) :
 	IGameController(pGameServer)
 {
@@ -41,4 +50,18 @@ void CGameControllerCarbonRace::OnPlayerExtraSnap(CPlayer *pPlayer, int Snapping
 	if(!pRaceInfo)
 		return;
 	pRaceInfo->m_RaceStartTick = -1;
+}
+
+bool CGameControllerCarbonRace::OnExtraTile(CGameWorld *pWorld, int Index, vec2 Pos)
+{
+	int Flag = -1;
+	switch(Index)
+	{
+	case TILE_START: Flag = COLFLAG_START; break;
+	case TILE_FINISH: Flag = COLFLAG_FINISH; break;
+	}
+	if(Flag == -1)
+		return false;
+	pWorld->Collision()->SetFlagFor(Pos, Flag);
+	return true;
 }

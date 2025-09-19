@@ -35,7 +35,7 @@ public:
 void CLaserWeapon::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer)
 {
 	new CLaser(pWorld, Pos, Direction, pWorld->GameServer()->Tuning()->m_LaserReach, pFrom);
-	pWorld->GameServer()->CreateSound(Pos, SOUND_LASER_FIRE);
+	pWorld->CreateSound(Pos, SOUND_LASER_FIRE);
 }
 
 static CLaserWeapon gs_WeaponLaser;

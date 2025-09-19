@@ -23,7 +23,7 @@
 CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInfos) :
 	CHealthEntity(pWorld, CGameWorld::ENTTYPE_BOTENTITY, Pos, ms_PhysSize)
 {
-	if(!GameController()->BotManager())
+	if(!GameWorld()->BotManager())
 	{
 		delete this;
 		return;
@@ -37,7 +37,7 @@ CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInf
 	m_ReloadTimer = 0;
 
 	m_Core.Reset();
-	m_Core.Init(&pWorld->m_Core, GameServer()->Collision());
+	m_Core.Init(&pWorld->m_Core, GameWorld()->Collision());
 	m_Core.m_Pos = m_Pos;
 
 	m_CursorTarget = vec2(100.f, 0.f);
@@ -49,7 +49,7 @@ CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInf
 	mem_zero(&m_Input, sizeof(m_Input));
 	mem_zero(&m_PrevInput, sizeof(m_PrevInput));
 
-	GameServer()->CreatePlayerSpawn(Pos);
+	GameWorld()->CreatePlayerSpawn(Pos);
 	GameWorld()->InsertEntity(this);
 }
 
@@ -76,7 +76,7 @@ void CBotEntity::TickDefered()
 	// advance the dummy
 	{
 		CWorldCore TempWorld;
-		m_ReckoningCore.Init(&TempWorld, GameServer()->Collision());
+		m_ReckoningCore.Init(&TempWorld, GameWorld()->Collision());
 		m_ReckoningCore.Tick(false);
 		m_ReckoningCore.Move();
 		m_ReckoningCore.Quantize();
@@ -90,13 +90,13 @@ void CBotEntity::TickDefered()
 	// lastsentcore
 	vec2 StartPos = m_Core.m_Pos;
 	vec2 StartVel = m_Core.m_Vel;
-	bool StuckBefore = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckBefore = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 
 	m_Core.Move();
 
-	bool StuckAfterMove = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckAfterMove = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 	m_Core.Quantize();
-	bool StuckAfterQuant = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckAfterQuant = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 	m_Pos = m_Core.m_Pos;
 
 	if(!StuckBefore && (StuckAfterMove || StuckAfterQuant))
@@ -154,7 +154,7 @@ void CBotEntity::TickDefered()
 
 void CBotEntity::Snap(int SnappingClient)
 {
-	int ClientID = GameController()->BotManager()->FindClientID(SnappingClient, GetBotID());
+	int ClientID = GameWorld()->BotManager()->FindClientID(SnappingClient, GetBotID());
 	if(ClientID == -1)
 		return;
 
@@ -234,11 +234,11 @@ void CBotEntity::PostSnap()
 void CBotEntity::Die(CEntity *pKiller, int Weapon)
 {
 	// a nice sound
-	GameServer()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
+	GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
 
 	CHealthEntity::Die(pKiller, Weapon);
-	GameController()->BotManager()->CreateDeath(m_Pos, GetBotID());
-	GameController()->BotManager()->OnBotDeath(GetBotID());
+	GameWorld()->BotManager()->CreateDeath(m_Pos, GetBotID());
+	GameWorld()->BotManager()->OnBotDeath(GetBotID());
 }
 
 bool CBotEntity::IsFriendlyDamage(CEntity *pFrom)
@@ -255,7 +255,7 @@ bool CBotEntity::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 	int OldHealth = m_Health, OldArmor = m_Armor;
 	bool Return = CHealthEntity::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
 	// create healthmod indicator
-	GameController()->BotManager()->CreateDamage(m_Pos, m_BotID, Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
+	GameWorld()->BotManager()->CreateDamage(m_Pos, m_BotID, Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
 
 	// do damage Hit sound
 	if(pFrom && pFrom->GetObjType() == CGameWorld::ENTTYPE_CHARACTER)
@@ -268,13 +268,13 @@ bool CBotEntity::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 				GameServer()->m_apPlayers[i]->GetSpectatorID() == pChr->GetCID())
 				Mask |= CmaskOne(i);
 		}
-		GameServer()->CreateSound(GameServer()->m_apPlayers[pChr->GetCID()]->m_ViewPos, SOUND_HIT, Mask);
+		GameWorld()->CreateSound(GameServer()->m_apPlayers[pChr->GetCID()]->m_ViewPos, SOUND_HIT, Mask);
 	}
 
 	if(Dmg > 2)
-		GameServer()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_LONG);
+		GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_LONG);
 	else
-		GameServer()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_SHORT);
+		GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_SHORT);
 
 	return Return;
 }
@@ -321,7 +321,7 @@ void CBotEntity::Action()
 	m_Input.m_Fire = 0;
 
 	CHealthEntity *pTarget = (CHealthEntity *) GameWorld()->ClosestEntity(GetPos(), 320.f, EEntityFlag::ENTFLAG_DAMAGE, this);
-	if(pTarget && GameServer()->Collision()->IntersectLine(GetPos(), pTarget->GetPos(), nullptr, nullptr))
+	if(pTarget && GameWorld()->Collision()->IntersectLine(GetPos(), pTarget->GetPos(), nullptr, nullptr))
 		pTarget = nullptr;
 
 	if(pTarget)

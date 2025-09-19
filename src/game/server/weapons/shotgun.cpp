@@ -51,7 +51,7 @@ void CShotgun::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directi
 			g_pData->m_Weapons.m_Shotgun.m_pBase->m_Damage, false, 0, -1, WEAPON_SHOTGUN);
 	}
 
-	pWorld->GameServer()->CreateSound(Pos, SOUND_SHOTGUN_FIRE);
+	pWorld->CreateSound(Pos, SOUND_SHOTGUN_FIRE);
 }
 
 static CShotgun gs_WeaponShotgun;

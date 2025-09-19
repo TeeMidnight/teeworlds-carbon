@@ -19,6 +19,8 @@ public:
 
 	void Snap(int SnappingClient) override;
 	void OnPlayerExtraSnap(class CPlayer *pPlayer, int SnappingClient) override;
+	bool OnExtraTile(class CGameWorld *pWorld, int Index, vec2 Pos) override;
+
 	int GetPlayerScore(int ClientID) const override { return -1; }
 	bool IsFriendlyFire(class CEntity *pEnt1, class CEntity *pEnt2) const override { return true; }
 };

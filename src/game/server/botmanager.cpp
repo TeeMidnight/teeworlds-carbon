@@ -21,14 +21,14 @@
 #include <algorithm>
 
 CConfig *CBotManager::Config() const { return GameServer()->Config(); }
-CGameContext *CBotManager::GameServer() const { return m_pGameServer; }
-IGameController *CBotManager::GameController() const { return GameServer()->GameController(); }
-CGameWorld *CBotManager::GameWorld() const { return &GameServer()->m_World; }
+CGameWorld *CBotManager::GameWorld() const { return m_pGameWorld; }
+CGameContext *CBotManager::GameServer() const { return GameWorld()->GameServer(); }
+IGameController *CBotManager::GameController() const { return GameWorld()->GameController(); }
 IServer *CBotManager::Server() const { return GameServer()->Server(); }
 
-CBotManager::CBotManager(CGameContext *pGameServer)
+CBotManager::CBotManager(CGameWorld *pGameWorld)
 {
-	m_pGameServer = pGameServer;
+	m_pGameWorld = pGameWorld;
 	m_vMarkedAsDestroy.clear();
 	m_vpBots.clear();
 	ClearPlayerMap(-1);
@@ -176,7 +176,7 @@ bool CBotManager::CreateBot()
 	for(; m_vpBots.count(FreeID); FreeID = RandomUuid()) {}
 
 	vec2 SpawnPos;
-	if(!GameServer()->GameController()->CanSpawn(TEAM_BLUE, &SpawnPos))
+	if(!GameWorld()->GameController()->CanSpawn(GameWorld(), TEAM_BLUE, &SpawnPos))
 		return false;
 
 	CBotEntity *pBot = new CBotEntity(GameWorld(), SpawnPos, FreeID, GenerateRandomSkin());
@@ -190,7 +190,7 @@ bool CBotManager::CreateBot()
 
 void CBotManager::Tick()
 {
-	while(m_vpBots.size() < GameController()->m_aNumSpawnPoints[2])
+	while(m_vpBots.size() < GameWorld()->m_aNumSpawnPoints[2])
 	{
 		if(!CreateBot())
 			break;
@@ -205,7 +205,7 @@ void CBotManager::CreateDamage(vec2 Pos, Uuid BotID, vec2 Source, int HealthAmou
 		if(ClientID == -1)
 			continue;
 
-		GameServer()->CreateDamage(Pos, ClientID, Source, HealthAmount, ArmorAmount, Self, CmaskOne(i));
+		GameWorld()->CreateDamage(Pos, ClientID, Source, HealthAmount, ArmorAmount, Self, CmaskOne(i));
 	}
 }
 
@@ -217,7 +217,7 @@ void CBotManager::CreateDeath(vec2 Pos, Uuid BotID)
 		if(ClientID == -1)
 			continue;
 
-		GameServer()->CreateDeath(Pos, ClientID, CmaskOne(i));
+		GameWorld()->CreateDeath(Pos, ClientID, CmaskOne(i));
 	}
 }
 

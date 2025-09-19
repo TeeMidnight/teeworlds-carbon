@@ -13,6 +13,8 @@
 
 #include <game/gamecore.h>
 
+#include <memory>
+
 #define MAX_CHECK_ENTITY 128
 
 enum class EEntityFlag : int
@@ -65,19 +67,32 @@ private:
 	class CConfig *m_pConfig;
 	class IServer *m_pServer;
 
+	std::shared_ptr<CCollision> m_pCollision;
+
+	class CBotManager *m_pBotManager;
+
 public:
+	class CBotManager *BotManager() const { return m_pBotManager; }
+	class CEventHandler *EventHandler();
 	class IGameController *GameController() { return m_pGameController; }
 	class CGameContext *GameServer() { return m_pGameServer; }
 	class CConfig *Config() { return m_pConfig; }
 	class IServer *Server() { return m_pServer; }
+	CCollision *Collision() { return m_pCollision.get(); }
+
+	vec2 m_aaSpawnPoints[3][64];
+	unsigned m_aNumSpawnPoints[3];
 
 	bool m_ResetRequested;
 	bool m_Paused;
 	CWorldCore m_Core;
 
+	Uuid m_WorldUuid;
+
 	CGameWorld();
 	~CGameWorld();
 
+	void SetCollision(std::shared_ptr<CCollision> pCollision);
 	void SetGameServer(CGameContext *pGameServer);
 	void SetGameController(IGameController *pGameController);
 
@@ -181,6 +196,24 @@ public:
 
 	*/
 	void Tick();
+
+	int64_t CmaskAllInWorld();
+	int64_t CmaskAllInWorldExceptOne(int ClientID);
+
+	// helper functions
+	void CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64_t Mask);
+	void CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64_t Mask);
+	void CreateHammerHit(vec2 Pos, int64_t Mask);
+	void CreatePlayerSpawn(vec2 Pos, int64_t Mask);
+	void CreateDeath(vec2 Pos, int Who, int64_t Mask);
+	void CreateSound(vec2 Pos, int Sound, int64_t Mask);
+
+	void CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self);
+	void CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage);
+	void CreateHammerHit(vec2 Pos);
+	void CreatePlayerSpawn(vec2 Pos);
+	void CreateDeath(vec2 Pos, int Who);
+	void CreateSound(vec2 Pos, int Sound);
 };
 
 #endif

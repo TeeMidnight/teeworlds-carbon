@@ -19,6 +19,7 @@
 #include <game/collision.h>
 #include <game/layers.h>
 #include <game/mapitems.h>
+#include "collision.h"
 
 CCollision::CCollision()
 {
@@ -154,6 +155,14 @@ bool CCollision::TestBox(vec2 Pos, vec2 Size, int Flag) const
 	if(CheckPoint(Pos.x + Size.x, Pos.y + Size.y, Flag))
 		return true;
 	return false;
+}
+
+void CCollision::SetFlagFor(float x, float y, int Flag)
+{
+	int Nx = clamp(round_to_int(x) / 32, 0, m_Width - 1);
+	int Ny = clamp(round_to_int(y) / 32, 0, m_Height - 1);
+
+	m_pTiles[Ny * m_Width + Nx] = Flag;
 }
 
 void CCollision::MoveBox(vec2 *pInoutPos, vec2 *pInoutVel, vec2 Size, float Elasticity, bool *pDeath) const

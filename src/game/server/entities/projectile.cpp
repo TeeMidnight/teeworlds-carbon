@@ -76,7 +76,7 @@ void CProjectile::Tick()
 	float Ct = (Server()->Tick() - m_StartTick) / (float) Server()->TickSpeed();
 	vec2 PrevPos = GetPos(Pt);
 	vec2 CurPos = GetPos(Ct);
-	int Collide = GameServer()->Collision()->IntersectLine(PrevPos, CurPos, &CurPos, 0);
+	int Collide = GameWorld()->Collision()->IntersectLine(PrevPos, CurPos, &CurPos, 0);
 	CBaseHealthEntity *TargetEnt = (CBaseHealthEntity *) GameWorld()->IntersectEntity(PrevPos, CurPos, 6.0f, EEntityFlag::ENTFLAG_DAMAGE, CurPos, GetOwner());
 
 	m_LifeSpan--;
@@ -84,10 +84,10 @@ void CProjectile::Tick()
 	if(TargetEnt || Collide || m_LifeSpan < 0 || GameLayerClipped(CurPos))
 	{
 		if(m_LifeSpan >= 0 || m_Weapon == WEAPON_GRENADE)
-			GameServer()->CreateSound(CurPos, m_SoundImpact);
+			GameWorld()->CreateSound(CurPos, m_SoundImpact);
 
 		if(m_Explosive)
-			GameServer()->CreateExplosion(CurPos, this, m_Weapon, m_Damage);
+			GameWorld()->CreateExplosion(CurPos, this, m_Weapon, m_Damage);
 
 		else if(TargetEnt)
 			TargetEnt->TakeDamage(m_Direction * maximum(0.001f, m_Force), m_Direction * -1, m_Damage, GetOwner(), m_Weapon);

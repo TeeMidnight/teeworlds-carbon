@@ -55,14 +55,13 @@ class IGameController
 			m_Pos = vec2(100, 100);
 		}
 
+		class CGameWorld *m_pWorld;
 		vec2 m_Pos;
 		bool m_Got;
 		bool m_RandomSpawn;
 		int m_FriendlyTeam;
 		float m_Score;
 	};
-	vec2 m_aaSpawnPoints[3][64];
-	unsigned m_aNumSpawnPoints[3];
 
 	float EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos) const;
 	void EvaluateSpawnType(CSpawnEval *pEval, int Type) const;
@@ -84,10 +83,8 @@ protected:
 
 	void SendGameInfo(int ClientID);
 
-	class CBotManager *m_pBotManager;
-
 public:
-	class CBotManager *BotManager() const { return m_pBotManager; }
+	virtual bool IsUsingBot() { return false; }
 
 	IGameController(class CGameContext *pGameServer);
 	virtual ~IGameController();
@@ -95,8 +92,8 @@ public:
 	virtual int OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon);
 	virtual void OnCharacterSpawn(class CCharacter *pChr);
 	virtual void OnFlagReturn(class CFlag *pFlag);
-	virtual bool OnEntity(int Index, vec2 Pos);
-	virtual bool OnExtraTile(int Index, vec2 Pos);
+	virtual bool OnEntity(class CGameWorld *pGameWorld, int Index, vec2 Pos);
+	virtual bool OnExtraTile(class CGameWorld *pGameWorld, int Index, vec2 Pos);
 
 	virtual void OnPlayerConnect(class CPlayer *pPlayer);
 	virtual void OnPlayerDisconnect(class CPlayer *pPlayer);
@@ -123,7 +120,7 @@ public:
 	const char *GetGameType() const { return m_pGameType; }
 
 	// spawn
-	virtual bool CanSpawn(int Team, vec2 *pPos) const;
+	virtual bool CanSpawn(class CGameWorld *pWorld, int Team, vec2 *pPos) const;
 	virtual bool GetStartRespawnState() const;
 
 	// team

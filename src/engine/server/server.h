@@ -150,6 +150,8 @@ public:
 		bool m_Quitting;
 		const IConsole::CCommandInfo *m_pRconCmdToSend;
 		int m_MapListEntryToSend;
+		Uuid m_MapID;
+		bool m_MapChangeRequest;
 
 		bool IncludedInServerInfo() const
 		{
@@ -185,11 +187,28 @@ public:
 	{
 		MAP_CHUNK_SIZE = NET_MAX_PAYLOAD - NET_MAX_CHUNKHEADERSIZE - 4, // msg type
 	};
-	char m_aCurrentMap[64];
-	SHA256_DIGEST m_CurrentMapSha256;
-	unsigned m_CurrentMapCrc;
-	unsigned char *m_pCurrentMapData;
-	int m_CurrentMapSize;
+	class CMapData
+	{
+	public:
+		char m_aName[64];
+		SHA256_DIGEST m_Sha256;
+		unsigned m_Crc;
+		unsigned char *m_pData;
+		int m_Size;
+		int m_ModeID;
+
+		CMapData() { Reset(); }
+		void Reset()
+		{
+			m_aName[0] = '\0';
+			m_Crc = 0;
+			m_pData = nullptr;
+			m_Size = 0;
+			m_ModeID = 0;
+		}
+	};
+	std::unordered_map<Uuid, CMapData> m_uMapDatas;
+	Uuid m_BaseMapUuid;
 	int m_MapChunksPerRequest;
 
 	// maplist
@@ -243,6 +262,7 @@ public:
 	int ClientCountry(int ClientID) const override;
 	int ClientScore(int ClientID) const override;
 	bool ClientIngame(int ClientID) const override;
+	Uuid GetClientMapID(int ClientID) const override;
 
 	int SendMsg(CMsgPacker *pMsg, int Flags, int ClientID) override;
 
@@ -274,7 +294,6 @@ public:
 
 	void PumpNetwork();
 
-	void ChangeMap(const char *pMap) override;
 	const char *GetMapName();
 	int LoadMap(const char *pMapName);
 
@@ -299,7 +318,6 @@ public:
 	static void ConchainModCommandUpdate(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData);
 	static void ConchainConsoleOutputLevelUpdate(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData);
 	static void ConchainRconPasswordSet(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData);
-	static void ConchainMapUpdate(IConsole::IResult *pResult, void *pUserData, IConsole::FCommandCallback pfnCallback, void *pCallbackUserData);
 
 	static void ConNetworkStats(IConsole::IResult *pResult, void *pUser);
 
@@ -313,6 +331,13 @@ public:
 	const char *Localize(const char *pCode, const char *pStr, const char *pContext = "") override;
 	const char *Localize(int ClientID, const char *pStr, const char *pContext = "") override;
 	int GetLanguagesInfo(SLanguageInfo **ppInfo) override;
+
+	void SwitchClientMap(int ClientID, Uuid MapID) override;
+	void RequestNewMap(int ClientID, const char *pMapName, int ModeID) override;
+
+	Uuid GetBaseMapUuid() const override { return m_BaseMapUuid; }
+	const char *GetMapName(Uuid MapID) override;
+	int GetMapModeID(Uuid MapID) override;
 };
 
 #endif

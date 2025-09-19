@@ -26,9 +26,9 @@ class CCollision
 public:
 	enum
 	{
-		COLFLAG_SOLID = 1,
-		COLFLAG_DEATH = 2,
-		COLFLAG_NOHOOK = 4,
+		COLFLAG_SOLID = 1 << 0,
+		COLFLAG_DEATH = 1 << 1,
+		COLFLAG_NOHOOK = 1 << 2,
 	};
 
 	CCollision();
@@ -43,6 +43,9 @@ public:
 	void MovePoint(vec2 *pInoutPos, vec2 *pInoutVel, float Elasticity, int *pBounces) const;
 	void MoveBox(vec2 *pInoutPos, vec2 *pInoutVel, vec2 Size, float Elasticity, bool *pDeath = 0) const;
 	bool TestBox(vec2 Pos, vec2 Size, int Flag = COLFLAG_SOLID) const;
+
+	void SetFlagFor(float x, float y, int Flag);
+	void SetFlagFor(vec2 Pos, int Flag) { SetFlagFor(Pos.x, Pos.y, Flag); }
 };
 
 #endif

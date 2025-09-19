@@ -21,7 +21,7 @@ class CPlayer
 	MACRO_ALLOC_POOL_ID()
 
 public:
-	CPlayer(CGameContext *pGameServer, int ClientID, bool Dummy, bool AsSpec = false);
+	CPlayer(CGameWorld *pGameWorld, int ClientID, bool Dummy, bool AsSpec = false);
 	~CPlayer();
 
 	void Init(int CID);
@@ -108,11 +108,17 @@ public:
 
 	bool m_HideTip;
 
+	void SwitchWorld(CGameWorld *pWorld);
+	CGameWorld *GameWorld() const { return m_pGameWorld; }
+	IGameController *GameController() const;
+
+	bool m_SwitchingMap;
+
 private:
 	CCharacter *m_pCharacter;
-	CGameContext *m_pGameServer;
+	CGameWorld *m_pGameWorld;
 
-	CGameContext *GameServer() const { return m_pGameServer; }
+	CGameContext *GameServer() const;
 	IServer *Server() const;
 
 	//

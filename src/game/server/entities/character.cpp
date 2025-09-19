@@ -50,7 +50,7 @@ bool CCharacter::Spawn(CPlayer *pPlayer, vec2 Pos)
 	m_Pos = Pos;
 
 	m_Core.Reset();
-	m_Core.Init(&GameWorld()->m_Core, GameServer()->Collision());
+	m_Core.Init(&GameWorld()->m_Core, GameWorld()->Collision());
 	m_Core.m_Pos = m_Pos;
 	GameWorld()->m_Core.m_apCharacters[m_pPlayer->GetCID()] = &m_Core;
 
@@ -61,7 +61,7 @@ bool CCharacter::Spawn(CPlayer *pPlayer, vec2 Pos)
 	GameWorld()->InsertEntity(this);
 	m_Alive = true;
 
-	GameServer()->GameController()->OnCharacterSpawn(this);
+	GameWorld()->GameController()->OnCharacterSpawn(this);
 
 	return true;
 }
@@ -80,7 +80,7 @@ void CCharacter::SetWeapon(int W)
 	m_LastWeapon = m_ActiveWeapon;
 	m_QueuedWeapon = -1;
 	m_ActiveWeapon = W;
-	GameServer()->CreateSound(m_Pos, SOUND_WEAPON_SWITCH);
+	GameWorld()->CreateSound(m_Pos, SOUND_WEAPON_SWITCH);
 
 	if(m_ActiveWeapon < 0 || m_ActiveWeapon >= NUM_WEAPONS)
 		m_ActiveWeapon = 0;
@@ -89,9 +89,9 @@ void CCharacter::SetWeapon(int W)
 
 bool CCharacter::IsGrounded()
 {
-	if(GameServer()->Collision()->CheckPoint(m_Pos.x + GetProximityRadius() / 2, m_Pos.y + GetProximityRadius() / 2 + 5))
+	if(GameWorld()->Collision()->CheckPoint(m_Pos.x + GetProximityRadius() / 2, m_Pos.y + GetProximityRadius() / 2 + 5))
 		return true;
-	if(GameServer()->Collision()->CheckPoint(m_Pos.x - GetProximityRadius() / 2, m_Pos.y + GetProximityRadius() / 2 + 5))
+	if(GameWorld()->Collision()->CheckPoint(m_Pos.x - GetProximityRadius() / 2, m_Pos.y + GetProximityRadius() / 2 + 5))
 		return true;
 	return false;
 }
@@ -131,7 +131,7 @@ void CCharacter::HandleNinja()
 		// Set velocity
 		m_Core.m_Vel = m_Ninja.m_ActivationDir * g_pData->m_Weapons.m_Ninja.m_Velocity;
 		vec2 OldPos = m_Pos;
-		GameServer()->Collision()->MoveBox(&m_Core.m_Pos, &m_Core.m_Vel, vec2(GetProximityRadius(), GetProximityRadius()), 0.f);
+		GameWorld()->Collision()->MoveBox(&m_Core.m_Pos, &m_Core.m_Vel, vec2(GetProximityRadius(), GetProximityRadius()), 0.f);
 
 		// reset velocity so the client doesn't predict stuff
 		m_Core.m_Vel = vec2(0.f, 0.f);
@@ -165,7 +165,7 @@ void CCharacter::HandleNinja()
 				continue;
 
 			// Hit a player, give him damage and stuffs...
-			GameServer()->CreateSound(apEnts[i]->GetPos(), SOUND_NINJA_HIT);
+			GameWorld()->CreateSound(apEnts[i]->GetPos(), SOUND_NINJA_HIT);
 			if(m_Ninja.m_NumObjectsHit < SERVER_MAX_CLIENTS)
 				m_Ninja.m_apHitObjects[m_Ninja.m_NumObjectsHit++] = apEnts[i];
 
@@ -254,7 +254,7 @@ void CCharacter::FireWeapon()
 		m_ReloadTimer = 125 * Server()->TickSpeed() / 1000;
 		if(m_LastNoAmmoSound + Server()->TickSpeed() <= Server()->Tick())
 		{
-			GameServer()->CreateSound(m_Pos, SOUND_WEAPON_NOAMMO);
+			GameWorld()->CreateSound(m_Pos, SOUND_WEAPON_NOAMMO);
 			m_LastNoAmmoSound = Server()->Tick();
 		}
 		return;
@@ -356,7 +356,7 @@ void CCharacter::GiveNinja()
 		m_LastWeapon = m_ActiveWeapon;
 	m_ActiveWeapon = WEAPON_NINJA;
 
-	GameServer()->CreateSound(m_Pos, SOUND_PICKUP_NINJA);
+	GameWorld()->CreateSound(m_Pos, SOUND_PICKUP_NINJA);
 }
 
 void CCharacter::SetEmote(int Emote, int Tick)
@@ -431,7 +431,7 @@ void CCharacter::Tick()
 			{
 				m_HealthRegenStart = Server()->Tick();
 				IncreaseHealth(1);
-				GameServer()->CreateSound(m_Pos, SOUND_PICKUP_HEALTH, CmaskOne(m_pPlayer->GetCID()));
+				GameWorld()->CreateSound(m_Pos, SOUND_PICKUP_HEALTH, CmaskOne(m_pPlayer->GetCID()));
 			}
 		}
 	}
@@ -475,7 +475,7 @@ void CCharacter::TickDefered()
 	// advance the dummy
 	{
 		CWorldCore TempWorld;
-		m_ReckoningCore.Init(&TempWorld, GameServer()->Collision());
+		m_ReckoningCore.Init(&TempWorld, GameWorld()->Collision());
 		m_ReckoningCore.Tick(false);
 		m_ReckoningCore.Move();
 		m_ReckoningCore.Quantize();
@@ -490,13 +490,13 @@ void CCharacter::TickDefered()
 	// lastsentcore
 	vec2 StartPos = m_Core.m_Pos;
 	vec2 StartVel = m_Core.m_Vel;
-	bool StuckBefore = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckBefore = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 
 	m_Core.Move();
 
-	bool StuckAfterMove = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckAfterMove = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 	m_Core.Quantize();
-	bool StuckAfterQuant = GameServer()->Collision()->TestBox(m_Core.m_Pos, ColBox);
+	bool StuckAfterQuant = GameWorld()->Collision()->TestBox(m_Core.m_Pos, ColBox);
 	m_Pos = m_Core.m_Pos;
 
 	if(!StuckBefore && (StuckAfterMove || StuckAfterQuant))
@@ -584,7 +584,7 @@ bool CCharacter::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 	int OldHealth = m_Health, OldArmor = m_Armor;
 	bool Return = CHealthEntity::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
 	// create healthmod indicator
-	GameServer()->CreateDamage(m_Pos, GetCID(), Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
+	GameWorld()->CreateDamage(m_Pos, GetCID(), Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
 
 	// do damage Hit sound
 	if(pFrom && pFrom->GetObjType() == CGameWorld::ENTTYPE_CHARACTER)
@@ -597,13 +597,13 @@ bool CCharacter::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 				GameServer()->m_apPlayers[i]->GetSpectatorID() == pChr->GetCID())
 				Mask |= CmaskOne(i);
 		}
-		GameServer()->CreateSound(GameServer()->m_apPlayers[pChr->GetCID()]->m_ViewPos, SOUND_HIT, Mask);
+		GameWorld()->CreateSound(GameServer()->m_apPlayers[pChr->GetCID()]->m_ViewPos, SOUND_HIT, Mask);
 	}
 
 	if(Dmg > 2)
-		GameServer()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_LONG);
+		GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_LONG);
 	else
-		GameServer()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_SHORT);
+		GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_PAIN_SHORT);
 
 	SetEmote(EMOTE_PAIN, Server()->Tick() + 500 * Server()->TickSpeed() / 1000);
 
@@ -614,7 +614,7 @@ void CCharacter::Die(CEntity *pKiller, int Weapon)
 {
 	// we got to wait 0.5 secs before respawning
 	m_pPlayer->m_RespawnTick = Server()->Tick() + Server()->TickSpeed() / 2;
-	int ModeSpecial = GameServer()->GameController()->OnCharacterDeath(this, pKiller->GetObjType() != CGameWorld::ENTTYPE_CHARACTER ? nullptr : static_cast<CCharacter *>(pKiller)->GetPlayer(), Weapon);
+	int ModeSpecial = GameWorld()->GameController()->OnCharacterDeath(this, pKiller->GetObjType() != CGameWorld::ENTTYPE_CHARACTER ? nullptr : static_cast<CCharacter *>(pKiller)->GetPlayer(), Weapon);
 
 	char aBuf[256];
 	int Killer = -1;
@@ -650,14 +650,14 @@ void CCharacter::Die(CEntity *pKiller, int Weapon)
 	}
 
 	// a nice sound
-	GameServer()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
+	GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
 
 	// this is for auto respawn after 3 secs
 	m_pPlayer->m_DieTick = Server()->Tick();
 
 	CHealthEntity::Die(pKiller, Weapon);
 	GameWorld()->m_Core.m_apCharacters[m_pPlayer->GetCID()] = 0;
-	GameServer()->CreateDeath(m_Pos, m_pPlayer->GetCID());
+	GameWorld()->CreateDeath(m_Pos, m_pPlayer->GetCID());
 }
 
 void CCharacter::Snap(int SnappingClient)

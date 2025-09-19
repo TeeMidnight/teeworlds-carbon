@@ -33,7 +33,7 @@ public:
 
 void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer)
 {
-	pWorld->GameServer()->CreateSound(Pos, SOUND_HAMMER_FIRE);
+	pWorld->CreateSound(Pos, SOUND_HAMMER_FIRE);
 
 	float ProximityRadius = pFrom ? pFrom->GetProximityRadius() : 28.f;
 
@@ -46,14 +46,14 @@ void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directio
 	{
 		CBaseHealthEntity *pTarget = apEnts[i];
 
-		if((pTarget == pFrom) || pWorld->GameServer()->Collision()->IntersectLine(Pos, pTarget->GetPos(), NULL, NULL))
+		if((pTarget == pFrom) || pWorld->Collision()->IntersectLine(Pos, pTarget->GetPos(), NULL, NULL))
 			continue;
 
 		// set his velocity to fast upward (for now)
 		if(length(pTarget->GetPos() - Pos) > 0.0f)
-			pWorld->GameServer()->CreateHammerHit(pTarget->GetPos() - normalize(pTarget->GetPos() - Pos) * ProximityRadius * 0.5f);
+			pWorld->CreateHammerHit(pTarget->GetPos() - normalize(pTarget->GetPos() - Pos) * ProximityRadius * 0.5f);
 		else
-			pWorld->GameServer()->CreateHammerHit(Pos);
+			pWorld->CreateHammerHit(Pos);
 
 		vec2 Dir;
 		if(length(pTarget->GetPos() - (pFrom ? pFrom->GetPos() : Pos)) > 0.0f)

@@ -9,12 +9,17 @@
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
 
+#include <generated/server_data.h>
+
+#include "botmanager.h"
 #include "entities/character.h"
 #include "entity.h"
 #include "gamecontext.h"
 #include "gamecontroller.h"
 #include "gameworld.h"
+#include "player.h"
 
+CEventHandler *CGameWorld::EventHandler() { return &GameServer()->m_Events; }
 //////////////////////////////////////////////////
 // game world
 //////////////////////////////////////////////////
@@ -24,10 +29,17 @@ CGameWorld::CGameWorld()
 	m_pConfig = nullptr;
 	m_pServer = nullptr;
 
+	// spawn
+	m_aNumSpawnPoints[0] = 0;
+	m_aNumSpawnPoints[1] = 0;
+	m_aNumSpawnPoints[2] = 0;
+
 	m_Paused = false;
 	m_ResetRequested = false;
 	for(int i = 0; i < NUM_ENTTYPES; i++)
 		m_apFirstEntityTypes[i] = nullptr;
+
+	m_pBotManager = nullptr;
 }
 
 CGameWorld::~CGameWorld()
@@ -36,6 +48,14 @@ CGameWorld::~CGameWorld()
 	for(int i = 0; i < NUM_ENTTYPES; i++)
 		while(m_apFirstEntityTypes[i])
 			delete m_apFirstEntityTypes[i];
+
+	if(m_pBotManager)
+		delete m_pBotManager;
+}
+
+void CGameWorld::SetCollision(std::shared_ptr<CCollision> pCollision)
+{
+	m_pCollision = pCollision;
 }
 
 void CGameWorld::SetGameServer(CGameContext *pGameServer)
@@ -48,6 +68,13 @@ void CGameWorld::SetGameServer(CGameContext *pGameServer)
 void CGameWorld::SetGameController(IGameController *pGameController)
 {
 	m_pGameController = pGameController;
+	if(m_pBotManager)
+		delete m_pBotManager;
+	m_pBotManager = nullptr;
+	if(pGameController->IsUsingBot())
+	{
+		m_pBotManager = new CBotManager(this);
+	}
 }
 
 CEntity *CGameWorld::FindFirst(int Type)
@@ -153,6 +180,9 @@ void CGameWorld::Snap(int SnappingClient)
 
 void CGameWorld::PostSnap()
 {
+	if(BotManager())
+		BotManager()->PostSnap();
+
 	for(int i = 0; i < NUM_ENTTYPES; i++)
 		for(CEntity *pEnt = m_apFirstEntityTypes[i]; pEnt;)
 		{
@@ -174,7 +204,7 @@ void CGameWorld::Reset()
 		}
 	RemoveEntities();
 
-	GameServer()->GameController()->OnReset();
+	GameController()->OnReset();
 	RemoveEntities();
 
 	m_ResetRequested = false;
@@ -200,6 +230,9 @@ void CGameWorld::Tick()
 {
 	if(m_ResetRequested)
 		Reset();
+
+	if(BotManager())
+		BotManager()->Tick();
 
 	if(m_Paused)
 	{
@@ -348,4 +381,130 @@ CEntity *CGameWorld::ClosestEntity(vec2 Pos, float Radius, EEntityFlag Flag, CEn
 	}
 
 	return pClosest;
+}
+
+int64_t CGameWorld::CmaskAllInWorld()
+{
+	int64_t Mask = 0LL;
+	for(auto &pPlayer : GameServer()->m_apPlayers)
+	{
+		if(pPlayer && pPlayer->GameWorld() == this)
+		{
+			Mask |= CmaskOne(pPlayer->GetCID());
+		}
+	}
+	return Mask;
+}
+
+int64_t CGameWorld::CmaskAllInWorldExceptOne(int ClientID)
+{
+	return CmaskAllInWorld() ^ CmaskOne(ClientID);
+}
+
+void CGameWorld::CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self, int64_t Mask)
+{
+	float f = angle(Source);
+	CNetEvent_Damage Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	Event.m_ClientID = Id;
+	Event.m_Angle = (int) (f * 256.0f);
+	Event.m_HealthAmount = HealthAmount;
+	Event.m_ArmorAmount = ArmorAmount;
+	Event.m_Self = Self;
+	EventHandler()->Create(&Event, NETEVENTTYPE_DAMAGE, sizeof(CNetEvent_Damage), Mask);
+}
+
+void CGameWorld::CreateHammerHit(vec2 Pos, int64_t Mask)
+{
+	// create the event
+	CNetEvent_HammerHit Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	EventHandler()->Create(&Event, NETEVENTTYPE_HAMMERHIT, sizeof(CNetEvent_HammerHit), Mask);
+}
+
+void CGameWorld::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage, int64_t Mask)
+{
+	// create the event
+	CNetEvent_Explosion Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	EventHandler()->Create(&Event, NETEVENTTYPE_EXPLOSION, sizeof(CNetEvent_Explosion), Mask);
+
+	// deal damage
+	CBaseHealthEntity *apEnts[MAX_CHECK_ENTITY];
+	float Radius = g_pData->m_Explosion.m_Radius;
+	float InnerRadius = 48.0f;
+	float MaxForce = g_pData->m_Explosion.m_MaxForce;
+	int Num = FindEntities(Pos, Radius, (CEntity **) apEnts, MAX_CHECK_ENTITY, EEntityFlag::ENTFLAG_DAMAGE);
+	for(int i = 0; i < Num; i++)
+	{
+		vec2 Diff = apEnts[i]->GetPos() - Pos;
+		vec2 Force(0, MaxForce);
+		float l = length(Diff);
+		if(l)
+			Force = normalize(Diff) * MaxForce;
+		float Factor = 1 - clamp((l - InnerRadius) / (Radius - InnerRadius), 0.0f, 1.0f);
+		if((int) (Factor * MaxDamage))
+			apEnts[i]->TakeDamage(Force * Factor, Diff * -1, (int) (Factor * MaxDamage), pFrom, Weapon);
+	}
+}
+
+void CGameWorld::CreatePlayerSpawn(vec2 Pos, int64_t Mask)
+{
+	CNetEvent_Spawn Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	EventHandler()->Create(&Event, NETEVENTTYPE_SPAWN, sizeof(CNetEvent_Spawn), Mask);
+}
+
+void CGameWorld::CreateDeath(vec2 Pos, int ClientID, int64_t Mask)
+{
+	CNetEvent_Death Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	Event.m_ClientID = ClientID;
+	EventHandler()->Create(&Event, NETEVENTTYPE_DEATH, sizeof(CNetEvent_Death), Mask);
+}
+
+void CGameWorld::CreateSound(vec2 Pos, int Sound, int64_t Mask)
+{
+	if(Sound < 0)
+		return;
+	CNetEvent_SoundWorld Event;
+	Event.m_X = (int) Pos.x;
+	Event.m_Y = (int) Pos.y;
+	Event.m_SoundID = Sound;
+	EventHandler()->Create(&Event, NETEVENTTYPE_SOUNDWORLD, sizeof(CNetEvent_SoundWorld), Mask);
+}
+
+void CGameWorld::CreateDamage(vec2 Pos, int Id, vec2 Source, int HealthAmount, int ArmorAmount, bool Self)
+{
+	CreateDamage(Pos, Id, Source, HealthAmount, ArmorAmount, Self, CmaskAllInWorld());
+}
+
+void CGameWorld::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDamage)
+{
+	CreateExplosion(Pos, pFrom, Weapon, MaxDamage, CmaskAllInWorld());
+}
+
+void CGameWorld::CreateHammerHit(vec2 Pos)
+{
+	CreateHammerHit(Pos, CmaskAllInWorld());
+}
+
+void CGameWorld::CreatePlayerSpawn(vec2 Pos)
+{
+	CreatePlayerSpawn(Pos, CmaskAllInWorld());
+}
+
+void CGameWorld::CreateDeath(vec2 Pos, int Who)
+{
+	CreateDeath(Pos, Who, CmaskAllInWorld());
+}
+
+void CGameWorld::CreateSound(vec2 Pos, int Sound)
+{
+	CreateSound(Pos, Sound, CmaskAllInWorld());
 }

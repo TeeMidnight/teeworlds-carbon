@@ -41,7 +41,7 @@ void CGrenade::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directi
 		(int) (pWorld->Server()->TickSpeed() * pWorld->GameServer()->Tuning()->m_GrenadeLifetime),
 		g_pData->m_Weapons.m_Grenade.m_pBase->m_Damage, true, 0, SOUND_GRENADE_EXPLODE, WEAPON_GRENADE);
 
-	pWorld->GameServer()->CreateSound(Pos, SOUND_GRENADE_FIRE);
+	pWorld->CreateSound(Pos, SOUND_GRENADE_FIRE);
 }
 
 static CGrenade gs_WeaponGrenade;

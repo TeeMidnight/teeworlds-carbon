@@ -59,10 +59,10 @@ void CFlag::TickDefered()
 	else
 	{
 		// flag hits death-tile or left the game layer, reset it
-		if((GameServer()->Collision()->GetCollisionAt(m_Pos.x, m_Pos.y) & CCollision::COLFLAG_DEATH) || GameLayerClipped(m_Pos))
+		if((GameWorld()->Collision()->GetCollisionAt(m_Pos.x, m_Pos.y) & CCollision::COLFLAG_DEATH) || GameLayerClipped(m_Pos))
 		{
 			Reset();
-			GameServer()->GameController()->OnFlagReturn(this);
+			GameWorld()->GameController()->OnFlagReturn(this);
 		}
 
 		if(!m_AtStand)
@@ -70,12 +70,12 @@ void CFlag::TickDefered()
 			if(Server()->Tick() > m_DropTick + Server()->TickSpeed() * 30)
 			{
 				Reset();
-				GameServer()->GameController()->OnFlagReturn(this);
+				GameWorld()->GameController()->OnFlagReturn(this);
 			}
 			else
 			{
 				m_Vel.y += GameWorld()->m_Core.m_Tuning.m_Gravity;
-				GameServer()->Collision()->MoveBox(&m_Pos, &m_Vel, vec2(ms_PhysSize, ms_PhysSize), 0.5f);
+				GameWorld()->Collision()->MoveBox(&m_Pos, &m_Vel, vec2(ms_PhysSize, ms_PhysSize), 0.5f);
 			}
 		}
 	}

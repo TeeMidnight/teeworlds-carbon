@@ -16,5 +16,4 @@
 CGameControllerCarbon::CGameControllerCarbon(CGameContext *pGameServer) :
 	IGameController(pGameServer)
 {
-	m_pBotManager = new CBotManager(GameServer());
 }

@@ -51,7 +51,7 @@ public:
 CWeaponManager::CWeaponManager()
 {
 	m_upWeapons.clear();
-	RegisterWeapon("Hand", &gs_WeaponHand);
+	RegisterWeapon("default.hand", &gs_WeaponHand);
 }
 
 void CWeaponManager::RegisterWeapon(const char *pWeapon, IWeaponInterface *pClass)

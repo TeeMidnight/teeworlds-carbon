@@ -41,7 +41,7 @@ void CGun::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, 
 		(int) (pWorld->Server()->TickSpeed() * pWorld->GameServer()->Tuning()->m_GunLifetime),
 		g_pData->m_Weapons.m_Gun.m_pBase->m_Damage, false, 0, -1, WEAPON_GUN);
 
-	pWorld->GameServer()->CreateSound(Pos, SOUND_GUN_FIRE);
+	pWorld->CreateSound(Pos, SOUND_GUN_FIRE);
 }
 
 static CGun gs_WeaponGun;
