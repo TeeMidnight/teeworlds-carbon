@@ -73,6 +73,7 @@ class CClient : public IClient, public CDemoPlayer::IListener
 	CConfig *m_pConfig;
 	IConsole *m_pConsole;
 	IStorage *m_pStorage;
+	IEngineMasterServer *m_pMasterServer;
 	CHttp m_Http;
 
 	enum
@@ -191,6 +192,7 @@ public:
 	IEngineInput *Input() { return m_pInput; }
 	IEngineSound *Sound() { return m_pSound; }
 	IGameClient *GameClient() { return m_pGameClient; }
+	IEngineMasterServer *MasterServer() { return m_pMasterServer; }
 	IConfigManager *ConfigManager() { return m_pConfigManager; }
 	CConfig *Config() { return m_pConfig; }
 	IConsole *Console() { return m_pConsole; }
@@ -264,8 +266,8 @@ public:
 	const char *GetCurrentMapName() const override { return m_aCurrentMap; }
 	const char *GetCurrentMapPath() const override { return m_aCurrentMapPath; }
 	const char *MapDownloadName() const override { return m_aMapdownloadName; }
-	int MapDownloadAmount() const override { return !m_pMapdownloadTask ? m_MapdownloadAmount : (int)m_pMapdownloadTask->Current(); }
-	int MapDownloadTotalsize() const override { return !m_pMapdownloadTask ? m_MapdownloadTotalsize : (int)m_pMapdownloadTask->Size(); }
+	int MapDownloadAmount() const override { return !m_pMapdownloadTask ? m_MapdownloadAmount : (int) m_pMapdownloadTask->Current(); }
+	int MapDownloadTotalsize() const override { return !m_pMapdownloadTask ? m_MapdownloadTotalsize : (int) m_pMapdownloadTask->Size(); }
 
 	void PumpNetwork();
 

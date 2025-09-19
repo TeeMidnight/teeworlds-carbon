@@ -305,8 +305,7 @@ int CServerBrowserFilter::CServerFilter::SortCompareName(int Index1, int Index2)
 {
 	CServerEntry *a = m_pServerBrowserFilter->m_ppServerlist[Index1];
 	CServerEntry *b = m_pServerBrowserFilter->m_ppServerlist[Index2];
-	//	make sure empty entries are listed last
-	return (a->m_InfoState == CServerEntry::STATE_READY && b->m_InfoState == CServerEntry::STATE_READY) ? 0 : ((a->m_InfoState != CServerEntry::STATE_READY && b->m_InfoState != CServerEntry::STATE_READY) ? str_comp_nocase(a->m_Info.m_aName, b->m_Info.m_aName) : (a->m_InfoState == CServerEntry::STATE_READY ? -1 : 0));
+	return str_comp_nocase(a->m_Info.m_aName, b->m_Info.m_aName);
 }
 
 int CServerBrowserFilter::CServerFilter::SortCompareMap(int Index1, int Index2) const

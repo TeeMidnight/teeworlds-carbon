@@ -1015,6 +1015,8 @@ void CMenus::RenderServerbrowserServerList(CUIRect View)
 			for(int ServerIndex = 0; ServerIndex < pFilter->NumSortedServers(); ServerIndex++)
 			{
 				const CServerInfo *pItem = pFilter->SortedGet(ServerIndex);
+				if(!pItem->m_Ready)
+					continue;
 
 				// select server if address changed and match found
 				bool IsSelected = m_aSelectedFilters[BrowserType] == FilterIndex && m_aSelectedServers[BrowserType] == ServerIndex;
@@ -2202,11 +2204,6 @@ void CMenus::RenderServerbrowser(CUIRect MainView)
 	BottomBox.VSplitRight(ButtonWidth * 2.0f + Spacing, 0, &BottomBox);
 
 	RenderServerbrowserBottomBox(BottomBox);
-
-	// render data source
-	CUIRect Source;
-	MainView.HSplitBottom(12.0f, 0, &Source);
-	UI()->DoLabel(&Source, Localize("Server list from status.tw"), 14.0f, TEXTALIGN_BL);
 }
 
 void CMenus::UpdateServerBrowserAddress()

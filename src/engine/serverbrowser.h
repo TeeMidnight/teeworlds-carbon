@@ -77,7 +77,7 @@ public:
 	char m_aAddress[NETADDR_MAXSTRSIZE];
 	CClient m_aClients[MAX_CLIENTS];
 
-	bool m_InfoGotByHttp;
+	bool m_Ready;
 };
 
 class CServerFilterInfo
