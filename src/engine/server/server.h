@@ -172,6 +172,7 @@ public:
 	CHttp m_Http;
 
 	IEngineMap *m_pMap;
+	IMapChecker *m_pMapChecker;
 	class ILocalization *m_pLocalization;
 
 	int64_t m_GameStartTime;

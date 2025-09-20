@@ -7,10 +7,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": ""
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -119,7 +115,159 @@
 			"tr": ""
 		},
 		{
+			"or": "Search:",
+			"tr": ""
+		},
+		{
 			"or": "key not found",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Tilskuer"
+		},
+		{
+			"or": "Team",
+			"tr": "Hold"
+		},
+		{
+			"or": "Chat",
+			"tr": "Chat"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Side %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Sudden Death"
+		},
+		{
+			"or": "Game paused",
+			"tr": ""
+		},
+		{
+			"or": "%d player not ready",
+			"tr": ""
+		},
+		{
+			"or": "%d players not ready",
+			"tr": ""
+		},
+		{
+			"or": "Game starts in",
+			"tr": ""
+		},
+		{
+			"or": "Wait for next round",
+			"tr": ""
+		},
+		{
+			"or": "%d player left",
+			"tr": ""
+		},
+		{
+			"or": "%d players left",
+			"tr": ""
+		},
+		{
+			"or": "Warmup",
+			"tr": "Opvarmning"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Forbindelsesproblemer..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Balancer venligst holdet!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%d sekunder tilbage"
+		},
+		{
+			"or": "Reason:",
+			"tr": "Grund:"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Kig på"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
 			"tr": ""
 		},
 		{
@@ -137,6 +285,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "Spil"
+		},
+		{
+			"or": "Players",
+			"tr": "Spillere"
+		},
+		{
+			"or": "Server info",
+			"tr": "Serverinfo"
+		},
+		{
+			"or": "Call vote",
+			"tr": " Lav afstemning"
+		},
+		{
+			"or": "Settings",
+			"tr": "Indstillinger"
+		},
+		{
+			"or": "General",
+			"tr": "Generelt"
+		},
+		{
+			"or": "Player",
+			"tr": "Spiller"
+		},
+		{
+			"or": "Controls",
+			"tr": "Taster"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Grafik"
+		},
+		{
+			"or": "Sound",
+			"tr": "Lyd"
+		},
+		{
+			"or": "Custom",
+			"tr": ""
+		},
+		{
+			"or": "Global",
+			"tr": ""
+		},
+		{
+			"or": "Local",
+			"tr": ""
+		},
+		{
+			"or": "Demos",
+			"tr": "Demoer"
+		},
+		{
+			"or": "Back",
+			"tr": ""
+		},
+		{
+			"or": "Sound error",
+			"tr": "Lyd fejl"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "Lydenheden kunne ikke startes"
+		},
+		{
+			"or": "Ok",
+			"tr": "Ok"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Forbinder til"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Downloader bane"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Sprog"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Omdøb navn på demoen"
+		},
+		{
+			"or": "Save skin",
+			"tr": ""
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Forkert adgangskode"
+		},
+		{
+			"or": "Quit",
+			"tr": "Afslut"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Velkommen til Teeworlds"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Er du sikker på at du vil afslutte?"
+		},
+		{
+			"or": "No",
+			"tr": "Nej"
+		},
+		{
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "Adgangskode"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Afbryd"
+		},
+		{
+			"or": "Try again",
+			"tr": "Forsøg igen"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i minut tilbage"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i minutter tilbage"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i sekund tilbage"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i sekunder tilbage"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Kunne ikke ikke indlæse demoen"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": ""
+		},
+		{
+			"or": "Name",
+			"tr": "Navn"
+		},
+		{
+			"or": "Error",
+			"tr": "Fejl"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Kunne ikke omdøbe demoen"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Siden dette er første gang du starter spillet, så vær så venlig at skrive dit navn nedenunder. Det anbefales at du kigger på indstillingerne så du kan tilpasse dem inden du kobler dig på en server."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Navn"
+		},
+		{
+			"or": "Enter",
+			"tr": "Fortsæt"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": ""
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Frakoblet"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "Denne server kører på en ikke-standard tuning på en ren spilletype."
 		},
 		{
 			"or": "Move left",
@@ -193,10 +569,6 @@
 		{
 			"or": "Vote no",
 			"tr": "Stem nej"
-		},
-		{
-			"or": "Chat",
-			"tr": "Chat"
 		},
 		{
 			"or": "Team chat",
@@ -347,10 +719,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Name",
-			"tr": "Navn"
-		},
-		{
 			"or": "Length",
 			"tr": ""
 		},
@@ -399,14 +767,6 @@
 			"tr": "Slet demo"
 		},
 		{
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
-			"or": "No",
-			"tr": "Nej"
-		},
-		{
 			"or": "Rename",
 			"tr": "Omdøb navn"
 		},
@@ -428,16 +788,8 @@
 			"tr": "Spil"
 		},
 		{
-			"or": "Error",
-			"tr": "Fejl"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "Kunne ikke slette demoen"
-		},
-		{
-			"or": "Ok",
-			"tr": "Ok"
 		},
 		{
 			"or": "Created",
@@ -540,24 +892,12 @@
 			"tr": "Spillermuligheder"
 		},
 		{
-			"or": "Player",
-			"tr": "Spiller"
-		},
-		{
-			"or": "Server info",
-			"tr": "Serverinfo"
-		},
-		{
 			"or": "Address",
 			"tr": "Adresse"
 		},
 		{
 			"or": "Ping",
 			"tr": "Ping"
-		},
-		{
-			"or": "Password",
-			"tr": "Adgangskode"
 		},
 		{
 			"context": "With",
@@ -613,10 +953,6 @@
 			"tr": "Tidsbegrænsning"
 		},
 		{
-			"or": "Players",
-			"tr": "Spillere"
-		},
-		{
 			"or": "MOTD",
 			"tr": "MOTD"
 		},
@@ -661,14 +997,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Reason:",
-			"tr": "Grund:"
-		},
-		{
-			"or": "Call vote",
-			"tr": " Lav afstemning"
-		},
-		{
 			"or": "Force vote",
 			"tr": "Tving afstemning"
 		},
@@ -687,379 +1015,6 @@
 		{
 			"or": "Add",
 			"tr": "Tilføj"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Tidsbegrænsning: %d min"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": ""
-		},
-		{
-			"or": "Spectators",
-			"tr": "Tilskuer"
-		},
-		{
-			"or": "Game over",
-			"tr": "Game over"
-		},
-		{
-			"or": "Round over",
-			"tr": ""
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "Score"
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Rødt hold"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Blå hold"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s vinder!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Uafgjort!"
-		},
-		{
-			"or": "Round over!",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": ""
-		},
-		{
-			"or": "Free-View",
-			"tr": "Free-View"
-		},
-		{
-			"or": "Suicides",
-			"tr": ""
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": ""
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Vote aborted",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote passed",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": ""
-		},
-		{
-			"or": "Vote failed",
-			"tr": ""
-		},
-		{
-			"or": "Settings",
-			"tr": "Indstillinger"
-		},
-		{
-			"or": "Local server",
-			"tr": ""
-		},
-		{
-			"or": "Demos",
-			"tr": "Demoer"
-		},
-		{
-			"or": "Editor",
-			"tr": ""
-		},
-		{
-			"or": "Play",
-			"tr": "Spil"
-		},
-		{
-			"or": "Quit",
-			"tr": "Afslut"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworld %s er ude nu! Download den på www.teeworlds.com!"
-		},
-		{
-			"or": "Game",
-			"tr": "Spil"
-		},
-		{
-			"or": "General",
-			"tr": "Generelt"
-		},
-		{
-			"or": "Controls",
-			"tr": "Taster"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Grafik"
-		},
-		{
-			"or": "Sound",
-			"tr": "Lyd"
-		},
-		{
-			"or": "Custom",
-			"tr": ""
-		},
-		{
-			"or": "Global",
-			"tr": ""
-		},
-		{
-			"or": "Local",
-			"tr": ""
-		},
-		{
-			"or": "Back",
-			"tr": ""
-		},
-		{
-			"or": "Sound error",
-			"tr": "Lyd fejl"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "Lydenheden kunne ikke startes"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Forbinder til"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Downloader bane"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Sprog"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Omdøb navn på demoen"
-		},
-		{
-			"or": "Save skin",
-			"tr": ""
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Forkert adgangskode"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Velkommen til Teeworlds"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Er du sikker på at du vil afslutte?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Afbryd"
-		},
-		{
-			"or": "Try again",
-			"tr": "Forsøg igen"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i minut tilbage"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i minutter tilbage"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i sekund tilbage"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i sekunder tilbage"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Kunne ikke ikke indlæse demoen"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": ""
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Kunne ikke omdøbe demoen"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Siden dette er første gang du starter spillet, så vær så venlig at skrive dit navn nedenunder. Det anbefales at du kigger på indstillingerne så du kan tilpasse dem inden du kobler dig på en server."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Navn"
-		},
-		{
-			"or": "Enter",
-			"tr": "Fortsæt"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": ""
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Frakoblet"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "Denne server kører på en ikke-standard tuning på en ren spilletype."
 		},
 		{
 			"or": "Hue:",
@@ -1221,6 +1176,10 @@
 			"tr": ""
 		},
 		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1289,6 +1248,14 @@
 			"tr": ""
 		},
 		{
+			"or": "Suicides",
+			"tr": ""
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1306,6 +1273,10 @@
 		},
 		{
 			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1457,8 +1428,169 @@
 			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Side %d-"
+			"or": "Local server",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": ""
+		},
+		{
+			"or": "Play",
+			"tr": "Spil"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworld %s er ude nu! Download den på www.teeworlds.com!"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Tidsbegrænsning: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": ""
+		},
+		{
+			"or": "Game over",
+			"tr": "Game over"
+		},
+		{
+			"or": "Round over",
+			"tr": ""
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Score"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Rødt hold"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Blå hold"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s vinder!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Uafgjort!"
+		},
+		{
+			"or": "Round over!",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": ""
+		},
+		{
+			"or": "Free-View",
+			"tr": "Free-View"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": ""
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Vote aborted",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote passed",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": ""
+		},
+		{
+			"or": "Vote failed",
+			"tr": ""
 		},
 		{
 			"or": "Server",
@@ -1471,10 +1603,6 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoritter"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1628,8 +1756,16 @@
 			"tr": "Ingen adgangskode"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "Standard spilletype"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1691,138 +1827,6 @@
 		{
 			"or": "Connect",
 			"tr": "Tilslut"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Sudden Death"
-		},
-		{
-			"or": "Game paused",
-			"tr": ""
-		},
-		{
-			"or": "%d player not ready",
-			"tr": ""
-		},
-		{
-			"or": "%d players not ready",
-			"tr": ""
-		},
-		{
-			"or": "Game starts in",
-			"tr": ""
-		},
-		{
-			"or": "Wait for next round",
-			"tr": ""
-		},
-		{
-			"or": "%d player left",
-			"tr": ""
-		},
-		{
-			"or": "%d players left",
-			"tr": ""
-		},
-		{
-			"or": "Warmup",
-			"tr": "Opvarmning"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Forbindelsesproblemer..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Balancer venligst holdet!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%d sekunder tilbage"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Kig på"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Team",
-			"tr": "Hold"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		}
 	]
 }

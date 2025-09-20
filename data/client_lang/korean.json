@@ -7,10 +7,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": ""
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -119,7 +115,159 @@
 			"tr": ""
 		},
 		{
+			"or": "Search:",
+			"tr": ""
+		},
+		{
 			"or": "key not found",
+			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "모두"
+		},
+		{
+			"or": "Spectators",
+			"tr": "관전자"
+		},
+		{
+			"or": "Team",
+			"tr": "팀"
+		},
+		{
+			"or": "Chat",
+			"tr": "채팅"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Page %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "서든 데스"
+		},
+		{
+			"or": "Game paused",
+			"tr": ""
+		},
+		{
+			"or": "%d player not ready",
+			"tr": ""
+		},
+		{
+			"or": "%d players not ready",
+			"tr": ""
+		},
+		{
+			"or": "Game starts in",
+			"tr": ""
+		},
+		{
+			"or": "Wait for next round",
+			"tr": ""
+		},
+		{
+			"or": "%d player left",
+			"tr": ""
+		},
+		{
+			"or": "%d players left",
+			"tr": ""
+		},
+		{
+			"or": "Warmup",
+			"tr": "준비"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "연결에 문제가 있음..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "팀 밸런스!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%d 초 후 취소"
+		},
+		{
+			"or": "Reason:",
+			"tr": "이유:"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "관전"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
 			"tr": ""
 		},
 		{
@@ -137,6 +285,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "게임"
+		},
+		{
+			"or": "Players",
+			"tr": "유저수"
+		},
+		{
+			"or": "Server info",
+			"tr": "서버 정보"
+		},
+		{
+			"or": "Call vote",
+			"tr": "투표"
+		},
+		{
+			"or": "Settings",
+			"tr": "세팅"
+		},
+		{
+			"or": "General",
+			"tr": "일반"
+		},
+		{
+			"or": "Player",
+			"tr": "플레이어"
+		},
+		{
+			"or": "Controls",
+			"tr": "조작"
+		},
+		{
+			"or": "Graphics",
+			"tr": "그래픽"
+		},
+		{
+			"or": "Sound",
+			"tr": "소리"
+		},
+		{
+			"or": "Custom",
+			"tr": ""
+		},
+		{
+			"or": "Global",
+			"tr": ""
+		},
+		{
+			"or": "Local",
+			"tr": ""
+		},
+		{
+			"or": "Demos",
+			"tr": "데모"
+		},
+		{
+			"or": "Back",
+			"tr": ""
+		},
+		{
+			"or": "Sound error",
+			"tr": "소리 오류"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "오디오 장치를 초기화할 수 없음"
+		},
+		{
+			"or": "Ok",
+			"tr": "확인"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "연결 중"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "맵 다운로드 중"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "언어"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "데모 이름 변경"
+		},
+		{
+			"or": "Save skin",
+			"tr": ""
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "비밀번호 오류"
+		},
+		{
+			"or": "Quit",
+			"tr": "종료"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Teeworlds 에 오신 것을 환영합니다."
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "종료하시겠습니까?"
+		},
+		{
+			"or": "No",
+			"tr": "아니오"
+		},
+		{
+			"or": "Yes",
+			"tr": "예"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "비밀번호"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "중단"
+		},
+		{
+			"or": "Try again",
+			"tr": "재시도"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i 분 남음"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i 분 남음"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i 초 남음"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i 초 남음"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "데모 로딩 에러"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": ""
+		},
+		{
+			"or": "Name",
+			"tr": "이름"
+		},
+		{
+			"or": "Error",
+			"tr": "에러"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "데모의 이름을 바꿀 수 없음"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "다음 빈칸에 게임에서 사용할 닉네임을 입력해 주세요."
+		},
+		{
+			"or": "Nickname",
+			"tr": "닉네임"
+		},
+		{
+			"or": "Enter",
+			"tr": "입력"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": ""
+		},
+		{
+			"or": "Disconnected",
+			"tr": "연결 끊김"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "이 서버는 게임의 표준 형식에 비표준 설정을 사용합니다."
 		},
 		{
 			"or": "Move left",
@@ -193,10 +569,6 @@
 		{
 			"or": "Vote no",
 			"tr": "아니오"
-		},
-		{
-			"or": "Chat",
-			"tr": "채팅"
 		},
 		{
 			"or": "Team chat",
@@ -347,10 +719,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Name",
-			"tr": "이름"
-		},
-		{
 			"or": "Length",
 			"tr": ""
 		},
@@ -399,14 +767,6 @@
 			"tr": "데모 삭제"
 		},
 		{
-			"or": "Yes",
-			"tr": "예"
-		},
-		{
-			"or": "No",
-			"tr": "아니오"
-		},
-		{
 			"or": "Rename",
 			"tr": "이름 변경"
 		},
@@ -428,16 +788,8 @@
 			"tr": "플레이"
 		},
 		{
-			"or": "Error",
-			"tr": "에러"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "데모를 삭제할 수 없음"
-		},
-		{
-			"or": "Ok",
-			"tr": "확인"
 		},
 		{
 			"or": "Created",
@@ -540,24 +892,12 @@
 			"tr": "플레이어 옵션"
 		},
 		{
-			"or": "Player",
-			"tr": "플레이어"
-		},
-		{
-			"or": "Server info",
-			"tr": "서버 정보"
-		},
-		{
 			"or": "Address",
 			"tr": "주소"
 		},
 		{
 			"or": "Ping",
 			"tr": "핑"
-		},
-		{
-			"or": "Password",
-			"tr": "비밀번호"
 		},
 		{
 			"context": "With",
@@ -613,10 +953,6 @@
 			"tr": "시간 제한"
 		},
 		{
-			"or": "Players",
-			"tr": "유저수"
-		},
-		{
 			"or": "MOTD",
 			"tr": "MOTD"
 		},
@@ -661,14 +997,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Reason:",
-			"tr": "이유:"
-		},
-		{
-			"or": "Call vote",
-			"tr": "투표"
-		},
-		{
 			"or": "Force vote",
 			"tr": "강제 투표"
 		},
@@ -687,379 +1015,6 @@
 		{
 			"or": "Add",
 			"tr": "추가"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "시간 제한: %d min"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": ""
-		},
-		{
-			"or": "Spectators",
-			"tr": "관전자"
-		},
-		{
-			"or": "Game over",
-			"tr": "게임 오버"
-		},
-		{
-			"or": "Round over",
-			"tr": ""
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "클랜"
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "점수"
-		},
-		{
-			"or": "%d other players",
-			"tr": ""
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "녹화 %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "레드팀"
-		},
-		{
-			"or": "Blue team",
-			"tr": "블루팀"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s (이)가 이김!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "무승부!"
-		},
-		{
-			"or": "Round over!",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": ""
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": ""
-		},
-		{
-			"or": "Free-View",
-			"tr": "자유 시점"
-		},
-		{
-			"or": "Suicides",
-			"tr": ""
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": ""
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": ""
-		},
-		{
-			"or": "Vote aborted",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote passed",
-			"tr": ""
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": ""
-		},
-		{
-			"or": "Vote failed",
-			"tr": ""
-		},
-		{
-			"or": "Settings",
-			"tr": "세팅"
-		},
-		{
-			"or": "Local server",
-			"tr": ""
-		},
-		{
-			"or": "Demos",
-			"tr": "데모"
-		},
-		{
-			"or": "Editor",
-			"tr": ""
-		},
-		{
-			"or": "Play",
-			"tr": "플레이"
-		},
-		{
-			"or": "Quit",
-			"tr": "종료"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s is out! Download it at www.teeworlds.com!"
-		},
-		{
-			"or": "Game",
-			"tr": "게임"
-		},
-		{
-			"or": "General",
-			"tr": "일반"
-		},
-		{
-			"or": "Controls",
-			"tr": "조작"
-		},
-		{
-			"or": "Graphics",
-			"tr": "그래픽"
-		},
-		{
-			"or": "Sound",
-			"tr": "소리"
-		},
-		{
-			"or": "Custom",
-			"tr": ""
-		},
-		{
-			"or": "Global",
-			"tr": ""
-		},
-		{
-			"or": "Local",
-			"tr": ""
-		},
-		{
-			"or": "Back",
-			"tr": ""
-		},
-		{
-			"or": "Sound error",
-			"tr": "소리 오류"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "오디오 장치를 초기화할 수 없음"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "연결 중"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "맵 다운로드 중"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "언어"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "데모 이름 변경"
-		},
-		{
-			"or": "Save skin",
-			"tr": ""
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "비밀번호 오류"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Teeworlds 에 오신 것을 환영합니다."
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "종료하시겠습니까?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "중단"
-		},
-		{
-			"or": "Try again",
-			"tr": "재시도"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i 분 남음"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i 분 남음"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i 초 남음"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i 초 남음"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "데모 로딩 에러"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": ""
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "데모의 이름을 바꿀 수 없음"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "다음 빈칸에 게임에서 사용할 닉네임을 입력해 주세요."
-		},
-		{
-			"or": "Nickname",
-			"tr": "닉네임"
-		},
-		{
-			"or": "Enter",
-			"tr": "입력"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": ""
-		},
-		{
-			"or": "Disconnected",
-			"tr": "연결 끊김"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "이 서버는 게임의 표준 형식에 비표준 설정을 사용합니다."
 		},
 		{
 			"or": "Hue:",
@@ -1221,6 +1176,10 @@
 			"tr": ""
 		},
 		{
+			"or": "Clan",
+			"tr": "클랜"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1289,6 +1248,14 @@
 			"tr": ""
 		},
 		{
+			"or": "Suicides",
+			"tr": ""
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1306,6 +1273,10 @@
 		},
 		{
 			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1457,8 +1428,169 @@
 			"tr": ""
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Page %d-"
+			"or": "Local server",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": ""
+		},
+		{
+			"or": "Play",
+			"tr": "플레이"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s is out! Download it at www.teeworlds.com!"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "시간 제한: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": ""
+		},
+		{
+			"or": "Game over",
+			"tr": "게임 오버"
+		},
+		{
+			"or": "Round over",
+			"tr": ""
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "점수"
+		},
+		{
+			"or": "%d other players",
+			"tr": ""
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "녹화 %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "레드팀"
+		},
+		{
+			"or": "Blue team",
+			"tr": "블루팀"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s (이)가 이김!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "무승부!"
+		},
+		{
+			"or": "Round over!",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": ""
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": ""
+		},
+		{
+			"or": "Free-View",
+			"tr": "자유 시점"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": ""
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": ""
+		},
+		{
+			"or": "Vote aborted",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote passed",
+			"tr": ""
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": ""
+		},
+		{
+			"or": "Vote failed",
+			"tr": ""
 		},
 		{
 			"or": "Server",
@@ -1471,10 +1603,6 @@
 		{
 			"or": "Favorites",
 			"tr": "즐겨찾기"
-		},
-		{
-			"or": "All",
-			"tr": "모두"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1628,8 +1756,16 @@
 			"tr": "비밀번호 없음"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "기본 게임 종류"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1691,138 +1827,6 @@
 		{
 			"or": "Connect",
 			"tr": "연결"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "서든 데스"
-		},
-		{
-			"or": "Game paused",
-			"tr": ""
-		},
-		{
-			"or": "%d player not ready",
-			"tr": ""
-		},
-		{
-			"or": "%d players not ready",
-			"tr": ""
-		},
-		{
-			"or": "Game starts in",
-			"tr": ""
-		},
-		{
-			"or": "Wait for next round",
-			"tr": ""
-		},
-		{
-			"or": "%d player left",
-			"tr": ""
-		},
-		{
-			"or": "%d players left",
-			"tr": ""
-		},
-		{
-			"or": "Warmup",
-			"tr": "준비"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "연결에 문제가 있음..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "팀 밸런스!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%d 초 후 취소"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "관전"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Team",
-			"tr": "팀"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": ""
 		}
 	]
 }

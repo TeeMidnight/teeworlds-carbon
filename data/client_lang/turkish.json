@@ -14,10 +14,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": "Ara:"
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -126,8 +122,160 @@
 			"tr": "'%s' izleyicilere katıldı"
 		},
 		{
+			"or": "Search:",
+			"tr": "Ara:"
+		},
+		{
 			"or": "key not found",
 			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "Hepsi"
+		},
+		{
+			"or": "Spectators",
+			"tr": "İzleyiciler"
+		},
+		{
+			"or": "Team",
+			"tr": "Takım"
+		},
+		{
+			"or": "Chat",
+			"tr": "Sohbet"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' susturuldu."
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' artık konuşabilir."
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' arkadaş olarak eklendi. "
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' arkadaşlardan çıkarıldı"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Sayfa %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Ani ölüm"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Oyun duraklatıldı"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "%d oyuncu hazır değil"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d oyuncular hazır değil"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "Oyun başlıyor :"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Bir sonraki tur için bekle"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d oyuncu kaldı"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d oyuncu kaldi"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Isınma"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Bağlantı Hataları..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Takımları dengeleyin!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds kaldı"
+		},
+		{
+			"or": "Reason:",
+			"tr": "Neden :"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "İzle"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Hazır olunca <%s>'e basın."
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -144,6 +292,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "Oyun"
+		},
+		{
+			"or": "Players",
+			"tr": "Oyuncular"
+		},
+		{
+			"or": "Server info",
+			"tr": "Sunucu bilgisi"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Oylama başlat"
+		},
+		{
+			"or": "Settings",
+			"tr": "Ayarlar"
+		},
+		{
+			"or": "General",
+			"tr": "Genel"
+		},
+		{
+			"or": "Player",
+			"tr": "Oyuncu"
+		},
+		{
+			"or": "Controls",
+			"tr": "Kontroller"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Grafik"
+		},
+		{
+			"or": "Sound",
+			"tr": "Ses"
+		},
+		{
+			"or": "Custom",
+			"tr": "Özel"
+		},
+		{
+			"or": "Global",
+			"tr": "Küresel"
+		},
+		{
+			"or": "Local",
+			"tr": "Yerel"
+		},
+		{
+			"or": "Demos",
+			"tr": "Demolar"
+		},
+		{
+			"or": "Back",
+			"tr": "Geri"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Ses hatası"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "Ses donanımı başlatılamadı."
+		},
+		{
+			"or": "Ok",
+			"tr": "Tamam"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Bağlanılıyor"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Harita yükleniyor"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Dil"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Demonun adını değiştir"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Deriyi kaydet"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Hatalı şifre"
+		},
+		{
+			"or": "Quit",
+			"tr": "Çıkış"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Teeworlds'e hoşgeldiniz"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Çıkmak istediğinize emin misiniz?"
+		},
+		{
+			"or": "No",
+			"tr": "Hayır"
+		},
+		{
+			"or": "Yes",
+			"tr": "Evet"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "Şifre"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "İptal"
+		},
+		{
+			"or": "Try again",
+			"tr": "Tekrar dene"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i dakika kaldı"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i dakika kaldı"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i saniye kaldı"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i saniye kaldı"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Demo yüklenirken hata oluştu"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Demonun adını değiştirmek istediğinize emin misiniz?"
+		},
+		{
+			"or": "Name",
+			"tr": "Ad"
+		},
+		{
+			"or": "Error",
+			"tr": "Hata"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Demonun ismi değiştirilemiyor"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Deriyi kaydetmek istediğinize emin misiniz? Eger aynı ada sahip bir isim varsa , mevcut deri değişecek."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Oyunu ilk açışınız olduğundan dolayı takma adınızı giriniz. Bir oyuna katılmadan önce ayarları incelemeniz ve isteklerinize göre özelleştirmeniz önerilir."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Takma ad"
+		},
+		{
+			"or": "Enter",
+			"tr": "Gir"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "Kullanıcı adı boş."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Bağlantı kesildi"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "Bu sunucu standart olmayan bir ayarı saf bir oyun türünde kullanıyor."
 		},
 		{
 			"or": "Move left",
@@ -200,10 +576,6 @@
 		{
 			"or": "Vote no",
 			"tr": "Olumsuz oy ver"
-		},
-		{
-			"or": "Chat",
-			"tr": "Sohbet"
 		},
 		{
 			"or": "Team chat",
@@ -354,10 +726,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Name",
-			"tr": "Ad"
-		},
-		{
 			"or": "Length",
 			"tr": "Uzunluk"
 		},
@@ -406,14 +774,6 @@
 			"tr": "Demoyu sil"
 		},
 		{
-			"or": "Yes",
-			"tr": "Evet"
-		},
-		{
-			"or": "No",
-			"tr": "Hayır"
-		},
-		{
 			"or": "Rename",
 			"tr": "Yeniden isimlendir"
 		},
@@ -435,16 +795,8 @@
 			"tr": "Oyna"
 		},
 		{
-			"or": "Error",
-			"tr": "Hata"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "Demo silinemiyor"
-		},
-		{
-			"or": "Ok",
-			"tr": "Tamam"
 		},
 		{
 			"or": "Created",
@@ -547,24 +899,12 @@
 			"tr": "Oyuncu ayarları"
 		},
 		{
-			"or": "Player",
-			"tr": "Oyuncu"
-		},
-		{
-			"or": "Server info",
-			"tr": "Sunucu bilgisi"
-		},
-		{
 			"or": "Address",
 			"tr": "Adres"
 		},
 		{
 			"or": "Ping",
 			"tr": "Ping"
-		},
-		{
-			"or": "Password",
-			"tr": "Şifre"
 		},
 		{
 			"context": "With",
@@ -620,10 +960,6 @@
 			"tr": "Süre limiti"
 		},
 		{
-			"or": "Players",
-			"tr": "Oyuncular"
-		},
-		{
 			"or": "MOTD",
 			"tr": "Açıklama"
 		},
@@ -668,14 +1004,6 @@
 			"tr": "Sunucu oyuncuları izleyici yapmak için oylamaya izin vermiyor"
 		},
 		{
-			"or": "Reason:",
-			"tr": "Neden :"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Oylama başlat"
-		},
-		{
 			"or": "Force vote",
 			"tr": "Oylamayı zorla"
 		},
@@ -694,379 +1022,6 @@
 		{
 			"or": "Add",
 			"tr": "Ekle"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Süre limiti: %d dakika"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Maç"
-		},
-		{
-			"or": "Spectators",
-			"tr": "İzleyiciler"
-		},
-		{
-			"or": "Game over",
-			"tr": "Oyun sonu"
-		},
-		{
-			"or": "Round over",
-			"tr": "Tur bitti"
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "Skor"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%dbaşka oyuncu"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "Kayıt %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Kırmızı takım"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Mavi takım"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s kazandı!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Berabere!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Tur bitti!"
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": "gövde"
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": "damga"
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": "Dekorasyon"
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": "eller"
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": "ayak"
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": "gözler"
-		},
-		{
-			"or": "Free-View",
-			"tr": "Serbest Görüntü"
-		},
-		{
-			"or": "Suicides",
-			"tr": ""
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": ""
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": ""
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": "'%s' sunucu ayarlarını değiştirmek için oylama başlattı '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": "'%s', '%s' adlı kişiyi oyundan atmak için oylama başlattı (%s)"
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": "'%s', '%s' adlı kişiyi izleyici yapmak için oylama başlattı (%s)"
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": "Yönetici '%s' sunucu ayarını değistirmeye zorladı (%s)"
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": "Yönetici '%s' adlı kişiyi izleyici yaptı (%s)"
-		},
-		{
-			"or": "Vote aborted",
-			"tr": "Oylama iptal edildi"
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": "Yönetici oylamayı \"olumlu\" olarak zorladı"
-		},
-		{
-			"or": "Vote passed",
-			"tr": "Oylama başarılı"
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": "Yönetici oylamayı 'olumsuz' olarak zorladı"
-		},
-		{
-			"or": "Vote failed",
-			"tr": "Oylama başarısız"
-		},
-		{
-			"or": "Settings",
-			"tr": "Ayarlar"
-		},
-		{
-			"or": "Local server",
-			"tr": "Yerel Sunucu"
-		},
-		{
-			"or": "Demos",
-			"tr": "Demolar"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editör"
-		},
-		{
-			"or": "Play",
-			"tr": "Oyna"
-		},
-		{
-			"or": "Quit",
-			"tr": "Çıkış"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s çıktı! www.teeworlds.com dan indir!"
-		},
-		{
-			"or": "Game",
-			"tr": "Oyun"
-		},
-		{
-			"or": "General",
-			"tr": "Genel"
-		},
-		{
-			"or": "Controls",
-			"tr": "Kontroller"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Grafik"
-		},
-		{
-			"or": "Sound",
-			"tr": "Ses"
-		},
-		{
-			"or": "Custom",
-			"tr": "Özel"
-		},
-		{
-			"or": "Global",
-			"tr": "Küresel"
-		},
-		{
-			"or": "Local",
-			"tr": "Yerel"
-		},
-		{
-			"or": "Back",
-			"tr": "Geri"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Ses hatası"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "Ses donanımı başlatılamadı."
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Bağlanılıyor"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Harita yükleniyor"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Dil"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Demonun adını değiştir"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Deriyi kaydet"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Hatalı şifre"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Teeworlds'e hoşgeldiniz"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Çıkmak istediğinize emin misiniz?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "İptal"
-		},
-		{
-			"or": "Try again",
-			"tr": "Tekrar dene"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i dakika kaldı"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i dakika kaldı"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i saniye kaldı"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i saniye kaldı"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Demo yüklenirken hata oluştu"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Demonun adını değiştirmek istediğinize emin misiniz?"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Demonun ismi değiştirilemiyor"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Deriyi kaydetmek istediğinize emin misiniz? Eger aynı ada sahip bir isim varsa , mevcut deri değişecek."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Oyunu ilk açışınız olduğundan dolayı takma adınızı giriniz. Bir oyuna katılmadan önce ayarları incelemeniz ve isteklerinize göre özelleştirmeniz önerilir."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Takma ad"
-		},
-		{
-			"or": "Enter",
-			"tr": "Gir"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "Kullanıcı adı boş."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Bağlantı kesildi"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "Bu sunucu standart olmayan bir ayarı saf bir oyun türünde kullanıyor."
 		},
 		{
 			"or": "Hue:",
@@ -1228,6 +1183,10 @@
 			"tr": "Kişisel"
 		},
 		{
+			"or": "Clan",
+			"tr": "Klan"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1296,6 +1255,14 @@
 			"tr": ""
 		},
 		{
+			"or": "Suicides",
+			"tr": ""
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1313,6 +1280,10 @@
 		},
 		{
 			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1464,8 +1435,169 @@
 			"tr": "Kimlik değiştirmek için %1.0f saniye beklemelisiniz."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Sayfa %d-"
+			"or": "Local server",
+			"tr": "Yerel Sunucu"
+		},
+		{
+			"or": "Editor",
+			"tr": "Editör"
+		},
+		{
+			"or": "Play",
+			"tr": "Oyna"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s çıktı! www.teeworlds.com dan indir!"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Süre limiti: %d dakika"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Maç"
+		},
+		{
+			"or": "Game over",
+			"tr": "Oyun sonu"
+		},
+		{
+			"or": "Round over",
+			"tr": "Tur bitti"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Skor"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%dbaşka oyuncu"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "Kayıt %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Kırmızı takım"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Mavi takım"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s kazandı!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Berabere!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Tur bitti!"
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": "gövde"
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": "damga"
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": "Dekorasyon"
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": "eller"
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": "ayak"
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": "gözler"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Serbest Görüntü"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": ""
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": ""
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": "'%s' sunucu ayarlarını değiştirmek için oylama başlattı '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": "'%s', '%s' adlı kişiyi oyundan atmak için oylama başlattı (%s)"
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": "'%s', '%s' adlı kişiyi izleyici yapmak için oylama başlattı (%s)"
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": "Yönetici '%s' sunucu ayarını değistirmeye zorladı (%s)"
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": "Yönetici '%s' adlı kişiyi izleyici yaptı (%s)"
+		},
+		{
+			"or": "Vote aborted",
+			"tr": "Oylama iptal edildi"
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": "Yönetici oylamayı \"olumlu\" olarak zorladı"
+		},
+		{
+			"or": "Vote passed",
+			"tr": "Oylama başarılı"
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": "Yönetici oylamayı 'olumsuz' olarak zorladı"
+		},
+		{
+			"or": "Vote failed",
+			"tr": "Oylama başarısız"
 		},
 		{
 			"or": "Server",
@@ -1478,10 +1610,6 @@
 		{
 			"or": "Favorites",
 			"tr": "En sevilenler"
-		},
-		{
-			"or": "All",
-			"tr": "Hepsi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1635,8 +1763,16 @@
 			"tr": "Şifresiz"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "Standart oyun türleri"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1698,138 +1834,6 @@
 		{
 			"or": "Connect",
 			"tr": "Bağlan"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Ani ölüm"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Oyun duraklatıldı"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d oyuncu hazır değil"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d oyuncular hazır değil"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Oyun başlıyor :"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Bir sonraki tur için bekle"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d oyuncu kaldı"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d oyuncu kaldi"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Isınma"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Bağlantı Hataları..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Takımları dengeleyin!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds kaldı"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "İzle"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Hazır olunca <%s>'e basın."
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Team",
-			"tr": "Takım"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' susturuldu."
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' artık konuşabilir."
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' arkadaş olarak eklendi. "
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' arkadaşlardan çıkarıldı"
 		}
 	]
 }

@@ -10,10 +10,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": "Пошук:"
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -122,8 +118,160 @@
 			"tr": "'%s' приєднався до спостерігачів"
 		},
 		{
+			"or": "Search:",
+			"tr": "Пошук:"
+		},
+		{
 			"or": "key not found",
 			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "All",
+			"tr": "Всі"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Спостерігачі"
+		},
+		{
+			"or": "Team",
+			"tr": "Команда"
+		},
+		{
+			"or": "Chat",
+			"tr": "Чат"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' заборонено використовувати чат"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' дозволено використовувати чат"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' додано як друга"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' вилучено з друзів"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Сторінка %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Швидка смерть"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Гра зупинена"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "%d гравець не готовий"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d гравців не готові"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "Гра почнеться через"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Дочекайтеся наступного раунду."
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d гравець залишився"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d гравцiв залишилось"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Розминка"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Проблеми зі з'єднанням..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Збалансуйте команди!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "залишилось %d сек."
+		},
+		{
+			"or": "Reason:",
+			"tr": "Причина:"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Спостерігати"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Коли готові, натиснить <%s>"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -140,6 +288,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": ""
+		},
+		{
+			"or": "Game",
+			"tr": "Гра"
+		},
+		{
+			"or": "Players",
+			"tr": "Гравці"
+		},
+		{
+			"or": "Server info",
+			"tr": "Інформація"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Голосувати"
+		},
+		{
+			"or": "Settings",
+			"tr": "Параметри"
+		},
+		{
+			"or": "General",
+			"tr": "Основні"
+		},
+		{
+			"or": "Player",
+			"tr": "Гравець"
+		},
+		{
+			"or": "Controls",
+			"tr": "Керування"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Графіка"
+		},
+		{
+			"or": "Sound",
+			"tr": "Звук"
+		},
+		{
+			"or": "Custom",
+			"tr": "Свій"
+		},
+		{
+			"or": "Global",
+			"tr": "Загальні"
+		},
+		{
+			"or": "Local",
+			"tr": "Локальні"
+		},
+		{
+			"or": "Demos",
+			"tr": "Демо"
+		},
+		{
+			"or": "Back",
+			"tr": "Назад"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Помилка звуку"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "Аудіопристрій не може бути ініціалізований."
+		},
+		{
+			"or": "Ok",
+			"tr": "Ок"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Підключення до"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Завантаження карти"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Мова"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Перейменутвати демо"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Зберегти скін"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "пароль введено невірно"
+		},
+		{
+			"or": "Quit",
+			"tr": "Вихід"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Ласкаво просимо в Teeworlds!"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Ви дійсно бажаєте вийти?"
+		},
+		{
+			"or": "No",
+			"tr": "Ні"
+		},
+		{
+			"or": "Yes",
+			"tr": "Так"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "Пароль"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Скасувати"
+		},
+		{
+			"or": "Try again",
+			"tr": "Спробувати знову"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i хвилин залишилось"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i хвилин залишилося"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i секунд залишилося"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i секунд до кінця"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Помилка при завантаженні демо"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Ви впевнені, що бажаєте перейменувати демо?"
+		},
+		{
+			"or": "Name",
+			"tr": "Ім'я"
+		},
+		{
+			"or": "Error",
+			"tr": "Помилка"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Неможливо перейменувати демо"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Ви впевнені, що хочете зберегти ваш скін? Якщо скін з таким ім'ям вже існує - він буде замінений."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Так як це ваш перший запуск гри, будь ласка, введіть свій нік у полі нижче. Також рекомендуємо перевірити налаштування гри і змінити деякі з них, перед тим, як почати грати."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Нік"
+		},
+		{
+			"or": "Enter",
+			"tr": "Вхід"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "Пустий нік."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Від'єднанно"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "Сервер запущено з нестандартними налаштуваннями на стандартному типі гри."
 		},
 		{
 			"or": "Move left",
@@ -196,10 +572,6 @@
 		{
 			"or": "Vote no",
 			"tr": "Проти"
-		},
-		{
-			"or": "Chat",
-			"tr": "Чат"
 		},
 		{
 			"or": "Team chat",
@@ -350,10 +722,6 @@
 			"tr": ""
 		},
 		{
-			"or": "Name",
-			"tr": "Ім'я"
-		},
-		{
 			"or": "Length",
 			"tr": "Довжина"
 		},
@@ -402,14 +770,6 @@
 			"tr": "Видалити демо"
 		},
 		{
-			"or": "Yes",
-			"tr": "Так"
-		},
-		{
-			"or": "No",
-			"tr": "Ні"
-		},
-		{
 			"or": "Rename",
 			"tr": "Назва"
 		},
@@ -431,16 +791,8 @@
 			"tr": "Перегляд"
 		},
 		{
-			"or": "Error",
-			"tr": "Помилка"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "Неможливо видалити демо"
-		},
-		{
-			"or": "Ok",
-			"tr": "Ок"
 		},
 		{
 			"or": "Created",
@@ -543,24 +895,12 @@
 			"tr": "Налаштування гравця"
 		},
 		{
-			"or": "Player",
-			"tr": "Гравець"
-		},
-		{
-			"or": "Server info",
-			"tr": "Інформація"
-		},
-		{
 			"or": "Address",
 			"tr": "Адреса"
 		},
 		{
 			"or": "Ping",
 			"tr": "Пінг"
-		},
-		{
-			"or": "Password",
-			"tr": "Пароль"
 		},
 		{
 			"context": "With",
@@ -616,10 +956,6 @@
 			"tr": "Ліміт часу"
 		},
 		{
-			"or": "Players",
-			"tr": "Гравці"
-		},
-		{
 			"or": "MOTD",
 			"tr": "MOTD"
 		},
@@ -664,14 +1000,6 @@
 			"tr": "Сервер не дозволяє голосуванням переміщати в спостерігачі"
 		},
 		{
-			"or": "Reason:",
-			"tr": "Причина:"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Голосувати"
-		},
-		{
 			"or": "Force vote",
 			"tr": "Форсувати"
 		},
@@ -690,379 +1018,6 @@
 		{
 			"or": "Add",
 			"tr": "Додати"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Ліміт часу: %d хв"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Матч"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Спостерігачі"
-		},
-		{
-			"or": "Game over",
-			"tr": "Гра закінчена"
-		},
-		{
-			"or": "Round over",
-			"tr": "Раунд завершено"
-		},
-		{
-			"or": "Map record",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
-		},
-		{
-			"or": "Time",
-			"tr": ""
-		},
-		{
-			"or": "Score",
-			"tr": "Очки"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d інші гравці"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Червоні"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Сині"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s перемогли!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Нічия!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Кінець раунду!"
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": "Тіло"
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": "Забарвлення"
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": "Оздоблення"
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": "Руки"
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": "Ноги"
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": "Очі"
-		},
-		{
-			"or": "Free-View",
-			"tr": "Вільний перегляд"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Самовбивства"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Співвідношення"
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": "Головне"
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": "Серія"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Найкраща серія"
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": "Підбирання"
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": "'%s' проголосував за зміну серверного параметру '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": "'%s' закликав голосуванням штурхнути з гри '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": "'%s' закликав голосуванням перемістити '%s' до спостерегачів (%s)"
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": "Адміністратор змінив опцію сервера '%s' (%s)"
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": "Адмін перемістив гравця '%s' в спостерагачі (%s)"
-		},
-		{
-			"or": "Vote aborted",
-			"tr": "Голосування скасовано"
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": "Адмін примусово проголосував так"
-		},
-		{
-			"or": "Vote passed",
-			"tr": "Голосування успішне"
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": "Адміністратор примусово проголосував ні"
-		},
-		{
-			"or": "Vote failed",
-			"tr": "Голосування провалено"
-		},
-		{
-			"or": "Settings",
-			"tr": "Параметри"
-		},
-		{
-			"or": "Local server",
-			"tr": "Локальний сервер"
-		},
-		{
-			"or": "Demos",
-			"tr": "Демо"
-		},
-		{
-			"or": "Editor",
-			"tr": "Редактор"
-		},
-		{
-			"or": "Play",
-			"tr": "Грати"
-		},
-		{
-			"or": "Quit",
-			"tr": "Вихід"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Вийшла Teeworlds %s! Завантажуйте на www.teeworlds.com!"
-		},
-		{
-			"or": "Game",
-			"tr": "Гра"
-		},
-		{
-			"or": "General",
-			"tr": "Основні"
-		},
-		{
-			"or": "Controls",
-			"tr": "Керування"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Графіка"
-		},
-		{
-			"or": "Sound",
-			"tr": "Звук"
-		},
-		{
-			"or": "Custom",
-			"tr": "Свій"
-		},
-		{
-			"or": "Global",
-			"tr": "Загальні"
-		},
-		{
-			"or": "Local",
-			"tr": "Локальні"
-		},
-		{
-			"or": "Back",
-			"tr": "Назад"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Помилка звуку"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "Аудіопристрій не може бути ініціалізований."
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Підключення до"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Завантаження карти"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Мова"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Перейменутвати демо"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Зберегти скін"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "пароль введено невірно"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Ласкаво просимо в Teeworlds!"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Ви дійсно бажаєте вийти?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Скасувати"
-		},
-		{
-			"or": "Try again",
-			"tr": "Спробувати знову"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i хвилин залишилось"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i хвилин залишилося"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i секунд залишилося"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i секунд до кінця"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Помилка при завантаженні демо"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Ви впевнені, що бажаєте перейменувати демо?"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Неможливо перейменувати демо"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Ви впевнені, що хочете зберегти ваш скін? Якщо скін з таким ім'ям вже існує - він буде замінений."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Так як це ваш перший запуск гри, будь ласка, введіть свій нік у полі нижче. Також рекомендуємо перевірити налаштування гри і змінити деякі з них, перед тим, як почати грати."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Нік"
-		},
-		{
-			"or": "Enter",
-			"tr": "Вхід"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "Пустий нік."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Від'єднанно"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "Сервер запущено з нестандартними налаштуваннями на стандартному типі гри."
 		},
 		{
 			"or": "Hue:",
@@ -1224,6 +1179,10 @@
 			"tr": "Особистість"
 		},
 		{
+			"or": "Clan",
+			"tr": "Клан"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1292,6 +1251,14 @@
 			"tr": "Смерті"
 		},
 		{
+			"or": "Suicides",
+			"tr": "Самовбивства"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Співвідношення"
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1310,6 +1277,10 @@
 		{
 			"or": "Current spree",
 			"tr": "Поточна серія"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Найкраща серія"
 		},
 		{
 			"or": "Weapons stats",
@@ -1460,8 +1431,169 @@
 			"tr": "Зачекайте %1.0f секунд перед зміною особистості."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Сторінка %d-"
+			"or": "Local server",
+			"tr": "Локальний сервер"
+		},
+		{
+			"or": "Editor",
+			"tr": "Редактор"
+		},
+		{
+			"or": "Play",
+			"tr": "Грати"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Вийшла Teeworlds %s! Завантажуйте на www.teeworlds.com!"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Ліміт часу: %d хв"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Матч"
+		},
+		{
+			"or": "Game over",
+			"tr": "Гра закінчена"
+		},
+		{
+			"or": "Round over",
+			"tr": "Раунд завершено"
+		},
+		{
+			"or": "Map record",
+			"tr": ""
+		},
+		{
+			"or": "Time",
+			"tr": ""
+		},
+		{
+			"or": "Score",
+			"tr": "Очки"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d інші гравці"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Червоні"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Сині"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s перемогли!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Нічия!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Кінець раунду!"
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": "Тіло"
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": "Забарвлення"
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": "Оздоблення"
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": "Руки"
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": "Ноги"
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": "Очі"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Вільний перегляд"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": "Головне"
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": "Серія"
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": "Підбирання"
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": "'%s' проголосував за зміну серверного параметру '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": "'%s' закликав голосуванням штурхнути з гри '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": "'%s' закликав голосуванням перемістити '%s' до спостерегачів (%s)"
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": "Адміністратор змінив опцію сервера '%s' (%s)"
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": "Адмін перемістив гравця '%s' в спостерагачі (%s)"
+		},
+		{
+			"or": "Vote aborted",
+			"tr": "Голосування скасовано"
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": "Адмін примусово проголосував так"
+		},
+		{
+			"or": "Vote passed",
+			"tr": "Голосування успішне"
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": "Адміністратор примусово проголосував ні"
+		},
+		{
+			"or": "Vote failed",
+			"tr": "Голосування провалено"
 		},
 		{
 			"or": "Server",
@@ -1474,10 +1606,6 @@
 		{
 			"or": "Favorites",
 			"tr": "Обрані"
-		},
-		{
-			"or": "All",
-			"tr": "Всі"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1631,8 +1759,16 @@
 			"tr": "Без пароля"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "Стандартний тип гри"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1694,138 +1830,6 @@
 		{
 			"or": "Connect",
 			"tr": "Під’єднатись"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Швидка смерть"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Гра зупинена"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "%d гравець не готовий"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d гравців не готові"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "Гра почнеться через"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Дочекайтеся наступного раунду."
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d гравець залишився"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d гравцiв залишилось"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Розминка"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Проблеми зі з'єднанням..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Збалансуйте команди!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "залишилось %d сек."
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Спостерігати"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Коли готові, натиснить <%s>"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "Team",
-			"tr": "Команда"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' заборонено використовувати чат"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' дозволено використовувати чат"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' додано як друга"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' вилучено з друзів"
 		}
 	]
 }

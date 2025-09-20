@@ -42,10 +42,10 @@ CMenus::CColumn CMenus::ms_aBrowserCols[] = {
 	{COL_BROWSER_PING, IServerBrowser::SORT_PING, "Ping", 1, 40.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_SORT_ORDER, -1, "↓", 1, 12.f, 0, {0}, {0}, TEXTALIGN_CENTER}};
 
-CServerFilterInfo CMenus::CBrowserFilter::ms_FilterStandard = {IServerBrowser::FILTER_PURE, 999, -1, 0, {{0}}, {0}, {0}};
-CServerFilterInfo CMenus::CBrowserFilter::ms_FilterRace = {0, 999, -1, 0, {{"Race"}}, {false}, {0}};
-CServerFilterInfo CMenus::CBrowserFilter::ms_FilterFavorites = {IServerBrowser::FILTER_FAVORITE, 999, -1, 0, {{0}}, {0}, {0}};
-CServerFilterInfo CMenus::CBrowserFilter::ms_FilterAll = {0, 999, -1, 0, {{0}}, {0}, {0}};
+CServerFilterInfo CMenus::CBrowserFilter::ms_FilterStandard = {IServerBrowser::FILTER_COMPAT_VERSION | IServerBrowser::FILTER_PURE, 999, -1, 0, {{0}}, {0}, {0}};
+CServerFilterInfo CMenus::CBrowserFilter::ms_FilterRace = {IServerBrowser::FILTER_COMPAT_VERSION, 999, -1, 0, {{"Race"}}, {false}, {0}};
+CServerFilterInfo CMenus::CBrowserFilter::ms_FilterFavorites = {IServerBrowser::FILTER_COMPAT_VERSION | IServerBrowser::FILTER_FAVORITE, 999, -1, 0, {{0}}, {0}, {0}};
+CServerFilterInfo CMenus::CBrowserFilter::ms_FilterAll = {IServerBrowser::FILTER_COMPAT_VERSION, 999, -1, 0, {{0}}, {0}, {0}};
 
 static CLocConstString s_aDifficultyLabels[] = {
 	"Casual",
@@ -1602,10 +1602,20 @@ void CMenus::RenderServerbrowserFilterTab(CUIRect View)
 		NewSortHash ^= IServerBrowser::FILTER_PW;
 
 	ServerFilter.HSplitTop(LineSize, &Button, &ServerFilter);
+	static int s_BrFilterCompatversion = 0;
+	if(DoButton_CheckBox(&s_BrFilterCompatversion, Localize("Compatible version"), FilterInfo.m_SortHash & IServerBrowser::FILTER_COMPAT_VERSION, &Button))
+		NewSortHash ^= IServerBrowser::FILTER_COMPAT_VERSION;
+
+	ServerFilter.HSplitTop(LineSize, &Button, &ServerFilter);
 	const bool Locked = pFilter->Custom() == CBrowserFilter::FILTER_STANDARD;
 	static int s_BrFilterPure = 0;
 	if(DoButton_CheckBox(&s_BrFilterPure, Localize("Standard gametype"), FilterInfo.m_SortHash & IServerBrowser::FILTER_PURE, &Button, Locked))
 		NewSortHash ^= IServerBrowser::FILTER_PURE;
+
+	ServerFilter.HSplitTop(LineSize, &Button, &ServerFilter);
+	static int s_BrFilterPureMap = 0;
+	if(DoButton_CheckBox(&s_BrFilterPureMap, Localize("Standard map"), FilterInfo.m_SortHash & IServerBrowser::FILTER_PURE_MAP, &Button))
+		NewSortHash ^= IServerBrowser::FILTER_PURE_MAP;
 
 	bool UpdateFilter = false;
 	if(FilterInfo.m_SortHash != NewSortHash)

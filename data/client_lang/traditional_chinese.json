@@ -8,10 +8,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": "搜尋："
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": "雙方隊伍已被交換"
 		},
@@ -120,8 +116,160 @@
 			"tr": "'%s' 加入了旁觀位"
 		},
 		{
+			"or": "Search:",
+			"tr": "搜尋："
+		},
+		{
 			"or": "key not found",
 			"tr": "鍵位不存在"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "地圖已更換為 '%s'"
+		},
+		{
+			"or": "All",
+			"tr": "全部"
+		},
+		{
+			"or": "Spectators",
+			"tr": "旁觀者"
+		},
+		{
+			"or": "Team",
+			"tr": "隊伍"
+		},
+		{
+			"or": "Chat",
+			"tr": "聊天"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "按 %s 以恢復聊天"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "- %d/%d -"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "已屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "已解除屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "已將 '%s' 新增為好友"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "已將 '%s' 從好友中移除"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-第%d頁-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "決勝"
+		},
+		{
+			"or": "Game paused",
+			"tr": "遊戲已暫停"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "還有%d名玩家未準備"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "還有%d名玩家未準備"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "遊戲即將開始："
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "等待下一回合"
+		},
+		{
+			"or": "%d player left",
+			"tr": "還剩%d名玩家"
+		},
+		{
+			"or": "%d players left",
+			"tr": "還剩%d名玩家"
+		},
+		{
+			"or": "Warmup",
+			"tr": "熱身"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "連線中斷..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "隊伍人數不平衡！"
+		},
+		{
+			"or": "%ds left",
+			"tr": "還剩%d秒"
+		},
+		{
+			"or": "Reason:",
+			"tr": "理由："
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "旁觀"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "按 <%s> 準備"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -138,6 +286,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": "'%s' 用時%s完成"
+		},
+		{
+			"or": "Game",
+			"tr": "遊戲"
+		},
+		{
+			"or": "Players",
+			"tr": "玩家"
+		},
+		{
+			"or": "Server info",
+			"tr": "伺服器資訊"
+		},
+		{
+			"or": "Call vote",
+			"tr": "發起投票"
+		},
+		{
+			"or": "Settings",
+			"tr": "設定"
+		},
+		{
+			"or": "General",
+			"tr": "常規"
+		},
+		{
+			"or": "Player",
+			"tr": "玩家"
+		},
+		{
+			"or": "Controls",
+			"tr": "控制"
+		},
+		{
+			"or": "Graphics",
+			"tr": "影象"
+		},
+		{
+			"or": "Sound",
+			"tr": "聲音"
+		},
+		{
+			"or": "Custom",
+			"tr": "自訂"
+		},
+		{
+			"or": "Global",
+			"tr": "網際網路"
+		},
+		{
+			"or": "Local",
+			"tr": "本地"
+		},
+		{
+			"or": "Demos",
+			"tr": "回放"
+		},
+		{
+			"or": "Back",
+			"tr": "返回"
+		},
+		{
+			"or": "Sound error",
+			"tr": "音訊錯誤"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "初始化音訊裝置失敗。"
+		},
+		{
+			"or": "Ok",
+			"tr": "確定"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "正在連線到"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "正在下載地圖"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "語言"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "重新命名回放"
+		},
+		{
+			"or": "Save skin",
+			"tr": "儲存造型"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "密碼錯誤"
+		},
+		{
+			"or": "Quit",
+			"tr": "退出"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "歡迎來到Teeworlds！"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "你確定要退出嗎？"
+		},
+		{
+			"or": "No",
+			"tr": "否"
+		},
+		{
+			"or": "Yes",
+			"tr": "是"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "密碼"
+		},
+		{
+			"or": "Save password",
+			"tr": "保存伺服器密碼"
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": "保存伺服器密碼並添加到收藏"
+		},
+		{
+			"or": "Abort",
+			"tr": "取消"
+		},
+		{
+			"or": "Try again",
+			"tr": "重試"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "還剩下%i分鐘"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "還剩下%i分鐘"
+		},
+		{
+			"or": "%i second left",
+			"tr": "還剩下%i秒鐘"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "還剩下%i秒鐘"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "回放讀取錯誤"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "你確定要重新命名這個回放嗎？"
+		},
+		{
+			"or": "Name",
+			"tr": "名字"
+		},
+		{
+			"or": "Error",
+			"tr": "錯誤"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "無法重新命名這個回放"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "你確定要儲存這個造型嗎？如果這個造型名已經存在，原造型將會被覆蓋。"
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "這是你第一次開啟遊戲，請在下面輸入你的暱稱。建議你在進入伺服器之前，確認一下設定是否符合你的習慣。"
+		},
+		{
+			"or": "Nickname",
+			"tr": "暱稱"
+		},
+		{
+			"or": "Enter",
+			"tr": "確定"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "暱稱不能為空。"
+		},
+		{
+			"or": "Disconnected",
+			"tr": "連線已斷開"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "此伺服器執行著經過調整的非標準遊戲模式。"
 		},
 		{
 			"or": "Move left",
@@ -194,10 +570,6 @@
 		{
 			"or": "Vote no",
 			"tr": "否決"
-		},
-		{
-			"or": "Chat",
-			"tr": "聊天"
 		},
 		{
 			"or": "Team chat",
@@ -348,10 +720,6 @@
 			"tr": "搖桿%d號軸"
 		},
 		{
-			"or": "Name",
-			"tr": "名字"
-		},
-		{
 			"or": "Length",
 			"tr": "長度"
 		},
@@ -400,14 +768,6 @@
 			"tr": "刪除回放"
 		},
 		{
-			"or": "Yes",
-			"tr": "是"
-		},
-		{
-			"or": "No",
-			"tr": "否"
-		},
-		{
 			"or": "Rename",
 			"tr": "重新命名"
 		},
@@ -429,16 +789,8 @@
 			"tr": "播放"
 		},
 		{
-			"or": "Error",
-			"tr": "錯誤"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "無法刪除這個回放"
-		},
-		{
-			"or": "Ok",
-			"tr": "確定"
 		},
 		{
 			"or": "Created",
@@ -541,24 +893,12 @@
 			"tr": "玩家選項"
 		},
 		{
-			"or": "Player",
-			"tr": "玩家"
-		},
-		{
-			"or": "Server info",
-			"tr": "伺服器資訊"
-		},
-		{
 			"or": "Address",
 			"tr": "地址"
 		},
 		{
 			"or": "Ping",
 			"tr": "延遲"
-		},
-		{
-			"or": "Password",
-			"tr": "密碼"
 		},
 		{
 			"context": "With",
@@ -614,10 +954,6 @@
 			"tr": "規定時限"
 		},
 		{
-			"or": "Players",
-			"tr": "玩家"
-		},
-		{
 			"or": "MOTD",
 			"tr": "公告"
 		},
@@ -662,14 +998,6 @@
 			"tr": "伺服器不允許投票將玩家移至旁觀位"
 		},
 		{
-			"or": "Reason:",
-			"tr": "理由："
-		},
-		{
-			"or": "Call vote",
-			"tr": "發起投票"
-		},
-		{
 			"or": "Force vote",
 			"tr": "強制投票"
 		},
@@ -688,379 +1016,6 @@
 		{
 			"or": "Add",
 			"tr": "新增"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "規定時限：%d分鐘"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "比賽"
-		},
-		{
-			"or": "Spectators",
-			"tr": "旁觀者"
-		},
-		{
-			"or": "Game over",
-			"tr": "遊戲結束"
-		},
-		{
-			"or": "Round over",
-			"tr": "回合結束"
-		},
-		{
-			"or": "Map record",
-			"tr": "地圖最高記錄"
-		},
-		{
-			"or": "Clan",
-			"tr": "戰隊"
-		},
-		{
-			"or": "Time",
-			"tr": "用時"
-		},
-		{
-			"or": "Score",
-			"tr": "分數"
-		},
-		{
-			"or": "%d other players",
-			"tr": "另有%d名玩家"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "紅隊"
-		},
-		{
-			"or": "Blue team",
-			"tr": "藍隊"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s勝利!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "平局！"
-		},
-		{
-			"or": "Round over!",
-			"tr": "回合結束！"
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": "身體"
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": "印記"
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": "裝飾"
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": "手"
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": "腳"
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": "眼睛"
-		},
-		{
-			"or": "Free-View",
-			"tr": "自由視角"
-		},
-		{
-			"or": "Suicides",
-			"tr": "自殺數"
-		},
-		{
-			"or": "Ratio",
-			"tr": "K/D"
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": "淨擊殺"
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": "連殺數"
-		},
-		{
-			"or": "Best spree",
-			"tr": "最高連殺數"
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": "得旗數"
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": "'%s' 發起投票想要改變伺服器設定 '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": "'%s' 發起投票想要踢除 '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": "'%s' 發起投票想要將 '%s' 移至旁觀位 (%s)"
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": "管理員強制修改了伺服器設定 '%s' (%s)"
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": "管理員將 '%s' 移至了旁觀位 (%s)"
-		},
-		{
-			"or": "Vote aborted",
-			"tr": "投票被取消"
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": "管理員強制通過了投票"
-		},
-		{
-			"or": "Vote passed",
-			"tr": "投票已通過"
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": "管理員強制否決了投票"
-		},
-		{
-			"or": "Vote failed",
-			"tr": "投票被否決"
-		},
-		{
-			"or": "Settings",
-			"tr": "設定"
-		},
-		{
-			"or": "Local server",
-			"tr": "本地伺服器"
-		},
-		{
-			"or": "Demos",
-			"tr": "回放"
-		},
-		{
-			"or": "Editor",
-			"tr": "地圖編輯器"
-		},
-		{
-			"or": "Play",
-			"tr": "開始遊戲"
-		},
-		{
-			"or": "Quit",
-			"tr": "退出"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s已經發布！請訪問 www.teeworlds.com 下載最新版本！"
-		},
-		{
-			"or": "Game",
-			"tr": "遊戲"
-		},
-		{
-			"or": "General",
-			"tr": "常規"
-		},
-		{
-			"or": "Controls",
-			"tr": "控制"
-		},
-		{
-			"or": "Graphics",
-			"tr": "影象"
-		},
-		{
-			"or": "Sound",
-			"tr": "聲音"
-		},
-		{
-			"or": "Custom",
-			"tr": "自訂"
-		},
-		{
-			"or": "Global",
-			"tr": "網際網路"
-		},
-		{
-			"or": "Local",
-			"tr": "本地"
-		},
-		{
-			"or": "Back",
-			"tr": "返回"
-		},
-		{
-			"or": "Sound error",
-			"tr": "音訊錯誤"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "初始化音訊裝置失敗。"
-		},
-		{
-			"or": "Connecting to",
-			"tr": "正在連線到"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "正在下載地圖"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "語言"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "重新命名回放"
-		},
-		{
-			"or": "Save skin",
-			"tr": "儲存造型"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "密碼錯誤"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "歡迎來到Teeworlds！"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "你確定要退出嗎？"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": "保存伺服器密碼"
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": "保存伺服器密碼並添加到收藏"
-		},
-		{
-			"or": "Abort",
-			"tr": "取消"
-		},
-		{
-			"or": "Try again",
-			"tr": "重試"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "還剩下%i分鐘"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "還剩下%i分鐘"
-		},
-		{
-			"or": "%i second left",
-			"tr": "還剩下%i秒鐘"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "還剩下%i秒鐘"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "回放讀取錯誤"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "你確定要重新命名這個回放嗎？"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "無法重新命名這個回放"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "你確定要儲存這個造型嗎？如果這個造型名已經存在，原造型將會被覆蓋。"
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "這是你第一次開啟遊戲，請在下面輸入你的暱稱。建議你在進入伺服器之前，確認一下設定是否符合你的習慣。"
-		},
-		{
-			"or": "Nickname",
-			"tr": "暱稱"
-		},
-		{
-			"or": "Enter",
-			"tr": "確定"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "暱稱不能為空。"
-		},
-		{
-			"or": "Disconnected",
-			"tr": "連線已斷開"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "此伺服器執行著經過調整的非標準遊戲模式。"
 		},
 		{
 			"or": "Hue:",
@@ -1222,6 +1177,10 @@
 			"tr": "個人"
 		},
 		{
+			"or": "Clan",
+			"tr": "戰隊"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1290,6 +1249,14 @@
 			"tr": "死亡數"
 		},
 		{
+			"or": "Suicides",
+			"tr": "自殺數"
+		},
+		{
+			"or": "Ratio",
+			"tr": "K/D"
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1308,6 +1275,10 @@
 		{
 			"or": "Current spree",
 			"tr": "當前連殺數"
+		},
+		{
+			"or": "Best spree",
+			"tr": "最高連殺數"
 		},
 		{
 			"or": "Weapons stats",
@@ -1458,8 +1429,169 @@
 			"tr": "你需要等待 %1.0f 秒才能修改身份"
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-第%d頁-"
+			"or": "Local server",
+			"tr": "本地伺服器"
+		},
+		{
+			"or": "Editor",
+			"tr": "地圖編輯器"
+		},
+		{
+			"or": "Play",
+			"tr": "開始遊戲"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s已經發布！請訪問 www.teeworlds.com 下載最新版本！"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "規定時限：%d分鐘"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "比賽"
+		},
+		{
+			"or": "Game over",
+			"tr": "遊戲結束"
+		},
+		{
+			"or": "Round over",
+			"tr": "回合結束"
+		},
+		{
+			"or": "Map record",
+			"tr": "地圖最高記錄"
+		},
+		{
+			"or": "Time",
+			"tr": "用時"
+		},
+		{
+			"or": "Score",
+			"tr": "分數"
+		},
+		{
+			"or": "%d other players",
+			"tr": "另有%d名玩家"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "紅隊"
+		},
+		{
+			"or": "Blue team",
+			"tr": "藍隊"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s勝利!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "平局！"
+		},
+		{
+			"or": "Round over!",
+			"tr": "回合結束！"
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": "身體"
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": "印記"
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": "裝飾"
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": "手"
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": "腳"
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": "眼睛"
+		},
+		{
+			"or": "Free-View",
+			"tr": "自由視角"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": "淨擊殺"
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": "連殺數"
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": "得旗數"
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": "'%s' 發起投票想要改變伺服器設定 '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": "'%s' 發起投票想要踢除 '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": "'%s' 發起投票想要將 '%s' 移至旁觀位 (%s)"
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": "管理員強制修改了伺服器設定 '%s' (%s)"
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": "管理員將 '%s' 移至了旁觀位 (%s)"
+		},
+		{
+			"or": "Vote aborted",
+			"tr": "投票被取消"
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": "管理員強制通過了投票"
+		},
+		{
+			"or": "Vote passed",
+			"tr": "投票已通過"
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": "管理員強制否決了投票"
+		},
+		{
+			"or": "Vote failed",
+			"tr": "投票被否決"
 		},
 		{
 			"or": "Server",
@@ -1472,10 +1604,6 @@
 		{
 			"or": "Favorites",
 			"tr": "收藏"
-		},
-		{
-			"or": "All",
-			"tr": "全部"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1629,8 +1757,16 @@
 			"tr": "沒有密碼"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "標準遊戲模式"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1692,138 +1828,6 @@
 		{
 			"or": "Connect",
 			"tr": "連線"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "決勝"
-		},
-		{
-			"or": "Game paused",
-			"tr": "遊戲已暫停"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "還有%d名玩家未準備"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "還有%d名玩家未準備"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "遊戲即將開始："
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "等待下一回合"
-		},
-		{
-			"or": "%d player left",
-			"tr": "還剩%d名玩家"
-		},
-		{
-			"or": "%d players left",
-			"tr": "還剩%d名玩家"
-		},
-		{
-			"or": "Warmup",
-			"tr": "熱身"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "連線中斷..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "隊伍人數不平衡！"
-		},
-		{
-			"or": "%ds left",
-			"tr": "還剩%d秒"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "旁觀"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "按 <%s> 準備"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "地圖已更換為 '%s'"
-		},
-		{
-			"or": "Team",
-			"tr": "隊伍"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "按 %s 以恢復聊天"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "- %d/%d -"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "已屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "已解除屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "已將 '%s' 新增為好友"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "已將 '%s' 從好友中移除"
 		}
 	]
 }

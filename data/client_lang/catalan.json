@@ -7,10 +7,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": "Buscar: "
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": "Els equips s'han intercanviat"
 		},
@@ -119,8 +115,160 @@
 			"tr": "'%s' s'ha unit als espectadors"
 		},
 		{
+			"or": "Search:",
+			"tr": "Buscar: "
+		},
+		{
 			"or": "key not found",
 			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Mapa canviat a '%s'"
+		},
+		{
+			"or": "All",
+			"tr": "Tots"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Espectadors"
+		},
+		{
+			"or": "Team",
+			"tr": "Equip"
+		},
+		{
+			"or": "Chat",
+			"tr": "Xat"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Prem %s per tornar a xatejar"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": "Prem Tab per canviar els recipients del xat"
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Pàgina %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Prem Enter per confirmar o Esc per cancelar"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' ha estat silenciat"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' ja no està silenciat"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "S'ha afegit '%s' com amic"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "S'ha tret '%s' com amic"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Pàgina %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Mort Súbdita"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Joc pausat"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "el jugador %d  no està llest"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d jugadors no estan a punt"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "El joc comença en"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Espera a la següent ronda"
+		},
+		{
+			"or": "%d player left",
+			"tr": "falta %d jugador"
+		},
+		{
+			"or": "%d players left",
+			"tr": "falten %d jugadors"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Escalfament"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Problemes de connexió..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Si us plau! Reequilibreu els equips"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds esquerra"
+		},
+		{
+			"or": "Reason:",
+			"tr": "Raó:"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Espectar"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Quan estiguis llest, prem <%s>"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -137,6 +285,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": "'%s' ha acabat en: %s"
+		},
+		{
+			"or": "Game",
+			"tr": "Joc"
+		},
+		{
+			"or": "Players",
+			"tr": "Jugadors"
+		},
+		{
+			"or": "Server info",
+			"tr": "Informació del servidor"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Començar una votació"
+		},
+		{
+			"or": "Settings",
+			"tr": "Configuració"
+		},
+		{
+			"or": "General",
+			"tr": "General"
+		},
+		{
+			"or": "Player",
+			"tr": "Jugador"
+		},
+		{
+			"or": "Controls",
+			"tr": "Controls"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Gràfics"
+		},
+		{
+			"or": "Sound",
+			"tr": "So"
+		},
+		{
+			"or": "Custom",
+			"tr": "Personalitzat"
+		},
+		{
+			"or": "Global",
+			"tr": "Global"
+		},
+		{
+			"or": "Local",
+			"tr": "Local"
+		},
+		{
+			"or": "Demos",
+			"tr": "Repeticions"
+		},
+		{
+			"or": "Back",
+			"tr": "Endarrere"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Error de so"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "El dispositiu de so no s'ha pogut inicialitzar "
+		},
+		{
+			"or": "Ok",
+			"tr": "Ok"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Connectan a"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Descarregant mapa "
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Idioma"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Reanomenar la repetició"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Guardar la skin"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Contrasenya incorrecte"
+		},
+		{
+			"or": "Quit",
+			"tr": "Sortir"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Benvingut a Teeworlds"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "Estàs segur que vols sortir?"
+		},
+		{
+			"or": "No",
+			"tr": "No"
+		},
+		{
+			"or": "Yes",
+			"tr": "Sí"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "Contrasenya"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Cancelar"
+		},
+		{
+			"or": "Try again",
+			"tr": "Torna a intentar-ho"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "Queden %i minuts"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "queden %i minuts"
+		},
+		{
+			"or": "%i second left",
+			"tr": "falten %i segons"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "Falten %i segons"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Error al carregar la repetició"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "Estàs segur que vols canviar el nom d'aquesta repetició?"
+		},
+		{
+			"or": "Name",
+			"tr": "Nom"
+		},
+		{
+			"or": "Error",
+			"tr": "Error"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "Impossible re-anomenar la repetició"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "Estàs segur que vols guardar la skin? Si la skin té el mateix nom que una existent, serà reemplaçada."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Al ser la primera vegada que obres el joc, si us plau posa el teu nom a sota. Et recomanem veure la configuració abans d'entrar a un servidor"
+		},
+		{
+			"or": "Nickname",
+			"tr": "Nom"
+		},
+		{
+			"or": "Enter",
+			"tr": "Començar"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "El nom esta buit"
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Desconectat"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "El servidor està funcionant amb una modificació diferent al mode de joc pur"
 		},
 		{
 			"or": "Move left",
@@ -193,10 +569,6 @@
 		{
 			"or": "Vote no",
 			"tr": "Vota no"
-		},
-		{
-			"or": "Chat",
-			"tr": "Xat"
 		},
 		{
 			"or": "Team chat",
@@ -347,10 +719,6 @@
 			"tr": "Joystick Axis #%d"
 		},
 		{
-			"or": "Name",
-			"tr": "Nom"
-		},
-		{
 			"or": "Length",
 			"tr": "Longitud"
 		},
@@ -399,14 +767,6 @@
 			"tr": "Esborrar repetició"
 		},
 		{
-			"or": "Yes",
-			"tr": "Sí"
-		},
-		{
-			"or": "No",
-			"tr": "No"
-		},
-		{
 			"or": "Rename",
 			"tr": "Reanomenar"
 		},
@@ -428,16 +788,8 @@
 			"tr": "Jugar"
 		},
 		{
-			"or": "Error",
-			"tr": "Error"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "No s'ha pogut esborra la repetició"
-		},
-		{
-			"or": "Ok",
-			"tr": "Ok"
 		},
 		{
 			"or": "Created",
@@ -540,24 +892,12 @@
 			"tr": "Opcions del jugador"
 		},
 		{
-			"or": "Player",
-			"tr": "Jugador"
-		},
-		{
-			"or": "Server info",
-			"tr": "Informació del servidor"
-		},
-		{
 			"or": "Address",
 			"tr": "Adreça"
 		},
 		{
 			"or": "Ping",
 			"tr": "Ping"
-		},
-		{
-			"or": "Password",
-			"tr": "Contrasenya"
 		},
 		{
 			"context": "With",
@@ -613,10 +953,6 @@
 			"tr": "Temps límit"
 		},
 		{
-			"or": "Players",
-			"tr": "Jugadors"
-		},
-		{
 			"or": "MOTD",
 			"tr": "Descripció"
 		},
@@ -661,14 +997,6 @@
 			"tr": "El servidor no permet moure jugadors als espectadors"
 		},
 		{
-			"or": "Reason:",
-			"tr": "Raó:"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Començar una votació"
-		},
-		{
 			"or": "Force vote",
 			"tr": "Forçar la votació"
 		},
@@ -687,379 +1015,6 @@
 		{
 			"or": "Add",
 			"tr": "Afegir"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Temps límit: %d min"
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Partida"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Espectadors"
-		},
-		{
-			"or": "Game over",
-			"tr": "El joc s'ha acabat"
-		},
-		{
-			"or": "Round over",
-			"tr": "S'ha acabat la ronda"
-		},
-		{
-			"or": "Map record",
-			"tr": "Rècord del mapa"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
-		},
-		{
-			"or": "Time",
-			"tr": "Temps"
-		},
-		{
-			"or": "Score",
-			"tr": "Puntuació"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d altres jugadors"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "REC %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Equip vermell"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Equip blau"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "%s ha guanyat!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "Dibuixa!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "Ronda acabada!"
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": "cos"
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": "marques"
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": "decoració"
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": "mans"
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": "peus"
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": "ulls"
-		},
-		{
-			"or": "Free-View",
-			"tr": "Càmera lliure"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Suïcidis"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Proporció"
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": "Net"
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": "Spree"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Millor spree"
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": "Agafades"
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": "%s' a votat per canviar una opció del servidor '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": "'%s' ha votat per expulsar a '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": "'%s' ha creat una votació per moure '%s' als espectadors (%s)"
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": "Un administrador a forçat una opció del servidor: '%s' (%s)"
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": "Un administrador ha mogut '%s' als espectadors (%s)"
-		},
-		{
-			"or": "Vote aborted",
-			"tr": "Votació cancelada"
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": "Un administrador a forçat votar si"
-		},
-		{
-			"or": "Vote passed",
-			"tr": "Votació acceptada"
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": "Un administrador a forçat no"
-		},
-		{
-			"or": "Vote failed",
-			"tr": "Votació fallida"
-		},
-		{
-			"or": "Settings",
-			"tr": "Configuració"
-		},
-		{
-			"or": "Local server",
-			"tr": "Servidor local"
-		},
-		{
-			"or": "Demos",
-			"tr": "Repeticions"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editor"
-		},
-		{
-			"or": "Play",
-			"tr": "Jugar"
-		},
-		{
-			"or": "Quit",
-			"tr": "Sortir"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "Teeworlds %s ha sortit! Descarga-la a www.teeworlds.com !"
-		},
-		{
-			"or": "Game",
-			"tr": "Joc"
-		},
-		{
-			"or": "General",
-			"tr": "General"
-		},
-		{
-			"or": "Controls",
-			"tr": "Controls"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Gràfics"
-		},
-		{
-			"or": "Sound",
-			"tr": "So"
-		},
-		{
-			"or": "Custom",
-			"tr": "Personalitzat"
-		},
-		{
-			"or": "Global",
-			"tr": "Global"
-		},
-		{
-			"or": "Local",
-			"tr": "Local"
-		},
-		{
-			"or": "Back",
-			"tr": "Endarrere"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Error de so"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "El dispositiu de so no s'ha pogut inicialitzar "
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Connectan a"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Descarregant mapa "
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Idioma"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Reanomenar la repetició"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Guardar la skin"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Contrasenya incorrecte"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Benvingut a Teeworlds"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "Estàs segur que vols sortir?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Cancelar"
-		},
-		{
-			"or": "Try again",
-			"tr": "Torna a intentar-ho"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "Queden %i minuts"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "queden %i minuts"
-		},
-		{
-			"or": "%i second left",
-			"tr": "falten %i segons"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "Falten %i segons"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Error al carregar la repetició"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "Estàs segur que vols canviar el nom d'aquesta repetició?"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "Impossible re-anomenar la repetició"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "Estàs segur que vols guardar la skin? Si la skin té el mateix nom que una existent, serà reemplaçada."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Al ser la primera vegada que obres el joc, si us plau posa el teu nom a sota. Et recomanem veure la configuració abans d'entrar a un servidor"
-		},
-		{
-			"or": "Nickname",
-			"tr": "Nom"
-		},
-		{
-			"or": "Enter",
-			"tr": "Començar"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "El nom esta buit"
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Desconectat"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "El servidor està funcionant amb una modificació diferent al mode de joc pur"
 		},
 		{
 			"or": "Hue:",
@@ -1221,6 +1176,10 @@
 			"tr": "Personal"
 		},
 		{
+			"or": "Clan",
+			"tr": "Clan"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1289,6 +1248,14 @@
 			"tr": "Morts"
 		},
 		{
+			"or": "Suicides",
+			"tr": "Suïcidis"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Proporció"
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1307,6 +1274,10 @@
 		{
 			"or": "Current spree",
 			"tr": "Spree actual"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Millor spree"
 		},
 		{
 			"or": "Weapons stats",
@@ -1457,8 +1428,169 @@
 			"tr": "Has d'esperar %1.0f segons per canviar d'identitat."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Pàgina %d-"
+			"or": "Local server",
+			"tr": "Servidor local"
+		},
+		{
+			"or": "Editor",
+			"tr": "Editor"
+		},
+		{
+			"or": "Play",
+			"tr": "Jugar"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "Teeworlds %s ha sortit! Descarga-la a www.teeworlds.com !"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Temps límit: %d min"
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Partida"
+		},
+		{
+			"or": "Game over",
+			"tr": "El joc s'ha acabat"
+		},
+		{
+			"or": "Round over",
+			"tr": "S'ha acabat la ronda"
+		},
+		{
+			"or": "Map record",
+			"tr": "Rècord del mapa"
+		},
+		{
+			"or": "Time",
+			"tr": "Temps"
+		},
+		{
+			"or": "Score",
+			"tr": "Puntuació"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d altres jugadors"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "REC %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Equip vermell"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Equip blau"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "%s ha guanyat!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "Dibuixa!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "Ronda acabada!"
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": "cos"
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": "marques"
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": "decoració"
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": "mans"
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": "peus"
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": "ulls"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Càmera lliure"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": "Net"
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": "Spree"
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": "Agafades"
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": "%s' a votat per canviar una opció del servidor '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": "'%s' ha votat per expulsar a '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": "'%s' ha creat una votació per moure '%s' als espectadors (%s)"
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": "Un administrador a forçat una opció del servidor: '%s' (%s)"
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": "Un administrador ha mogut '%s' als espectadors (%s)"
+		},
+		{
+			"or": "Vote aborted",
+			"tr": "Votació cancelada"
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": "Un administrador a forçat votar si"
+		},
+		{
+			"or": "Vote passed",
+			"tr": "Votació acceptada"
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": "Un administrador a forçat no"
+		},
+		{
+			"or": "Vote failed",
+			"tr": "Votació fallida"
 		},
 		{
 			"or": "Server",
@@ -1471,10 +1603,6 @@
 		{
 			"or": "Favorites",
 			"tr": "Preferit"
-		},
-		{
-			"or": "All",
-			"tr": "Tots"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1628,8 +1756,16 @@
 			"tr": "Sense contrasenya"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "Tipus de joc estàndar"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1691,138 +1827,6 @@
 		{
 			"or": "Connect",
 			"tr": "Connectar"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Mort Súbdita"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Joc pausat"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "el jugador %d  no està llest"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d jugadors no estan a punt"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "El joc comença en"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Espera a la següent ronda"
-		},
-		{
-			"or": "%d player left",
-			"tr": "falta %d jugador"
-		},
-		{
-			"or": "%d players left",
-			"tr": "falten %d jugadors"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Escalfament"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Problemes de connexió..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Si us plau! Reequilibreu els equips"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds esquerra"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Espectar"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Quan estiguis llest, prem <%s>"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Mapa canviat a '%s'"
-		},
-		{
-			"or": "Team",
-			"tr": "Equip"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Prem %s per tornar a xatejar"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": "Prem Tab per canviar els recipients del xat"
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Pàgina %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Prem Enter per confirmar o Esc per cancelar"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' ha estat silenciat"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' ja no està silenciat"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "S'ha afegit '%s' com amic"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "S'ha tret '%s' com amic"
 		}
 	]
 }

@@ -16,10 +16,6 @@
 	},
 	"translated strings": [
 		{
-			"or": "Search:",
-			"tr": "Buscar:"
-		},
-		{
 			"or": "Teams were swapped",
 			"tr": "Los equipos fueron intercambiados"
 		},
@@ -128,8 +124,160 @@
 			"tr": "'%s' se unio a los espectadores"
 		},
 		{
+			"or": "Search:",
+			"tr": "Buscar:"
+		},
+		{
 			"or": "key not found",
 			"tr": ""
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Mapa cambiado a '%s'"
+		},
+		{
+			"or": "All",
+			"tr": "Todos"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Espectadores"
+		},
+		{
+			"or": "Team",
+			"tr": "Equipo"
+		},
+		{
+			"or": "Chat",
+			"tr": "Conversación"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Presiona %s para salir del chat"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": "Presione Tab para cambiar de chat"
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Página %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Enter para confirmar o Esc para cancelar"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' fue silenciado"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' fue desilenciado"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' fue añadido como amigo"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' fue removido de tus amigos"
+		},
+		{
+			"or": "-Page %d-",
+			"tr": "-Página %d-"
+		},
+		{
+			"or": "Sudden Death",
+			"tr": "Muerte Súbita"
+		},
+		{
+			"or": "Game paused",
+			"tr": "Juego en pausa"
+		},
+		{
+			"or": "%d player not ready",
+			"tr": "El jugador %d no está listo"
+		},
+		{
+			"or": "%d players not ready",
+			"tr": "%d jugadores no están listos"
+		},
+		{
+			"or": "Game starts in",
+			"tr": "El juego comienza en"
+		},
+		{
+			"or": "Wait for next round",
+			"tr": "Espera a la siguiente ronda"
+		},
+		{
+			"or": "%d player left",
+			"tr": "%d jugador restante"
+		},
+		{
+			"or": "%d players left",
+			"tr": "%d jugadores restantes"
+		},
+		{
+			"or": "Warmup",
+			"tr": "Calentamiento"
+		},
+		{
+			"or": "waiting for more players",
+			"tr": ""
+		},
+		{
+			"or": "Connection Problems...",
+			"tr": "Problemas de conexión..."
+		},
+		{
+			"or": "Please balance teams!",
+			"tr": "Por favor, ¡equilibrad los equipos!"
+		},
+		{
+			"or": "%ds left",
+			"tr": "%ds restantes"
+		},
+		{
+			"or": "Reason:",
+			"tr": "Motivo:"
+		},
+		{
+			"or": "Vote Yes",
+			"tr": ""
+		},
+		{
+			"or": "Vote No",
+			"tr": ""
+		},
+		{
+			"or": "Spectate",
+			"tr": "Modo Espectador"
+		},
+		{
+			"or": "Free View",
+			"tr": ""
+		},
+		{
+			"or": "Red Flag",
+			"tr": ""
+		},
+		{
+			"or": "Blue Flag",
+			"tr": ""
+		},
+		{
+			"or": "Click on a player or flag to follow it",
+			"tr": ""
+		},
+		{
+			"or": "When ready, press <%s>",
+			"tr": "Cuando estes listo, presiona <%s>"
 		},
 		{
 			"or": "'%s' has set a new map record: %s",
@@ -146,6 +294,234 @@
 		{
 			"or": "'%s' finished in: %s",
 			"tr": "'%s' terminó en: %s"
+		},
+		{
+			"or": "Game",
+			"tr": "Juego"
+		},
+		{
+			"or": "Players",
+			"tr": "Jugadores"
+		},
+		{
+			"or": "Server info",
+			"tr": "Servidor"
+		},
+		{
+			"or": "Call vote",
+			"tr": "Votar"
+		},
+		{
+			"or": "Settings",
+			"tr": "Configuración"
+		},
+		{
+			"or": "General",
+			"tr": "General"
+		},
+		{
+			"or": "Player",
+			"tr": "Jugador"
+		},
+		{
+			"or": "Controls",
+			"tr": "Controles"
+		},
+		{
+			"or": "Graphics",
+			"tr": "Gráficos"
+		},
+		{
+			"or": "Sound",
+			"tr": "Sonido"
+		},
+		{
+			"or": "Custom",
+			"tr": "Personalizado"
+		},
+		{
+			"or": "Global",
+			"tr": "Global"
+		},
+		{
+			"or": "Local",
+			"tr": "Local"
+		},
+		{
+			"or": "Demos",
+			"tr": "Demos"
+		},
+		{
+			"or": "Back",
+			"tr": "Atrás"
+		},
+		{
+			"or": "Sound error",
+			"tr": "Error de sonido"
+		},
+		{
+			"or": "The audio device couldn't be initialised.",
+			"tr": "El dispositivo de audio no puede ser inicializado."
+		},
+		{
+			"or": "Ok",
+			"tr": "Aceptar"
+		},
+		{
+			"or": "Connecting to",
+			"tr": "Conectando con"
+		},
+		{
+			"or": "Downloading map",
+			"tr": "Descargando mapa"
+		},
+		{
+			"or": "Loading demo",
+			"tr": ""
+		},
+		{
+			"or": "Language",
+			"tr": "Idioma"
+		},
+		{
+			"or": "Flag",
+			"tr": ""
+		},
+		{
+			"or": "Rename demo",
+			"tr": "Renombrar demo"
+		},
+		{
+			"or": "Save skin",
+			"tr": "Guardar skin"
+		},
+		{
+			"or": "Password incorrect",
+			"tr": "Contraseña incorrecta"
+		},
+		{
+			"or": "Quit",
+			"tr": "Salir"
+		},
+		{
+			"or": "Welcome to Teeworlds",
+			"tr": "Bienvenido/a a Teeworlds"
+		},
+		{
+			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to quit?",
+			"tr": "¿Estás seguro de que quieres salir?"
+		},
+		{
+			"or": "No",
+			"tr": "No"
+		},
+		{
+			"or": "Yes",
+			"tr": "Sí"
+		},
+		{
+			"or": "Please enter the password.",
+			"tr": ""
+		},
+		{
+			"or": "Password",
+			"tr": "Contraseña"
+		},
+		{
+			"or": "Save password",
+			"tr": ""
+		},
+		{
+			"or": "Save password and server as favorite",
+			"tr": ""
+		},
+		{
+			"or": "Abort",
+			"tr": "Abortar"
+		},
+		{
+			"or": "Try again",
+			"tr": "Intentar de nuevo"
+		},
+		{
+			"or": "%i minute left",
+			"tr": "%i minuto restante"
+		},
+		{
+			"or": "%i minutes left",
+			"tr": "%i minutos restantes"
+		},
+		{
+			"or": "%i second left",
+			"tr": "%i segundo restante"
+		},
+		{
+			"or": "%i seconds left",
+			"tr": "%i segundos restantes"
+		},
+		{
+			"or": "Error loading demo",
+			"tr": "Error al cargar la demo"
+		},
+		{
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure you want to rename the demo?",
+			"tr": "¿Estás seguro de que quieres renombrar la demo?"
+		},
+		{
+			"or": "Name",
+			"tr": "Nombre"
+		},
+		{
+			"or": "Error",
+			"tr": "Error"
+		},
+		{
+			"or": "Unable to rename the demo",
+			"tr": "No se pudo renombrar la demo"
+		},
+		{
+			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
+			"tr": "¿Estás seguro de que quieres guardar tu skin? Si un skin con este nombre ya existiese, será reemplazado."
+		},
+		{
+			"or": "Unable to save the skin",
+			"tr": ""
+		},
+		{
+			"or": "Unable to save the skin with a reserved name",
+			"tr": ""
+		},
+		{
+			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
+			"tr": "Como es la primera vez que inicias el juego, por favor, introduce tu apodo. Es recomendable que verifiques tu configuración y ajustes las preferencias antes de unirte a un servidor."
+		},
+		{
+			"or": "Nickname",
+			"tr": "Apodo"
+		},
+		{
+			"or": "Enter",
+			"tr": "Entrar"
+		},
+		{
+			"or": "Nickname is empty.",
+			"tr": "El apodo se encuentra vacío."
+		},
+		{
+			"or": "Disconnected",
+			"tr": "Desconectado"
+		},
+		{
+			"or": "The server is running a non-standard tuning on a pure game type.",
+			"tr": "El servidor está ejecutando una configuración no estándar en un tipo de juego puro."
 		},
 		{
 			"or": "Move left",
@@ -202,10 +578,6 @@
 		{
 			"or": "Vote no",
 			"tr": "Votar no"
-		},
-		{
-			"or": "Chat",
-			"tr": "Conversación"
 		},
 		{
 			"or": "Team chat",
@@ -356,10 +728,6 @@
 			"tr": "Eje del mando #%d"
 		},
 		{
-			"or": "Name",
-			"tr": "Nombre"
-		},
-		{
 			"or": "Length",
 			"tr": "Longitud"
 		},
@@ -408,14 +776,6 @@
 			"tr": "Eliminar demo"
 		},
 		{
-			"or": "Yes",
-			"tr": "Sí"
-		},
-		{
-			"or": "No",
-			"tr": "No"
-		},
-		{
 			"or": "Rename",
 			"tr": "Renombrar"
 		},
@@ -437,16 +797,8 @@
 			"tr": "Jugar"
 		},
 		{
-			"or": "Error",
-			"tr": "Error"
-		},
-		{
 			"or": "Unable to delete the demo",
 			"tr": "No se pudo eliminar la demo"
-		},
-		{
-			"or": "Ok",
-			"tr": "Aceptar"
 		},
 		{
 			"or": "Created",
@@ -549,24 +901,12 @@
 			"tr": "Opciones de jugador"
 		},
 		{
-			"or": "Player",
-			"tr": "Jugador"
-		},
-		{
-			"or": "Server info",
-			"tr": "Servidor"
-		},
-		{
 			"or": "Address",
 			"tr": "Dirección"
 		},
 		{
 			"or": "Ping",
 			"tr": "Ping"
-		},
-		{
-			"or": "Password",
-			"tr": "Contraseña"
 		},
 		{
 			"context": "With",
@@ -622,10 +962,6 @@
 			"tr": "Tiempo límite"
 		},
 		{
-			"or": "Players",
-			"tr": "Jugadores"
-		},
-		{
 			"or": "MOTD",
 			"tr": "Mensaje del día"
 		},
@@ -670,14 +1006,6 @@
 			"tr": "El servidor no permite votar para mover jugadores a espectadores"
 		},
 		{
-			"or": "Reason:",
-			"tr": "Motivo:"
-		},
-		{
-			"or": "Call vote",
-			"tr": "Votar"
-		},
-		{
 			"or": "Force vote",
 			"tr": "Forzar Voto"
 		},
@@ -696,379 +1024,6 @@
 		{
 			"or": "Add",
 			"tr": "Añadir"
-		},
-		{
-			"or": "Time limit: %d min",
-			"tr": "Tiempo límite: %d mins."
-		},
-		{
-			"context": "rounds (scoreboard)",
-			"or": "Match",
-			"tr": "Partida"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Espectadores"
-		},
-		{
-			"or": "Game over",
-			"tr": "Fin de la partida"
-		},
-		{
-			"or": "Round over",
-			"tr": "Ronda terminada"
-		},
-		{
-			"or": "Map record",
-			"tr": "Récord de mapa"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
-		},
-		{
-			"or": "Time",
-			"tr": "Tiempo"
-		},
-		{
-			"or": "Score",
-			"tr": "Puntuación"
-		},
-		{
-			"or": "%d other players",
-			"tr": "%d otros jugadores"
-		},
-		{
-			"or": "REC %3d:%02d",
-			"tr": "GRABANDO %3d:%02d"
-		},
-		{
-			"or": "Red team",
-			"tr": "Equipo rojo"
-		},
-		{
-			"or": "Blue team",
-			"tr": "Equipo azul"
-		},
-		{
-			"or": "%s wins!",
-			"tr": "¡%s gana!"
-		},
-		{
-			"or": "Draw!",
-			"tr": "¡Empate!"
-		},
-		{
-			"or": "Round over!",
-			"tr": "¡Ronda terminada!"
-		},
-		{
-			"context": "skins",
-			"or": "body",
-			"tr": "cuerpo"
-		},
-		{
-			"context": "skins",
-			"or": "marking",
-			"tr": "tatuaje"
-		},
-		{
-			"context": "skins",
-			"or": "decoration",
-			"tr": "decoración"
-		},
-		{
-			"context": "skins",
-			"or": "hands",
-			"tr": "manos"
-		},
-		{
-			"context": "skins",
-			"or": "feet",
-			"tr": "pies"
-		},
-		{
-			"context": "skins",
-			"or": "eyes",
-			"tr": "ojos"
-		},
-		{
-			"or": "Free-View",
-			"tr": "Vista libre"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Suicidios"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Radio"
-		},
-		{
-			"context": "Net score",
-			"or": "Net",
-			"tr": "Neto"
-		},
-		{
-			"or": "KPM",
-			"tr": ""
-		},
-		{
-			"or": "Spree",
-			"tr": "Racha"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Mejor racha"
-		},
-		{
-			"context": "Flag grabs",
-			"or": "Grabs",
-			"tr": "Capturas"
-		},
-		{
-			"or": "'%s' called vote to change server option '%s' (%s)",
-			"tr": "'%s' inició una votación para cambiar la opción del servidor '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to kick '%s' (%s)",
-			"tr": "'%s' ha votado expulsar a '%s' (%s)"
-		},
-		{
-			"or": "'%s' called for vote to move '%s' to spectators (%s)",
-			"tr": "'%s' inició una votación para mover '%s' a espectadores (%s)"
-		},
-		{
-			"or": "Admin forced server option '%s' (%s)",
-			"tr": "El administrador forzó la opción del servidor '%s' (%s)"
-		},
-		{
-			"or": "Admin moved '%s' to spectator (%s)",
-			"tr": "El administrador movió '%s' a espectadores (%s)"
-		},
-		{
-			"or": "Vote aborted",
-			"tr": "La votación fue cancelada"
-		},
-		{
-			"or": "Admin forced vote yes",
-			"tr": "El administrador forzó la votación a sí"
-		},
-		{
-			"or": "Vote passed",
-			"tr": "La votación fue aprobada"
-		},
-		{
-			"or": "Admin forced vote no",
-			"tr": "El administrador forzó la votación a no"
-		},
-		{
-			"or": "Vote failed",
-			"tr": "La votación fracasó"
-		},
-		{
-			"or": "Settings",
-			"tr": "Configuración"
-		},
-		{
-			"or": "Local server",
-			"tr": "Servidor local"
-		},
-		{
-			"or": "Demos",
-			"tr": "Demos"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editor"
-		},
-		{
-			"or": "Play",
-			"tr": "Jugar"
-		},
-		{
-			"or": "Quit",
-			"tr": "Salir"
-		},
-		{
-			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
-			"tr": "¡Teeworlds %s ya ha salido! ¡Descárgalo desde www.teeworlds.com!"
-		},
-		{
-			"or": "Game",
-			"tr": "Juego"
-		},
-		{
-			"or": "General",
-			"tr": "General"
-		},
-		{
-			"or": "Controls",
-			"tr": "Controles"
-		},
-		{
-			"or": "Graphics",
-			"tr": "Gráficos"
-		},
-		{
-			"or": "Sound",
-			"tr": "Sonido"
-		},
-		{
-			"or": "Custom",
-			"tr": "Personalizado"
-		},
-		{
-			"or": "Global",
-			"tr": "Global"
-		},
-		{
-			"or": "Local",
-			"tr": "Local"
-		},
-		{
-			"or": "Back",
-			"tr": "Atrás"
-		},
-		{
-			"or": "Sound error",
-			"tr": "Error de sonido"
-		},
-		{
-			"or": "The audio device couldn't be initialised.",
-			"tr": "El dispositivo de audio no puede ser inicializado."
-		},
-		{
-			"or": "Connecting to",
-			"tr": "Conectando con"
-		},
-		{
-			"or": "Downloading map",
-			"tr": "Descargando mapa"
-		},
-		{
-			"or": "Loading demo",
-			"tr": ""
-		},
-		{
-			"or": "Language",
-			"tr": "Idioma"
-		},
-		{
-			"or": "Flag",
-			"tr": ""
-		},
-		{
-			"or": "Rename demo",
-			"tr": "Renombrar demo"
-		},
-		{
-			"or": "Save skin",
-			"tr": "Guardar skin"
-		},
-		{
-			"or": "Password incorrect",
-			"tr": "Contraseña incorrecta"
-		},
-		{
-			"or": "Welcome to Teeworlds",
-			"tr": "Bienvenido/a a Teeworlds"
-		},
-		{
-			"or": "There's an unsaved map in the editor; you may want to save it before you quit the game.",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to quit?",
-			"tr": "¿Estás seguro de que quieres salir?"
-		},
-		{
-			"or": "Please enter the password.",
-			"tr": ""
-		},
-		{
-			"or": "Save password",
-			"tr": ""
-		},
-		{
-			"or": "Save password and server as favorite",
-			"tr": ""
-		},
-		{
-			"or": "Abort",
-			"tr": "Abortar"
-		},
-		{
-			"or": "Try again",
-			"tr": "Intentar de nuevo"
-		},
-		{
-			"or": "%i minute left",
-			"tr": "%i minuto restante"
-		},
-		{
-			"or": "%i minutes left",
-			"tr": "%i minutos restantes"
-		},
-		{
-			"or": "%i second left",
-			"tr": "%i segundo restante"
-		},
-		{
-			"or": "%i seconds left",
-			"tr": "%i segundos restantes"
-		},
-		{
-			"or": "Error loading demo",
-			"tr": "Error al cargar la demo"
-		},
-		{
-			"or": "Cancel",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure you want to rename the demo?",
-			"tr": "¿Estás seguro de que quieres renombrar la demo?"
-		},
-		{
-			"or": "Unable to rename the demo",
-			"tr": "No se pudo renombrar la demo"
-		},
-		{
-			"or": "Are you sure you want to save your skin? If a skin with this name already exists, it will be replaced.",
-			"tr": "¿Estás seguro de que quieres guardar tu skin? Si un skin con este nombre ya existiese, será reemplazado."
-		},
-		{
-			"or": "Unable to save the skin",
-			"tr": ""
-		},
-		{
-			"or": "Unable to save the skin with a reserved name",
-			"tr": ""
-		},
-		{
-			"or": "As this is the first time you launch the game, please enter your nick name below. It's recommended that you check the settings to adjust them to your liking before joining a server.",
-			"tr": "Como es la primera vez que inicias el juego, por favor, introduce tu apodo. Es recomendable que verifiques tu configuración y ajustes las preferencias antes de unirte a un servidor."
-		},
-		{
-			"or": "Nickname",
-			"tr": "Apodo"
-		},
-		{
-			"or": "Enter",
-			"tr": "Entrar"
-		},
-		{
-			"or": "Nickname is empty.",
-			"tr": "El apodo se encuentra vacío."
-		},
-		{
-			"or": "Disconnected",
-			"tr": "Desconectado"
-		},
-		{
-			"or": "The server is running a non-standard tuning on a pure game type.",
-			"tr": "El servidor está ejecutando una configuración no estándar en un tipo de juego puro."
 		},
 		{
 			"or": "Hue:",
@@ -1230,6 +1185,10 @@
 			"tr": "Personal"
 		},
 		{
+			"or": "Clan",
+			"tr": "Clan"
+		},
+		{
 			"or": "Flag:",
 			"tr": ""
 		},
@@ -1298,6 +1257,14 @@
 			"tr": "Muertes"
 		},
 		{
+			"or": "Suicides",
+			"tr": "Suicidios"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Radio"
+		},
+		{
 			"or": "The ratio of kills to deaths.",
 			"tr": ""
 		},
@@ -1316,6 +1283,10 @@
 		{
 			"or": "Current spree",
 			"tr": "Racha actual"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Mejor racha"
 		},
 		{
 			"or": "Weapons stats",
@@ -1466,8 +1437,169 @@
 			"tr": "Debes esperar %1.0f segundos para cambiar tu identidad."
 		},
 		{
-			"or": "-Page %d-",
-			"tr": "-Página %d-"
+			"or": "Local server",
+			"tr": "Servidor local"
+		},
+		{
+			"or": "Editor",
+			"tr": "Editor"
+		},
+		{
+			"or": "Play",
+			"tr": "Jugar"
+		},
+		{
+			"or": "Teeworlds %s is out! Download it at www.teeworlds.com!",
+			"tr": "¡Teeworlds %s ya ha salido! ¡Descárgalo desde www.teeworlds.com!"
+		},
+		{
+			"or": "Time limit: %d min",
+			"tr": "Tiempo límite: %d mins."
+		},
+		{
+			"context": "rounds (scoreboard)",
+			"or": "Match",
+			"tr": "Partida"
+		},
+		{
+			"or": "Game over",
+			"tr": "Fin de la partida"
+		},
+		{
+			"or": "Round over",
+			"tr": "Ronda terminada"
+		},
+		{
+			"or": "Map record",
+			"tr": "Récord de mapa"
+		},
+		{
+			"or": "Time",
+			"tr": "Tiempo"
+		},
+		{
+			"or": "Score",
+			"tr": "Puntuación"
+		},
+		{
+			"or": "%d other players",
+			"tr": "%d otros jugadores"
+		},
+		{
+			"or": "REC %3d:%02d",
+			"tr": "GRABANDO %3d:%02d"
+		},
+		{
+			"or": "Red team",
+			"tr": "Equipo rojo"
+		},
+		{
+			"or": "Blue team",
+			"tr": "Equipo azul"
+		},
+		{
+			"or": "%s wins!",
+			"tr": "¡%s gana!"
+		},
+		{
+			"or": "Draw!",
+			"tr": "¡Empate!"
+		},
+		{
+			"or": "Round over!",
+			"tr": "¡Ronda terminada!"
+		},
+		{
+			"context": "skins",
+			"or": "body",
+			"tr": "cuerpo"
+		},
+		{
+			"context": "skins",
+			"or": "marking",
+			"tr": "tatuaje"
+		},
+		{
+			"context": "skins",
+			"or": "decoration",
+			"tr": "decoración"
+		},
+		{
+			"context": "skins",
+			"or": "hands",
+			"tr": "manos"
+		},
+		{
+			"context": "skins",
+			"or": "feet",
+			"tr": "pies"
+		},
+		{
+			"context": "skins",
+			"or": "eyes",
+			"tr": "ojos"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Vista libre"
+		},
+		{
+			"context": "Net score",
+			"or": "Net",
+			"tr": "Neto"
+		},
+		{
+			"or": "KPM",
+			"tr": ""
+		},
+		{
+			"or": "Spree",
+			"tr": "Racha"
+		},
+		{
+			"context": "Flag grabs",
+			"or": "Grabs",
+			"tr": "Capturas"
+		},
+		{
+			"or": "'%s' called vote to change server option '%s' (%s)",
+			"tr": "'%s' inició una votación para cambiar la opción del servidor '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to kick '%s' (%s)",
+			"tr": "'%s' ha votado expulsar a '%s' (%s)"
+		},
+		{
+			"or": "'%s' called for vote to move '%s' to spectators (%s)",
+			"tr": "'%s' inició una votación para mover '%s' a espectadores (%s)"
+		},
+		{
+			"or": "Admin forced server option '%s' (%s)",
+			"tr": "El administrador forzó la opción del servidor '%s' (%s)"
+		},
+		{
+			"or": "Admin moved '%s' to spectator (%s)",
+			"tr": "El administrador movió '%s' a espectadores (%s)"
+		},
+		{
+			"or": "Vote aborted",
+			"tr": "La votación fue cancelada"
+		},
+		{
+			"or": "Admin forced vote yes",
+			"tr": "El administrador forzó la votación a sí"
+		},
+		{
+			"or": "Vote passed",
+			"tr": "La votación fue aprobada"
+		},
+		{
+			"or": "Admin forced vote no",
+			"tr": "El administrador forzó la votación a no"
+		},
+		{
+			"or": "Vote failed",
+			"tr": "La votación fracasó"
 		},
 		{
 			"or": "Server",
@@ -1480,10 +1612,6 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoritos"
-		},
-		{
-			"or": "All",
-			"tr": "Todos"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1637,8 +1765,16 @@
 			"tr": "Sin contraseña"
 		},
 		{
+			"or": "Compatible version",
+			"tr": ""
+		},
+		{
 			"or": "Standard gametype",
 			"tr": "Tipo de juego estándar"
+		},
+		{
+			"or": "Standard map",
+			"tr": ""
 		},
 		{
 			"or": "Game types:",
@@ -1700,138 +1836,6 @@
 		{
 			"or": "Connect",
 			"tr": "Conectar"
-		},
-		{
-			"or": "Server list from status.tw",
-			"tr": ""
-		},
-		{
-			"or": "Sudden Death",
-			"tr": "Muerte Súbita"
-		},
-		{
-			"or": "Game paused",
-			"tr": "Juego en pausa"
-		},
-		{
-			"or": "%d player not ready",
-			"tr": "El jugador %d no está listo"
-		},
-		{
-			"or": "%d players not ready",
-			"tr": "%d jugadores no están listos"
-		},
-		{
-			"or": "Game starts in",
-			"tr": "El juego comienza en"
-		},
-		{
-			"or": "Wait for next round",
-			"tr": "Espera a la siguiente ronda"
-		},
-		{
-			"or": "%d player left",
-			"tr": "%d jugador restante"
-		},
-		{
-			"or": "%d players left",
-			"tr": "%d jugadores restantes"
-		},
-		{
-			"or": "Warmup",
-			"tr": "Calentamiento"
-		},
-		{
-			"or": "waiting for more players",
-			"tr": ""
-		},
-		{
-			"or": "Connection Problems...",
-			"tr": "Problemas de conexión..."
-		},
-		{
-			"or": "Please balance teams!",
-			"tr": "Por favor, ¡equilibrad los equipos!"
-		},
-		{
-			"or": "%ds left",
-			"tr": "%ds restantes"
-		},
-		{
-			"or": "Vote Yes",
-			"tr": ""
-		},
-		{
-			"or": "Vote No",
-			"tr": ""
-		},
-		{
-			"or": "Spectate",
-			"tr": "Modo Espectador"
-		},
-		{
-			"or": "Free View",
-			"tr": ""
-		},
-		{
-			"or": "Red Flag",
-			"tr": ""
-		},
-		{
-			"or": "Blue Flag",
-			"tr": ""
-		},
-		{
-			"or": "Click on a player or flag to follow it",
-			"tr": ""
-		},
-		{
-			"or": "When ready, press <%s>",
-			"tr": "Cuando estes listo, presiona <%s>"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Mapa cambiado a '%s'"
-		},
-		{
-			"or": "Team",
-			"tr": "Equipo"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Presiona %s para salir del chat"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": "Presione Tab para cambiar de chat"
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Página %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Enter para confirmar o Esc para cancelar"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' fue silenciado"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' fue desilenciado"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' fue añadido como amigo"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' fue removido de tus amigos"
 		}
 	]
 }

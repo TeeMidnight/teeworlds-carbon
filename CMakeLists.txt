@@ -1314,6 +1314,7 @@ set_src(ENGINE_INTERFACE GLOB src/engine
   keys.h
   localization.h
   map.h
+  mapchecker.h
   masterserver.h
   message.h
   server.h
@@ -1355,6 +1356,9 @@ set_src(ENGINE_SHARED GLOB src/engine/shared
   linereader.h
   localization.cpp
   map.cpp
+  mapchecker.cpp
+  mapchecker.h
+  mapversions.h
   masterserver.cpp
   masterserver.h
   memheap.cpp

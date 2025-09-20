@@ -37,6 +37,7 @@
 #include <engine/shared/datafile.h>
 #include <engine/shared/demo.h>
 #include <engine/shared/filecollection.h>
+#include <engine/shared/mapchecker.h>
 #include <engine/shared/masterserver.h>
 #include <engine/shared/network.h>
 #include <engine/shared/packer.h>
@@ -247,6 +248,7 @@ CClient::CClient() :
 	m_pSound = 0;
 	m_pGameClient = 0;
 	m_pMap = 0;
+	m_pMapChecker = 0;
 	m_pConfigManager = 0;
 	m_pConfig = 0;
 	m_pConsole = 0;
@@ -1096,6 +1098,10 @@ void CClient::ProcessServerPacket(CNetChunk *pPacket)
 			const SHA256_DIGEST *pMapSha256 = (const SHA256_DIGEST *) Unpacker.GetRaw(sizeof(*pMapSha256));
 			const char *pError = 0;
 
+			// check for valid standard map
+			if(!m_pMapChecker->IsMapValid(pMap, pMapSha256, MapCrc, MapSize))
+				pError = "invalid standard map";
+
 			// protect the player from nasty map names
 			for(int i = 0; pMap[i]; i++)
 			{
@@ -1750,6 +1756,7 @@ void CClient::InitInterfaces()
 	m_pGameClient = Kernel()->RequestInterface<IGameClient>();
 	m_pInput = Kernel()->RequestInterface<IEngineInput>();
 	m_pMap = Kernel()->RequestInterface<IEngineMap>();
+	m_pMapChecker = Kernel()->RequestInterface<IMapChecker>();
 	m_pConfigManager = Kernel()->RequestInterface<IConfigManager>();
 	m_pConfig = m_pConfigManager->Values();
 	m_pStorage = Kernel()->RequestInterface<IStorage>();
@@ -2590,6 +2597,7 @@ int main(int argc, const char **argv)
 	IEngineInput *pEngineInput = CreateEngineInput();
 	IEngineTextRender *pEngineTextRender = CreateEngineTextRender();
 	IEngineMap *pEngineMap = CreateEngineMap();
+	IMapChecker *pMapChecker = CreateMapChecker();
 	IEngineMasterServer *pEngineMasterServer = CreateEngineMasterServer();
 
 	if(RandInitFailed)
@@ -2616,6 +2624,8 @@ int main(int argc, const char **argv)
 
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IEngineMap *>(pEngineMap)); // register as both
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IMap *>(pEngineMap));
+
+		RegisterFail = RegisterFail || !pKernel->RegisterInterface(pMapChecker);
 
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IEngineMasterServer *>(pEngineMasterServer)); // register as both
 		RegisterFail = RegisterFail || !pKernel->RegisterInterface(static_cast<IMasterServer *>(pEngineMasterServer));
@@ -2718,6 +2728,7 @@ int main(int argc, const char **argv)
 	delete pEngineInput;
 	delete pEngineTextRender;
 	delete pEngineMap;
+	delete pMapChecker;
 	delete pEngineMasterServer;
 
 	secure_random_uninit();
