@@ -39,8 +39,8 @@ void CGameControllerCarbonRace::Snap(int SnappingClient)
 	if(!pGameData)
 		return;
 
-	pGameData->m_BestTime = 0;
-	pGameData->m_Precision = 3;
+	pGameData->m_BestTime = -1;
+	pGameData->m_Precision = 2;
 	pGameData->m_RaceFlags = RACEFLAG_KEEP_WANTED_WEAPON;
 }
 
