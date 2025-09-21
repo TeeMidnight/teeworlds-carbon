@@ -31,6 +31,24 @@ CGameControllerCarbonRace::CGameControllerCarbonRace(CGameContext *pGameServer) 
 	m_GameFlags = GAMEFLAG_RACE;
 }
 
+void CGameControllerCarbonRace::HandleCharacterTiles(CCharacter *pChr, vec2 LastPos, vec2 NewPos)
+{
+	static const vec2 ColBox(CCharacterCore::PHYS_SIZE, CCharacterCore::PHYS_SIZE);
+	if(!pChr)
+		return;
+
+	int Flag = pChr->GameWorld()->Collision()->TestBoxMoveAt(LastPos, NewPos, ColBox);
+	if(Flag & COLFLAG_START)
+	{
+		
+	}
+
+	if(Flag & COLFLAG_FINISH)
+	{
+
+	}
+}
+
 void CGameControllerCarbonRace::Snap(int SnappingClient)
 {
 	IGameController::Snap(SnappingClient);

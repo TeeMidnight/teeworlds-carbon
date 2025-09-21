@@ -143,18 +143,43 @@ void CCollision::MovePoint(vec2 *pInoutPos, vec2 *pInoutVel, float Elasticity, i
 	}
 }
 
-bool CCollision::TestBox(vec2 Pos, vec2 Size, int Flag) const
+int CCollision::TestBoxAt(vec2 Pos, vec2 Size) const
 {
 	Size *= 0.5f;
-	if(CheckPoint(Pos.x - Size.x, Pos.y - Size.y, Flag))
-		return true;
-	if(CheckPoint(Pos.x + Size.x, Pos.y - Size.y, Flag))
-		return true;
-	if(CheckPoint(Pos.x - Size.x, Pos.y + Size.y, Flag))
-		return true;
-	if(CheckPoint(Pos.x + Size.x, Pos.y + Size.y, Flag))
-		return true;
-	return false;
+	int Flag = 0;
+	Flag |= GetCollisionAt(Pos.x - Size.x, Pos.y - Size.y);
+	Flag |= GetCollisionAt(Pos.x + Size.x, Pos.y - Size.y);
+	Flag |= GetCollisionAt(Pos.x - Size.x, Pos.y + Size.y);
+	Flag |= GetCollisionAt(Pos.x + Size.x, Pos.y + Size.y);
+	return Flag;
+}
+
+bool CCollision::TestBox(vec2 Pos, vec2 Size, int Flag) const
+{
+	return TestBoxAt(Pos, Size) & Flag;
+}
+
+int CCollision::TestBoxMoveAt(vec2 LastPos, vec2 NewPos, vec2 Size) const
+{
+	vec2 Pos = LastPos;
+	const vec2 Direction = normalize(NewPos - LastPos);
+	const float Distance = distance(NewPos, LastPos);
+	const int Max = (int) Distance;
+
+	int Flag = 0;
+	if(Distance > 0.00001f)
+	{
+		const float Fraction = 1.0f / (Max + 1);
+		for(int i = 0; i <= Max; i++)
+		{
+			Flag |= TestBoxAt(Pos, Size);
+			Pos = Pos + Direction * Fraction;
+		}
+	}
+	else
+		return TestBoxAt(Pos, Size);
+
+	return Flag;
 }
 
 void CCollision::SetFlagFor(float x, float y, int Flag)

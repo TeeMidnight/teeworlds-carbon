@@ -536,7 +536,10 @@ void CCharacter::TickDefered()
 	{
 		// handle death-tiles
 		Die(this, WEAPON_WORLD);
+		return;
 	}
+
+	GameController()->HandleCharacterTiles(this, StartPos, m_Pos);
 
 	// update the m_SendCore if needed
 	{

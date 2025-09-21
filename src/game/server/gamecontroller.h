@@ -134,6 +134,7 @@ public:
 	virtual void OnPlayerExtraSnap(class CPlayer *pPlayer, int SnappingClient) {}
 	virtual int GetPlayerScore(int ClientID) const { return 0; }
 
+	virtual void HandleCharacterTiles(class CCharacter *pChr, vec2 LastPos, vec2 NewPos) {};
 	// static void Com_Example(IConsole::IResult *pResult, void *pContext);
 	virtual void RegisterChatCommands(CCommandManager *pManager);
 };

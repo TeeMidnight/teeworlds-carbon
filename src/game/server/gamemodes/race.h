@@ -17,6 +17,7 @@ class CGameControllerCarbonRace : public IGameController
 public:
 	CGameControllerCarbonRace(class CGameContext *pGameServer);
 
+	void HandleCharacterTiles(class CCharacter *pChr, vec2 LastPos, vec2 NewPos) override;
 	void Snap(int SnappingClient) override;
 	void OnPlayerExtraSnap(class CPlayer *pPlayer, int SnappingClient) override;
 	bool OnExtraTile(class CGameWorld *pWorld, int Index, vec2 Pos) override;
