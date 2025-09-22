@@ -53,7 +53,7 @@ CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInf
 
 	GameWorld()->CreatePlayerSpawn(Pos);
 	GameWorld()->InsertEntity(this);
-	GameWorld()->RegisterEntityComponent(this, CHealthComponent::GetTypeHash(), static_cast<CHealthComponent *>(this));
+	GameWorld()->RegisterEntitySelfAsComponent<CHealthComponent>(this);
 }
 
 void CBotEntity::Tick()

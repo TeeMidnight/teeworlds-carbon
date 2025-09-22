@@ -34,7 +34,7 @@ CProjectile::CProjectile(CGameWorld *pGameWorld, int Type, CEntity *pOwner, vec2
 	m_Explosive = Explosive;
 
 	GameWorld()->InsertEntity(this);
-	GameWorld()->RegisterEntityComponent(this, COwnerComponent::GetTypeHash(), static_cast<COwnerComponent *>(this));
+	GameWorld()->RegisterEntitySelfAsComponent<COwnerComponent>(this);
 }
 
 void CProjectile::Reset()

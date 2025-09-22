@@ -25,7 +25,7 @@ CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEner
 	m_Bounces = 0;
 	m_EvalTick = 0;
 	GameWorld()->InsertEntity(this);
-	GameWorld()->RegisterEntityComponent(this, COwnerComponent::GetTypeHash(), static_cast<COwnerComponent *>(this));
+	GameWorld()->RegisterEntitySelfAsComponent<COwnerComponent>(this);
 	DoBounce();
 }
 

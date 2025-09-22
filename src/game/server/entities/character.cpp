@@ -61,7 +61,7 @@ bool CCharacter::Spawn(CPlayer *pPlayer, vec2 Pos)
 	mem_zero(&m_ReckoningCore, sizeof(m_ReckoningCore));
 
 	GameWorld()->InsertEntity(this);
-	GameWorld()->RegisterEntityComponent(this, CHealthComponent::GetTypeHash(), static_cast<CHealthComponent *>(this));
+	GameWorld()->RegisterEntitySelfAsComponent<CHealthComponent>(this);
 	m_Alive = true;
 
 	GameWorld()->GameController()->OnCharacterSpawn(this);

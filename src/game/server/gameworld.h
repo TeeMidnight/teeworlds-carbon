@@ -163,6 +163,18 @@ public:
 
 	void RegisterEntityComponent(CEntity *pThis, unsigned TypeHash, void *pComponent);
 
+	template<typename Target, typename Component>
+	void RegisterEntityComponent(CEntity *pThis, Component *pComponent)
+	{
+		RegisterEntityComponent(pThis, Target::GetTypeHash(), static_cast<Target *>(pComponent));
+	}
+
+	template<typename Target, typename Entity>
+	void RegisterEntitySelfAsComponent(Entity *pThis)
+	{
+		RegisterEntityComponent(pThis, Target::GetTypeHash(), static_cast<Target *>(pThis));
+	}
+
 	/*
 		Function: snap
 			Calls snap on all the entities in the world to create
