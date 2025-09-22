@@ -15,21 +15,26 @@
 //
 class CEventHandler
 {
+	struct SEventRef
+	{
+		int m_DataOffset;
+		int m_Type;
+		int m_Size;
+		int m_X;
+		int m_Y;
+	};
 	static const int MAX_EVENTS = 32;
-	static const int MAX_DATASIZE = 32 * 64;
+	static const int MAX_EVENTS_TOTAL = 256;
+	char m_aSharedData[MAX_EVENTS_TOTAL * 64];
+	int m_CurrentOffset;
 
-	// extra 1 is server demo snap.
-	int m_aaTypes[SERVER_MAX_CLIENTS][MAX_EVENTS];
-	int m_aaOffsets[SERVER_MAX_CLIENTS][MAX_EVENTS];
-	int m_aaSizes[SERVER_MAX_CLIENTS][MAX_EVENTS];
-	char m_aaData[SERVER_MAX_CLIENTS][MAX_DATASIZE];
+	SEventRef m_aEvents[MAX_EVENTS_TOTAL];
+	int m_NumEvents;
+
+	int m_aClientEventList[SERVER_MAX_CLIENTS][MAX_EVENTS];
+	int m_aClientNumEvents[SERVER_MAX_CLIENTS];
 
 	class CGameContext *m_pGameServer;
-
-	int m_aCurrentOffset[SERVER_MAX_CLIENTS];
-	int m_aNumEvents[SERVER_MAX_CLIENTS];
-
-	void Create(void *pData, int Type, int Size, int ClientID);
 
 public:
 	CGameContext *GameServer() const { return m_pGameServer; }

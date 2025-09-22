@@ -16,6 +16,7 @@
 #include "entities/pickup.h"
 #include "gamecontext.h"
 #include "gamecontroller.h"
+#include "gameworld.inl"
 #include "player.h"
 
 IGameController::IGameController(CGameContext *pGameServer)
@@ -421,8 +422,8 @@ void IGameController::EvaluateSpawnType(CSpawnEval *pEval, int Type) const
 	for(unsigned i = 0; i < pEval->m_pWorld->m_aNumSpawnPoints[Type]; i++)
 	{
 		// check if the position is occupado
-		CBaseHealthEntity *apEnts[MAX_CHECK_ENTITY];
-		int Num = pEval->m_pWorld->FindEntities(pEval->m_pWorld->m_aaSpawnPoints[Type][i], 64, (CEntity **) apEnts, MAX_CHECK_ENTITY, EEntityFlag::ENTFLAG_DAMAGE);
+		CEntity *apEnts[MAX_CHECK_ENTITY];
+		int Num = pEval->m_pWorld->FindEntities(pEval->m_pWorld->m_aaSpawnPoints[Type][i], 64, (CEntity **) apEnts, MAX_CHECK_ENTITY, GameWorldCheck::EntityComponent(pEval->m_pWorld, CHealthComponent::GetTypeHash()));
 		vec2 Positions[5] = {vec2(0.0f, 0.0f), vec2(-32.0f, 0.0f), vec2(0.0f, -32.0f), vec2(32.0f, 0.0f), vec2(0.0f, 32.0f)}; // start, left, up, right, down
 		int Result = -1;
 		for(int Index = 0; Index < 5 && Result == -1; ++Index)

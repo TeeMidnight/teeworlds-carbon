@@ -27,30 +27,29 @@ void CEventHandler::SetGameServer(CGameContext *pGameServer)
 	m_pGameServer = pGameServer;
 }
 
-void CEventHandler::Create(void *pData, int Type, int Size, int ClientID)
-{
-	int &NumEvent = m_aNumEvents[ClientID];
-	if(m_aNumEvents[ClientID] == MAX_EVENTS)
-		return;
-	if(m_aCurrentOffset[ClientID] + Size >= MAX_DATASIZE)
-		return;
-
-	void *p = &m_aaData[ClientID][m_aCurrentOffset[ClientID]];
-	m_aaOffsets[ClientID][NumEvent] = m_aCurrentOffset[ClientID];
-	m_aaTypes[ClientID][NumEvent] = Type;
-	m_aaSizes[ClientID][NumEvent] = Size;
-	m_aCurrentOffset[ClientID] += Size;
-	NumEvent++;
-	mem_copy(p, pData, Size);
-}
-
 void CEventHandler::Create(void *pData, int Type, int Size, int64_t Mask)
 {
+	if(m_NumEvents >= MAX_EVENTS_TOTAL || m_CurrentOffset + Size > MAX_EVENTS_TOTAL * 64)
+		return;
+
+	int Offset = m_CurrentOffset;
+	mem_copy(m_aSharedData + Offset, pData, Size);
+	m_CurrentOffset += Size;
+
+	SEventRef &EventRef = m_aEvents[m_NumEvents++];
+	EventRef.m_DataOffset = Offset;
+	EventRef.m_Type = Type;
+	EventRef.m_Size = Size;
+	EventRef.m_X = static_cast<CNetEvent_Common *>(pData)->m_X;
+	EventRef.m_Y = static_cast<CNetEvent_Common *>(pData)->m_Y;
+
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{
 		if(CmaskIsSet(Mask, i))
 		{
-			Create(pData, Type, Size, i);
+			int &Num = m_aClientNumEvents[i];
+			if(Num < MAX_EVENTS)
+				m_aClientEventList[i][Num++] = m_NumEvents - 1;
 		}
 	}
 }
@@ -59,9 +58,10 @@ void CEventHandler::Clear()
 {
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{
-		m_aNumEvents[i] = 0;
-		m_aCurrentOffset[i] = 0;
+		m_aClientNumEvents[i] = 0;
 	}
+	m_CurrentOffset = 0;
+	m_NumEvents = 0;
 }
 
 void CEventHandler::Snap(int SnappingClient)
@@ -69,14 +69,16 @@ void CEventHandler::Snap(int SnappingClient)
 	if(SnappingClient == -1)
 		return;
 
-	for(int i = 0; i < m_aNumEvents[SnappingClient]; i++)
+	for(int i = 0; i < m_aClientNumEvents[SnappingClient]; i++)
 	{
-		CNetEvent_Common *pEvent = (CNetEvent_Common *) &m_aaData[SnappingClient][m_aaOffsets[SnappingClient][i]];
-		if(!NetworkClipped(SnappingClient, vec2(pEvent->m_X, pEvent->m_Y), GameServer()))
-		{
-			void *pData = GameServer()->Server()->SnapNewItem(m_aaTypes[SnappingClient][i], i, m_aaSizes[SnappingClient][i]);
-			if(pData)
-				mem_copy(pData, &m_aaData[SnappingClient][m_aaOffsets[SnappingClient][i]], m_aaSizes[SnappingClient][i]);
-		}
+		int EventID = m_aClientEventList[SnappingClient][i];
+		const SEventRef &EventRef = m_aEvents[EventID];
+
+		if(NetworkClipped(SnappingClient, vec2(EventRef.m_X, EventRef.m_Y), GameServer()))
+			continue;
+
+		void *pData = GameServer()->Server()->SnapNewItem(EventRef.m_Type, EventID, EventRef.m_Size);
+		if(pData)
+			mem_copy(pData, m_aSharedData + EventRef.m_DataOffset, EventRef.m_Size);
 	}
 }

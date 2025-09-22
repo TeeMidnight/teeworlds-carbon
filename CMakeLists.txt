@@ -224,7 +224,7 @@ function(set_glob VAR GLOBBING EXTS DIRECTORY) # ...
 endfunction()
 
 function(set_src VAR GLOBBING DIRECTORY) # ...
-  set_glob(${VAR} ${GLOBBING} "c;cpp;h" ${DIRECTORY} ${ARGN})
+  set_glob(${VAR} ${GLOBBING} "c;cpp;h;inl" ${DIRECTORY} ${ARGN})
   set(${VAR} ${${VAR}} PARENT_SCOPE)
 endfunction()
 
@@ -1672,6 +1672,7 @@ endif()
     gamemodes/race.h
     gameworld.cpp
     gameworld.h
+    gameworld.inl
     player.cpp
     player.h
     teeinfo.cpp

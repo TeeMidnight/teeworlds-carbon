@@ -27,7 +27,7 @@ struct SNinja
 	int m_OldVelAmount;
 };
 
-class CCharacter : public CHealthEntity<CEntity>
+class CCharacter : public CEntity, public CHealthComponent
 {
 	MACRO_ALLOC_POOL_ID()
 

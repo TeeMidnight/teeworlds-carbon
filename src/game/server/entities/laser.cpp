@@ -9,13 +9,15 @@
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
 #include <game/server/gamecontext.h>
+#include <game/server/gameworld.inl>
 #include <generated/server_data.h>
 
 #include "character.h"
 #include "laser.h"
 
 CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEnergy, CEntity *pOwner) :
-	COwnerEntity(pGameWorld, CGameWorld::ENTTYPE_LASER, Pos)
+	CEntity(pGameWorld, CGameWorld::ENTTYPE_LASER, Pos),
+	COwnerComponent(this)
 {
 	SetOwner(pOwner);
 	m_Energy = StartEnergy;
@@ -23,20 +25,21 @@ CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEner
 	m_Bounces = 0;
 	m_EvalTick = 0;
 	GameWorld()->InsertEntity(this);
+	GameWorld()->RegisterEntityComponent(this, COwnerComponent::GetTypeHash(), static_cast<COwnerComponent *>(this));
 	DoBounce();
 }
 
 bool CLaser::Hit(vec2 From, vec2 To)
 {
 	vec2 At;
-	CBaseHealthEntity *pHit = (CBaseHealthEntity *) GameWorld()->IntersectEntity(m_Pos, To, 0.f, EEntityFlag::ENTFLAG_DAMAGE, At, GetOwner());
+	CEntity *pHit = GameWorld()->IntersectEntity(m_Pos, To, 0.f, GameWorldCheck::EntityComponent(GameWorld(), CHealthComponent::GetTypeHash()), At, GetOwner());
 	if(!pHit)
 		return false;
 
 	m_From = From;
 	m_Pos = At;
 	m_Energy = -1;
-	pHit->TakeDamage(vec2(0.f, 0.f), normalize(To - From), g_pData->m_Weapons.m_aId[WEAPON_LASER].m_Damage, GetOwner(), WEAPON_LASER);
+	GameWorld()->GetComponent<CHealthComponent>(pHit)->TakeDamage(vec2(0.f, 0.f), normalize(To - From), g_pData->m_Weapons.m_aId[WEAPON_LASER].m_Damage, GetOwner(), WEAPON_LASER);
 	return true;
 }
 

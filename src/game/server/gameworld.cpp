@@ -17,6 +17,7 @@
 #include "gamecontext.h"
 #include "gamecontroller.h"
 #include "gameworld.h"
+#include "gameworld.inl"
 #include "player.h"
 
 CEventHandler *CGameWorld::EventHandler() { return &GameServer()->m_Events; }
@@ -40,6 +41,7 @@ CGameWorld::CGameWorld()
 		m_apFirstEntityTypes[i] = nullptr;
 
 	m_pBotManager = nullptr;
+	m_uupComponents.clear();
 }
 
 CGameWorld::~CGameWorld()
@@ -51,6 +53,8 @@ CGameWorld::~CGameWorld()
 
 	if(m_pBotManager)
 		delete m_pBotManager;
+
+	m_uupComponents.clear();
 }
 
 void CGameWorld::SetCollision(std::shared_ptr<CCollision> pCollision)
@@ -82,48 +86,6 @@ CEntity *CGameWorld::FindFirst(int Type)
 	return Type < 0 || Type >= NUM_ENTTYPES ? 0 : m_apFirstEntityTypes[Type];
 }
 
-int CGameWorld::FindEntities(vec2 Pos, float Radius, CEntity **ppEnts, int Max, int Type)
-{
-	if(Type < 0 || Type >= NUM_ENTTYPES)
-		return 0;
-
-	int Num = 0;
-	for(CEntity *pEnt = m_apFirstEntityTypes[Type]; pEnt; pEnt = pEnt->m_pNextTypeEntity)
-	{
-		if(distance(pEnt->m_Pos, Pos) < Radius + pEnt->m_ProximityRadius)
-		{
-			if(ppEnts)
-				ppEnts[Num] = pEnt;
-			Num++;
-			if(Num == Max)
-				break;
-		}
-	}
-
-	return Num;
-}
-
-int CGameWorld::FindEntities(vec2 Pos, float Radius, CEntity **ppEnts, int Max, EEntityFlag Flag)
-{
-	int Num = 0;
-	for(int i = 0; i < NUM_ENTTYPES; i++)
-	{
-		for(CEntity *pEnt = m_apFirstEntityTypes[i]; pEnt; pEnt = pEnt->TypeNext())
-		{
-			if((pEnt->GetObjFlag() & Flag) && distance(pEnt->m_Pos, Pos) < Radius + pEnt->m_ProximityRadius)
-			{
-				if(ppEnts)
-					ppEnts[Num] = pEnt;
-				Num++;
-				if(Num == Max)
-					break;
-			}
-		}
-	}
-
-	return Num;
-}
-
 void CGameWorld::InsertEntity(CEntity *pEnt)
 {
 #ifdef CONF_DEBUG
@@ -142,6 +104,14 @@ void CGameWorld::InsertEntity(CEntity *pEnt)
 void CGameWorld::DestroyEntity(CEntity *pEnt)
 {
 	pEnt->MarkForDestroy();
+}
+
+void CGameWorld::RegisterEntityComponent(CEntity *pThis, unsigned TypeHash, void *pComponent)
+{
+	if(m_uupComponents.count(pThis))
+		dbg_assert(!m_uupComponents[pThis].count(TypeHash), "registered a entity component twice!");
+
+	m_uupComponents[pThis][TypeHash] = pComponent;
 }
 
 void CGameWorld::RemoveEntity(CEntity *pEnt)
@@ -164,6 +134,8 @@ void CGameWorld::RemoveEntity(CEntity *pEnt)
 
 	pEnt->m_pNextTypeEntity = 0;
 	pEnt->m_pPrevTypeEntity = 0;
+
+	m_uupComponents.erase(pEnt);
 }
 
 //
@@ -268,121 +240,6 @@ void CGameWorld::Tick()
 	RemoveEntities();
 }
 
-// TODO: should be more general
-CEntity *CGameWorld::IntersectEntity(vec2 Pos0, vec2 Pos1, float Radius, int Type, vec2 &NewPos, CEntity *pNotThis)
-{
-	// Find other players
-	float ClosestLen = distance(Pos0, Pos1) * 100.0f;
-	CEntity *pClosest = 0;
-
-	CEntity *p = (CEntity *) FindFirst(Type);
-	for(; p; p = (CEntity *) p->TypeNext())
-	{
-		if(p == pNotThis)
-			continue;
-
-		vec2 IntersectPos = closest_point_on_line(Pos0, Pos1, p->m_Pos);
-		float Len = distance(p->m_Pos, IntersectPos);
-		if(Len < p->m_ProximityRadius + Radius)
-		{
-			Len = distance(Pos0, IntersectPos);
-			if(Len < ClosestLen)
-			{
-				NewPos = IntersectPos;
-				ClosestLen = Len;
-				pClosest = p;
-			}
-		}
-	}
-
-	return pClosest;
-}
-
-CEntity *CGameWorld::IntersectEntity(vec2 Pos0, vec2 Pos1, float Radius, EEntityFlag Flag, vec2 &NewPos, CEntity *pNotThis)
-{
-	// Find other players
-	float ClosestLen = distance(Pos0, Pos1) * 100.0f;
-	CEntity *pClosest = 0;
-
-	for(int i = 0; i < NUM_ENTTYPES; i++)
-	{
-		for(CEntity *pEnt = m_apFirstEntityTypes[i]; pEnt; pEnt = pEnt->TypeNext())
-		{
-			if(!(pEnt->GetObjFlag() & Flag) || pEnt == pNotThis)
-				continue;
-
-			vec2 IntersectPos = closest_point_on_line(Pos0, Pos1, pEnt->m_Pos);
-			float Len = distance(pEnt->m_Pos, IntersectPos);
-			if(Len < pEnt->m_ProximityRadius + Radius)
-			{
-				Len = distance(Pos0, IntersectPos);
-				if(Len < ClosestLen)
-				{
-					NewPos = IntersectPos;
-					ClosestLen = Len;
-					pClosest = pEnt;
-				}
-			}
-		}
-	}
-
-	return pClosest;
-}
-
-CEntity *CGameWorld::ClosestEntity(vec2 Pos, float Radius, int Type, CEntity *pNotThis)
-{
-	// Find other players
-	float ClosestRange = Radius * 2;
-	CEntity *pClosest = 0;
-
-	CEntity *p = FindFirst(Type);
-	for(; p; p = p->TypeNext())
-	{
-		if(p == pNotThis)
-			continue;
-
-		float Len = distance(Pos, p->m_Pos);
-		if(Len < p->m_ProximityRadius + Radius)
-		{
-			if(Len < ClosestRange)
-			{
-				ClosestRange = Len;
-				pClosest = p;
-			}
-		}
-	}
-
-	return pClosest;
-}
-
-CEntity *CGameWorld::ClosestEntity(vec2 Pos, float Radius, EEntityFlag Flag, CEntity *pNotThis)
-{
-	// Find other players
-	float ClosestRange = Radius * 2;
-	CEntity *pClosest = 0;
-
-	for(int i = 0; i < NUM_ENTTYPES; i++)
-	{
-		for(CEntity *pEnt = m_apFirstEntityTypes[i]; pEnt; pEnt = pEnt->TypeNext())
-		{
-			if(!(pEnt->GetObjFlag() & Flag) || pEnt == pNotThis)
-				continue;
-
-			float Len = distance(Pos, pEnt->m_Pos);
-			if(Len < pEnt->m_ProximityRadius + Radius)
-			{
-				if(Len < ClosestRange)
-				{
-					ClosestRange = Len;
-					pClosest = pEnt;
-				}
-			}
-		}
-	}
-
-	return pClosest;
-}
-
 int64_t CGameWorld::CmaskAllInWorld()
 {
 	int64_t Mask = 0LL;
@@ -433,11 +290,11 @@ void CGameWorld::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDa
 	EventHandler()->Create(&Event, NETEVENTTYPE_EXPLOSION, sizeof(CNetEvent_Explosion), Mask);
 
 	// deal damage
-	CBaseHealthEntity *apEnts[MAX_CHECK_ENTITY];
+	CEntity *apEnts[MAX_CHECK_ENTITY];
 	float Radius = g_pData->m_Explosion.m_Radius;
 	float InnerRadius = 48.0f;
 	float MaxForce = g_pData->m_Explosion.m_MaxForce;
-	int Num = FindEntities(Pos, Radius, (CEntity **) apEnts, MAX_CHECK_ENTITY, EEntityFlag::ENTFLAG_DAMAGE);
+	int Num = FindEntities(Pos, Radius, (CEntity **) apEnts, MAX_CHECK_ENTITY, GameWorldCheck::EntityComponent(this, CHealthComponent::GetTypeHash()));
 	for(int i = 0; i < Num; i++)
 	{
 		vec2 Diff = apEnts[i]->GetPos() - Pos;
@@ -447,7 +304,7 @@ void CGameWorld::CreateExplosion(vec2 Pos, CEntity *pFrom, int Weapon, int MaxDa
 			Force = normalize(Diff) * MaxForce;
 		float Factor = 1 - clamp((l - InnerRadius) / (Radius - InnerRadius), 0.0f, 1.0f);
 		if((int) (Factor * MaxDamage))
-			apEnts[i]->TakeDamage(Force * Factor, Diff * -1, (int) (Factor * MaxDamage), pFrom, Weapon);
+			GetComponent<CHealthComponent>(apEnts[i])->TakeDamage(Force * Factor, Diff * -1, (int) (Factor * MaxDamage), pFrom, Weapon);
 	}
 }
 

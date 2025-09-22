@@ -12,6 +12,7 @@
 
 #include <game/server/gamecontext.h>
 #include <game/server/gamecontroller.h>
+#include <game/server/gameworld.inl>
 #include <game/server/player.h>
 #include <game/server/weapons.h>
 #include <generated/protocol.h>
@@ -25,7 +26,8 @@ MACRO_ALLOC_POOL_ID_IMPL(CCharacter, SERVER_MAX_CLIENTS)
 
 // Character, "physical" player's part
 CCharacter::CCharacter(CGameWorld *pWorld) :
-	CHealthEntity(pWorld, CGameWorld::ENTTYPE_CHARACTER, vec2(0, 0), ms_PhysSize)
+	CEntity(pWorld, CGameWorld::ENTTYPE_CHARACTER, vec2(0.f, 0.f), ms_PhysSize),
+	CHealthComponent(this)
 {
 	m_TriggeredEvents = 0;
 	SetMaxHealth(10);
@@ -59,6 +61,7 @@ bool CCharacter::Spawn(CPlayer *pPlayer, vec2 Pos)
 	mem_zero(&m_ReckoningCore, sizeof(m_ReckoningCore));
 
 	GameWorld()->InsertEntity(this);
+	GameWorld()->RegisterEntityComponent(this, CHealthComponent::GetTypeHash(), static_cast<CHealthComponent *>(this));
 	m_Alive = true;
 
 	GameWorld()->GameController()->OnCharacterSpawn(this);
@@ -139,8 +142,8 @@ void CCharacter::HandleNinja()
 		// check if we hit anything along the way
 		const float Radius = GetProximityRadius() * 2.0f;
 		const vec2 Center = OldPos + (m_Pos - OldPos) * 0.5f;
-		CHealthEntity *apEnts[MAX_CHECK_ENTITY];
-		const int Num = GameWorld()->FindEntities(Center, Radius, (CEntity **) apEnts, MAX_CHECK_ENTITY, EEntityFlag::ENTFLAG_DAMAGE);
+		CEntity *apEnts[MAX_CHECK_ENTITY];
+		const int Num = GameWorld()->FindEntities(Center, Radius, (CEntity **) apEnts, MAX_CHECK_ENTITY, GameWorldCheck::EntityComponent(GameWorld(), CHealthComponent::GetTypeHash()));
 
 		for(int i = 0; i < Num; ++i)
 		{
@@ -170,7 +173,7 @@ void CCharacter::HandleNinja()
 				m_Ninja.m_apHitObjects[m_Ninja.m_NumObjectsHit++] = apEnts[i];
 
 			// set his velocity to fast upward (for now)
-			apEnts[i]->TakeDamage(vec2(0, -10.0f), m_Ninja.m_ActivationDir * -1, g_pData->m_Weapons.m_Ninja.m_pBase->m_Damage, this, WEAPON_NINJA);
+			GameWorld()->GetComponent<CHealthComponent>(apEnts[i])->TakeDamage(vec2(0, -10.0f), m_Ninja.m_ActivationDir * -1, g_pData->m_Weapons.m_Ninja.m_pBase->m_Damage, this, WEAPON_NINJA);
 		}
 	}
 }
@@ -585,7 +588,7 @@ bool CCharacter::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 {
 	m_Core.m_Vel += Force;
 	int OldHealth = m_Health, OldArmor = m_Armor;
-	bool Return = CHealthEntity::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
+	bool Return = CHealthComponent::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
 	// create healthmod indicator
 	GameWorld()->CreateDamage(m_Pos, GetCID(), Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
 
@@ -658,7 +661,7 @@ void CCharacter::Die(CEntity *pKiller, int Weapon)
 	// this is for auto respawn after 3 secs
 	m_pPlayer->m_DieTick = Server()->Tick();
 
-	CHealthEntity::Die(pKiller, Weapon);
+	CHealthComponent::Die(pKiller, Weapon);
 	GameWorld()->m_Core.m_apCharacters[m_pPlayer->GetCID()] = 0;
 	GameWorld()->CreateDeath(m_Pos, m_pPlayer->GetCID());
 }

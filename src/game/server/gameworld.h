@@ -17,24 +17,8 @@
 
 #define MAX_CHECK_ENTITY 128
 
-enum class EEntityFlag : int
-{
-	ENTFLAG_NONE = 0,
-	ENTFLAG_OWNER = 1 << 0,
-	ENTFLAG_DAMAGE = 1 << 1,
-};
-
-inline EEntityFlag operator|(const EEntityFlag &A, const EEntityFlag &B)
-{
-	return static_cast<EEntityFlag>(static_cast<int>(A) | static_cast<int>(B));
-}
-
-inline bool operator&(const EEntityFlag &A, const EEntityFlag &B)
-{
-	return static_cast<int>(A) & static_cast<int>(B);
-}
-
 class CEntity;
+class IEntityComponent;
 
 /*
 	Class: Game World
@@ -68,6 +52,7 @@ private:
 	class IServer *m_pServer;
 
 	std::shared_ptr<CCollision> m_pCollision;
+	std::unordered_map<CEntity *, std::unordered_map<unsigned, void *>> m_uupComponents;
 
 	class CBotManager *m_pBotManager;
 
@@ -113,8 +98,8 @@ public:
 		Returns:
 			Number of entities found and added to the ents array.
 	*/
-	int FindEntities(vec2 Pos, float Radius, CEntity **ppEnts, int Max, int Type);
-	int FindEntities(vec2 Pos, float Radius, CEntity **ppEnts, int Max, EEntityFlag Flag);
+	template<typename F>
+	int FindEntities(vec2 Pos, float Radius, CEntity **ppEnts, int Max, F Flag);
 
 	/*
 		Function: closest_CEntity
@@ -129,8 +114,8 @@ public:
 		Returns:
 			Returns a pointer to the closest CEntity or NULL if no CEntity is close enough.
 	*/
-	CEntity *ClosestEntity(vec2 Pos, float Radius, int Type, CEntity *pNotThis);
-	CEntity *ClosestEntity(vec2 Pos, float Radius, EEntityFlag Flag, CEntity *pNotThis);
+	template<typename F>
+	CEntity *ClosestEntity(vec2 Pos, float Radius, F Flag, CEntity *pNotThis);
 
 	/*
 		Function: interserct_CCharacter
@@ -146,8 +131,8 @@ public:
 		Returns:
 			Returns a pointer to the closest hit or NULL of there is no intersection.
 	*/
-	CEntity *IntersectEntity(vec2 Pos0, vec2 Pos1, float Radius, int Type, vec2 &NewPos, class CEntity *pNotThis = 0);
-	CEntity *IntersectEntity(vec2 Pos0, vec2 Pos1, float Radius, EEntityFlag Flag, vec2 &NewPos, class CEntity *pNotThis = 0);
+	template<typename F>
+	CEntity *IntersectEntity(vec2 Pos0, vec2 Pos1, float Radius, F Flag, vec2 &NewPos, class CEntity *pNotThis = 0);
 
 	/*
 		Function: insert_entity
@@ -175,6 +160,8 @@ public:
 			entity - Entity to destroy
 	*/
 	void DestroyEntity(CEntity *pEntity);
+
+	void RegisterEntityComponent(CEntity *pThis, unsigned TypeHash, void *pComponent);
 
 	/*
 		Function: snap
@@ -214,6 +201,25 @@ public:
 	void CreatePlayerSpawn(vec2 Pos);
 	void CreateDeath(vec2 Pos, int Who);
 	void CreateSound(vec2 Pos, int Sound);
+
+	void *GetComponent(CEntity *pEntity, unsigned Hash)
+	{
+		auto IterEntity = m_uupComponents.find(pEntity);
+		if(IterEntity == m_uupComponents.end())
+			return nullptr;
+
+		auto IterComponent = IterEntity->second.find(Hash);
+		if(IterComponent == IterEntity->second.end())
+			return nullptr;
+		return IterComponent->second;
+	}
+
+	template<typename T>
+	T *GetComponent(CEntity *pEntity)
+	{
+		static_assert(std::is_same_v<decltype(T::GetTypeHash()), unsigned>, "T must have static unsigned GetTypeHash()");
+		return static_cast<T *>(GetComponent(pEntity, T::GetTypeHash()));
+	}
 };
 
 #endif

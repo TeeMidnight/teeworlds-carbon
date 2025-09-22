@@ -10,6 +10,7 @@
 #include <game/server/entity.h>
 #include <game/server/gamecontext.h>
 #include <game/server/gameworld.h>
+#include <game/server/gameworld.inl>
 #include <game/server/weapons.h>
 #include <generated/server_data.h>
 
@@ -37,14 +38,14 @@ void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directio
 
 	float ProximityRadius = pFrom ? pFrom->GetProximityRadius() : 28.f;
 
-	CBaseHealthEntity *apEnts[MAX_CHECK_ENTITY];
+	CEntity *apEnts[MAX_CHECK_ENTITY];
 	int Hits = 0;
-	int Num = pWorld->FindEntities(Pos, ProximityRadius * 0.5f, (CEntity **) apEnts,
-		MAX_CHECK_ENTITY, EEntityFlag::ENTFLAG_DAMAGE);
+	int Num = pWorld->FindEntities(Pos, ProximityRadius * 0.5f, (CEntity **) apEnts, MAX_CHECK_ENTITY,
+		GameWorldCheck::EntityComponent(pWorld, CHealthComponent::GetTypeHash()));
 
 	for(int i = 0; i < Num; ++i)
 	{
-		CBaseHealthEntity *pTarget = apEnts[i];
+		CEntity *pTarget = apEnts[i];
 
 		if((pTarget == pFrom) || pWorld->Collision()->IntersectLine(Pos, pTarget->GetPos(), NULL, NULL))
 			continue;
@@ -61,7 +62,7 @@ void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Directio
 		else
 			Dir = vec2(0.f, -1.f);
 
-		pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, Dir * -1, g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage,
+		pWorld->GetComponent<CHealthComponent>(pTarget)->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, Dir * -1, g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage,
 			pFrom, WEAPON_HAMMER);
 		Hits++;
 	}

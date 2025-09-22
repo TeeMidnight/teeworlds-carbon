@@ -18,7 +18,7 @@
 #include <memory>
 #include <vector>
 
-#define MENU_MAIN_PAGE_UUID CalculateUuid("MAIN")
+#define MENU_MAIN_PAGE_ID str_quickhash("MAIN")
 #define MENU_OPTIONS_NUM 12
 
 struct SCallVoteStatus
@@ -34,8 +34,8 @@ typedef bool (*FMenuCallback)(int ClientID, SCallVoteStatus &VoteStatus, class C
 
 struct SMenuPage
 {
-	Uuid m_Uuid = UUID_ZEROED;
-	Uuid m_ParentUuid = UUID_ZEROED;
+	unsigned m_Hash = 0;
+	unsigned m_ParentHash = 0;
 	FMenuCallback m_pfnCallback = nullptr;
 	char m_aTitle[VOTE_DESC_LENGTH] = {'\0'};
 	char m_aContext[VOTE_DESC_LENGTH] = {'\0'};
@@ -60,7 +60,7 @@ public:
 	void SendMenuChat(int ClientID, const char *pChat);
 
 	void ClearOptions(int ClientID);
-	void SetPlayerPage(int ClientID, Uuid Page);
+	void SetPlayerPage(int ClientID, unsigned Page);
 	void SetPlayerPage(int ClientID, const char *pPage);
 
 	// generate menu
@@ -80,7 +80,7 @@ private:
 	static bool MenuMain(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData);
 	static bool MenuLanguage(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData);
 
-	std::unordered_map<Uuid, std::shared_ptr<SMenuPage>> m_vpMenuPages;
+	std::unordered_map<unsigned, std::shared_ptr<SMenuPage>> m_upMenuPages;
 
 	class CPlayerData
 	{
@@ -90,7 +90,7 @@ private:
 		CVoteOptionServer *m_pVoteOptionLast;
 		int m_NumVoteOptions;
 
-		Uuid m_CurrentPage;
+		unsigned m_CurrentPage;
 		char m_aMenuChat[48];
 
 		void Reset(bool Clear = false)
@@ -102,7 +102,7 @@ private:
 				m_NumVoteOptions = 0;
 			}
 
-			m_CurrentPage = MENU_MAIN_PAGE_UUID;
+			m_CurrentPage = MENU_MAIN_PAGE_ID;
 			m_aMenuChat[0] = '\0';
 		}
 

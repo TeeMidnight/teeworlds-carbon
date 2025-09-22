@@ -13,6 +13,7 @@
 #include "entities/flag.h"
 #include "gamecontext.h"
 #include "gamecontroller.h"
+#include "gameworld.inl"
 #include "player.h"
 
 MACRO_ALLOC_POOL_ID_IMPL(CPlayer, SERVER_MAX_CLIENTS)
@@ -279,8 +280,8 @@ void CPlayer::OnDirectInput(CNetObj_PlayerInput *NewInput)
 			m_ActiveSpecSwitch = true;
 			if(m_SpecMode == SPEC_FREEVIEW)
 			{
-				CCharacter *pChar = (CCharacter *) (GameWorld()->ClosestEntity(m_ViewPos, 6.0f * 32, CGameWorld::ENTTYPE_CHARACTER, 0));
-				CFlag *pFlag = (CFlag *) GameWorld()->ClosestEntity(m_ViewPos, 6.0f * 32, CGameWorld::ENTTYPE_FLAG, 0);
+				CCharacter *pChar = (CCharacter *) (GameWorld()->ClosestEntity(m_ViewPos, 6.0f * 32, GameWorldCheck::EntityType(CGameWorld::ENTTYPE_CHARACTER), 0));
+				CFlag *pFlag = (CFlag *) GameWorld()->ClosestEntity(m_ViewPos, 6.0f * 32, GameWorldCheck::EntityType(CGameWorld::ENTTYPE_FLAG), 0);
 				if(pChar || pFlag)
 				{
 					if(!pChar || (pFlag && pChar && distance(m_ViewPos, pFlag->GetPos()) < distance(m_ViewPos, pChar->GetPos())))

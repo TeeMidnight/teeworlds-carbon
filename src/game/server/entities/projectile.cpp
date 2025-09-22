@@ -9,6 +9,7 @@
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
 #include <game/server/gamecontext.h>
+#include <game/server/gameworld.inl>
 #include <game/server/player.h>
 
 #include "character.h"
@@ -16,7 +17,8 @@
 
 CProjectile::CProjectile(CGameWorld *pGameWorld, int Type, CEntity *pOwner, vec2 Pos, vec2 Dir, int Span,
 	int Damage, bool Explosive, float Force, int SoundImpact, int Weapon) :
-	COwnerEntity(pGameWorld, CGameWorld::ENTTYPE_PROJECTILE, vec2(round_to_int(Pos.x), round_to_int(Pos.y)))
+	CEntity(pGameWorld, CGameWorld::ENTTYPE_PROJECTILE, vec2(round_to_int(Pos.x), round_to_int(Pos.y))),
+	COwnerComponent(this)
 {
 	SetOwner(pOwner);
 
@@ -32,6 +34,7 @@ CProjectile::CProjectile(CGameWorld *pGameWorld, int Type, CEntity *pOwner, vec2
 	m_Explosive = Explosive;
 
 	GameWorld()->InsertEntity(this);
+	GameWorld()->RegisterEntityComponent(this, COwnerComponent::GetTypeHash(), static_cast<COwnerComponent *>(this));
 }
 
 void CProjectile::Reset()
@@ -77,7 +80,7 @@ void CProjectile::Tick()
 	vec2 PrevPos = GetPos(Pt);
 	vec2 CurPos = GetPos(Ct);
 	int Collide = GameWorld()->Collision()->IntersectLine(PrevPos, CurPos, &CurPos, 0);
-	CBaseHealthEntity *TargetEnt = (CBaseHealthEntity *) GameWorld()->IntersectEntity(PrevPos, CurPos, 6.0f, EEntityFlag::ENTFLAG_DAMAGE, CurPos, GetOwner());
+	CEntity *TargetEnt = GameWorld()->IntersectEntity(PrevPos, CurPos, 6.0f, GameWorldCheck::EntityComponent(GameWorld(), CHealthComponent::GetTypeHash()), CurPos, GetOwner());
 
 	m_LifeSpan--;
 
@@ -90,7 +93,7 @@ void CProjectile::Tick()
 			GameWorld()->CreateExplosion(CurPos, this, m_Weapon, m_Damage);
 
 		else if(TargetEnt)
-			TargetEnt->TakeDamage(m_Direction * maximum(0.001f, m_Force), m_Direction * -1, m_Damage, GetOwner(), m_Weapon);
+			GameWorld()->GetComponent<CHealthComponent>(TargetEnt)->TakeDamage(m_Direction * maximum(0.001f, m_Force), m_Direction * -1, m_Damage, GetOwner(), m_Weapon);
 
 		GameWorld()->DestroyEntity(this);
 	}

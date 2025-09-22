@@ -12,6 +12,7 @@
 #include <game/server/botmanager.h>
 #include <game/server/gamecontext.h>
 #include <game/server/gamecontroller.h>
+#include <game/server/gameworld.inl>
 #include <game/server/player.h>
 #include <game/server/weapons.h>
 
@@ -21,7 +22,8 @@
 #include "character.h"
 
 CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInfos) :
-	CHealthEntity(pWorld, CGameWorld::ENTTYPE_BOTENTITY, Pos, ms_PhysSize)
+	CEntity(pWorld, CGameWorld::ENTTYPE_BOTENTITY, Pos, ms_PhysSize),
+	CHealthComponent(this)
 {
 	if(!GameWorld()->BotManager())
 	{
@@ -51,6 +53,7 @@ CBotEntity::CBotEntity(CGameWorld *pWorld, vec2 Pos, Uuid BotID, STeeInfo TeeInf
 
 	GameWorld()->CreatePlayerSpawn(Pos);
 	GameWorld()->InsertEntity(this);
+	GameWorld()->RegisterEntityComponent(this, CHealthComponent::GetTypeHash(), static_cast<CHealthComponent *>(this));
 }
 
 void CBotEntity::Tick()
@@ -236,7 +239,7 @@ void CBotEntity::Die(CEntity *pKiller, int Weapon)
 	// a nice sound
 	GameWorld()->CreateSound(m_Pos, SOUND_PLAYER_DIE);
 
-	CHealthEntity::Die(pKiller, Weapon);
+	CHealthComponent::Die(pKiller, Weapon);
 	GameWorld()->BotManager()->CreateDeath(m_Pos, GetBotID());
 	GameWorld()->BotManager()->OnBotDeath(GetBotID());
 }
@@ -253,7 +256,7 @@ bool CBotEntity::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, in
 {
 	m_Core.m_Vel += Force;
 	int OldHealth = m_Health, OldArmor = m_Armor;
-	bool Return = CHealthEntity::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
+	bool Return = CHealthComponent::TakeDamage(Force, Source, Dmg, pFrom, Weapon);
 	// create healthmod indicator
 	GameWorld()->BotManager()->CreateDamage(m_Pos, m_BotID, Source, OldHealth - m_Health, OldArmor - m_Armor, pFrom == this);
 
@@ -294,7 +297,7 @@ void CBotEntity::RandomAction()
 	}
 }
 
-void CBotEntity::TargetAction(CHealthEntity *pTarget)
+void CBotEntity::TargetAction(CEntity *pTarget)
 {
 	vec2 MoveTo = pTarget->GetPos();
 	if(abs(MoveTo.x - m_Pos.x) > 48.f)
@@ -320,7 +323,7 @@ void CBotEntity::Action()
 	m_Input.m_Jump = 0;
 	m_Input.m_Fire = 0;
 
-	CHealthEntity *pTarget = (CHealthEntity *) GameWorld()->ClosestEntity(GetPos(), 320.f, EEntityFlag::ENTFLAG_DAMAGE, this);
+	CEntity *pTarget = (CEntity *) GameWorld()->ClosestEntity(GetPos(), 320.f, GameWorldCheck::EntityComponent(GameWorld(), CHealthComponent::GetTypeHash()), this);
 	if(pTarget && GameWorld()->Collision()->IntersectLine(GetPos(), pTarget->GetPos(), nullptr, nullptr))
 		pTarget = nullptr;
 
@@ -362,7 +365,7 @@ void CBotEntity::DoWeapon()
 
 	vec2 ProjStartPos = m_Pos + Direction * GetProximityRadius() * 0.75f;
 
-	static Uuid HammerUuid = CalculateUuid("Hammer");
+	static Uuid HammerUuid = CalculateUuid("vanilla.hammer");
 
 	WeaponManager()->GetWeapon(HammerUuid)->OnFire(this, GameWorld(), ProjStartPos, Direction, &m_ReloadTimer);
 

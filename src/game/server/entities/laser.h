@@ -13,7 +13,7 @@
 
 #include <game/server/entity.h>
 
-class CLaser : public CBaseOwnerEntity
+class CLaser : public CEntity, public COwnerComponent
 {
 public:
 	CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEnergy, CEntity *pOwner);

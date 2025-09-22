@@ -43,11 +43,11 @@ void CGameMenu::Register(const char *pPageName, const char *pTitle, const char *
 	std::shared_ptr<SMenuPage> pPage = std::make_shared<SMenuPage>();
 	pPage->m_pfnCallback = pfnFunc;
 	pPage->m_pUserData = pUser;
-	pPage->m_Uuid = CalculateUuid(pPageName);
-	pPage->m_ParentUuid = CalculateUuid(pParent);
+	pPage->m_Hash = str_quickhash(pPageName);
+	pPage->m_ParentHash = str_quickhash(pParent);
 	str_copy(pPage->m_aTitle, pTitle, sizeof(pPage->m_aTitle));
 	str_copy(pPage->m_aContext, pContext, sizeof(pPage->m_aContext));
-	m_vpMenuPages[pPage->m_Uuid] = pPage;
+	m_upMenuPages[pPage->m_Hash] = pPage;
 }
 
 void CGameMenu::OnClientEntered(int ClientID)
@@ -66,10 +66,10 @@ void CGameMenu::OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound
 
 	m_CurrentClientID = ClientID;
 
-	Uuid &CurrentPage = m_aPlayerData[ClientID].m_CurrentPage;
-	if(!m_vpMenuPages.count(CurrentPage))
+	unsigned &CurrentPage = m_aPlayerData[ClientID].m_CurrentPage;
+	if(!m_upMenuPages.count(CurrentPage))
 	{
-		CurrentPage = MENU_MAIN_PAGE_UUID;
+		CurrentPage = MENU_MAIN_PAGE_ID;
 		VoteStatus.m_aDesc[0] = '\0';
 		VoteStatus.m_aReason[0] = '\0';
 	}
@@ -93,7 +93,7 @@ void CGameMenu::OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound
 
 	if(str_comp(VoteStatus.m_aCmd, "PREPAGE") == 0)
 	{
-		SetPlayerPage(ClientID, m_vpMenuPages[CurrentPage]->m_ParentUuid);
+		SetPlayerPage(ClientID, m_upMenuPages[CurrentPage]->m_ParentHash);
 		return;
 	}
 	else if(str_comp(VoteStatus.m_aCmd, "NONE") == 0)
@@ -102,10 +102,10 @@ void CGameMenu::OnMenuVote(int ClientID, SCallVoteStatus &VoteStatus, bool Sound
 	}
 
 	// call back
-	if(!m_vpMenuPages[CurrentPage]->m_pfnCallback(ClientID, VoteStatus, this, m_vpMenuPages[CurrentPage]->m_pUserData))
+	if(!m_upMenuPages[CurrentPage]->m_pfnCallback(ClientID, VoteStatus, this, m_upMenuPages[CurrentPage]->m_pUserData))
 		return;
 	// add back page
-	if(CurrentPage != MENU_MAIN_PAGE_UUID)
+	if(CurrentPage != MENU_MAIN_PAGE_ID)
 	{
 		AddHorizontalRule();
 		AddOptionLocalize(_C("Previous Page", "Vote Menu"), "PREPAGE", "=");
@@ -158,7 +158,7 @@ void CGameMenu::ClearOptions(int ClientID)
 	m_aPlayerData[ClientID].m_NumVoteOptions = 0;
 }
 
-void CGameMenu::SetPlayerPage(int ClientID, Uuid Page)
+void CGameMenu::SetPlayerPage(int ClientID, unsigned Page)
 {
 	if(ClientID < 0 || ClientID >= SERVER_MAX_CLIENTS)
 		return;
@@ -171,7 +171,7 @@ void CGameMenu::SetPlayerPage(int ClientID, const char *pPage)
 {
 	if(!pPage || !pPage[0])
 		return;
-	SetPlayerPage(ClientID, CalculateUuid(pPage));
+	SetPlayerPage(ClientID, str_quickhash(pPage));
 }
 // static
 bool CGameMenu::MenuMain(int ClientID, SCallVoteStatus &VoteStatus, class CGameMenu *pMenu, void *pUserData)
@@ -282,11 +282,11 @@ void CGameMenu::AddPageTitle()
 {
 	if(m_CurrentClientID < 0 || m_CurrentClientID >= SERVER_MAX_CLIENTS)
 		return;
-	if(!m_vpMenuPages.count(m_aPlayerData[m_CurrentClientID].m_CurrentPage))
+	if(!m_upMenuPages.count(m_aPlayerData[m_CurrentClientID].m_CurrentPage))
 		return;
 
 	AddOption("===============================", "NONE", "");
-	AddOptionLocalize(m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, m_vpMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aContext, "NONE", "=");
+	AddOptionLocalize(m_upMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aTitle, m_upMenuPages[m_aPlayerData[m_CurrentClientID].m_CurrentPage]->m_aContext, "NONE", "=");
 	AddOption("===============================", "NONE", "");
 }
 

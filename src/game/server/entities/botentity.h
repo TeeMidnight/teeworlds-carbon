@@ -18,7 +18,7 @@
 #include <game/server/entity.h>
 #include <game/server/teeinfo.h>
 
-class CBotEntity : public CHealthEntity<CEntity>
+class CBotEntity : public CEntity, public CHealthComponent
 {
 public:
 	// same as character's size
@@ -60,7 +60,7 @@ private:
 	vec2 m_CursorTarget;
 
 	void RandomAction();
-	void TargetAction(CHealthEntity *pTarget);
+	void TargetAction(CEntity *pTarget);
 
 	void Action();
 	void DoWeapon();

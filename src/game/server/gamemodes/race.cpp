@@ -40,12 +40,10 @@ void CGameControllerCarbonRace::HandleCharacterTiles(CCharacter *pChr, vec2 Last
 	int Flag = pChr->GameWorld()->Collision()->TestBoxMoveAt(LastPos, NewPos, ColBox);
 	if(Flag & COLFLAG_START)
 	{
-		
 	}
 
 	if(Flag & COLFLAG_FINISH)
 	{
-
 	}
 }
 

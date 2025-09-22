@@ -1017,6 +1017,8 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 
 			if(Config()->m_SvSpamprotection && pPlayer->m_LastSetSpectatorModeTick && pPlayer->m_LastSetSpectatorModeTick + Server()->TickSpeed() > Server()->Tick())
 				return;
+			if(pMsg->m_SpectatorID < 0 || pMsg->m_SpectatorID >= SERVER_MAX_CLIENTS)
+				return;
 
 			pPlayer->m_LastSetSpectatorModeTick = Server()->Tick();
 			if(!pPlayer->SetSpectatorID(pMsg->m_SpecMode, pMsg->m_SpectatorID))

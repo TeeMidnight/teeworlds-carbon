@@ -9,6 +9,7 @@
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
 #include <game/server/gamecontext.h>
+#include <game/server/gameworld.inl>
 #include <game/server/player.h>
 #include <game/server/weapons.h>
 #include <generated/server_data.h>
@@ -51,7 +52,7 @@ void CPickup::Tick()
 			return;
 	}
 	// Check if a player intersected us
-	CCharacter *pChr = (CCharacter *) (GameWorld()->ClosestEntity(m_Pos, 20.0f, CGameWorld::ENTTYPE_CHARACTER, 0));
+	CCharacter *pChr = (CCharacter *) (GameWorld()->ClosestEntity(m_Pos, 20.0f, GameWorldCheck::EntityType(CGameWorld::ENTTYPE_CHARACTER), 0));
 	if(pChr && pChr->IsAlive())
 	{
 		// player picked us up, is someone was hooking us, let them go

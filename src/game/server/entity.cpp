@@ -13,7 +13,7 @@
 #include "gamecontext.h"
 #include "player.h"
 
-CEntity::CEntity(CGameWorld *pGameWorld, int ObjType, vec2 Pos, int ProximityRadius, EEntityFlag ObjFlag)
+CEntity::CEntity(CGameWorld *pGameWorld, int ObjType, vec2 Pos, int ProximityRadius)
 {
 	m_pGameWorld = pGameWorld;
 
@@ -52,52 +52,40 @@ bool CEntity::GameLayerClipped(vec2 CheckPos)
 	return (rx < -200 || rx >= GameWorld()->Collision()->GetWidth() + 200) || (ry < -200 || ry >= GameWorld()->Collision()->GetHeight() + 200);
 }
 
-template<class IBaseEntity>
-COwnerEntity<IBaseEntity>::COwnerEntity(CGameWorld *pGameWorld, int Objtype, vec2 Pos, int ProximityRadius) :
-	IBaseEntity(pGameWorld, Objtype, Pos, ProximityRadius)
+COwnerComponent::COwnerComponent(CEntity *pThis)
 {
 	m_pOwner = nullptr;
-	IBaseEntity::m_ObjFlag = EEntityFlag::ENTFLAG_OWNER | IBaseEntity::m_ObjFlag;
+	m_pThis = pThis;
 }
 
-template<class IBaseEntity>
-CHealthEntity<IBaseEntity>::CHealthEntity(CGameWorld *pGameWorld, int ObjType, vec2 Pos, int ProximityRadius) :
-	IBaseEntity(pGameWorld, ObjType, Pos, ProximityRadius)
+CHealthComponent::CHealthComponent(CEntity *pThis)
 {
-	m_Health = 0;
-	m_Armor = 0;
-	m_MaxHealth = 0;
-	m_MaxArmor = 0;
-	IBaseEntity::m_ObjFlag = EEntityFlag::ENTFLAG_DAMAGE | IBaseEntity::m_ObjFlag;
+	m_pThis = pThis;
 }
 
-template<class IBaseEntity>
-CHealthEntity<IBaseEntity>::~CHealthEntity()
+CHealthComponent::~CHealthComponent()
 {
 }
 
-template<class IBaseEntity>
-void CHealthEntity<IBaseEntity>::Die(CEntity *pKiller, int Weapon)
+void CHealthComponent::Die(CEntity *pKiller, int Weapon)
 {
 	m_Alive = false;
-	(IBaseEntity::GameWorld())->DestroyEntity(this);
+	m_pThis->GameWorld()->DestroyEntity(m_pThis);
 }
 
-template<class IBaseEntity>
-bool CHealthEntity<IBaseEntity>::IsFriendlyDamage(CEntity *pFrom)
+bool CHealthComponent::IsFriendlyDamage(CEntity *pFrom)
 {
 	if(!pFrom)
 		return false;
 	return true;
 }
 
-template<class IBaseEntity>
-bool CHealthEntity<IBaseEntity>::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, int Weapon)
+bool CHealthComponent::TakeDamage(vec2 Force, vec2 Source, int Dmg, CEntity *pFrom, int Weapon)
 {
 	if(IsFriendlyDamage(pFrom))
 		return false;
 
-	if(pFrom == this)
+	if(pFrom == m_pThis)
 		Dmg = maximum(1, Dmg / 2);
 
 	if(Dmg)
@@ -133,7 +121,3 @@ bool CHealthEntity<IBaseEntity>::TakeDamage(vec2 Force, vec2 Source, int Dmg, CE
 	}
 	return true;
 }
-
-template class CHealthEntity<CEntity>;
-template class COwnerEntity<CEntity>;
-template class CHealthEntity<COwnerEntity<CEntity>>;

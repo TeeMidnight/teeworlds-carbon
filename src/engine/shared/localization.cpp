@@ -79,7 +79,7 @@ private:
 		const char *Parent() { return m_aParent; }
 		inline bool IsLoaded() { return m_Loaded; }
 	};
-	std::unordered_map<Uuid, std::shared_ptr<CLanguage>> m_vpLanguages;
+	std::unordered_map<unsigned, std::shared_ptr<CLanguage>> m_vpLanguages;
 
 	void AddLanguage(const char *pCode, const char *pName, const char *pParent);
 };
@@ -124,14 +124,14 @@ const char *CLocalization::Localize(const char *pCode, const char *pStr, const c
 	if(str_comp(pCode, "en") == 0)
 		return pStr;
 
-	Uuid LanguageUuid = CalculateUuid(pCode);
-	if(!m_vpLanguages.count(LanguageUuid))
+	unsigned LanguageID = str_quickhash(pCode);
+	if(!m_vpLanguages.count(LanguageID))
 		return pStr;
-	if(!m_vpLanguages[LanguageUuid]->IsLoaded())
-		m_vpLanguages[LanguageUuid]->Load(Storage(), Console());
-	const char *pNewStr = m_vpLanguages[LanguageUuid]->Localize(pStr, pContext);
+	if(!m_vpLanguages[LanguageID]->IsLoaded())
+		m_vpLanguages[LanguageID]->Load(Storage(), Console());
+	const char *pNewStr = m_vpLanguages[LanguageID]->Localize(pStr, pContext);
 	if(!pNewStr)
-		return Localize(m_vpLanguages[LanguageUuid]->Parent(), pStr, pContext);
+		return Localize(m_vpLanguages[LanguageID]->Parent(), pStr, pContext);
 	return pNewStr;
 }
 
@@ -262,12 +262,12 @@ int CLocalization::GetLanguagesInfo(SLanguageInfo **ppInfo)
 
 void CLocalization::AddLanguage(const char *pCode, const char *pName, const char *pParent)
 {
-	Uuid LanguageUuid = CalculateUuid(pCode);
-	if(m_vpLanguages.count(LanguageUuid))
+	unsigned LanguageID = str_quickhash(pCode);
+	if(m_vpLanguages.count(LanguageID))
 		return;
 
 	std::shared_ptr<CLanguage> pLanguage = std::make_shared<CLanguage>(pCode, pName, pParent);
-	m_vpLanguages[LanguageUuid] = pLanguage;
+	m_vpLanguages[LanguageID] = pLanguage;
 
 	char aBuf[256];
 	str_format(aBuf, sizeof(aBuf), "loaded language '%s'(%s)", pCode, pName);

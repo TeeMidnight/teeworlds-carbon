@@ -11,6 +11,7 @@
 #ifndef GAME_SERVER_ENTITY_H
 #define GAME_SERVER_ENTITY_H
 
+#include <base/uuid.h>
 #include <base/vmath.h>
 
 #include "alloc.h"
@@ -47,7 +48,6 @@ private:
 	bool m_MarkedForDestroy;
 
 protected:
-	EEntityFlag m_ObjFlag;
 	/* State */
 
 	/*
@@ -61,7 +61,7 @@ protected:
 
 public:
 	/* Constructor */
-	CEntity(CGameWorld *pGameWorld, int Objtype, vec2 Pos, int ProximityRadius = 0, EEntityFlag ObjFlag = EEntityFlag::ENTFLAG_NONE);
+	CEntity(CGameWorld *pGameWorld, int Objtype, vec2 Pos, int ProximityRadius = 0);
 
 	/* Destructor */
 	virtual ~CEntity();
@@ -81,7 +81,6 @@ public:
 	bool IsMarkedForDestroy() const { return m_MarkedForDestroy; }
 
 	int GetObjType() const { return m_ObjType; }
-	EEntityFlag GetObjFlag() const { return m_ObjFlag; }
 
 	/* Setters */
 	void MarkForDestroy() { m_MarkedForDestroy = true; }
@@ -155,23 +154,26 @@ public:
 	bool GameLayerClipped(vec2 CheckPos);
 };
 
-template<class IBaseEntity>
-class COwnerEntity : public IBaseEntity
+class COwnerComponent
 {
 	CEntity *m_pOwner;
+	CEntity *m_pThis;
 
 protected:
 	void SetOwner(CEntity *pOwner) { m_pOwner = pOwner; }
 
 public:
-	COwnerEntity(CGameWorld *pGameWorld, int Objtype, vec2 Pos, int ProximityRadius = 0);
+	COwnerComponent(CEntity *pThis);
+
+	static unsigned GetTypeHash() { return str_quickhash("Owner"); }
 
 	CEntity *GetOwner() const { return m_pOwner; }
 };
 
-template<class IBaseEntity>
-class CHealthEntity : public IBaseEntity
+class CHealthComponent
 {
+	CEntity *m_pThis;
+
 protected:
 	bool m_Alive;
 
@@ -182,9 +184,11 @@ protected:
 	int m_MaxArmor;
 
 public:
-	CHealthEntity(CGameWorld *pGameWorld, int Objtype, vec2 Pos, int ProximityRadius = 0);
+	CHealthComponent(CEntity *pThis);
 
-	virtual ~CHealthEntity();
+	static unsigned GetTypeHash() { return str_quickhash("Health"); }
+
+	virtual ~CHealthComponent();
 
 	virtual void Die(CEntity *pKiller, int Weapon);
 	virtual bool IsFriendlyDamage(CEntity *pFrom);
@@ -221,12 +225,5 @@ public:
 	void SetMaxHealth(int Amount) { m_MaxHealth = Amount; }
 	void SetMaxArmor(int Amount) { m_MaxArmor = Amount; }
 };
-
-extern template class CHealthEntity<CEntity>;
-extern template class COwnerEntity<CEntity>;
-extern template class CHealthEntity<COwnerEntity<CEntity>>;
-
-using CBaseOwnerEntity = COwnerEntity<CEntity>;
-using CBaseHealthEntity = CHealthEntity<CEntity>;
 
 #endif
