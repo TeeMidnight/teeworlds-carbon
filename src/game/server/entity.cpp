@@ -70,7 +70,7 @@ CHealthComponent::~CHealthComponent()
 void CHealthComponent::Die(CEntity *pKiller, int Weapon)
 {
 	m_Alive = false;
-	m_pThis->GameWorld()->DestroyEntity(m_pThis);
+	m_pThis->GameWorld()->RemoveEntity(m_pThis);
 }
 
 bool CHealthComponent::IsFriendlyDamage(CEntity *pFrom)

@@ -22,6 +22,7 @@
 #include "laser.h"
 #include "projectile.h"
 
+static Uuid s_Ninja = CalculateUuid("vanilla.ninja");
 MACRO_ALLOC_POOL_ID_IMPL(CCharacter, SERVER_MAX_CLIENTS)
 
 // Character, "physical" player's part
@@ -101,13 +102,13 @@ bool CCharacter::IsGrounded()
 
 void CCharacter::HandleNinja()
 {
-	if(m_ActiveWeapon != WEAPON_NINJA)
+	if(m_aWeapons[m_ActiveWeapon].m_Weapon != s_Ninja)
 		return;
 
 	if((Server()->Tick() - m_Ninja.m_ActivationTick) > (g_pData->m_Weapons.m_Ninja.m_Duration * Server()->TickSpeed() / 1000))
 	{
 		// time's up, return
-		m_aWeapons[WEAPON_NINJA].m_Got = false;
+		m_aWeapons[m_ActiveWeapon].m_Got = false;
 		m_ActiveWeapon = m_LastWeapon;
 
 		// reset velocity and current move
@@ -120,7 +121,7 @@ void CCharacter::HandleNinja()
 	}
 
 	// force ninja Weapon
-	SetWeapon(WEAPON_NINJA);
+	SetWeapon(m_ActiveWeapon);
 
 	m_Ninja.m_CurrentMoveTime--;
 
@@ -327,15 +328,27 @@ void CCharacter::HandleWeapons()
 
 bool CCharacter::GiveWeapon(Uuid WeaponID, int Ammo)
 {
+	int FirstFree = -1;
 	for(int i = 0; i < NUM_WEAPONS; i++)
 	{
-		if(!m_aWeapons[i].m_Got)
-			continue;
-		if(m_aWeapons[i].m_Weapon == WeaponID)
+		if(m_aWeapons[i].m_Got)
 		{
-			m_aWeapons[i].m_Ammo = minimum(WeaponManager()->GetWeapon(WeaponID)->MaxAmmo(), m_aWeapons[i].m_Ammo + Ammo);
-			return true;
+			if(m_aWeapons[i].m_Weapon == WeaponID)
+			{
+				m_aWeapons[i].m_Ammo = minimum(WeaponManager()->GetWeapon(WeaponID)->MaxAmmo(), m_aWeapons[i].m_Ammo + Ammo);
+				return true;
+			}
+			continue;
 		}
+		if(FirstFree == -1)
+			FirstFree = i;
+	}
+	if(FirstFree != -1)
+	{
+		m_aWeapons[FirstFree].m_Got = true;
+		m_aWeapons[FirstFree].m_Weapon = WeaponID;
+		m_aWeapons[FirstFree].m_Ammo = minimum(WeaponManager()->GetWeapon(WeaponID)->MaxAmmo(), Ammo);
+		return true;
 	}
 	return false;
 }
@@ -353,13 +366,6 @@ void CCharacter::SetWeapon(int Place, Uuid WeaponID, int Ammo)
 void CCharacter::GiveNinja()
 {
 	m_Ninja.m_ActivationTick = Server()->Tick();
-	m_aWeapons[WEAPON_NINJA].m_Got = true;
-	m_aWeapons[WEAPON_NINJA].m_Ammo = -1;
-	if(m_ActiveWeapon != WEAPON_NINJA)
-		m_LastWeapon = m_ActiveWeapon;
-	m_ActiveWeapon = WEAPON_NINJA;
-
-	GameWorld()->CreateSound(m_Pos, SOUND_PICKUP_NINJA);
 }
 
 void CCharacter::SetEmote(int Emote, int Tick)
@@ -712,7 +718,7 @@ void CCharacter::Snap(int SnappingClient)
 	{
 		pCharacter->m_Health = clamp(round_to_int(GetHealth() / (float) GetMaxHealth() * 10), 0, 10);
 		pCharacter->m_Armor = clamp(round_to_int(GetArmor() / (float) GetMaxArmor() * 10), 0, 10);
-		if(m_ActiveWeapon == WEAPON_NINJA)
+		if(m_aWeapons[m_ActiveWeapon].m_Weapon == s_Ninja)
 			pCharacter->m_AmmoCount = m_Ninja.m_ActivationTick + g_pData->m_Weapons.m_Ninja.m_Duration * Server()->TickSpeed() / 1000;
 		else if(m_aWeapons[m_ActiveWeapon].m_Ammo > 0)
 			pCharacter->m_AmmoCount = round_to_int((m_aWeapons[m_ActiveWeapon].m_Ammo / static_cast<float>(WeaponManager()->GetWeapon(m_aWeapons[m_ActiveWeapon].m_Weapon)->MaxAmmo())) * 10);

@@ -28,8 +28,8 @@ public:
 
 	// Ammo
 	int AmmoRegenTime() override { return g_pData->m_Weapons.m_Hammer.m_pBase->m_Ammoregentime; }
-	int DefaultAmmo() override { return g_pData->m_Weapons.m_Hammer.m_pBase->m_Maxammo; }
-	int MaxAmmo() override { return g_pData->m_Weapons.m_Hammer.m_pBase->m_Maxammo; }
+	int DefaultAmmo() override { return -1; }
+	int MaxAmmo() override { return -1; }
 };
 
 void CHammer::OnFire(CEntity *pFrom, CGameWorld *pWorld, vec2 Pos, vec2 Direction, int *pReloadTimer)

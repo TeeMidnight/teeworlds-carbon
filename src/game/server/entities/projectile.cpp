@@ -90,7 +90,7 @@ void CProjectile::Tick()
 			GameWorld()->CreateSound(CurPos, m_SoundImpact);
 
 		if(m_Explosive)
-			GameWorld()->CreateExplosion(CurPos, this, m_Weapon, m_Damage);
+			GameWorld()->CreateExplosion(CurPos, GetOwner(), m_Weapon, m_Damage);
 
 		else if(TargetEnt)
 			GameWorld()->GetComponent<CHealthComponent>(TargetEnt)->TakeDamage(m_Direction * maximum(0.001f, m_Force), m_Direction * -1, m_Damage, GetOwner(), m_Weapon);

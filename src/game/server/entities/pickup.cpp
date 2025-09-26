@@ -77,7 +77,7 @@ void CPickup::Tick()
 
 		case PICKUP_GRENADE:
 		{
-			Uuid WeaponID = CalculateUuid("Grenade");
+			static Uuid WeaponID = CalculateUuid("vanilla.grenade");
 			if(pChr->GiveWeapon(WeaponID, WeaponManager()->GetWeapon(WeaponID)->MaxAmmo()))
 			{
 				Picked = true;
@@ -89,7 +89,7 @@ void CPickup::Tick()
 		break;
 		case PICKUP_SHOTGUN:
 		{
-			Uuid WeaponID = CalculateUuid("Shotgun");
+			static Uuid WeaponID = CalculateUuid("vanilla.shotgun");
 			if(pChr->GiveWeapon(WeaponID, WeaponManager()->GetWeapon(WeaponID)->MaxAmmo()))
 			{
 				Picked = true;
@@ -101,7 +101,7 @@ void CPickup::Tick()
 		break;
 		case PICKUP_LASER:
 		{
-			Uuid WeaponID = CalculateUuid("Laser");
+			static Uuid WeaponID = CalculateUuid("vanilla.laser");
 			if(pChr->GiveWeapon(WeaponID, WeaponManager()->GetWeapon(WeaponID)->MaxAmmo()))
 			{
 				Picked = true;
@@ -114,21 +114,25 @@ void CPickup::Tick()
 
 		case PICKUP_NINJA:
 		{
-			Picked = true;
-			// activate ninja on target player
-			pChr->GiveNinja();
-
-			// loop through all players, setting their emotes
-			CCharacter *pC = (CCharacter *) (GameWorld()->FindFirst(CGameWorld::ENTTYPE_CHARACTER));
-			for(; pC; pC = (CCharacter *) (pC->TypeNext()))
+			static Uuid WeaponID = CalculateUuid("vanilla.ninja");
+			if(pChr->GiveWeapon(WeaponID, WeaponManager()->GetWeapon(WeaponID)->MaxAmmo()))
 			{
-				if(pC != pChr)
-					pC->SetEmote(EMOTE_SURPRISE, Server()->Tick() + Server()->TickSpeed());
-			}
+				Picked = true;
+				// activate ninja on target player
+				pChr->GiveNinja();
 
-			pChr->SetEmote(EMOTE_ANGRY, Server()->Tick() + 1200 * Server()->TickSpeed() / 1000);
-			break;
+				// loop through all players, setting their emotes
+				CCharacter *pC = (CCharacter *) (GameWorld()->FindFirst(CGameWorld::ENTTYPE_CHARACTER));
+				for(; pC; pC = (CCharacter *) (pC->TypeNext()))
+				{
+					if(pC != pChr)
+						pC->SetEmote(EMOTE_SURPRISE, Server()->Tick() + Server()->TickSpeed());
+				}
+
+				pChr->SetEmote(EMOTE_ANGRY, Server()->Tick() + 1200 * Server()->TickSpeed() / 1000);
+			}
 		}
+		break;
 
 		default:
 			break;
