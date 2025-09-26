@@ -19,6 +19,8 @@
 #include "gameworld.inl"
 #include "player.h"
 
+#include <stdexcept>
+
 IGameController::IGameController(CGameContext *pGameServer)
 {
 	m_pGameServer = pGameServer;
@@ -373,6 +375,11 @@ void IGameController::SendGameInfo(int ClientID)
 	}
 }
 
+unsigned IGameController::ModeHash() const
+{
+	return str_quickhash(m_pGameType);
+}
+
 // spawn
 bool IGameController::CanSpawn(CGameWorld *pWorld, int Team, vec2 *pOutPos) const
 {
@@ -530,4 +537,72 @@ int IGameController::GetStartTeam()
 
 void IGameController::RegisterChatCommands(CCommandManager *pManager)
 {
+}
+
+CGameModeManager::CGameModeManager()
+{
+	m_upfnCreate.clear();
+	m_upControllers.clear();
+}
+
+CGameModeManager::~CGameModeManager()
+{
+	m_upfnCreate.clear();
+	m_upControllers.clear();
+}
+
+void CGameModeManager::RegisterGameMode(const char *pGamemode, FCreateGameController pfnCreate)
+{
+	m_upfnCreate[str_quickhash(pGamemode)] = pfnCreate;
+}
+
+void CGameModeManager::OnInit(class CGameContext *pGameServer)
+{
+	char aBuf[64];
+	for(auto &[Hash, pfnCreate] : m_upfnCreate)
+	{
+		m_upControllers[Hash] = pfnCreate(pGameServer);
+		m_upControllers[Hash]->RegisterChatCommands(pGameServer->CommandManager());
+		str_format(aBuf, sizeof(aBuf), "registered gamemode '%s' as '%u'", m_upControllers[Hash]->GetGameType(), Hash);
+		pGameServer->Console()->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "game", aBuf);
+	}
+}
+
+void CGameModeManager::OnTick()
+{
+	for(auto &[Hash, pController] : m_upControllers)
+		pController->Tick();
+}
+
+void CGameModeManager::OnPostSnap()
+{
+	for(auto &[Hash, pController] : m_upControllers)
+		pController->PostSnap();
+}
+
+void CGameModeManager::OnShutdown()
+{
+	for(auto &[Hash, pController] : m_upControllers)
+		delete pController;
+	m_upControllers.clear();
+}
+
+IGameController *CGameModeManager::Get(const char *pGamemode)
+{
+	return Get(str_quickhash(pGamemode));
+}
+
+IGameController *CGameModeManager::Get(unsigned ModeHash)
+{
+	auto IterController = m_upControllers.find(ModeHash);
+	if(IterController == m_upControllers.end())
+		throw std::out_of_range("Gamemode not found");
+	;
+	return IterController->second;
+}
+
+CGameModeManager *GameModeManager()
+{
+	static CGameModeManager *s_pGameModeManager = new CGameModeManager();
+	return s_pGameModeManager;
 }

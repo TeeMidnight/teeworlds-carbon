@@ -13,7 +13,7 @@
 #include <game/server/entities/character.h>
 #include <game/server/player.h>
 
-#include "race.h"
+#include <game/server/gamecontroller.h>
 
 enum
 {
@@ -22,6 +22,28 @@ enum
 
 	COLFLAG_START = 1 << 3,
 	COLFLAG_FINISH = 1 << 4
+};
+
+class CGameControllerCarbonRace : public IGameController
+{
+public:
+	class CQuickRegister
+	{
+	public:
+		CQuickRegister() { GameModeManager()->RegisterGameMode("CarbonRace", CGameControllerCarbonRace::CreateController); }
+	};
+
+	CGameControllerCarbonRace(CGameContext *pGameServer);
+
+	void HandleCharacterTiles(CCharacter *pChr, vec2 LastPos, vec2 NewPos) override;
+	void Snap(int SnappingClient) override;
+	void OnPlayerExtraSnap(CPlayer *pPlayer, int SnappingClient) override;
+	bool OnExtraTile(CGameWorld *pWorld, int Index, vec2 Pos) override;
+
+	int GetPlayerScore(int ClientID) const override { return -1; }
+	bool IsFriendlyFire(CEntity *pEnt1, CEntity *pEnt2) const override { return true; }
+
+	static IGameController *CreateController(CGameContext *pGameServer) { return new CGameControllerCarbonRace(pGameServer); }
 };
 
 CGameControllerCarbonRace::CGameControllerCarbonRace(CGameContext *pGameServer) :
@@ -81,3 +103,5 @@ bool CGameControllerCarbonRace::OnExtraTile(CGameWorld *pWorld, int Index, vec2 
 	pWorld->Collision()->SetFlagFor(Pos, Flag);
 	return true;
 }
+
+static CGameControllerCarbonRace::CQuickRegister s_Register;

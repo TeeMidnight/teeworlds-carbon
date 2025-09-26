@@ -93,11 +93,11 @@ public:
 	virtual int GetLanguagesInfo(struct SLanguageInfo **ppInfo) = 0;
 
 	virtual void SwitchClientMap(int ClientID, Uuid MapID) = 0;
-	virtual void RequestNewMap(int ClientID, const char *pMapName, int ModeID) = 0;
+	virtual void RequestNewMap(int ClientID, const char *pMapName, unsigned ModeID) = 0;
 
 	virtual Uuid GetBaseMapUuid() const = 0;
 	virtual const char *GetMapName(Uuid MapID) = 0;
-	virtual int GetMapModeID(Uuid MapID) = 0;
+	virtual unsigned GetMapModeID(Uuid MapID) = 0;
 };
 
 class IGameServer : public IInterface

@@ -196,7 +196,7 @@ public:
 		unsigned m_Crc;
 		unsigned char *m_pData;
 		int m_Size;
-		int m_ModeID;
+		unsigned m_ModeID;
 
 		CMapData() { Reset(); }
 		void Reset()
@@ -334,11 +334,11 @@ public:
 	int GetLanguagesInfo(SLanguageInfo **ppInfo) override;
 
 	void SwitchClientMap(int ClientID, Uuid MapID) override;
-	void RequestNewMap(int ClientID, const char *pMapName, int ModeID) override;
+	void RequestNewMap(int ClientID, const char *pMapName, unsigned ModeID) override;
 
 	Uuid GetBaseMapUuid() const override { return m_BaseMapUuid; }
 	const char *GetMapName(Uuid MapID) override;
-	int GetMapModeID(Uuid MapID) override;
+	unsigned GetMapModeID(Uuid MapID) override;
 };
 
 #endif

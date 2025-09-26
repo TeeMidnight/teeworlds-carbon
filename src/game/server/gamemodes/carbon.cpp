@@ -11,9 +11,27 @@
 #include <game/server/entities/character.h>
 #include <game/server/player.h>
 
-#include "carbon.h"
+#include <game/server/gamecontroller.h>
+
+class CGameControllerCarbon : public IGameController
+{
+public:
+	class CQuickRegister
+	{
+	public:
+		CQuickRegister() { GameModeManager()->RegisterGameMode("Carbon", CGameControllerCarbon::CreateController); }
+	};
+
+	CGameControllerCarbon(CGameContext *pGameServer);
+
+	bool IsUsingBot() override { return true; }
+	static IGameController *CreateController(CGameContext *pGameServer) { return new CGameControllerCarbon(pGameServer); }
+};
 
 CGameControllerCarbon::CGameControllerCarbon(CGameContext *pGameServer) :
 	IGameController(pGameServer)
 {
+	m_pGameType = "Carbon";
 }
+
+static CGameControllerCarbon::CQuickRegister s_Register;

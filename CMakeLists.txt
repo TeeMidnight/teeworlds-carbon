@@ -1667,9 +1667,7 @@ endif()
     gamemenu.cpp
     gamemenu.h
     gamemodes/carbon.cpp
-    gamemodes/carbon.h
     gamemodes/race.cpp
-    gamemodes/race.h
     gameworld.cpp
     gameworld.h
     gameworld.inl

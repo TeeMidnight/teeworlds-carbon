@@ -2058,10 +2058,10 @@ void CServer::SwitchClientMap(int ClientID, Uuid MapID)
 	m_aClients[ClientID].m_MapChangeRequest = true;
 }
 
-void CServer::RequestNewMap(int ClientID, const char *pMapName, int ModeID)
+void CServer::RequestNewMap(int ClientID, const char *pMapName, unsigned ModeID)
 {
 	static std::mutex s_LoadWorldLock;
-	std::thread([this](int ClientID, string WorldName, int ModeID) {
+	std::thread([this](int ClientID, string WorldName, unsigned ModeID) {
 		s_LoadWorldLock.lock();
 
 		Uuid MapUuid = CalculateUuid(WorldName);
@@ -2085,7 +2085,7 @@ const char *CServer::GetMapName(Uuid MapID)
 	return m_uMapDatas[MapID].m_aName;
 }
 
-int CServer::GetMapModeID(Uuid MapID)
+unsigned CServer::GetMapModeID(Uuid MapID)
 {
 	dbg_assert(m_uMapDatas.count(MapID), "Couldn't find this map");
 	return m_uMapDatas[MapID].m_ModeID;

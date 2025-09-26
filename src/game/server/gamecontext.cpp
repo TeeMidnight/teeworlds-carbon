@@ -25,8 +25,7 @@
 #include "entities/character.h"
 #include "entities/projectile.h"
 #include "gamecontext.h"
-#include "gamemodes/carbon.h"
-#include "gamemodes/race.h"
+#include "gamecontroller.h"
 #include "player.h"
 #include "weapons.h"
 
@@ -46,8 +45,6 @@ void CGameContext::Construct(int Resetting)
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		m_apPlayers[i] = 0;
 
-	m_apControllers[0] = nullptr;
-	m_apControllers[1] = nullptr;
 	m_VoteCloseTime = 0;
 	m_VoteCancelTime = 0;
 	m_pVoteOptionFirst = nullptr;
@@ -485,8 +482,7 @@ void CGameContext::OnTick()
 		pWorld->Tick();
 	}
 	// if(world.paused) // make sure that the game object always updates
-	for(auto &pController : m_apControllers)
-		pController->Tick();
+	GameModeManager()->OnTick();
 
 	for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 	{
@@ -1561,13 +1557,9 @@ void CGameContext::OnInit()
 		Server()->SnapSetStaticsize(i, m_NetObjHandler.GetObjSize(i));
 
 	// select gametype
-	m_apControllers[EGameModes::GAMEMODE_CARBON] = new CGameControllerCarbon(this);
-	m_apControllers[EGameModes::GAMEMODE_RACE] = new CGameControllerCarbonRace(this);
+	GameModeManager()->OnInit(this);
 
-	Server()->RequestNewMap(-1, Config()->m_SvMap, EGameModes::GAMEMODE_CARBON);
-
-	for(auto &pController : m_apControllers)
-		pController->RegisterChatCommands(CommandManager());
+	Server()->RequestNewMap(-1, Config()->m_SvMap, GameModeManager()->Get("Carbon")->ModeHash());
 
 	CommandManager()->AddCommand("w", "Whisper another player", "sr", ComWhisper, this);
 	CommandManager()->AddCommand("whisper", "Whisper another player", "sr", ComWhisper, this);
@@ -1595,12 +1587,7 @@ void CGameContext::OnInit()
 
 void CGameContext::OnShutdown()
 {
-	for(auto &pController : m_apControllers)
-	{
-		delete pController;
-		pController = nullptr;
-	}
-
+	GameModeManager()->OnShutdown();
 	Clear();
 }
 
@@ -1633,8 +1620,7 @@ void CGameContext::OnPostSnap()
 	for(auto &[WorldID, pWorld] : m_upWorlds)
 		pWorld->PostSnap();
 	m_Events.Clear();
-	for(auto &pController : m_apControllers)
-		pController->PostSnap();
+	GameModeManager()->OnPostSnap();
 }
 
 bool CGameContext::IsClientBot(int ClientID) const
@@ -1730,7 +1716,7 @@ bool CGameContext::CheckWorldExists(Uuid WorldID)
 void CGameContext::LoadNewWorld(Uuid WorldID)
 {
 	CGameWorld *pWorld = new CGameWorld();
-	IGameController *pController = m_apControllers[Server()->GetMapModeID(WorldID)];
+	IGameController *pController = GameModeManager()->Get(Server()->GetMapModeID(WorldID));
 	pWorld->SetGameServer(this);
 	pWorld->SetGameController(pController);
 	pWorld->m_WorldUuid = WorldID;
@@ -1767,12 +1753,4 @@ void CGameContext::SwitchPlayerWorld(int ClientID, Uuid WorldID)
 {
 	if(m_apPlayers[ClientID])
 		m_apPlayers[ClientID]->SwitchWorld(m_upWorlds[WorldID]);
-}
-
-int CGameContext::GetRealPlayerNum() const
-{
-	int Num = 0;
-	for(auto &pController : m_apControllers)
-		Num += pController->GetRealPlayerNum();
-	return Num;
 }

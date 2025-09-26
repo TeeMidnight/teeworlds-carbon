@@ -34,13 +34,6 @@ enum class EChatPrefix
 	QUESTION,
 };
 
-enum EGameModes
-{
-	GAMEMODE_CARBON = 0,
-	GAMEMODE_RACE = 1,
-	NUM_GAMEMODES
-};
-
 /*
 	Tick
 		Game Context (CGameContext::tick)
@@ -71,8 +64,6 @@ class CGameContext : public IGameServer
 	CLayers m_Layers;
 	CNetObjHandler m_NetObjHandler;
 	CTuningParams m_Tuning;
-
-	class IGameController *m_apControllers[EGameModes::NUM_GAMEMODES];
 
 	CGameMenu *m_pGameMenu;
 
@@ -228,8 +219,6 @@ public:
 	bool CheckWorldExists(Uuid WorldID) override;
 	void LoadNewWorld(Uuid WorldID) override;
 	void SwitchPlayerWorld(int ClientID, Uuid WorldID) override;
-
-	int GetRealPlayerNum() const;
 };
 
 inline int64_t CmaskAll() { return -1; }

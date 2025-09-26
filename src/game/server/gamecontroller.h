@@ -118,6 +118,7 @@ public:
 	virtual bool IsSurvival() const { return false; }
 
 	const char *GetGameType() const { return m_pGameType; }
+	unsigned ModeHash() const;
 
 	// spawn
 	virtual bool CanSpawn(class CGameWorld *pWorld, int Team, vec2 *pPos) const;
@@ -138,5 +139,27 @@ public:
 	// static void Com_Example(IConsole::IResult *pResult, void *pContext);
 	virtual void RegisterChatCommands(CCommandManager *pManager);
 };
+
+class CGameModeManager
+{
+	typedef IGameController *(*FCreateGameController)(class CGameContext *pGameServer);
+
+	std::unordered_map<unsigned, FCreateGameController> m_upfnCreate;
+	std::unordered_map<unsigned, IGameController *> m_upControllers;
+
+public:
+	CGameModeManager();
+	~CGameModeManager();
+
+	void RegisterGameMode(const char *pGamemode, FCreateGameController pfnCreate);
+	void OnInit(class CGameContext *pGameServer);
+	void OnPostSnap();
+	void OnShutdown();
+	void OnTick();
+	IGameController *Get(const char *pGamemode);
+	IGameController *Get(unsigned ModeHash);
+};
+
+extern CGameModeManager *GameModeManager();
 
 #endif
