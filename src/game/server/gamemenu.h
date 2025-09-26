@@ -13,6 +13,7 @@
 #include <base/system.h>
 #include <base/uuid.h>
 
+#include <engine/external/sugarformat/sugarformat.hpp>
 #include <game/voting.h>
 
 #include <memory>
@@ -69,11 +70,15 @@ public:
 	void AddHorizontalRule();
 	void AddOption(const char *pDesc, const char *pCommand, const char *pPrefix = "");
 	void AddOptionLocalize(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix = "");
-	void AddOptionLocalizeFormat(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix, ...)
-		GNUC_ATTRIBUTE((format(printf, 2, 6)));
 
-	const char *Localize(const char *pStr, const char *pContext)
-		GNUC_ATTRIBUTE((format_arg(2)));
+	template<typename... T>
+	void AddOptionLocalizeFormat(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix, const T &...Args)
+	{
+		char aBuf[VOTE_DESC_LENGTH];
+		sugarformat::format_to(aBuf, sizeof(aBuf), Localize(pDesc, pContext), Args...);
+		AddOption(aBuf, pCommand, pPrefix);
+	}
+	const char *Localize(const char *pStr, const char *pContext);
 
 private:
 	int m_CurrentClientID;

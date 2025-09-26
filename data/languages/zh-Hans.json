@@ -1,12 +1,12 @@
 {
 	"translated strings": [
 		{
-			"key": "'%s' entered the server",
-			"value": "'%s' 进入服务器"
+			"key": "'{}' entered the server",
+			"value": "'{}' 进入服务器"
 		},
 		{
-			"key": "'%s' left the server",
-			"value": "'%s' 退出服务器"
+			"key": "'{}' left the server",
+			"value": "'{}' 退出服务器"
 		},
 		{
 			"key": "No such command",
@@ -64,18 +64,18 @@
 		},
 		{
 			"context": "Vote Main Menu",
-			"key": "Name: %s",
-			"value": "昵称: %s"
+			"key": "Name: {}",
+			"value": "昵称: {}"
 		},
 		{
 			"context": "Vote Main Menu",
-			"key": "Level: %d",
-			"value": "等级: %d"
+			"key": "Level: {}",
+			"value": "等级: {}"
 		},
 		{
 			"context": "Vote Main Menu",
-			"key": "IP Address: %s (Click to hide)",
-			"value": "IP地址: %s (双击以隐藏)"
+			"key": "IP Address: {} (Click to hide)",
+			"value": "IP地址: {} (双击以隐藏)"
 		},
 		{
 			"context": "Vote Main Menu",

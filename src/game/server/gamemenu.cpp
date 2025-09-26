@@ -215,13 +215,13 @@ bool CGameMenu::MenuMain(int ClientID, SCallVoteStatus &VoteStatus, class CGameM
 	}
 	// player stats
 	{
-		pMenu->AddOptionLocalizeFormat(_C("Name: %s", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientName(ClientID));
-		pMenu->AddOptionLocalizeFormat(_C("Level: %d", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientScore(ClientID));
+		pMenu->AddOptionLocalizeFormat(_C("Name: {}", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientName(ClientID));
+		pMenu->AddOptionLocalizeFormat(_C("Level: {}", "Vote Main Menu"), "DISPLAY", "-", pMenu->Server()->ClientScore(ClientID));
 		if(DisplayAddr)
 		{
 			char aAddr[NETADDR_MAXSTRSIZE];
 			pMenu->Server()->GetClientAddr(ClientID, aAddr, sizeof(aAddr));
-			pMenu->AddOptionLocalizeFormat(_C("IP Address: %s (Click to hide)", "Vote Main Menu"), "DISPLAY", "-", aAddr);
+			pMenu->AddOptionLocalizeFormat(_C("IP Address: {} (Click to hide)", "Vote Main Menu"), "DISPLAY", "-", aAddr);
 		}
 		else
 		{
@@ -337,17 +337,6 @@ void CGameMenu::AddOptionLocalize(const char *pDesc, const char *pContext, const
 	if(!pDesc[0] || !pCommand[0])
 		return;
 	AddOption(Localize(pDesc, pContext), pCommand, pPrefix);
-}
-
-void CGameMenu::AddOptionLocalizeFormat(const char *pDesc, const char *pContext, const char *pCommand, const char *pPrefix, ...)
-{
-	va_list List;
-	va_start(List, pPrefix);
-	char aBuf[VOTE_DESC_LENGTH];
-	vsnprintf(aBuf, sizeof(aBuf), Localize(pDesc, pContext), List);
-	va_end(List);
-
-	AddOption(aBuf, pCommand, pPrefix);
 }
 
 const char *CGameMenu::Localize(const char *pStr, const char *pContext)

@@ -183,31 +183,7 @@ void CLocalization::CLanguage::Load(IStorage *pStorage, IConsole *pConsole)
 	{
 		for(unsigned i = 0; i < rStart.u.array.length; ++i)
 		{
-			bool Valid = true;
-			const char *pKey = (const char *) rStart[i]["key"];
-			const char *pValue = (const char *) rStart[i]["value"];
-			while(pKey[0] && pValue[0])
-			{
-				for(; pKey[0] && pKey[0] != '%'; ++pKey)
-					;
-				for(; pValue[0] && pValue[0] != '%'; ++pValue)
-					;
-				if(pKey[0] && pValue[0] && ((pKey[1] == ' ' && pValue[1] == 0) || (pKey[1] == 0 && pValue[1] == ' '))) // skip  false positive
-					break;
-				if((pKey[0] && (!pValue[0] || pKey[1] != pValue[1])) || (pValue[0] && (!pKey[0] || pValue[1] != pKey[1])))
-				{
-					Valid = false;
-					str_format(aBuf, sizeof(aBuf), "skipping invalid entry key:'%s', value:'%s'", (const char *) rStart[i]["key"], (const char *) rStart[i]["value"]);
-					pConsole->Print(IConsole::OUTPUT_LEVEL_ADDINFO, "l10n", aBuf);
-					break;
-				}
-				if(pKey[0])
-					++pKey;
-				if(pValue[0])
-					++pValue;
-			}
-			if(Valid)
-				AddString((const char *) rStart[i]["key"], (const char *) rStart[i]["value"], (const char *) rStart[i]["context"]);
+			AddString((const char *) rStart[i]["key"], (const char *) rStart[i]["value"], (const char *) rStart[i]["context"]);
 		}
 	}
 

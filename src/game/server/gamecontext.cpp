@@ -213,33 +213,6 @@ void CGameContext::SendChatTargetLocalize(int To, const char *pText, const char 
 	SendChatTarget(To, Server()->Localize(To, pText, pContext), Prefix);
 }
 
-void CGameContext::SendChatTargetFormat(int To, const char *pFormat, EChatPrefix Prefix, va_list List)
-{
-	char aLine[512];
-	vsnprintf(aLine, sizeof(aLine), pFormat, List);
-	SendChatTarget(To, aLine, Prefix);
-}
-
-void CGameContext::SendChatTargetLocalizeFormat(int To, const char *pFormat, const char *pContext, EChatPrefix Prefix, ...)
-{
-	va_list List;
-	if(To == -1)
-	{
-		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
-		{
-			if(!Server()->ClientIngame(i))
-				continue;
-			va_start(List, Prefix);
-			SendChatTargetFormat(i, Server()->Localize(To, pFormat, pContext), Prefix, List);
-			va_end(List);
-		}
-		return;
-	}
-	va_start(List, Prefix);
-	SendChatTargetFormat(To, Server()->Localize(To, pFormat, pContext), Prefix, List);
-	va_end(List);
-}
-
 void CGameContext::SendBroadcast(const char *pText, int ClientID)
 {
 	CNetMsg_Sv_Broadcast Msg;
@@ -679,7 +652,7 @@ void CGameContext::OnClientEnter(int ClientID)
 	}
 
 	Server()->ExpireServerInfo();
-	SendChatTargetLocalizeFormat(-1, _("'%s' entered the server"), EChatPrefix::ENTER_PLAYER, Server()->ClientName(ClientID));
+	SendChatTargetLocalizeFormat(-1, _("'{}' entered the server"), EChatPrefix::ENTER_PLAYER, Server()->ClientName(ClientID));
 }
 
 void CGameContext::OnClientConnected(int ClientID, bool Dummy, bool AsSpec)
@@ -760,7 +733,7 @@ void CGameContext::OnClientDrop(int ClientID, const char *pReason)
 	m_VoteUpdate = true;
 
 	Server()->ExpireServerInfo();
-	SendChatTargetLocalizeFormat(-1, _("'%s' left the server"), EChatPrefix::LEAVE_PLAYER, Server()->ClientName(ClientID));
+	SendChatTargetLocalizeFormat(-1, _("'{}' left the server"), EChatPrefix::LEAVE_PLAYER, Server()->ClientName(ClientID));
 }
 
 void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)

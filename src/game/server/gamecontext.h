@@ -12,6 +12,7 @@
 #define GAME_SERVER_GAMECONTEXT_H
 
 #include <engine/console.h>
+#include <engine/external/sugarformat/sugarformat.hpp>
 #include <engine/server.h>
 
 #include <game/commands.h>
@@ -163,10 +164,29 @@ public:
 	void SendChatTarget(int To, const char *pText, EChatPrefix Prefix = EChatPrefix::NONE);
 	void SendChatTargetLocalize(int To, const char *pText, const char *pContext, EChatPrefix Prefix = EChatPrefix::NONE);
 
-	void SendChatTargetFormat(int To, const char *pFormat, EChatPrefix Prefix, va_list List)
-		GNUC_ATTRIBUTE((format(printf, 3, 0)));
-	void SendChatTargetLocalizeFormat(int To, const char *pFormat, const char *pContext, EChatPrefix Prefix, ...)
-		GNUC_ATTRIBUTE((format(printf, 3, 6)));
+	template<typename... T>
+	void SendChatTargetFormat(int To, const char *pFormat, EChatPrefix Prefix, const T &...Args)
+	{
+		char aLine[512];
+		sugarformat::format_to(aLine, sizeof(aLine), pFormat, Args...);
+		SendChatTarget(To, aLine, Prefix);
+	}
+
+	template<typename... T>
+	void SendChatTargetLocalizeFormat(int To, const char *pFormat, const char *pContext, EChatPrefix Prefix, const T &...Args)
+	{
+		if(To == -1)
+		{
+			for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
+			{
+				if(!Server()->ClientIngame(i))
+					continue;
+				SendChatTargetFormat(i, Server()->Localize(To, pFormat, pContext), Prefix, Args...);
+			}
+			return;
+		}
+		SendChatTargetFormat(To, Server()->Localize(To, pFormat, pContext), Prefix, Args...);
+	};
 
 	void SendGameMsg(int GameMsgID, int ClientID);
 	void SendGameMsg(int GameMsgID, int ParaI1, int ClientID);

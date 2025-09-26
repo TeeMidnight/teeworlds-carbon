@@ -305,6 +305,10 @@ find_package(Ogg)
 find_package(Opus)
 find_package(Opusfile)
 
+if(SERVER)
+  find_package(FMT)
+endif()
+
 if(TARGET_OS AND TARGET_OS STREQUAL "mac")
   find_program(CMAKE_OTOOL otool)
   find_program(DMG dmg)
@@ -359,12 +363,17 @@ show_dependency_status("Python3" Python3)
 show_dependency_status("SDL3" SDL3)
 show_dependency_status("Wavpack" WAVPACK)
 show_dependency_status("Zlib" ZLIB)
+show_dependency_status("fmt" FMT)
 
 if(CLIENT AND NOT(FREETYPE_FOUND))
   message(SEND_ERROR "You must install Freetype to compile the Teeworlds client")
 endif()
 if(CLIENT AND NOT(SDL3_FOUND))
   message(SEND_ERROR "You must install SDL3 to compile the Teeworlds client")
+endif()
+
+if(SERVER AND NOT(FMT_FOUND))
+  message(SEND_ERROR "You must install fmt to compile the Teeworlds Carbon")
 endif()
 
 if(NOT(CURL_FOUND))
@@ -1697,7 +1706,8 @@ endif()
   endif()
 
   # Libraries
-  set(LIBS_SERVER ${LIBS})
+  set(LIBS_SERVER ${LIBS} ${FMT_LIBRARY})
+  set(DEPS_SERVER ${DEPS})
 
   # Target
   set(TARGET_SERVER ${SERVER_EXECUTABLE})
