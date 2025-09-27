@@ -1294,10 +1294,10 @@ void CChat::OnRender()
 			if(!Config()->m_ClOldStyleChat)
 				TextRender()->TextSecondaryColor(ShadowColor);
 			{
-				CAnimState State;
-				State.Set(&g_pData->m_aAnimations[ANIM_BASE], 1.0f);
-				State.Add(&g_pData->m_aAnimations[ANIM_IDLE], 0, 1.0f);
-				RenderTools()->RenderTee(&State, &pLine->m_RenderInfo, EMOTE_NORMAL, vec2(1.f, 0.f), vec2(s_ChatCursor.AdvancePosition().x + FontSize / 3 * 2 - 1.f, y + FontSize / 3 * 2 + 1.f), Blend);
+				static CAnimState s_State;
+				s_State.Set(&g_pData->m_aAnimations[ANIM_BASE], 1.0f);
+				s_State.Add(&g_pData->m_aAnimations[ANIM_IDLE], 0, 1.0f);
+				RenderTools()->RenderTee(&s_State, &pLine->m_RenderInfo, EMOTE_NORMAL, vec2(1.f, 0.f), vec2(s_ChatCursor.AdvancePosition().x + FontSize / 3 * 2 - 1.f, y + FontSize / 3 * 2 + 1.f), Blend);
 			}
 			TextRender()->TextAdvance(&s_ChatCursor, FontSize + 1.f);
 			TextRender()->TextDeferred(&s_ChatCursor, pLine->m_aName, -1);
