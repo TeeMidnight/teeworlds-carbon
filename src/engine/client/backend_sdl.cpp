@@ -19,7 +19,7 @@
 #include "backend_sdl.h"
 #include "graphics_threaded.h"
 
-static constexpr GLenum BUFFER_INIT_INDEX_TARGET = GL_COPY_WRITE_BUFFER;
+static constexpr GLenum BUFFER_INIT_INDEX_TARGET = GL_ELEMENT_ARRAY_BUFFER;
 
 // Vertex shader source code using OpenGL 4.6 Core Profile
 static const char *s_VertexShaderSource = R"(
@@ -466,7 +466,7 @@ void CCommandProcessorFragment_OpenGL::SetState(const CCommandBuffer::CState &St
 	{
 		if(State.m_Dimension == 2)
 		{
-			if(m_aLast2DWarpMode[1] != State.m_WrapModeU)
+			if(m_aLast2DWarpMode[0] != State.m_WrapModeU)
 			{
 				switch(State.m_WrapModeU)
 				{
@@ -871,7 +871,8 @@ void CCommandProcessorFragment_OpenGL::Cmd_Render(const CCommandBuffer::CRenderC
 		glBindBuffer(GL_ARRAY_BUFFER, m_aPrimitiveDrawBufferID[m_LastStreamBuffer]);
 		m_LastRender3D = false;
 	}
-	glBufferData(GL_ARRAY_BUFFER, pCommand->m_PrimCount * 4 * sizeof(CCommandBuffer::CVertex), pCommand->m_pVertices, GL_STREAM_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, pCommand->m_PrimCount * 4 * sizeof(CCommandBuffer::CVertex), nullptr, GL_STREAM_DRAW);
+	glBufferSubData(GL_ARRAY_BUFFER, 0, pCommand->m_PrimCount * 4 * sizeof(CCommandBuffer::CVertex), pCommand->m_pVertices);
 
 	switch(pCommand->m_PrimType)
 	{
