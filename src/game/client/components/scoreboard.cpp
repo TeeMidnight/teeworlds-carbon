@@ -583,7 +583,6 @@ float CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const c
 			{
 				const int &Ping = pInfo->m_pPlayerInfo->m_Latency;
 				vec4 PingColor = vec4(TextColor.r, TextColor.g, TextColor.b, 0.5f * ColorAlpha);
-				;
 				vec4 StartColor;
 				vec4 EndColor;
 				float MixVal;
