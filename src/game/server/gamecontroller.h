@@ -37,13 +37,7 @@ class IGameController
 	void SetPlayersReadyState(bool ReadyState);
 
 	// balancing
-	enum
-	{
-		TBALANCE_CHECK = -2,
-		TBALANCE_OK,
-	};
 	int m_RealPlayerNum;
-	void ResetGame();
 
 	// spawn
 	struct CSpawnEval
@@ -66,22 +60,22 @@ class IGameController
 	float EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos) const;
 	void EvaluateSpawnType(CSpawnEval *pEval, int Type) const;
 
-	// team
-	int ClampTeam(int Team) const;
-
+	// game
+	int m_GameStartTick;
 protected:
 	class CGameContext *GameServer() const { return m_pGameServer; }
 	CConfig *Config() const { return m_pConfig; }
 	IServer *Server() const { return m_pServer; }
 
-	// game
-	int m_GameStartTick;
-
 	// info
 	int m_GameFlags;
 	const char *m_pGameType;
 
-	void SendGameInfo(int ClientID);
+	virtual void ResetGame(class CGameWorld *pGameWorld);
+	virtual void SendGameInfo(int ClientID);
+
+	// team
+	int ClampTeam(int Team) const;
 
 public:
 	virtual bool IsUsingBot() { return false; }
@@ -111,9 +105,9 @@ public:
 
 	// info
 	virtual bool IsFriendlyFire(class CEntity *pEnt1, class CEntity *pEnt2) const;
-	virtual bool IsFriendlyTeamFire(int Team1, int Team2) const;
-	virtual bool IsPlayerReadyMode() const;
-	virtual bool IsTeamChangeAllowed() const;
+	virtual bool IsFriendlyTeamFire(class CGameWorld *pWorld, int Team1, int Team2) const;
+	virtual bool IsPlayerReadyMode(class CGameWorld *pWorld) const;
+	virtual bool IsTeamChangeAllowed(class CGameWorld *pWorld) const;
 	virtual bool IsTeamplay() const { return false; }
 	virtual bool IsSurvival() const { return false; }
 
@@ -136,8 +130,9 @@ public:
 	virtual int GetPlayerScore(int ClientID) const { return 0; }
 
 	virtual void HandleCharacterTiles(class CCharacter *pChr, vec2 LastPos, vec2 NewPos) {};
-	// static void Com_Example(IConsole::IResult *pResult, void *pContext);
 	virtual void RegisterChatCommands(CCommandManager *pManager);
+
+	virtual void InitWorldConfig(CWorldConfig *pConfig);
 };
 
 class CGameModeManager
@@ -161,5 +156,17 @@ public:
 };
 
 extern CGameModeManager *GameModeManager();
+
+template<typename ControllerClass>
+class CGameModeRegister
+{
+public:
+    CGameModeRegister(const char *pModeName)
+    {
+        GameModeManager()->RegisterGameMode(pModeName, CreateController);
+    }
+
+	static IGameController *CreateController(CGameContext *pGameServer) { return new ControllerClass(pGameServer); }
+};
 
 #endif

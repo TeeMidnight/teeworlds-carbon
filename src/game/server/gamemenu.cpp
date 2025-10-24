@@ -7,6 +7,8 @@
  * See license.txt in the root of the distribution for more information.
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
+#include <base/system_new.hpp>
+
 #include <engine/config.h>
 #include <engine/localization.h>
 #include <engine/shared/memheap.h>

@@ -16,16 +16,8 @@
 class CGameControllerCarbon : public IGameController
 {
 public:
-	class CQuickRegister
-	{
-	public:
-		CQuickRegister() { GameModeManager()->RegisterGameMode("Carbon", CGameControllerCarbon::CreateController); }
-	};
-
 	CGameControllerCarbon(CGameContext *pGameServer);
-
 	bool IsUsingBot() override { return true; }
-	static IGameController *CreateController(CGameContext *pGameServer) { return new CGameControllerCarbon(pGameServer); }
 };
 
 CGameControllerCarbon::CGameControllerCarbon(CGameContext *pGameServer) :
@@ -34,4 +26,4 @@ CGameControllerCarbon::CGameControllerCarbon(CGameContext *pGameServer) :
 	m_pGameType = "Carbon";
 }
 
-static CGameControllerCarbon::CQuickRegister s_Register;
+static CGameModeRegister<CGameControllerCarbon> s_Register("Carbon");

@@ -9,7 +9,6 @@
  */
 #include <engine/server.h>
 
-#include <game/server/botmanager.h>
 #include <game/server/entities/character.h>
 #include <game/server/player.h>
 
@@ -27,12 +26,6 @@ enum
 class CGameControllerCarbonRace : public IGameController
 {
 public:
-	class CQuickRegister
-	{
-	public:
-		CQuickRegister() { GameModeManager()->RegisterGameMode("CarbonRace", CGameControllerCarbonRace::CreateController); }
-	};
-
 	CGameControllerCarbonRace(CGameContext *pGameServer);
 
 	void HandleCharacterTiles(CCharacter *pChr, vec2 LastPos, vec2 NewPos) override;
@@ -42,8 +35,6 @@ public:
 
 	int GetPlayerScore(int ClientID) const override { return -1; }
 	bool IsFriendlyFire(CEntity *pEnt1, CEntity *pEnt2) const override { return true; }
-
-	static IGameController *CreateController(CGameContext *pGameServer) { return new CGameControllerCarbonRace(pGameServer); }
 };
 
 CGameControllerCarbonRace::CGameControllerCarbonRace(CGameContext *pGameServer) :
@@ -104,4 +95,4 @@ bool CGameControllerCarbonRace::OnExtraTile(CGameWorld *pWorld, int Index, vec2 
 	return true;
 }
 
-static CGameControllerCarbonRace::CQuickRegister s_Register;
+static CGameModeRegister<CGameControllerCarbonRace> s_Register("CarbonRace");

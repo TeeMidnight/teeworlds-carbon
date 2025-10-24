@@ -26,6 +26,7 @@ extern "C" {
 #define _(TEXT) TEXT, ""
 #define _C(TEXT, CONTEXT) TEXT, CONTEXT
 #define _N(NAME) NAME
+#define _Config(CONFIG_NAME) CONFIG_NAME
 
 enum
 {

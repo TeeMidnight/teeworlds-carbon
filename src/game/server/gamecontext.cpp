@@ -960,7 +960,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 				m_VoteCloseTime = -1;
 			}
 		}
-		else if(MsgID == NETMSGTYPE_CL_SETTEAM && pPlayer->GameController()->IsTeamChangeAllowed())
+		else if(MsgID == NETMSGTYPE_CL_SETTEAM && pPlayer->GameController()->IsTeamChangeAllowed(pPlayer->GameWorld()))
 		{
 			CNetMsg_Cl_SetTeam *pMsg = (CNetMsg_Cl_SetTeam *) pRawMsg;
 

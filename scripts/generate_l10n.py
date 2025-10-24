@@ -22,7 +22,8 @@ JSON_KEY_TR="value"
 
 SOURCE_LOCALIZE_RE=re.compile(br'_\("(?P<str>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
 SOURCE_LOCALIZE_CONTEXT_RE=re.compile(br'_C\("(?P<str>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
-SOURCE_LOCALIZE_NAME_RE=re.compile(br'_\("(?P<name>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
+SOURCE_LOCALIZE_NAME_RE=re.compile(br'_N\("(?P<name>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
+SOURCE_LOCALIZE_CONFIG_NAME_RE=re.compile(br'_Config\("(?P<name>([^"\\]|\\.)*)"(, ?"(?P<ctxt>([^"\\]|\\.)*)")?\)')
 
 def parse_source():
 	l10n = defaultdict(lambda: str)
@@ -36,8 +37,11 @@ def parse_source():
 			l10n[(str_, None)] = ""
 		for match in SOURCE_LOCALIZE_CONTEXT_RE.finditer(line):
 			str_ = match.group('str').decode()
-			ctxt = match.group('ctxt')
-			ctxt = ctxt.decode()
+			ctxt = match.group('ctxt').decode()
+			l10n[(str_, ctxt)] = ""
+		for match in SOURCE_LOCALIZE_CONFIG_NAME_RE.finditer(line):
+			str_ = match.group('name').decode()
+			ctxt = "Mode config"
 			l10n[(str_, ctxt)] = ""
 
 	for root, dirs, files in os.walk("src"):

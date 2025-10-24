@@ -10,6 +10,7 @@
  */
 #include <base/math.h>
 #include <base/system.h>
+#include <base/system_new.hpp>
 
 #include <engine/console.h>
 #include <engine/shared/config.h>

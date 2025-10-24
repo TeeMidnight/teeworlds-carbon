@@ -8,6 +8,7 @@
  * See license.txt in the root of the distribution for more information.
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
+#include <base/system_new.hpp>
 #include <engine/shared/config.h>
 
 #include <game/mapitems.h>
@@ -162,10 +163,10 @@ bool IGameController::OnEntity(CGameWorld *pGameWorld, int Index, vec2 Pos)
 
 	switch(Index)
 	{
-	case ENTITY_SPAWN: // Player
+	case ENTITY_SPAWN:
 		pGameWorld->m_aaSpawnPoints[0][pGameWorld->m_aNumSpawnPoints[0]++] = Pos;
 		break;
-	case ENTITY_SPAWN_RED: // NPC1
+	case ENTITY_SPAWN_RED:
 		pGameWorld->m_aaSpawnPoints[1][pGameWorld->m_aNumSpawnPoints[1]++] = Pos;
 		break;
 	case ENTITY_SPAWN_BLUE:
@@ -240,7 +241,7 @@ void IGameController::OnPlayerInfoChange(CPlayer *pPlayer)
 
 void IGameController::OnPlayerReadyChange(CPlayer *pPlayer)
 {
-	if(Config()->m_SvPlayerReadyMode && pPlayer->GetTeam() != TEAM_SPECTATORS && !pPlayer->m_DeadSpecMode)
+	if(pPlayer->GameWorld()->m_Config.Get<bool>("PlayerReadyMode") && pPlayer->GetTeam() != TEAM_SPECTATORS && !pPlayer->m_DeadSpecMode)
 	{
 		// change players ready state
 		pPlayer->m_IsReadyToPlay ^= 1;
@@ -266,7 +267,7 @@ void IGameController::OnReset()
 }
 
 // game
-void IGameController::ResetGame()
+void IGameController::ResetGame(CGameWorld *pGameWorld)
 {
 	m_GameStartTick = Server()->Tick();
 }
@@ -323,24 +324,24 @@ bool IGameController::IsFriendlyFire(class CEntity *pEnt1, class CEntity *pEnt2)
 		if(!GameServer()->m_apPlayers[ClientID1] || !GameServer()->m_apPlayers[ClientID2])
 			return false;
 
-		if(!Config()->m_SvTeamdamage && GameServer()->m_apPlayers[ClientID1]->GetTeam() == GameServer()->m_apPlayers[ClientID2]->GetTeam())
+		if(!pEnt1->GameWorld()->m_Config.Get<bool>("TeamDamage") && GameServer()->m_apPlayers[ClientID1]->GetTeam() == GameServer()->m_apPlayers[ClientID2]->GetTeam())
 			return true;
 	}
 
 	return false;
 }
 
-bool IGameController::IsFriendlyTeamFire(int Team1, int Team2) const
+bool IGameController::IsFriendlyTeamFire(class CGameWorld *pWorld, int Team1, int Team2) const
 {
-	return IsTeamplay() && !Config()->m_SvTeamdamage && Team1 == Team2;
+	return IsTeamplay() && !pWorld->m_Config.Get<bool>("TeamDamage") && Team1 == Team2;
 }
 
-bool IGameController::IsPlayerReadyMode() const
+bool IGameController::IsPlayerReadyMode(class CGameWorld *pWorld) const
 {
-	return Config()->m_SvPlayerReadyMode != 0;
+	return pWorld->m_Config.Get<bool>("PlayerReadyMode");
 }
 
-bool IGameController::IsTeamChangeAllowed() const
+bool IGameController::IsTeamChangeAllowed(class CGameWorld *pWorld) const
 {
 	return true;
 }
@@ -392,13 +393,24 @@ bool IGameController::CanSpawn(CGameWorld *pWorld, int Team, vec2 *pOutPos) cons
 	Eval.m_FriendlyTeam = Team;
 	Eval.m_pWorld = pWorld;
 
-	// first try own team spawn, then normal spawn and then enemy
-	EvaluateSpawnType(&Eval, 1 + (Team & 1));
-	if(!Eval.m_Got)
+	if(IsTeamplay())
+	{
+		Eval.m_FriendlyTeam = Team;
+
+		// first try own team spawn, then normal spawn and then enemy
+		EvaluateSpawnType(&Eval, 1+(Team&1));
+		if(!Eval.m_Got)
+		{
+			EvaluateSpawnType(&Eval, 0);
+			if(!Eval.m_Got)
+				EvaluateSpawnType(&Eval, 1+((Team+1)&1));
+		}
+	}
+	else
 	{
 		EvaluateSpawnType(&Eval, 0);
-		if(!Eval.m_Got)
-			EvaluateSpawnType(&Eval, 1 + ((Team + 1) & 1));
+		EvaluateSpawnType(&Eval, 1);
+		EvaluateSpawnType(&Eval, 2);
 	}
 
 	*pOutPos = Eval.m_Pos;
@@ -514,7 +526,7 @@ void IGameController::DoTeamChange(CPlayer *pPlayer, int Team, bool DoChatMsg)
 	if(Team != TEAM_SPECTATORS)
 	{
 		m_RealPlayerNum++;
-		pPlayer->m_IsReadyToPlay = !IsPlayerReadyMode();
+		pPlayer->m_IsReadyToPlay = !IsPlayerReadyMode(pPlayer->GameWorld());
 		pPlayer->m_RespawnDisabled = GetStartRespawnState();
 	}
 	OnPlayerInfoChange(pPlayer);
@@ -537,6 +549,12 @@ int IGameController::GetStartTeam()
 
 void IGameController::RegisterChatCommands(CCommandManager *pManager)
 {
+}
+
+void IGameController::InitWorldConfig(CWorldConfig *pConfig)
+{
+	pConfig->Init("PlayerReadyMode", _Config("Player Ready Mode"), false);
+	pConfig->Init("TeamDamage", _Config("Team Damage"), false);
 }
 
 CGameModeManager::CGameModeManager()

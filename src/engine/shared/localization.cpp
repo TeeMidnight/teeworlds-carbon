@@ -8,6 +8,7 @@
  * See license.txt in the root of the distribution for more information.
  * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
  */
+#include <base/system_new.hpp>
 #include <base/tl/sorted_array.h>
 #include <base/uuid.h>
 

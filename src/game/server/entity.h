@@ -11,6 +11,7 @@
 #ifndef GAME_SERVER_ENTITY_H
 #define GAME_SERVER_ENTITY_H
 
+#include <base/system_new.hpp>
 #include <base/uuid.h>
 #include <base/vmath.h>
 

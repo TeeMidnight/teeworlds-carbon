@@ -3343,15 +3343,6 @@ void str_utf8_stats(const char *str, int max_size, int max_count, int *size, int
 		++(*count);
 	}
 }
-
-unsigned str_quickhash(const char *str)
-{
-	unsigned hash = 5381;
-	for(; *str; str++)
-		hash = ((hash << 5) + hash) + (*str); /* hash * 33 + c */
-	return hash;
-}
-
 static const char *str_token_get(const char *str, const char *delim, int *length)
 {
 	size_t len = strspn(str, delim);

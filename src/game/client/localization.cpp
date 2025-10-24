@@ -10,6 +10,7 @@
  */
 
 #include <base/system.h>
+#include <base/system_new.hpp>
 #include <base/tl/algorithm.h>
 
 #include <engine/console.h>

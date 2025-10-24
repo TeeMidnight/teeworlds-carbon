@@ -13,6 +13,8 @@
 
 #include <game/gamecore.h>
 
+#include "config.h"
+
 #include <memory>
 
 #define MAX_CHECK_ENTITY 128
@@ -71,7 +73,7 @@ public:
 	bool m_ResetRequested;
 	bool m_Paused;
 	CWorldCore m_Core;
-
+	CWorldConfig m_Config;
 	Uuid m_WorldUuid;
 
 	CGameWorld();

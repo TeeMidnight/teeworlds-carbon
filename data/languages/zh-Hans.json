@@ -1,6 +1,10 @@
 {
 	"translated strings": [
 		{
+			"key": "Hand",
+			"value": "空手"
+		},
+		{
 			"key": "'{}' entered the server",
 			"value": "'{}' 进入服务器"
 		},
@@ -31,6 +35,16 @@
 			"context": "Vote Menu",
 			"key": "Server Vote",
 			"value": "服务器投票"
+		},
+		{
+			"context": "Mode config",
+			"key": "Player Ready Mode",
+			"value": "准备模式"
+		},
+		{
+			"context": "Mode config",
+			"key": "Team Damage",
+			"value": "友伤"
 		},
 		{
 			"context": "Vote Menu",
@@ -95,6 +109,34 @@
 		{
 			"key": "Oops, couldn't find any language. (Click to refresh)",
 			"value": "哦不!没有找到任何语言! (双击以刷新)"
+		},
+		{
+			"key": "Grenade",
+			"value": "榴弹炮"
+		},
+		{
+			"key": "Gun",
+			"value": "手枪"
+		},
+		{
+			"key": "Laser",
+			"value": "激光枪"
+		},
+		{
+			"key": "Shotgun",
+			"value": "霰弹枪"
+		},
+		{
+			"key": "Sniping Rifle",
+			"value": "狙击步枪"
+		},
+		{
+			"key": "Hammer",
+			"value": "锤子"
+		},
+		{
+			"key": "Ninja",
+			"value": "忍者刀"
 		}
 	]
 }

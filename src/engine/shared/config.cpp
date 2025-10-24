@@ -133,6 +133,7 @@ void CConfigManager::Save(const char *pFilename)
 
 #include <game/variables.h>
 #include "config_variables.h"
+#include "config.h"
 
 #undef MACRO_CONFIG_INT
 #undef MACRO_CONFIG_STR
