@@ -1883,7 +1883,7 @@ void CClient::Run()
 		}
 	}
 
-	if(!m_Http.Init(2000, Config()))
+	if(!m_Http.Init(Config()))
 	{
 		dbg_msg("server", "Failed to initialize the HTTP client.");
 		return;

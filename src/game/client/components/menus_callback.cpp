@@ -402,6 +402,7 @@ float CMenus::RenderSettingsCustomLaser(CUIRect View)
 	View.HSplitTop(LaserSize, &Rifle, &ColorPicker);
 	Rifle.VSplitLeft(LaserSize, &Rifle, &Laser);
 
+	float Height = Rifle.h + ColorPicker.h;
 	// laser
 	{
 		const vec2 From = Rifle.Center();
@@ -493,7 +494,7 @@ float CMenus::RenderSettingsCustomLaser(CUIRect View)
 		RenderHSLPicker(Picker, Config()->m_ClLaserOuterColor, false, s_HLPicker, s_aButtons);
 	}
 
-	return 48.0f;
+	return Height;
 }
 
 void CMenus::DoJoystickAxisPicker(CUIRect View)

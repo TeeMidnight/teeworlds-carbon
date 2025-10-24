@@ -602,9 +602,8 @@ int64_t CHttpRequest::ResultLastModified() const
 	return m_ResultLastModified;
 }
 
-bool CHttp::Init(int64_t ShutdownDelayMs, CConfig *pConfig)
+bool CHttp::Init(CConfig *pConfig)
 {
-	m_ShutdownDelayMs = ShutdownDelayMs;
 	m_pConfig = pConfig;
 
 #if !defined(CONF_FAMILY_WINDOWS)
@@ -675,18 +674,9 @@ void CHttp::RunLoop()
 		int Events = 0;
 		const CURLMcode PollCode = curl_multi_poll((CURLM *) m_pMultiH, nullptr, 0, s_NextTimeout, &Events);
 
-		if(m_Shutdown)
+		if(m_Shutdown && m_RunningRequests.size() == 0)
 		{
-			int64_t Now = time_get();
-			if(m_ShutdownTime == -1)
-			{
-				m_ShutdownTime = Now + (m_ShutdownDelayMs * time_freq()) / 1000;
-				s_NextTimeout = m_ShutdownDelayMs;
-			}
-			else if(Now >= m_ShutdownTime || m_RunningRequests.size() == 0)
-			{
-				break;
-			}
+			break;
 		}
 
 		if(PollCode != CURLM_OK)
@@ -722,11 +712,8 @@ void CHttp::RunLoop()
 			}
 		}
 
-		array<CHttpRequest *> apNewRequests;
-		apNewRequests.clear();
 		m_pLock->take();
-		apNewRequests = std::move(m_PendingRequests);
-		m_PendingRequests.clear();
+		array<CHttpRequest *> apNewRequests(std::move(m_PendingRequests));
 		m_pLock->release();
 
 		// Process pending requests

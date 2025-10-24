@@ -313,8 +313,6 @@ private:
 	array<CHttpRequest *> m_PendingRequests;
 	std::unordered_map<void *, CHttpRequest *> m_RunningRequests{};
 
-	int64_t m_ShutdownDelayMs = 0;
-	int64_t m_ShutdownTime = -1;
 	bool m_Shutdown = false;
 
 	void *m_pMultiH = nullptr;
@@ -326,7 +324,7 @@ private:
 
 public:
 	CConfig *Config() { return m_pConfig; }
-	bool Init(int64_t ShutdownDelayMs, CConfig *pConfig);
+	bool Init(CConfig *pConfig);
 
 	void Run(IHttpRequest *pRequest) override;
 	void Shutdown() override;

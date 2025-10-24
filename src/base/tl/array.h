@@ -44,6 +44,18 @@ public:
 	{
 		init();
 	}
+	/*
+		Function: for std::move
+	*/
+	array(array &&other) noexcept
+		: list(other.list),
+		  list_size(other.list_size),
+		  num_elements(other.num_elements)
+	{
+		other.list = nullptr;
+		other.list_size = 0;
+		other.num_elements = 0;
+	}
 
 	/*
 		Function: array copy constructor
