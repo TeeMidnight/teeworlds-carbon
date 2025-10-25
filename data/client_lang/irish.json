@@ -7,6 +7,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Sábháil"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Níl"
+		},
+		{
+			"or": "Yes",
+			"tr": "Tá"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Cuir Vóta Leis"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Eagarthóir"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Cuardach:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -115,67 +1081,7 @@
 			"tr": ""
 		},
 		{
-			"or": "Search:",
-			"tr": "Cuardach:"
-		},
-		{
 			"or": "key not found",
-			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Uile"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Lucht féachana"
-		},
-		{
-			"or": "Team",
-			"tr": "Foireann"
-		},
-		{
-			"or": "Chat",
-			"tr": "Comhrá"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
 			"tr": ""
 		},
 		{
@@ -407,14 +1313,6 @@
 			"tr": "An bhfuil tú cinnte gur mhaith leat fágáil?"
 		},
 		{
-			"or": "No",
-			"tr": "Níl"
-		},
-		{
-			"or": "Yes",
-			"tr": "Tá"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -513,210 +1411,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Tá an freastalaí ag déanamh tiúnadh neamhchaighdeánach ar chluiche glan."
-		},
-		{
-			"or": "Move left",
-			"tr": "Ar chlé"
-		},
-		{
-			"or": "Move right",
-			"tr": "Ar dheis"
-		},
-		{
-			"or": "Jump",
-			"tr": "Léim"
-		},
-		{
-			"or": "Fire",
-			"tr": "Tine"
-		},
-		{
-			"or": "Hook",
-			"tr": "Croch"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Casúr"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Piostal"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Gunna gráin"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Gránáid"
-		},
-		{
-			"or": "Laser",
-			"tr": "Léasar"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "An chéad ghléas troda eile"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "An gléas troda roimhe seo"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "Vótáil 'is ea'"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Vótáil 'ní hea'"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Comhrá foirne"
-		},
-		{
-			"or": "Whisper",
-			"tr": ""
-		},
-		{
-			"or": "Show chat",
-			"tr": "Taispeáin comhrá"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Straoiseog"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Mód breathnóra"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Breathnaigh ar an chéad cheann eile"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Breathnaigh ar an gceann roimhe seo"
-		},
-		{
-			"or": "Console",
-			"tr": "Consól"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Consól i gcéin"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Seat den scáileán"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Scórchlár"
-		},
-		{
-			"or": "Statboard",
-			"tr": ""
-		},
-		{
-			"or": "Respawn",
-			"tr": "Athsceith"
-		},
-		{
-			"or": "Ready",
-			"tr": "Réidh"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": ""
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": ""
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": ""
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": ""
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Enable joystick",
-			"tr": ""
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": ""
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": ""
-		},
-		{
-			"or": "Configure statboard",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": ""
-		},
-		{
-			"or": "Status",
-			"tr": ""
-		},
-		{
-			"or": "Aim bind",
-			"tr": ""
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": ""
 		},
 		{
 			"or": "Length",
@@ -828,612 +1522,8 @@
 			"tr": "Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Foirne faoi ghlas"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Ní cheadaítear níos mó ná %d imreoir gníomhach"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Foirne faoi ghlas. Tréimhse sular féidir foirne a athrú: %02d:%02d"
-		},
-		{
-			"or": "Game options",
-			"tr": ""
-		},
-		{
-			"or": "locked",
-			"tr": "faoi ghlas"
-		},
-		{
-			"or": "Spectating",
-			"tr": "Ag Breathnú"
-		},
-		{
-			"or": "Join red",
-			"tr": "Gabh leis an bhfoireann dhearg"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Ar an bhfoireann dhearg"
-		},
-		{
-			"or": "Join blue",
-			"tr": "Gabh leis an bhfoireann ghorm"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Ar an bhfoireann ghorm"
-		},
-		{
-			"or": "Join",
-			"tr": "Glac páirt"
-		},
-		{
-			"or": "Joined",
-			"tr": "Sa chluiche"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Dícheangail"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Stop ag taifeadadh"
-		},
-		{
-			"or": "Record",
-			"tr": "Déan Taifead"
-		},
-		{
-			"or": "Player options",
-			"tr": "Roghanna imreora"
-		},
-		{
-			"or": "Address",
-			"tr": "Seoladh"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Tá"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Níl"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Ceanán"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": ""
-		},
-		{
-			"or": "Game info",
-			"tr": "Eolas faoin chluiche"
-		},
-		{
-			"or": "Game type",
-			"tr": "Cineál an chluiche"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty",
-			"tr": ""
-		},
-		{
-			"or": "Score limit",
-			"tr": "Teorainn scóir"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Teorainn ama"
-		},
-		{
-			"or": "MOTD",
-			"tr": "Teachtaireacht na Lae"
-		},
-		{
-			"or": "Option",
-			"tr": ""
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Caithfidh tú fanacht le deireadh an vóta reatha sular féidir leat vóta nua a eagrú."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Caithfidh tú feitheamh %d soicind sular féidir leat vóta eile a dhéanamh"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Níl cead ag baill den lucht féachana vóta a thosú."
-		},
-		{
-			"or": "Change settings",
-			"tr": "Athraigh socruithe"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Ruaig an t-imreoir"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Díbir an t-imreoir go dtí an lucht féachana"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Ní cheadaíonn an freastalaí vótáil ar imreoirí a ruaigeadh"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Ní mór ar a laghad %d imreoir a bheith ar an bhfreastalaí le vótáil ar ruaigeadh"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Ní cheadaíonn an freastalaí vótáil ar imreoirí a dhíbirt go dtí an lucht féachana"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Fórsáil vóta"
-		},
-		{
-			"or": "Remove",
-			"tr": "Bain"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Cur síos ar vóta:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Ordú vótála:"
-		},
-		{
-			"or": "Add",
-			"tr": "Cuir Vóta Leis"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Lí:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Sáith:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Gile:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Alfa:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Craicne"
-		},
-		{
-			"or": "Theme",
-			"tr": ""
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Ceamara Dinimiciúil"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Úsáid gléas troda tár éis é a phiocadh suas"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Taispeáin ainmchláir"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Taispeáin ainmchláir i gcónaí"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Úsáid dathanna foirne ar ainmchláir"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": ""
-		},
-		{
-			"or": "Show social",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": ""
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": ""
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": ""
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": ""
-		},
-		{
-			"or": "Client",
-			"tr": "Cliant"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": ""
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Taifead taispeántais go huathoibríoch"
-		},
-		{
-			"or": "Max",
-			"tr": "Uasmhéid"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Seat scáileáin go huathoibríoch ag deireadh an chluiche"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Athshocraigh"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Saincheap"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Dathanna saincheaptha"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tí"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Gnáth:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Foireann:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Pearsanta"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clann"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Sábháil"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Scrios an craiceann"
-		},
-		{
-			"or": "Basic",
-			"tr": "Bunúsach"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Níorbh fhéidir an craiceann a scriosadh"
-		},
-		{
-			"or": "Mouse",
-			"tr": ""
-		},
-		{
-			"or": "Joystick",
-			"tr": ""
-		},
-		{
-			"or": "Movement",
-			"tr": "Gluaiseacht"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Gléas Troda"
-		},
-		{
-			"or": "Voting",
-			"tr": "Vótáil"
-		},
-		{
-			"or": "Misc",
-			"tr": "Éagsúil"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": ""
-		},
-		{
-			"or": "Suicides",
-			"tr": ""
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": ""
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"or": "Weapons stats",
-			"tr": ""
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": ""
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": ""
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Scáileán"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Lánscáileán"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Fuinneog gan imlíne"
-		},
-		{
-			"or": "Screen:",
-			"tr": ""
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Frithailiasáil"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Sionc"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": ""
-		},
-		{
-			"or": "Max fps",
-			"tr": ""
-		},
-		{
-			"or": "Texture",
-			"tr": "Uigeacht"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Uigeachtaí Den Scoth"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Comhbhrú Uigeachtaí"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Mionsonraithe"
-		},
-		{
-			"or": "Resolution",
-			"tr": ""
-		},
-		{
-			"or": "Recommended",
-			"tr": ""
-		},
-		{
-			"or": "Other",
-			"tr": ""
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": ""
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Seinn ceol cúlra"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Mionsonraí"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Ráta samplála"
-		},
-		{
-			"or": "Volume",
-			"tr": "Airde"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": ""
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Úsáid fuaimeanna"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Ní mór duit an cluiche a atosú chun na hathruithe go léir a chur i bhfeidhm."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": ""
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": ""
-		},
-		{
 			"or": "Local server",
 			"tr": "Freastalaí áitiúil"
-		},
-		{
-			"or": "Editor",
-			"tr": "Eagarthóir"
 		},
 		{
 			"or": "Play",
@@ -1444,6 +1534,10 @@
 			"tr": "Tá Teeworlds %s ar fáil! Íoslódáil ó www.teeworlds.com!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Teorainn scóir"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Teorainn ama: %d nóim"
 		},
@@ -1451,6 +1545,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Comórtas"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Lucht féachana"
 		},
 		{
 			"or": "Game over",
@@ -1463,6 +1561,14 @@
 		{
 			"or": "Map record",
 			"tr": ""
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Clann"
 		},
 		{
 			"or": "Time",
@@ -1531,8 +1637,12 @@
 			"tr": ""
 		},
 		{
-			"or": "Free-View",
-			"tr": "Saoramharc"
+			"or": "Suicides",
+			"tr": ""
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
 		},
 		{
 			"context": "Net score",
@@ -1545,6 +1655,10 @@
 		},
 		{
 			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1593,6 +1707,183 @@
 			"tr": "Theip ar an vóta"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Foirne faoi ghlas"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Ní cheadaítear níos mó ná %d imreoir gníomhach"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Foirne faoi ghlas. Tréimhse sular féidir foirne a athrú: %02d:%02d"
+		},
+		{
+			"or": "Game options",
+			"tr": ""
+		},
+		{
+			"or": "locked",
+			"tr": "faoi ghlas"
+		},
+		{
+			"or": "Spectating",
+			"tr": "Ag Breathnú"
+		},
+		{
+			"or": "Join red",
+			"tr": "Gabh leis an bhfoireann dhearg"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Ar an bhfoireann dhearg"
+		},
+		{
+			"or": "Join blue",
+			"tr": "Gabh leis an bhfoireann ghorm"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Ar an bhfoireann ghorm"
+		},
+		{
+			"or": "Join",
+			"tr": "Glac páirt"
+		},
+		{
+			"or": "Joined",
+			"tr": "Sa chluiche"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Dícheangail"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Stop ag taifeadadh"
+		},
+		{
+			"or": "Record",
+			"tr": "Déan Taifead"
+		},
+		{
+			"or": "Player options",
+			"tr": "Roghanna imreora"
+		},
+		{
+			"or": "Address",
+			"tr": "Seoladh"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Tá"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Níl"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Ceanán"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": ""
+		},
+		{
+			"or": "Game info",
+			"tr": "Eolas faoin chluiche"
+		},
+		{
+			"or": "Game type",
+			"tr": "Cineál an chluiche"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": ""
+		},
+		{
+			"or": "Difficulty",
+			"tr": ""
+		},
+		{
+			"or": "Time limit",
+			"tr": "Teorainn ama"
+		},
+		{
+			"or": "MOTD",
+			"tr": "Teachtaireacht na Lae"
+		},
+		{
+			"or": "Option",
+			"tr": ""
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Caithfidh tú fanacht le deireadh an vóta reatha sular féidir leat vóta nua a eagrú."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Caithfidh tú feitheamh %d soicind sular féidir leat vóta eile a dhéanamh"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Níl cead ag baill den lucht féachana vóta a thosú."
+		},
+		{
+			"or": "Change settings",
+			"tr": "Athraigh socruithe"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Ruaig an t-imreoir"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Díbir an t-imreoir go dtí an lucht féachana"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Ní cheadaíonn an freastalaí vótáil ar imreoirí a ruaigeadh"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Ní mór ar a laghad %d imreoir a bheith ar an bhfreastalaí le vótáil ar ruaigeadh"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Ní cheadaíonn an freastalaí vótáil ar imreoirí a dhíbirt go dtí an lucht féachana"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Fórsáil vóta"
+		},
+		{
+			"or": "Remove",
+			"tr": "Bain"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Cur síos ar vóta:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Ordú vótála:"
+		},
+		{
 			"or": "Server",
 			"tr": ""
 		},
@@ -1603,6 +1894,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Ceanáin"
+		},
+		{
+			"or": "All",
+			"tr": "Uile"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1793,6 +2088,10 @@
 			"tr": "Seoladh an fhreastalaí:"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": ""
 		},
@@ -1825,8 +2124,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Scórchlár"
+		},
+		{
 			"or": "Connect",
 			"tr": "Ceangail"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Saoramharc"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Foireann"
+		},
+		{
+			"or": "Chat",
+			"tr": "Comhrá"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": ""
+		},
+		{
+			"or": "Hue:",
+			"tr": "Lí:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Sáith:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Gile:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Alfa:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Craicne"
+		},
+		{
+			"or": "Theme",
+			"tr": ""
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Ceamara Dinimiciúil"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Úsáid gléas troda tár éis é a phiocadh suas"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Taispeáin ainmchláir"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Taispeáin ainmchláir i gcónaí"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Úsáid dathanna foirne ar ainmchláir"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": ""
+		},
+		{
+			"or": "Show social",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": ""
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": ""
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": ""
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": ""
+		},
+		{
+			"or": "Client",
+			"tr": "Cliant"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": ""
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Taifead taispeántais go huathoibríoch"
+		},
+		{
+			"or": "Max",
+			"tr": "Uasmhéid"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Seat scáileáin go huathoibríoch ag deireadh an chluiche"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Athshocraigh"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Saincheap"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Dathanna saincheaptha"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tí"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Gnáth:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Foireann:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Pearsanta"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Scrios an craiceann"
+		},
+		{
+			"or": "Basic",
+			"tr": "Bunúsach"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Níorbh fhéidir an craiceann a scriosadh"
+		},
+		{
+			"or": "Mouse",
+			"tr": ""
+		},
+		{
+			"or": "Joystick",
+			"tr": ""
+		},
+		{
+			"or": "Movement",
+			"tr": "Gluaiseacht"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Gléas Troda"
+		},
+		{
+			"or": "Voting",
+			"tr": "Vótáil"
+		},
+		{
+			"or": "Misc",
+			"tr": "Éagsúil"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": ""
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": ""
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Weapons stats",
+			"tr": ""
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": ""
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": ""
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Scáileán"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Lánscáileán"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Fuinneog gan imlíne"
+		},
+		{
+			"or": "Screen:",
+			"tr": ""
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Frithailiasáil"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Sionc"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": ""
+		},
+		{
+			"or": "Max fps",
+			"tr": ""
+		},
+		{
+			"or": "Texture",
+			"tr": "Uigeacht"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Uigeachtaí Den Scoth"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Comhbhrú Uigeachtaí"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Mionsonraithe"
+		},
+		{
+			"or": "Resolution",
+			"tr": ""
+		},
+		{
+			"or": "Recommended",
+			"tr": ""
+		},
+		{
+			"or": "Other",
+			"tr": ""
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": ""
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Seinn ceol cúlra"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Mionsonraí"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Ráta samplála"
+		},
+		{
+			"or": "Volume",
+			"tr": "Airde"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": ""
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Úsáid fuaimeanna"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Léasar"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Ní mór duit an cluiche a atosú chun na hathruithe go léir a chur i bhfeidhm."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": ""
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": ""
+		},
+		{
+			"or": "Move left",
+			"tr": "Ar chlé"
+		},
+		{
+			"or": "Move right",
+			"tr": "Ar dheis"
+		},
+		{
+			"or": "Jump",
+			"tr": "Léim"
+		},
+		{
+			"or": "Fire",
+			"tr": "Tine"
+		},
+		{
+			"or": "Hook",
+			"tr": "Croch"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Casúr"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Piostal"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Gunna gráin"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Gránáid"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "An chéad ghléas troda eile"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "An gléas troda roimhe seo"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "Vótáil 'is ea'"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Vótáil 'ní hea'"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Comhrá foirne"
+		},
+		{
+			"or": "Whisper",
+			"tr": ""
+		},
+		{
+			"or": "Show chat",
+			"tr": "Taispeáin comhrá"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Straoiseog"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Mód breathnóra"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Breathnaigh ar an chéad cheann eile"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Breathnaigh ar an gceann roimhe seo"
+		},
+		{
+			"or": "Console",
+			"tr": "Consól"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Consól i gcéin"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Seat den scáileán"
+		},
+		{
+			"or": "Statboard",
+			"tr": ""
+		},
+		{
+			"or": "Respawn",
+			"tr": "Athsceith"
+		},
+		{
+			"or": "Ready",
+			"tr": "Réidh"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": ""
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": ""
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": ""
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": ""
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Enable joystick",
+			"tr": ""
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": ""
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": ""
+		},
+		{
+			"or": "Configure statboard",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": ""
+		},
+		{
+			"or": "Status",
+			"tr": ""
+		},
+		{
+			"or": "Aim bind",
+			"tr": ""
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": ""
 		}
 	]
 }

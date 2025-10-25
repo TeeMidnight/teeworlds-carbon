@@ -10,6 +10,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Sačuvaj"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Ne"
+		},
+		{
+			"or": "Yes",
+			"tr": "Da"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Dodaj"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Urednik"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Traži:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "Timovi su bili razmenjeni"
 		},
@@ -118,68 +1084,8 @@
 			"tr": "'%s' se pridružio posmatračima"
 		},
 		{
-			"or": "Search:",
-			"tr": "Traži:"
-		},
-		{
 			"or": "key not found",
 			"tr": "Dugme nije pronađjeno"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Mapa je promenjena u '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Svi"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Posmatrači"
-		},
-		{
-			"or": "Team",
-			"tr": "Tim"
-		},
-		{
-			"or": "Chat",
-			"tr": "Čet"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Pritisnite %s da biste nastavili ćaskanje"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Strana %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Pritisnite Enter za potvrdu ili Esc za otkaz"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Pritisnite Tab za odabir ili Esc da biste ga otkazali"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' je utišan"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' više nije utišan"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' je dodat u prijatelje"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' je izbačen iz prijatelja"
 		},
 		{
 			"or": "-Page %d-",
@@ -410,14 +1316,6 @@
 			"tr": "Jeste li sigurni da želite da izađete?"
 		},
 		{
-			"or": "No",
-			"tr": "Ne"
-		},
-		{
-			"or": "Yes",
-			"tr": "Da"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -516,210 +1414,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Server sadrži nestandardna podešavanja."
-		},
-		{
-			"or": "Move left",
-			"tr": "Levo"
-		},
-		{
-			"or": "Move right",
-			"tr": "Desno"
-		},
-		{
-			"or": "Jump",
-			"tr": "Skok"
-		},
-		{
-			"or": "Fire",
-			"tr": "Pucaj"
-		},
-		{
-			"or": "Hook",
-			"tr": "Kuka"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Čekić"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Pištolj"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Sačmara"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Granata"
-		},
-		{
-			"or": "Laser",
-			"tr": "Laser"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Sledeće oružje"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Prethodno oružje"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "Za"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Protiv"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Timski čet"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Šapat"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Prikaži chat"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Emoticon"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Posmatrački mod"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Posmatraj sledećeg"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Posmatraj prošlog"
-		},
-		{
-			"or": "Console",
-			"tr": "Konzola"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Serverska konzola"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Screenshot"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Bodovi"
-		},
-		{
-			"or": "Statboard",
-			"tr": "Tabla statistike"
-		},
-		{
-			"or": "Respawn",
-			"tr": "Respawn"
-		},
-		{
-			"or": "Ready",
-			"tr": "Spreman"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "Dodaj demo obeleživač"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": "Prebaci zvuk"
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": "Prebaci dinamičnu kameru"
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "Koristi ubrzanje miša OS-a"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "Osetljivost miša u meniju."
-		},
-		{
-			"or": "Enable joystick",
-			"tr": "Omogući džojstik"
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": "Tolerancija podrhtavanja džojstik-a"
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": "Nisu pronađjene džojstike. Uključite džojstik i ponovo pokrenite igru."
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "Podesi tablu statistike"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": "Uređjaj"
-		},
-		{
-			"or": "Status",
-			"tr": "Stanje"
-		},
-		{
-			"or": "Aim bind",
-			"tr": "Nišan dugme"
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": "Džojstik osovina #%d"
 		},
 		{
 			"or": "Length",
@@ -831,612 +1525,8 @@
 			"tr": "Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Timovi su zaključani"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Samo %d aktivnih igrača dozvoljeno"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Timovi su zaključani. Sačekajte %02d:%02d pre promene tima"
-		},
-		{
-			"or": "Game options",
-			"tr": "Opcije igre"
-		},
-		{
-			"or": "locked",
-			"tr": "zaključano"
-		},
-		{
-			"or": "Spectating",
-			"tr": "Posmatranje"
-		},
-		{
-			"or": "Join red",
-			"tr": "U crveni tim"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Pridružen crvenim"
-		},
-		{
-			"or": "Join blue",
-			"tr": "U plavi tim"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Pridružen plavim"
-		},
-		{
-			"or": "Join",
-			"tr": "Uđi"
-		},
-		{
-			"or": "Joined",
-			"tr": "Pridružio"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Diskonektuj"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Prekini snimanje"
-		},
-		{
-			"or": "Record",
-			"tr": "Snimaj"
-		},
-		{
-			"or": "Player options",
-			"tr": "Podešavanja igrača"
-		},
-		{
-			"or": "Address",
-			"tr": "Adresa"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Da"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Ne"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Omiljen"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "Utišaj emitovanja"
-		},
-		{
-			"or": "Game info",
-			"tr": "O igri"
-		},
-		{
-			"or": "Game type",
-			"tr": "Tip igre"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Opušteno"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Normalno"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Takmičarski"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Teškoća"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Max. bodova"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Max. vremena"
-		},
-		{
-			"or": "MOTD",
-			"tr": "Vest dana"
-		},
-		{
-			"or": "Option",
-			"tr": "Opcija"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Sačekajte da se trenutno glasanje završi."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Morate sačekati %d sekundi pre početka sledećeg glasanja"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Posmatračima nije dozvoljeno da pokreću glasanje."
-		},
-		{
-			"or": "Change settings",
-			"tr": "Izmeni podešavanja"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Izbaci igrača iz igre"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Prebaci igrača u posmatrače"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Glasanje za izbacivanje nije dozvoljeno"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Glasanje za izbacivanje zahteva %d igrača na serveru"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Glasanje za premeštanje u posmatrače nije dozvoljeno"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Forsiraj glas"
-		},
-		{
-			"or": "Remove",
-			"tr": "Ukloni"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Opis glasanja:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Komanda za glasanje:"
-		},
-		{
-			"or": "Add",
-			"tr": "Dodaj"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Nijansa:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Zasićenost:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Svetlina:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Transparentnost:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Izgled"
-		},
-		{
-			"or": "Theme",
-			"tr": "Tema"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Dinamična kamera"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Aktiviraj novo oružje prilikom uzimanja"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Prikaži imena igrača"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Uvek prikaži imena igrača"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Koristi timsku boju u prikazu imena"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "Prikaži korisnički IDs"
-		},
-		{
-			"or": "Show social",
-			"tr": "Prikaži društvo"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": "svakog"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": "samo prijatelje"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": "nikog"
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": "Prikaži čet poruke od"
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "Omogućiti obojene server difuzne poruke"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": "Onemogući funkciju šaputanja"
-		},
-		{
-			"or": "Client",
-			"tr": "Klijent"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Preskoči glavni meni"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Automatski snimi demo"
-		},
-		{
-			"or": "Max",
-			"tr": "Max"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Automatski snimi screenshot"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Resetuj"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Prilagodi"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Vlastite boje"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Normalno:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Tim:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Lično"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Sačuvaj"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Izbriši skin"
-		},
-		{
-			"or": "Basic",
-			"tr": "Osnovno"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Skin nije moguće obrisati"
-		},
-		{
-			"or": "Mouse",
-			"tr": "Miš"
-		},
-		{
-			"or": "Joystick",
-			"tr": "Džojstik"
-		},
-		{
-			"or": "Movement",
-			"tr": "Kretanje"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Oružje"
-		},
-		{
-			"or": "Voting",
-			"tr": "Glasanje"
-		},
-		{
-			"or": "Misc",
-			"tr": "Razno"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": "Smrti"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Samoubistva"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Razmera"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": "Neto rezultat"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": "Trenutan niz"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Najbolji niz"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "Statistika oružja"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "Uhvaćene zastave"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "Osvojenje zastave"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Ekran"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Čitav ekran"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Prozor bez okvira"
-		},
-		{
-			"or": "Screen:",
-			"tr": "Ekran:"
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Anti Aliasing"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Sync"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "Ograniči fps"
-		},
-		{
-			"or": "Max fps",
-			"tr": "Max fps"
-		},
-		{
-			"or": "Texture",
-			"tr": "Tekstura"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Visokokvalitetne teksture"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Kompresija tekstura"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Visoki detalji"
-		},
-		{
-			"or": "Resolution",
-			"tr": "Rezolucija"
-		},
-		{
-			"or": "Recommended",
-			"tr": "Preporučeno"
-		},
-		{
-			"or": "Other",
-			"tr": "Ostalo"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "Trenutno: %dx%d (%d:%d)"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Pozadinska muzika"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Detalj"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Frekvencija"
-		},
-		{
-			"or": "Volume",
-			"tr": "Jačina zvuka"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "Učitaj zvučni sistem"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Koristi zvuk"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Morate ponovo pokrenuti igru da bi sva podešavanja bila primenjena."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "Morate se rekonektovati da promenite identitet."
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Morate čekati %1.0f sekundi da promenite identitet."
-		},
-		{
 			"or": "Local server",
 			"tr": "Lokalni server"
-		},
-		{
-			"or": "Editor",
-			"tr": "Urednik"
 		},
 		{
 			"or": "Play",
@@ -1447,6 +1537,10 @@
 			"tr": "Teeworld %s je objavljen! Preuzmi ga na www.teeworlds.com!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Max. bodova"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Vremensko ograničenje: %d min."
 		},
@@ -1454,6 +1548,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Meč"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Posmatrači"
 		},
 		{
 			"or": "Game over",
@@ -1466,6 +1564,14 @@
 		{
 			"or": "Map record",
 			"tr": "Rekord mape"
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
 		},
 		{
 			"or": "Time",
@@ -1534,8 +1640,12 @@
 			"tr": "oči"
 		},
 		{
-			"or": "Free-View",
-			"tr": "Slobodan pregled"
+			"or": "Suicides",
+			"tr": "Samoubistva"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Razmera"
 		},
 		{
 			"context": "Net score",
@@ -1549,6 +1659,10 @@
 		{
 			"or": "Spree",
 			"tr": "Niz"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Najbolji niz"
 		},
 		{
 			"context": "Flag grabs",
@@ -1596,6 +1710,183 @@
 			"tr": "Glasanje neuspelo"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Timovi su zaključani"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Samo %d aktivnih igrača dozvoljeno"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Timovi su zaključani. Sačekajte %02d:%02d pre promene tima"
+		},
+		{
+			"or": "Game options",
+			"tr": "Opcije igre"
+		},
+		{
+			"or": "locked",
+			"tr": "zaključano"
+		},
+		{
+			"or": "Spectating",
+			"tr": "Posmatranje"
+		},
+		{
+			"or": "Join red",
+			"tr": "U crveni tim"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Pridružen crvenim"
+		},
+		{
+			"or": "Join blue",
+			"tr": "U plavi tim"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Pridružen plavim"
+		},
+		{
+			"or": "Join",
+			"tr": "Uđi"
+		},
+		{
+			"or": "Joined",
+			"tr": "Pridružio"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Diskonektuj"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Prekini snimanje"
+		},
+		{
+			"or": "Record",
+			"tr": "Snimaj"
+		},
+		{
+			"or": "Player options",
+			"tr": "Podešavanja igrača"
+		},
+		{
+			"or": "Address",
+			"tr": "Adresa"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Da"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Ne"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Omiljen"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "Utišaj emitovanja"
+		},
+		{
+			"or": "Game info",
+			"tr": "O igri"
+		},
+		{
+			"or": "Game type",
+			"tr": "Tip igre"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Opušteno"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Normalno"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Takmičarski"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Teškoća"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Max. vremena"
+		},
+		{
+			"or": "MOTD",
+			"tr": "Vest dana"
+		},
+		{
+			"or": "Option",
+			"tr": "Opcija"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Sačekajte da se trenutno glasanje završi."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Morate sačekati %d sekundi pre početka sledećeg glasanja"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Posmatračima nije dozvoljeno da pokreću glasanje."
+		},
+		{
+			"or": "Change settings",
+			"tr": "Izmeni podešavanja"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Izbaci igrača iz igre"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Prebaci igrača u posmatrače"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Glasanje za izbacivanje nije dozvoljeno"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Glasanje za izbacivanje zahteva %d igrača na serveru"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Glasanje za premeštanje u posmatrače nije dozvoljeno"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Forsiraj glas"
+		},
+		{
+			"or": "Remove",
+			"tr": "Ukloni"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Opis glasanja:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Komanda za glasanje:"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1606,6 +1897,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Omiljeni"
+		},
+		{
+			"or": "All",
+			"tr": "Svi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1796,6 +2091,10 @@
 			"tr": "Adresa servera:"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "Težina:"
 		},
@@ -1828,8 +2127,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Bodovi"
+		},
+		{
 			"or": "Connect",
 			"tr": "Konektuj"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Slobodan pregled"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Mapa je promenjena u '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "Tim"
+		},
+		{
+			"or": "Chat",
+			"tr": "Čet"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Pritisnite %s da biste nastavili ćaskanje"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Strana %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Pritisnite Enter za potvrdu ili Esc za otkaz"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Pritisnite Tab za odabir ili Esc da biste ga otkazali"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' je utišan"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' više nije utišan"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' je dodat u prijatelje"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' je izbačen iz prijatelja"
+		},
+		{
+			"or": "Hue:",
+			"tr": "Nijansa:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Zasićenost:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Svetlina:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Transparentnost:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Izgled"
+		},
+		{
+			"or": "Theme",
+			"tr": "Tema"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Dinamična kamera"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Aktiviraj novo oružje prilikom uzimanja"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Prikaži imena igrača"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Uvek prikaži imena igrača"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Koristi timsku boju u prikazu imena"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "Prikaži korisnički IDs"
+		},
+		{
+			"or": "Show social",
+			"tr": "Prikaži društvo"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": "svakog"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": "samo prijatelje"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": "nikog"
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": "Prikaži čet poruke od"
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "Omogućiti obojene server difuzne poruke"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": "Onemogući funkciju šaputanja"
+		},
+		{
+			"or": "Client",
+			"tr": "Klijent"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Preskoči glavni meni"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Automatski snimi demo"
+		},
+		{
+			"or": "Max",
+			"tr": "Max"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Automatski snimi screenshot"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Resetuj"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Prilagodi"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Vlastite boje"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Normalno:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Tim:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Lično"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Izbriši skin"
+		},
+		{
+			"or": "Basic",
+			"tr": "Osnovno"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Skin nije moguće obrisati"
+		},
+		{
+			"or": "Mouse",
+			"tr": "Miš"
+		},
+		{
+			"or": "Joystick",
+			"tr": "Džojstik"
+		},
+		{
+			"or": "Movement",
+			"tr": "Kretanje"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Oružje"
+		},
+		{
+			"or": "Voting",
+			"tr": "Glasanje"
+		},
+		{
+			"or": "Misc",
+			"tr": "Razno"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": "Smrti"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": "Neto rezultat"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": "Trenutan niz"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "Statistika oružja"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "Uhvaćene zastave"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "Osvojenje zastave"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Ekran"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Čitav ekran"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Prozor bez okvira"
+		},
+		{
+			"or": "Screen:",
+			"tr": "Ekran:"
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Anti Aliasing"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Sync"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "Ograniči fps"
+		},
+		{
+			"or": "Max fps",
+			"tr": "Max fps"
+		},
+		{
+			"or": "Texture",
+			"tr": "Tekstura"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Visokokvalitetne teksture"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Kompresija tekstura"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Visoki detalji"
+		},
+		{
+			"or": "Resolution",
+			"tr": "Rezolucija"
+		},
+		{
+			"or": "Recommended",
+			"tr": "Preporučeno"
+		},
+		{
+			"or": "Other",
+			"tr": "Ostalo"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "Trenutno: %dx%d (%d:%d)"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Pozadinska muzika"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Detalj"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Frekvencija"
+		},
+		{
+			"or": "Volume",
+			"tr": "Jačina zvuka"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "Učitaj zvučni sistem"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Koristi zvuk"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Laser"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Morate ponovo pokrenuti igru da bi sva podešavanja bila primenjena."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "Morate se rekonektovati da promenite identitet."
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Morate čekati %1.0f sekundi da promenite identitet."
+		},
+		{
+			"or": "Move left",
+			"tr": "Levo"
+		},
+		{
+			"or": "Move right",
+			"tr": "Desno"
+		},
+		{
+			"or": "Jump",
+			"tr": "Skok"
+		},
+		{
+			"or": "Fire",
+			"tr": "Pucaj"
+		},
+		{
+			"or": "Hook",
+			"tr": "Kuka"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Čekić"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Pištolj"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Sačmara"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Granata"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Sledeće oružje"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Prethodno oružje"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "Za"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Protiv"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Timski čet"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Šapat"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Prikaži chat"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Emoticon"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Posmatrački mod"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Posmatraj sledećeg"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Posmatraj prošlog"
+		},
+		{
+			"or": "Console",
+			"tr": "Konzola"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Serverska konzola"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Screenshot"
+		},
+		{
+			"or": "Statboard",
+			"tr": "Tabla statistike"
+		},
+		{
+			"or": "Respawn",
+			"tr": "Respawn"
+		},
+		{
+			"or": "Ready",
+			"tr": "Spreman"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "Dodaj demo obeleživač"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": "Prebaci zvuk"
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": "Prebaci dinamičnu kameru"
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "Koristi ubrzanje miša OS-a"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "Osetljivost miša u meniju."
+		},
+		{
+			"or": "Enable joystick",
+			"tr": "Omogući džojstik"
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": "Tolerancija podrhtavanja džojstik-a"
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": "Nisu pronađjene džojstike. Uključite džojstik i ponovo pokrenite igru."
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "Podesi tablu statistike"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": "Uređjaj"
+		},
+		{
+			"or": "Status",
+			"tr": "Stanje"
+		},
+		{
+			"or": "Aim bind",
+			"tr": "Nišan dugme"
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": "Džojstik osovina #%d"
 		}
 	]
 }

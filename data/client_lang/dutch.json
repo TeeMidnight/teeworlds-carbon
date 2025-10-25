@@ -25,6 +25,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Opslaan"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Nee"
+		},
+		{
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Toevoegen"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Bewerker"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Zoeken:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "De teams zijn omgewisseld"
 		},
@@ -133,68 +1099,8 @@
 			"tr": "'%s' heeft zich aangesloten bij de toeschouwers"
 		},
 		{
-			"or": "Search:",
-			"tr": "Zoeken:"
-		},
-		{
 			"or": "key not found",
 			"tr": "sleutel niet gevonden"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Je bevindt je nu op de kaart '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Toeschouwers"
-		},
-		{
-			"or": "Team",
-			"tr": "Team"
-		},
-		{
-			"or": "Chat",
-			"tr": "Chat"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Druk op %s om weer te chatten"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Pagina %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Druk op Enter om te bevestigen of Esc om af te breken"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Druk op Tab om te selecteren of Esc om af te breken"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' is gedempt"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' is ontdempt"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' is toegevoegd als vriend"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' is verwijderd als vriend"
 		},
 		{
 			"or": "-Page %d-",
@@ -425,14 +1331,6 @@
 			"tr": "Weet je zeker dat je wilt stoppen?"
 		},
 		{
-			"or": "No",
-			"tr": "Nee"
-		},
-		{
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -531,210 +1429,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "De tuning van de server is niet standaard, maar draait wel op een standaard speltype."
-		},
-		{
-			"or": "Move left",
-			"tr": "Naar links verplaatsen"
-		},
-		{
-			"or": "Move right",
-			"tr": "Naar rechts verplaatsen"
-		},
-		{
-			"or": "Jump",
-			"tr": "Springen"
-		},
-		{
-			"or": "Fire",
-			"tr": "Schieten"
-		},
-		{
-			"or": "Hook",
-			"tr": "Haak"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Hamer"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Pistool"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Geweer"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Granaat"
-		},
-		{
-			"or": "Laser",
-			"tr": "Laser"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Volgend wapen"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Vorig wapen"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "'Ja' stemmen"
-		},
-		{
-			"or": "Vote no",
-			"tr": "'Nee' stemmen"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Teamchat"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Fluisteren"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Chat tonen"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Emoticon"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Toeschouwermodus"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Volgende speler volgen"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Vorige speler volgen"
-		},
-		{
-			"or": "Console",
-			"tr": "Console"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Externe console"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Schermafdruk"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Scorebord"
-		},
-		{
-			"or": "Statboard",
-			"tr": "Statistiekpagina"
-		},
-		{
-			"or": "Respawn",
-			"tr": "Terugkeren"
-		},
-		{
-			"or": "Ready",
-			"tr": "Klaar"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "Demomarkering toevoegen"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": "Geluiden in-/uitschakelen"
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": "Dynamische camera in-/uitschakelen"
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "Muisversnelling van systeem gebruiken"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "Muissnelheid in menu"
-		},
-		{
-			"or": "Enable joystick",
-			"tr": "Joystick gebruiken"
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": "Joystick-gevoeligheidstolerantie"
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": "Geen joysticks aangetroffen. Koppel een joystick aan en start het spel opnieuw."
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "Statistiekpagina instellen"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": "Apparaat"
-		},
-		{
-			"or": "Status",
-			"tr": "Status"
-		},
-		{
-			"or": "Aim bind",
-			"tr": "Richtbinding"
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": "Joystick-as #%d"
 		},
 		{
 			"or": "Length",
@@ -846,612 +1540,8 @@
 			"tr": "Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Teams zijn vastgesteld"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Er zijn slechts %d actieve spelers toegestaan"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Teams zijn vastgesteld. Wachttijd voor verandering van team: %02d:%02d"
-		},
-		{
-			"or": "Game options",
-			"tr": "Spelopties"
-		},
-		{
-			"or": "locked",
-			"tr": "vastgesteld"
-		},
-		{
-			"or": "Spectating",
-			"tr": "Kijkt toe"
-		},
-		{
-			"or": "Join red",
-			"tr": "Aansluiten bij rood"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Aangesloten bij het rode team"
-		},
-		{
-			"or": "Join blue",
-			"tr": "Aansluiten bij blauw"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Aangesloten bij het blauwe team"
-		},
-		{
-			"or": "Join",
-			"tr": "Deelnemen"
-		},
-		{
-			"or": "Joined",
-			"tr": "Aangesloten"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Verbinding verbreken"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Opname stoppen"
-		},
-		{
-			"or": "Record",
-			"tr": "Opnemen"
-		},
-		{
-			"or": "Player options",
-			"tr": "Speleropties"
-		},
-		{
-			"or": "Address",
-			"tr": "Adres"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Nee"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Favoriet"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "Uitzendingen dempen"
-		},
-		{
-			"or": "Game info",
-			"tr": "Spelinformatie"
-		},
-		{
-			"or": "Game type",
-			"tr": "Speltype"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Gewoon"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Normaal"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Wedstrijdverband"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Moeilijkheidsgraad"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Scorelimiet"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Tijdslimiet"
-		},
-		{
-			"or": "MOTD",
-			"tr": "MOTD"
-		},
-		{
-			"or": "Option",
-			"tr": "Optie"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Wacht totdat de huidige stemming is afgerond voordat je een nieuwe stemming opent."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Je moet %d seconden wachten voordat je opnieuw kunt stemmen"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Toeschouwers mogen geen stemming openen."
-		},
-		{
-			"or": "Change settings",
-			"tr": "Instellingen wijzigen"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Speler verbannen"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Speler verplaatsen naar toeschouwers"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Server staat niet toe dat er kan worden gestemd over het verbannen van spelers"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Stemmen over verbanningen vereist %d spelers op de server"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Server staat niet toe dat spelers kunnen stemmen om te worden overgezet naar toeschouwers"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Stemmen afdwingen"
-		},
-		{
-			"or": "Remove",
-			"tr": "Verwijderen"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Stemomschrijving:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Stemopdracht:"
-		},
-		{
-			"or": "Add",
-			"tr": "Toevoegen"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Kleurverloop:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Sat:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Lgt:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Alp:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Skins"
-		},
-		{
-			"or": "Theme",
-			"tr": "Thema"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Dynamische camera"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Van wapen veranderen na oppakken"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Naambordjes tonen"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Altijd naambordjes tonen"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Gebruik teamkleuren voor naambordjes"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "Gebruikersnamen tonen"
-		},
-		{
-			"or": "Show social",
-			"tr": "Social tonen"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": "iedereen"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": "alleen vrienden"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": "niemand"
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": "Chatberichten tonen van"
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "Gekleurde serveruitzendingen inschakelen"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": "Fluisteren uitschakelen"
-		},
-		{
-			"or": "Client",
-			"tr": "Client"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Hoofdmenu overslaan"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Automatisch demo's opnemen"
-		},
-		{
-			"or": "Max",
-			"tr": "Max"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Automatisch schermafdrukken maken"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Herstellen"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Aanpassen"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Aangepaste kleuren"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Normaal:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Team:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Persoonlijk"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Opslaan"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Skin verwijderen"
-		},
-		{
-			"or": "Basic",
-			"tr": "Basis"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Kan skin niet verwijderen"
-		},
-		{
-			"or": "Mouse",
-			"tr": "Muis"
-		},
-		{
-			"or": "Joystick",
-			"tr": "Joystick"
-		},
-		{
-			"or": "Movement",
-			"tr": "Beweging"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Wapen"
-		},
-		{
-			"or": "Voting",
-			"tr": "Stemmen"
-		},
-		{
-			"or": "Misc",
-			"tr": "Overig"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": "Doden"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Zelfdoden"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Verhouding"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": "Net-score"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": "Huidige moordaanslag"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Beste moordaanslag"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "Wapenstatistieken"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "Vlag gepakt"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "Vlagveroveringen"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Scherm"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Volledig scherm"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Naadloos venster"
-		},
-		{
-			"or": "Screen:",
-			"tr": "Scherm:"
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Anti-kartelvorming"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Sync"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "FPS inperken"
-		},
-		{
-			"or": "Max fps",
-			"tr": "Max. FPS"
-		},
-		{
-			"or": "Texture",
-			"tr": "Textuur"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Textuurkwaliteit"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Textuurcompressie"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Veel details"
-		},
-		{
-			"or": "Resolution",
-			"tr": "Resolutie"
-		},
-		{
-			"or": "Recommended",
-			"tr": "Aanbevolen"
-		},
-		{
-			"or": "Other",
-			"tr": "Overig"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "Huidig: %dx%d (%d:%d)"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Achtergrondmuziek afspelen"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Details"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Voorbeeldsnelheid"
-		},
-		{
-			"or": "Volume",
-			"tr": "Volume"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "Geluidssysteem laden"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Geluiden gebruiken"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Je moet het spel herstarten om de instellingen toe te passen."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "Je moet opnieuw verbinden om je identiteitswijziging toe te passen."
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Je moet %1.0f seconden wachten voordat je je identiteit kunt wijzigen."
-		},
-		{
 			"or": "Local server",
 			"tr": "Lokale server"
-		},
-		{
-			"or": "Editor",
-			"tr": "Bewerker"
 		},
 		{
 			"or": "Play",
@@ -1462,6 +1552,10 @@
 			"tr": "Teeworlds %s is uitgebracht! Download het op www.teeworlds.com!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Scorelimiet"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Tijdslimiet: %d minuten"
 		},
@@ -1469,6 +1563,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Wedstrijd"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Toeschouwers"
 		},
 		{
 			"or": "Game over",
@@ -1481,6 +1579,14 @@
 		{
 			"or": "Map record",
 			"tr": "Kaartrecord"
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Clan"
 		},
 		{
 			"or": "Time",
@@ -1549,8 +1655,12 @@
 			"tr": "ogen"
 		},
 		{
-			"or": "Free-View",
-			"tr": "Vrij bewegen"
+			"or": "Suicides",
+			"tr": "Zelfdoden"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Verhouding"
 		},
 		{
 			"context": "Net score",
@@ -1564,6 +1674,10 @@
 		{
 			"or": "Spree",
 			"tr": "Moordaanslag"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Beste moordaanslag"
 		},
 		{
 			"context": "Flag grabs",
@@ -1611,6 +1725,183 @@
 			"tr": "Stemmen mislukt"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Teams zijn vastgesteld"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Er zijn slechts %d actieve spelers toegestaan"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Teams zijn vastgesteld. Wachttijd voor verandering van team: %02d:%02d"
+		},
+		{
+			"or": "Game options",
+			"tr": "Spelopties"
+		},
+		{
+			"or": "locked",
+			"tr": "vastgesteld"
+		},
+		{
+			"or": "Spectating",
+			"tr": "Kijkt toe"
+		},
+		{
+			"or": "Join red",
+			"tr": "Aansluiten bij rood"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Aangesloten bij het rode team"
+		},
+		{
+			"or": "Join blue",
+			"tr": "Aansluiten bij blauw"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Aangesloten bij het blauwe team"
+		},
+		{
+			"or": "Join",
+			"tr": "Deelnemen"
+		},
+		{
+			"or": "Joined",
+			"tr": "Aangesloten"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Verbinding verbreken"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Opname stoppen"
+		},
+		{
+			"or": "Record",
+			"tr": "Opnemen"
+		},
+		{
+			"or": "Player options",
+			"tr": "Speleropties"
+		},
+		{
+			"or": "Address",
+			"tr": "Adres"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Nee"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Favoriet"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "Uitzendingen dempen"
+		},
+		{
+			"or": "Game info",
+			"tr": "Spelinformatie"
+		},
+		{
+			"or": "Game type",
+			"tr": "Speltype"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Gewoon"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Normaal"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Wedstrijdverband"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Moeilijkheidsgraad"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Tijdslimiet"
+		},
+		{
+			"or": "MOTD",
+			"tr": "MOTD"
+		},
+		{
+			"or": "Option",
+			"tr": "Optie"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Wacht totdat de huidige stemming is afgerond voordat je een nieuwe stemming opent."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Je moet %d seconden wachten voordat je opnieuw kunt stemmen"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Toeschouwers mogen geen stemming openen."
+		},
+		{
+			"or": "Change settings",
+			"tr": "Instellingen wijzigen"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Speler verbannen"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Speler verplaatsen naar toeschouwers"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Server staat niet toe dat er kan worden gestemd over het verbannen van spelers"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Stemmen over verbanningen vereist %d spelers op de server"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Server staat niet toe dat spelers kunnen stemmen om te worden overgezet naar toeschouwers"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Stemmen afdwingen"
+		},
+		{
+			"or": "Remove",
+			"tr": "Verwijderen"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Stemomschrijving:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Stemopdracht:"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1621,6 +1912,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favorieten"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1811,6 +2106,10 @@
 			"tr": "Serveradres:"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "Moeilijkheidsgraad:"
 		},
@@ -1843,8 +2142,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Scorebord"
+		},
+		{
 			"or": "Connect",
 			"tr": "Verbinden"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Vrij bewegen"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Je bevindt je nu op de kaart '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "Team"
+		},
+		{
+			"or": "Chat",
+			"tr": "Chat"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Druk op %s om weer te chatten"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Pagina %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Druk op Enter om te bevestigen of Esc om af te breken"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Druk op Tab om te selecteren of Esc om af te breken"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' is gedempt"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' is ontdempt"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' is toegevoegd als vriend"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' is verwijderd als vriend"
+		},
+		{
+			"or": "Hue:",
+			"tr": "Kleurverloop:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Sat:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Lgt:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Alp:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Skins"
+		},
+		{
+			"or": "Theme",
+			"tr": "Thema"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Dynamische camera"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Van wapen veranderen na oppakken"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Naambordjes tonen"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Altijd naambordjes tonen"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Gebruik teamkleuren voor naambordjes"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "Gebruikersnamen tonen"
+		},
+		{
+			"or": "Show social",
+			"tr": "Social tonen"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": "iedereen"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": "alleen vrienden"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": "niemand"
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": "Chatberichten tonen van"
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "Gekleurde serveruitzendingen inschakelen"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": "Fluisteren uitschakelen"
+		},
+		{
+			"or": "Client",
+			"tr": "Client"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Hoofdmenu overslaan"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Automatisch demo's opnemen"
+		},
+		{
+			"or": "Max",
+			"tr": "Max"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Automatisch schermafdrukken maken"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Herstellen"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Aanpassen"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Aangepaste kleuren"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Normaal:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Team:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Persoonlijk"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Skin verwijderen"
+		},
+		{
+			"or": "Basic",
+			"tr": "Basis"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Kan skin niet verwijderen"
+		},
+		{
+			"or": "Mouse",
+			"tr": "Muis"
+		},
+		{
+			"or": "Joystick",
+			"tr": "Joystick"
+		},
+		{
+			"or": "Movement",
+			"tr": "Beweging"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Wapen"
+		},
+		{
+			"or": "Voting",
+			"tr": "Stemmen"
+		},
+		{
+			"or": "Misc",
+			"tr": "Overig"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": "Doden"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": "Net-score"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": "Huidige moordaanslag"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "Wapenstatistieken"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "Vlag gepakt"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "Vlagveroveringen"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Scherm"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Volledig scherm"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Naadloos venster"
+		},
+		{
+			"or": "Screen:",
+			"tr": "Scherm:"
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Anti-kartelvorming"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Sync"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "FPS inperken"
+		},
+		{
+			"or": "Max fps",
+			"tr": "Max. FPS"
+		},
+		{
+			"or": "Texture",
+			"tr": "Textuur"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Textuurkwaliteit"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Textuurcompressie"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Veel details"
+		},
+		{
+			"or": "Resolution",
+			"tr": "Resolutie"
+		},
+		{
+			"or": "Recommended",
+			"tr": "Aanbevolen"
+		},
+		{
+			"or": "Other",
+			"tr": "Overig"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "Huidig: %dx%d (%d:%d)"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Achtergrondmuziek afspelen"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Details"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Voorbeeldsnelheid"
+		},
+		{
+			"or": "Volume",
+			"tr": "Volume"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "Geluidssysteem laden"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Geluiden gebruiken"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Laser"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Je moet het spel herstarten om de instellingen toe te passen."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "Je moet opnieuw verbinden om je identiteitswijziging toe te passen."
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Je moet %1.0f seconden wachten voordat je je identiteit kunt wijzigen."
+		},
+		{
+			"or": "Move left",
+			"tr": "Naar links verplaatsen"
+		},
+		{
+			"or": "Move right",
+			"tr": "Naar rechts verplaatsen"
+		},
+		{
+			"or": "Jump",
+			"tr": "Springen"
+		},
+		{
+			"or": "Fire",
+			"tr": "Schieten"
+		},
+		{
+			"or": "Hook",
+			"tr": "Haak"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Hamer"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Pistool"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Geweer"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Granaat"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Volgend wapen"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Vorig wapen"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "'Ja' stemmen"
+		},
+		{
+			"or": "Vote no",
+			"tr": "'Nee' stemmen"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Teamchat"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Fluisteren"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Chat tonen"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Emoticon"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Toeschouwermodus"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Volgende speler volgen"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Vorige speler volgen"
+		},
+		{
+			"or": "Console",
+			"tr": "Console"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Externe console"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Schermafdruk"
+		},
+		{
+			"or": "Statboard",
+			"tr": "Statistiekpagina"
+		},
+		{
+			"or": "Respawn",
+			"tr": "Terugkeren"
+		},
+		{
+			"or": "Ready",
+			"tr": "Klaar"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "Demomarkering toevoegen"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": "Geluiden in-/uitschakelen"
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": "Dynamische camera in-/uitschakelen"
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "Muisversnelling van systeem gebruiken"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "Muissnelheid in menu"
+		},
+		{
+			"or": "Enable joystick",
+			"tr": "Joystick gebruiken"
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": "Joystick-gevoeligheidstolerantie"
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": "Geen joysticks aangetroffen. Koppel een joystick aan en start het spel opnieuw."
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "Statistiekpagina instellen"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": "Apparaat"
+		},
+		{
+			"or": "Status",
+			"tr": "Status"
+		},
+		{
+			"or": "Aim bind",
+			"tr": "Richtbinding"
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": "Joystick-as #%d"
 		}
 	]
 }

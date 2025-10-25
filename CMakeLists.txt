@@ -1557,6 +1557,7 @@ if(CLIENT)
     auto_map.h
     editor.cpp
     editor.h
+    editor_ui.cpp
     io.cpp
     layer_game.cpp
     layer_quads.cpp

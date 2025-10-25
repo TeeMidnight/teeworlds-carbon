@@ -9,6 +9,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Spara"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Nej"
+		},
+		{
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Lägg till"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Sök:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -117,68 +1083,8 @@
 			"tr": ""
 		},
 		{
-			"or": "Search:",
-			"tr": "Sök:"
-		},
-		{
 			"or": "key not found",
 			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Alla"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Åskådare"
-		},
-		{
-			"or": "Team",
-			"tr": "Lag"
-		},
-		{
-			"or": "Chat",
-			"tr": "Chatt"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "%stogs bort som vän"
 		},
 		{
 			"or": "-Page %d-",
@@ -409,14 +1315,6 @@
 			"tr": "Är du säker på att du vill avsluta?"
 		},
 		{
-			"or": "No",
-			"tr": "Nej"
-		},
-		{
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -515,210 +1413,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Denna server kör inte standardinställningar på en reserverad speltyp."
-		},
-		{
-			"or": "Move left",
-			"tr": "Gå vänster"
-		},
-		{
-			"or": "Move right",
-			"tr": "Gå höger"
-		},
-		{
-			"or": "Jump",
-			"tr": "Hoppa"
-		},
-		{
-			"or": "Fire",
-			"tr": "Skjuta"
-		},
-		{
-			"or": "Hook",
-			"tr": "Haken"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Hammare"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Pistol"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Hagelgevär"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Granater"
-		},
-		{
-			"or": "Laser",
-			"tr": "Laser"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Nästa vapen"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Föregående vapen"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "Rösta ja"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Rösta nej"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Lagchatt"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Viskning"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Visa chatten"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Känsloikon"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Åskådarläge"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Se på nästa"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Se på föregående"
-		},
-		{
-			"or": "Console",
-			"tr": "Konsol"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Serverkonsol"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Skärmdump"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Poänglista"
-		},
-		{
-			"or": "Statboard",
-			"tr": ""
-		},
-		{
-			"or": "Respawn",
-			"tr": ""
-		},
-		{
-			"or": "Ready",
-			"tr": "Redo"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": ""
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": ""
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": ""
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": ""
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Enable joystick",
-			"tr": ""
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": ""
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": ""
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "Ändra statistiken"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": ""
-		},
-		{
-			"or": "Status",
-			"tr": ""
-		},
-		{
-			"or": "Aim bind",
-			"tr": ""
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": ""
 		},
 		{
 			"or": "Length",
@@ -830,612 +1524,8 @@
 			"tr": ""
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Lagen är låsta"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": ""
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Lag är låsta. Tid att vänta innan lagbyte: %02d:%02d"
-		},
-		{
-			"or": "Game options",
-			"tr": ""
-		},
-		{
-			"or": "locked",
-			"tr": "låst"
-		},
-		{
-			"or": "Spectating",
-			"tr": ""
-		},
-		{
-			"or": "Join red",
-			"tr": "Spela i rött"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Gick med i rött"
-		},
-		{
-			"or": "Join blue",
-			"tr": "Spela i blått"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Gick in i blått"
-		},
-		{
-			"or": "Join",
-			"tr": ""
-		},
-		{
-			"or": "Joined",
-			"tr": "Gick in"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Avsluta"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Sluta spela in"
-		},
-		{
-			"or": "Record",
-			"tr": "Inspelning"
-		},
-		{
-			"or": "Player options",
-			"tr": "Spelaralternativ"
-		},
-		{
-			"or": "Address",
-			"tr": "Adress"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Nej"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Favorit"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": ""
-		},
-		{
-			"or": "Game info",
-			"tr": "Spelinfo"
-		},
-		{
-			"or": "Game type",
-			"tr": "Speltyp"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": ""
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": ""
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Svårighetsgrad"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Poängmål"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Tidsbegränsning"
-		},
-		{
-			"or": "MOTD",
-			"tr": "Meddelande"
-		},
-		{
-			"or": "Option",
-			"tr": ""
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": ""
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": ""
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Åskådare har inte tillåtelse att starta en röstning"
-		},
-		{
-			"or": "Change settings",
-			"tr": "Ändra inställningar"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Kicka spelare"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Flytta till åskådarna"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Servern tillåter inte röstning för att sparka spelare"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": ""
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Server tillåter inte röstning för att flytta spelare till åskådare."
-		},
-		{
-			"or": "Force vote",
-			"tr": "Tvinga omröstning"
-		},
-		{
-			"or": "Remove",
-			"tr": "Ta bort"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Beskrivning:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Omröstningskommando:"
-		},
-		{
-			"or": "Add",
-			"tr": "Lägg till"
-		},
-		{
-			"or": "Hue:",
-			"tr": ""
-		},
-		{
-			"or": "Sat:",
-			"tr": ""
-		},
-		{
-			"or": "Lgt:",
-			"tr": ""
-		},
-		{
-			"or": "Alp:",
-			"tr": ""
-		},
-		{
-			"or": "Skins",
-			"tr": "Utseende"
-		},
-		{
-			"or": "Theme",
-			"tr": ""
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Dynamisk kamera"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Byt vapen vid anskaffning"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Visa namnskyltar"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Visa alltid namnskyltar"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Använd lagfärger i namnskyltar"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": ""
-		},
-		{
-			"or": "Show social",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": ""
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": ""
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": ""
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": ""
-		},
-		{
-			"or": "Client",
-			"tr": "Klient"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Hoppa över huvudmenyn"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Spela in demon automatiskt"
-		},
-		{
-			"or": "Max",
-			"tr": ""
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Ta skärmdumpar vid matchslut"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Återställ"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": ""
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Egna färger"
-		},
-		{
-			"or": "Tee",
-			"tr": ""
-		},
-		{
-			"or": "Normal:",
-			"tr": "Normal:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Lag:"
-		},
-		{
-			"or": "Personal",
-			"tr": ""
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Spara"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Radera skin"
-		},
-		{
-			"or": "Basic",
-			"tr": "Vanlig"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Skin går ej att ta bort"
-		},
-		{
-			"or": "Mouse",
-			"tr": ""
-		},
-		{
-			"or": "Joystick",
-			"tr": ""
-		},
-		{
-			"or": "Movement",
-			"tr": "Förflyttning"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Vapen"
-		},
-		{
-			"or": "Voting",
-			"tr": "Röstning"
-		},
-		{
-			"or": "Misc",
-			"tr": "Annat"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": ""
-		},
-		{
-			"or": "Suicides",
-			"tr": "Självmord"
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": ""
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"or": "Weapons stats",
-			"tr": ""
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": ""
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "Fångade flaggor"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Skärm"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Fullskärm"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Kantlöst fönster"
-		},
-		{
-			"or": "Screen:",
-			"tr": ""
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Anti Aliasing"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Synk"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": ""
-		},
-		{
-			"or": "Max fps",
-			"tr": ""
-		},
-		{
-			"or": "Texture",
-			"tr": ""
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Kvalitetstexturer"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Texturkompression"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Extra detaljer"
-		},
-		{
-			"or": "Resolution",
-			"tr": ""
-		},
-		{
-			"or": "Recommended",
-			"tr": ""
-		},
-		{
-			"or": "Other",
-			"tr": ""
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": ""
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Aktivera bakgrundsmusik"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Detalj"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Samplingsfrekvens"
-		},
-		{
-			"or": "Volume",
-			"tr": "Volym"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": ""
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Aktivera ljudeffekter"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Du måste starta om spelet för att ändringarna skall verkställas."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": ""
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Du måste vänta %1.0f sekunder för att kunna byta identitet."
-		},
-		{
 			"or": "Local server",
 			"tr": "Lokal server"
-		},
-		{
-			"or": "Editor",
-			"tr": ""
 		},
 		{
 			"or": "Play",
@@ -1446,6 +1536,10 @@
 			"tr": "Teeworlds %s är ute nu! Ladda ner det från www.teeworlds.com."
 		},
 		{
+			"or": "Score limit",
+			"tr": "Poängmål"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Tidsgräns: %d min"
 		},
@@ -1453,6 +1547,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": ""
+		},
+		{
+			"or": "Spectators",
+			"tr": "Åskådare"
 		},
 		{
 			"or": "Game over",
@@ -1465,6 +1563,14 @@
 		{
 			"or": "Map record",
 			"tr": ""
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
 		},
 		{
 			"or": "Time",
@@ -1533,8 +1639,12 @@
 			"tr": ""
 		},
 		{
-			"or": "Free-View",
-			"tr": "Friläge"
+			"or": "Suicides",
+			"tr": "Självmord"
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
 		},
 		{
 			"context": "Net score",
@@ -1547,6 +1657,10 @@
 		},
 		{
 			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1595,6 +1709,183 @@
 			"tr": "Röstning misslyckades"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Lagen är låsta"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": ""
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Lag är låsta. Tid att vänta innan lagbyte: %02d:%02d"
+		},
+		{
+			"or": "Game options",
+			"tr": ""
+		},
+		{
+			"or": "locked",
+			"tr": "låst"
+		},
+		{
+			"or": "Spectating",
+			"tr": ""
+		},
+		{
+			"or": "Join red",
+			"tr": "Spela i rött"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Gick med i rött"
+		},
+		{
+			"or": "Join blue",
+			"tr": "Spela i blått"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Gick in i blått"
+		},
+		{
+			"or": "Join",
+			"tr": ""
+		},
+		{
+			"or": "Joined",
+			"tr": "Gick in"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Avsluta"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Sluta spela in"
+		},
+		{
+			"or": "Record",
+			"tr": "Inspelning"
+		},
+		{
+			"or": "Player options",
+			"tr": "Spelaralternativ"
+		},
+		{
+			"or": "Address",
+			"tr": "Adress"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Nej"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Favorit"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": ""
+		},
+		{
+			"or": "Game info",
+			"tr": "Spelinfo"
+		},
+		{
+			"or": "Game type",
+			"tr": "Speltyp"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": ""
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": ""
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Svårighetsgrad"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Tidsbegränsning"
+		},
+		{
+			"or": "MOTD",
+			"tr": "Meddelande"
+		},
+		{
+			"or": "Option",
+			"tr": ""
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": ""
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": ""
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Åskådare har inte tillåtelse att starta en röstning"
+		},
+		{
+			"or": "Change settings",
+			"tr": "Ändra inställningar"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Kicka spelare"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Flytta till åskådarna"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Servern tillåter inte röstning för att sparka spelare"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": ""
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Server tillåter inte röstning för att flytta spelare till åskådare."
+		},
+		{
+			"or": "Force vote",
+			"tr": "Tvinga omröstning"
+		},
+		{
+			"or": "Remove",
+			"tr": "Ta bort"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Beskrivning:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Omröstningskommando:"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1605,6 +1896,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoriter"
+		},
+		{
+			"or": "All",
+			"tr": "Alla"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1795,6 +2090,10 @@
 			"tr": "Serveradress"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": ""
 		},
@@ -1827,8 +2126,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Poänglista"
+		},
+		{
 			"or": "Connect",
 			"tr": "Anslut"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Friläge"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Lag"
+		},
+		{
+			"or": "Chat",
+			"tr": "Chatt"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "%stogs bort som vän"
+		},
+		{
+			"or": "Hue:",
+			"tr": ""
+		},
+		{
+			"or": "Sat:",
+			"tr": ""
+		},
+		{
+			"or": "Lgt:",
+			"tr": ""
+		},
+		{
+			"or": "Alp:",
+			"tr": ""
+		},
+		{
+			"or": "Skins",
+			"tr": "Utseende"
+		},
+		{
+			"or": "Theme",
+			"tr": ""
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Dynamisk kamera"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Byt vapen vid anskaffning"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Visa namnskyltar"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Visa alltid namnskyltar"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Använd lagfärger i namnskyltar"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": ""
+		},
+		{
+			"or": "Show social",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": ""
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": ""
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": ""
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": ""
+		},
+		{
+			"or": "Client",
+			"tr": "Klient"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Hoppa över huvudmenyn"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Spela in demon automatiskt"
+		},
+		{
+			"or": "Max",
+			"tr": ""
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Ta skärmdumpar vid matchslut"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Återställ"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": ""
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Egna färger"
+		},
+		{
+			"or": "Tee",
+			"tr": ""
+		},
+		{
+			"or": "Normal:",
+			"tr": "Normal:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Lag:"
+		},
+		{
+			"or": "Personal",
+			"tr": ""
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Radera skin"
+		},
+		{
+			"or": "Basic",
+			"tr": "Vanlig"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Skin går ej att ta bort"
+		},
+		{
+			"or": "Mouse",
+			"tr": ""
+		},
+		{
+			"or": "Joystick",
+			"tr": ""
+		},
+		{
+			"or": "Movement",
+			"tr": "Förflyttning"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Vapen"
+		},
+		{
+			"or": "Voting",
+			"tr": "Röstning"
+		},
+		{
+			"or": "Misc",
+			"tr": "Annat"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": ""
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": ""
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Weapons stats",
+			"tr": ""
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": ""
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "Fångade flaggor"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Skärm"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Fullskärm"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Kantlöst fönster"
+		},
+		{
+			"or": "Screen:",
+			"tr": ""
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Anti Aliasing"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Synk"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": ""
+		},
+		{
+			"or": "Max fps",
+			"tr": ""
+		},
+		{
+			"or": "Texture",
+			"tr": ""
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Kvalitetstexturer"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Texturkompression"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Extra detaljer"
+		},
+		{
+			"or": "Resolution",
+			"tr": ""
+		},
+		{
+			"or": "Recommended",
+			"tr": ""
+		},
+		{
+			"or": "Other",
+			"tr": ""
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": ""
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Aktivera bakgrundsmusik"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Detalj"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Samplingsfrekvens"
+		},
+		{
+			"or": "Volume",
+			"tr": "Volym"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": ""
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Aktivera ljudeffekter"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Laser"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Du måste starta om spelet för att ändringarna skall verkställas."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": ""
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Du måste vänta %1.0f sekunder för att kunna byta identitet."
+		},
+		{
+			"or": "Move left",
+			"tr": "Gå vänster"
+		},
+		{
+			"or": "Move right",
+			"tr": "Gå höger"
+		},
+		{
+			"or": "Jump",
+			"tr": "Hoppa"
+		},
+		{
+			"or": "Fire",
+			"tr": "Skjuta"
+		},
+		{
+			"or": "Hook",
+			"tr": "Haken"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Hammare"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Pistol"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Hagelgevär"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Granater"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Nästa vapen"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Föregående vapen"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "Rösta ja"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Rösta nej"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Lagchatt"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Viskning"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Visa chatten"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Känsloikon"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Åskådarläge"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Se på nästa"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Se på föregående"
+		},
+		{
+			"or": "Console",
+			"tr": "Konsol"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Serverkonsol"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Skärmdump"
+		},
+		{
+			"or": "Statboard",
+			"tr": ""
+		},
+		{
+			"or": "Respawn",
+			"tr": ""
+		},
+		{
+			"or": "Ready",
+			"tr": "Redo"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": ""
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": ""
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": ""
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": ""
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Enable joystick",
+			"tr": ""
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": ""
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": ""
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "Ändra statistiken"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": ""
+		},
+		{
+			"or": "Status",
+			"tr": ""
+		},
+		{
+			"or": "Aim bind",
+			"tr": ""
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": ""
 		}
 	]
 }

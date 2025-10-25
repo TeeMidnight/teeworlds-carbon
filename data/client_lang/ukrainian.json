@@ -10,6 +10,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Зберегти"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Ні"
+		},
+		{
+			"or": "Yes",
+			"tr": "Так"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Додати"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Редактор"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Пошук:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -118,68 +1084,8 @@
 			"tr": "'%s' приєднався до спостерігачів"
 		},
 		{
-			"or": "Search:",
-			"tr": "Пошук:"
-		},
-		{
 			"or": "key not found",
 			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Всі"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Спостерігачі"
-		},
-		{
-			"or": "Team",
-			"tr": "Команда"
-		},
-		{
-			"or": "Chat",
-			"tr": "Чат"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' заборонено використовувати чат"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' дозволено використовувати чат"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' додано як друга"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' вилучено з друзів"
 		},
 		{
 			"or": "-Page %d-",
@@ -410,14 +1316,6 @@
 			"tr": "Ви дійсно бажаєте вийти?"
 		},
 		{
-			"or": "No",
-			"tr": "Ні"
-		},
-		{
-			"or": "Yes",
-			"tr": "Так"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -516,210 +1414,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Сервер запущено з нестандартними налаштуваннями на стандартному типі гри."
-		},
-		{
-			"or": "Move left",
-			"tr": "Рух ліворуч"
-		},
-		{
-			"or": "Move right",
-			"tr": "Рух праворуч"
-		},
-		{
-			"or": "Jump",
-			"tr": "Стрибок"
-		},
-		{
-			"or": "Fire",
-			"tr": "Постріл"
-		},
-		{
-			"or": "Hook",
-			"tr": "Гак"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Молоток"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Пістолет"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Дробовик"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Ракетниця"
-		},
-		{
-			"or": "Laser",
-			"tr": "Лазер"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Наступ. зброя"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Попер. зброя"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "За"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Проти"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Командний чат"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Написати гравцю"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Показати чат"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Емоція"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Режим спостерігача"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Спост. за наст."
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Спост. за поп."
-		},
-		{
-			"or": "Console",
-			"tr": "Консоль"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Консоль сервера"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Скріншот"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Хід гри"
-		},
-		{
-			"or": "Statboard",
-			"tr": "Статистика"
-		},
-		{
-			"or": "Respawn",
-			"tr": "Респаун"
-		},
-		{
-			"or": "Ready",
-			"tr": "Готовність"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "Додати демо мітку часу"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": ""
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": ""
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "Використовувати прискорення миші від ОС"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "Чутливість курсору в меню"
-		},
-		{
-			"or": "Enable joystick",
-			"tr": ""
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": ""
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": ""
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "Налаштування вікна статистики"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": ""
-		},
-		{
-			"or": "Status",
-			"tr": ""
-		},
-		{
-			"or": "Aim bind",
-			"tr": ""
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": ""
 		},
 		{
 			"or": "Length",
@@ -831,612 +1525,8 @@
 			"tr": "Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Команди заблоковані"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Дозволено лише %d активних гравців"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Команди будуть заблоковані. Час очікування перед зміною команди: %02d: %02d"
-		},
-		{
-			"or": "Game options",
-			"tr": "Налаштування гри"
-		},
-		{
-			"or": "locked",
-			"tr": "заблокований"
-		},
-		{
-			"or": "Spectating",
-			"tr": "Спостерігання"
-		},
-		{
-			"or": "Join red",
-			"tr": "За червоних"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Приєднався до червоних"
-		},
-		{
-			"or": "Join blue",
-			"tr": "За синіх"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Приєднався до синіх"
-		},
-		{
-			"or": "Join",
-			"tr": "Приєднатися"
-		},
-		{
-			"or": "Joined",
-			"tr": "Приєднався"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Від'єднатись"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Зупинити запис"
-		},
-		{
-			"or": "Record",
-			"tr": "Запис"
-		},
-		{
-			"or": "Player options",
-			"tr": "Налаштування гравця"
-		},
-		{
-			"or": "Address",
-			"tr": "Адреса"
-		},
-		{
-			"or": "Ping",
-			"tr": "Пінг"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Так"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Ні"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Обраний"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "Приглушити мовлення серверу"
-		},
-		{
-			"or": "Game info",
-			"tr": "Інфо по грі"
-		},
-		{
-			"or": "Game type",
-			"tr": "Тип гри"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Легко"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Нормально"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Важко"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Складність"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Ліміт очок"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Ліміт часу"
-		},
-		{
-			"or": "MOTD",
-			"tr": "MOTD"
-		},
-		{
-			"or": "Option",
-			"tr": "Опція"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Чекайте кінця поточного опитування перед створенням нового."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Ви маєте зачекати %d секунд перед початком нового голосування"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Спостерігачі не мають права голосувати"
-		},
-		{
-			"or": "Change settings",
-			"tr": "Змінити налаштування"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Штурхнути гравця з гри "
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Перемістити гравця до спостерігачів"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Сервер не дозволяє голосуванням штурхати гравців з гри ."
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Штурхнути з гри %d гравців на сервері"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Сервер не дозволяє голосуванням переміщати в спостерігачі"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Форсувати"
-		},
-		{
-			"or": "Remove",
-			"tr": "Видалити"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Докладно:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "команда голосування:"
-		},
-		{
-			"or": "Add",
-			"tr": "Додати"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Відтінок:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Контраст.:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Яскравість:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Прозор.:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Скіни"
-		},
-		{
-			"or": "Theme",
-			"tr": "Тема"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Динамічна камера"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Перемикати зброю при підборі"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Показувати ніки гравців"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Завжди показувати ніки гравців"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Використовувати кольори для імен"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "Відображати ID гравців"
-		},
-		{
-			"or": "Show social",
-			"tr": "Показати імена гравців"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": ""
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": ""
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "Дозволити кольорове мовлення сервера"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": ""
-		},
-		{
-			"or": "Client",
-			"tr": "Клієнт"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Пропустити головне меню"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Автоматичний запис демо"
-		},
-		{
-			"or": "Max",
-			"tr": "Макс."
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Автоматично робити скріншот в кінці гри"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Скинути"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Налаштувати"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Особистий колір"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Нормальний:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Команда:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Особистість"
-		},
-		{
-			"or": "Clan",
-			"tr": "Клан"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Зберегти"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Видалити скін"
-		},
-		{
-			"or": "Basic",
-			"tr": "Базові"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Неможливо видалити скін"
-		},
-		{
-			"or": "Mouse",
-			"tr": ""
-		},
-		{
-			"or": "Joystick",
-			"tr": ""
-		},
-		{
-			"or": "Movement",
-			"tr": "Переміщення"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Зброя"
-		},
-		{
-			"or": "Voting",
-			"tr": "Голосування"
-		},
-		{
-			"or": "Misc",
-			"tr": "Інше"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": "Смерті"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Самовбивства"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Співвідношення"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": "Чистий рахунок"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": "Поточна серія"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Найкраща серія"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "Статистика зброї"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "Підбирання прапорів"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "Захоплення прапору"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Екран"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Повноекранний режим"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Вікно без рамки"
-		},
-		{
-			"or": "Screen:",
-			"tr": "Екран:"
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Згладжування"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "Вертикальна синхронізація"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "Обмежити кількість кадрів у секунду "
-		},
-		{
-			"or": "Max fps",
-			"tr": "Максимальна кількість кадрів у секунду"
-		},
-		{
-			"or": "Texture",
-			"tr": "Текстура"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Якісні текстури"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Стиснення текстур"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Висока деталізація"
-		},
-		{
-			"or": "Resolution",
-			"tr": "Роздільна здатність екрану"
-		},
-		{
-			"or": "Recommended",
-			"tr": "Рекомендовано"
-		},
-		{
-			"or": "Other",
-			"tr": "Інше"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "Поточне: %dx%d (%d:%d)"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Грати фонову музику"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Деталізація"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Частота"
-		},
-		{
-			"or": "Volume",
-			"tr": "Гучність"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "Завантаження системи звуків"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Використовувати звуки"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Перезапустіть гру для застосування змін."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "Ви маєте перепідключитися для зміни особистості."
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Зачекайте %1.0f секунд перед зміною особистості."
-		},
-		{
 			"or": "Local server",
 			"tr": "Локальний сервер"
-		},
-		{
-			"or": "Editor",
-			"tr": "Редактор"
 		},
 		{
 			"or": "Play",
@@ -1447,6 +1537,10 @@
 			"tr": "Вийшла Teeworlds %s! Завантажуйте на www.teeworlds.com!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Ліміт очок"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Ліміт часу: %d хв"
 		},
@@ -1454,6 +1548,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Матч"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Спостерігачі"
 		},
 		{
 			"or": "Game over",
@@ -1466,6 +1564,14 @@
 		{
 			"or": "Map record",
 			"tr": ""
+		},
+		{
+			"or": "Ping",
+			"tr": "Пінг"
+		},
+		{
+			"or": "Clan",
+			"tr": "Клан"
 		},
 		{
 			"or": "Time",
@@ -1534,8 +1640,12 @@
 			"tr": "Очі"
 		},
 		{
-			"or": "Free-View",
-			"tr": "Вільний перегляд"
+			"or": "Suicides",
+			"tr": "Самовбивства"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Співвідношення"
 		},
 		{
 			"context": "Net score",
@@ -1549,6 +1659,10 @@
 		{
 			"or": "Spree",
 			"tr": "Серія"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Найкраща серія"
 		},
 		{
 			"context": "Flag grabs",
@@ -1596,6 +1710,183 @@
 			"tr": "Голосування провалено"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Команди заблоковані"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Дозволено лише %d активних гравців"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Команди будуть заблоковані. Час очікування перед зміною команди: %02d: %02d"
+		},
+		{
+			"or": "Game options",
+			"tr": "Налаштування гри"
+		},
+		{
+			"or": "locked",
+			"tr": "заблокований"
+		},
+		{
+			"or": "Spectating",
+			"tr": "Спостерігання"
+		},
+		{
+			"or": "Join red",
+			"tr": "За червоних"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Приєднався до червоних"
+		},
+		{
+			"or": "Join blue",
+			"tr": "За синіх"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Приєднався до синіх"
+		},
+		{
+			"or": "Join",
+			"tr": "Приєднатися"
+		},
+		{
+			"or": "Joined",
+			"tr": "Приєднався"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Від'єднатись"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Зупинити запис"
+		},
+		{
+			"or": "Record",
+			"tr": "Запис"
+		},
+		{
+			"or": "Player options",
+			"tr": "Налаштування гравця"
+		},
+		{
+			"or": "Address",
+			"tr": "Адреса"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Так"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Ні"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Обраний"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "Приглушити мовлення серверу"
+		},
+		{
+			"or": "Game info",
+			"tr": "Інфо по грі"
+		},
+		{
+			"or": "Game type",
+			"tr": "Тип гри"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Легко"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Нормально"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Важко"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Складність"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Ліміт часу"
+		},
+		{
+			"or": "MOTD",
+			"tr": "MOTD"
+		},
+		{
+			"or": "Option",
+			"tr": "Опція"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Чекайте кінця поточного опитування перед створенням нового."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Ви маєте зачекати %d секунд перед початком нового голосування"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Спостерігачі не мають права голосувати"
+		},
+		{
+			"or": "Change settings",
+			"tr": "Змінити налаштування"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Штурхнути гравця з гри "
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Перемістити гравця до спостерігачів"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Сервер не дозволяє голосуванням штурхати гравців з гри ."
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Штурхнути з гри %d гравців на сервері"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Сервер не дозволяє голосуванням переміщати в спостерігачі"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Форсувати"
+		},
+		{
+			"or": "Remove",
+			"tr": "Видалити"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Докладно:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "команда голосування:"
+		},
+		{
 			"or": "Server",
 			"tr": "Сервер"
 		},
@@ -1606,6 +1897,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Обрані"
+		},
+		{
+			"or": "All",
+			"tr": "Всі"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1796,6 +2091,10 @@
 			"tr": "Адреса серверу:"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "Складність:"
 		},
@@ -1828,8 +2127,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Хід гри"
+		},
+		{
 			"or": "Connect",
 			"tr": "Під’єднатись"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Вільний перегляд"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Команда"
+		},
+		{
+			"or": "Chat",
+			"tr": "Чат"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Натисніть Enter щоб підтвердити або Esc щоб скасувати"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' заборонено використовувати чат"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' дозволено використовувати чат"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' додано як друга"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' вилучено з друзів"
+		},
+		{
+			"or": "Hue:",
+			"tr": "Відтінок:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Контраст.:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Яскравість:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Прозор.:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Скіни"
+		},
+		{
+			"or": "Theme",
+			"tr": "Тема"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Динамічна камера"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Перемикати зброю при підборі"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Показувати ніки гравців"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Завжди показувати ніки гравців"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Використовувати кольори для імен"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "Відображати ID гравців"
+		},
+		{
+			"or": "Show social",
+			"tr": "Показати імена гравців"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": ""
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": ""
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "Дозволити кольорове мовлення сервера"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": ""
+		},
+		{
+			"or": "Client",
+			"tr": "Клієнт"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Пропустити головне меню"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Автоматичний запис демо"
+		},
+		{
+			"or": "Max",
+			"tr": "Макс."
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Автоматично робити скріншот в кінці гри"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Скинути"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Налаштувати"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Особистий колір"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Нормальний:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Команда:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Особистість"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Видалити скін"
+		},
+		{
+			"or": "Basic",
+			"tr": "Базові"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Неможливо видалити скін"
+		},
+		{
+			"or": "Mouse",
+			"tr": ""
+		},
+		{
+			"or": "Joystick",
+			"tr": ""
+		},
+		{
+			"or": "Movement",
+			"tr": "Переміщення"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Зброя"
+		},
+		{
+			"or": "Voting",
+			"tr": "Голосування"
+		},
+		{
+			"or": "Misc",
+			"tr": "Інше"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": "Смерті"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": "Чистий рахунок"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": "Поточна серія"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "Статистика зброї"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "Підбирання прапорів"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "Захоплення прапору"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Екран"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Повноекранний режим"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Вікно без рамки"
+		},
+		{
+			"or": "Screen:",
+			"tr": "Екран:"
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Згладжування"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "Вертикальна синхронізація"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "Обмежити кількість кадрів у секунду "
+		},
+		{
+			"or": "Max fps",
+			"tr": "Максимальна кількість кадрів у секунду"
+		},
+		{
+			"or": "Texture",
+			"tr": "Текстура"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Якісні текстури"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Стиснення текстур"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Висока деталізація"
+		},
+		{
+			"or": "Resolution",
+			"tr": "Роздільна здатність екрану"
+		},
+		{
+			"or": "Recommended",
+			"tr": "Рекомендовано"
+		},
+		{
+			"or": "Other",
+			"tr": "Інше"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "Поточне: %dx%d (%d:%d)"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Грати фонову музику"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Деталізація"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Частота"
+		},
+		{
+			"or": "Volume",
+			"tr": "Гучність"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "Завантаження системи звуків"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Використовувати звуки"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Лазер"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Перезапустіть гру для застосування змін."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "Ви маєте перепідключитися для зміни особистості."
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Зачекайте %1.0f секунд перед зміною особистості."
+		},
+		{
+			"or": "Move left",
+			"tr": "Рух ліворуч"
+		},
+		{
+			"or": "Move right",
+			"tr": "Рух праворуч"
+		},
+		{
+			"or": "Jump",
+			"tr": "Стрибок"
+		},
+		{
+			"or": "Fire",
+			"tr": "Постріл"
+		},
+		{
+			"or": "Hook",
+			"tr": "Гак"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Молоток"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Пістолет"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Дробовик"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Ракетниця"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Наступ. зброя"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Попер. зброя"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "За"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Проти"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Командний чат"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Написати гравцю"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Показати чат"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Емоція"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Режим спостерігача"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Спост. за наст."
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Спост. за поп."
+		},
+		{
+			"or": "Console",
+			"tr": "Консоль"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Консоль сервера"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Скріншот"
+		},
+		{
+			"or": "Statboard",
+			"tr": "Статистика"
+		},
+		{
+			"or": "Respawn",
+			"tr": "Респаун"
+		},
+		{
+			"or": "Ready",
+			"tr": "Готовність"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "Додати демо мітку часу"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": ""
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": ""
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "Використовувати прискорення миші від ОС"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "Чутливість курсору в меню"
+		},
+		{
+			"or": "Enable joystick",
+			"tr": ""
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": ""
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": ""
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "Налаштування вікна статистики"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": ""
+		},
+		{
+			"or": "Status",
+			"tr": ""
+		},
+		{
+			"or": "Aim bind",
+			"tr": ""
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": ""
 		}
 	]
 }

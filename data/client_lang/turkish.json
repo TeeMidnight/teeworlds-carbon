@@ -14,6 +14,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Kaydet"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Hayır"
+		},
+		{
+			"or": "Yes",
+			"tr": "Evet"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Ekle"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Editör"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Ara:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": ""
 		},
@@ -122,68 +1088,8 @@
 			"tr": "'%s' izleyicilere katıldı"
 		},
 		{
-			"or": "Search:",
-			"tr": "Ara:"
-		},
-		{
 			"or": "key not found",
 			"tr": ""
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": ""
-		},
-		{
-			"or": "All",
-			"tr": "Hepsi"
-		},
-		{
-			"or": "Spectators",
-			"tr": "İzleyiciler"
-		},
-		{
-			"or": "Team",
-			"tr": "Takım"
-		},
-		{
-			"or": "Chat",
-			"tr": "Sohbet"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": ""
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": ""
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": ""
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "'%s' susturuldu."
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "'%s' artık konuşabilir."
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "'%s' arkadaş olarak eklendi. "
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "'%s' arkadaşlardan çıkarıldı"
 		},
 		{
 			"or": "-Page %d-",
@@ -414,14 +1320,6 @@
 			"tr": "Çıkmak istediğinize emin misiniz?"
 		},
 		{
-			"or": "No",
-			"tr": "Hayır"
-		},
-		{
-			"or": "Yes",
-			"tr": "Evet"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -520,210 +1418,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Bu sunucu standart olmayan bir ayarı saf bir oyun türünde kullanıyor."
-		},
-		{
-			"or": "Move left",
-			"tr": "Sola git"
-		},
-		{
-			"or": "Move right",
-			"tr": "Sağa git"
-		},
-		{
-			"or": "Jump",
-			"tr": "Zıpla"
-		},
-		{
-			"or": "Fire",
-			"tr": "Ateş"
-		},
-		{
-			"or": "Hook",
-			"tr": "Kanca"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Çekiç"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Tabanca"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Tüfek"
-		},
-		{
-			"or": "Grenade",
-			"tr": "El bombası"
-		},
-		{
-			"or": "Laser",
-			"tr": "Lazer"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Sonraki silah"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Önceki silah"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "Olumlu oy ver"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Olumsuz oy ver"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Takım sohbeti"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Fısılda"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Sohbeti göster"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Yüz ifadesi"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "İzleyici modu"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Sıradakini izle"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Öncekini izle"
-		},
-		{
-			"or": "Console",
-			"tr": "Konsol"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Uzak konsol"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Ekran alıntısı"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Skor tahtası"
-		},
-		{
-			"or": "Statboard",
-			"tr": ""
-		},
-		{
-			"or": "Respawn",
-			"tr": "Yeniden doğ"
-		},
-		{
-			"or": "Ready",
-			"tr": "Hazır"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "Demo işareti ekle"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": ""
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": ""
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "İşletim sisteminin fare ivmesini kullan."
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "Menü fare hassasiyeti."
-		},
-		{
-			"or": "Enable joystick",
-			"tr": ""
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": ""
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": ""
-		},
-		{
-			"or": "Configure statboard",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": ""
-		},
-		{
-			"or": "Status",
-			"tr": ""
-		},
-		{
-			"or": "Aim bind",
-			"tr": ""
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": ""
 		},
 		{
 			"or": "Length",
@@ -835,612 +1529,8 @@
 			"tr": "Sağlama"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Takimlar kilitli"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Sadece %d aktif oyuncu kabul edilir"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Takımlar kilitli. Bir dahaki takım geçişine kalan süre : %02d:%02d"
-		},
-		{
-			"or": "Game options",
-			"tr": "Oyun ayarları"
-		},
-		{
-			"or": "locked",
-			"tr": "kilitli"
-		},
-		{
-			"or": "Spectating",
-			"tr": "İzleyici"
-		},
-		{
-			"or": "Join red",
-			"tr": "Kırmızıya katıl"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Kırmızıya katıldın"
-		},
-		{
-			"or": "Join blue",
-			"tr": "Maviye katıl"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Maviye katıldın"
-		},
-		{
-			"or": "Join",
-			"tr": "Katıl"
-		},
-		{
-			"or": "Joined",
-			"tr": "Girdi"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Bağlantıyı kes"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Kaydı durdur"
-		},
-		{
-			"or": "Record",
-			"tr": "Kayıt"
-		},
-		{
-			"or": "Player options",
-			"tr": "Oyuncu ayarları"
-		},
-		{
-			"or": "Address",
-			"tr": "Adres"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Evet"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Hayır"
-		},
-		{
-			"or": "Favorite",
-			"tr": "En sevilen"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "Sunucu mesajlarını kapat"
-		},
-		{
-			"or": "Game info",
-			"tr": "Oyun bilgisi"
-		},
-		{
-			"or": "Game type",
-			"tr": "Oyun türü"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Sıradan"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Orta"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Rekabetçi"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Zorluk"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Skor limiti"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Süre limiti"
-		},
-		{
-			"or": "MOTD",
-			"tr": "Açıklama"
-		},
-		{
-			"or": "Option",
-			"tr": "Seçenek"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Yeni bir oylama başlatmak için mevcut oylamanın bitmesini bekleyiniz."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Yeni bir oylama başlatmak için %d saniye beklemek zorundasınız"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "İzleyiciler oylama başlatamaz."
-		},
-		{
-			"or": "Change settings",
-			"tr": "Ayarları değiştir"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Oyuncuyu at"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Seyircilere katıl"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Sunucu oyuncuları atmak için oylamaya izin vermiyor"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Atma oylaması sunucuda %d oyuncu gerektiriyor"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Sunucu oyuncuları izleyici yapmak için oylamaya izin vermiyor"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Oylamayı zorla"
-		},
-		{
-			"or": "Remove",
-			"tr": "Çıkar"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Açıklama :"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Komut:"
-		},
-		{
-			"or": "Add",
-			"tr": "Ekle"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Renk:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Canlılık:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Parlaklık:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Alfa:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Skinler"
-		},
-		{
-			"or": "Theme",
-			"tr": "Tema"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Dinamik Kamera"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Silah alındınğıda yeni silaha geç"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Oyuncu isimlerini göster"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Oyuncu isimlerini her zaman göster"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "İsim etiketlerinde takım renklerini kullan"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "Kullanıcı IDlerini göster"
-		},
-		{
-			"or": "Show social",
-			"tr": "Sosyal özellikleri göster"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": ""
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": ""
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": ""
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "Renkli sunucu mesajlarını aç"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": ""
-		},
-		{
-			"or": "Client",
-			"tr": "İstemci"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Ana menüyü geç"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Demoları otomatik olarak kaydet"
-		},
-		{
-			"or": "Max",
-			"tr": "En fazla"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Otomatik olarak oyun bitişinde ekran görüntüsü al"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Yenile"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Özelleştir"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Özel renkler"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Normal:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Takım:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Kişisel"
-		},
-		{
-			"or": "Clan",
-			"tr": "Klan"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Kaydet"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Deriyi sil"
-		},
-		{
-			"or": "Basic",
-			"tr": "Temel"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Deri silinemiyor"
-		},
-		{
-			"or": "Mouse",
-			"tr": ""
-		},
-		{
-			"or": "Joystick",
-			"tr": ""
-		},
-		{
-			"or": "Movement",
-			"tr": "Hareket"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Silah"
-		},
-		{
-			"or": "Voting",
-			"tr": "Oylama"
-		},
-		{
-			"or": "Misc",
-			"tr": "Çeşitli"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": ""
-		},
-		{
-			"or": "Suicides",
-			"tr": ""
-		},
-		{
-			"or": "Ratio",
-			"tr": ""
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": ""
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": ""
-		},
-		{
-			"or": "Best spree",
-			"tr": ""
-		},
-		{
-			"or": "Weapons stats",
-			"tr": ""
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": ""
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": ""
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Ekran"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Tam ekran"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Sınırsız pencere"
-		},
-		{
-			"or": "Screen:",
-			"tr": ""
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Anti Aliasing"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Sync"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "FPS limiti"
-		},
-		{
-			"or": "Max fps",
-			"tr": "Maks FPS."
-		},
-		{
-			"or": "Texture",
-			"tr": "Doku"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Kaliteli dolgular"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Dolgu sıkıştırması"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Yüksek Detay"
-		},
-		{
-			"or": "Resolution",
-			"tr": "Çözünürlük"
-		},
-		{
-			"or": "Recommended",
-			"tr": "Önerilen"
-		},
-		{
-			"or": "Other",
-			"tr": "Diğer"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "Şu anki %dx%d(%d:%d)"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Arkaplan müziğini çal"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Detay"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Sample rate"
-		},
-		{
-			"or": "Volume",
-			"tr": "Ses"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "Ses sistemini yükle"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Sesleri kullan"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Bütün ayarların aktif olması için oyunu yeniden başlatmalısınız."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "Kimlik değiştirmek için tekrar giriş yapmalısın."
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Kimlik değiştirmek için %1.0f saniye beklemelisiniz."
-		},
-		{
 			"or": "Local server",
 			"tr": "Yerel Sunucu"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editör"
 		},
 		{
 			"or": "Play",
@@ -1451,6 +1541,10 @@
 			"tr": "Teeworlds %s çıktı! www.teeworlds.com dan indir!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Skor limiti"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Süre limiti: %d dakika"
 		},
@@ -1458,6 +1552,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Maç"
+		},
+		{
+			"or": "Spectators",
+			"tr": "İzleyiciler"
 		},
 		{
 			"or": "Game over",
@@ -1470,6 +1568,14 @@
 		{
 			"or": "Map record",
 			"tr": ""
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Klan"
 		},
 		{
 			"or": "Time",
@@ -1538,8 +1644,12 @@
 			"tr": "gözler"
 		},
 		{
-			"or": "Free-View",
-			"tr": "Serbest Görüntü"
+			"or": "Suicides",
+			"tr": ""
+		},
+		{
+			"or": "Ratio",
+			"tr": ""
 		},
 		{
 			"context": "Net score",
@@ -1552,6 +1662,10 @@
 		},
 		{
 			"or": "Spree",
+			"tr": ""
+		},
+		{
+			"or": "Best spree",
 			"tr": ""
 		},
 		{
@@ -1600,6 +1714,183 @@
 			"tr": "Oylama başarısız"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Takimlar kilitli"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Sadece %d aktif oyuncu kabul edilir"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Takımlar kilitli. Bir dahaki takım geçişine kalan süre : %02d:%02d"
+		},
+		{
+			"or": "Game options",
+			"tr": "Oyun ayarları"
+		},
+		{
+			"or": "locked",
+			"tr": "kilitli"
+		},
+		{
+			"or": "Spectating",
+			"tr": "İzleyici"
+		},
+		{
+			"or": "Join red",
+			"tr": "Kırmızıya katıl"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Kırmızıya katıldın"
+		},
+		{
+			"or": "Join blue",
+			"tr": "Maviye katıl"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Maviye katıldın"
+		},
+		{
+			"or": "Join",
+			"tr": "Katıl"
+		},
+		{
+			"or": "Joined",
+			"tr": "Girdi"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Bağlantıyı kes"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Kaydı durdur"
+		},
+		{
+			"or": "Record",
+			"tr": "Kayıt"
+		},
+		{
+			"or": "Player options",
+			"tr": "Oyuncu ayarları"
+		},
+		{
+			"or": "Address",
+			"tr": "Adres"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Evet"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Hayır"
+		},
+		{
+			"or": "Favorite",
+			"tr": "En sevilen"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "Sunucu mesajlarını kapat"
+		},
+		{
+			"or": "Game info",
+			"tr": "Oyun bilgisi"
+		},
+		{
+			"or": "Game type",
+			"tr": "Oyun türü"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Sıradan"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Orta"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Rekabetçi"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Zorluk"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Süre limiti"
+		},
+		{
+			"or": "MOTD",
+			"tr": "Açıklama"
+		},
+		{
+			"or": "Option",
+			"tr": "Seçenek"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Yeni bir oylama başlatmak için mevcut oylamanın bitmesini bekleyiniz."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Yeni bir oylama başlatmak için %d saniye beklemek zorundasınız"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "İzleyiciler oylama başlatamaz."
+		},
+		{
+			"or": "Change settings",
+			"tr": "Ayarları değiştir"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Oyuncuyu at"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Seyircilere katıl"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Sunucu oyuncuları atmak için oylamaya izin vermiyor"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Atma oylaması sunucuda %d oyuncu gerektiriyor"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Sunucu oyuncuları izleyici yapmak için oylamaya izin vermiyor"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Oylamayı zorla"
+		},
+		{
+			"or": "Remove",
+			"tr": "Çıkar"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Açıklama :"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Komut:"
+		},
+		{
 			"or": "Server",
 			"tr": "Sunucu"
 		},
@@ -1610,6 +1901,10 @@
 		{
 			"or": "Favorites",
 			"tr": "En sevilenler"
+		},
+		{
+			"or": "All",
+			"tr": "Hepsi"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1800,6 +2095,10 @@
 			"tr": "Sunucu adresi :"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "Zorluk:"
 		},
@@ -1832,8 +2131,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Skor tahtası"
+		},
+		{
 			"or": "Connect",
 			"tr": "Bağlan"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Serbest Görüntü"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": ""
+		},
+		{
+			"or": "Team",
+			"tr": "Takım"
+		},
+		{
+			"or": "Chat",
+			"tr": "Sohbet"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": ""
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": ""
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Enter'a basarak onayla veya Esc'ye basarak iptal et."
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": ""
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "'%s' susturuldu."
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "'%s' artık konuşabilir."
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "'%s' arkadaş olarak eklendi. "
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "'%s' arkadaşlardan çıkarıldı"
+		},
+		{
+			"or": "Hue:",
+			"tr": "Renk:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Canlılık:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Parlaklık:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Alfa:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Skinler"
+		},
+		{
+			"or": "Theme",
+			"tr": "Tema"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Dinamik Kamera"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Silah alındınğıda yeni silaha geç"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Oyuncu isimlerini göster"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Oyuncu isimlerini her zaman göster"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "İsim etiketlerinde takım renklerini kullan"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "Kullanıcı IDlerini göster"
+		},
+		{
+			"or": "Show social",
+			"tr": "Sosyal özellikleri göster"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": ""
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": ""
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": ""
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "Renkli sunucu mesajlarını aç"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": ""
+		},
+		{
+			"or": "Client",
+			"tr": "İstemci"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Ana menüyü geç"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Demoları otomatik olarak kaydet"
+		},
+		{
+			"or": "Max",
+			"tr": "En fazla"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Otomatik olarak oyun bitişinde ekran görüntüsü al"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Yenile"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Özelleştir"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Özel renkler"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Normal:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Takım:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Kişisel"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Deriyi sil"
+		},
+		{
+			"or": "Basic",
+			"tr": "Temel"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Deri silinemiyor"
+		},
+		{
+			"or": "Mouse",
+			"tr": ""
+		},
+		{
+			"or": "Joystick",
+			"tr": ""
+		},
+		{
+			"or": "Movement",
+			"tr": "Hareket"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Silah"
+		},
+		{
+			"or": "Voting",
+			"tr": "Oylama"
+		},
+		{
+			"or": "Misc",
+			"tr": "Çeşitli"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": ""
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": ""
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": ""
+		},
+		{
+			"or": "Weapons stats",
+			"tr": ""
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": ""
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": ""
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Ekran"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Tam ekran"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Sınırsız pencere"
+		},
+		{
+			"or": "Screen:",
+			"tr": ""
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Anti Aliasing"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Sync"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "FPS limiti"
+		},
+		{
+			"or": "Max fps",
+			"tr": "Maks FPS."
+		},
+		{
+			"or": "Texture",
+			"tr": "Doku"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Kaliteli dolgular"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Dolgu sıkıştırması"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Yüksek Detay"
+		},
+		{
+			"or": "Resolution",
+			"tr": "Çözünürlük"
+		},
+		{
+			"or": "Recommended",
+			"tr": "Önerilen"
+		},
+		{
+			"or": "Other",
+			"tr": "Diğer"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "Şu anki %dx%d(%d:%d)"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Arkaplan müziğini çal"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Detay"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Sample rate"
+		},
+		{
+			"or": "Volume",
+			"tr": "Ses"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "Ses sistemini yükle"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Sesleri kullan"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Lazer"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Bütün ayarların aktif olması için oyunu yeniden başlatmalısınız."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "Kimlik değiştirmek için tekrar giriş yapmalısın."
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Kimlik değiştirmek için %1.0f saniye beklemelisiniz."
+		},
+		{
+			"or": "Move left",
+			"tr": "Sola git"
+		},
+		{
+			"or": "Move right",
+			"tr": "Sağa git"
+		},
+		{
+			"or": "Jump",
+			"tr": "Zıpla"
+		},
+		{
+			"or": "Fire",
+			"tr": "Ateş"
+		},
+		{
+			"or": "Hook",
+			"tr": "Kanca"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Çekiç"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Tabanca"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Tüfek"
+		},
+		{
+			"or": "Grenade",
+			"tr": "El bombası"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Sonraki silah"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Önceki silah"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "Olumlu oy ver"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Olumsuz oy ver"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Takım sohbeti"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Fısılda"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Sohbeti göster"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Yüz ifadesi"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "İzleyici modu"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Sıradakini izle"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Öncekini izle"
+		},
+		{
+			"or": "Console",
+			"tr": "Konsol"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Uzak konsol"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Ekran alıntısı"
+		},
+		{
+			"or": "Statboard",
+			"tr": ""
+		},
+		{
+			"or": "Respawn",
+			"tr": "Yeniden doğ"
+		},
+		{
+			"or": "Ready",
+			"tr": "Hazır"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "Demo işareti ekle"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": ""
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": ""
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "İşletim sisteminin fare ivmesini kullan."
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "Menü fare hassasiyeti."
+		},
+		{
+			"or": "Enable joystick",
+			"tr": ""
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": ""
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": ""
+		},
+		{
+			"or": "Configure statboard",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": ""
+		},
+		{
+			"or": "Status",
+			"tr": ""
+		},
+		{
+			"or": "Aim bind",
+			"tr": ""
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": ""
 		}
 	]
 }

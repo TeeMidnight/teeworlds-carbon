@@ -19,6 +19,7 @@
 #include <engine/keys.h>
 #include <engine/storage.h>
 
+#include <game/client/gameclient.h>
 #include <game/client/ui_scrollregion.h>
 
 #include "editor.h"
@@ -34,7 +35,7 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	// don't allow deletion of game group
 	if(pEditor->m_Map.m_pGameGroup != pEditor->GetSelectedGroup())
 	{
-		if(pEditor->DoButton_Editor(&s_DeleteButton, "Delete group", 0, &Button, 0, "Delete group"))
+		if(pEditor->DoButton_Editor(&s_DeleteButton, Localize("Delete group", "Editor"), 0, &Button, 0, Localize("Delete group", "Editor")))
 		{
 			pEditor->m_Map.DeleteGroup(pEditor->m_SelectedGroup);
 			pEditor->m_SelectedGroup = maximum(0, pEditor->m_SelectedGroup - 1);
@@ -43,7 +44,7 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	}
 	else
 	{
-		if(pEditor->DoButton_Editor(&s_DeleteButton, "Clean-up game tiles", 0, &Button, 0, "Removes game tiles that aren't based on a layer"))
+		if(pEditor->DoButton_Editor(&s_DeleteButton, Localize("Clean-up game tiles", "Editor"), 0, &Button, 0, Localize("Removes game tiles that aren't based on a layer", "Editor")))
 		{
 			// gather all tile layers
 			array<CLayerTiles *> Layers;
@@ -86,7 +87,7 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	View.HSplitBottom(10.0f, &View, &Button);
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_NewQuadLayerButton = 0;
-	if(pEditor->DoButton_Editor(&s_NewQuadLayerButton, "Add quads layer", 0, &Button, 0, "Creates a new quad layer"))
+	if(pEditor->DoButton_Editor(&s_NewQuadLayerButton, Localize("Add quads layer", "Editor"), 0, &Button, 0, Localize("Creates a new quad layer", "Editor")))
 	{
 		CLayer *l = new CLayerQuads;
 		l->m_pEditor = pEditor;
@@ -100,7 +101,7 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	View.HSplitBottom(5.0f, &View, &Button);
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_NewTileLayerButton = 0;
-	if(pEditor->DoButton_Editor(&s_NewTileLayerButton, "Add tile layer", 0, &Button, 0, "Creates a new tile layer"))
+	if(pEditor->DoButton_Editor(&s_NewTileLayerButton, Localize("Add tile layer", "Editor"), 0, &Button, 0, Localize("Creates a new tile layer", "Editor")))
 	{
 		CLayer *l = new CLayerTiles(pEditor->m_Map.m_pGameLayer->m_Width, pEditor->m_Map.m_pGameLayer->m_Height);
 		l->m_pEditor = pEditor;
@@ -115,7 +116,7 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	{
 		View.HSplitBottom(5.0f, &View, &Button);
 		View.HSplitBottom(16.0f, &View, &Button);
-		pEditor->UI()->DoLabel(&Button, "Name:", 10.0f, TEXTALIGN_LEFT);
+		pEditor->UI()->DoLabel(&Button, Localize("Name:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 		Button.VSplitLeft(40.0f, 0, &Button);
 		static CLineInput s_NameInput;
 		s_NameInput.SetBuffer(pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_aName, sizeof(pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_aName));
@@ -139,17 +140,17 @@ bool CEditor::PopupGroup(void *pContext, CUIRect View)
 	};
 
 	CProperty aProps[] = {
-		{"Order", pEditor->m_SelectedGroup, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lGroups.size() - 1},
-		{"Pos X", -pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_OffsetX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Pos Y", -pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_OffsetY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Para X", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ParallaxX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Para Y", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ParallaxY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Order", "Editor"), pEditor->m_SelectedGroup, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lGroups.size() - 1},
+		{Localize("Pos X", "Editor"), -pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_OffsetX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos Y", "Editor"), -pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_OffsetY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Para X", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ParallaxX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Para Y", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ParallaxY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
 
-		{"Use Clipping", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_UseClipping, PROPTYPE_BOOL, 0, 1},
-		{"Clip X", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Clip Y", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Clip W", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipW, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Clip H", pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipH, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Use Clipping", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_UseClipping, PROPTYPE_BOOL, 0, 1},
+		{Localize("Clip X", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipX, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Clip Y", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipY, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Clip W", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipW, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Clip H", "Editor"), pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->m_ClipH, PROPTYPE_INT_SCROLL, -1000000, 1000000},
 		{0},
 	};
 
@@ -205,7 +206,7 @@ bool CEditor::PopupLayer(void *pContext, CUIRect View)
 	static int s_DeleteButton = 0;
 
 	// don't allow deletion of game layer
-	if(!IsGameLayer && pEditor->DoButton_Editor(&s_DeleteButton, "Delete layer", 0, &Button, 0, "Deletes the layer"))
+	if(!IsGameLayer && pEditor->DoButton_Editor(&s_DeleteButton, Localize("Delete layer", "Editor"), 0, &Button, 0, Localize("Deletes the layer", "Editor")))
 	{
 		pEditor->m_Map.m_lGroups[pEditor->m_SelectedGroup]->DeleteLayer(pEditor->m_SelectedLayer);
 		return true;
@@ -216,7 +217,7 @@ bool CEditor::PopupLayer(void *pContext, CUIRect View)
 	{
 		View.HSplitBottom(5.0f, &View, &Button);
 		View.HSplitBottom(16.0f, &View, &Button);
-		pEditor->UI()->DoLabel(&Button, "Name:", 10.0f, TEXTALIGN_LEFT);
+		pEditor->UI()->DoLabel(&Button, Localize("Name:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 		Button.VSplitLeft(40.0f, 0, &Button);
 		static CLineInput s_NameInput;
 		s_NameInput.SetBuffer(pCurrentLayer->m_aName, sizeof(pCurrentLayer->m_aName));
@@ -237,9 +238,9 @@ bool CEditor::PopupLayer(void *pContext, CUIRect View)
 	};
 
 	CProperty aProps[] = {
-		{"Group", pEditor->m_SelectedGroup, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lGroups.size() - 1},
-		{"Order", pEditor->m_SelectedLayer, PROPTYPE_INT_STEP, 0, pCurrentGroup->m_lLayers.size()},
-		{"Detail", pCurrentLayer->m_Flags & LAYERFLAG_DETAIL, PROPTYPE_BOOL, 0, 1},
+		{Localize("Group", "Editor"), pEditor->m_SelectedGroup, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lGroups.size() - 1},
+		{Localize("Order", "Editor"), pEditor->m_SelectedLayer, PROPTYPE_INT_STEP, 0, pCurrentGroup->m_lLayers.size()},
+		{Localize("Detail", "Editor"), pCurrentLayer->m_Flags & LAYERFLAG_DETAIL, PROPTYPE_BOOL, 0, 1},
 		{0},
 	};
 
@@ -287,7 +288,7 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	// delete button
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_DeleteButton = 0;
-	if(pEditor->DoButton_Editor(&s_DeleteButton, "Delete", 0, &Button, 0, "Deletes the current quad"))
+	if(pEditor->DoButton_Editor(&s_DeleteButton, Localize("Delete", "Editor"), 0, &Button, 0, Localize("Deletes the current quad", "Editor")))
 	{
 		CLayerQuads *pLayer = (CLayerQuads *) pEditor->GetSelectedLayerType(0, LAYERTYPE_QUADS);
 		if(pLayer)
@@ -306,7 +307,7 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	if(pLayer && pLayer->m_Image >= 0 && pLayer->m_Image < pEditor->m_Map.m_lImages.size())
 	{
 		static int s_AspectRatioButton = 0;
-		if(pEditor->DoButton_Editor(&s_AspectRatioButton, "Aspect ratio", 0, &Button, 0, "Resizes the current Quad based on the aspect ratio of the image"))
+		if(pEditor->DoButton_Editor(&s_AspectRatioButton, Localize("Aspect ratio", "Editor"), 0, &Button, 0, Localize("Resizes the current Quad based on the aspect ratio of the image", "Editor")))
 		{
 			int Top = pQuad->m_aPoints[0].y;
 			int Left = pQuad->m_aPoints[0].x;
@@ -341,7 +342,7 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	View.HSplitBottom(6.0f, &View, &Button);
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_AlignButton = 0;
-	if(pEditor->DoButton_Editor(&s_AlignButton, "Align", 0, &Button, 0, "Aligns coordinates of the quad points"))
+	if(pEditor->DoButton_Editor(&s_AlignButton, Localize("Align", "Editor"), 0, &Button, 0, Localize("Aligns coordinates of the quad points", "Editor")))
 	{
 		for(int k = 1; k < 4; k++)
 		{
@@ -356,7 +357,7 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	View.HSplitBottom(6.0f, &View, &Button);
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_SquareButton = 0;
-	if(pEditor->DoButton_Editor(&s_SquareButton, "Square", 0, &Button, 0, "Squares the current quad"))
+	if(pEditor->DoButton_Editor(&s_SquareButton, Localize("Square", "Editor"), 0, &Button, 0, Localize("Squares the current quad", "Editor")))
 	{
 		int Top = pQuad->m_aPoints[0].y;
 		int Left = pQuad->m_aPoints[0].x;
@@ -391,7 +392,7 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	View.HSplitBottom(6.0f, &View, &Button);
 	View.HSplitBottom(12.0f, &View, &Button);
 	static int s_CenterButton = 0;
-	if(pEditor->DoButton_Editor(&s_CenterButton, "Center pivot", 0, &Button, 0, "Centers the pivot of the current quad"))
+	if(pEditor->DoButton_Editor(&s_CenterButton, Localize("Center pivot", "Editor"), 0, &Button, 0, Localize("Centers the pivot of the current quad", "Editor")))
 	{
 		int Top = pQuad->m_aPoints[0].y;
 		int Left = pQuad->m_aPoints[0].x;
@@ -428,12 +429,12 @@ bool CEditor::PopupQuad(void *pContext, CUIRect View)
 	};
 
 	CProperty aProps[] = {
-		{"Pos X", fx2i(pQuad->m_aPoints[4].x), PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Pos Y", fx2i(pQuad->m_aPoints[4].y), PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Pos. Env", pQuad->m_PosEnv + 1, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lEnvelopes.size() + 1},
-		{"Pos. TO", pQuad->m_PosEnvOffset, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Color Env", pQuad->m_ColorEnv + 1, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lEnvelopes.size() + 1},
-		{"Color TO", pQuad->m_ColorEnvOffset, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos X", "Editor"), fx2i(pQuad->m_aPoints[4].x), PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos Y", "Editor"), fx2i(pQuad->m_aPoints[4].y), PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos. Env", "Editor"), pQuad->m_PosEnv + 1, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lEnvelopes.size() + 1},
+		{Localize("Pos. TO", "Editor"), pQuad->m_PosEnvOffset, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Color Env", "Editor"), pQuad->m_ColorEnv + 1, PROPTYPE_INT_STEP, 0, pEditor->m_Map.m_lEnvelopes.size() + 1},
+		{Localize("Color TO", "Editor"), pQuad->m_ColorEnvOffset, PROPTYPE_INT_SCROLL, -1000000, 1000000},
 
 		{0},
 	};
@@ -529,11 +530,11 @@ bool CEditor::PopupPoint(void *pContext, CUIRect View)
 	}
 
 	CProperty aProps[] = {
-		{"Pos X", x, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Pos Y", y, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Color", Color, PROPTYPE_COLOR, -1, pEditor->m_Map.m_lEnvelopes.size()},
-		{"Tex U", tu, PROPTYPE_INT_SCROLL, -1000000, 1000000},
-		{"Tex V", tv, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos X", "Editor"), x, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Pos Y", "Editor"), y, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Color", "Editor"), Color, PROPTYPE_COLOR, -1, pEditor->m_Map.m_lEnvelopes.size()},
+		{Localize("Tex U", "Editor"), tu, PROPTYPE_INT_SCROLL, -1000000, 1000000},
+		{Localize("Tex V", "Editor"), tv, PROPTYPE_INT_SCROLL, -1000000, 1000000},
 		{0},
 	};
 
@@ -592,7 +593,7 @@ bool CEditor::PopupNewFolder(void *pContext, CUIRect View)
 	// title
 	View.HSplitTop(10.0f, 0, &View);
 	View.HSplitTop(30.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Create new folder", 20.0f, TEXTALIGN_CENTER);
+	pEditor->UI()->DoLabel(&Label, Localize("Create new folder", "Editor"), 20.0f, TEXTALIGN_CENTER);
 
 	View.HSplitBottom(10.0f, &View, 0);
 	View.HSplitBottom(20.0f, &View, &ButtonBar);
@@ -605,13 +606,13 @@ bool CEditor::PopupNewFolder(void *pContext, CUIRect View)
 		View.HSplitBottom(20.0f, &View, &Label);
 		pEditor->DoEditBox(&pEditor->m_FileDialogNewFolderNameInput, &Label, 15.0f);
 		View.HSplitBottom(20.0f, &View, &Label);
-		pEditor->UI()->DoLabel(&Label, "Name:", 10.0f, TEXTALIGN_LEFT);
+		pEditor->UI()->DoLabel(&Label, Localize("Name:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 
 		// button bar
 		ButtonBar.VSplitLeft(30.0f, 0, &ButtonBar);
 		ButtonBar.VSplitLeft(110.0f, &Label, &ButtonBar);
 		static int s_CreateButton = 0;
-		if(pEditor->DoButton_Editor(&s_CreateButton, "Create", 0, &Label, 0, 0))
+		if(pEditor->DoButton_Editor(&s_CreateButton, Localize("Create", "Editor"), 0, &Label, 0, 0))
 		{
 			// create the folder
 			if(pEditor->m_FileDialogNewFolderNameInput.GetLength())
@@ -624,13 +625,13 @@ bool CEditor::PopupNewFolder(void *pContext, CUIRect View)
 					return true;
 				}
 				else
-					str_copy(pEditor->m_aFileDialogErrString, "Unable to create the folder", sizeof(pEditor->m_aFileDialogErrString));
+					str_copy(pEditor->m_aFileDialogErrString, Localize("Unable to create the folder", "Editor"), sizeof(pEditor->m_aFileDialogErrString));
 			}
 		}
 		ButtonBar.VSplitRight(30.0f, &ButtonBar, 0);
 		ButtonBar.VSplitRight(110.0f, &ButtonBar, &Label);
 		static int s_AbortButton = 0;
-		if(pEditor->DoButton_Editor(&s_AbortButton, "Abort", 0, &Label, 0, 0))
+		if(pEditor->DoButton_Editor(&s_AbortButton, Localize("Abort", "Editor"), 0, &Label, 0, 0))
 			return true;
 	}
 	else
@@ -639,14 +640,14 @@ bool CEditor::PopupNewFolder(void *pContext, CUIRect View)
 		View.HSplitTop(30.0f, 0, &View);
 		View.VMargin(40.0f, &View);
 		View.HSplitTop(20.0f, &Label, &View);
-		pEditor->UI()->DoLabel(&Label, "Error:", 10.0f, TEXTALIGN_LEFT);
+		pEditor->UI()->DoLabel(&Label, Localize("Error:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 		View.HSplitTop(20.0f, &Label, &View);
-		pEditor->UI()->DoLabel(&Label, "Unable to create the folder", 10.0f, TEXTALIGN_LEFT, View.w);
+		pEditor->UI()->DoLabel(&Label, Localize("Unable to create the folder", "Editor"), 10.0f, TEXTALIGN_LEFT, View.w);
 
 		// button
 		ButtonBar.VMargin(ButtonBar.w / 2.0f - 55.0f, &ButtonBar);
 		static int s_CreateButton = 0;
-		if(pEditor->DoButton_Editor(&s_CreateButton, "Ok", 0, &ButtonBar, 0, 0))
+		if(pEditor->DoButton_Editor(&s_CreateButton, Localize("Ok", "Editor"), 0, &ButtonBar, 0, 0))
 			return true;
 	}
 
@@ -661,7 +662,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 	// title
 	View.HSplitTop(10.0f, 0, &View);
 	View.HSplitTop(30.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Map details", 20.0f, TEXTALIGN_CENTER);
+	pEditor->UI()->DoLabel(&Label, Localize("Map details", "Editor"), 20.0f, TEXTALIGN_CENTER);
 
 	View.HSplitBottom(10.0f, &View, 0);
 	View.HSplitBottom(20.0f, &View, &ButtonBar);
@@ -670,7 +671,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 
 	// author box
 	View.HSplitTop(20.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Author:", 10.0f, TEXTALIGN_LEFT);
+	pEditor->UI()->DoLabel(&Label, Localize("Author:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 	Label.VSplitLeft(40.0f, 0, &Button);
 	Button.HSplitTop(16.0f, &Button, 0);
 	static CLineInput s_AuthorInput;
@@ -679,7 +680,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 
 	// version box
 	View.HSplitTop(20.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Version:", 10.0f, TEXTALIGN_LEFT);
+	pEditor->UI()->DoLabel(&Label, Localize("Version:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 	Label.VSplitLeft(40.0f, 0, &Button);
 	Button.HSplitTop(16.0f, &Button, 0);
 	static CLineInput s_VersionInput;
@@ -688,7 +689,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 
 	// credits box
 	View.HSplitTop(20.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Credits:", 10.0f, TEXTALIGN_LEFT);
+	pEditor->UI()->DoLabel(&Label, Localize("Credits:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 	Label.VSplitLeft(40.0f, 0, &Button);
 	Button.HSplitTop(16.0f, &Button, 0);
 	static CLineInput s_CreditsInput;
@@ -697,7 +698,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 
 	// license box
 	View.HSplitTop(20.0f, &Label, &View);
-	pEditor->UI()->DoLabel(&Label, "License:", 10.0f, TEXTALIGN_LEFT);
+	pEditor->UI()->DoLabel(&Label, Localize("License:", "Editor"), 10.0f, TEXTALIGN_LEFT);
 	Label.VSplitLeft(40.0f, 0, &Button);
 	Button.HSplitTop(16.0f, &Button, 0);
 	static CLineInput s_LicenseInput;
@@ -708,7 +709,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 	ButtonBar.VSplitLeft(30.0f, 0, &ButtonBar);
 	ButtonBar.VSplitLeft(110.0f, &Label, &ButtonBar);
 	static int s_CreateButton = 0;
-	if(pEditor->DoButton_Editor(&s_CreateButton, "Save", 0, &Label, 0, 0))
+	if(pEditor->DoButton_Editor(&s_CreateButton, Localize("Save", "Editor"), 0, &Label, 0, 0))
 	{
 		str_copy(pEditor->m_Map.m_MapInfo.m_aAuthor, pEditor->m_Map.m_MapInfoTmp.m_aAuthor, sizeof(pEditor->m_Map.m_MapInfo.m_aAuthor));
 		str_copy(pEditor->m_Map.m_MapInfo.m_aVersion, pEditor->m_Map.m_MapInfoTmp.m_aVersion, sizeof(pEditor->m_Map.m_MapInfo.m_aVersion));
@@ -720,7 +721,7 @@ bool CEditor::PopupMapInfo(void *pContext, CUIRect View)
 	ButtonBar.VSplitRight(30.0f, &ButtonBar, 0);
 	ButtonBar.VSplitRight(110.0f, &ButtonBar, &Label);
 	static int s_AbortButton = 0;
-	if(pEditor->DoButton_Editor(&s_AbortButton, "Abort", 0, &Label, 0, 0))
+	if(pEditor->DoButton_Editor(&s_AbortButton, Localize("Abort", "Editor"), 0, &Label, 0, 0))
 		return true;
 
 	return false;
@@ -735,15 +736,15 @@ bool CEditor::PopupEvent(void *pContext, CUIRect View)
 	View.HSplitTop(10.0f, 0, &View);
 	View.HSplitTop(30.0f, &Label, &View);
 	if(pEditor->m_PopupEventType == POPEVENT_EXIT)
-		pEditor->UI()->DoLabel(&Label, "Exit the editor", 20.0f, TEXTALIGN_CENTER);
+		pEditor->UI()->DoLabel(&Label, Localize("Exit the editor", "Editor"), 20.0f, TEXTALIGN_CENTER);
 	else if(pEditor->m_PopupEventType == POPEVENT_LOAD)
-		pEditor->UI()->DoLabel(&Label, "Load map", 20.0f, TEXTALIGN_CENTER);
+		pEditor->UI()->DoLabel(&Label, Localize("Load map", "Editor"), 20.0f, TEXTALIGN_CENTER);
 	else if(pEditor->m_PopupEventType == POPEVENT_LOAD_CURRENT)
-		pEditor->UI()->DoLabel(&Label, "Load current map", 20.0f, TEXTALIGN_CENTER);
+		pEditor->UI()->DoLabel(&Label, Localize("Load current map", "Editor"), 20.0f, TEXTALIGN_CENTER);
 	else if(pEditor->m_PopupEventType == POPEVENT_NEW)
-		pEditor->UI()->DoLabel(&Label, "New map", 20.0f, TEXTALIGN_CENTER);
+		pEditor->UI()->DoLabel(&Label, Localize("New map", "Editor"), 20.0f, TEXTALIGN_CENTER);
 	else if(pEditor->m_PopupEventType == POPEVENT_SAVE)
-		pEditor->UI()->DoLabel(&Label, "Save map", 20.0f, TEXTALIGN_CENTER);
+		pEditor->UI()->DoLabel(&Label, Localize("Save map", "Editor"), 20.0f, TEXTALIGN_CENTER);
 
 	View.HSplitBottom(10.0f, &View, 0);
 	View.HSplitBottom(20.0f, &View, &ButtonBar);
@@ -753,26 +754,26 @@ bool CEditor::PopupEvent(void *pContext, CUIRect View)
 	View.VMargin(40.0f, &View);
 	View.HSplitTop(20.0f, &Label, &View);
 	if(pEditor->m_PopupEventType == POPEVENT_EXIT)
-		pEditor->UI()->DoLabel(&Label, "The map currently contains unsaved data; you may want to save it before you exit the editor.\nContinue anyway?", 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
+		pEditor->UI()->DoLabel(&Label, Localize("The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?", "Editor"), 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
 	else if(pEditor->m_PopupEventType == POPEVENT_LOAD)
-		pEditor->UI()->DoLabel(&Label, "The map currently contains unsaved data; you may want to save it before you load a new map.\nContinue anyway?", 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
+		pEditor->UI()->DoLabel(&Label, Localize("The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?", "Editor"), 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
 	else if(pEditor->m_PopupEventType == POPEVENT_LOAD_CURRENT)
-		pEditor->UI()->DoLabel(&Label, "The map currently contains unsaved data; you may want to save it before you load the current map.\nContinue anyway?", 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
+		pEditor->UI()->DoLabel(&Label, Localize("The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?", "Editor"), 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
 	else if(pEditor->m_PopupEventType == POPEVENT_NEW)
-		pEditor->UI()->DoLabel(&Label, "The map currently contains unsaved data; you may want to save it before you create a new map.\nContinue anyway?", 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
+		pEditor->UI()->DoLabel(&Label, Localize("The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?", "Editor"), 10.0f, TEXTALIGN_LEFT, Label.w - 10.0f);
 	else if(pEditor->m_PopupEventType == POPEVENT_SAVE)
-		pEditor->UI()->DoLabel(&Label, "This file already exists.\nDo you want to overwrite it?", 10.0f, TEXTALIGN_LEFT);
+		pEditor->UI()->DoLabel(&Label, Localize("This file already exists. Do you want to overwrite it?", "Editor"), 10.0f, TEXTALIGN_LEFT);
 
 	// button bar
 	ButtonBar.VSplitLeft(30.0f, 0, &ButtonBar);
 	ButtonBar.VSplitLeft(110.0f, &Label, &ButtonBar);
 	static int s_OkButton = 0;
-	if(pEditor->DoButton_Editor(&s_OkButton, "Ok", 0, &Label, 0, 0))
+	if(pEditor->DoButton_Editor(&s_OkButton, Localize("Ok", "Editor"), 0, &Label, 0, 0))
 	{
 		if(pEditor->m_PopupEventType == POPEVENT_EXIT)
 			pEditor->Config()->m_ClEditor = 0;
 		else if(pEditor->m_PopupEventType == POPEVENT_LOAD)
-			pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, "Load map", "Load", "maps", "", pEditor->CallbackOpenMap, pEditor);
+			pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, Localize("Load map", "Editor"), Localize("Load", "Editor"), "maps", "", pEditor->CallbackOpenMap, pEditor);
 		else if(pEditor->m_PopupEventType == POPEVENT_LOAD_CURRENT)
 			pEditor->LoadCurrentMap();
 		else if(pEditor->m_PopupEventType == POPEVENT_NEW)
@@ -788,7 +789,7 @@ bool CEditor::PopupEvent(void *pContext, CUIRect View)
 	ButtonBar.VSplitRight(30.0f, &ButtonBar, 0);
 	ButtonBar.VSplitRight(110.0f, &ButtonBar, &Label);
 	static int s_AbortButton = 0;
-	if(pEditor->DoButton_Editor(&s_AbortButton, "Abort", 0, &Label, 0, 0))
+	if(pEditor->DoButton_Editor(&s_AbortButton, Localize("Abort", "Editor"), 0, &Label, 0, 0))
 	{
 		pEditor->m_PopupEventWasActivated = false;
 		return true;
@@ -837,7 +838,7 @@ bool CEditor::PopupSelectImage(void *pContext, CUIRect View)
 		if(pEditor->UI()->MouseInside(&Button))
 			ShowImage = i;
 
-		if(pEditor->DoButton_MenuItem(i == -1 ? (void *) &s_NoImageButton : &pEditor->m_Map.m_lImages[i], i == -1 ? "None" : pEditor->m_Map.m_lImages[i]->m_aName, i == g_SelectImageCurrent, &Button))
+		if(pEditor->DoButton_MenuItem(i == -1 ? (void *) &s_NoImageButton : &pEditor->m_Map.m_lImages[i], i == -1 ? Localize("None", "Editor") : pEditor->m_Map.m_lImages[i]->m_aName, i == g_SelectImageCurrent, &Button))
 		{
 			g_SelectImageSelected = i;
 			ClosePopup |= pEditor->Input()->MouseDoubleClick();
@@ -890,7 +891,7 @@ static int s_GametileOpSelected = -1;
 bool CEditor::PopupSelectGametileOp(void *pContext, CUIRect View)
 {
 	CEditor *pEditor = (CEditor *) pContext;
-	static const char *s_pButtonNames[] = {"Clear", "Collision", "Death", "Unhookable"};
+	static const char *s_pButtonNames[] = {Localize("Clear", "Editor"), Localize("Collision", "Editor"), Localize("Death", "Editor"), Localize("Unhookable", "Editor")};
 	static unsigned s_NumButtons = sizeof(s_pButtonNames) / sizeof(char *);
 	CUIRect Button;
 
@@ -943,7 +944,7 @@ bool CEditor::PopupDoodadAutoMap(void *pContext, CUIRect View)
 
 	// Amount
 	int s_DoodadSelectAmountButton = 0;
-	int NewValue = pEditor->UiDoValueSelector(&s_DoodadSelectAmountButton, &Rect, "", pLayer->m_SelectedAmount, 1, 100, 1, 1.0f, "Use left mouse button to drag and change the value. Hold shift to be more precise.");
+	int NewValue = pEditor->UiDoValueSelector(&s_DoodadSelectAmountButton, &Rect, "", pLayer->m_SelectedAmount, 1, 100, 1, 1.0f, Localize("Use left mouse button to drag and change the value. Hold shift to be more precise.", "Editor"));
 	if(NewValue != pLayer->m_SelectedAmount)
 	{
 		pLayer->m_SelectedAmount = NewValue;
@@ -954,7 +955,7 @@ bool CEditor::PopupDoodadAutoMap(void *pContext, CUIRect View)
 
 	// Generate button
 	static int s_ButtonDoodadGenerate = 0;
-	if(pEditor->DoButton_Editor(&s_ButtonDoodadGenerate, "Generate", 0, &Rect, 0, 0))
+	if(pEditor->DoButton_Editor(&s_ButtonDoodadGenerate, Localize("Generate", "Editor"), 0, &Rect, 0, 0))
 		s_AutoMapProceedOrder = true;
 
 	return false;
@@ -1008,14 +1009,14 @@ bool CEditor::PopupSelectConfigAutoMap(void *pContext, CUIRect View)
 
 	CUIRect Label, Full, Live;
 	View.VSplitMid(&Label, &View);
-	pEditor->UI()->DoLabel(&Label, "Type", 10.0f, TEXTALIGN_LEFT);
+	pEditor->UI()->DoLabel(&Label, Localize("Type", "Editor"), 10.0f, TEXTALIGN_LEFT);
 
 	View.VSplitMid(&Full, &Live);
-	if(pEditor->DoButton_ButtonDec(&s_aIds[0], "Full", !pLayer->m_LiveAutoMap, &Full, 0, ""))
+	if(pEditor->DoButton_ButtonDec(&s_aIds[0], Localize("Full", "Editor"), !pLayer->m_LiveAutoMap, &Full, 0, ""))
 	{
 		pLayer->m_LiveAutoMap = false;
 	}
-	if(pEditor->DoButton_ButtonInc(((char *) &s_aIds[0]) + 1, "Live", pLayer->m_LiveAutoMap, &Live, 0, ""))
+	if(pEditor->DoButton_ButtonInc(((char *) &s_aIds[0]) + 1, Localize("Live", "Editor"), pLayer->m_LiveAutoMap, &Live, 0, ""))
 	{
 		pLayer->m_LiveAutoMap = true;
 	}
@@ -1188,7 +1189,7 @@ bool CEditor::PopupImage(void *pContext, CUIRect View)
 	static int s_ExternalButton = 0;
 	if(pImg->m_External)
 	{
-		if(pEditor->DoButton_MenuItem(&s_ExternalButton, "Embed", 0, &Slot, 0, "Embeds the image into the map file."))
+		if(pEditor->DoButton_MenuItem(&s_ExternalButton, Localize("Embed", "Editor"), 0, &Slot, 0, Localize("Embeds the image into the map file.", "Editor")))
 		{
 			pImg->m_External = 0;
 			return true;
@@ -1196,7 +1197,7 @@ bool CEditor::PopupImage(void *pContext, CUIRect View)
 	}
 	else
 	{
-		if(pEditor->DoButton_MenuItem(&s_ExternalButton, "Make external", 0, &Slot, 0, "Removes the image from the map file."))
+		if(pEditor->DoButton_MenuItem(&s_ExternalButton, Localize("Make external", "Editor"), 0, &Slot, 0, Localize("Removes the image from the map file.", "Editor")))
 		{
 			pImg->m_External = 1;
 			return true;
@@ -1205,15 +1206,15 @@ bool CEditor::PopupImage(void *pContext, CUIRect View)
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_ReplaceButton, "Replace", 0, &Slot, 0, "Replaces the image with a new one"))
+	if(pEditor->DoButton_MenuItem(&s_ReplaceButton, Localize("Replace", "Editor"), 0, &Slot, 0, Localize("Replaces the image with a new one", "Editor")))
 	{
-		pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_IMG, "Replace Image", "Replace", "mapres", "", ReplaceImage, pEditor);
+		pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_IMG, Localize("Replace Image", "Editor"), Localize("Replace", "Editor"), "mapres", "", ReplaceImage, pEditor);
 		return true;
 	}
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_RemoveButton, "Remove", 0, &Slot, 0, "Removes the image from the map"))
+	if(pEditor->DoButton_MenuItem(&s_RemoveButton, Localize("Remove", "Editor"), 0, &Slot, 0, Localize("Removes the image from the map", "Editor")))
 	{
 		delete pImg;
 		pEditor->m_Map.m_lImages.remove_index(pEditor->m_SelectedImage);
@@ -1239,7 +1240,7 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 	CUIRect Slot;
 	View.HSplitTop(2.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_NewMapButton, "New", 0, &Slot, 0, "Creates a new map"))
+	if(pEditor->DoButton_MenuItem(&s_NewMapButton, Localize("New", "Editor"), 0, &Slot, 0, Localize("Creates a new map", "Editor")))
 	{
 		if(pEditor->HasUnsavedData())
 		{
@@ -1256,7 +1257,7 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_OpenButton, "Load", 0, &Slot, 0, "Opens a map for editing"))
+	if(pEditor->DoButton_MenuItem(&s_OpenButton, Localize("Load", "Editor"), 0, &Slot, 0, Localize("Opens a map for editing", "Editor")))
 	{
 		if(pEditor->HasUnsavedData())
 		{
@@ -1264,7 +1265,7 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 			pEditor->m_PopupEventActivated = true;
 		}
 		else
-			pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, "Load map", "Load", "maps", "", pEditor->CallbackOpenMap, pEditor);
+			pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, Localize("Load map", "Editor"), Localize("Load", "Editor"), "maps", "", pEditor->CallbackOpenMap, pEditor);
 		return true;
 	}
 
@@ -1272,7 +1273,7 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 	{
 		View.HSplitTop(2.0f, &Slot, &View);
 		View.HSplitTop(12.0f, &Slot, &View);
-		if(pEditor->DoButton_MenuItem(&s_OpenCurrentButton, "Load Current Map", 0, &Slot, 0, "Opens the current in game map for editing"))
+		if(pEditor->DoButton_MenuItem(&s_OpenCurrentButton, Localize("Load Current Map", "Editor"), 0, &Slot, 0, Localize("Opens the current in game map for editing", "Editor")))
 		{
 			if(pEditor->HasUnsavedData())
 			{
@@ -1287,15 +1288,15 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_AppendButton, "Append", 0, &Slot, 0, "Opens a map and adds everything from that map to the current one"))
+	if(pEditor->DoButton_MenuItem(&s_AppendButton, Localize("Append", "Editor"), 0, &Slot, 0, Localize("Opens a map and adds everything from that map to the current one", "Editor")))
 	{
-		pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, "Append map", "Append", "maps", "", pEditor->CallbackAppendMap, pEditor);
+		pEditor->InvokeFileDialog(IStorage::TYPE_ALL, FILETYPE_MAP, Localize("Append map", "Editor"), Localize("Append", "Editor"), "maps", "", pEditor->CallbackAppendMap, pEditor);
 		return true;
 	}
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_SaveButton, "Save", 0, &Slot, 0, "Saves the current map"))
+	if(pEditor->DoButton_MenuItem(&s_SaveButton, Localize("Save", "Editor"), 0, &Slot, 0, Localize("Saves the current map", "Editor")))
 	{
 		if(pEditor->m_aFileName[0] && pEditor->m_ValidSaveFilename)
 		{
@@ -1304,21 +1305,21 @@ bool CEditor::PopupMenuFile(void *pContext, CUIRect View)
 			pEditor->m_PopupEventActivated = true;
 		}
 		else
-			pEditor->InvokeFileDialog(IStorage::TYPE_SAVE, FILETYPE_MAP, "Save map", "Save", "maps", "", pEditor->CallbackSaveMap, pEditor);
+			pEditor->InvokeFileDialog(IStorage::TYPE_SAVE, FILETYPE_MAP, Localize("Save map", "Editor"), Localize("Save", "Editor"), "maps", "", pEditor->CallbackSaveMap, pEditor);
 		return true;
 	}
 
 	View.HSplitTop(2.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_SaveAsButton, "Save As", 0, &Slot, 0, "Saves the current map under a new name"))
+	if(pEditor->DoButton_MenuItem(&s_SaveAsButton, Localize("Save As", "Editor"), 0, &Slot, 0, Localize("Saves the current map under a new name", "Editor")))
 	{
-		pEditor->InvokeFileDialog(IStorage::TYPE_SAVE, FILETYPE_MAP, "Save map", "Save", "maps", "", pEditor->CallbackSaveMap, pEditor);
+		pEditor->InvokeFileDialog(IStorage::TYPE_SAVE, FILETYPE_MAP, Localize("Save map", "Editor"), Localize("Save", "Editor"), "maps", "", pEditor->CallbackSaveMap, pEditor);
 		return true;
 	}
 
 	View.HSplitTop(10.0f, &Slot, &View);
 	View.HSplitTop(12.0f, &Slot, &View);
-	if(pEditor->DoButton_MenuItem(&s_ExitButton, "Exit", 0, &Slot, 0, "Exits from the editor"))
+	if(pEditor->DoButton_MenuItem(&s_ExitButton, Localize(Localize("Exit", "Editor"), Localize("Editor")), 0, &Slot, 0, Localize("Exits from the editor", "Editor")))
 	{
 		if(pEditor->HasUnsavedData())
 		{

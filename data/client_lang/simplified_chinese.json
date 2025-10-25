@@ -11,6 +11,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": "加载地图"
+		},
+		{
+			"or": "Load",
+			"tr": "加载"
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": "保存地图"
+		},
+		{
+			"or": "Save",
+			"tr": "保存"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": "[ctrl+h] 切换高细节模式"
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": "动画"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": "[ctrl+m] 切换动画"
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": "预览"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": "[ctrl+p] 切换预览边界。这些边界表示玩家在游戏中能看到的最大范围。"
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": "信息"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": "[ctrl+i] 显示图块信息"
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": "[小键盘-] 缩小"
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": "[小键盘*] 恢复正常缩放并移除编辑器偏移"
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": "[小键盘+] 放大"
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": "增加动画速度"
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": "正常动画速度"
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": "降低动画速度"
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": "[N] 水平翻转画笔"
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": "[M] 垂直翻转画笔"
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": "[R] 逆时针旋转画笔"
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": "[T] 顺时针旋转画笔"
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": "添加四边形"
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": "添加一个新的四边形"
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": "边界"
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": "添加边界图块"
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": "重新聚焦"
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": "[HOME] 恢复地图焦点"
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": "网格"
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": "切换网格"
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": "减小网格"
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": "正常网格"
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": "增大网格"
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": "取色器"
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": "从视图中选取颜色"
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": "按住鼠标左键移动。按住 Shift 键移动轴心。按住 Ctrl 键旋转。按住 Alt 键忽略网格。"
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": "按住鼠标左键移动。按住 Shift 键移动纹理。按住 Alt 键忽略网格。"
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": "按住鼠标左键移动。按住 Ctrl 键旋转。按住 Alt 键忽略网格。"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": "使用鼠标左键拖拽创建画笔。"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": "使用鼠标左键用画笔绘制。右键清除画笔。"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": "使用鼠标左键从屏幕中选取颜色。"
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": "减少"
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": "增加"
+		},
+		{
+			"or": "No",
+			"tr": "否"
+		},
+		{
+			"or": "Yes",
+			"tr": "是"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": "使用鼠标左键拖拽更改数值。按住 Shift 键可更精确。"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": "使用鼠标左键拖拽更改颜色值。按住 Shift 键可更精确。"
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": "左"
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": "右"
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": "上"
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": "下"
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": "切换组可见性"
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": "启用/禁用组保存"
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": "选择组。双击展开。"
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": "选择组。双击收起。"
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": "切换图层可见性"
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": "启用/禁用图层保存"
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": "图块"
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": "四边形"
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": "选择图层。"
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": "添加组"
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": "添加一个新组"
+		},
+		{
+			"or": "Embedded",
+			"tr": "嵌入"
+		},
+		{
+			"or": "External",
+			"tr": "自带"
+		},
+		{
+			"or": "Add",
+			"tr": "添加"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": "加载一张新图像用于地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": "添加图像"
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": "当前路径：%s"
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": "文件名："
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": "搜索："
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": "打开"
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": "保存"
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": "取消"
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": "新建文件夹"
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": "地图详情"
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": "图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": "图像"
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": "在图像和图层管理之间切换。"
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": "包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": "切换包络线编辑器。"
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": "%s 右键点击以打开上下文菜单。"
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": "颜色+"
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": "创建一个新的颜色包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": "位置+"
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": "创建一个新的位置包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": "删除"
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": "删除此包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": "上一个包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": "下一个包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": "名称："
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": "包络线的 X 轴"
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": "包络线的 Y 轴"
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": "包络线的旋转"
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": "包络线的红色值"
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": "包络线的绿色值"
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": "包络线的蓝色值"
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": "包络线的透明度值"
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": "启用客户端间的包络线同步"
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": "已同步"
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": "按鼠标右键创建一个新点"
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": "切换曲线类型"
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": "鼠标左键拖拽。按住 Ctrl 键更精确。按住 Shift 键同时调整时间点。右键删除。"
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": "鼠标左键拖拽。按住 Ctrl 键更精确。"
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": "文件"
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": "文件: %s%s"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": "[ctrl+shift+e] 退出"
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": "删除组"
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": "清理游戏图块"
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": "移除不基于图层的游戏图块"
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": "添加四边形图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": "创建一个新的四边形图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": "添加图块图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": "创建一个新的图块图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": "顺序"
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": "位置 X"
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": "位置 Y"
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": "视差 X"
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": "视差 Y"
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": "使用裁剪"
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": "裁剪 X"
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": "裁剪 Y"
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": "裁剪宽度"
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": "裁剪高度"
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": "删除图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": "删除该图层"
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": "组"
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": "细节"
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": "删除当前四边形"
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": "宽高比"
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": "根据图像的宽高比调整当前四边形的大小"
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": "对齐"
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": "对齐四边形点的坐标"
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": "矩形化"
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": "将当前四边形变为矩形"
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": "居中轴心"
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": "将当前四边形的轴心居中"
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": "位置包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": "位置目标"
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": "颜色包络线"
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": "颜色目标"
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": "颜色"
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": "纹理 U"
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": "纹理 V"
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": "创建新文件夹"
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": "创建"
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": "无法创建文件夹"
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": "中止"
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": "错误："
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": "确定"
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": "作者："
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": "版本："
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": "鸣谢："
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": "许可证："
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": "退出编辑器"
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": "加载当前地图"
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": "新地图"
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": "地图包含未保存的数据；建议在退出编辑器前保存。是否继续？"
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": "地图包含未保存的数据；建议在加载新地图前保存。是否继续？"
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": "地图包含未保存的数据；建议在加载当前地图前保存。是否继续？"
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": "地图包含未保存的数据；建议在创建新地图前保存。是否继续？"
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": "此文件已存在。 是否覆盖？"
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": "加载"
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": "无"
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": "清除"
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": "碰撞"
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": "死亡"
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": "不可钩锁"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": "使用鼠标左键拖拽更改数值。按住 Shift 键可更精确。"
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": "生成"
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": "类型"
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": "完整"
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": "实时"
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": "嵌入"
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": "将图像嵌入地图文件中。"
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": "设为外部"
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": "从地图文件中移除图像。"
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": "替换"
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": "用新图像替换当前图像"
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": "替换图像"
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": "移除"
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": "从地图中移除图像"
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": "新建"
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": "创建一张新地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": "加载一张地图进行编辑"
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": "加载当前地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": "加载当前游戏内地图进行编辑"
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": "添加"
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": "加载并添加地图中的所有数据到当前地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": "添加地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": "保存当前地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": "另存为"
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": "以新名称保存当前地图"
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": "退出"
+		},
+		{
+			"or": "Editor",
+			"tr": "编辑器"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": "退出编辑器"
+		},
+		{
+			"or": "Search:",
+			"tr": "搜索："
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "双方队伍已被交换"
 		},
@@ -119,68 +1085,8 @@
 			"tr": "'%s' 加入了旁观位"
 		},
 		{
-			"or": "Search:",
-			"tr": "搜索："
-		},
-		{
 			"or": "key not found",
 			"tr": "键位不存在"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "地图已更换为 '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "全部"
-		},
-		{
-			"or": "Spectators",
-			"tr": "旁观者"
-		},
-		{
-			"or": "Team",
-			"tr": "队伍"
-		},
-		{
-			"or": "Chat",
-			"tr": "聊天"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "按 %s 以恢复聊天"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": "按下Tab以轮换at对象"
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "- %d/%d -"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "按 Enter 键确认或 Esc 键取消"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "按 Tab 键选择或 Esc 键取消"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "已屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "已解除屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "已将 '%s' 添加为好友"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "已将 '%s' 从好友中移除"
 		},
 		{
 			"or": "-Page %d-",
@@ -411,14 +1317,6 @@
 			"tr": "你确定要退出吗？"
 		},
 		{
-			"or": "No",
-			"tr": "否"
-		},
-		{
-			"or": "Yes",
-			"tr": "是"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": "请输入密码"
 		},
@@ -517,210 +1415,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "此服务器运行着经过调整的非标准游戏模式。"
-		},
-		{
-			"or": "Move left",
-			"tr": "向左移动"
-		},
-		{
-			"or": "Move right",
-			"tr": "向右移动"
-		},
-		{
-			"or": "Jump",
-			"tr": "跳跃"
-		},
-		{
-			"or": "Fire",
-			"tr": "开火"
-		},
-		{
-			"or": "Hook",
-			"tr": "钩子"
-		},
-		{
-			"or": "Hammer",
-			"tr": "锤子"
-		},
-		{
-			"or": "Pistol",
-			"tr": "手枪"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "霰弹枪"
-		},
-		{
-			"or": "Grenade",
-			"tr": "榴弹枪"
-		},
-		{
-			"or": "Laser",
-			"tr": "激光枪"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "下一个武器"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "上一个武器"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "赞成"
-		},
-		{
-			"or": "Vote no",
-			"tr": "否决"
-		},
-		{
-			"or": "Team chat",
-			"tr": "队伍聊天"
-		},
-		{
-			"or": "Whisper",
-			"tr": "私信"
-		},
-		{
-			"or": "Show chat",
-			"tr": "显示聊天"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "表情"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "旁观者模式"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "旁观下一个"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "旁观上一个"
-		},
-		{
-			"or": "Console",
-			"tr": "控制台"
-		},
-		{
-			"or": "Remote console",
-			"tr": "远程控制台"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "截图"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "计分板"
-		},
-		{
-			"or": "Statboard",
-			"tr": "统计板"
-		},
-		{
-			"or": "Respawn",
-			"tr": "重生"
-		},
-		{
-			"or": "Ready",
-			"tr": "准备"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "添加回放书签"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": "启用/禁用音效"
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": "切换动态镜头"
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "使用系统的鼠标加速度设置"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": "游戏内鼠标灵敏度"
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "主界面鼠标灵敏度"
-		},
-		{
-			"or": "Enable joystick",
-			"tr": "启用控制器"
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": "点击轮换所有可用控制器"
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": "相对"
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": "绝对"
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": "游戏内控制器模式"
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": "游戏内控制器灵敏度"
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": "主界面控制器灵敏度"
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": "摇杆防抖强度"
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": "未发现游戏控制器。连接游戏控制器后请重启游戏。"
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "配置统计信息板"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": "主体颜色"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": "轮廓颜色"
-		},
-		{
-			"or": "Device",
-			"tr": "设备"
-		},
-		{
-			"or": "Status",
-			"tr": "状态"
-		},
-		{
-			"or": "Aim bind",
-			"tr": "瞄准绑定"
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": "摇杆%d号轴"
 		},
 		{
 			"or": "Length",
@@ -832,612 +1526,8 @@
 			"tr": "地图Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "队伍被锁定"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "服务器只允许%d名玩家加入游戏"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "队伍已锁定。还有%02d:%02d才能更换队伍"
-		},
-		{
-			"or": "Game options",
-			"tr": "游戏选项"
-		},
-		{
-			"or": "locked",
-			"tr": "已锁定"
-		},
-		{
-			"or": "Spectating",
-			"tr": "视角"
-		},
-		{
-			"or": "Join red",
-			"tr": "加入红队"
-		},
-		{
-			"or": "Joined red",
-			"tr": "已加入红队"
-		},
-		{
-			"or": "Join blue",
-			"tr": "加入蓝队"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "已加入蓝队"
-		},
-		{
-			"or": "Join",
-			"tr": "加入"
-		},
-		{
-			"or": "Joined",
-			"tr": "已加入"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "断开连接"
-		},
-		{
-			"or": "Stop record",
-			"tr": "停止录制"
-		},
-		{
-			"or": "Record",
-			"tr": "录制回放"
-		},
-		{
-			"or": "Player options",
-			"tr": "玩家选项"
-		},
-		{
-			"or": "Address",
-			"tr": "地址"
-		},
-		{
-			"or": "Ping",
-			"tr": "延迟"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "是"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "否"
-		},
-		{
-			"or": "Favorite",
-			"tr": "收藏"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "屏蔽广播"
-		},
-		{
-			"or": "Game info",
-			"tr": "游戏信息"
-		},
-		{
-			"or": "Game type",
-			"tr": "游戏模式"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "休闲"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "普通"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "竞技"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "难度"
-		},
-		{
-			"or": "Score limit",
-			"tr": "目标得分"
-		},
-		{
-			"or": "Time limit",
-			"tr": "规定时限"
-		},
-		{
-			"or": "MOTD",
-			"tr": "公告"
-		},
-		{
-			"or": "Option",
-			"tr": "选项"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "当前投票结束前不能发起新投票"
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "你必须再等%d秒钟才能发起新的投票"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "旁观者不能发起投票。"
-		},
-		{
-			"or": "Change settings",
-			"tr": "变更设置"
-		},
-		{
-			"or": "Kick player",
-			"tr": "踢除玩家"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "将玩家移至旁观位"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "服务器不允许投票踢除玩家"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "踢除投票需要服务器中至少有%d名玩家才能发起"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "服务器不允许投票将玩家移至旁观位"
-		},
-		{
-			"or": "Force vote",
-			"tr": "强制投票"
-		},
-		{
-			"or": "Remove",
-			"tr": "移除"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "投票描述："
-		},
-		{
-			"or": "Vote command:",
-			"tr": "投票命令："
-		},
-		{
-			"or": "Add",
-			"tr": "添加"
-		},
-		{
-			"or": "Hue:",
-			"tr": "色调："
-		},
-		{
-			"or": "Sat:",
-			"tr": "饱和度："
-		},
-		{
-			"or": "Lgt:",
-			"tr": "亮度："
-		},
-		{
-			"or": "Alp:",
-			"tr": "透明度:"
-		},
-		{
-			"or": "Skins",
-			"tr": "皮肤"
-		},
-		{
-			"or": "Theme",
-			"tr": "主题"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "动态镜头"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": "平滑动态镜头"
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "拾取武器时自动装备"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "显示昵称"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "总是显示昵称"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "用队伍颜色标注昵称"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": "显示游戏内HUD"
-		},
-		{
-			"or": "Hide player's score",
-			"tr": "隐藏玩家分数"
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "显示用户ID"
-		},
-		{
-			"or": "Show social",
-			"tr": "显示社交与聊天"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": "允许所有"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": "仅好友"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": "屏蔽所有"
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": "聊天消息过滤"
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "启用服务器广播消息颜色"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": "禁用私信功能"
-		},
-		{
-			"or": "Client",
-			"tr": "客户端"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "跳过主菜单"
-		},
-		{
-			"or": "Wide menu",
-			"tr": "宽屏菜单"
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": "菜单背景不透明度"
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "自动保存回放"
-		},
-		{
-			"or": "Max",
-			"tr": "上限"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "自动截取游戏结束画面"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": "使用旧风格聊天"
-		},
-		{
-			"or": "Reset",
-			"tr": "重置"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": "重置常规设置"
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": "你确定要将常规设置恢复默认值吗？"
-		},
-		{
-			"or": "Customize",
-			"tr": "自定义"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "自定义颜色"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "普通："
-		},
-		{
-			"or": "Team:",
-			"tr": "队伍："
-		},
-		{
-			"or": "Personal",
-			"tr": "个人"
-		},
-		{
-			"or": "Clan",
-			"tr": "战队"
-		},
-		{
-			"or": "Flag:",
-			"tr": "旗帜:"
-		},
-		{
-			"or": "Save",
-			"tr": "保存"
-		},
-		{
-			"or": "Randomize",
-			"tr": "随机"
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": "你确定要删除皮肤'%s'吗？"
-		},
-		{
-			"or": "Delete skin",
-			"tr": "删除皮肤"
-		},
-		{
-			"or": "Basic",
-			"tr": "基础"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "无法删除这个皮肤"
-		},
-		{
-			"or": "Mouse",
-			"tr": "鼠标"
-		},
-		{
-			"or": "Joystick",
-			"tr": "控制器"
-		},
-		{
-			"or": "Movement",
-			"tr": "移动"
-		},
-		{
-			"or": "Weapon",
-			"tr": "武器"
-		},
-		{
-			"or": "Voting",
-			"tr": "投票"
-		},
-		{
-			"or": "Misc",
-			"tr": "其他"
-		},
-		{
-			"or": "Reset controls",
-			"tr": "重置控制设置"
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": "你确定要将控制设置恢复默认值吗？"
-		},
-		{
-			"or": "Kills",
-			"tr": "击杀数"
-		},
-		{
-			"or": "Deaths",
-			"tr": "死亡数"
-		},
-		{
-			"or": "Suicides",
-			"tr": "自杀数"
-		},
-		{
-			"or": "Ratio",
-			"tr": "击杀死亡比"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": "击杀死亡比"
-		},
-		{
-			"or": "Net score",
-			"tr": "净得分"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": "击杀数减去死亡数"
-		},
-		{
-			"or": "Kills per minute",
-			"tr": "每分钟击杀数"
-		},
-		{
-			"or": "Current spree",
-			"tr": "当前连杀数"
-		},
-		{
-			"or": "Best spree",
-			"tr": "最高连杀数"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "武器统计信息"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": "每种武器的击杀比"
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "得旗数"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": "CTF中的得旗数（1分/个）"
-		},
-		{
-			"or": "Flag captures",
-			"tr": "夺旗数"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": "CTF中的夺旗数（100分/个）"
-		},
-		{
-			"or": "Screen",
-			"tr": "屏幕"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "全屏幕"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "无边框窗口"
-		},
-		{
-			"or": "Screen:",
-			"tr": "屏幕："
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "抗锯齿"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "垂直同步"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "限制帧率"
-		},
-		{
-			"or": "Max fps",
-			"tr": "最大帧率"
-		},
-		{
-			"or": "Texture",
-			"tr": "纹理"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "高品质纹理"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "纹理压缩"
-		},
-		{
-			"or": "High Detail",
-			"tr": "显示地图细节"
-		},
-		{
-			"or": "Resolution",
-			"tr": "分辨率"
-		},
-		{
-			"or": "Recommended",
-			"tr": "推荐"
-		},
-		{
-			"or": "Other",
-			"tr": "其它"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "当前：%dx%d（%d：%d）"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": "重置图像设置"
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": "你确定要将图像设置恢复默认值吗？"
-		},
-		{
-			"or": "Play background music",
-			"tr": "播放背景音乐"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": "窗口失去焦点时静音"
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": "使用旧风格聊天音效"
-		},
-		{
-			"or": "Detail",
-			"tr": "详情"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "采样率"
-		},
-		{
-			"or": "Volume",
-			"tr": "音量"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "加载音效系统"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "启用音效"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": "重置音效设置"
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": "你确定要将音效设置恢复默认值吗？"
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "你需要重启游戏来使某些设置生效。"
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "你必须重新连接以更改身份。"
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "你需要等待 %1.0f 秒才能修改身份"
-		},
-		{
 			"or": "Local server",
 			"tr": "本地服务器"
-		},
-		{
-			"or": "Editor",
-			"tr": "地图编辑器"
 		},
 		{
 			"or": "Play",
@@ -1448,6 +1538,10 @@
 			"tr": "Teeworlds %s已经发布！请访问 www.teeworlds.com 下载最新版本！"
 		},
 		{
+			"or": "Score limit",
+			"tr": "目标得分"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "规定时限：%d分钟"
 		},
@@ -1455,6 +1549,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "比赛"
+		},
+		{
+			"or": "Spectators",
+			"tr": "旁观者"
 		},
 		{
 			"or": "Game over",
@@ -1467,6 +1565,14 @@
 		{
 			"or": "Map record",
 			"tr": "地图最高记录"
+		},
+		{
+			"or": "Ping",
+			"tr": "延迟"
+		},
+		{
+			"or": "Clan",
+			"tr": "战队"
 		},
 		{
 			"or": "Time",
@@ -1535,8 +1641,12 @@
 			"tr": "眼睛"
 		},
 		{
-			"or": "Free-View",
-			"tr": "自由视角"
+			"or": "Suicides",
+			"tr": "自杀数"
+		},
+		{
+			"or": "Ratio",
+			"tr": "击杀死亡比"
 		},
 		{
 			"context": "Net score",
@@ -1550,6 +1660,10 @@
 		{
 			"or": "Spree",
 			"tr": "连杀数"
+		},
+		{
+			"or": "Best spree",
+			"tr": "最高连杀数"
 		},
 		{
 			"context": "Flag grabs",
@@ -1597,6 +1711,183 @@
 			"tr": "投票被否决"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "队伍被锁定"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "服务器只允许%d名玩家加入游戏"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "队伍已锁定。还有%02d:%02d才能更换队伍"
+		},
+		{
+			"or": "Game options",
+			"tr": "游戏选项"
+		},
+		{
+			"or": "locked",
+			"tr": "已锁定"
+		},
+		{
+			"or": "Spectating",
+			"tr": "视角"
+		},
+		{
+			"or": "Join red",
+			"tr": "加入红队"
+		},
+		{
+			"or": "Joined red",
+			"tr": "已加入红队"
+		},
+		{
+			"or": "Join blue",
+			"tr": "加入蓝队"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "已加入蓝队"
+		},
+		{
+			"or": "Join",
+			"tr": "加入"
+		},
+		{
+			"or": "Joined",
+			"tr": "已加入"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "断开连接"
+		},
+		{
+			"or": "Stop record",
+			"tr": "停止录制"
+		},
+		{
+			"or": "Record",
+			"tr": "录制回放"
+		},
+		{
+			"or": "Player options",
+			"tr": "玩家选项"
+		},
+		{
+			"or": "Address",
+			"tr": "地址"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "是"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "否"
+		},
+		{
+			"or": "Favorite",
+			"tr": "收藏"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "屏蔽广播"
+		},
+		{
+			"or": "Game info",
+			"tr": "游戏信息"
+		},
+		{
+			"or": "Game type",
+			"tr": "游戏模式"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "休闲"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "普通"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "竞技"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "难度"
+		},
+		{
+			"or": "Time limit",
+			"tr": "规定时限"
+		},
+		{
+			"or": "MOTD",
+			"tr": "公告"
+		},
+		{
+			"or": "Option",
+			"tr": "选项"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "当前投票结束前不能发起新投票"
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "你必须再等%d秒钟才能发起新的投票"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "旁观者不能发起投票。"
+		},
+		{
+			"or": "Change settings",
+			"tr": "变更设置"
+		},
+		{
+			"or": "Kick player",
+			"tr": "踢除玩家"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "将玩家移至旁观位"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "服务器不允许投票踢除玩家"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "踢除投票需要服务器中至少有%d名玩家才能发起"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "服务器不允许投票将玩家移至旁观位"
+		},
+		{
+			"or": "Force vote",
+			"tr": "强制投票"
+		},
+		{
+			"or": "Remove",
+			"tr": "移除"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "投票描述："
+		},
+		{
+			"or": "Vote command:",
+			"tr": "投票命令："
+		},
+		{
 			"or": "Server",
 			"tr": "服务器"
 		},
@@ -1607,6 +1898,10 @@
 		{
 			"or": "Favorites",
 			"tr": "收藏"
+		},
+		{
+			"or": "All",
+			"tr": "全部"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1797,6 +2092,10 @@
 			"tr": "服务器地址："
 		},
 		{
+			"or": "Flag:",
+			"tr": "旗帜:"
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "难度："
 		},
@@ -1829,8 +2128,651 @@
 			"tr": "点击将该玩家加入到好友"
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "计分板"
+		},
+		{
 			"or": "Connect",
 			"tr": "连接"
+		},
+		{
+			"or": "Free-View",
+			"tr": "自由视角"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "地图已更换为 '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "队伍"
+		},
+		{
+			"or": "Chat",
+			"tr": "聊天"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "按 %s 以恢复聊天"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": "按下Tab以轮换at对象"
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "- %d/%d -"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "按 Enter 键确认或 Esc 键取消"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "按 Tab 键选择或 Esc 键取消"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "已屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "已解除屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "已将 '%s' 添加为好友"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "已将 '%s' 从好友中移除"
+		},
+		{
+			"or": "Hue:",
+			"tr": "色调："
+		},
+		{
+			"or": "Sat:",
+			"tr": "饱和度："
+		},
+		{
+			"or": "Lgt:",
+			"tr": "亮度："
+		},
+		{
+			"or": "Alp:",
+			"tr": "透明度:"
+		},
+		{
+			"or": "Skins",
+			"tr": "皮肤"
+		},
+		{
+			"or": "Theme",
+			"tr": "主题"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "动态镜头"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": "平滑动态镜头"
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "拾取武器时自动装备"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "显示昵称"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "总是显示昵称"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "用队伍颜色标注昵称"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": "显示游戏内HUD"
+		},
+		{
+			"or": "Hide player's score",
+			"tr": "隐藏玩家分数"
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "显示用户ID"
+		},
+		{
+			"or": "Show social",
+			"tr": "显示社交与聊天"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": "允许所有"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": "仅好友"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": "屏蔽所有"
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": "聊天消息过滤"
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "启用服务器广播消息颜色"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": "禁用私信功能"
+		},
+		{
+			"or": "Client",
+			"tr": "客户端"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "跳过主菜单"
+		},
+		{
+			"or": "Wide menu",
+			"tr": "宽屏菜单"
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": "菜单背景不透明度"
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "自动保存回放"
+		},
+		{
+			"or": "Max",
+			"tr": "上限"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "自动截取游戏结束画面"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": "使用旧风格聊天"
+		},
+		{
+			"or": "Reset",
+			"tr": "重置"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": "重置常规设置"
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": "你确定要将常规设置恢复默认值吗？"
+		},
+		{
+			"or": "Customize",
+			"tr": "自定义"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "自定义颜色"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "普通："
+		},
+		{
+			"or": "Team:",
+			"tr": "队伍："
+		},
+		{
+			"or": "Personal",
+			"tr": "个人"
+		},
+		{
+			"or": "Randomize",
+			"tr": "随机"
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": "你确定要删除皮肤'%s'吗？"
+		},
+		{
+			"or": "Delete skin",
+			"tr": "删除皮肤"
+		},
+		{
+			"or": "Basic",
+			"tr": "基础"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "无法删除这个皮肤"
+		},
+		{
+			"or": "Mouse",
+			"tr": "鼠标"
+		},
+		{
+			"or": "Joystick",
+			"tr": "控制器"
+		},
+		{
+			"or": "Movement",
+			"tr": "移动"
+		},
+		{
+			"or": "Weapon",
+			"tr": "武器"
+		},
+		{
+			"or": "Voting",
+			"tr": "投票"
+		},
+		{
+			"or": "Misc",
+			"tr": "其他"
+		},
+		{
+			"or": "Reset controls",
+			"tr": "重置控制设置"
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": "你确定要将控制设置恢复默认值吗？"
+		},
+		{
+			"or": "Kills",
+			"tr": "击杀数"
+		},
+		{
+			"or": "Deaths",
+			"tr": "死亡数"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": "击杀死亡比"
+		},
+		{
+			"or": "Net score",
+			"tr": "净得分"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": "击杀数减去死亡数"
+		},
+		{
+			"or": "Kills per minute",
+			"tr": "每分钟击杀数"
+		},
+		{
+			"or": "Current spree",
+			"tr": "当前连杀数"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "武器统计信息"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": "每种武器的击杀比"
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "得旗数"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": "CTF中的得旗数（1分/个）"
+		},
+		{
+			"or": "Flag captures",
+			"tr": "夺旗数"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": "CTF中的夺旗数（100分/个）"
+		},
+		{
+			"or": "Screen",
+			"tr": "屏幕"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "全屏幕"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "无边框窗口"
+		},
+		{
+			"or": "Screen:",
+			"tr": "屏幕："
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "抗锯齿"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "垂直同步"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "限制帧率"
+		},
+		{
+			"or": "Max fps",
+			"tr": "最大帧率"
+		},
+		{
+			"or": "Texture",
+			"tr": "纹理"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "高品质纹理"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "纹理压缩"
+		},
+		{
+			"or": "High Detail",
+			"tr": "显示地图细节"
+		},
+		{
+			"or": "Resolution",
+			"tr": "分辨率"
+		},
+		{
+			"or": "Recommended",
+			"tr": "推荐"
+		},
+		{
+			"or": "Other",
+			"tr": "其它"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "当前：%dx%d（%d：%d）"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": "重置图像设置"
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": "你确定要将图像设置恢复默认值吗？"
+		},
+		{
+			"or": "Play background music",
+			"tr": "播放背景音乐"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": "窗口失去焦点时静音"
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": "使用旧风格聊天音效"
+		},
+		{
+			"or": "Detail",
+			"tr": "详情"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "采样率"
+		},
+		{
+			"or": "Volume",
+			"tr": "音量"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "加载音效系统"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "启用音效"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": "重置音效设置"
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": "你确定要将音效设置恢复默认值吗？"
+		},
+		{
+			"or": "Laser",
+			"tr": "激光枪"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "你需要重启游戏来使某些设置生效。"
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "你必须重新连接以更改身份。"
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "你需要等待 %1.0f 秒才能修改身份"
+		},
+		{
+			"or": "Move left",
+			"tr": "向左移动"
+		},
+		{
+			"or": "Move right",
+			"tr": "向右移动"
+		},
+		{
+			"or": "Jump",
+			"tr": "跳跃"
+		},
+		{
+			"or": "Fire",
+			"tr": "开火"
+		},
+		{
+			"or": "Hook",
+			"tr": "钩子"
+		},
+		{
+			"or": "Hammer",
+			"tr": "锤子"
+		},
+		{
+			"or": "Pistol",
+			"tr": "手枪"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "霰弹枪"
+		},
+		{
+			"or": "Grenade",
+			"tr": "榴弹枪"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "下一个武器"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "上一个武器"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "赞成"
+		},
+		{
+			"or": "Vote no",
+			"tr": "否决"
+		},
+		{
+			"or": "Team chat",
+			"tr": "队伍聊天"
+		},
+		{
+			"or": "Whisper",
+			"tr": "私信"
+		},
+		{
+			"or": "Show chat",
+			"tr": "显示聊天"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "表情"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "旁观者模式"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "旁观下一个"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "旁观上一个"
+		},
+		{
+			"or": "Console",
+			"tr": "控制台"
+		},
+		{
+			"or": "Remote console",
+			"tr": "远程控制台"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "截图"
+		},
+		{
+			"or": "Statboard",
+			"tr": "统计板"
+		},
+		{
+			"or": "Respawn",
+			"tr": "重生"
+		},
+		{
+			"or": "Ready",
+			"tr": "准备"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "添加回放书签"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": "启用/禁用音效"
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": "切换动态镜头"
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "使用系统的鼠标加速度设置"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": "游戏内鼠标灵敏度"
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "主界面鼠标灵敏度"
+		},
+		{
+			"or": "Enable joystick",
+			"tr": "启用控制器"
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": "点击轮换所有可用控制器"
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": "相对"
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": "绝对"
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": "游戏内控制器模式"
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": "游戏内控制器灵敏度"
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": "主界面控制器灵敏度"
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": "摇杆防抖强度"
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": "未发现游戏控制器。连接游戏控制器后请重启游戏。"
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "配置统计信息板"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": "主体颜色"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": "轮廓颜色"
+		},
+		{
+			"or": "Device",
+			"tr": "设备"
+		},
+		{
+			"or": "Status",
+			"tr": "状态"
+		},
+		{
+			"or": "Aim bind",
+			"tr": "瞄准绑定"
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": "摇杆%d号轴"
 		}
 	]
 }

@@ -8,6 +8,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "儲存"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "否"
+		},
+		{
+			"or": "Yes",
+			"tr": "是"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "新增"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "地圖編輯器"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "搜尋："
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "雙方隊伍已被交換"
 		},
@@ -116,68 +1082,8 @@
 			"tr": "'%s' 加入了旁觀位"
 		},
 		{
-			"or": "Search:",
-			"tr": "搜尋："
-		},
-		{
 			"or": "key not found",
 			"tr": "鍵位不存在"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "地圖已更換為 '%s'"
-		},
-		{
-			"or": "All",
-			"tr": "全部"
-		},
-		{
-			"or": "Spectators",
-			"tr": "旁觀者"
-		},
-		{
-			"or": "Team",
-			"tr": "隊伍"
-		},
-		{
-			"or": "Chat",
-			"tr": "聊天"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "按 %s 以恢復聊天"
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "- %d/%d -"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "已屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "已解除屏蔽 '%s'"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "已將 '%s' 新增為好友"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "已將 '%s' 從好友中移除"
 		},
 		{
 			"or": "-Page %d-",
@@ -408,14 +1314,6 @@
 			"tr": "你確定要退出嗎？"
 		},
 		{
-			"or": "No",
-			"tr": "否"
-		},
-		{
-			"or": "Yes",
-			"tr": "是"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -514,210 +1412,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "此伺服器執行著經過調整的非標準遊戲模式。"
-		},
-		{
-			"or": "Move left",
-			"tr": "向左移動"
-		},
-		{
-			"or": "Move right",
-			"tr": "向右移動"
-		},
-		{
-			"or": "Jump",
-			"tr": "跳躍"
-		},
-		{
-			"or": "Fire",
-			"tr": "開火"
-		},
-		{
-			"or": "Hook",
-			"tr": "鉤子"
-		},
-		{
-			"or": "Hammer",
-			"tr": "錘子"
-		},
-		{
-			"or": "Pistol",
-			"tr": "手槍"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "霰彈槍"
-		},
-		{
-			"or": "Grenade",
-			"tr": "榴彈槍"
-		},
-		{
-			"or": "Laser",
-			"tr": "鐳射槍"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "下一個武器"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "上一個武器"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "贊成"
-		},
-		{
-			"or": "Vote no",
-			"tr": "否決"
-		},
-		{
-			"or": "Team chat",
-			"tr": "隊伍聊天"
-		},
-		{
-			"or": "Whisper",
-			"tr": "私訊"
-		},
-		{
-			"or": "Show chat",
-			"tr": "顯示聊天"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "表情"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "旁觀者模式"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "旁觀下一個"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "旁觀上一個"
-		},
-		{
-			"or": "Console",
-			"tr": "控制面板"
-		},
-		{
-			"or": "Remote console",
-			"tr": "遠端控制面板"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "截圖"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "計分板"
-		},
-		{
-			"or": "Statboard",
-			"tr": "統計板"
-		},
-		{
-			"or": "Respawn",
-			"tr": "重生"
-		},
-		{
-			"or": "Ready",
-			"tr": "準備"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "新增回放書籤"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": "啟用/禁用聲音"
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": "切換動態鏡頭"
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "使用系統的滑鼠加速度設定"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "主介面滑鼠靈敏度"
-		},
-		{
-			"or": "Enable joystick",
-			"tr": "啟用控制器"
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": "搖桿防抖強度"
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": "未發現遊戲控制器。連線遊戲控制器後請重啟遊戲。"
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "配置統計資訊板"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": "裝置"
-		},
-		{
-			"or": "Status",
-			"tr": "狀態"
-		},
-		{
-			"or": "Aim bind",
-			"tr": "瞄準繫結"
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": "搖桿%d號軸"
 		},
 		{
 			"or": "Length",
@@ -829,612 +1523,8 @@
 			"tr": "地圖Crc"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "隊伍被鎖定"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "伺服器只允許%d名玩家加入遊戲"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "隊伍已鎖定。還有%02d:%02d才能更換隊伍"
-		},
-		{
-			"or": "Game options",
-			"tr": "遊戲選項"
-		},
-		{
-			"or": "locked",
-			"tr": "已鎖定"
-		},
-		{
-			"or": "Spectating",
-			"tr": "視角"
-		},
-		{
-			"or": "Join red",
-			"tr": "加入紅隊"
-		},
-		{
-			"or": "Joined red",
-			"tr": "已加入紅隊"
-		},
-		{
-			"or": "Join blue",
-			"tr": "加入藍隊"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "已加入藍隊"
-		},
-		{
-			"or": "Join",
-			"tr": "加入"
-		},
-		{
-			"or": "Joined",
-			"tr": "已加入"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "斷開連線"
-		},
-		{
-			"or": "Stop record",
-			"tr": "停止錄製"
-		},
-		{
-			"or": "Record",
-			"tr": "錄製回放"
-		},
-		{
-			"or": "Player options",
-			"tr": "玩家選項"
-		},
-		{
-			"or": "Address",
-			"tr": "地址"
-		},
-		{
-			"or": "Ping",
-			"tr": "延遲"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "是"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "否"
-		},
-		{
-			"or": "Favorite",
-			"tr": "收藏"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "屏蔽廣播"
-		},
-		{
-			"or": "Game info",
-			"tr": "遊戲資訊"
-		},
-		{
-			"or": "Game type",
-			"tr": "遊戲模式"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "休閒"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "普通"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "競技"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "難度"
-		},
-		{
-			"or": "Score limit",
-			"tr": "目標得分"
-		},
-		{
-			"or": "Time limit",
-			"tr": "規定時限"
-		},
-		{
-			"or": "MOTD",
-			"tr": "公告"
-		},
-		{
-			"or": "Option",
-			"tr": "選項"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "當前投票結束前不能發起新投票"
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "你必須再等%d秒鐘才能發起新的投票"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "旁觀者不能發起投票。"
-		},
-		{
-			"or": "Change settings",
-			"tr": "變更設定"
-		},
-		{
-			"or": "Kick player",
-			"tr": "踢除玩家"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "將玩家移至旁觀位"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "伺服器不允許投票踢除玩家"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "踢除投票需要伺服器中至少有%d名玩家才能發起"
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "伺服器不允許投票將玩家移至旁觀位"
-		},
-		{
-			"or": "Force vote",
-			"tr": "強制投票"
-		},
-		{
-			"or": "Remove",
-			"tr": "移除"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "投票描述："
-		},
-		{
-			"or": "Vote command:",
-			"tr": "投票命令："
-		},
-		{
-			"or": "Add",
-			"tr": "新增"
-		},
-		{
-			"or": "Hue:",
-			"tr": "色調："
-		},
-		{
-			"or": "Sat:",
-			"tr": "飽和度："
-		},
-		{
-			"or": "Lgt:",
-			"tr": "亮度："
-		},
-		{
-			"or": "Alp:",
-			"tr": "透明度:"
-		},
-		{
-			"or": "Skins",
-			"tr": "造型"
-		},
-		{
-			"or": "Theme",
-			"tr": "主題"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "動態鏡頭"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "拾取武器時自動裝備"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "顯示暱稱"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "總是顯示暱稱"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "用隊伍顏色標註暱稱"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "顯示使用者ID"
-		},
-		{
-			"or": "Show social",
-			"tr": "顯示社交與聊天"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": "允許所有"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": "僅好友"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": "屏蔽所有"
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": "聊天訊息過濾"
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "啟用伺服器廣播訊息顏色"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": "禁用私訊功能"
-		},
-		{
-			"or": "Client",
-			"tr": "客戶端"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "跳過主選單"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "自動儲存回放"
-		},
-		{
-			"or": "Max",
-			"tr": "上限"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "自動擷取遊戲結束畫面"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "重置"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "自定義"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "自定義顏色"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "普通："
-		},
-		{
-			"or": "Team:",
-			"tr": "隊伍："
-		},
-		{
-			"or": "Personal",
-			"tr": "個人"
-		},
-		{
-			"or": "Clan",
-			"tr": "戰隊"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "儲存"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "刪除造型"
-		},
-		{
-			"or": "Basic",
-			"tr": "基礎"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "無法刪除這個造型"
-		},
-		{
-			"or": "Mouse",
-			"tr": "滑鼠"
-		},
-		{
-			"or": "Joystick",
-			"tr": "控制器"
-		},
-		{
-			"or": "Movement",
-			"tr": "移動"
-		},
-		{
-			"or": "Weapon",
-			"tr": "武器"
-		},
-		{
-			"or": "Voting",
-			"tr": "投票"
-		},
-		{
-			"or": "Misc",
-			"tr": "其他"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": "死亡數"
-		},
-		{
-			"or": "Suicides",
-			"tr": "自殺數"
-		},
-		{
-			"or": "Ratio",
-			"tr": "K/D"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": "淨得分"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": "當前連殺數"
-		},
-		{
-			"or": "Best spree",
-			"tr": "最高連殺數"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "武器統計資訊"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "得旗數"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "奪旗數"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "螢幕"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "全螢幕"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "無邊框視窗"
-		},
-		{
-			"or": "Screen:",
-			"tr": "螢幕："
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "抗鋸齒"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "垂直同步"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "限制幀率"
-		},
-		{
-			"or": "Max fps",
-			"tr": "最大幀率"
-		},
-		{
-			"or": "Texture",
-			"tr": "紋理"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "高品質紋理"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "紋理壓縮"
-		},
-		{
-			"or": "High Detail",
-			"tr": "顯示地圖細節"
-		},
-		{
-			"or": "Resolution",
-			"tr": "解析度"
-		},
-		{
-			"or": "Recommended",
-			"tr": "推薦"
-		},
-		{
-			"or": "Other",
-			"tr": "其它"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "當前：%dx%d（%d：%d）"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "播放背景音樂"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "詳情"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "取樣率"
-		},
-		{
-			"or": "Volume",
-			"tr": "音量"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "載入聲音系統"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "啟用聲音"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "你需要重啟遊戲來使某些設定生效。"
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "你必須重新連線以更改身份。"
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "你需要等待 %1.0f 秒才能修改身份"
-		},
-		{
 			"or": "Local server",
 			"tr": "本地伺服器"
-		},
-		{
-			"or": "Editor",
-			"tr": "地圖編輯器"
 		},
 		{
 			"or": "Play",
@@ -1445,6 +1535,10 @@
 			"tr": "Teeworlds %s已經發布！請訪問 www.teeworlds.com 下載最新版本！"
 		},
 		{
+			"or": "Score limit",
+			"tr": "目標得分"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "規定時限：%d分鐘"
 		},
@@ -1452,6 +1546,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "比賽"
+		},
+		{
+			"or": "Spectators",
+			"tr": "旁觀者"
 		},
 		{
 			"or": "Game over",
@@ -1464,6 +1562,14 @@
 		{
 			"or": "Map record",
 			"tr": "地圖最高記錄"
+		},
+		{
+			"or": "Ping",
+			"tr": "延遲"
+		},
+		{
+			"or": "Clan",
+			"tr": "戰隊"
 		},
 		{
 			"or": "Time",
@@ -1532,8 +1638,12 @@
 			"tr": "眼睛"
 		},
 		{
-			"or": "Free-View",
-			"tr": "自由視角"
+			"or": "Suicides",
+			"tr": "自殺數"
+		},
+		{
+			"or": "Ratio",
+			"tr": "K/D"
 		},
 		{
 			"context": "Net score",
@@ -1547,6 +1657,10 @@
 		{
 			"or": "Spree",
 			"tr": "連殺數"
+		},
+		{
+			"or": "Best spree",
+			"tr": "最高連殺數"
 		},
 		{
 			"context": "Flag grabs",
@@ -1594,6 +1708,183 @@
 			"tr": "投票被否決"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "隊伍被鎖定"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "伺服器只允許%d名玩家加入遊戲"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "隊伍已鎖定。還有%02d:%02d才能更換隊伍"
+		},
+		{
+			"or": "Game options",
+			"tr": "遊戲選項"
+		},
+		{
+			"or": "locked",
+			"tr": "已鎖定"
+		},
+		{
+			"or": "Spectating",
+			"tr": "視角"
+		},
+		{
+			"or": "Join red",
+			"tr": "加入紅隊"
+		},
+		{
+			"or": "Joined red",
+			"tr": "已加入紅隊"
+		},
+		{
+			"or": "Join blue",
+			"tr": "加入藍隊"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "已加入藍隊"
+		},
+		{
+			"or": "Join",
+			"tr": "加入"
+		},
+		{
+			"or": "Joined",
+			"tr": "已加入"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "斷開連線"
+		},
+		{
+			"or": "Stop record",
+			"tr": "停止錄製"
+		},
+		{
+			"or": "Record",
+			"tr": "錄製回放"
+		},
+		{
+			"or": "Player options",
+			"tr": "玩家選項"
+		},
+		{
+			"or": "Address",
+			"tr": "地址"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "是"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "否"
+		},
+		{
+			"or": "Favorite",
+			"tr": "收藏"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "屏蔽廣播"
+		},
+		{
+			"or": "Game info",
+			"tr": "遊戲資訊"
+		},
+		{
+			"or": "Game type",
+			"tr": "遊戲模式"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "休閒"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "普通"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "競技"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "難度"
+		},
+		{
+			"or": "Time limit",
+			"tr": "規定時限"
+		},
+		{
+			"or": "MOTD",
+			"tr": "公告"
+		},
+		{
+			"or": "Option",
+			"tr": "選項"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "當前投票結束前不能發起新投票"
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "你必須再等%d秒鐘才能發起新的投票"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "旁觀者不能發起投票。"
+		},
+		{
+			"or": "Change settings",
+			"tr": "變更設定"
+		},
+		{
+			"or": "Kick player",
+			"tr": "踢除玩家"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "將玩家移至旁觀位"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "伺服器不允許投票踢除玩家"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "踢除投票需要伺服器中至少有%d名玩家才能發起"
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "伺服器不允許投票將玩家移至旁觀位"
+		},
+		{
+			"or": "Force vote",
+			"tr": "強制投票"
+		},
+		{
+			"or": "Remove",
+			"tr": "移除"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "投票描述："
+		},
+		{
+			"or": "Vote command:",
+			"tr": "投票命令："
+		},
+		{
 			"or": "Server",
 			"tr": "伺服器"
 		},
@@ -1604,6 +1895,10 @@
 		{
 			"or": "Favorites",
 			"tr": "收藏"
+		},
+		{
+			"or": "All",
+			"tr": "全部"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1794,6 +2089,10 @@
 			"tr": "伺服器地址："
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "難度："
 		},
@@ -1826,8 +2125,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "計分板"
+		},
+		{
 			"or": "Connect",
 			"tr": "連線"
+		},
+		{
+			"or": "Free-View",
+			"tr": "自由視角"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "地圖已更換為 '%s'"
+		},
+		{
+			"or": "Team",
+			"tr": "隊伍"
+		},
+		{
+			"or": "Chat",
+			"tr": "聊天"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "按 %s 以恢復聊天"
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "- %d/%d -"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "按 Enter 鍵確認或 Esc 鍵取消"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "按 Enter 鍵選擇或 Esc 鍵取消"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "已屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "已解除屏蔽 '%s'"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "已將 '%s' 新增為好友"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "已將 '%s' 從好友中移除"
+		},
+		{
+			"or": "Hue:",
+			"tr": "色調："
+		},
+		{
+			"or": "Sat:",
+			"tr": "飽和度："
+		},
+		{
+			"or": "Lgt:",
+			"tr": "亮度："
+		},
+		{
+			"or": "Alp:",
+			"tr": "透明度:"
+		},
+		{
+			"or": "Skins",
+			"tr": "造型"
+		},
+		{
+			"or": "Theme",
+			"tr": "主題"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "動態鏡頭"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "拾取武器時自動裝備"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "顯示暱稱"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "總是顯示暱稱"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "用隊伍顏色標註暱稱"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "顯示使用者ID"
+		},
+		{
+			"or": "Show social",
+			"tr": "顯示社交與聊天"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": "允許所有"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": "僅好友"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": "屏蔽所有"
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": "聊天訊息過濾"
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "啟用伺服器廣播訊息顏色"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": "禁用私訊功能"
+		},
+		{
+			"or": "Client",
+			"tr": "客戶端"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "跳過主選單"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "自動儲存回放"
+		},
+		{
+			"or": "Max",
+			"tr": "上限"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "自動擷取遊戲結束畫面"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "重置"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "自定義"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "自定義顏色"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "普通："
+		},
+		{
+			"or": "Team:",
+			"tr": "隊伍："
+		},
+		{
+			"or": "Personal",
+			"tr": "個人"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "刪除造型"
+		},
+		{
+			"or": "Basic",
+			"tr": "基礎"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "無法刪除這個造型"
+		},
+		{
+			"or": "Mouse",
+			"tr": "滑鼠"
+		},
+		{
+			"or": "Joystick",
+			"tr": "控制器"
+		},
+		{
+			"or": "Movement",
+			"tr": "移動"
+		},
+		{
+			"or": "Weapon",
+			"tr": "武器"
+		},
+		{
+			"or": "Voting",
+			"tr": "投票"
+		},
+		{
+			"or": "Misc",
+			"tr": "其他"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": "死亡數"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": "淨得分"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": "當前連殺數"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "武器統計資訊"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "得旗數"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "奪旗數"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "螢幕"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "全螢幕"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "無邊框視窗"
+		},
+		{
+			"or": "Screen:",
+			"tr": "螢幕："
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "抗鋸齒"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "垂直同步"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "限制幀率"
+		},
+		{
+			"or": "Max fps",
+			"tr": "最大幀率"
+		},
+		{
+			"or": "Texture",
+			"tr": "紋理"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "高品質紋理"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "紋理壓縮"
+		},
+		{
+			"or": "High Detail",
+			"tr": "顯示地圖細節"
+		},
+		{
+			"or": "Resolution",
+			"tr": "解析度"
+		},
+		{
+			"or": "Recommended",
+			"tr": "推薦"
+		},
+		{
+			"or": "Other",
+			"tr": "其它"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "當前：%dx%d（%d：%d）"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "播放背景音樂"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "詳情"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "取樣率"
+		},
+		{
+			"or": "Volume",
+			"tr": "音量"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "載入聲音系統"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "啟用聲音"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "鐳射槍"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "你需要重啟遊戲來使某些設定生效。"
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "你必須重新連線以更改身份。"
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "你需要等待 %1.0f 秒才能修改身份"
+		},
+		{
+			"or": "Move left",
+			"tr": "向左移動"
+		},
+		{
+			"or": "Move right",
+			"tr": "向右移動"
+		},
+		{
+			"or": "Jump",
+			"tr": "跳躍"
+		},
+		{
+			"or": "Fire",
+			"tr": "開火"
+		},
+		{
+			"or": "Hook",
+			"tr": "鉤子"
+		},
+		{
+			"or": "Hammer",
+			"tr": "錘子"
+		},
+		{
+			"or": "Pistol",
+			"tr": "手槍"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "霰彈槍"
+		},
+		{
+			"or": "Grenade",
+			"tr": "榴彈槍"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "下一個武器"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "上一個武器"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "贊成"
+		},
+		{
+			"or": "Vote no",
+			"tr": "否決"
+		},
+		{
+			"or": "Team chat",
+			"tr": "隊伍聊天"
+		},
+		{
+			"or": "Whisper",
+			"tr": "私訊"
+		},
+		{
+			"or": "Show chat",
+			"tr": "顯示聊天"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "表情"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "旁觀者模式"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "旁觀下一個"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "旁觀上一個"
+		},
+		{
+			"or": "Console",
+			"tr": "控制面板"
+		},
+		{
+			"or": "Remote console",
+			"tr": "遠端控制面板"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "截圖"
+		},
+		{
+			"or": "Statboard",
+			"tr": "統計板"
+		},
+		{
+			"or": "Respawn",
+			"tr": "重生"
+		},
+		{
+			"or": "Ready",
+			"tr": "準備"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "新增回放書籤"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": "啟用/禁用聲音"
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": "切換動態鏡頭"
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "使用系統的滑鼠加速度設定"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "主介面滑鼠靈敏度"
+		},
+		{
+			"or": "Enable joystick",
+			"tr": "啟用控制器"
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": "搖桿防抖強度"
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": "未發現遊戲控制器。連線遊戲控制器後請重啟遊戲。"
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "配置統計資訊板"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": "裝置"
+		},
+		{
+			"or": "Status",
+			"tr": "狀態"
+		},
+		{
+			"or": "Aim bind",
+			"tr": "瞄準繫結"
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": "搖桿%d號軸"
 		}
 	]
 }

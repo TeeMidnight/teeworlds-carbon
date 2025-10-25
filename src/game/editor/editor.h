@@ -35,6 +35,10 @@
 
 typedef void (*INDEX_MODIFY_FUNC)(int *pIndex);
 
+enum
+{
+	BUTTON_CONTEXT = 1,
+};
 // CRenderTools m_RenderTools;
 
 // CEditor SPECIFIC

@@ -32,6 +32,972 @@
 	},
 	"translated strings": [
 		{
+			"context": "Editor",
+			"or": "Load map",
+			"tr": ""
+		},
+		{
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save map",
+			"tr": ""
+		},
+		{
+			"or": "Save",
+			"tr": "Speichern"
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+h] Toggle High Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Anim",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+m] Toggle animation",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Proof",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+p] Toggle proof borders. These borders represent the maximum range players are able to see in-game.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Info",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+i] Show tile information",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad-] Zoom out",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad*] Zoom to normal and remove editor offset",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[NumPad+] Zoom in",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease animation speed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[N] Flip brush horizontal",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[M] Flip brush vertical",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[R] Rotates the brush counter-clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[T] Rotates the brush clockwise",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Border",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds border tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Refocus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[HOME] Restore map focus",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Normal grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase grid",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pipette",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pick color from view",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move pivot. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Shift to move the texture. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse button to move. Hold Ctrl to rotate. Hold Alt to ignore grid.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and create a brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to paint with the brush. Right button clears the brush.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to pick a color from screen.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Decrease",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Increase",
+			"tr": ""
+		},
+		{
+			"or": "No",
+			"tr": "Nein"
+		},
+		{
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the color value. Hold Shift for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Right",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Up",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Down",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle group visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable group for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to expand.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select group. Double click to collapse.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggle layer visibility",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable/disable layer for saving",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Quads",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Select layer.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Adds a new group",
+			"tr": ""
+		},
+		{
+			"or": "Embedded",
+			"tr": ""
+		},
+		{
+			"or": "External",
+			"tr": ""
+		},
+		{
+			"or": "Add",
+			"tr": "Hinzufügen"
+		},
+		{
+			"context": "Editor",
+			"or": "Load a new image to use in the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Current path: %s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Filename:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Search:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Open",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Cancel",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Map details",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Layers",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Images",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch between image and layer management.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Envelopes",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Toggles the envelope editor.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "%s Right click for context menu.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new color envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos.+",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new pos envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete this envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Previous Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Next Envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Name:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "X-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Y-axis of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Rotation of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Red value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Green value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Blue value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Alpha value of the envelope",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Enable envelope synchronization between clients",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Synchronized",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Press right mouse button to create a new point",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Switch curve type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision. Hold Shift to alter time point aswell. Right click to delete.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Left mouse to drag. Hold Ctrl for more precision.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "File: %s%s",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "[ctrl+shift+e] Exit",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clean-up game tiles",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes game tiles that aren't based on a layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add quads layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new quad layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Add tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new tile layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Order",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Para Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use Clipping",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip X",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip Y",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip W",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clip H",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Delete layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the layer",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Group",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Detail",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Deletes the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aspect ratio",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Resizes the current Quad based on the aspect ratio of the image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Align",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Aligns coordinates of the quad points",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Square",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Squares the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Center pivot",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Centers the pivot of the current quad",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Pos. TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color Env",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color TO",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Color",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex U",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Tex V",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create new folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Create",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unable to create the folder",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Abort",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Error:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Ok",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Author:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Version:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Credits:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "License:",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit the editor",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you exit the editor. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you load the current map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "The map currently contains unsaved data; you may want to save it before you create a new map. Continue anyway?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "This file already exists. Do you want to overwrite it?",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "None",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Clear",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Collision",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Death",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Unhookable",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Use left mouse button to drag and change the value. Hold shift to be more precise.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Generate",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Type",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Full",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Live",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embed",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Embeds the image into the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Make external",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map file.",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replaces the image with a new one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Replace Image",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Remove",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Removes the image from the map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "New",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Creates a new map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Load Current Map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens the current in game map for editing",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Opens a map and adds everything from that map to the current one",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Append map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Save As",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Saves the current map under a new name",
+			"tr": ""
+		},
+		{
+			"context": "Editor",
+			"or": "Exit",
+			"tr": ""
+		},
+		{
+			"or": "Editor",
+			"tr": "Editor"
+		},
+		{
+			"context": "Editor",
+			"or": "Exits from the editor",
+			"tr": ""
+		},
+		{
+			"or": "Search:",
+			"tr": "Suche:"
+		},
+		{
 			"or": "Teams were swapped",
 			"tr": "Die Teams wurden getauscht"
 		},
@@ -140,68 +1106,8 @@
 			"tr": "'%s' ist den Zuschauern beigetreten"
 		},
 		{
-			"or": "Search:",
-			"tr": "Suche:"
-		},
-		{
 			"or": "key not found",
 			"tr": "Taste nicht gefunden"
-		},
-		{
-			"or": "Map changed to '%s'",
-			"tr": "Die Map wurde geändert zu %s"
-		},
-		{
-			"or": "All",
-			"tr": "Alle"
-		},
-		{
-			"or": "Spectators",
-			"tr": "Zuschauer"
-		},
-		{
-			"or": "Team",
-			"tr": "Team"
-		},
-		{
-			"or": "Chat",
-			"tr": "Chat"
-		},
-		{
-			"or": "Press %s to resume chatting",
-			"tr": "Drücke %s um in den Chat zurückzukehren "
-		},
-		{
-			"or": "Press Tab to cycle chat recipients",
-			"tr": ""
-		},
-		{
-			"or": "-Page %d/%d-",
-			"tr": "-Seite %d/%d-"
-		},
-		{
-			"or": "Press Enter to confirm or Esc to cancel",
-			"tr": "Drücke Enter zum Bestätigen oder Esc zum Abbrechen"
-		},
-		{
-			"or": "Press Tab to select or Esc to cancel",
-			"tr": "Drücke die Tabulatortaste zum Auswählen oder Esc zum Abbrechen"
-		},
-		{
-			"or": "'%s' was muted",
-			"tr": "%s wurde stumm geschaltet"
-		},
-		{
-			"or": "'%s' was unmuted",
-			"tr": "%s ist nicht mehr stumm geschaltet"
-		},
-		{
-			"or": "'%s' was added as a friend",
-			"tr": "%s wurde als Freund hinzugefügt"
-		},
-		{
-			"or": "'%s' was removed as a friend",
-			"tr": "%s wurde als Freund entfernt"
 		},
 		{
 			"or": "-Page %d-",
@@ -432,14 +1338,6 @@
 			"tr": "Möchtest du wirklich beenden?"
 		},
 		{
-			"or": "No",
-			"tr": "Nein"
-		},
-		{
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
 			"or": "Please enter the password.",
 			"tr": ""
 		},
@@ -538,210 +1436,6 @@
 		{
 			"or": "The server is running a non-standard tuning on a pure game type.",
 			"tr": "Der Server verwendet vom Standard abweichende Anpassungen für einen Standard-Spieltyp."
-		},
-		{
-			"or": "Move left",
-			"tr": "Nach links bewegen"
-		},
-		{
-			"or": "Move right",
-			"tr": "Nach rechts bewegen"
-		},
-		{
-			"or": "Jump",
-			"tr": "Springen"
-		},
-		{
-			"or": "Fire",
-			"tr": "Schießen"
-		},
-		{
-			"or": "Hook",
-			"tr": "Enterhaken"
-		},
-		{
-			"or": "Hammer",
-			"tr": "Hammer"
-		},
-		{
-			"or": "Pistol",
-			"tr": "Pistole"
-		},
-		{
-			"or": "Shotgun",
-			"tr": "Schrotflinte"
-		},
-		{
-			"or": "Grenade",
-			"tr": "Granate"
-		},
-		{
-			"or": "Laser",
-			"tr": "Laser"
-		},
-		{
-			"or": "Next weapon",
-			"tr": "Nächste Waffe"
-		},
-		{
-			"or": "Prev. weapon",
-			"tr": "Vorherige Waffe"
-		},
-		{
-			"or": "Vote yes",
-			"tr": "Ja stimmen"
-		},
-		{
-			"or": "Vote no",
-			"tr": "Nein stimmen"
-		},
-		{
-			"or": "Team chat",
-			"tr": "Teamchat"
-		},
-		{
-			"or": "Whisper",
-			"tr": "Flüstern"
-		},
-		{
-			"or": "Show chat",
-			"tr": "Chat zeigen"
-		},
-		{
-			"or": "Emoticon",
-			"tr": "Emoticon"
-		},
-		{
-			"or": "Spectator mode",
-			"tr": "Zuschaueroptionen"
-		},
-		{
-			"or": "Spectate next",
-			"tr": "Nächstem zusehen"
-		},
-		{
-			"or": "Spectate previous",
-			"tr": "Vorherigem zusehen"
-		},
-		{
-			"or": "Console",
-			"tr": "Konsole"
-		},
-		{
-			"or": "Remote console",
-			"tr": "Remotekonsole"
-		},
-		{
-			"or": "Screenshot",
-			"tr": "Bildschirmfoto"
-		},
-		{
-			"or": "Scoreboard",
-			"tr": "Punktetafel"
-		},
-		{
-			"or": "Statboard",
-			"tr": "Statistiktafel"
-		},
-		{
-			"or": "Respawn",
-			"tr": "Wiederbelebung"
-		},
-		{
-			"or": "Ready",
-			"tr": "Bereit"
-		},
-		{
-			"or": "Add demo marker",
-			"tr": "Aufnahmen-Zeitmarker setzen"
-		},
-		{
-			"or": "Toggle sounds",
-			"tr": "Sound an/ausschalten"
-		},
-		{
-			"or": "Toggle dynamic camera",
-			"tr": "Dynamische Kamera an/ausschalten"
-		},
-		{
-			"or": "Use OS mouse acceleration",
-			"tr": "Nutze Mausbeschleunigung vom Betriebssystem"
-		},
-		{
-			"or": "In-game mouse sens.",
-			"tr": ""
-		},
-		{
-			"or": "Menu mouse sens.",
-			"tr": "Menü-Mausempfindlichkeit"
-		},
-		{
-			"or": "Enable joystick",
-			"tr": "Joystick aktivieren"
-		},
-		{
-			"or": "Click to cycle through all available joysticks.",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Relative",
-			"tr": ""
-		},
-		{
-			"context": "In-game joystick mode",
-			"or": "Absolute",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick mode",
-			"tr": ""
-		},
-		{
-			"or": "In-game joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Menu/Editor joystick sensitivity",
-			"tr": ""
-		},
-		{
-			"or": "Joystick jitter tolerance",
-			"tr": "Joystick-Toleranz"
-		},
-		{
-			"or": "No joysticks found. Plug in a joystick and restart the game.",
-			"tr": "Es wurde kein Joystick gefunden. Bitte steck den Joystick nochmal neu ein und starte das Spiel neu."
-		},
-		{
-			"or": "Configure statboard",
-			"tr": "Statistiktafel einrichten"
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Inner Color",
-			"tr": ""
-		},
-		{
-			"context": "Custom Laser",
-			"or": "Outer Color",
-			"tr": ""
-		},
-		{
-			"or": "Device",
-			"tr": "Gerät"
-		},
-		{
-			"or": "Status",
-			"tr": "Status"
-		},
-		{
-			"or": "Aim bind",
-			"tr": "Zielen bind"
-		},
-		{
-			"or": "Joystick Axis #%d",
-			"tr": "Joystick Achse #%d"
 		},
 		{
 			"or": "Length",
@@ -853,612 +1547,8 @@
 			"tr": "CRC"
 		},
 		{
-			"or": "Teams are locked",
-			"tr": "Teams sind gesperrt"
-		},
-		{
-			"or": "Only %d active players are allowed",
-			"tr": "Nur %d aktive Spieler sind erlaubt"
-		},
-		{
-			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
-			"tr": "Teams sind gesperrt. Zeit bis zum Teamwechsel: %02d:%02d"
-		},
-		{
-			"or": "Game options",
-			"tr": "Spieleinstellungen"
-		},
-		{
-			"or": "locked",
-			"tr": "Gesperrt"
-		},
-		{
-			"or": "Spectating",
-			"tr": "Zuschauend"
-		},
-		{
-			"or": "Join red",
-			"tr": "Rot beitreten"
-		},
-		{
-			"or": "Joined red",
-			"tr": "Rot beigetreten"
-		},
-		{
-			"or": "Join blue",
-			"tr": "Blau beitreten"
-		},
-		{
-			"or": "Joined blue",
-			"tr": "Blau beitreten"
-		},
-		{
-			"or": "Join",
-			"tr": "Beitreten"
-		},
-		{
-			"or": "Joined",
-			"tr": "Im Spiel"
-		},
-		{
-			"or": "Disconnect",
-			"tr": "Trennen"
-		},
-		{
-			"or": "Stop record",
-			"tr": "Aufnahme beenden"
-		},
-		{
-			"or": "Record",
-			"tr": "Aufnehmen"
-		},
-		{
-			"or": "Player options",
-			"tr": "Spieleroptionen"
-		},
-		{
-			"or": "Address",
-			"tr": "Adresse"
-		},
-		{
-			"or": "Ping",
-			"tr": "Ping"
-		},
-		{
-			"context": "With",
-			"or": "Yes",
-			"tr": "Ja"
-		},
-		{
-			"context": "Without/None",
-			"or": "No",
-			"tr": "Nein"
-		},
-		{
-			"or": "Favorite",
-			"tr": "Favorit"
-		},
-		{
-			"or": "Mute broadcasts",
-			"tr": "Servernachrichten stummschalten"
-		},
-		{
-			"or": "Game info",
-			"tr": "Spielinfo"
-		},
-		{
-			"or": "Game type",
-			"tr": "Spieltyp"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Casual",
-			"tr": "Gelegenheitsspiel"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Normal",
-			"tr": "Normal"
-		},
-		{
-			"context": "Server difficulty",
-			"or": "Competitive",
-			"tr": "Wettkampf"
-		},
-		{
-			"or": "Difficulty",
-			"tr": "Schwie­rig­keit"
-		},
-		{
-			"or": "Score limit",
-			"tr": "Punktelimit"
-		},
-		{
-			"or": "Time limit",
-			"tr": "Zeitlimit"
-		},
-		{
-			"or": "MOTD",
-			"tr": "Servernachricht"
-		},
-		{
-			"or": "Option",
-			"tr": "Einstellungen"
-		},
-		{
-			"or": "Wait for current vote to end before calling a new one.",
-			"tr": "Warte bis die aktuelle Abstimmung endet, bevor du eine neue startest."
-		},
-		{
-			"or": "You must wait %d seconds before making another vote",
-			"tr": "Du musst %d Sekunden warten, bevor du eine neue Abstimmung starten darfst"
-		},
-		{
-			"or": "Spectators aren't allowed to start a vote.",
-			"tr": "Zuschauer dürfen keine Abstimmung starten."
-		},
-		{
-			"or": "Change settings",
-			"tr": "Einstellungen ändern"
-		},
-		{
-			"or": "Kick player",
-			"tr": "Spieler hinauswerfen"
-		},
-		{
-			"or": "Move player to spectators",
-			"tr": "Spieler zu Zuschauern verschieben"
-		},
-		{
-			"or": "Server does not allow voting to kick players",
-			"tr": "Server erlaubt es nicht, Spieler durch Abstimmungen hinauszuwerfen"
-		},
-		{
-			"or": "Kick voting requires %d players on the server",
-			"tr": "Eine Abstimmung zum Rauswurf benötigt mindestens %d Spieler auf dem Server."
-		},
-		{
-			"or": "Server does not allow voting to move players to spectators",
-			"tr": "Server erlaubt es nicht, Spieler durch Abstimmung zu Zuschauern zu machen"
-		},
-		{
-			"or": "Force vote",
-			"tr": "Abstimmung erzwingen"
-		},
-		{
-			"or": "Remove",
-			"tr": "Löschen"
-		},
-		{
-			"or": "Vote description:",
-			"tr": "Abstimmungsbeschreibung:"
-		},
-		{
-			"or": "Vote command:",
-			"tr": "Befehl:"
-		},
-		{
-			"or": "Add",
-			"tr": "Hinzufügen"
-		},
-		{
-			"or": "Hue:",
-			"tr": "Farbton:"
-		},
-		{
-			"or": "Sat:",
-			"tr": "Sättigung:"
-		},
-		{
-			"or": "Lgt:",
-			"tr": "Helligkeit:"
-		},
-		{
-			"or": "Alp:",
-			"tr": "Deckkraft:"
-		},
-		{
-			"or": "Skins",
-			"tr": "Skins"
-		},
-		{
-			"or": "Theme",
-			"tr": "Hintergrund"
-		},
-		{
-			"or": "Dynamic Camera",
-			"tr": "Dynamische Kamera"
-		},
-		{
-			"or": "Smooth Camera",
-			"tr": ""
-		},
-		{
-			"or": "Switch weapon on pickup",
-			"tr": "Waffe beim Aufheben wechseln"
-		},
-		{
-			"or": "Show name plates",
-			"tr": "Zeige Namen"
-		},
-		{
-			"or": "Always show name plates",
-			"tr": "Spielernamen immer anzeigen"
-		},
-		{
-			"or": "Use team colors for name plates",
-			"tr": "Teamfarben für Spielernamen nutzen"
-		},
-		{
-			"or": "Show in-game HUD",
-			"tr": ""
-		},
-		{
-			"or": "Hide player's score",
-			"tr": ""
-		},
-		{
-			"or": "Show user IDs",
-			"tr": "Zeige Benutzer-IDs an"
-		},
-		{
-			"or": "Show social",
-			"tr": "Sozial-Infos anzeigen"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "everyone",
-			"tr": "Allen"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "friends only",
-			"tr": "Nur Freunden"
-		},
-		{
-			"context": "Show chat messages from",
-			"or": "no one",
-			"tr": "Niemandem"
-		},
-		{
-			"or": "Show chat messages from",
-			"tr": "Zeige Chat-Nachrichten von"
-		},
-		{
-			"or": "Enable colored server broadcasts",
-			"tr": "Farbige Servernachrichten aktivieren"
-		},
-		{
-			"or": "Disable whisper feature",
-			"tr": "Flüsterfunktion deaktivieren"
-		},
-		{
-			"or": "Client",
-			"tr": "Client"
-		},
-		{
-			"or": "Skip the main menu",
-			"tr": "Hauptmenü überspringen"
-		},
-		{
-			"or": "Wide menu",
-			"tr": ""
-		},
-		{
-			"or": "Menu background opacity",
-			"tr": ""
-		},
-		{
-			"or": "Automatically record demos",
-			"tr": "Automatisch Aufnahmen erstellen"
-		},
-		{
-			"or": "Max",
-			"tr": "Max"
-		},
-		{
-			"or": "Automatically take game over screenshot",
-			"tr": "Bei Spielende automatisch ein Bildschirmfoto erstellen"
-		},
-		{
-			"or": "Use old style chat",
-			"tr": ""
-		},
-		{
-			"or": "Reset",
-			"tr": "Zurücksetzen"
-		},
-		{
-			"or": "Reset general settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the general settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Customize",
-			"tr": "Anpassen"
-		},
-		{
-			"or": "Custom colors",
-			"tr": "Eigene Farben"
-		},
-		{
-			"or": "Tee",
-			"tr": "Tee"
-		},
-		{
-			"or": "Normal:",
-			"tr": "Normal:"
-		},
-		{
-			"or": "Team:",
-			"tr": "Team:"
-		},
-		{
-			"or": "Personal",
-			"tr": "Persönlich"
-		},
-		{
-			"or": "Clan",
-			"tr": "Clan"
-		},
-		{
-			"or": "Flag:",
-			"tr": ""
-		},
-		{
-			"or": "Save",
-			"tr": "Speichern"
-		},
-		{
-			"or": "Randomize",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to delete the skin '%s'?",
-			"tr": ""
-		},
-		{
-			"or": "Delete skin",
-			"tr": "Skin löschen"
-		},
-		{
-			"or": "Basic",
-			"tr": "Standard"
-		},
-		{
-			"or": "Unable to delete the skin",
-			"tr": "Skin konnte nicht gelöscht werden"
-		},
-		{
-			"or": "Mouse",
-			"tr": "Maus"
-		},
-		{
-			"or": "Joystick",
-			"tr": "Joystick"
-		},
-		{
-			"or": "Movement",
-			"tr": "Bewegungen"
-		},
-		{
-			"or": "Weapon",
-			"tr": "Waffe"
-		},
-		{
-			"or": "Voting",
-			"tr": "Abstimmung"
-		},
-		{
-			"or": "Misc",
-			"tr": "Verschiedenes"
-		},
-		{
-			"or": "Reset controls",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the controls to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Kills",
-			"tr": ""
-		},
-		{
-			"or": "Deaths",
-			"tr": "Tode"
-		},
-		{
-			"or": "Suicides",
-			"tr": "Selbstmorde"
-		},
-		{
-			"or": "Ratio",
-			"tr": "Verhältnis"
-		},
-		{
-			"or": "The ratio of kills to deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Net score",
-			"tr": "Differenz Score"
-		},
-		{
-			"or": "The number of kills minus the number of deaths.",
-			"tr": ""
-		},
-		{
-			"or": "Kills per minute",
-			"tr": ""
-		},
-		{
-			"or": "Current spree",
-			"tr": "Derzeitiger Blutrausch"
-		},
-		{
-			"or": "Best spree",
-			"tr": "Bester Blutrausch"
-		},
-		{
-			"or": "Weapons stats",
-			"tr": "Waffenstatistik"
-		},
-		{
-			"or": "The proportion of kills gotten with each weapon.",
-			"tr": ""
-		},
-		{
-			"or": "Flag grabs",
-			"tr": "Flaggenaufnahmen"
-		},
-		{
-			"or": "The number of times that the flag was touched in CTF (1 point).",
-			"tr": ""
-		},
-		{
-			"or": "Flag captures",
-			"tr": "Flaggeneroberungen"
-		},
-		{
-			"or": "The number of times that the flag was captured in CTF (100 points).",
-			"tr": ""
-		},
-		{
-			"or": "Screen",
-			"tr": "Bildschirm"
-		},
-		{
-			"or": "Fullscreen",
-			"tr": "Vollbild"
-		},
-		{
-			"or": "Borderless window",
-			"tr": "Randloses Fenster"
-		},
-		{
-			"or": "Screen:",
-			"tr": "Bildschirm:"
-		},
-		{
-			"or": "Anti Aliasing",
-			"tr": "Anti-Aliasing"
-		},
-		{
-			"or": "V-Sync",
-			"tr": "V-Sync"
-		},
-		{
-			"or": "Limit Fps",
-			"tr": "Limitiere FPS"
-		},
-		{
-			"or": "Max fps",
-			"tr": "Maximale FPS"
-		},
-		{
-			"or": "Texture",
-			"tr": "Textur"
-		},
-		{
-			"or": "Quality Textures",
-			"tr": "Hochauflösende Texturen"
-		},
-		{
-			"or": "Texture Compression",
-			"tr": "Texturkompression"
-		},
-		{
-			"or": "High Detail",
-			"tr": "Hohe Details"
-		},
-		{
-			"or": "Resolution",
-			"tr": "Auflösung"
-		},
-		{
-			"or": "Recommended",
-			"tr": "Empfohlen"
-		},
-		{
-			"or": "Other",
-			"tr": "Andere"
-		},
-		{
-			"or": "Current: %dx%d (%d:%d)",
-			"tr": "Ausgewählt: %dx%d (%d:%d)"
-		},
-		{
-			"or": "Reset graphics settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "Play background music",
-			"tr": "Hintergrundmusik abspielen"
-		},
-		{
-			"or": "Mute when window is inactive",
-			"tr": ""
-		},
-		{
-			"or": "Use old style chat sound",
-			"tr": ""
-		},
-		{
-			"or": "Detail",
-			"tr": "Details"
-		},
-		{
-			"or": "Sample rate",
-			"tr": "Abtastrate"
-		},
-		{
-			"or": "Volume",
-			"tr": "Lautstärke"
-		},
-		{
-			"or": "Load the sound system",
-			"tr": "Audiosystem laden"
-		},
-		{
-			"or": "Use sounds",
-			"tr": "Ton aktivieren"
-		},
-		{
-			"or": "Reset sound settings",
-			"tr": ""
-		},
-		{
-			"or": "Are you sure that you want to reset the sound settings to their defaults?",
-			"tr": ""
-		},
-		{
-			"or": "You must restart the game for all settings to take effect.",
-			"tr": "Du musst das Spiel neustarten um die Änderungen zu übernehmen."
-		},
-		{
-			"or": "You must reconnect to change identity.",
-			"tr": "Du musst dich neu verbinden, um deine Identität zu ändern."
-		},
-		{
-			"or": "You have to wait %1.0f seconds to change identity.",
-			"tr": "Du musst %1.0f Sekunden warten, um deine Identität zu ändern."
-		},
-		{
 			"or": "Local server",
 			"tr": "Lokaler Server"
-		},
-		{
-			"or": "Editor",
-			"tr": "Editor"
 		},
 		{
 			"or": "Play",
@@ -1469,6 +1559,10 @@
 			"tr": "Teeworlds %s ist verfügbar! Lade es auf www.teeworlds.com herunter!"
 		},
 		{
+			"or": "Score limit",
+			"tr": "Punktelimit"
+		},
+		{
 			"or": "Time limit: %d min",
 			"tr": "Zeitlimit: %d min"
 		},
@@ -1476,6 +1570,10 @@
 			"context": "rounds (scoreboard)",
 			"or": "Match",
 			"tr": "Spiel"
+		},
+		{
+			"or": "Spectators",
+			"tr": "Zuschauer"
 		},
 		{
 			"or": "Game over",
@@ -1488,6 +1586,14 @@
 		{
 			"or": "Map record",
 			"tr": "Map Rekord"
+		},
+		{
+			"or": "Ping",
+			"tr": "Ping"
+		},
+		{
+			"or": "Clan",
+			"tr": "Clan"
 		},
 		{
 			"or": "Time",
@@ -1556,8 +1662,12 @@
 			"tr": "Augen"
 		},
 		{
-			"or": "Free-View",
-			"tr": "Freie Ansicht"
+			"or": "Suicides",
+			"tr": "Selbstmorde"
+		},
+		{
+			"or": "Ratio",
+			"tr": "Verhältnis"
 		},
 		{
 			"context": "Net score",
@@ -1571,6 +1681,10 @@
 		{
 			"or": "Spree",
 			"tr": "Blutrausch"
+		},
+		{
+			"or": "Best spree",
+			"tr": "Bester Blutrausch"
 		},
 		{
 			"context": "Flag grabs",
@@ -1618,6 +1732,183 @@
 			"tr": "Abstimmung fehlgeschlagen"
 		},
 		{
+			"or": "Teams are locked",
+			"tr": "Teams sind gesperrt"
+		},
+		{
+			"or": "Only %d active players are allowed",
+			"tr": "Nur %d aktive Spieler sind erlaubt"
+		},
+		{
+			"or": "Teams are locked. Time to wait before changing team: %02d:%02d",
+			"tr": "Teams sind gesperrt. Zeit bis zum Teamwechsel: %02d:%02d"
+		},
+		{
+			"or": "Game options",
+			"tr": "Spieleinstellungen"
+		},
+		{
+			"or": "locked",
+			"tr": "Gesperrt"
+		},
+		{
+			"or": "Spectating",
+			"tr": "Zuschauend"
+		},
+		{
+			"or": "Join red",
+			"tr": "Rot beitreten"
+		},
+		{
+			"or": "Joined red",
+			"tr": "Rot beigetreten"
+		},
+		{
+			"or": "Join blue",
+			"tr": "Blau beitreten"
+		},
+		{
+			"or": "Joined blue",
+			"tr": "Blau beitreten"
+		},
+		{
+			"or": "Join",
+			"tr": "Beitreten"
+		},
+		{
+			"or": "Joined",
+			"tr": "Im Spiel"
+		},
+		{
+			"or": "Disconnect",
+			"tr": "Trennen"
+		},
+		{
+			"or": "Stop record",
+			"tr": "Aufnahme beenden"
+		},
+		{
+			"or": "Record",
+			"tr": "Aufnehmen"
+		},
+		{
+			"or": "Player options",
+			"tr": "Spieleroptionen"
+		},
+		{
+			"or": "Address",
+			"tr": "Adresse"
+		},
+		{
+			"context": "With",
+			"or": "Yes",
+			"tr": "Ja"
+		},
+		{
+			"context": "Without/None",
+			"or": "No",
+			"tr": "Nein"
+		},
+		{
+			"or": "Favorite",
+			"tr": "Favorit"
+		},
+		{
+			"or": "Mute broadcasts",
+			"tr": "Servernachrichten stummschalten"
+		},
+		{
+			"or": "Game info",
+			"tr": "Spielinfo"
+		},
+		{
+			"or": "Game type",
+			"tr": "Spieltyp"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Casual",
+			"tr": "Gelegenheitsspiel"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Normal",
+			"tr": "Normal"
+		},
+		{
+			"context": "Server difficulty",
+			"or": "Competitive",
+			"tr": "Wettkampf"
+		},
+		{
+			"or": "Difficulty",
+			"tr": "Schwie­rig­keit"
+		},
+		{
+			"or": "Time limit",
+			"tr": "Zeitlimit"
+		},
+		{
+			"or": "MOTD",
+			"tr": "Servernachricht"
+		},
+		{
+			"or": "Option",
+			"tr": "Einstellungen"
+		},
+		{
+			"or": "Wait for current vote to end before calling a new one.",
+			"tr": "Warte bis die aktuelle Abstimmung endet, bevor du eine neue startest."
+		},
+		{
+			"or": "You must wait %d seconds before making another vote",
+			"tr": "Du musst %d Sekunden warten, bevor du eine neue Abstimmung starten darfst"
+		},
+		{
+			"or": "Spectators aren't allowed to start a vote.",
+			"tr": "Zuschauer dürfen keine Abstimmung starten."
+		},
+		{
+			"or": "Change settings",
+			"tr": "Einstellungen ändern"
+		},
+		{
+			"or": "Kick player",
+			"tr": "Spieler hinauswerfen"
+		},
+		{
+			"or": "Move player to spectators",
+			"tr": "Spieler zu Zuschauern verschieben"
+		},
+		{
+			"or": "Server does not allow voting to kick players",
+			"tr": "Server erlaubt es nicht, Spieler durch Abstimmungen hinauszuwerfen"
+		},
+		{
+			"or": "Kick voting requires %d players on the server",
+			"tr": "Eine Abstimmung zum Rauswurf benötigt mindestens %d Spieler auf dem Server."
+		},
+		{
+			"or": "Server does not allow voting to move players to spectators",
+			"tr": "Server erlaubt es nicht, Spieler durch Abstimmung zu Zuschauern zu machen"
+		},
+		{
+			"or": "Force vote",
+			"tr": "Abstimmung erzwingen"
+		},
+		{
+			"or": "Remove",
+			"tr": "Löschen"
+		},
+		{
+			"or": "Vote description:",
+			"tr": "Abstimmungsbeschreibung:"
+		},
+		{
+			"or": "Vote command:",
+			"tr": "Befehl:"
+		},
+		{
 			"or": "Server",
 			"tr": "Server"
 		},
@@ -1628,6 +1919,10 @@
 		{
 			"or": "Favorites",
 			"tr": "Favoriten"
+		},
+		{
+			"or": "All",
+			"tr": "Alle"
 		},
 		{
 			"or": "This server is protected by a password.",
@@ -1818,6 +2113,10 @@
 			"tr": "Serveradresse:"
 		},
 		{
+			"or": "Flag:",
+			"tr": ""
+		},
+		{
 			"or": "Difficulty:",
 			"tr": "Schwierigkeitsgrad:"
 		},
@@ -1850,8 +2149,651 @@
 			"tr": ""
 		},
 		{
+			"or": "Scoreboard",
+			"tr": "Punktetafel"
+		},
+		{
 			"or": "Connect",
 			"tr": "Verbinden"
+		},
+		{
+			"or": "Free-View",
+			"tr": "Freie Ansicht"
+		},
+		{
+			"or": "Map changed to '%s'",
+			"tr": "Die Map wurde geändert zu %s"
+		},
+		{
+			"or": "Team",
+			"tr": "Team"
+		},
+		{
+			"or": "Chat",
+			"tr": "Chat"
+		},
+		{
+			"or": "Press %s to resume chatting",
+			"tr": "Drücke %s um in den Chat zurückzukehren "
+		},
+		{
+			"or": "Press Tab to cycle chat recipients",
+			"tr": ""
+		},
+		{
+			"or": "-Page %d/%d-",
+			"tr": "-Seite %d/%d-"
+		},
+		{
+			"or": "Press Enter to confirm or Esc to cancel",
+			"tr": "Drücke Enter zum Bestätigen oder Esc zum Abbrechen"
+		},
+		{
+			"or": "Press Tab to select or Esc to cancel",
+			"tr": "Drücke die Tabulatortaste zum Auswählen oder Esc zum Abbrechen"
+		},
+		{
+			"or": "'%s' was muted",
+			"tr": "%s wurde stumm geschaltet"
+		},
+		{
+			"or": "'%s' was unmuted",
+			"tr": "%s ist nicht mehr stumm geschaltet"
+		},
+		{
+			"or": "'%s' was added as a friend",
+			"tr": "%s wurde als Freund hinzugefügt"
+		},
+		{
+			"or": "'%s' was removed as a friend",
+			"tr": "%s wurde als Freund entfernt"
+		},
+		{
+			"or": "Hue:",
+			"tr": "Farbton:"
+		},
+		{
+			"or": "Sat:",
+			"tr": "Sättigung:"
+		},
+		{
+			"or": "Lgt:",
+			"tr": "Helligkeit:"
+		},
+		{
+			"or": "Alp:",
+			"tr": "Deckkraft:"
+		},
+		{
+			"or": "Skins",
+			"tr": "Skins"
+		},
+		{
+			"or": "Theme",
+			"tr": "Hintergrund"
+		},
+		{
+			"or": "Dynamic Camera",
+			"tr": "Dynamische Kamera"
+		},
+		{
+			"or": "Smooth Camera",
+			"tr": ""
+		},
+		{
+			"or": "Switch weapon on pickup",
+			"tr": "Waffe beim Aufheben wechseln"
+		},
+		{
+			"or": "Show name plates",
+			"tr": "Zeige Namen"
+		},
+		{
+			"or": "Always show name plates",
+			"tr": "Spielernamen immer anzeigen"
+		},
+		{
+			"or": "Use team colors for name plates",
+			"tr": "Teamfarben für Spielernamen nutzen"
+		},
+		{
+			"or": "Show in-game HUD",
+			"tr": ""
+		},
+		{
+			"or": "Hide player's score",
+			"tr": ""
+		},
+		{
+			"or": "Show user IDs",
+			"tr": "Zeige Benutzer-IDs an"
+		},
+		{
+			"or": "Show social",
+			"tr": "Sozial-Infos anzeigen"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "everyone",
+			"tr": "Allen"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "friends only",
+			"tr": "Nur Freunden"
+		},
+		{
+			"context": "Show chat messages from",
+			"or": "no one",
+			"tr": "Niemandem"
+		},
+		{
+			"or": "Show chat messages from",
+			"tr": "Zeige Chat-Nachrichten von"
+		},
+		{
+			"or": "Enable colored server broadcasts",
+			"tr": "Farbige Servernachrichten aktivieren"
+		},
+		{
+			"or": "Disable whisper feature",
+			"tr": "Flüsterfunktion deaktivieren"
+		},
+		{
+			"or": "Client",
+			"tr": "Client"
+		},
+		{
+			"or": "Skip the main menu",
+			"tr": "Hauptmenü überspringen"
+		},
+		{
+			"or": "Wide menu",
+			"tr": ""
+		},
+		{
+			"or": "Menu background opacity",
+			"tr": ""
+		},
+		{
+			"or": "Automatically record demos",
+			"tr": "Automatisch Aufnahmen erstellen"
+		},
+		{
+			"or": "Max",
+			"tr": "Max"
+		},
+		{
+			"or": "Automatically take game over screenshot",
+			"tr": "Bei Spielende automatisch ein Bildschirmfoto erstellen"
+		},
+		{
+			"or": "Use old style chat",
+			"tr": ""
+		},
+		{
+			"or": "Reset",
+			"tr": "Zurücksetzen"
+		},
+		{
+			"or": "Reset general settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the general settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Customize",
+			"tr": "Anpassen"
+		},
+		{
+			"or": "Custom colors",
+			"tr": "Eigene Farben"
+		},
+		{
+			"or": "Tee",
+			"tr": "Tee"
+		},
+		{
+			"or": "Normal:",
+			"tr": "Normal:"
+		},
+		{
+			"or": "Team:",
+			"tr": "Team:"
+		},
+		{
+			"or": "Personal",
+			"tr": "Persönlich"
+		},
+		{
+			"or": "Randomize",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to delete the skin '%s'?",
+			"tr": ""
+		},
+		{
+			"or": "Delete skin",
+			"tr": "Skin löschen"
+		},
+		{
+			"or": "Basic",
+			"tr": "Standard"
+		},
+		{
+			"or": "Unable to delete the skin",
+			"tr": "Skin konnte nicht gelöscht werden"
+		},
+		{
+			"or": "Mouse",
+			"tr": "Maus"
+		},
+		{
+			"or": "Joystick",
+			"tr": "Joystick"
+		},
+		{
+			"or": "Movement",
+			"tr": "Bewegungen"
+		},
+		{
+			"or": "Weapon",
+			"tr": "Waffe"
+		},
+		{
+			"or": "Voting",
+			"tr": "Abstimmung"
+		},
+		{
+			"or": "Misc",
+			"tr": "Verschiedenes"
+		},
+		{
+			"or": "Reset controls",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the controls to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Kills",
+			"tr": ""
+		},
+		{
+			"or": "Deaths",
+			"tr": "Tode"
+		},
+		{
+			"or": "The ratio of kills to deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Net score",
+			"tr": "Differenz Score"
+		},
+		{
+			"or": "The number of kills minus the number of deaths.",
+			"tr": ""
+		},
+		{
+			"or": "Kills per minute",
+			"tr": ""
+		},
+		{
+			"or": "Current spree",
+			"tr": "Derzeitiger Blutrausch"
+		},
+		{
+			"or": "Weapons stats",
+			"tr": "Waffenstatistik"
+		},
+		{
+			"or": "The proportion of kills gotten with each weapon.",
+			"tr": ""
+		},
+		{
+			"or": "Flag grabs",
+			"tr": "Flaggenaufnahmen"
+		},
+		{
+			"or": "The number of times that the flag was touched in CTF (1 point).",
+			"tr": ""
+		},
+		{
+			"or": "Flag captures",
+			"tr": "Flaggeneroberungen"
+		},
+		{
+			"or": "The number of times that the flag was captured in CTF (100 points).",
+			"tr": ""
+		},
+		{
+			"or": "Screen",
+			"tr": "Bildschirm"
+		},
+		{
+			"or": "Fullscreen",
+			"tr": "Vollbild"
+		},
+		{
+			"or": "Borderless window",
+			"tr": "Randloses Fenster"
+		},
+		{
+			"or": "Screen:",
+			"tr": "Bildschirm:"
+		},
+		{
+			"or": "Anti Aliasing",
+			"tr": "Anti-Aliasing"
+		},
+		{
+			"or": "V-Sync",
+			"tr": "V-Sync"
+		},
+		{
+			"or": "Limit Fps",
+			"tr": "Limitiere FPS"
+		},
+		{
+			"or": "Max fps",
+			"tr": "Maximale FPS"
+		},
+		{
+			"or": "Texture",
+			"tr": "Textur"
+		},
+		{
+			"or": "Quality Textures",
+			"tr": "Hochauflösende Texturen"
+		},
+		{
+			"or": "Texture Compression",
+			"tr": "Texturkompression"
+		},
+		{
+			"or": "High Detail",
+			"tr": "Hohe Details"
+		},
+		{
+			"or": "Resolution",
+			"tr": "Auflösung"
+		},
+		{
+			"or": "Recommended",
+			"tr": "Empfohlen"
+		},
+		{
+			"or": "Other",
+			"tr": "Andere"
+		},
+		{
+			"or": "Current: %dx%d (%d:%d)",
+			"tr": "Ausgewählt: %dx%d (%d:%d)"
+		},
+		{
+			"or": "Reset graphics settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the graphics settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Play background music",
+			"tr": "Hintergrundmusik abspielen"
+		},
+		{
+			"or": "Mute when window is inactive",
+			"tr": ""
+		},
+		{
+			"or": "Use old style chat sound",
+			"tr": ""
+		},
+		{
+			"or": "Detail",
+			"tr": "Details"
+		},
+		{
+			"or": "Sample rate",
+			"tr": "Abtastrate"
+		},
+		{
+			"or": "Volume",
+			"tr": "Lautstärke"
+		},
+		{
+			"or": "Load the sound system",
+			"tr": "Audiosystem laden"
+		},
+		{
+			"or": "Use sounds",
+			"tr": "Ton aktivieren"
+		},
+		{
+			"or": "Reset sound settings",
+			"tr": ""
+		},
+		{
+			"or": "Are you sure that you want to reset the sound settings to their defaults?",
+			"tr": ""
+		},
+		{
+			"or": "Laser",
+			"tr": "Laser"
+		},
+		{
+			"or": "You must restart the game for all settings to take effect.",
+			"tr": "Du musst das Spiel neustarten um die Änderungen zu übernehmen."
+		},
+		{
+			"or": "You must reconnect to change identity.",
+			"tr": "Du musst dich neu verbinden, um deine Identität zu ändern."
+		},
+		{
+			"or": "You have to wait %1.0f seconds to change identity.",
+			"tr": "Du musst %1.0f Sekunden warten, um deine Identität zu ändern."
+		},
+		{
+			"or": "Move left",
+			"tr": "Nach links bewegen"
+		},
+		{
+			"or": "Move right",
+			"tr": "Nach rechts bewegen"
+		},
+		{
+			"or": "Jump",
+			"tr": "Springen"
+		},
+		{
+			"or": "Fire",
+			"tr": "Schießen"
+		},
+		{
+			"or": "Hook",
+			"tr": "Enterhaken"
+		},
+		{
+			"or": "Hammer",
+			"tr": "Hammer"
+		},
+		{
+			"or": "Pistol",
+			"tr": "Pistole"
+		},
+		{
+			"or": "Shotgun",
+			"tr": "Schrotflinte"
+		},
+		{
+			"or": "Grenade",
+			"tr": "Granate"
+		},
+		{
+			"or": "Next weapon",
+			"tr": "Nächste Waffe"
+		},
+		{
+			"or": "Prev. weapon",
+			"tr": "Vorherige Waffe"
+		},
+		{
+			"or": "Vote yes",
+			"tr": "Ja stimmen"
+		},
+		{
+			"or": "Vote no",
+			"tr": "Nein stimmen"
+		},
+		{
+			"or": "Team chat",
+			"tr": "Teamchat"
+		},
+		{
+			"or": "Whisper",
+			"tr": "Flüstern"
+		},
+		{
+			"or": "Show chat",
+			"tr": "Chat zeigen"
+		},
+		{
+			"or": "Emoticon",
+			"tr": "Emoticon"
+		},
+		{
+			"or": "Spectator mode",
+			"tr": "Zuschaueroptionen"
+		},
+		{
+			"or": "Spectate next",
+			"tr": "Nächstem zusehen"
+		},
+		{
+			"or": "Spectate previous",
+			"tr": "Vorherigem zusehen"
+		},
+		{
+			"or": "Console",
+			"tr": "Konsole"
+		},
+		{
+			"or": "Remote console",
+			"tr": "Remotekonsole"
+		},
+		{
+			"or": "Screenshot",
+			"tr": "Bildschirmfoto"
+		},
+		{
+			"or": "Statboard",
+			"tr": "Statistiktafel"
+		},
+		{
+			"or": "Respawn",
+			"tr": "Wiederbelebung"
+		},
+		{
+			"or": "Ready",
+			"tr": "Bereit"
+		},
+		{
+			"or": "Add demo marker",
+			"tr": "Aufnahmen-Zeitmarker setzen"
+		},
+		{
+			"or": "Toggle sounds",
+			"tr": "Sound an/ausschalten"
+		},
+		{
+			"or": "Toggle dynamic camera",
+			"tr": "Dynamische Kamera an/ausschalten"
+		},
+		{
+			"or": "Use OS mouse acceleration",
+			"tr": "Nutze Mausbeschleunigung vom Betriebssystem"
+		},
+		{
+			"or": "In-game mouse sens.",
+			"tr": ""
+		},
+		{
+			"or": "Menu mouse sens.",
+			"tr": "Menü-Mausempfindlichkeit"
+		},
+		{
+			"or": "Enable joystick",
+			"tr": "Joystick aktivieren"
+		},
+		{
+			"or": "Click to cycle through all available joysticks.",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Relative",
+			"tr": ""
+		},
+		{
+			"context": "In-game joystick mode",
+			"or": "Absolute",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick mode",
+			"tr": ""
+		},
+		{
+			"or": "In-game joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Menu/Editor joystick sensitivity",
+			"tr": ""
+		},
+		{
+			"or": "Joystick jitter tolerance",
+			"tr": "Joystick-Toleranz"
+		},
+		{
+			"or": "No joysticks found. Plug in a joystick and restart the game.",
+			"tr": "Es wurde kein Joystick gefunden. Bitte steck den Joystick nochmal neu ein und starte das Spiel neu."
+		},
+		{
+			"or": "Configure statboard",
+			"tr": "Statistiktafel einrichten"
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Inner Color",
+			"tr": ""
+		},
+		{
+			"context": "Custom Laser",
+			"or": "Outer Color",
+			"tr": ""
+		},
+		{
+			"or": "Device",
+			"tr": "Gerät"
+		},
+		{
+			"or": "Status",
+			"tr": "Status"
+		},
+		{
+			"or": "Aim bind",
+			"tr": "Zielen bind"
+		},
+		{
+			"or": "Joystick Axis #%d",
+			"tr": "Joystick Achse #%d"
 		}
 	]
 }
