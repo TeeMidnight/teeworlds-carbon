@@ -39,7 +39,7 @@ CMenus::CColumn CMenus::ms_aBrowserCols[] = {
 	{COL_BROWSER_GAMETYPE, IServerBrowser::SORT_GAMETYPE, "Type", 1, 70.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_MAP, IServerBrowser::SORT_MAP, "Map", 1, 100.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_PLAYERS, IServerBrowser::SORT_NUMPLAYERS, "Players", 1, 50.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
-	{COL_BROWSER_PING, IServerBrowser::SORT_PING, "Ping", 1, 40.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
+	{COL_BROWSER_PING, IServerBrowser::SORT_PING, "Ping", 1, 30.0f, 0, {0}, {0}, TEXTALIGN_CENTER},
 	{COL_BROWSER_SORT_ORDER, -1, "↓", 1, 12.f, 0, {0}, {0}, TEXTALIGN_CENTER}};
 
 CServerFilterInfo CMenus::CBrowserFilter::ms_FilterStandard = {IServerBrowser::FILTER_COMPAT_VERSION | IServerBrowser::FILTER_PURE, 999, -1, 0, {{0}}, {0}, {0}};
@@ -2089,7 +2089,7 @@ void CMenus::RenderServerbrowserBottomBox(CUIRect MainView)
 	MainView.HSplitTop(25.0f, &MainView, 0);
 	MainView.VSplitLeft(ButtonWidth, &Button, &MainView);
 	static CButtonContainer s_RefreshButton;
-	if(DoButton_Menu(&s_RefreshButton, Localize("Refresh"), 0, &Button) || (UI()->KeyPress(KEY_R) && (Input()->KeyIsPressed(KEY_LCTRL) || Input()->KeyIsPressed(KEY_RCTRL))))
+	if(DoButton_Menu(&s_RefreshButton, Localize("Refresh"), 0, &Button) || (UI()->KeyPress(KEY_R) && (Input()->KeyIsPressed(KEY_LCTRL) || Input()->KeyIsPressed(KEY_RCTRL))) || UI()->KeyPress(KEY_F5))
 	{
 		if(m_MenuPage == PAGE_INTERNET)
 			ServerBrowser()->Refresh(IServerBrowser::REFRESHFLAG_INTERNET);
