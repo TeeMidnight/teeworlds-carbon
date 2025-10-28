@@ -651,7 +651,6 @@ void CGameContext::OnClientEnter(int ClientID)
 		Server()->SendPackMsg(&Msg, MSGFLAG_NOSEND, -1);
 	}
 
-	Server()->ExpireServerInfo();
 	SendChatTargetLocalizeFormat(-1, _("'{}' entered the server"), EChatPrefix::ENTER_PLAYER, Server()->ClientName(ClientID));
 }
 
@@ -732,7 +731,6 @@ void CGameContext::OnClientDrop(int ClientID, const char *pReason)
 
 	m_VoteUpdate = true;
 
-	Server()->ExpireServerInfo();
 	SendChatTargetLocalizeFormat(-1, _("'{}' left the server"), EChatPrefix::LEAVE_PLAYER, Server()->ClientName(ClientID));
 }
 
@@ -1046,7 +1044,6 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 				SendSkinChange(pPlayer->GetCID(), i);
 			}
 
-			Server()->ExpireServerInfo();
 			pPlayer->GameController()->OnPlayerInfoChange(pPlayer);
 		}
 		else if(MsgID == NETMSGTYPE_CL_COMMAND)
@@ -1082,8 +1079,6 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 
 			SendTuningParams(ClientID);
 			SendReadyToEnter(pPlayer);
-
-			Server()->ExpireServerInfo();
 		}
 	}
 }
@@ -1623,46 +1618,6 @@ const char *CGameContext::NetVersionHashUsed() const { return GAME_NETVERSION_HA
 const char *CGameContext::NetVersionHashReal() const { return GAME_NETVERSION_HASH; }
 
 IGameServer *CreateGameServer() { return new CGameContext; }
-
-void CGameContext::OnUpdatePlayerServerInfo(CJsonStringWriter *pJSonWriter, int Id)
-{
-	if(!m_apPlayers[Id])
-		return;
-
-	STeeInfo &TeeInfo = m_apPlayers[Id]->m_TeeInfos;
-
-	pJSonWriter->WriteAttribute("skin");
-	pJSonWriter->BeginObject();
-
-	const char *apPartNames[NUM_SKINPARTS] = {"body", "marking", "decoration", "hands", "feet", "eyes"};
-
-	for(int i = 0; i < NUM_SKINPARTS; ++i)
-	{
-		pJSonWriter->WriteAttribute(apPartNames[i]);
-		pJSonWriter->BeginObject();
-
-		pJSonWriter->WriteAttribute("name");
-		pJSonWriter->WriteStrValue(TeeInfo.m_aaSkinPartNames[i]);
-
-		if(TeeInfo.m_aUseCustomColors[i])
-		{
-			pJSonWriter->WriteAttribute("color");
-			pJSonWriter->WriteIntValue(TeeInfo.m_aSkinPartColors[i]);
-		}
-
-		pJSonWriter->EndObject();
-	}
-
-	pJSonWriter->EndObject();
-
-	pJSonWriter->WriteAttribute("afk");
-	pJSonWriter->WriteBoolValue(false);
-
-	const int Team = m_apPlayers[Id]->GetTeam() == TEAM_SPECTATORS ? -1 : 0;
-
-	pJSonWriter->WriteAttribute("team");
-	pJSonWriter->WriteIntValue(Team);
-}
 
 int NetworkClipped(int SnappingClient, vec2 CheckPos, CGameContext *pGameServer)
 {

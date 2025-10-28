@@ -75,7 +75,6 @@ class CServer : public IServer
 	class CConfig *m_pConfig;
 	class IConsole *m_pConsole;
 	class IStorage *m_pStorage;
-	class IRegister *m_pRegister;
 
 public:
 	class IGameServer *GameServer() const { return m_pGameServer; }
@@ -228,7 +227,7 @@ public:
 	int m_GeneratedRconPassword;
 
 	CDemoRecorder m_DemoRecorder;
-	bool m_ServerInfoNeedsUpdate;
+	CRegister m_Register;
 
 	CServer();
 
@@ -286,10 +285,6 @@ public:
 
 	void ProcessClientPacket(CNetChunk *pPacket);
 
-	void ExpireServerInfo() override;
-	void UpdateRegisterServerInfo();
-	void UpdateServerInfo(bool Resend = false);
-
 	void SendServerInfo(int ClientID);
 	void GenerateServerInfo(CPacker *pPacker, bool IncludeClientInfo);
 
@@ -298,6 +293,7 @@ public:
 	const char *GetMapName();
 	int LoadMap(const char *pMapName);
 
+	void InitRegister(CNetServer *pNetServer, IEngineMasterServer *pMasterServer, CConfig *pConfig, IConsole *pConsole);
 	void InitInterfaces(IKernel *pKernel);
 	int Run();
 	void Free();

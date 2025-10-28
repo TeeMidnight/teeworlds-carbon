@@ -1602,7 +1602,7 @@ void CGameClient::OnPredict()
 				// apply player input
 				const int *pInput = Client()->GetInput(Tick);
 				if(pInput)
-					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput*)pInput);
+					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
 
 				World.m_apCharacters[c]->Tick(true);
 			}

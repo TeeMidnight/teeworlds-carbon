@@ -234,8 +234,6 @@ public:
 	const char *NetVersionHashUsed() const override;
 	const char *NetVersionHashReal() const override;
 
-	void OnUpdatePlayerServerInfo(class CJsonStringWriter *pJSonWriter, int Id) override;
-
 	bool CheckWorldExists(Uuid WorldID) override;
 	void LoadNewWorld(Uuid WorldID) override;
 	void SwitchPlayerWorld(int ClientID, Uuid WorldID) override;
