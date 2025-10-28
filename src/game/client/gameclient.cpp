@@ -1329,7 +1329,7 @@ void CGameClient::OnNewSnapshot()
 						m_aClients[Item.m_ID].m_Evolved = m_Snap.m_aCharacters[Item.m_ID].m_Cur;
 					}
 
-					if(Item.m_ID != m_LocalClientID || Client()->State() == IClient::STATE_DEMOPLAYBACK)
+					if(Item.m_ID != m_LocalClientID || !Config()->m_ClPredict || Client()->State() == IClient::STATE_DEMOPLAYBACK)
 						ProcessTriggeredEvents(pCharInfo->m_Cur.m_TriggeredEvents, vec2(pCharInfo->m_Cur.m_X, pCharInfo->m_Cur.m_Y));
 				}
 			}
@@ -1389,15 +1389,6 @@ void CGameClient::OnNewSnapshot()
 			else if(Item.m_Type == NETOBJTYPE_FLAG)
 			{
 				m_Snap.m_apFlags[Item.m_ID % 2] = (const CNetObj_Flag *) pData;
-			}
-			else if(Item.m_Type == NETOBJTYPE_DDNETCHARACTER)
-			{
-				const CNetObj_DDNetCharacter *pCharacterData = (const CNetObj_DDNetCharacter *) pData;
-				if(Item.m_ID < MAX_CLIENTS)
-				{
-					CSnapState::CCharacterInfo *pCharInfo = &m_Snap.m_aCharacters[Item.m_ID];
-					pCharInfo->m_FreezeEnd = pCharacterData->m_FreezeEnd;
-				}
 			}
 		}
 	}
@@ -1608,18 +1599,11 @@ void CGameClient::OnPredict()
 
 			if(m_LocalClientID == c)
 			{
-				// apply freeze for DDRace mode
 				// apply player input
 				const int *pInput = Client()->GetInput(Tick);
 				if(pInput)
-					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput *) pInput);
-				if(m_Snap.m_aCharacters[c].m_FreezeEnd > Client()->GameTick())
-				{
-					World.m_apCharacters[c]->m_Input.m_Direction = 0;
-					World.m_apCharacters[c]->m_Input.m_Jump = 0;
-					World.m_apCharacters[c]->m_Input.m_Fire &= INPUT_STATE_MASK;
-					World.m_apCharacters[c]->m_Input.m_Hook = 0;
-				}
+					World.m_apCharacters[c]->m_Input = *((const CNetObj_PlayerInput*)pInput);
+
 				World.m_apCharacters[c]->Tick(true);
 			}
 			else
@@ -1652,7 +1636,7 @@ void CGameClient::OnPredict()
 			// necessary to trigger events for them here. Also, our predictions
 			// for other players will often be wrong, so it's safer not to
 			// trigger events here.
-			if(m_LocalClientID != -1 && World.m_apCharacters[m_LocalClientID])
+			if(m_LocalClientID != -1 && World.m_apCharacters[m_LocalClientID] && Config()->m_ClPredict)
 			{
 				ProcessTriggeredEvents(
 					World.m_apCharacters[m_LocalClientID]->m_TriggeredEvents,

@@ -198,9 +198,6 @@ public:
 
 			// interpolated position
 			vec2 m_Position;
-
-			//
-			int m_FreezeEnd;
 		};
 
 		CCharacterInfo m_aCharacters[MAX_CLIENTS];
