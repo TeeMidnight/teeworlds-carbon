@@ -50,13 +50,6 @@ if(SDL3_FOUND)
   if(SDL3_BUNDLED)
     if(TARGET_OS STREQUAL "windows")
       set(SDL3_COPY_FILES "${EXTRA_SDL3_LIBDIR}/SDL3.dll")
-      if(TARGET_BITS EQUAL 32)
-        list(APPEND OPUSFILE_COPY_FILES
-          "${EXTRA_SDL3_LIBDIR}/libgcc_s_dw2-1.dll"
-        )
-      endif()
-    elseif(TARGET_OS STREQUAL "mac")
-      set(SDL3_COPY_DIRS "${EXTRA_SDL3_LIBDIR}/SDL3.framework")
     endif()
   endif()
 endif()
