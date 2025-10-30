@@ -1,4 +1,4 @@
 [submodule "data/maps"]
 	path = data/maps
-	url = https://github.com/NewTeeworldsCN/teeworlds-maps
+	url = https://github.com/TeeMidnight/teeworlds-maps
 	branch = carbon

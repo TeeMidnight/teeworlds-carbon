@@ -1,4 +1,4 @@
-Teeworlds Carbon ![GitHub Actions](https://github.com/NewTeeworldsCN/teeworlds-carbon/workflows/Build/badge.svg)
+Teeworlds Carbon ![GitHub Actions](https://github.com/TeeMidnight/teeworlds-carbon/workflows/Build/badge.svg)
 =========
 A teeworlds mod.
 

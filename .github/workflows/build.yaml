@@ -63,7 +63,7 @@ jobs:
       if: contains(matrix.os, 'windows')
       uses: actions/checkout@v4
       with:
-        repository: NewTeeworldsCN/carbon-libraries
+        repository: TeeMidnight/carbon-libraries
         ref: main
         path: ./carbon-libraries
 

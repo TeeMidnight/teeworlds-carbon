@@ -4,11 +4,11 @@
  *
  * Copyright (C) 2007-2014 Magnus Auvinen
  * Copyright (C) 2014-2018 Dennis Felsing
- * Copyright (C) 2025 NewTeeworldsCN
+ * Copyright (C) 2025 TeeMidnight
  *
  * This software is provided 'as-is', under the zlib License.
  * See license.txt in the root of the distribution for more information.
- * If you are missing that file, acquire a complete release at github.com/NewTeeworldsCN/teeworlds-carbon
+ * If you are missing that file, acquire a complete release at github.com/TeeMidnight/teeworlds-carbon
  */
 #include <base/math.h>
 #include <base/system.h>
