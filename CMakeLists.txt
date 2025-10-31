@@ -919,7 +919,6 @@ set(EXPECTED_DATA
   countryflags/TR.png
   countryflags/TT.png
   countryflags/TV.png
-  countryflags/TW.png
   countryflags/TZ.png
   countryflags/UA.png
   countryflags/UG.png

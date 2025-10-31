@@ -65,9 +65,13 @@ void CCountryFlags::LoadCountryflagsIndexfile()
 					str_copy(CountryFlag.m_aCountryCodeString, pCountryName, sizeof(CountryFlag.m_aCountryCodeString));
 					if(Config()->m_ClLoadCountryFlags)
 					{
+						const char *pFlagName = pCountryName;
+						const json_value Flag = rStart[i]["flag"];
+						if(Flag.type == json_string)
+							pFlagName = Flag;
 						// load the graphic file
 						CImageInfo Info;
-						str_format(aBuf, sizeof(aBuf), "countryflags/%s.png", pCountryName);
+						str_format(aBuf, sizeof(aBuf), "countryflags/%s.png", pFlagName);
 						if(!Graphics()->LoadPNG(&Info, aBuf, IStorage::TYPE_ALL))
 						{
 							char aMsg[64];
