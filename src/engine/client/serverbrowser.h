@@ -16,6 +16,8 @@
 #include "serverbrowser_fav.h"
 #include "serverbrowser_filter.h"
 
+extern void SortClients(CServerInfo *pInfo);
+
 class CServerBrowser : public IServerBrowser
 {
 public:
@@ -24,6 +26,7 @@ public:
 		SET_MASTER_ADD = 1,
 		SET_FAV_ADD,
 		SET_TOKEN,
+		SET_PLAYERINFO,
 	};
 
 	CServerBrowser();
@@ -122,6 +125,7 @@ private:
 	void RemoveRequest(CServerEntry *pEntry);
 	void RequestImpl(const NETADDR &Addr, CServerEntry *pEntry);
 	void SetInfo(int ServerlistType, CServerEntry *pEntry, const CServerInfo &Info);
+	void AddInfo(int ServerlistType, CServerEntry *pEntry, const CServerInfo &Info);
 };
 
 #endif

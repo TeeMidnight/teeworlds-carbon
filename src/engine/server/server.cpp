@@ -930,6 +930,7 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 				}
 
 				m_aClients[ClientID].m_Version = Unpacker.GetInt();
+				m_aClients[ClientID].m_ServerInfoVersion = Unpacker.GetIntOrDefault(SERVERINFO_VERSION_LEGACY);
 
 				m_aClients[ClientID].m_State = CClient::STATE_CONNECTING;
 				SendMap(ClientID);
@@ -1172,7 +1173,7 @@ void CServer::ProcessClientPacket(CNetChunk *pPacket)
 	}
 }
 
-void CServer::GenerateServerInfo(CPacker *pPacker, bool IncludeClientInfo)
+void CServer::GenerateServerInfo(CPacker *pPacker, int ServerInfoVersion, bool IncludeClientInfo)
 {
 	// count the players
 	int PlayerCount = 0, ClientCount = 0;
@@ -1203,13 +1204,13 @@ void CServer::GenerateServerInfo(CPacker *pPacker, bool IncludeClientInfo)
 		Flags |= SERVERINFO_FLAG_TIMESCORE;
 	pPacker->AddInt(Flags);
 
-	pPacker->AddInt(Config()->m_SvSkillLevel); // server skill level
-	pPacker->AddInt(PlayerCount); // num players
+	pPacker->AddInt(Config()->m_SvSkillLevel);	// server skill level
+	pPacker->AddInt(ServerInfoVersion == SERVERINFO_VERSION_LEGACY ? PlayerCount : 0); // num players
 	pPacker->AddInt(maximum(ClientCount, Config()->m_SvMaxClients)); // max players
-	pPacker->AddInt(ClientCount); // num clients
+	pPacker->AddInt(ServerInfoVersion == SERVERINFO_VERSION_LEGACY ? ClientCount : 0); // num clients
 	pPacker->AddInt(maximum(ClientCount, Config()->m_SvMaxClients)); // max clients
 
-	if(IncludeClientInfo)
+	if(IncludeClientInfo && ServerInfoVersion == SERVERINFO_VERSION_LEGACY)
 	{
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
@@ -1225,20 +1226,49 @@ void CServer::GenerateServerInfo(CPacker *pPacker, bool IncludeClientInfo)
 	}
 }
 
+int CServer::GenerateServerInfoPlayers(CPacker *pPacker, int ServerInfoVersion, int StartClientID)
+{
+	if(ServerInfoVersion == SERVERINFO_VERSION_LEGACY)
+		return -1;
+	// pack 16 clients to one packet.
+	int ClientCount = 0;
+	for(; StartClientID < SERVER_MAX_CLIENTS && ClientCount < SERVERINFO_PACKET_MAX_PLAYERS; StartClientID++)
+	{
+		if(m_aClients[StartClientID].m_State != CClient::STATE_EMPTY)
+		{
+			pPacker->AddInt(1); // for client to check
+			pPacker->AddString(ClientName(StartClientID), 0); // client name
+			pPacker->AddString(ClientClan(StartClientID), 0); // client clan
+			pPacker->AddInt(m_aClients[StartClientID].m_Country); // client country
+			pPacker->AddInt(m_aClients[StartClientID].m_Score); // client score
+			pPacker->AddInt(GameServer()->IsClientPlayer(StartClientID) ? 0 : 1); // flag spectator=1, bot=2 (player=0)
+			ClientCount++;
+		}
+	}
+
+	return StartClientID >= SERVER_MAX_CLIENTS ? -1 : StartClientID;
+}
+
 void CServer::SendServerInfo(int ClientID)
 {
-	CMsgPacker Msg(NETMSG_SERVERINFO, true);
-	GenerateServerInfo(&Msg, false);
 	if(ClientID == -1)
 	{
 		for(int i = 0; i < SERVER_MAX_CLIENTS; i++)
 		{
 			if(m_aClients[i].m_State != CClient::STATE_EMPTY)
-				SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH, i);
+			{
+				CMsgPacker Msg(NETMSG_SERVERINFO, true);
+				GenerateServerInfo(&Msg, m_aClients[ClientID].m_ServerInfoVersion, false);
+				SendMsg(&Msg, MSGFLAG_VITAL|MSGFLAG_FLUSH, i);
+			}
 		}
 	}
 	else if(ClientID >= 0 && ClientID < SERVER_MAX_CLIENTS && m_aClients[ClientID].m_State != CClient::STATE_EMPTY)
-		SendMsg(&Msg, MSGFLAG_VITAL | MSGFLAG_FLUSH, ClientID);
+	{
+		CMsgPacker Msg(NETMSG_SERVERINFO, true);
+		GenerateServerInfo(&Msg, m_aClients[ClientID].m_ServerInfoVersion, false);
+		SendMsg(&Msg, MSGFLAG_VITAL|MSGFLAG_FLUSH, ClientID);
+	}
 }
 
 void CServer::PumpNetwork()
@@ -1261,6 +1291,7 @@ void CServer::PumpNetwork()
 				CUnpacker Unpacker;
 				Unpacker.Reset((unsigned char *) Packet.m_pData + sizeof(SERVERBROWSE_GETINFO), Packet.m_DataSize - sizeof(SERVERBROWSE_GETINFO));
 				int SrvBrwsToken = Unpacker.GetInt();
+				int InfoVersion = Unpacker.GetIntOrDefault(SERVERINFO_VERSION_LEGACY);
 				if(Unpacker.Error())
 					continue;
 
@@ -1268,7 +1299,7 @@ void CServer::PumpNetwork()
 				Packer.Reset();
 				Packer.AddRaw(SERVERBROWSE_INFO, sizeof(SERVERBROWSE_INFO));
 				Packer.AddInt(SrvBrwsToken);
-				GenerateServerInfo(&Packer, true);
+				GenerateServerInfo(&Packer, InfoVersion, true);
 
 				CNetChunk Response;
 				Response.m_ClientID = -1;
@@ -1277,6 +1308,25 @@ void CServer::PumpNetwork()
 				Response.m_pData = Packer.Data();
 				Response.m_DataSize = Packer.Size();
 				m_NetServer.Send(&Response, ResponseToken);
+
+				if(InfoVersion == SERVERINFO_VERSION_LEGACY)
+					continue;
+
+				int Next = 0;
+				while(Next != -1)
+				{
+					Packer.Reset();
+					Packer.AddRaw(SERVERBROWSE_PLAYERSINFO, sizeof(SERVERBROWSE_PLAYERSINFO));
+					Packer.AddInt(SrvBrwsToken);
+					Next = GenerateServerInfoPlayers(&Packer, InfoVersion, Next);
+
+					Response.m_ClientID = -1;
+					Response.m_Address = Packet.m_Address;
+					Response.m_Flags = NETSENDFLAG_CONNLESS;
+					Response.m_pData = Packer.Data();
+					Response.m_DataSize = Packer.Size();
+					m_NetServer.Send(&Response, ResponseToken);
+				}
 			}
 		}
 		else

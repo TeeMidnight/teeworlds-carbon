@@ -92,6 +92,11 @@ enum
 	SERVERINFO_LEVEL_MIN = 0,
 	SERVERINFO_LEVEL_MAX = 2,
 
+	SERVERINFO_PACKET_MAX_PLAYERS=16,
+
+	SERVERINFO_VERSION_LEGACY=-1,
+	SERVERINFO_VERSION_CURRENT, // add extend player info
+
 	MAX_CLIENTS = 128,
 	VANILLA_MAX_CLIENTS = 64,
 	// which means the max number of bots display together, isn't the max number of bots.

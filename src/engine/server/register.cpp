@@ -182,7 +182,6 @@ void CRegister::RegisterUpdate(int Nettype)
 				if(!m_aMasterserverInfo[i].m_Valid || m_aMasterserverInfo[i].m_Count == -1)
 					continue;
 
-				dbg_msg("yee", "%d: %d", i, m_aMasterserverInfo[i].m_Count);
 				if(Best == -1 || m_aMasterserverInfo[i].m_Count < m_aMasterserverInfo[Best].m_Count)
 					Best = i;
 			}

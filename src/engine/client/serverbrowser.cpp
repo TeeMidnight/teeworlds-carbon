@@ -8,6 +8,9 @@
  * See license.txt in the root of the distribution for more information.
  * If you are missing that file, acquire a complete release at github.com/TeeMidnight/teeworlds-carbon
  */
+
+#include <algorithm>
+
 #include <base/math.h>
 #include <base/system.h>
 
@@ -196,6 +199,36 @@ void CServerBrowser::Set(const NETADDR &Addr, int SetType, int Token, const CSer
 			RemoveRequest(pEntry);
 		}
 	}
+	break;
+	case SET_PLAYERINFO:
+		{
+			int Type;
+
+			// internet entry
+			if(m_RefreshFlags&IServerBrowser::REFRESHFLAG_INTERNET)
+			{
+				Type = IServerBrowser::TYPE_INTERNET;
+				pEntry = Find(Type, Addr);
+				if(pEntry && (pEntry->m_InfoState != CServerEntry::STATE_READY || Token != pEntry->m_CurrentToken))
+					pEntry = 0;
+			}
+
+			// lan entry
+			if(!pEntry && (m_RefreshFlags&IServerBrowser::REFRESHFLAG_LAN))
+			{
+				Type = IServerBrowser::TYPE_LAN;
+				pEntry = Find(Type, Addr);
+				if(pEntry && (pEntry->m_InfoState != CServerEntry::STATE_READY || Token != m_CurrentLanToken))
+					pEntry = 0;
+			}
+
+			// set info
+			if(pEntry)
+			{
+				AddInfo(Type, pEntry, *pInfo);
+			}
+		}
+		
 	}
 
 	if(pEntry)
@@ -333,6 +366,7 @@ void CServerBrowser::Refresh(int RefreshFlags)
 		Packer.Reset();
 		Packer.AddRaw(SERVERBROWSE_GETINFO, sizeof(SERVERBROWSE_GETINFO));
 		Packer.AddInt(m_CurrentLanToken);
+		Packer.AddInt(SERVERINFO_VERSION_CURRENT);
 
 		/* do the broadcast version */
 		CNetChunk Packet;
@@ -605,6 +639,7 @@ void CServerBrowser::RequestImpl(const NETADDR &Addr, CServerEntry *pEntry)
 	Packer.Reset();
 	Packer.AddRaw(SERVERBROWSE_GETINFO, sizeof(SERVERBROWSE_GETINFO));
 	Packer.AddInt(pEntry ? pEntry->m_CurrentToken : m_CurrentLanToken);
+	Packer.AddInt(SERVERINFO_VERSION_CURRENT);
 
 	CNetChunk Packet;
 	Packet.m_ClientID = -1;
@@ -647,6 +682,35 @@ void CServerBrowser::SetInfo(int ServerlistType, CServerEntry *pEntry, const CSe
 	pEntry->m_InfoState = CServerEntry::STATE_READY;
 }
 
+void CServerBrowser::AddInfo(int ServerlistType, CServerEntry *pEntry, const CServerInfo &Info)
+{
+	int CopyNum = Info.m_NumClients;
+	if(pEntry->m_Info.m_NumClients + CopyNum > pEntry->m_Info.m_MaxClients)
+		CopyNum = pEntry->m_Info.m_MaxClients - pEntry->m_Info.m_NumClients;
+
+	mem_copy(&pEntry->m_Info.m_aClients[pEntry->m_Info.m_NumClients], Info.m_aClients, sizeof(CServerInfo::CClient) * CopyNum);
+
+	for(int i = 0; i < CopyNum; i++)
+	{
+		if(pEntry->m_Info.m_aClients[i].m_PlayerType&CServerInfo::CClient::PLAYERFLAG_BOT)
+		{
+			if(pEntry->m_Info.m_aClients[i].m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC)
+				pEntry->m_Info.m_NumBotSpectators++;
+			else
+				pEntry->m_Info.m_NumBotPlayers++;
+		}
+
+		pEntry->m_Info.m_NumClients++;
+		if(!(pEntry->m_Info.m_aClients[i].m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC))
+			pEntry->m_Info.m_NumPlayers++;
+	}
+
+	m_aServerlist[ServerlistType].m_NumPlayers += Info.m_NumPlayers;
+	m_aServerlist[ServerlistType].m_NumClients += Info.m_NumClients;
+
+	SortClients(&pEntry->m_Info);
+}
+
 void CServerBrowser::LoadServerlist()
 {
 	CJsonParser JsonParser;
@@ -684,4 +748,32 @@ void CServerBrowser::SaveServerlist()
 		Writer.WriteStrValue(m_aServerlist[IServerBrowser::TYPE_INTERNET].m_ppServerlist[i]->m_Info.m_aAddress);
 	Writer.EndArray();
 	Writer.EndObject();
+}
+
+bool CompareScore(const CServerInfo::CClient &C1, const CServerInfo::CClient &C2)
+{
+	if(C1.m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC)
+		return false;
+	if(C2.m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC)
+		return true;
+	return C1.m_Score > C2.m_Score;
+}
+
+bool CompareTime(const CServerInfo::CClient &C1, const CServerInfo::CClient &C2)
+{
+	if(C1.m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC)
+		return false;
+	if(C2.m_PlayerType&CServerInfo::CClient::PLAYERFLAG_SPEC)
+		return true;
+	if(C1.m_Score < 0)
+		return false;
+	if(C2.m_Score < 0)
+		return true;
+	return C1.m_Score < C2.m_Score;
+}
+
+void SortClients(CServerInfo *pInfo)
+{
+	std::stable_sort(pInfo->m_aClients, pInfo->m_aClients + pInfo->m_NumClients,
+		(pInfo->m_Flags&IServerBrowser::FLAG_TIMESCORE) ? CompareTime : CompareScore);
 }
